@@ -1,0 +1,98 @@
+# Secrets / environment
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python caches / build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# Type checker / lint caches
+.mypy_cache/
+.ruff_cache/
+.pytype/
+
+# Coverage output
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Test caches
+.pytest_cache/
+.tox/
+.nox/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Runtime state
+state/*
+!state/.gitkeep
+
+# Market data
+data/raw/*
+!data/raw/.gitkeep
+data/normalized/*
+!data/normalized/.gitkeep
+data/features/*
+!data/features/.gitkeep
+data/metadata/*
+!data/metadata/.gitkeep
+
+# Generated reports
+reports/data_quality/*
+!reports/data_quality/.gitkeep
+reports/backtests/*
+!reports/backtests/.gitkeep
+reports/walk_forward/*
+!reports/walk_forward/.gitkeep
+reports/live/*
+!reports/live/.gitkeep
+
+# Experiment results (registry metadata is tracked; heavy results are not)
+experiments/results/*
+!experiments/results/.gitkeep
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Credentials / secret files
+*.pem
+*.key
+*.pfx
+*credentials*.json
+*secret*.json
+
+# MT5 terminal data
+*.ex5
+MQL5/
+terminal64.log
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db

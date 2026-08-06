@@ -15,13 +15,19 @@ other codebase.
 
 ## Current Phase
 
-**Phase 0 — Project Foundation and Governance.**
+**Phase 1 — Data Infrastructure** (implementation complete, pending
+phase-gate review by the project owner).
 
-This phase establishes the project's structure, documentation, tooling, and
-engineering rules. It intentionally contains **no trading strategy, no
-backtest engine, no broker connectivity, no machine learning, and no market
-data**. See [docs/DEVELOPMENT_ROADMAP.md](docs/DEVELOPMENT_ROADMAP.md) for
-the full phase plan and [docs/PROJECT_CHARTER.md](docs/PROJECT_CHARTER.md)
+Phase 0 established the project's structure, documentation, tooling, and
+engineering rules. Phase 1 adds the data layer
+(`src/forex_daytrade/data/`): MT5 historical-bar ingestion, UTC timestamp
+normalization, data-quality validation, trading-session classification, and
+Parquet storage with metadata. It intentionally contains **no trading
+strategy, no backtest engine, no order execution, and no machine
+learning** — only market-data ingestion, normalization, validation, and
+storage. See [docs/DEVELOPMENT_ROADMAP.md](docs/DEVELOPMENT_ROADMAP.md) for
+the full phase plan, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the
+Data Layer's design, and [docs/PROJECT_CHARTER.md](docs/PROJECT_CHARTER.md)
 for the governing principles.
 
 ## High-Level Roadmap

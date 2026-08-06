@@ -39,6 +39,23 @@ phase begins. No phase may be skipped.
   results on a defined historical range; no look-ahead bias in any
   transformation.
 - **Exit Decision:** PASS required before feature/backtest work begins.
+- **Implementation status:** Deliverables implemented — see the Data Layer
+  section of [ARCHITECTURE.md](ARCHITECTURE.md) for the module breakdown
+  and `src/forex_daytrade/data/` / `scripts/ingest_historical_data.py` for
+  the code. The pipeline is purely historical/batch (each bar's derived
+  columns and validation depend only on that bar and prior bars), so it
+  introduces no look-ahead bias. Unit tests cover normalization, session
+  classification, validation, and metadata generation without requiring an
+  MT5 terminal. Also delivered as Phase 1 foundational infrastructure: the
+  Domain Layer (`src/forex_daytrade/domain/`, `config/`, `types/`,
+  `exceptions/`) — see the Domain Layer section of
+  [ARCHITECTURE.md](ARCHITECTURE.md) — providing the shared candle/tick/
+  symbol/timeframe/session/market-data contracts, configuration models, and
+  exception hierarchy other layers will build on, without altering the
+  existing Data Layer code. This status note records implementation
+  completeness only; the PASS/REWORK/REJECT gate decision itself remains
+  the project owner's, per the Phase Gate System in
+  [PROJECT_CHARTER.md](PROJECT_CHARTER.md).
 
 ## Phase 2: Backtest Core
 

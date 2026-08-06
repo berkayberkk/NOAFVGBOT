@@ -15,7 +15,11 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 
-dependencies = []
+dependencies = [
+    "pandas>=2.2",
+    "pyarrow>=17.0",
+    "MetaTrader5>=5.0.45; sys_platform == 'win32'",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -23,6 +27,7 @@ dev = [
     "pytest-cov>=5.0",
     "ruff>=0.6",
     "mypy>=1.11",
+    "pandas-stubs>=2.2",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -65,6 +70,10 @@ no_implicit_optional = true
 [[tool.mypy.overrides]]
 module = "tests.*"
 disallow_untyped_defs = false
+
+[[tool.mypy.overrides]]
+module = "MetaTrader5"
+ignore_missing_imports = true
 
 [tool.coverage.run]
 source = ["src/forex_daytrade"]

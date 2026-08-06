@@ -29,15 +29,31 @@ def test_env_example_exists_and_has_no_real_looking_values() -> None:
         "TELEGRAM_CHAT_ID",
         "LOG_LEVEL",
         "ENVIRONMENT",
+        "MT5_TERMINAL_PATH",
+        "MT5_BROKER_TIMEZONE",
+        "DATA_RAW_DIR",
+        "DATA_NORMALIZED_DIR",
+        "DATA_METADATA_DIR",
     }
     for key in expected_keys:
         assert key in content
 
+    # Non-secret config values (filesystem paths, log level, timezone names)
+    # may ship with a sane non-blank default; only credential-shaped keys
+    # must remain blank placeholders.
+    non_secret_defaults = {
+        "LOG_LEVEL",
+        "ENVIRONMENT",
+        "MT5_BROKER_TIMEZONE",
+        "DATA_RAW_DIR",
+        "DATA_NORMALIZED_DIR",
+        "DATA_METADATA_DIR",
+    }
     for line in content.splitlines():
         if "=" not in line or line.strip().startswith("#"):
             continue
         key, _, value = line.partition("=")
-        if key.strip() in {"LOG_LEVEL", "ENVIRONMENT"}:
+        if key.strip() in non_secret_defaults:
             continue
         assert value.strip() == "", f"{key} should be a blank placeholder in .env.example"
 

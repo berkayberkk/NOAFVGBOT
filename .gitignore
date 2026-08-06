@@ -24,6 +24,10 @@ dist/
 .ruff_cache/
 .pytype/
 
+# Benchmark / hypothesis caches
+.benchmarks/
+.hypothesis/
+
 # Coverage output
 .coverage
 .coverage.*
@@ -92,6 +96,12 @@ terminal64.log
 
 # Notebook checkpoints
 .ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
 
 # OS files
 .DS_Store

@@ -3,9 +3,11 @@
 **Status:** Describes the target layered architecture. The **Data Layer**
 is implemented as of Phase 1 (`src/forex_daytrade/data/`), alongside the
 **Domain Layer** (`src/forex_daytrade/domain/`, `config/`, `types/`,
-`exceptions/`) as Phase 1 foundational infrastructure; all layers above
-Data remain planning-only. Implementation begins in the phase where each
-layer is scheduled — see [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md).
+`exceptions/`) as Phase 1 foundational infrastructure. The **Feature
+Layer**'s baseline generators (`src/forex_daytrade/features/`) were added
+in Sprint 2, ahead of Phase 2; all layers above Feature remain
+planning-only. Implementation begins in the phase where each layer is
+scheduled — see [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md).
 
 ## Purpose
 
@@ -183,6 +185,88 @@ Computes derived, deterministic features (e.g., multi-timeframe indicators)
 from normalized data. Pure functions of historical data only — must never
 have access to future bars relative to the point being computed. Outputs are
 cached under `data/features`.
+
+**Baseline generators implemented in Sprint 2** (ahead of Phase 2, since a
+modular feature framework has no strategy/backtest content of its own) as
+`src/forex_daytrade/features/`:
+
+- `base.py` — the `Feature` interface every generator implements: `name`,
+  `required_columns`, `generated_columns` (declared as class attributes),
+  and `compute(df) -> pd.DataFrame`. `metadata()` returns a `FeatureMetadata`
+  snapshot of the above plus the class's docstring as `description`.
+  `validate_input`/`validate_output` enforce that a feature only ever sees
+  its declared required columns and only ever returns its declared
+  generated columns.
+- `registry.py` — `@register_feature` is a class decorator that adds a
+  `Feature` subclass to a module-level registry keyed by `.name`, raising
+  `DuplicateFeatureRegistrationError` on a name collision. `get_feature`,
+  `all_features`, and `feature_names` read the registry.
+- `pipeline.py` — `FeaturePipeline` takes an explicit, caller-ordered
+  sequence of `Feature` instances. `.run(df)` validates every feature's
+  required columns are present in `df` up front (batched, so all missing
+  columns are reported together), then runs each feature and merges its
+  output into the result, returning `(DataFrame, FeatureReport)`.
+  `FeatureReport` records which features ran, which columns they produced,
+  a NaN count per generated column, and row count.
+- `returns.py` / `price.py` / `volatility.py` / `time.py` — the baseline
+  generators: `log_return`, `simple_return` (returns); `high_low_range`,
+  `close_open_distance`, `body_size`, `upper_wick`, `lower_wick` (price
+  shape); `true_range`, `rolling_std_20` (raw dispersion — no EMA/RSI/ATR/
+  MACD or any indicator that bakes in a strategy decision); `hour_of_day`,
+  `day_of_week`, `session_placeholder` (time). `session_placeholder`
+  deliberately passes through the Data Layer's already-classified
+  `session` column rather than reclassifying sessions itself — see
+  `time.py`'s docstring for why.
+
+**"No feature may know about another feature" is structurally enforced,
+not just a convention:** `FeaturePipeline.run()` slices the input down to
+`df[list(feature.required_columns)]` before calling `feature.compute()`,
+so a feature has no way to read another feature's generated columns, or
+even columns of its own input it didn't declare needing — attempting to
+do so raises `KeyError` immediately. This also means **pipeline order is
+safely configurable**: since no feature's output can depend on another
+feature having already run, reordering a `FeaturePipeline`'s feature list
+never changes what any individual feature computes.
+
+**Extension mechanism:** adding a new feature requires (1) a new class
+implementing `Feature`, decorated with `@register_feature`, in a new or
+existing module under `features/`, and (2) one import line in
+`features/__init__.py` (for the side effect of running the decorator) if
+it's a new module — no changes to `base.py`, `registry.py`, or
+`pipeline.py`. Importing `forex_daytrade.features` registers every
+baseline feature as a side effect.
+
+**Column-conflict validation:** `FeaturePipeline` raises
+`DuplicateColumnError` at *construction* time if two features in the list
+declare overlapping `generated_columns` (a static, declared-contract
+check), and `ColumnConflictError` at *run* time if a feature's actual
+output columns collide with the input DataFrame's original columns or an
+earlier feature's actual output (a dynamic, contract-enforcement check —
+catches a feature whose `compute()` doesn't honor what it declared).
+
+**NaN handling is observability, not a hard failure:** `FeatureReport.
+nan_counts` surfaces how many NaNs each generated column contains, but
+`FeaturePipeline` never raises on NaN. Leading NaNs are the correct,
+expected output for `log_return`/`simple_return` (no prior bar for the
+first row) and `rolling_std_20` (fewer than 20 prior bars for the first 19
+rows) — rejecting them would mean fabricating data for bars that don't
+exist. Downstream layers decide how to handle NaN (e.g. drop, or require a
+minimum warm-up period), not the Feature Layer itself.
+
+**No files created for `trend.py`, `volume.py`, or a standalone
+`metadata.py`:** Sprint 2's baseline feature set has no trend or volume
+features (EMA/RSI/ATR/MACD-style trend indicators were explicitly out of
+scope, and no volume-derived feature was specified), so those modules
+would be empty; `FeatureMetadata` lives in `base.py` since it's a one-
+dataclass type tightly coupled to the `Feature` interface it describes.
+Add these modules when a concrete feature actually needs them.
+
+The Feature Layer currently has no import dependency on the Data or Domain
+layers: every generator operates on a plain `pd.DataFrame` and validates
+against column *names* (`open`, `high`, `low`, `close`, `timestamp_utc`,
+`session`, matching the Data Layer's normalized/session-augmented output
+schema) rather than importing `forex_daytrade.data` or
+`forex_daytrade.domain` types directly.
 
 ### Regime Layer
 

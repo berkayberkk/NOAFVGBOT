@@ -36,9 +36,13 @@ class Trade:
     entry_price: float = 0.0
     stop_loss: float = 0.0
     take_profit: float = 0.0
+    executed_entry: float = 0.0
+    executed_exit: float | None = None
     exit_price: float | None = None
     won: bool | None = None
-    r_multiple: float | None = None       # kazanç/kayıp, risk biriminin katı olarak
+    gross_r_multiple: float | None = None
+    net_r_multiple: float | None = None
+    r_multiple: float | None = None       # net_r_multiple ile özdeş (geriye dönük uyumluluk)
 
 
 @dataclass
@@ -70,9 +74,9 @@ def _find_take_profit(entry: float, direction: SignalType, levels, signal_index:
         return min(below, key=lambda lvl: entry - lvl.price).price
 
 
-def run_backtest(candles: list[dict], signals: list[Signal]) -> BacktestResult:
+def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyConfig = DEFAULT_CONFIG) -> BacktestResult:
     """
-    Sinyalleri geçmiş veri üzerinde simüle eder.
+    Sinyalleri geçmiş veri üzerinde işlem maliyetleri (spread, kayma, komisyon) ile simüle eder.
 
     Emir yönetimi kuralı: her mumda önce stop-loss kontrol edilir
     (aynı mumda hem SL hem TP'ye değinildiyse kötümser/muhafazakâr
@@ -80,6 +84,10 @@ def run_backtest(candles: list[dict], signals: list[Signal]) -> BacktestResult:
     """
     trades: list[Trade] = []
     skipped = 0
+
+    half_spread = config.spread / 2.0
+    slippage = config.slippage
+    commission = config.commission
 
     for signal in signals:
         historical_candles = candles[: signal.index + 1]
@@ -97,24 +105,56 @@ def run_backtest(candles: list[dict], signals: list[Signal]) -> BacktestResult:
             skipped += 1
             continue
 
+        # Taraf bazlı gerçek giriş fiyatı (adverse slippage + ask/bid spread adjustment)
+        if signal.type == SignalType.BUY:
+            trade.executed_entry = signal.entry + half_spread + slippage
+        else:
+            trade.executed_entry = signal.entry - half_spread - slippage
+
         for j in range(signal.index + 1, len(candles)):
             candle = candles[j]
 
             if signal.type == SignalType.BUY:
-                hit_sl = candle["low"] <= trade.stop_loss
-                hit_tp = candle["high"] >= trade.take_profit
+                # LONG pozisyonu BID fiyatı ile kapanır (BID = MID - half_spread)
+                bid_low = candle["low"] - half_spread
+                bid_high = candle["high"] - half_spread
+                hit_sl = bid_low <= trade.stop_loss
+                hit_tp = bid_high >= trade.take_profit
             else:
-                hit_sl = candle["high"] >= trade.stop_loss
-                hit_tp = candle["low"] <= trade.take_profit
+                # SHORT pozisyonu ASK fiyatı ile kapanır (ASK = MID + half_spread)
+                ask_high = candle["high"] + half_spread
+                ask_low = candle["low"] + half_spread
+                hit_sl = ask_high >= trade.stop_loss
+                hit_tp = ask_low <= trade.take_profit
 
             if hit_sl:
                 trade.exit_index, trade.exit_price, trade.won = j, trade.stop_loss, False
-                trade.r_multiple = -1.0
+                if signal.type == SignalType.BUY:
+                    trade.executed_exit = trade.stop_loss - half_spread - slippage
+                    gross_pnl = trade.executed_exit - trade.executed_entry
+                else:
+                    trade.executed_exit = trade.stop_loss + half_spread + slippage
+                    gross_pnl = trade.executed_entry - trade.executed_exit
+
+                net_pnl = gross_pnl - commission
+                trade.gross_r_multiple = gross_pnl / risk
+                trade.net_r_multiple = net_pnl / risk
+                trade.r_multiple = trade.net_r_multiple
                 break
+
             if hit_tp:
                 trade.exit_index, trade.exit_price, trade.won = j, trade.take_profit, True
-                reward = abs(trade.take_profit - trade.entry_price)
-                trade.r_multiple = reward / risk
+                if signal.type == SignalType.BUY:
+                    trade.executed_exit = trade.take_profit - half_spread - slippage
+                    gross_pnl = trade.executed_exit - trade.executed_entry
+                else:
+                    trade.executed_exit = trade.take_profit + half_spread + slippage
+                    gross_pnl = trade.executed_entry - trade.executed_exit
+
+                net_pnl = gross_pnl - commission
+                trade.gross_r_multiple = gross_pnl / risk
+                trade.net_r_multiple = net_pnl / risk
+                trade.r_multiple = trade.net_r_multiple
                 break
 
         if trade.r_multiple is not None:

@@ -20,6 +20,11 @@ class StrategyConfig:
     avg_range_period: int = 14
     strong_move_ratio: float = 2.0
 
+    # --- Backtest İşlem Maliyetleri (0.0 varsayılan = geriye dönük uyumlu) ---
+    spread: float = 0.0            # Fiyat mesafesi cinsinden spread (örn. 0.20)
+    slippage: float = 0.0          # Taraf başına olumsuz kayma mesafesi (örn. 0.05)
+    commission: float = 0.0        # İşlem başı tur maliyeti (fiyat mesafesi cinsinden, örn. 0.10)
+
     # --- Destek / Direnç Parametreleri ---
     swing_lookback: int = 5
     tolerance_atr_ratio: float = 0.5

@@ -36,6 +36,8 @@ class Trade:
     entry_price: float = 0.0
     stop_loss: float = 0.0
     take_profit: float = 0.0
+    filled: bool = False
+    entry_fill_index: int | None = None
     executed_entry: float = 0.0
     executed_exit: float | None = None
     exit_price: float | None = None
@@ -53,6 +55,7 @@ class BacktestResult:
     avg_r: float = 0.0
     max_drawdown_r: float = 0.0
     skipped_no_tp: int = 0     # uygun S/R hedefi bulunamadığı için atlanan sinyal sayısı
+    unfilled_orders: int = 0   # limit seviyesine ulaşılamadığı için dolmayan emir sayısı
 
 
 def _find_take_profit(entry: float, direction: SignalType, levels, signal_index: int) -> float | None:
@@ -76,14 +79,11 @@ def _find_take_profit(entry: float, direction: SignalType, levels, signal_index:
 
 def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyConfig = DEFAULT_CONFIG) -> BacktestResult:
     """
-    Sinyalleri geçmiş veri üzerinde işlem maliyetleri (spread, kayma, komisyon) ile simüle eder.
-
-    Emir yönetimi kuralı: her mumda önce stop-loss kontrol edilir
-    (aynı mumda hem SL hem TP'ye değinildiyse kötümser/muhafazakâr
-    varsayımla önce SL'in vurulduğu kabul edilir), sonra take-profit.
+    Sinyalleri geçmiş veri üzerinde limit-emir dolum gerçekçiliği ve işlem maliyetleri ile simüle eder.
     """
     trades: list[Trade] = []
     skipped = 0
+    unfilled = 0
 
     half_spread = config.spread / 2.0
     slippage = config.slippage
@@ -105,23 +105,70 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
             skipped += 1
             continue
 
-        # Taraf bazlı gerçek giriş fiyatı (adverse slippage + ask/bid spread adjustment)
-        if signal.type == SignalType.BUY:
-            trade.executed_entry = signal.entry + half_spread + slippage
-        else:
-            trade.executed_entry = signal.entry - half_spread - slippage
+        is_filled = False
 
         for j in range(signal.index + 1, len(candles)):
             candle = candles[j]
 
+            # 1. EMİR DOLUM KONTROLÜ (Henüz dolmadıysa)
+            if not is_filled:
+                if signal.type == SignalType.BUY:
+                    candle_ask_low = candle["low"] + half_spread
+                    candle_ask_open = candle["open"] + half_spread
+                    if candle_ask_low <= signal.entry:
+                        is_filled = True
+                        trade.filled = True
+                        trade.entry_fill_index = j
+                        better_price = min(signal.entry, candle_ask_open)
+                        trade.executed_entry = min(signal.entry, better_price + slippage)
+                else:
+                    candle_bid_high = candle["high"] - half_spread
+                    candle_bid_open = candle["open"] - half_spread
+                    if candle_bid_high >= signal.entry:
+                        is_filled = True
+                        trade.filled = True
+                        trade.entry_fill_index = j
+                        better_price = max(signal.entry, candle_bid_open)
+                        trade.executed_entry = max(signal.entry, better_price - slippage)
+
+                if not is_filled:
+                    continue  # Bu mumda emir dolmadı, sonraki muma geç
+
+                # Giriş mumundaki (j) çıkış kontrolü (Aynı mumda dolum + çıkış karmaşası)
+                if signal.type == SignalType.BUY:
+                    bid_low = candle["low"] - half_spread
+                    hit_sl = bid_low <= trade.stop_loss
+                else:
+                    ask_high = candle["high"] + half_spread
+                    hit_sl = ask_high >= trade.stop_loss
+
+                if hit_sl:
+                    # Giriş mumunda SL vuruldusa kötümser kabul et ve kapat
+                    trade.exit_index, trade.exit_price, trade.won = j, trade.stop_loss, False
+                    if signal.type == SignalType.BUY:
+                        trade.executed_exit = trade.stop_loss - half_spread - slippage
+                        gross_pnl = trade.executed_exit - trade.executed_entry
+                    else:
+                        trade.executed_exit = trade.stop_loss + half_spread + slippage
+                        gross_pnl = trade.executed_entry - trade.executed_exit
+
+                    net_pnl = gross_pnl - commission
+                    trade.gross_r_multiple = gross_pnl / risk
+                    trade.net_r_multiple = net_pnl / risk
+                    trade.r_multiple = trade.net_r_multiple
+                    break
+                else:
+                    # Giriş mumunda TP vurulmuş olsa dahi yol sırası belirsiz olduğu için
+                    # aynı mumda iyimser TP kabul etme, sonraki mumlara bırak.
+                    continue
+
+            # 2. POZİSYON ÇIKIŞ KONTROLÜ (Daha önceki bir mumda dolmuşsa)
             if signal.type == SignalType.BUY:
-                # LONG pozisyonu BID fiyatı ile kapanır (BID = MID - half_spread)
                 bid_low = candle["low"] - half_spread
                 bid_high = candle["high"] - half_spread
                 hit_sl = bid_low <= trade.stop_loss
                 hit_tp = bid_high >= trade.take_profit
             else:
-                # SHORT pozisyonu ASK fiyatı ile kapanır (ASK = MID + half_spread)
                 ask_high = candle["high"] + half_spread
                 ask_low = candle["low"] + half_spread
                 hit_sl = ask_high >= trade.stop_loss
@@ -160,14 +207,17 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
         if trade.r_multiple is not None:
             trades.append(trade)
         else:
-            skipped += 1  # islem hicbir zaman kapanmadi (veri bitti)
+            if not is_filled:
+                unfilled += 1
+            else:
+                skipped += 1  # Doldu fakat veri bittiği için kapanamadı
 
-    return _summarize(trades, skipped)
+    return _summarize(trades, skipped, unfilled)
 
 
-def _summarize(trades: list[Trade], skipped: int) -> BacktestResult:
+def _summarize(trades: list[Trade], skipped: int, unfilled: int = 0) -> BacktestResult:
     if not trades:
-        return BacktestResult(trades=trades, skipped_no_tp=skipped)
+        return BacktestResult(trades=trades, skipped_no_tp=skipped, unfilled_orders=unfilled)
 
     wins = [t for t in trades if t.won]
     win_rate = len(wins) / len(trades)
@@ -183,7 +233,8 @@ def _summarize(trades: list[Trade], skipped: int) -> BacktestResult:
         max_dd = max(max_dd, peak - equity)
 
     return BacktestResult(trades=trades, win_rate=win_rate, total_r=total_r,
-                           avg_r=avg_r, max_drawdown_r=max_dd, skipped_no_tp=skipped)
+                          avg_r=avg_r, max_drawdown_r=max_dd, skipped_no_tp=skipped,
+                          unfilled_orders=unfilled)
 
 
 def print_report(result: BacktestResult) -> None:

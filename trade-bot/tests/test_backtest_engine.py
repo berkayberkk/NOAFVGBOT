@@ -37,16 +37,7 @@ def test_take_profit_hit():
     candles_data[5] = (100.0, 110.0, 99.0, 105.0)
     candles_data[15] = (100.0, 110.0, 99.0, 105.0)
 
-    signal = Signal(
-        index=20,
-        type=SignalType.BUY,
-        confidence=Confidence.HIGH,
-        setup_type=SetupType.A_PLUS,
-        entry=100.0,
-        stop_loss=98.0,
-        reason="A+ test",
-    )
-
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
     candles_data[22] = (100.0, 111.0, 99.5, 110.5)
 
     candles = _make_dummy_candles(candles_data)
@@ -64,16 +55,7 @@ def test_stop_loss_hit():
     candles_data[5] = (100.0, 110.0, 99.0, 105.0)
     candles_data[15] = (100.0, 110.0, 99.0, 105.0)
 
-    signal = Signal(
-        index=20,
-        type=SignalType.BUY,
-        confidence=Confidence.HIGH,
-        setup_type=SetupType.A_PLUS,
-        entry=100.0,
-        stop_loss=98.0,
-        reason="A+ test",
-    )
-
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
     candles_data[22] = (100.0, 100.5, 97.0, 97.5)
 
     candles = _make_dummy_candles(candles_data)
@@ -91,16 +73,11 @@ def test_pessimistic_sl_first_priority_when_both_touched():
     candles_data[5] = (100.0, 110.0, 99.0, 105.0)
     candles_data[15] = (100.0, 110.0, 99.0, 105.0)
 
-    signal = Signal(
-        index=20,
-        type=SignalType.BUY,
-        confidence=Confidence.HIGH,
-        setup_type=SetupType.A_PLUS,
-        entry=100.0,
-        stop_loss=98.0,
-        reason="A+ test",
-    )
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
 
+    # idx 21: limit dolum
+    candles_data[21] = (100.0, 100.5, 99.5, 100.0)
+    # idx 22: high=112.0 (>= TP 110.0) AND low=96.0 (<= SL 98.0)
     candles_data[22] = (100.0, 112.0, 96.0, 105.0)
 
     candles = _make_dummy_candles(candles_data)
@@ -125,36 +102,25 @@ def test_non_lookahead_sr_target_exit_selection():
 
 
 def test_future_touch_does_not_contaminate_past_trade_tp():
-    # Gelecek mumlardaki (idx 28) S/R dokunuşu idx 20'deki işlemin TP seçimini etkilememelidir.
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(35)]
     candles_data[5] = (100.0, 110.0, 99.0, 105.0)
-    candles_data[15] = (100.0, 110.0, 99.0, 105.0)  # S/R level at 110.0 created by idx 5 & 15
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
 
-    signal = Signal(
-        index=20,
-        type=SignalType.BUY,
-        confidence=Confidence.HIGH,
-        setup_type=SetupType.A_PLUS,
-        entry=100.0,
-        stop_loss=98.0,
-        reason="A+ test",
-    )
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
 
-    # idx 22: price hits TP 110.0
     candles_data[22] = (100.0, 111.0, 99.5, 110.5)
-
-    # idx 28: Gelecekteki 3. dokunuş (last_index=28 olurdu eğer tüm veriyle S/R hesaplansaydı)
     candles_data[28] = (100.0, 110.0, 99.0, 105.0)
 
     candles = _make_dummy_candles(candles_data)
     result = run_backtest(candles, [signal])
 
-    # Gelecekteki dokunuş yüzünden işlem atlanmamalı (skipped_no_tp = 0 olmalı)
     assert len(result.trades) == 1
     assert result.skipped_no_tp == 0
     assert result.trades[0].take_profit == 110.0
     assert result.trades[0].won is True
 
+
+# --- Phase 3A: Execution Cost Tests ---
 
 def test_zero_cost_backward_compatibility():
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
@@ -182,27 +148,27 @@ def test_buy_spread_worsens_result():
     cfg = StrategyConfig(spread=0.40)  # half_spread = 0.20
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
-    # Exec entry = 100.20, Exec exit = 109.80, gross_pnl = 9.60, risk = 2.0 -> R = 4.80 < 5.0
-    assert t.executed_entry == 100.20
+    # Exec entry = 100.0, Exec exit = 109.80, gross_pnl = 9.80, risk = 2.0 -> R = 4.90 < 5.0
+    assert t.executed_entry == 100.0
     assert t.executed_exit == 109.80
-    assert t.r_multiple == pytest.approx(4.80)
+    assert t.r_multiple == pytest.approx(4.90)
 
 
 def test_sell_spread_worsens_result():
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
     candles_data[5] = (100.0, 101.0, 90.0, 95.0)
-    candles_data[15] = (100.0, 101.0, 90.0, 95.0)  # Support at 90.0
+    candles_data[15] = (100.0, 101.0, 90.0, 95.0)
     signal = Signal(index=20, type=SignalType.SELL, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=102.0, reason="A+")
-    candles_data[22] = (100.0, 100.5, 89.0, 89.5)  # Hits TP 90.0
+    candles_data[22] = (100.0, 100.5, 89.0, 89.5)
     candles = _make_dummy_candles(candles_data)
 
     cfg = StrategyConfig(spread=0.40)  # half_spread = 0.20
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
-    # Exec entry = 99.80, Exec exit = 90.20, gross_pnl = 9.60, risk = 2.0 -> R = 4.80 < 5.0
-    assert t.executed_entry == 99.80
+    # Exec entry = 100.0, Exec exit = 90.20, gross_pnl = 9.80, risk = 2.0 -> R = 4.90 < 5.0
+    assert t.executed_entry == 100.0
     assert t.executed_exit == 90.20
-    assert t.r_multiple == pytest.approx(4.80)
+    assert t.r_multiple == pytest.approx(4.90)
 
 
 def test_buy_adverse_slippage():
@@ -216,10 +182,10 @@ def test_buy_adverse_slippage():
     cfg = StrategyConfig(slippage=0.10)
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
-    # Exec entry = 100.10, Exec exit = 109.90, gross_pnl = 9.80, risk = 2.0 -> R = 4.90 < 5.0
-    assert t.executed_entry == 100.10
+    # Exec entry capped at limit 100.0, Exec exit = 109.90, gross_pnl = 9.90, risk = 2.0 -> R = 4.95 < 5.0
+    assert t.executed_entry == 100.0
     assert t.executed_exit == 109.90
-    assert t.r_multiple == pytest.approx(4.90)
+    assert t.r_multiple == pytest.approx(4.95)
 
 
 def test_sell_adverse_slippage():
@@ -233,10 +199,10 @@ def test_sell_adverse_slippage():
     cfg = StrategyConfig(slippage=0.10)
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
-    # Exec entry = 99.90, Exec exit = 90.10, gross_pnl = 9.80, risk = 2.0 -> R = 4.90 < 5.0
-    assert t.executed_entry == 99.90
+    # Exec entry capped at limit 100.0, Exec exit = 90.10, gross_pnl = 9.90, risk = 2.0 -> R = 4.95 < 5.0
+    assert t.executed_entry == 100.0
     assert t.executed_exit == 90.10
-    assert t.r_multiple == pytest.approx(4.90)
+    assert t.r_multiple == pytest.approx(4.95)
 
 
 def test_commission_reduces_net_r():
@@ -247,7 +213,7 @@ def test_commission_reduces_net_r():
     candles_data[22] = (100.0, 111.0, 99.5, 110.5)
     candles = _make_dummy_candles(candles_data)
 
-    cfg = StrategyConfig(commission=0.20)  # $0.20 price units -> 0.10 R on risk=2.0
+    cfg = StrategyConfig(commission=0.20)
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
     assert t.gross_r_multiple == pytest.approx(5.0)
@@ -265,14 +231,14 @@ def test_combined_execution_costs():
     cfg = StrategyConfig(spread=0.20, slippage=0.05, commission=0.10)
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
-    # Entry = 100.0 + 0.10 + 0.05 = 100.15
-    # Exit = 110.0 - 0.10 - 0.05 = 109.85
-    # Gross PnL = 9.70 -> Gross R = 4.85
-    # Net PnL = 9.70 - 0.10 = 9.60 -> Net R = 4.80
-    assert t.executed_entry == pytest.approx(100.15)
+    # Exec entry capped at limit 100.0
+    # Exec exit = 110.0 - 0.10 - 0.05 = 109.85
+    # Gross PnL = 9.85 -> Gross R = 4.925
+    # Net PnL = 9.85 - 0.10 = 9.75 -> Net R = 4.875
+    assert t.executed_entry == pytest.approx(100.0)
     assert t.executed_exit == pytest.approx(109.85)
-    assert t.gross_r_multiple == pytest.approx(4.85)
-    assert t.net_r_multiple == pytest.approx(4.80)
+    assert t.gross_r_multiple == pytest.approx(4.925)
+    assert t.net_r_multiple == pytest.approx(4.875)
 
 
 def test_same_bar_sl_tp_pessimistic_with_costs():
@@ -280,7 +246,8 @@ def test_same_bar_sl_tp_pessimistic_with_costs():
     candles_data[5] = (100.0, 110.0, 99.0, 105.0)
     candles_data[15] = (100.0, 110.0, 99.0, 105.0)
     signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
-    candles_data[22] = (100.0, 112.0, 96.0, 105.0)
+    candles_data[21] = (100.0, 100.5, 99.5, 100.0)  # Fill at idx 21
+    candles_data[22] = (100.0, 112.0, 96.0, 105.0)  # Same-bar SL/TP at idx 22
     candles = _make_dummy_candles(candles_data)
 
     cfg = StrategyConfig(spread=0.20, slippage=0.05, commission=0.10)
@@ -288,38 +255,321 @@ def test_same_bar_sl_tp_pessimistic_with_costs():
     t = res.trades[0]
     assert t.won is False
     # Executed SL exit = 98.0 - 0.10 - 0.05 = 97.85
-    # Executed entry = 100.15
-    # Gross PnL = 97.85 - 100.15 = -2.30
-    assert t.net_r_multiple == pytest.approx(-1.20)
+    # Executed entry = 100.0 (capped at limit)
+    # Gross PnL = 97.85 - 100.0 = -2.15
+    # Net PnL = -2.15 - 0.10 = -2.25 -> Net R = -1.125
+    assert t.net_r_multiple == pytest.approx(-1.125)
 
 
 def test_long_tp_not_triggered_when_mid_touches_but_bid_does_not():
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
     candles_data[5] = (100.0, 110.0, 99.0, 105.0)
-    candles_data[15] = (100.0, 110.0, 99.0, 105.0)  # TP = 110.0
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
     signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
 
-    # MID high = 110.1 (>= 110.0), ama spread = 0.40 (half_spread = 0.20)
-    # BID high = 110.1 - 0.20 = 109.9 (< 110.0 TP). TP tetiklenmemelidir!
-    candles_data[22] = (100.0, 110.1, 99.5, 105.0)
+    candles_data[21] = (100.0, 100.5, 99.5, 100.0)  # Fill at idx 21
+    candles_data[22] = (100.0, 110.1, 99.5, 105.0)  # MID high = 110.1, BID high = 109.9 < 110.0
     candles = _make_dummy_candles(candles_data)
 
     cfg = StrategyConfig(spread=0.40)
     res = run_backtest(candles, [signal], config=cfg)
-    assert len(res.trades) == 0  # Islem hic kapanmadi (TP tetiklenmedi)
+    assert len(res.trades) == 0
 
 
 def test_short_tp_not_triggered_when_mid_touches_but_ask_does_not():
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
     candles_data[5] = (100.0, 101.0, 90.0, 95.0)
-    candles_data[15] = (100.0, 101.0, 90.0, 95.0)  # TP = 90.0
+    candles_data[15] = (100.0, 101.0, 90.0, 95.0)
     signal = Signal(index=20, type=SignalType.SELL, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=102.0, reason="A+")
 
-    # MID low = 89.9 (<= 90.0), ama spread = 0.40 (half_spread = 0.20)
-    # ASK low = 89.9 + 0.20 = 90.1 (> 90.0 TP). TP tetiklenmemelidir!
-    candles_data[22] = (100.0, 100.5, 89.9, 95.0)
+    candles_data[21] = (100.0, 100.5, 99.5, 100.0)  # Fill at idx 21
+    candles_data[22] = (100.0, 100.5, 89.9, 95.0)  # MID low = 89.9, ASK low = 90.1 > 90.0
     candles = _make_dummy_candles(candles_data)
 
     cfg = StrategyConfig(spread=0.40)
     res = run_backtest(candles, [signal], config=cfg)
-    assert len(res.trades) == 0  # Islem hic kapanmadi (TP tetiklenmedi)
+    assert len(res.trades) == 0
+
+
+# --- Phase 3B: Order Fill Realism Tests ---
+
+def test_signal_candle_does_not_retroactively_fill_order():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+
+    # Sinyal mumu (idx 20) limit entry seviyesine (99.0) değiyor!
+    candles_data[20] = (100.0, 100.5, 98.5, 100.0)
+
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=99.0, stop_loss=97.0, reason="A+")
+
+    # Sonraki mumlar (idx 21+) 99.0 seviyesine hiç değmiyor (low = 99.5)
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    # Sinyal mumu retroaktif olarak emri doldurmamalıdır!
+    assert len(result.trades) == 0
+    assert result.unfilled_orders == 1
+
+
+def test_next_candle_touches_long_limit_fills_correctly():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=99.0, stop_loss=97.0, reason="A+")
+
+    # idx 21: low = 98.5 (<= limit 99.0) -> Limit dolumu idx 21'de gerçekleşmeli!
+    candles_data[21] = (100.0, 100.5, 98.5, 100.0)
+    candles_data[22] = (100.0, 111.0, 99.5, 110.5)  # TP 110.0 hit at idx 22
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    t = result.trades[0]
+    assert t.filled is True
+    assert t.entry_fill_index == 21
+    assert t.executed_entry == 99.0
+    assert t.won is True
+
+
+def test_next_candle_never_reaches_long_limit_remains_unfilled():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=99.0, stop_loss=97.0, reason="A+")
+
+    # Tüm sonraki mumlarda fiyat en düşük 99.5 (limit 99.0'a hiç ulaşamıyor)
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 0
+    assert result.unfilled_orders == 1
+
+
+def test_short_limit_fills_correctly():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 101.0, 90.0, 95.0)
+    candles_data[15] = (100.0, 101.0, 90.0, 95.0)
+
+    signal = Signal(index=20, type=SignalType.SELL, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=101.0, stop_loss=103.0, reason="A+")
+
+    # idx 21: high = 101.5 (>= limit 101.0) -> Short limit dolumu gerçekleşir
+    candles_data[21] = (100.0, 101.5, 99.5, 100.0)
+    candles_data[22] = (100.0, 100.5, 89.0, 89.5)  # TP 90.0 hit at idx 22
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    t = result.trades[0]
+    assert t.filled is True
+    assert t.entry_fill_index == 21
+    assert t.executed_entry == 101.0
+    assert t.won is True
+
+
+def test_short_never_reaches_limit_unfilled():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 101.0, 90.0, 95.0)
+    candles_data[15] = (100.0, 101.0, 90.0, 95.0)
+
+    signal = Signal(index=20, type=SignalType.SELL, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=101.0, stop_loss=103.0, reason="A+")
+
+    # Tüm mumlarda high en fazla 100.5 (< limit 101.0)
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 0
+    assert result.unfilled_orders == 1
+
+
+def test_gap_through_long_fill():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=99.0, stop_loss=96.0, reason="A+")
+
+    # idx 21: Open = 97.0 (gap down through limit 99.0). Fill occurs at open 97.0 (better price fill)!
+    candles_data[21] = (97.0, 98.0, 96.5, 97.5)
+    candles_data[22] = (97.5, 111.0, 97.0, 110.5)
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    t = result.trades[0]
+    assert t.executed_entry == 97.0  # Limit 99.0'dan daha iyi (97.0) fiyatla doldu!
+
+
+def test_gap_through_short_fill():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 101.0, 90.0, 95.0)
+    candles_data[15] = (100.0, 101.0, 90.0, 95.0)
+
+    signal = Signal(index=20, type=SignalType.SELL, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=101.0, stop_loss=104.0, reason="A+")
+
+    # idx 21: Open = 103.0 (gap up through limit 101.0). Fill occurs at open 103.0 (better price fill for short)!
+    candles_data[21] = (103.0, 103.5, 102.0, 102.5)
+    candles_data[22] = (102.5, 103.0, 89.0, 89.5)
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    t = result.trades[0]
+    assert t.executed_entry == 103.0  # Limit 101.0'dan daha iyi (103.0) fiyatla doldu!
+
+
+def test_same_bar_entry_and_tp_ambiguity_no_optimistic_tp():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
+
+    # idx 21: low = 99.5 (<= entry 100.0) AND high = 111.0 (>= TP 110.0)
+    # Aynı mumda dolum + TP: Yol sırası belirsiz olduğundan iyimser TP verilmemeli!
+    candles_data[21] = (100.0, 111.0, 99.5, 105.0)
+    # idx 22: Sonraki mumda TP tekrar vuruluyor
+    candles_data[22] = (105.0, 111.0, 104.0, 110.0)
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    t = result.trades[0]
+    assert t.entry_fill_index == 21
+    assert t.exit_index == 22  # TP 21. mumda değil 22. mumda kapandı!
+
+
+def test_same_bar_entry_and_sl_pessimistic_fill():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
+
+    # idx 21: low = 97.0 (<= entry 100.0 VE <= SL 98.0!)
+    # Aynı mumda dolum + SL: Kötümser olarak 21. mumda SL ile kapanmalı!
+    candles_data[21] = (100.0, 100.5, 97.0, 97.5)
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    t = result.trades[0]
+    assert t.entry_fill_index == 21
+    assert t.exit_index == 21
+    assert t.won is False
+    assert t.r_multiple == -1.0
+
+
+def test_same_bar_entry_sl_tp_all_reachable_pessimistic_sl_first():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
+
+    # idx 21: high = 112.0 (>= TP 110.0) AND low = 96.0 (<= entry 100.0 VE <= SL 98.0)
+    # Giriş, SL ve TP hepsi aynı mumda! Kötümser kural gereği SL kazanır!
+    candles_data[21] = (100.0, 112.0, 96.0, 105.0)
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    t = result.trades[0]
+    assert t.entry_fill_index == 21
+    assert t.exit_index == 21
+    assert t.won is False
+    assert t.r_multiple == -1.0
+
+
+def test_buy_gap_through_with_large_slippage_capped_at_limit():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
+
+    candles_data[21] = (99.90, 100.5, 99.0, 100.0)
+    candles_data[22] = (100.0, 111.0, 99.5, 110.5)
+
+    candles = _make_dummy_candles(candles_data)
+    cfg = StrategyConfig(slippage=0.30)
+    res = run_backtest(candles, [signal], config=cfg)
+
+    assert len(res.trades) == 1
+    assert res.trades[0].executed_entry == 100.0
+
+
+def test_sell_gap_through_with_large_slippage_capped_at_limit():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 101.0, 90.0, 95.0)
+    candles_data[15] = (100.0, 101.0, 90.0, 95.0)
+    signal = Signal(index=20, type=SignalType.SELL, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=102.0, reason="A+")
+
+    candles_data[21] = (100.10, 100.5, 99.0, 99.5)
+    candles_data[22] = (99.5, 100.0, 89.0, 89.5)
+
+    candles = _make_dummy_candles(candles_data)
+    cfg = StrategyConfig(slippage=0.30)
+    res = run_backtest(candles, [signal], config=cfg)
+
+    assert len(res.trades) == 1
+    assert res.trades[0].executed_entry == 100.0
+
+
+def test_buy_intrabar_touch_with_slippage_never_exceeds_limit():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
+
+    candles_data[21] = (101.0, 101.5, 99.8, 100.5)
+    candles_data[22] = (100.5, 111.0, 100.0, 110.5)
+
+    candles = _make_dummy_candles(candles_data)
+    cfg = StrategyConfig(slippage=0.20)
+    res = run_backtest(candles, [signal], config=cfg)
+
+    assert len(res.trades) == 1
+    assert res.trades[0].executed_entry == 100.0
+
+
+def test_sell_intrabar_touch_with_slippage_never_exceeds_limit():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 101.0, 90.0, 95.0)
+    candles_data[15] = (100.0, 101.0, 90.0, 95.0)
+    signal = Signal(index=20, type=SignalType.SELL, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=102.0, reason="A+")
+
+    candles_data[21] = (99.0, 100.2, 98.5, 99.5)
+    candles_data[22] = (99.5, 100.0, 89.0, 89.5)
+
+    candles = _make_dummy_candles(candles_data)
+    cfg = StrategyConfig(slippage=0.20)
+    res = run_backtest(candles, [signal], config=cfg)
+
+    assert len(res.trades) == 1
+    assert res.trades[0].executed_entry == 100.0
+
+
+def test_small_slippage_consumes_some_gap_improvement():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    candles_data[5] = (100.0, 110.0, 99.0, 105.0)
+    candles_data[15] = (100.0, 110.0, 99.0, 105.0)
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS, entry=100.0, stop_loss=98.0, reason="A+")
+
+    candles_data[21] = (99.50, 100.5, 99.0, 100.0)
+    candles_data[22] = (100.0, 111.0, 99.5, 110.5)
+
+    candles = _make_dummy_candles(candles_data)
+    cfg = StrategyConfig(slippage=0.20)
+    res = run_backtest(candles, [signal], config=cfg)
+
+    assert len(res.trades) == 1
+    assert res.trades[0].executed_entry == pytest.approx(99.70)

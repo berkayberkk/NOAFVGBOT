@@ -33,13 +33,11 @@ class OrderBlock:
     mitigated_index: int | None = None
 
 
-# --- Kalibre edilecek parametreler ---
-AVG_RANGE_PERIOD = 14
+from strategy.config import DEFAULT_CONFIG, StrategyConfig
 
-# Bir mumun "güçlü hareket" sayılması için, boyunun son AVG_RANGE_PERIOD
-# mumun ortalama boyundan kaç kat büyük olması gerektiği. VARSAYIM —
-# gerçek veride örnekleri gözden geçirip birlikte kalibre edeceğiz.
-STRONG_MOVE_RATIO = 2.0
+# --- Kalibre edilecek parametreler ---
+AVG_RANGE_PERIOD = DEFAULT_CONFIG.avg_range_period
+STRONG_MOVE_RATIO = DEFAULT_CONFIG.strong_move_ratio
 
 
 def _average_range_series(candles: list[dict], period: int) -> list[float | None]:

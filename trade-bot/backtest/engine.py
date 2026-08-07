@@ -22,9 +22,10 @@ from dataclasses import dataclass, field
 from strategy.signal_engine import Signal, SignalType, generate_signals
 from strategy.support_resistance import build_levels, LevelType
 
+from strategy.config import DEFAULT_CONFIG, StrategyConfig
 
 # --- Kalibre edilecek parametreler ---
-MIN_LEVEL_TOUCH_COUNT = 2   # TP hedefi olarak kullanılacak S/R seviyesinin en az kaç kez dokunulmuş olması gerektiği
+MIN_LEVEL_TOUCH_COUNT = DEFAULT_CONFIG.min_level_touch_count
 
 
 @dataclass

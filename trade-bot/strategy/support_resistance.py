@@ -27,9 +27,11 @@ class Level:
     last_index: int = 0
 
 
+from strategy.config import DEFAULT_CONFIG, StrategyConfig
+
 # --- Kalibre edilecek parametreler ---
-SWING_LOOKBACK = 5           # swing noktası için her iki yanda kaç muma bakılacak
-TOLERANCE_ATR_RATIO = 0.5    # iki nokta aynı seviye sayılsın diye ATR'nin kaç katı yakın olmalı (VARSAYIM)
+SWING_LOOKBACK = DEFAULT_CONFIG.swing_lookback
+TOLERANCE_ATR_RATIO = DEFAULT_CONFIG.tolerance_atr_ratio
 
 
 def find_swing_points(candles: list[dict], lookback: int = SWING_LOOKBACK) -> tuple[list[int], list[int]]:

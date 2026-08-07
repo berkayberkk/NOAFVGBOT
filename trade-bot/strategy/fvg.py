@@ -48,22 +48,13 @@ class FVG:
         return self.bottom if self.direction == FVGDirection.BULLISH else self.top
 
 
+from strategy.config import DEFAULT_CONFIG, StrategyConfig
+
 # --- Kalibre edilecek parametreler ---
-# ATR periyodu: mesafe kuralı için "o bölgedeki ortalama volatilite"yi
-# hesaplarken kaç mumluk pencereye bakılacağı.
-ATR_PERIOD = 14
-
-# Mesafe kuralı artık ATR'nin katları cinsinden: gap_size / ATR bu aralıkta
-# olmalı. Sayılar VARSAYIM — gerçek veride tespitleri gözden geçirip
-# birlikte kalibre edeceğiz.
-MIN_GAP_TO_ATR_RATIO = 0.15   # ATR'nin çok altındaki gap'ler "gürültü" sayılır
-MAX_GAP_TO_ATR_RATIO = 2.5    # ATR'nin çok üstündeki gap'ler "uçurum" sayılır (3. büyük mum tarzına yakın)
-
-# "Dengesiz FVG" kuralı sayısal olarak PDF'de verilmemiş; ortadaki mumun
-# boşluktan kaç kat büyük olması durumunda dengesiz sayılacağı burada bir
-# VARSAYIM olarak MAX_MIDDLE_CANDLE_RATIO ile ayarlanabilir bırakıldı.
-# Gerçek veride tespitleri gözden geçirip bu sayıyı birlikte kalibre edeceğiz.
-MAX_MIDDLE_CANDLE_RATIO = 3.0
+ATR_PERIOD = DEFAULT_CONFIG.atr_period
+MIN_GAP_TO_ATR_RATIO = DEFAULT_CONFIG.min_gap_to_atr_ratio
+MAX_GAP_TO_ATR_RATIO = DEFAULT_CONFIG.max_gap_to_atr_ratio
+MAX_MIDDLE_CANDLE_RATIO = DEFAULT_CONFIG.max_middle_candle_ratio
 
 
 def _true_range(candle: dict, prev_close: float) -> float:

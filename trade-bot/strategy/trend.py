@@ -28,8 +28,9 @@ class TrendState:
     ema_aligned: bool                 # fiyat EMA'nın yapıyla aynı tarafında mı
     strong: bool                       # yön + EMA teyidi ikisi de aynı yöndeyse True
 
+from strategy.config import DEFAULT_CONFIG, StrategyConfig
 
-EMA_PERIOD = 50
+EMA_PERIOD = DEFAULT_CONFIG.ema_period
 
 
 def compute_ema_series(candles: list[dict], period: int = EMA_PERIOD) -> list[float | None]:

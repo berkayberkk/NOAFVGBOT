@@ -1,0 +1,33 @@
+"""
+Merkezi Strateji Yapılandırması (Centralized Strategy Configuration).
+
+Tüm strateji parametreleri burada tek bir dataclass altında toplanmıştır.
+Tüm varsayılan değerler orijinal strateji kodundaki sabitlerle 100% aynıdır.
+"""
+
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class StrategyConfig:
+    # --- FVG Parametreleri ---
+    atr_period: int = 14
+    min_gap_to_atr_ratio: float = 0.15
+    max_gap_to_atr_ratio: float = 2.5
+    max_middle_candle_ratio: float = 3.0
+
+    # --- Order Block Parametreleri ---
+    avg_range_period: int = 14
+    strong_move_ratio: float = 2.0
+
+    # --- Destek / Direnç Parametreleri ---
+    swing_lookback: int = 5
+    tolerance_atr_ratio: float = 0.5
+    min_level_touch_count: int = 2
+
+    # --- Trend Parametreleri ---
+    ema_period: int = 50
+
+
+# Global varsayılan yapılandırma nesnesi
+DEFAULT_CONFIG = StrategyConfig()

@@ -1,0 +1,5 @@
+pandas
+numpy
+matplotlib
+pytest
+MetaTrader5  # sadece Windows + MT5 terminaliyle canlı bağlantı kurulacaksa gerekli

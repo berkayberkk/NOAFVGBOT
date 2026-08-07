@@ -50,20 +50,20 @@ def compute_ema_series(candles: list[dict], period: int = EMA_PERIOD) -> list[fl
     return ema
 
 
-def detect_trend(candles: list[dict], lookback: int = 5, ema_period: int = EMA_PERIOD) -> list[TrendState]:
+from dataclasses import replace
+
+
+def detect_trend(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG,
+                 lookback: int | None = None, ema_period: int | None = None) -> list[TrendState]:
     """
     Her mum için o ana kadarki trend durumunu hesaplar.
-
-    Mantık: her mumda, o ana kadar oluşmuş son 2 swing high ve son 2
-    swing low karşılaştırılır:
-      - son high > önceki high VE son low > önceki low  -> UP
-      - son high < önceki high VE son low < önceki low  -> DOWN
-      - aksi halde                                        -> SIDEWAYS
-    Sonra kapanış fiyatının EMA'ya göre pozisyonu bu yönle karşılaştırılıp
-    `ema_aligned` ve `strong` alanları belirlenir.
     """
-    swing_highs, swing_lows = find_swing_points(candles, lookback)
-    ema_series = compute_ema_series(candles, ema_period)
+    if lookback is not None or ema_period is not None:
+        lb = lookback if lookback is not None else config.swing_lookback
+        ep = ema_period if ema_period is not None else config.ema_period
+        config = replace(config, swing_lookback=lb, ema_period=ep)
+    swing_highs, swing_lows = find_swing_points(candles, config=config)
+    ema_series = compute_ema_series(candles, config.ema_period)
 
     states: list[TrendState] = []
 

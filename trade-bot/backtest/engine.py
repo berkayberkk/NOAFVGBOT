@@ -58,11 +58,11 @@ class BacktestResult:
     unfilled_orders: int = 0   # limit seviyesine ulaşılamadığı için dolmayan emir sayısı
 
 
-def _find_take_profit(entry: float, direction: SignalType, levels, signal_index: int) -> float | None:
+def _find_take_profit(entry: float, direction: SignalType, levels, signal_index: int, min_level_touch_count: int = 2) -> float | None:
     """Sinyal anına kadar oluşmuş, yeterince güçlü, doğru taraftaki en yakın seviyeyi bulur."""
     candidates = [
         lvl for lvl in levels
-        if lvl.touch_count >= MIN_LEVEL_TOUCH_COUNT and lvl.last_index <= signal_index
+        if lvl.touch_count >= min_level_touch_count and lvl.last_index <= signal_index
     ]
 
     if direction == SignalType.BUY:
@@ -91,8 +91,8 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
 
     for signal in signals:
         historical_candles = candles[: signal.index + 1]
-        historical_levels = build_levels(historical_candles)
-        take_profit = _find_take_profit(signal.entry, signal.type, historical_levels, signal.index)
+        historical_levels = build_levels(historical_candles, config=config)
+        take_profit = _find_take_profit(signal.entry, signal.type, historical_levels, signal.index, min_level_touch_count=config.min_level_touch_count)
         if take_profit is None:
             skipped += 1
             continue

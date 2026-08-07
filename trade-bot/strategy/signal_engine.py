@@ -80,12 +80,15 @@ def _trend_confidence(trend: TrendState, wants_up: bool, cap_medium: bool = Fals
     return Confidence.LOW  # sideways
 
 
-def generate_signals(candles: list[dict]) -> list[Signal]:
-    fvgs = detect_fvgs(candles)
+from strategy.config import DEFAULT_CONFIG, StrategyConfig
+
+
+def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG) -> list[Signal]:
+    fvgs = detect_fvgs(candles, config=config)
     mark_filled_fvgs(fvgs, candles)
-    obs = detect_order_blocks(candles)
+    obs = detect_order_blocks(candles, config=config)
     mark_mitigated_blocks(obs, candles)
-    trend_states = detect_trend(candles)
+    trend_states = detect_trend(candles, config=config)
 
     valid_fvgs = [f for f in fvgs if f.valid and not f.filled]
     valid_obs = [o for o in obs if not o.mitigated]

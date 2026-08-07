@@ -54,24 +54,19 @@ def _average_range_series(candles: list[dict], period: int) -> list[float | None
     return result
 
 
-def detect_order_blocks(candles: list[dict], period: int = AVG_RANGE_PERIOD,
-                         strong_move_ratio: float = STRONG_MOVE_RATIO) -> list[OrderBlock]:
+from dataclasses import replace
+
+
+def detect_order_blocks(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG,
+                        period: int | None = None, strong_move_ratio: float | None = None) -> list[OrderBlock]:
     """
     Verilen mum listesinden order block'ları tespit eder.
-
-    Parametreler
-    ----------
-    candles : {"open","high","low","close",...} anahtarlı mum listesi.
-    period : ortalama mum boyu hesaplanırken kaç mumluk pencereye bakılacağı.
-    strong_move_ratio : bir mumun "güçlü" sayılması için ortalamanın kaç katı
-                        olması gerektiği.
-
-    Dönüş
-    -----
-    list[OrderBlock] : tespit edilen tüm order block'lar (mitigasyon durumu
-                        henüz kontrol edilmemiş halde — bkz. mark_mitigated_blocks).
     """
-    avg_ranges = _average_range_series(candles, period)
+    if period is not None or strong_move_ratio is not None:
+        p = period if period is not None else config.avg_range_period
+        sm = strong_move_ratio if strong_move_ratio is not None else config.strong_move_ratio
+        config = replace(config, avg_range_period=p, strong_move_ratio=sm)
+    avg_ranges = _average_range_series(candles, config.avg_range_period)
     blocks: list[OrderBlock] = []
 
     for i, candle in enumerate(candles):
@@ -80,7 +75,7 @@ def detect_order_blocks(candles: list[dict], period: int = AVG_RANGE_PERIOD,
             continue
 
         candle_range = candle["high"] - candle["low"]
-        if candle_range < avg_range * strong_move_ratio:
+        if candle_range < avg_range * config.strong_move_ratio:
             continue  # yeterince güçlü değil
 
         direction = OBDirection.BULLISH if candle["close"] > candle["open"] else OBDirection.BEARISH

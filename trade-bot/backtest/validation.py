@@ -252,7 +252,7 @@ def run_walk_forward(
 
         # Sadece doğrulama penceresi verileri üzerinde sinyal üretimi ve backtest
         val_window_candles = eval_candles[v_start:v_end]
-        val_signals = generate_signals(val_window_candles)
+        val_signals = generate_signals(val_window_candles, config=config)
         val_result = run_backtest(val_window_candles, val_signals, config=config)
 
         val_metrics = calculate_metrics(
@@ -309,14 +309,14 @@ def build_validation_report(
     report.split = split_def
 
     # Train evaluation
-    tr_signals = generate_signals(train_candles)
+    tr_signals = generate_signals(train_candles, config=config)
     tr_result = run_backtest(train_candles, tr_signals, config=config)
     report.train_metrics = calculate_metrics(
         tr_result.trades, len(tr_signals), tr_result.unfilled_orders, tr_result.skipped_no_tp
     )
 
     # Validation evaluation
-    val_signals = generate_signals(val_candles)
+    val_signals = generate_signals(val_candles, config=config)
     val_result = run_backtest(val_candles, val_signals, config=config)
     report.val_metrics = calculate_metrics(
         val_result.trades, len(val_signals), val_result.unfilled_orders, val_result.skipped_no_tp

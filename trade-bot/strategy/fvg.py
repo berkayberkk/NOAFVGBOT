@@ -86,26 +86,17 @@ def compute_atr_series(candles: list[dict], period: int = ATR_PERIOD) -> list[fl
     return atrs
 
 
-def detect_fvgs(candles: list[dict], atr_period: int = ATR_PERIOD) -> list[FVG]:
+from dataclasses import replace
+
+
+def detect_fvgs(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG, atr_period: int | None = None) -> list[FVG]:
     """
     Verilen mum listesinden FVG'leri tespit eder ve geçerlilik kurallarını uygular.
-
-    Parametreler
-    ----------
-    candles : {"open","high","low","close",...} anahtarlı mum sözlüklerinin
-              listesi (eskiden yeniye sıralı).
-    atr_period : mesafe kuralı için ATR hesabında kullanılacak periyot.
-
-    Dönüş
-    -----
-    list[FVG] : tespit edilen tüm FVG'ler (geçerli olsun olmasın).
-                 fvg.valid == False olanlar mesafe/dengesizlik/multi
-                 kurallarından birine takılmış demektir; invalid_reason'da
-                 sebebi yazar. İlk `atr_period` mum içinde oluşan FVG'ler
-                 ATR henüz hesaplanamadığı için atlanır.
     """
+    if atr_period is not None:
+        config = replace(config, atr_period=atr_period)
     fvgs: list[FVG] = []
-    atr_series = compute_atr_series(candles, atr_period)
+    atr_series = compute_atr_series(candles, config.atr_period)
 
     for i in range(len(candles) - 2):
         c1, c2, c3 = candles[i], candles[i + 1], candles[i + 2]
@@ -116,33 +107,33 @@ def detect_fvgs(candles: list[dict], atr_period: int = ATR_PERIOD) -> list[FVG]:
         # Bullish FVG: 3. mumun alt fitili, 1. mumun üst fitilinin üstünde
         if c3["low"] > c1["high"]:
             fvgs.append(_build_fvg(i, i + 2, c1["high"], c3["low"],
-                                    FVGDirection.BULLISH, c2, atr))
+                                    FVGDirection.BULLISH, c2, atr, config))
 
         # Bearish FVG: 3. mumun üst fitili, 1. mumun alt fitilinin altında
         if c3["high"] < c1["low"]:
             fvgs.append(_build_fvg(i, i + 2, c3["high"], c1["low"],
-                                    FVGDirection.BEARISH, c2, atr))
+                                    FVGDirection.BEARISH, c2, atr, config))
 
     _apply_multi_fvg_rule(fvgs)
     return fvgs
 
 
 def _build_fvg(start_index: int, end_index: int, bottom: float, top: float,
-               direction: FVGDirection, middle_candle: dict, atr: float) -> FVG:
+               direction: FVGDirection, middle_candle: dict, atr: float, config: StrategyConfig = DEFAULT_CONFIG) -> FVG:
     gap_size = top - bottom
     gap_to_atr = gap_size / atr if atr else 0
 
     valid = True
     reason = None
 
-    if not (MIN_GAP_TO_ATR_RATIO <= gap_to_atr <= MAX_GAP_TO_ATR_RATIO):
+    if not (config.min_gap_to_atr_ratio <= gap_to_atr <= config.max_gap_to_atr_ratio):
         valid = False
         reason = (f"mesafe kuralı dışında (gap/ATR={gap_to_atr:.2f}, "
-                  f"izin verilen aralık {MIN_GAP_TO_ATR_RATIO}-{MAX_GAP_TO_ATR_RATIO})")
+                  f"izin verilen aralık {config.min_gap_to_atr_ratio}-{config.max_gap_to_atr_ratio})")
 
     if valid:
         middle_range = middle_candle["high"] - middle_candle["low"]
-        if gap_size > 0 and middle_range > gap_size * MAX_MIDDLE_CANDLE_RATIO:
+        if gap_size > 0 and middle_range > gap_size * config.max_middle_candle_ratio:
             valid = False
             reason = "dengesiz FVG (ortadaki mum boşluğa göre orantısız büyük)"
 

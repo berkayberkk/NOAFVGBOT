@@ -1,0 +1,517 @@
+{
+  "baseline_hash": "5a56639725048f3d",
+  "dataset_hash": "ec0c2603bc96e2f9",
+  "overall_classification": "SENSITIVE",
+  "total_variants_tested": 32,
+  "positive_expectancy_pct": 100.0,
+  "positive_total_net_r_pct": 100.0,
+  "high_win_window_pct": 100.0,
+  "worst_case": {
+    "variant": "min_level_touch_count=1",
+    "expectancy_r": 0.3045,
+    "total_net_r": 14.01,
+    "max_drawdown_r": 1.76
+  },
+  "trade_count_range": {
+    "min": 35,
+    "median": 42,
+    "max": 46
+  },
+  "parameter_reports": [
+    {
+      "parameter_name": "atr_period",
+      "baseline_value": 14,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.5335,
+      "worst_total_net_r": 21.88,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 13,
+          "pct_change": -7.14,
+          "filled_trades": 41,
+          "win_rate": 0.7805,
+          "total_net_r": 21.88,
+          "expectancy_r": 0.5335,
+          "profit_factor": 4.4,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": -1.57
+        },
+        {
+          "variant_value": 15,
+          "pct_change": 7.14,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.58,
+          "expectancy_r": 0.5377,
+          "profit_factor": 4.5,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": -2.35
+        }
+      ]
+    },
+    {
+      "parameter_name": "min_gap_to_atr_ratio",
+      "baseline_value": 0.15,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.5253,
+      "worst_total_net_r": 22.06,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 0.135,
+          "pct_change": -10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 0.1425,
+          "pct_change": -5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 0.1575,
+          "pct_change": 5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 0.165,
+          "pct_change": 10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        }
+      ]
+    },
+    {
+      "parameter_name": "max_gap_to_atr_ratio",
+      "baseline_value": 2.5,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.5253,
+      "worst_total_net_r": 22.06,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 2.25,
+          "pct_change": -10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 2.375,
+          "pct_change": -5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 2.625,
+          "pct_change": 5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 2.75,
+          "pct_change": 10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        }
+      ]
+    },
+    {
+      "parameter_name": "max_middle_candle_ratio",
+      "baseline_value": 3.0,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.5253,
+      "worst_total_net_r": 22.06,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 2.7,
+          "pct_change": -10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 2.85,
+          "pct_change": -5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 3.15,
+          "pct_change": 5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 3.3,
+          "pct_change": 10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        }
+      ]
+    },
+    {
+      "parameter_name": "avg_range_period",
+      "baseline_value": 14,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.5253,
+      "worst_total_net_r": 22.06,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 13,
+          "pct_change": -7.14,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 15,
+          "pct_change": 7.14,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        }
+      ]
+    },
+    {
+      "parameter_name": "strong_move_ratio",
+      "baseline_value": 2.0,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.5253,
+      "worst_total_net_r": 22.06,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 1.8,
+          "pct_change": -10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 1.9,
+          "pct_change": -5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 2.1,
+          "pct_change": 5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 2.2,
+          "pct_change": 10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        }
+      ]
+    },
+    {
+      "parameter_name": "swing_lookback",
+      "baseline_value": 5,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.461,
+      "worst_total_net_r": 19.36,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 4,
+          "pct_change": -20.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 19.36,
+          "expectancy_r": 0.461,
+          "profit_factor": 4.01,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 12.24
+        },
+        {
+          "variant_value": 6,
+          "pct_change": 20.0,
+          "filled_trades": 40,
+          "win_rate": 0.75,
+          "total_net_r": 19.52,
+          "expectancy_r": 0.4881,
+          "profit_factor": 3.68,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 7.09
+        }
+      ]
+    },
+    {
+      "parameter_name": "tolerance_atr_ratio",
+      "baseline_value": 0.5,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.483,
+      "worst_total_net_r": 19.8,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 0.45,
+          "pct_change": -10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.02,
+          "expectancy_r": 0.5242,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.21
+        },
+        {
+          "variant_value": 0.475,
+          "pct_change": -5.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 21.85,
+          "expectancy_r": 0.5203,
+          "profit_factor": 4.39,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.95
+        },
+        {
+          "variant_value": 0.525,
+          "pct_change": 5.0,
+          "filled_trades": 41,
+          "win_rate": 0.7805,
+          "total_net_r": 21.83,
+          "expectancy_r": 0.5323,
+          "profit_factor": 4.39,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": -1.33
+        },
+        {
+          "variant_value": 0.55,
+          "pct_change": 10.0,
+          "filled_trades": 41,
+          "win_rate": 0.7805,
+          "total_net_r": 19.8,
+          "expectancy_r": 0.483,
+          "profit_factor": 4.07,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 8.05
+        }
+      ]
+    },
+    {
+      "parameter_name": "min_level_touch_count",
+      "baseline_value": 2,
+      "classification": "SENSITIVE",
+      "plateau": "NARROW SPIKE",
+      "worst_expectancy_r": 0.3045,
+      "worst_total_net_r": 14.01,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 1,
+          "pct_change": -50.0,
+          "filled_trades": 46,
+          "win_rate": 0.8043,
+          "total_net_r": 14.01,
+          "expectancy_r": 0.3045,
+          "profit_factor": 3.17,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 42.03
+        },
+        {
+          "variant_value": 3,
+          "pct_change": 50.0,
+          "filled_trades": 35,
+          "win_rate": 0.8571,
+          "total_net_r": 34.69,
+          "expectancy_r": 0.991,
+          "profit_factor": 11.83,
+          "max_drawdown_r": 1.02,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": -88.65
+        }
+      ]
+    },
+    {
+      "parameter_name": "ema_period",
+      "baseline_value": 50,
+      "classification": "ROBUST",
+      "plateau": "BROAD PLATEAU",
+      "worst_expectancy_r": 0.5253,
+      "worst_total_net_r": 22.06,
+      "worst_max_drawdown_r": 1.76,
+      "variants": [
+        {
+          "variant_value": 45,
+          "pct_change": -10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 48,
+          "pct_change": -4.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 52,
+          "pct_change": 4.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        },
+        {
+          "variant_value": 55,
+          "pct_change": 10.0,
+          "filled_trades": 42,
+          "win_rate": 0.7857,
+          "total_net_r": 22.06,
+          "expectancy_r": 0.5253,
+          "profit_factor": 4.42,
+          "max_drawdown_r": 1.76,
+          "profitable_windows": 4,
+          "expectancy_degradation_pct": 0.0
+        }
+      ]
+    }
+  ],
+  "final_test_evaluated": false
+}

@@ -78,12 +78,13 @@ def run_backtest(candles: list[dict], signals: list[Signal]) -> BacktestResult:
     (aynı mumda hem SL hem TP'ye değinildiyse kötümser/muhafazakâr
     varsayımla önce SL'in vurulduğu kabul edilir), sonra take-profit.
     """
-    levels = build_levels(candles)
     trades: list[Trade] = []
     skipped = 0
 
     for signal in signals:
-        take_profit = _find_take_profit(signal.entry, signal.type, levels, signal.index)
+        historical_candles = candles[: signal.index + 1]
+        historical_levels = build_levels(historical_candles)
+        take_profit = _find_take_profit(signal.entry, signal.type, historical_levels, signal.index)
         if take_profit is None:
             skipped += 1
             continue

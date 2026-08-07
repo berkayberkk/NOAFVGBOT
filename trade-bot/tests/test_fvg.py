@@ -117,9 +117,11 @@ def test_multi_fvg_proximity_cancellation():
     candles = _make_dummy_candles(neutral_candles + multi_fvg_candles)
     fvgs = detect_fvgs(candles)
     assert len(fvgs) == 2
-    # Mevcut uygulamada ilk FVG çakışma tespitiyle valid=False işaretlenir.
+    # Her iki çakışan FVG de geçersiz kılınmalı (döngü sırasından bağımsız)
     assert fvgs[0].valid is False
+    assert fvgs[1].valid is False
     assert "multi FVG" in fvgs[0].invalid_reason
+    assert "multi FVG" in fvgs[1].invalid_reason
 
 
 def test_mark_filled_fvgs():

@@ -156,20 +156,25 @@ def _apply_multi_fvg_rule(fvgs: list[FVG]) -> None:
     modeli) geçersiz işaretler — PDF'e göre bu kümedeki hiçbir FVG
     güvenilir sayılmıyor.
     """
-    for i, fvg in enumerate(fvgs):
-        if not fvg.valid:
+    to_invalidate = set()
+    n = len(fvgs)
+    for i in range(n):
+        if not fvgs[i].valid:
             continue
-        for j, other in enumerate(fvgs):
-            if i == j or not other.valid or fvg.direction != other.direction:
+        for j in range(i + 1, n):
+            if not fvgs[j].valid or fvgs[i].direction != fvgs[j].direction:
                 continue
 
-            close_by = abs(fvg.start_index - other.start_index) <= 3
-            overlap = min(fvg.top, other.top) - max(fvg.bottom, other.bottom)
+            close_by = abs(fvgs[i].start_index - fvgs[j].start_index) <= 3
+            overlap = min(fvgs[i].top, fvgs[j].top) - max(fvgs[i].bottom, fvgs[j].bottom)
 
             if close_by and overlap > 0:
-                fvg.valid = False
-                fvg.invalid_reason = "multi FVG (yakında çakışan başka FVG var)"
-                break
+                to_invalidate.add(i)
+                to_invalidate.add(j)
+
+    for idx in to_invalidate:
+        fvgs[idx].valid = False
+        fvgs[idx].invalid_reason = "multi FVG (yakında çakışan başka FVG var)"
 
 
 def mark_filled_fvgs(fvgs: list[FVG], candles: list[dict]) -> list[FVG]:

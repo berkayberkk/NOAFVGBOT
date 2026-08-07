@@ -119,44 +119,67 @@ void OnTick()
 void EvaluateAndTrade()
   {
    int lookback = 500;  // gecmise ne kadar bakilacagi (performans icin sinirli)
-   int bars = MathMin(lookback, iBars(_Symbol, TF) - 1);
+   int totalBars = iBars(_Symbol, TF);
+   if(totalBars <= 1)
+      return;
+
+   int bars = MathMin(lookback, totalBars - 1);
    if(bars < ATR_Period + SwingLookback * 3)
       return;  // yeterli veri yok
 
-   Candle candles[];
-   ArrayResize(candles, bars);
-   // MT5'te index 0 en yeni mum; biz Python'daki gibi eskiden-yeniye sirali istiyoruz
-   for(int i = 0; i < bars; i++)
+   // 1. Bulk CopyRates for COMPLETED bars starting from shift 1
+   MqlRates rates[];
+   ArraySetAsSeries(rates, false);  // index 0 = oldest, index bars-1 = newest completed (shift 1)
+   if(CopyRates(_Symbol, TF, 1, bars, rates) != bars)
      {
-      int shift = bars - 1 - i;  // ters cevir
-      candles[i].time  = iTime(_Symbol, TF, shift);
-      candles[i].open  = iOpen(_Symbol, TF, shift);
-      candles[i].high  = iHigh(_Symbol, TF, shift);
-      candles[i].low   = iLow(_Symbol, TF, shift);
-      candles[i].close = iClose(_Symbol, TF, shift);
+      Print("[BUFFER_ALIGNMENT_FAILED] CopyRates failed or incomplete for ", _Symbol);
+      return;
      }
 
+   // 2. Bulk CopyBuffer for ATR (shift 1, count bars)
    double atr[];
    ArraySetAsSeries(atr, false);
-   if(CopyBuffer(atrHandle, 0, 0, bars, atr) <= 0)
+   if(CopyBuffer(atrHandle, 0, 1, bars, atr) != bars)
+     {
+      Print("[BUFFER_ALIGNMENT_FAILED] CopyBuffer ATR failed or incomplete for ", _Symbol);
       return;
-   // atr[] da MT5'ten en eskiden en yeniye siralanir CopyBuffer ile (series=false, ters index)
-   // Guvenli tarafta kalmak icin candle index'ine gore ATR degerini ayrica hesapliyoruz:
-   double atrByIdx[];
-   ArrayResize(atrByIdx, bars);
+     }
+
+   // 3. Bulk CopyBuffer for EMA (shift 1, count bars)
+   double ema[];
+   ArraySetAsSeries(ema, false);
+   if(CopyBuffer(emaHandle, 0, 1, bars, ema) != bars)
+     {
+      Print("[BUFFER_ALIGNMENT_FAILED] CopyBuffer EMA failed or incomplete for ", _Symbol);
+      return;
+     }
+
+   // 4. Build Candle array from rates and verify timestamp synchronization & buffer values
+   Candle candles[];
+   ArrayResize(candles, bars);
    for(int i = 0; i < bars; i++)
      {
-      int shift = bars - 1 - i;
-      double a[];
-      if(CopyBuffer(atrHandle, 0, shift, 1, a) > 0)
-         atrByIdx[i] = a[0];
-      else
-         atrByIdx[i] = 0;
+      candles[i].time  = rates[i].time;
+      candles[i].open  = rates[i].open;
+      candles[i].high  = rates[i].high;
+      candles[i].low   = rates[i].low;
+      candles[i].close = rates[i].close;
+
+      if(!MathIsValidNumber(atr[i]) || atr[i] <= 0)
+        {
+         Print("[BUFFER_ALIGNMENT_FAILED] Invalid ATR value at index ", i);
+         return;
+        }
+      if(!MathIsValidNumber(ema[i]))
+        {
+         Print("[BUFFER_ALIGNMENT_FAILED] Invalid EMA value at index ", i);
+         return;
+        }
      }
 
    //--- FVG tespiti
    FVGZone fvgs[];
-   DetectFVGs(candles, atrByIdx, fvgs);
+   DetectFVGs(candles, atr, fvgs);
 
    //--- Order Block tespiti
    OBZone obs[];
@@ -164,12 +187,12 @@ void EvaluateAndTrade()
 
    //--- Destek/Direnc seviyeleri
    SRLevel levels[];
-   BuildLevels(candles, atrByIdx, levels);
+   BuildLevels(candles, atr, levels);
 
-   //--- Trend (son mum icin)
+   //--- Trend (son tamamlanan mum icin)
    int lastIdx = bars - 1;
    bool trendUp, trendDown, trendStrong;
-   DetectTrendAt(candles, lastIdx, trendUp, trendDown, trendStrong);
+   DetectTrendAt(candles, lastIdx, ema, trendUp, trendDown, trendStrong);
 
    //--- A+ confluence ara: son mumda olusan gecerli FVG + gecerli OB cakisiyor mu
    for(int i = 0; i < ArraySize(fvgs); i++)
@@ -412,7 +435,7 @@ bool FindNearestLevel(const SRLevel &levels[], double entry, bool wantsUp, int s
 //+------------------------------------------------------------------+
 //| Trend tespiti (Python: strategy/trend.py mantiginin sadelestirmesi)|
 //+------------------------------------------------------------------+
-void DetectTrendAt(const Candle &candles[], int idx, bool &up, bool &down, bool &strong)
+void DetectTrendAt(const Candle &candles[], int idx, const double &ema[], bool &up, bool &down, bool &strong)
   {
    up = false; down = false; strong = false;
 
@@ -439,10 +462,9 @@ void DetectTrendAt(const Candle &candles[], int idx, bool &up, bool &down, bool 
       if(highs[nh-1] < highs[nh-2] && lows[nl-1] < lows[nl-2]) down = true;
      }
 
-   double ema[];
-   if(CopyBuffer(emaHandle, 0, 0, 1, ema) > 0)
+   if(idx >= 0 && idx < ArraySize(ema))
      {
-      double emaVal = ema[0];
+      double emaVal = ema[idx];
       if(up && candles[idx].close > emaVal) strong = true;
       if(down && candles[idx].close < emaVal) strong = true;
      }

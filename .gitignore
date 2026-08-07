@@ -1,0 +1,4 @@
+*.ex5
+*.log
+compile.log
+__pycache__/

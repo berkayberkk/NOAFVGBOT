@@ -15,6 +15,7 @@ CTrade trade;
 //--- Genel ayarlar
 input ENUM_TIMEFRAMES TF                = PERIOD_M30;
 input double  RiskPercent               = 1.0;      // islem basi risk (% bakiye)
+input double  MaxLotCap                 = 5.0;      // maksimum lot siniri (guvenlik kepi)
 input int     MagicNumber               = 20260726;
 
 //--- FVG parametreleri (Python: strategy/fvg.py ile birebir)
@@ -448,33 +449,135 @@ void DetectTrendAt(const Candle &candles[], int idx, bool &up, bool &down, bool 
   }
 
 //+------------------------------------------------------------------+
-//| Pozisyon acma - risk yuzdesine gore lot hesabi                    |
+//| Sembol ve hesap tipine gore acik pozisyon kontrolu              |
+//+------------------------------------------------------------------+
+bool CheckPositionConflict()
+  {
+   ENUM_ACCOUNT_MARGIN_MODE marginMode = (ENUM_ACCOUNT_MARGIN_MODE)AccountInfoInteger(ACCOUNT_MARGIN_MODE);
+   bool isHedging = (marginMode == ACCOUNT_MARGIN_MODE_RETAIL_HEDGING);
+
+   int total = PositionsTotal();
+   for(int i = 0; i < total; i++)
+     {
+      ulong ticket = PositionGetTicket(i);
+      if(ticket > 0)
+        {
+         if(PositionGetString(POSITION_SYMBOL) == _Symbol)
+           {
+            long posMagic = PositionGetInteger(POSITION_MAGIC);
+            if(posMagic == MagicNumber)
+              {
+               Print("[EXISTING_EA_POSITION] Trade skipped: Open position exists for ", _Symbol, " with MagicNumber ", MagicNumber);
+               return true;
+              }
+            else if(!isHedging)
+              {
+               Print("[FOREIGN_POSITION_NETTING_CONFLICT] Trade skipped: Foreign position (Magic ", posMagic, ") exists on Netting/Exchange account for ", _Symbol);
+               return true;
+              }
+           }
+        }
+     }
+   return false;
+  }
+
+//+------------------------------------------------------------------+
+//| Pozisyon acma - risk yuzdesine gore lot hesabi ve guvenlik       |
 //+------------------------------------------------------------------+
 void TryOpenTrade(bool isBuy, double entry, double sl, double tp, string reason)
   {
-   if(PositionSelect(_Symbol))
-      return;  // zaten acik pozisyon varsa yeni islem acma
+   if(CheckPositionConflict())
+     {
+      return;
+     }
+
+   if(!MathIsValidNumber(entry) || !MathIsValidNumber(sl) || !MathIsValidNumber(tp))
+     {
+      Print("[INVALID_SL] Trade skipped: NaN/invalid entry, SL, or TP prices");
+      return;
+     }
+
+   if(isBuy && sl >= entry)
+     {
+      Print("[INVALID_SL] Trade skipped: BUY SL (", sl, ") >= Entry (", entry, ")");
+      return;
+     }
+   if(!isBuy && sl <= entry)
+     {
+      Print("[INVALID_SL] Trade skipped: SELL SL (", sl, ") <= Entry (", entry, ")");
+      return;
+     }
+
+   double point = SymbolInfoDouble(_Symbol, SYMBOL_POINT);
+   int stopsLevelPoints = (int)SymbolInfoInteger(_Symbol, SYMBOL_TRADE_STOPS_LEVEL);
+   double minStopDist = stopsLevelPoints * point;
+   double slDistance = MathAbs(entry - sl);
+
+   if(slDistance <= 0 || (minStopDist > 0 && slDistance < minStopDist))
+     {
+      Print("[STOP_LEVEL_TOO_CLOSE] Trade skipped: SL distance (", slDistance, ") < min stops level (", minStopDist, ")");
+      return;
+     }
 
    double balance = AccountInfoDouble(ACCOUNT_BALANCE);
    double riskAmount = balance * (RiskPercent / 100.0);
-   double slDistance = MathAbs(entry - sl);
-   if(slDistance <= 0)
-      return;
-
    double tickValue = SymbolInfoDouble(_Symbol, SYMBOL_TRADE_TICK_VALUE);
    double tickSize  = SymbolInfoDouble(_Symbol, SYMBOL_TRADE_TICK_SIZE);
-   double lots = (riskAmount / (slDistance / tickSize * tickValue));
 
-   double minLot = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_MIN);
-   double maxLot = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_MAX);
+   if(tickValue <= 0 || tickSize <= 0 || !MathIsValidNumber(riskAmount) || riskAmount <= 0)
+     {
+      Print("[INVALID_VOLUME] Trade skipped: Invalid balance or tick parameters");
+      return;
+     }
+
+   double rawLots = riskAmount / (slDistance / tickSize * tickValue);
+   if(!MathIsValidNumber(rawLots) || rawLots <= 0)
+     {
+      Print("[INVALID_VOLUME] Trade skipped: Invalid calculated raw lot size");
+      return;
+     }
+
+   double minLot  = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_MIN);
+   double maxLot  = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_MAX);
    double lotStep = SymbolInfoDouble(_Symbol, SYMBOL_VOLUME_STEP);
-   lots = MathFloor(lots / lotStep) * lotStep;
-   lots = MathMax(minLot, MathMin(maxLot, lots));
+
+   double lots = MathFloor(rawLots / lotStep) * lotStep;
+
+   if(lots < minLot)
+     {
+      Print("[INVALID_VOLUME] Trade skipped: Calculated lot (", lots, ") below broker min lot (", minLot, ")");
+      return;
+     }
+
+   double safeMaxLot = MathMin(maxLot, MaxLotCap);
+   if(lots > safeMaxLot)
+     {
+      Print("[MAX_LOT_GUARD] Volume capped from ", lots, " to max lot limit ", safeMaxLot);
+      lots = safeMaxLot;
+     }
 
    double price = isBuy ? SymbolInfoDouble(_Symbol, SYMBOL_ASK) : SymbolInfoDouble(_Symbol, SYMBOL_BID);
+   ENUM_ORDER_TYPE orderType = isBuy ? ORDER_TYPE_BUY : ORDER_TYPE_SELL;
+   double reqMargin = 0.0;
 
-   if(isBuy)
-      trade.Buy(lots, _Symbol, price, sl, tp, reason);
-   else
-      trade.Sell(lots, _Symbol, price, sl, tp, reason);
+   if(!OrderCalcMargin(orderType, _Symbol, lots, price, reqMargin) || !MathIsValidNumber(reqMargin) || reqMargin <= 0)
+     {
+      Print("[MARGIN_CALC_FAILED] Trade skipped: Could not calculate required margin");
+      return;
+     }
+
+   double freeMargin = AccountInfoDouble(ACCOUNT_MARGIN_FREE);
+   if(reqMargin > freeMargin)
+     {
+      Print("[INSUFFICIENT_MARGIN] Trade skipped: Required margin (", reqMargin, ") > free margin (", freeMargin, ")");
+      return;
+     }
+
+   bool res = isBuy ? trade.Buy(lots, _Symbol, price, sl, tp, reason)
+                    : trade.Sell(lots, _Symbol, price, sl, tp, reason);
+
+   if(!res)
+     {
+      Print("[ORDER_SEND_FAILED] Trade failed: Code=", trade.ResultRetcode(), " - ", trade.ResultComment());
+     }
   }

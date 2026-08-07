@@ -6,3 +6,10 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+
+# Phase 5 Runtime Artifacts (Ignored)
+*.db
+*.db-wal
+*.db-shm
+*.lock
+forward_*.log

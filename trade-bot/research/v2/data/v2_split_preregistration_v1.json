@@ -1,0 +1,59 @@
+{
+  "dataset_id": "V2_M1_LIVE_DATASET_V1",
+  "source_kind": "LIVE_MT5",
+  "research_symbol": "XAUUSD",
+  "broker_symbol": "GOLD",
+  "canonical_fingerprint": "8f5a20fd6b77dbebcfcf756b16e670cfb39712ff3e2b18a59f49073bd189e042",
+  "raw_fingerprint": "d084112edf0fd0645b90641e12ab32fe03eddcc8f6e330aa3d9d610587c0a57e",
+  "split_plan_fingerprint": "2896517f4292b0787b8682600c0c3229ef8a1545bcb3f612304542d0146aa474",
+  "schema_version": "2.DATA.2",
+  "dataset_freeze": {
+    "start_timestamp_utc": "2021-01-04 01:00:00",
+    "end_timestamp_utc": "2026-08-07 23:57:00",
+    "canonical_m1_count": 1981625,
+    "quality_status": "WARNING",
+    "unresolved_suspicious_gaps": 0,
+    "materiality_conclusion": "ACCEPTABLE_DISCONTINUITIES"
+  },
+  "partitions": [
+    {
+      "name": "TRAIN",
+      "start_timestamp_utc": "2021-01-04 01:00:00",
+      "end_timestamp_utc": "2023-10-31 23:59:00",
+      "context_start_utc": "2021-01-04 01:00:00",
+      "scoring_start_utc": "2021-01-04 01:00:00"
+    },
+    {
+      "name": "DEVELOPMENT",
+      "start_timestamp_utc": "2023-11-01 00:00:00",
+      "end_timestamp_utc": "2024-12-31 23:59:00",
+      "context_start_utc": "2023-10-15 00:00:00",
+      "scoring_start_utc": "2023-11-01 00:00:00"
+    },
+    {
+      "name": "VALIDATION",
+      "start_timestamp_utc": "2025-01-01 00:00:00",
+      "end_timestamp_utc": "2025-10-31 23:59:00",
+      "context_start_utc": "2024-12-15 00:00:00",
+      "scoring_start_utc": "2025-01-01 00:00:00"
+    },
+    {
+      "name": "FINAL_TEST",
+      "start_timestamp_utc": "2025-11-01 00:00:00",
+      "end_timestamp_utc": "2026-08-07 23:57:00",
+      "context_start_utc": "2025-10-15 00:00:00",
+      "scoring_start_utc": "2025-11-01 00:00:00"
+    }
+  ],
+  "boundary_rules": {
+    "thesis_assignment_rule": "THESIS_CREATION_TIMESTAMP",
+    "child_inheritance_rule": "INHERIT_PARENT_THESIS_PARTITION",
+    "boundary_censoring_rule": "CENSOR_AT_PARTITION_END",
+    "warmup_context_rule": "WARMUP_ALLOWED_NO_SCORED_EVIDENCE"
+  },
+  "protection_flags": {
+    "validation_evaluated": false,
+    "final_test_evaluated": false,
+    "final_test_consumed": false
+  }
+}

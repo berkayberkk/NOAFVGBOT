@@ -180,6 +180,8 @@ class V2MultiTimeframeBacktester:
         self.active_theses: Dict[str, ParentThesis] = {}
         self.terminal_theses: Dict[str, ParentThesis] = {}
         self.passports: Dict[str, TradePassport] = {}
+        self.active_passports: Dict[str, TradePassport] = {}
+        self.seen_candidate_keys: set = set()
         self.scenarios: Dict[str, CounterfactualScenario] = {}
         self.pairs: List[CounterfactualPair] = []
         self.path_observations: List[PathObservation] = []
@@ -282,12 +284,22 @@ class V2MultiTimeframeBacktester:
                 source_candle_id=f"c_m1_{c.timestamp_close_utc}",
             )
             self.path_observations.append(obs)
-            for p in self.passports.values():
+
+            # Update active passports only
+            to_remove = []
+            for pid, p in self.active_passports.items():
                 if not p.is_censored and p.outcome_state in (OutcomeState.OPEN, OutcomeState.ENTRY_TOUCHED):
                     try:
                         p.add_observation(obs)
+                        if p.outcome_state not in (OutcomeState.OPEN, OutcomeState.ENTRY_TOUCHED) or p.is_censored:
+                            to_remove.append(pid)
                     except Exception:
-                        pass
+                        to_remove.append(pid)
+                else:
+                    to_remove.append(pid)
+
+            for pid in to_remove:
+                self.active_passports.pop(pid, None)
 
         # 2. Update MTF trace
         self.market_state["mtf_trace"][tf.name] = c.timestamp_close_utc
@@ -308,15 +320,34 @@ class V2MultiTimeframeBacktester:
                     # Record observational confirmation trace
                     pass
 
-        # 5. Process M5/M3 events -> EntryCandidatePolicy
+        # 5. Process M5/M3 events -> EntryCandidatePolicy (Scoped strictly to matching timeframe event)
         elif tf in (Timeframe.M5, Timeframe.M3):
             candidates = self.policy.evaluate_setup(c, list(self.active_theses.values()), self.market_state)
             for cand in candidates:
-                self._on_candidate_generated(cand)
+                if cand.timeframe == tf:
+                    self._on_candidate_generated(cand)
 
     def _on_candidate_generated(self, cand: ChildEntryCandidate) -> None:
         th = self.active_theses.get(cand.thesis_id)
         if not th:
+            return
+
+        # Candidate Deduplication by Semantic Key
+        cand_key = (
+            cand.thesis_id,
+            cand.timeframe.name,
+            cand.created_at,
+            cand.direction.name,
+            cand.structural_entry,
+            cand.structural_stop,
+            cand.structural_target,
+        )
+        if cand_key in self.seen_candidate_keys:
+            return
+        self.seen_candidate_keys.add(cand_key)
+
+        pid = compute_passport_id(th.thesis_id, cand.candidate_id, self.config_fingerprint, cand.created_at)
+        if pid in self.passports:
             return
 
         # 1. Build DecisionSnapshot (known_at <= candidate.created_at)
@@ -334,7 +365,6 @@ class V2MultiTimeframeBacktester:
             mtf_trace=dict(self.market_state["mtf_trace"]),
         )
 
-        pid = compute_passport_id(th.thesis_id, cand.candidate_id, self.config_fingerprint, cand.created_at)
         passport = TradePassport(
             passport_id=pid,
             strategy_version="V2.8",
@@ -349,6 +379,7 @@ class V2MultiTimeframeBacktester:
             decision_snapshot=snap,
         )
         self.passports[pid] = passport
+        self.active_passports[pid] = passport
 
         # 2. Build Counterfactual Scenarios
         scen_ctrl_id = compute_scenario_id(th.thesis_id, ScenarioType.M30_CONTROL, th.created_at)

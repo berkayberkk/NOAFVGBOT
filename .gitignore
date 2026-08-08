@@ -2,3 +2,6 @@
 *.log
 compile.log
 __pycache__/
+/data/
+/trade-bot/data/
+scratch/

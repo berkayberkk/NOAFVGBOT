@@ -197,6 +197,8 @@ class TradePassport:
     @property
     def decision_snapshot(self) -> DecisionSnapshot: return self._decision_snapshot
     @property
+    def entry_touch_ts(self) -> Optional[str]: return self._entry_touch_ts
+    @property
     def outcome_state(self) -> OutcomeState: return self._outcome_state
     @property
     def is_censored(self) -> bool: return self._is_censored

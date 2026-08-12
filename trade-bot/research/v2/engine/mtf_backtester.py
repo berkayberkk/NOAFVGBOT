@@ -1,5 +1,5 @@
 """
-NOAFVGBOT V2.8 — Multi-Timeframe Event-Driven Backtester.
+NOAFVGBOT V2.10A — Multi-Timeframe Event-Driven Backtester.
 
 Orchestrates chronological multi-timeframe event streams, ParentThesis lifecycle, liquidity intelligence,
 FVG/OB/structure features, child candidate generation, TradePassports, MAE/MFE path telemetry,
@@ -11,8 +11,26 @@ INVARIANTS:
 - Strict isolation between structural telemetry (neutral OHLC) and simulated execution (BID/ASK, limit protection, conservative same-bar).
 - Zero mutation of frozen V1 files or V1 config modules.
 - 100% reconstructible & content-fingerprinted simulation runs.
+
+V2.10A — Bounded lifecycle (engineering fix, not a strategy change):
+- ParentThesis now actually reaches a terminal state instead of living forever:
+  * INVALIDATED: a new opposite-direction M30 thesis supersedes existing active theses in
+    the opposite direction, at the new thesis's own timestamp, before any lower-timeframe
+    event at that same timestamp is processed.
+  * EXPIRED: a thesis that reaches REFERENCE_ENGINEERING_LIFETIME_M30_BARS completed M30
+    bars of age without invalidating or completing is force-expired. This bound exists
+    purely to keep engine state finite; it is explicitly NOT a strategy parameter and was
+    not chosen by comparing outcomes.
+  * COMPLETED is intentionally left unused by the engine in this phase (see class docstring
+    below) — invalidation + expiry alone are sufficient to bound state.
+- Terminal theses are removed from active_theses immediately, so they can no longer receive
+  candidate registrations (a terminal thesis simply isn't looked up any more).
+- Counterfactual scenario evaluation is incremental (see counterfactual/engine.py additions):
+  each M1 close updates only the currently-open scenarios in O(1) each, instead of rescanning
+  the entire historical path on every new candidate.
 """
 
+import bisect
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -43,6 +61,10 @@ from research.v2.counterfactual.engine import (
     select_candidate,
     evaluate_scenario,
     compare_scenarios,
+    ScenarioTrackingState,
+    init_scenario_tracking,
+    update_scenario_tracking,
+    finalize_scenario_tracking,
 )
 from research.v2.dataset.builder import DatasetBuilder, build_research_row
 from research.v2.dataset.schema import ResearchRow
@@ -54,6 +76,16 @@ from research.v2.engine.models import (
     EntryCandidatePolicy,
     ReferenceResearchPolicy,
 )
+
+
+# ENGINEERING_SAFETY_BOUND — exists purely to keep active-thesis state finite and testable.
+# NOT a strategy parameter: chosen as a round, structurally meaningful unit (half a trading
+# day's worth of M30 bars = 24) and was never compared against outcome/PnL to select this
+# value — only against engine state size / runtime, which Section 16 of the V2.10A mission
+# does not prohibit (only PnL-based tuning is prohibited). Override via
+# V2MultiTimeframeBacktester(thesis_max_active_m30_bars=...) for engineering experiments;
+# do not tune this to affect research results.
+REFERENCE_ENGINEERING_LIFETIME_M30_BARS = 24
 
 
 def compute_backtest_fingerprint(
@@ -165,17 +197,31 @@ def simulate_execution(
 from research.v2.data.resampler import resample_m1
 
 class V2MultiTimeframeBacktester:
-    """Multi-Timeframe Event-Driven Backtester for NOAFVGBOT V2."""
+    """
+    Multi-Timeframe Event-Driven Backtester for NOAFVGBOT V2.
+
+    Completion semantics (V2.10A): ParentThesis.complete() is intentionally never called by
+    this engine. The domain model exposes winning_child_id/COMPLETED specifically for "first
+    clean child outcome terminates the parent," but that rule requires deciding tie-breaking
+    across siblings, whether a STOP counts as clean, and what happens to sibling
+    candidates/passports on parent completion — none of which is specified by the existing
+    architecture. Inventing that here would be a strategy/domain decision, not an engineering
+    bound. Invalidation (opposite-direction supersession) + expiry (bounded M30-bar age) are
+    sufficient on their own to guarantee every thesis reaches a terminal state and active_theses
+    stays finite, which is this phase's actual goal.
+    """
 
     def __init__(
         self,
         policy: ReferenceResearchPolicy,
         execution_config: Optional[V2ExecutionConfig] = None,
         config_fingerprint: str = "v2_default_fp",
+        thesis_max_active_m30_bars: int = REFERENCE_ENGINEERING_LIFETIME_M30_BARS,
     ):
         self.policy = policy
         self.execution_config = execution_config or V2ExecutionConfig()
         self.config_fingerprint = config_fingerprint
+        self.thesis_max_active_m30_bars = thesis_max_active_m30_bars
 
         self.active_theses: Dict[str, ParentThesis] = {}
         self.terminal_theses: Dict[str, ParentThesis] = {}
@@ -185,6 +231,7 @@ class V2MultiTimeframeBacktester:
         self.scenarios: Dict[str, CounterfactualScenario] = {}
         self.pairs: List[CounterfactualPair] = []
         self.path_observations: List[PathObservation] = []
+        self._path_observation_timestamps: List[str] = []  # parallel, sorted; enables bisect catch-up
 
         self.market_state: Dict[str, Any] = {
             "feature_records": [],
@@ -192,6 +239,50 @@ class V2MultiTimeframeBacktester:
             "mtf_trace": {},
         }
         self.total_events = 0
+
+        # V2.10A lifecycle bookkeeping
+        self.m30_bar_index = 0
+        self.thesis_created_m30_index: Dict[str, int] = {}
+        self.created_theses = 0
+        self.invalidated_theses = 0
+        self.expired_theses = 0
+        self.completed_theses = 0
+        self.peak_active_theses = 0
+
+        # V2.10A passport bookkeeping
+        self.peak_active_passports = 0
+        self.path_updates_total = 0
+
+        # V2.10A incremental counterfactual scenario tracking
+        self.scenario_states: Dict[str, ScenarioTrackingState] = {}
+        self.open_scenario_ids: Set[str] = set()
+        self.pending_pairs: List[Tuple[CounterfactualScenario, CounterfactualScenario, ThesisDirection]] = []
+
+    def _terminalize_thesis(self, th: ParentThesis) -> None:
+        """Moves a now-terminal thesis out of active_theses so it can no longer receive candidates."""
+        self.active_theses.pop(th.thesis_id, None)
+        self.terminal_theses[th.thesis_id] = th
+        self.thesis_created_m30_index.pop(th.thesis_id, None)
+
+    def _register_scenario(self, scenario: CounterfactualScenario, direction: ThesisDirection) -> None:
+        """
+        Registers a scenario for incremental tracking. If reference_timestamp lies in the
+        past relative to "now" (e.g. M30_CONTROL, whose reference is the thesis's own — possibly
+        much earlier — creation time), it is first caught up against the already-observed
+        suffix of path_observations located via bisect (O(log n) + O(bars since reference),
+        the latter bounded by thesis lifetime, not total dataset size), then registered for
+        ordinary forward incremental updates for any observation still to come.
+        """
+        state = init_scenario_tracking(scenario, direction)
+        if not state.resolved:
+            start_idx = bisect.bisect_left(self._path_observation_timestamps, scenario.reference_timestamp)
+            for obs in self.path_observations[start_idx:]:
+                state = update_scenario_tracking(state, obs)
+                if state.resolved:
+                    break
+        self.scenario_states[scenario.scenario_id] = state
+        if not state.resolved:
+            self.open_scenario_ids.add(scenario.scenario_id)
 
     def run(self, m1_candles: List[CandleV2]) -> BacktestV2Result:
         """Executes full chronological backtest over M1 candles stream."""
@@ -220,6 +311,15 @@ class V2MultiTimeframeBacktester:
         for p in self.passports.values():
             if not p.is_censored and p.outcome_state in (OutcomeState.OPEN, OutcomeState.ENTRY_TOUCHED):
                 p.censor(last_ts, reason="END_OF_DATA")
+
+        # Finalize counterfactual pairs from accumulated incremental scenario state.
+        # Any scenario still unresolved at end-of-data is finalized as-is (mirrors passport
+        # end-of-data censoring: no further observations exist to resolve it).
+        for scen_ctrl, scen_exp, direction in self.pending_pairs:
+            res_ctrl = finalize_scenario_tracking(self.scenario_states[scen_ctrl.scenario_id])
+            res_exp = finalize_scenario_tracking(self.scenario_states[scen_exp.scenario_id])
+            pair = compare_scenarios(res_ctrl, res_exp, scen_ctrl, scen_exp, direction)
+            self.pairs.append(pair)
 
         # Build Research Dataset
         builder = DatasetBuilder(list(self.passports.values()))
@@ -284,6 +384,7 @@ class V2MultiTimeframeBacktester:
                 source_candle_id=f"c_m1_{c.timestamp_close_utc}",
             )
             self.path_observations.append(obs)
+            self._path_observation_timestamps.append(obs.timestamp_utc)
 
             # Update active passports only
             to_remove = []
@@ -291,6 +392,7 @@ class V2MultiTimeframeBacktester:
                 if not p.is_censored and p.outcome_state in (OutcomeState.OPEN, OutcomeState.ENTRY_TOUCHED):
                     try:
                         p.add_observation(obs)
+                        self.path_updates_total += 1
                         if p.outcome_state not in (OutcomeState.OPEN, OutcomeState.ENTRY_TOUCHED) or p.is_censored:
                             to_remove.append(pid)
                     except Exception:
@@ -301,16 +403,56 @@ class V2MultiTimeframeBacktester:
             for pid in to_remove:
                 self.active_passports.pop(pid, None)
 
+            # Feed the same observation to currently-open counterfactual scenarios, O(1) each,
+            # instead of rescanning all historical path_observations per candidate (V2.10A).
+            resolved_scenario_ids = []
+            for sid in self.open_scenario_ids:
+                new_state = update_scenario_tracking(self.scenario_states[sid], obs)
+                self.scenario_states[sid] = new_state
+                if new_state.resolved:
+                    resolved_scenario_ids.append(sid)
+            for sid in resolved_scenario_ids:
+                self.open_scenario_ids.discard(sid)
+
         # 2. Update MTF trace
         self.market_state["mtf_trace"][tf.name] = c.timestamp_close_utc
 
-        # 3. Process M30 event -> MacroThesisPolicy
+        # 3. Process M30 event -> lifecycle bounding, then MacroThesisPolicy
         if tf == Timeframe.M30:
+            self.m30_bar_index += 1
+
+            # 3a. Age-based expiry, evaluated BEFORE lower-timeframe events at this timestamp
+            # (an already-expired thesis must not be able to emit a same-timestamp candidate).
+            for th_id in list(self.active_theses.keys()):
+                th = self.active_theses[th_id]
+                created_idx = self.thesis_created_m30_index.get(th_id, self.m30_bar_index)
+                age = self.m30_bar_index - created_idx
+                if age >= self.thesis_max_active_m30_bars and not th.is_terminal():
+                    th.expire(c.timestamp_close_utc, reason="ENGINEERING_LIFETIME_EXPIRED")
+                    self.expired_theses += 1
+                    self._terminalize_thesis(th)
+
+            # 3b. New thesis proposals: invalidate opposite-direction incumbents BEFORE
+            # registering the new thesis, then register it (same-timestamp candidate
+            # eligibility for a brand-new thesis is preserved — see class docs / V2.10A tests).
             new_theses = self.policy.evaluate_m30(c, self.market_state)
             for th in new_theses:
-                if th.thesis_id not in self.active_theses and th.thesis_id not in self.terminal_theses:
-                    th.activate("ACTIVE", c.timestamp_close_utc)
-                    self.active_theses[th.thesis_id] = th
+                if th.thesis_id in self.active_theses or th.thesis_id in self.terminal_theses:
+                    continue
+
+                opposite_dir = ThesisDirection.SHORT if th.direction == ThesisDirection.LONG else ThesisDirection.LONG
+                for other_id in list(self.active_theses.keys()):
+                    other = self.active_theses[other_id]
+                    if other.direction == opposite_dir and not other.is_terminal():
+                        other.invalidate(c.timestamp_close_utc, reason="OPPOSITE_DIRECTION_M30_THESIS")
+                        self.invalidated_theses += 1
+                        self._terminalize_thesis(other)
+
+                th.activate(c.timestamp_close_utc, reason="M30_THESIS_ACTIVATED")
+                self.active_theses[th.thesis_id] = th
+                self.thesis_created_m30_index[th.thesis_id] = self.m30_bar_index
+                self.created_theses += 1
+                self.peak_active_theses = max(self.peak_active_theses, len(self.active_theses))
 
         # 4. Process M15 event -> M15 Confirmation Evidence
         elif tf == Timeframe.M15:
@@ -380,6 +522,7 @@ class V2MultiTimeframeBacktester:
         )
         self.passports[pid] = passport
         self.active_passports[pid] = passport
+        self.peak_active_passports = max(self.peak_active_passports, len(self.active_passports))
 
         # 2. Build Counterfactual Scenarios
         scen_ctrl_id = compute_scenario_id(th.thesis_id, ScenarioType.M30_CONTROL, th.created_at)
@@ -411,8 +554,12 @@ class V2MultiTimeframeBacktester:
         )
         self.scenarios[scen_exp_id] = scen_exp
 
-        # Evaluate and Pair Scenarios
-        res_ctrl = evaluate_scenario(scen_ctrl, self.path_observations, th.direction)
-        res_exp = evaluate_scenario(scen_exp, self.path_observations, th.direction)
-        pair = compare_scenarios(res_ctrl, res_exp, scen_ctrl, scen_exp, th.direction)
-        self.pairs.append(pair)
+        # Register both scenarios for incremental tracking; the resulting CounterfactualPair
+        # is finalized once at end-of-run() from accumulated state (see run()), not rescanned
+        # from scratch here. This also means M5/M3_REFINED scenarios now correctly see their
+        # own forward path as it happens, instead of the pre-V2.10A behavior of being evaluated
+        # against an empty observation window (path_observations never yet contained any bar
+        # at or after cand.created_at at the moment this function ran) — see V2.10A report.
+        self._register_scenario(scen_ctrl, th.direction)
+        self._register_scenario(scen_exp, th.direction)
+        self.pending_pairs.append((scen_ctrl, scen_exp, th.direction))

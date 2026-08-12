@@ -9,6 +9,15 @@ INVARIANTS:
 - Zero retroactive entry touches before scenario reference timestamp.
 - Same market path observations used for all scenarios of a ParentThesis.
 - Zero mutation of ParentThesis or TradePassport domain objects.
+
+V2.10A ADDITION — Incremental scenario tracking:
+evaluate_scenario() below is a batch function that rescans a full observation list from
+reference_timestamp forward; O(path_length) per call. init_scenario_tracking /
+update_scenario_tracking / finalize_scenario_tracking implement the exact same per-bar
+outcome/MAE/MFE semantics incrementally (O(1) amortized per new observation), so a caller
+holding many concurrently-open scenarios can feed each new M1 close once instead of
+rescanning history on every candidate. evaluate_scenario() is kept unchanged for direct
+unit testing and as the semantic reference the incremental path is verified against.
 """
 
 from datetime import datetime, timezone
@@ -257,6 +266,213 @@ def compare_scenarios(
         delta_risk_distance=delta_risk,
         delta_time_to_entry_min=delay_min,
         geometry=geometry,
+    )
+
+
+class ScenarioTrackingState:
+    """
+    Mutable incremental tracking state for one CounterfactualScenario.
+
+    Carries exactly the running state evaluate_scenario() would otherwise recompute from
+    scratch on every call: whether/when entry was touched, current outcome, running MAE/MFE,
+    and whether the scenario has reached a terminal state (resolved=True) and no longer
+    needs further observations.
+
+    Deliberately a plain mutated-in-place class (not a frozen dataclass): with many thousands
+    of concurrently open scenarios each receiving one update per M1 close, dataclasses.replace()
+    dominated runtime (~3.6M calls, ~70% of wall time in early profiling) purely from its
+    reflection/reconstruction overhead. In-place attribute mutation removes that entirely
+    without changing any outcome semantics — update_scenario_tracking()'s return value is
+    still the authoritative state to store, exactly as when it returned a new instance.
+    """
+    __slots__ = (
+        "scenario_id", "reference_timestamp", "structural_entry", "structural_stop",
+        "structural_target", "direction", "risk_distance", "entry_touched",
+        "entry_touch_timestamp", "outcome_state", "mae_absolute", "mae_timestamp",
+        "mfe_absolute", "mfe_timestamp", "bars_before_touch", "resolved",
+    )
+
+    def __init__(
+        self,
+        scenario_id: str,
+        reference_timestamp: str,
+        structural_entry: float,
+        structural_stop: float,
+        structural_target: Optional[float],
+        direction: ThesisDirection,
+        risk_distance: float,
+        entry_touched: bool = False,
+        entry_touch_timestamp: Optional[str] = None,
+        outcome_state: OutcomeState = OutcomeState.OPEN,
+        mae_absolute: float = 0.0,
+        mae_timestamp: Optional[str] = None,
+        mfe_absolute: float = 0.0,
+        mfe_timestamp: Optional[str] = None,
+        bars_before_touch: int = 0,
+        resolved: bool = False,
+    ):
+        self.scenario_id = scenario_id
+        self.reference_timestamp = reference_timestamp
+        self.structural_entry = structural_entry
+        self.structural_stop = structural_stop
+        self.structural_target = structural_target
+        self.direction = direction
+        self.risk_distance = risk_distance
+        self.entry_touched = entry_touched
+        self.entry_touch_timestamp = entry_touch_timestamp
+        self.outcome_state = outcome_state
+        self.mae_absolute = mae_absolute
+        self.mae_timestamp = mae_timestamp
+        self.mfe_absolute = mfe_absolute
+        self.mfe_timestamp = mfe_timestamp
+        self.bars_before_touch = bars_before_touch
+        self.resolved = resolved
+
+
+_TERMINAL_OUTCOME_STATES = (
+    OutcomeState.STOP_REACHED,
+    OutcomeState.TARGET_REACHED,
+    OutcomeState.AMBIGUOUS_SAME_BAR,
+)
+
+
+def init_scenario_tracking(scenario: CounterfactualScenario, direction: ThesisDirection) -> ScenarioTrackingState:
+    """Initializes incremental tracking state for a scenario. Mirrors evaluate_scenario()'s setup."""
+    if not scenario.is_available:
+        return ScenarioTrackingState(
+            scenario_id=scenario.scenario_id,
+            reference_timestamp=scenario.reference_timestamp,
+            structural_entry=scenario.structural_entry,
+            structural_stop=scenario.structural_stop,
+            structural_target=scenario.structural_target,
+            direction=direction,
+            risk_distance=0.0,
+            outcome_state=OutcomeState.ENTRY_NOT_TOUCHED,
+            resolved=True,
+        )
+
+    risk_dist = abs(scenario.structural_entry - scenario.structural_stop)
+    return ScenarioTrackingState(
+        scenario_id=scenario.scenario_id,
+        reference_timestamp=scenario.reference_timestamp,
+        structural_entry=scenario.structural_entry,
+        structural_stop=scenario.structural_stop,
+        structural_target=scenario.structural_target,
+        direction=direction,
+        risk_distance=risk_dist,
+    )
+
+
+def _apply_excursion_step(state: ScenarioTrackingState, obs: PathObservation) -> None:
+    """Single-observation MAE/MFE running-max update, mutating state in place. Mirrors calculate_excursion_as_of()'s per-bar body."""
+    entry = state.structural_entry
+    if state.direction == ThesisDirection.LONG:
+        adverse = obs.low
+        adverse = entry - adverse if adverse < entry else 0.0
+        favorable = obs.high
+        favorable = favorable - entry if favorable > entry else 0.0
+    else:
+        adverse = obs.high
+        adverse = adverse - entry if adverse > entry else 0.0
+        favorable = obs.low
+        favorable = entry - favorable if favorable < entry else 0.0
+
+    if adverse > state.mae_absolute:
+        state.mae_absolute = adverse
+        state.mae_timestamp = obs.timestamp_utc
+
+    if favorable > state.mfe_absolute:
+        state.mfe_absolute = favorable
+        state.mfe_timestamp = obs.timestamp_utc
+
+
+def _outcome_step(state: ScenarioTrackingState, obs: PathObservation) -> OutcomeState:
+    """Single-observation stop/target/ambiguous check. Mirrors evaluate_scenario()'s per-bar body."""
+    stop = state.structural_stop
+    target = state.structural_target
+    direction = state.direction
+
+    stop_hit = (obs.low <= stop) if direction == ThesisDirection.LONG else (obs.high >= stop)
+    target_hit = (target is not None) and (
+        (obs.high >= target) if direction == ThesisDirection.LONG else (obs.low <= target)
+    )
+
+    if stop_hit and target_hit:
+        return OutcomeState.AMBIGUOUS_SAME_BAR
+    elif stop_hit:
+        return OutcomeState.STOP_REACHED
+    elif target_hit:
+        return OutcomeState.TARGET_REACHED
+    return state.outcome_state
+
+
+def update_scenario_tracking(state: ScenarioTrackingState, obs: PathObservation) -> ScenarioTrackingState:
+    """
+    Applies one new PathObservation to scenario tracking state in O(1), mutating and
+    returning the same state object (the caller re-stores the return value regardless,
+    so this is transparent to callers).
+
+    Semantic parity with evaluate_scenario(): observations strictly before reference_timestamp
+    are ignored (no retroactive fills); once resolved, no further updates are applied (mirrors
+    evaluate_scenario() never un-terminalizing an outcome).
+    """
+    if state.resolved:
+        return state
+
+    if obs.timestamp_utc < state.reference_timestamp:
+        return state
+
+    if not state.entry_touched:
+        touched = (obs.low <= state.structural_entry <= obs.high)
+        if not touched:
+            state.bars_before_touch += 1
+            return state
+
+        state.entry_touched = True
+        state.entry_touch_timestamp = obs.timestamp_utc
+        state.outcome_state = OutcomeState.ENTRY_TOUCHED
+        state.outcome_state = _outcome_step(state, obs)
+        _apply_excursion_step(state, obs)
+        state.resolved = state.outcome_state in _TERMINAL_OUTCOME_STATES
+        return state
+
+    # Already touched: keep updating post-entry excursion + outcome while still open.
+    _apply_excursion_step(state, obs)
+    if state.outcome_state in (OutcomeState.ENTRY_TOUCHED, OutcomeState.OPEN):
+        state.outcome_state = _outcome_step(state, obs)
+
+    state.resolved = state.outcome_state in _TERMINAL_OUTCOME_STATES
+    return state
+
+
+def finalize_scenario_tracking(state: ScenarioTrackingState) -> CounterfactualResult:
+    """Converts accumulated incremental tracking state into the standard CounterfactualResult shape."""
+    gross_r: Optional[float] = None
+    if state.entry_touched:
+        if state.outcome_state == OutcomeState.TARGET_REACHED and state.structural_target is not None:
+            target_dist = abs(state.structural_target - state.structural_entry)
+            gross_r = target_dist / state.risk_distance if state.risk_distance > 0 else None
+        elif state.outcome_state == OutcomeState.STOP_REACHED:
+            gross_r = -1.0
+        elif state.outcome_state == OutcomeState.AMBIGUOUS_SAME_BAR:
+            gross_r = None
+
+    mae_r = (state.mae_absolute / state.risk_distance) if state.risk_distance > 0 else 0.0
+    mfe_r = (state.mfe_absolute / state.risk_distance) if state.risk_distance > 0 else 0.0
+
+    return CounterfactualResult(
+        scenario_id=state.scenario_id,
+        entry_touched=state.entry_touched,
+        entry_touch_timestamp=state.entry_touch_timestamp,
+        outcome_state=state.outcome_state,
+        gross_structural_r=gross_r,
+        mae_r=mae_r,
+        mfe_r=mfe_r,
+        mae_absolute=state.mae_absolute,
+        mfe_absolute=state.mfe_absolute,
+        bars_to_entry_touch=(state.bars_before_touch if state.entry_touched else None),
+        is_censored=False,
+        is_ambiguous=(state.outcome_state == OutcomeState.AMBIGUOUS_SAME_BAR),
     )
 
 

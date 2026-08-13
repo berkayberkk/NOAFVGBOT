@@ -27,14 +27,22 @@ def test_1_to_4_identity_verification_and_partition_boundary_guard():
 
 
 def test_5_to_10_ablation_matrix_and_experiment_reproducibility():
-    res1 = run_train_discovery_experiment()
-    assert res1["status"] in ("PARTIAL_TRAIN_SMOKE", "TRAIN DISCOVERY COMPLETE")
+    res1 = run_train_discovery_experiment(allow_synthetic=True, count=1000)
+    assert res1["status"] in ("TRAIN_DISCOVERY_INCOMPLETE", "TRAIN DISCOVERY COMPLETE")
     assert len(res1["ablation_matrix"]) == 6
+    assert len(res1["branch_results"]) == 6  # A0..A5 all present
     assert res1["experiment"]["max_scored_timestamp"] <= TRAIN_END_UTC
 
     # Run second time for exact reproducibility
-    res2 = run_train_discovery_experiment()
+    res2 = run_train_discovery_experiment(allow_synthetic=True, count=1000)
     assert res1["experiment"]["experiment_fingerprint"] == res2["experiment"]["experiment_fingerprint"]
+
+
+def test_real_dataset_wiring_and_fail_closed_guard():
+    # Verify runner rejects invalid source kind when allow_synthetic is False
+    res = run_train_discovery_experiment(source_kind="INVALID_SOURCE", allow_synthetic=False)
+    assert res["status"] == "TRAIN DATA WIRING BLOCKED"
+    assert "source_kind == LIVE_MT5" in res["reason"]
 
 
 def test_candidate_deduplication_and_passport_idempotency():

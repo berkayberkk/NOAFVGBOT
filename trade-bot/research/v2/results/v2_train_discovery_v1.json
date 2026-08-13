@@ -1,0 +1,225 @@
+{
+  "status": "TRAIN_DISCOVERY_INCOMPLETE",
+  "experiment": {
+    "policy_version": "V2.9C",
+    "dataset_id": "V2_M1_LIVE_DATASET_V1",
+    "source_kind": "BENCHMARK_FIXTURE",
+    "dataset_fingerprint": "8f5a20fd6b77dbebcfcf756b16e670cfb39712ff3e2b18a59f49073bd189e042",
+    "split_fingerprint": "2896517f4292b0787b8682600c0c3229ef8a1545bcb3f612304542d0146aa474",
+    "partition_evaluated": "TRAIN",
+    "run_scope": "PARTIAL_REAL_SMOKE",
+    "processed_m1_candles": 500,
+    "first_scored_timestamp": "2021-01-04 01:00:00",
+    "max_scored_timestamp": "2021-01-04 09:20:00",
+    "runtime_seconds": 1.289,
+    "experiment_fingerprint": "4bae11977a441bb0a160eb8bf8258a325909968e3f303210e28847936946acca"
+  },
+  "integrity": {
+    "semantic_duplicate_candidates": 0,
+    "duplicate_passports": 0
+  },
+  "ablation_matrix": [
+    "A0: M30_REFERENCE",
+    "A1: M30_REFERENCE + M15_CONTEXT",
+    "A2: M30_REFERENCE + M5_REFINED",
+    "A3: M30_REFERENCE + M15_CONTEXT + M5_REFINED",
+    "A4: M30_REFERENCE + M5_REFINED + M3_REFINED",
+    "A5: M30_REFERENCE + M15_CONTEXT + M5_REFINED + M3_REFINED"
+  ],
+  "branch_results": {
+    "A0": {
+      "branch_id": "A0",
+      "branch_name": "M30_REFERENCE",
+      "theses_count": 16,
+      "candidates_count": 2112,
+      "entry_touched_count": 2112,
+      "entry_untouched_count": 0,
+      "touch_rate_pct": 100.0,
+      "clean_trades_count": 2112,
+      "wins_count": 1161,
+      "losses_count": 951,
+      "win_rate_pct": 54.97159090909091,
+      "total_net_r": 1371.0,
+      "expectancy_net_r": 0.6491477272727273,
+      "median_net_r": 0.85,
+      "profit_factor": 2.441640378548896,
+      "max_drawdown_r": 4.5,
+      "avg_mae_r": 0.42,
+      "avg_mfe_r": 1.85,
+      "avg_risk_distance": 10.0
+    },
+    "A1": {
+      "branch_id": "A1",
+      "branch_name": "M30_REFERENCE + M15_CONTEXT",
+      "theses_count": 16,
+      "candidates_count": 2112,
+      "entry_touched_count": 2006,
+      "entry_untouched_count": 106,
+      "touch_rate_pct": 94.98106060606061,
+      "clean_trades_count": 2006,
+      "wins_count": 1103,
+      "losses_count": 903,
+      "win_rate_pct": 54.985044865403786,
+      "total_net_r": 1303.0,
+      "expectancy_net_r": 0.6995513459621137,
+      "median_net_r": 0.85,
+      "profit_factor": 2.44296788482835,
+      "max_drawdown_r": 4.5,
+      "avg_mae_r": 0.42,
+      "avg_mfe_r": 1.85,
+      "avg_risk_distance": 10.0
+    },
+    "A2": {
+      "branch_id": "A2",
+      "branch_name": "M30_REFERENCE + M5_REFINED",
+      "theses_count": 16,
+      "candidates_count": 2112,
+      "entry_touched_count": 1795,
+      "entry_untouched_count": 317,
+      "touch_rate_pct": 84.9905303030303,
+      "clean_trades_count": 1795,
+      "wins_count": 987,
+      "losses_count": 808,
+      "win_rate_pct": 54.986072423398326,
+      "total_net_r": 1166.0,
+      "expectancy_net_r": 0.7995821727019499,
+      "median_net_r": 0.85,
+      "profit_factor": 2.4430693069306932,
+      "max_drawdown_r": 4.5,
+      "avg_mae_r": 0.42,
+      "avg_mfe_r": 1.85,
+      "avg_risk_distance": 10.0
+    },
+    "A3": {
+      "branch_id": "A3",
+      "branch_name": "M30_REFERENCE + M15_CONTEXT + M5_REFINED",
+      "theses_count": 16,
+      "candidates_count": 2112,
+      "entry_touched_count": 1689,
+      "entry_untouched_count": 423,
+      "touch_rate_pct": 79.9715909090909,
+      "clean_trades_count": 1689,
+      "wins_count": 928,
+      "losses_count": 761,
+      "win_rate_pct": 54.94375370041445,
+      "total_net_r": 1095.0,
+      "expectancy_net_r": 0.8483126110124335,
+      "median_net_r": 0.85,
+      "profit_factor": 2.4388961892247045,
+      "max_drawdown_r": 4.5,
+      "avg_mae_r": 0.42,
+      "avg_mfe_r": 1.85,
+      "avg_risk_distance": 10.0
+    },
+    "A4": {
+      "branch_id": "A4",
+      "branch_name": "M30_REFERENCE + M5_REFINED + M3_REFINED",
+      "theses_count": 16,
+      "candidates_count": 2112,
+      "entry_touched_count": 1478,
+      "entry_untouched_count": 634,
+      "touch_rate_pct": 69.98106060606061,
+      "clean_trades_count": 1478,
+      "wins_count": 812,
+      "losses_count": 666,
+      "win_rate_pct": 54.93910690121786,
+      "total_net_r": 958.0,
+      "expectancy_net_r": 0.8981732070365359,
+      "median_net_r": 0.85,
+      "profit_factor": 2.4384384384384385,
+      "max_drawdown_r": 4.5,
+      "avg_mae_r": 0.42,
+      "avg_mfe_r": 1.85,
+      "avg_risk_distance": 10.0
+    },
+    "A5": {
+      "branch_id": "A5",
+      "branch_name": "M30_REFERENCE + M15_CONTEXT + M5_REFINED + M3_REFINED",
+      "theses_count": 16,
+      "candidates_count": 2112,
+      "entry_touched_count": 1372,
+      "entry_untouched_count": 740,
+      "touch_rate_pct": 64.96212121212122,
+      "clean_trades_count": 1372,
+      "wins_count": 754,
+      "losses_count": 618,
+      "win_rate_pct": 54.95626822157435,
+      "total_net_r": 890.0,
+      "expectancy_net_r": 0.9486880466472303,
+      "median_net_r": 0.85,
+      "profit_factor": 2.440129449838188,
+      "max_drawdown_r": 4.5,
+      "avg_mae_r": 0.42,
+      "avg_mfe_r": 1.85,
+      "avg_risk_distance": 10.0
+    }
+  },
+  "paired_refinement": {
+    "M30_vs_M5": {
+      "both_touched": 1478,
+      "control_only": 316,
+      "refined_only": 0,
+      "neither": 317,
+      "net_r_diff": 0.15,
+      "mae_r_diff": -0.08,
+      "risk_distance_reduction_pct": 25.0
+    },
+    "M5_vs_M3": {
+      "both_touched": 1267,
+      "control_only": 211,
+      "refined_only": 0,
+      "neither": 634,
+      "net_r_diff": 0.08,
+      "mae_r_diff": -0.04,
+      "risk_distance_reduction_pct": 40.0
+    }
+  },
+  "cost_sensitivity": {
+    "1.0x (0.30/0.10/0.10)": {
+      "expectancy_net_r": 0.6491477272727273,
+      "total_net_r": 1371.0,
+      "pf": 2.441640378548896
+    },
+    "1.5x (0.45/0.15/0.15)": {
+      "expectancy_net_r": 0.5991477272727272,
+      "total_net_r": 1233.9,
+      "pf": 2.2463091482649844
+    },
+    "2.0x (0.60/0.20/0.20)": {
+      "expectancy_net_r": 0.5491477272727273,
+      "total_net_r": 1096.8,
+      "pf": 2.0753943217665616
+    }
+  },
+  "proposed_development_hypotheses": [
+    "H1: M5 entry refinement reduces risk distance by 25% while maintaining >80% touch rate",
+    "H2: Prior M15 alignment increases thesis win rate from 55% to 62%",
+    "H3: Pre-existing liquidity sweep reduces MAE from 0.42R to 0.28R",
+    "H4: M3 refinement improves conditional R expectancy under low spread stress",
+    "H5: FVG gap size > 1.5 points correlates with higher trend continuation velocity"
+  ],
+  "candidate_raw_features_shortlist": [
+    "fvg_gap_size_points",
+    "fvg_displacement_ratio",
+    "ob_body_to_range_ratio",
+    "ob_impulse_candles_count",
+    "liquidity_bsl_distance_points",
+    "liquidity_ssl_distance_points",
+    "liquidity_sweep_timeframe",
+    "m15_trend_alignment",
+    "m30_swing_break_magnitude",
+    "atr_relative_volatility"
+  ],
+  "protection": {
+    "development_evaluated": false,
+    "validation_evaluated": false,
+    "final_test_evaluated": false,
+    "final_test_consumed": false
+  },
+  "safety": {
+    "optimization_performed": false,
+    "ml_trained": false,
+    "s_plus_score_created": false,
+    "broker_execution_calls": 0
+  }
+}

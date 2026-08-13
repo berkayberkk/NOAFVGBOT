@@ -157,11 +157,19 @@ def audit_dataset_gaps(candles: List[CandleV2], dataset_fingerprint: str) -> Tup
     max_dur = durations[-1] if n > 0 else 0.0
 
     suspicious_count = category_counts[DetailedGapCategory.SUSPICIOUS_INTRASESSION]
+    unknown_count = category_counts[DetailedGapCategory.UNKNOWN]
+    unresolved_count = suspicious_count + unknown_count
 
-    # Materiality conclusion:
-    # Intraday provider gaps and session/weekend breaks are expected in OTC CFD history.
-    # No price corruption or timestamp manipulation exists.
-    materiality = "ACCEPTABLE_DISCONTINUITIES"
+    # V2.10B fix: materiality must reflect the actual computed counts, not a constant.
+    # Weekend/daily-session/holiday/likely-provider-gap categories are structurally explained
+    # (matched by an explicit rule) and are never, by themselves, grounds to withhold
+    # ACCEPTABLE_DISCONTINUITIES. SUSPICIOUS_INTRASESSION/UNKNOWN gaps are NOT auto-classified
+    # as expected — any unresolved count > 0 forces a review conclusion instead. No repair or
+    # reclassification happens here; this only reports what the counts already show.
+    if unresolved_count > 0:
+        materiality = "UNRESOLVED_GAPS_REQUIRE_REVIEW"
+    else:
+        materiality = "ACCEPTABLE_DISCONTINUITIES"
 
     summary = GapAuditSummary(
         dataset_fingerprint=dataset_fingerprint,

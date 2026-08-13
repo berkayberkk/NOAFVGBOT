@@ -8,6 +8,13 @@ INVARIANTS:
 - Absolutely ZERO strategy backtester / performance evaluation.
 - Canonical fingerprint MUST match 8f5a20fd6b77dbebcfcf756b16e670cfb39712ff3e2b18a59f49073bd189e042 exactly.
 - Final test partition is marked unevaluated and unconsumed.
+
+V2.10B FIX: this script previously read the REAL fingerprint from data/manifest.json, then
+computed the gap audit and split-plan artifacts from 5,000 rows of SYNTHETIC data — stamping
+those synthetic-derived statistics with the real dataset's fingerprint (CRITICAL-4 finding).
+It now loads the real canonical file via research.v2.data.live_dataset.load_frozen_live_dataset
+(no synthetic fallback of any kind) and fails closed with status "REAL DATASET MISSING" if that
+file is not present. It will never again stamp the real fingerprint onto synthetic statistics.
 """
 
 from dataclasses import asdict
@@ -20,13 +27,21 @@ from research.v2.data.models import CandleV2, Timeframe
 from research.v2.data.gap_audit import audit_dataset_gaps, GapAuditSummary
 from research.v2.data.split_preregistration import build_preregistered_v2_split, DatasetSplitPreregistration
 from research.v2.data.manifest import compute_canonical_fingerprint, DatasetManifest
+from research.v2.data.live_dataset import (
+    load_frozen_live_dataset,
+    DatasetFileMissingError,
+    DatasetIntegrityError,
+    DatasetIdentityMismatchError,
+)
 
 
+EXPECTED_DATASET_ID = "V2_M1_LIVE_DATASET_V1"
 EXPECTED_CANONICAL_FINGERPRINT = "8f5a20fd6b77dbebcfcf756b16e670cfb39712ff3e2b18a59f49073bd189e042"
+DEFAULT_LIVE_DATASET_PATH = "data/canonical/V2_M1_LIVE_DATASET_V1.csv"
 
 
-def execute_freeze_and_split() -> Dict[str, Any]:
-    # Check manifest file
+def execute_freeze_and_split(live_dataset_path: str = DEFAULT_LIVE_DATASET_PATH) -> Dict[str, Any]:
+    # Check manifest file (identity cross-check only; the manifest is NOT itself a data source)
     manifest_path = "data/manifest.json"
     if not os.path.exists(manifest_path):
         return {"status": "DATASET FREEZE BLOCKED", "reason": "data/manifest.json does not exist"}
@@ -41,18 +56,34 @@ def execute_freeze_and_split() -> Dict[str, Any]:
             "reason": f"Fingerprint mismatch. Expected {EXPECTED_CANONICAL_FINGERPRINT}, got {can_fp}",
         }
 
-    # Generate or load canonical candles for auditing split structure
-    from research.v2.data.acquisition import generate_synthetic_m1_dataset
-    raw_list, canonical_m1 = generate_synthetic_m1_dataset("2021-01-04 01:00:00", count=5000, start_price=1800.0)
+    # Load the REAL canonical candles. No synthetic fallback exists on this path.
+    try:
+        canonical_m1, live_manifest = load_frozen_live_dataset(
+            path=live_dataset_path,
+            expected_dataset_id=EXPECTED_DATASET_ID,
+            expected_canonical_fingerprint=can_fp,
+        )
+    except DatasetFileMissingError as e:
+        return {
+            "status": "REAL DATASET MISSING",
+            "reason": str(e),
+            "note": "No synthetic fallback was used. Nothing was written to data/results/.",
+        }
+    except (DatasetIntegrityError, DatasetIdentityMismatchError) as e:
+        return {
+            "status": "DATASET FREEZE FAILED",
+            "reason": str(e),
+            "note": "No synthetic fallback was used. Nothing was written to data/results/.",
+        }
 
-    # 1. Run Gap Audit
+    # 1. Run Gap Audit on the real data
     gap_summary, gap_records = audit_dataset_gaps(canonical_m1, can_fp)
 
     os.makedirs("data/results", exist_ok=True)
     with open("data/results/live_m1_gap_audit_v1.json", "w") as f:
         json.dump(asdict(gap_summary), f, indent=2)
 
-    # 2. Build Preregistered Split
+    # 2. Build Preregistered Split from the real data
     split_plan = build_preregistered_v2_split(canonical_m1, can_fp)
     with open("data/results/v2_split_preregistration_v1.json", "w") as f:
         f.write(split_plan.to_json())
@@ -60,10 +91,12 @@ def execute_freeze_and_split() -> Dict[str, Any]:
     return {
         "status": "V2 DATASET AND SPLIT PREREGISTERED",
         "dataset_freeze": {
-            "dataset_id": "V2_M1_LIVE_DATASET_V1",
+            "dataset_id": EXPECTED_DATASET_ID,
+            "source_kind": live_manifest.source_kind,
             "canonical_fingerprint": can_fp,
-            "date_range": "2021-01-04 01:00:00 UTC to 2026-08-07 23:57:00 UTC",
-            "candle_count": manifest_data.get("canonical_row_count", 1981625),
+            "first_timestamp": live_manifest.earliest_timestamp,
+            "last_timestamp": live_manifest.latest_timestamp,
+            "candle_count": live_manifest.canonical_row_count,
             "quality_status": manifest_data.get("quality_status", "WARNING"),
         },
         "gap_audit": {

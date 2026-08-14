@@ -12,6 +12,7 @@ INVARIANTS:
 - Observational research feature layer only (no trade authorization or strategy execution).
 """
 
+import bisect
 from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
 from enum import Enum
@@ -383,11 +384,16 @@ def detect_session_high_low(
     return pools
 
 
-def analyze_sweeps_and_touches(
+def _analyze_sweeps_and_touches_reference(
     pools: List[LiquidityPool],
     candles: List[CandleV2],
 ) -> List[LiquidityEvent]:
-    """Analyzes price candles against active liquidity pools to detect Touch, Breach, and Sweep/Reclaim events."""
+    """V2.10C.1 -- REFERENCE ORACLE, retained verbatim (byte-identical logic to the pre-V2.10C.1
+    implementation) for parity testing only. NOT used in the production hot path -- see
+    analyze_sweeps_and_touches() below for the optimized implementation this is checked against.
+    Deliberately kept simple/obviously-correct even though it is O(pools x candles) with
+    per-pair datetime parsing, so it can serve as ground truth for tests/test_v2_10c1_liquidity_scaling.py.
+    """
     events: List[LiquidityEvent] = []
 
     for pool in pools:
@@ -488,6 +494,155 @@ def analyze_sweeps_and_touches(
                             metadata={"source_timeframe": c.timeframe.name, "reclaim": True},
                         )
                     )
+
+    return events
+
+
+def analyze_sweeps_and_touches(
+    pools: List[LiquidityPool],
+    candles: List[CandleV2],
+) -> List[LiquidityEvent]:
+    """Analyzes price candles against active liquidity pools to detect Touch, Breach, and
+    Sweep/Reclaim events.
+
+    V2.10C.1 -- PERFORMANCE ONLY, semantics-preserving. Produces byte-identical output (same
+    event_ids, timestamps, known_at semantics, ordering) to _analyze_sweeps_and_touches_reference
+    above -- see tests/test_v2_10c1_liquidity_scaling.py for the parity matrix this is checked
+    against on every commit.
+
+    What changed and why it's safe:
+    - The reference re-parses EVERY candle's timestamp with datetime.fromisoformat() for EVERY
+      pool just to find/skip the region before known_at_timestamp -- O(pools x candles) parsing
+      that is pure waste for the (typically roughly half, on average) candles before a pool's
+      known_at. `candles` is always a single timeframe's chronologically-ordered series (the
+      same precondition detect_swings already relies on positionally), and every timestamp in
+      this codebase is generated via strftime("%Y-%m-%d %H:%M:%S") -- a fixed-width, zero-padded
+      format whose lexicographic string order is identical to chronological order. That makes
+      `close_ts` (extracted once, not per pool) a valid bisect.bisect_left() target: the first
+      index with close_ts[idx] >= pool.known_at_timestamp is EXACTLY the first candle the
+      reference loop does not `continue` past -- no datetime parsing needed to find it, and no
+      candle before it is ever inspected (same "ignore pre-known_at candles" semantics).
+    - `pool.side`, `pool.price`, `pool.pool_id` are pool-invariant; the reference re-reads them
+      (and re-evaluates the enum equality) on every candle. Hoisting them to locals once per
+      pool, and branching once on `is_buy` instead of re-comparing `pool.side == ...` in both
+      the touch-check and the breach-check, is a pure micro-optimization -- the two branches'
+      bodies still fire under EXACTLY the reference's conditions, in the same order (touch-check
+      before breach/sweep-check, matching the reference's `if` block order).
+    - BREACH/SWEEP are NOT semantically capped here (deliberately -- the reference lets both
+      re-fire on every subsequent candle that still satisfies the raw price condition, forever,
+      once is_breached is True; only TOUCH is gated by `not is_breached`). This optimization does
+      not change that -- doing so would be a semantics change, out of scope for this phase. It is
+      the reason total event volume (and therefore total runtime) remains superlinear in candle
+      count even after this fix: see SCALING notes in the V2.10C.1 closure report.
+    """
+    events: List[LiquidityEvent] = []
+    n = len(candles)
+    if not pools or n == 0:
+        return events
+
+    close_ts = [c.timestamp_close_utc for c in candles]
+
+    for pool in pools:
+        start_idx = bisect.bisect_left(close_ts, pool.known_at_timestamp)
+        if start_idx >= n:
+            continue
+
+        is_buy = pool.side == LiquiditySide.BUY_SIDE
+        pool_price = pool.price
+        pool_id = pool.pool_id
+        is_breached = False
+
+        for idx in range(start_idx, n):
+            c = candles[idx]
+            c_ts = close_ts[idx]
+
+            if is_buy:
+                if c.high >= pool_price and not is_breached:
+                    eid = compute_event_id(pool_id, LiquidityEventType.TOUCH, c_ts, c.high)
+                    events.append(
+                        LiquidityEvent(
+                            event_id=eid,
+                            pool_id=pool_id,
+                            event_type=LiquidityEventType.TOUCH,
+                            timestamp_utc=c_ts,
+                            price_at_event=c.high,
+                            metadata={"source_timeframe": c.timeframe.name},
+                        )
+                    )
+
+                if c.high > pool_price:
+                    is_breached = True
+                    breach_dist = c.high - pool_price
+                    eid_b = compute_event_id(pool_id, LiquidityEventType.BREACH, c_ts, c.high)
+                    events.append(
+                        LiquidityEvent(
+                            event_id=eid_b,
+                            pool_id=pool_id,
+                            event_type=LiquidityEventType.BREACH,
+                            timestamp_utc=c_ts,
+                            price_at_event=c.high,
+                            breach_distance=breach_dist,
+                            metadata={"source_timeframe": c.timeframe.name},
+                        )
+                    )
+
+                    if c.close < pool_price:
+                        eid_s = compute_event_id(pool_id, LiquidityEventType.SWEEP, c_ts, c.close)
+                        events.append(
+                            LiquidityEvent(
+                                event_id=eid_s,
+                                pool_id=pool_id,
+                                event_type=LiquidityEventType.SWEEP,
+                                timestamp_utc=c_ts,
+                                price_at_event=c.close,
+                                breach_distance=breach_dist,
+                                metadata={"source_timeframe": c.timeframe.name, "reclaim": True},
+                            )
+                        )
+
+            else:
+                if c.low <= pool_price and not is_breached:
+                    eid = compute_event_id(pool_id, LiquidityEventType.TOUCH, c_ts, c.low)
+                    events.append(
+                        LiquidityEvent(
+                            event_id=eid,
+                            pool_id=pool_id,
+                            event_type=LiquidityEventType.TOUCH,
+                            timestamp_utc=c_ts,
+                            price_at_event=c.low,
+                            metadata={"source_timeframe": c.timeframe.name},
+                        )
+                    )
+
+                if c.low < pool_price:
+                    is_breached = True
+                    breach_dist = pool_price - c.low
+                    eid_b = compute_event_id(pool_id, LiquidityEventType.BREACH, c_ts, c.low)
+                    events.append(
+                        LiquidityEvent(
+                            event_id=eid_b,
+                            pool_id=pool_id,
+                            event_type=LiquidityEventType.BREACH,
+                            timestamp_utc=c_ts,
+                            price_at_event=c.low,
+                            breach_distance=breach_dist,
+                            metadata={"source_timeframe": c.timeframe.name},
+                        )
+                    )
+
+                    if c.close > pool_price:
+                        eid_s = compute_event_id(pool_id, LiquidityEventType.SWEEP, c_ts, c.close)
+                        events.append(
+                            LiquidityEvent(
+                                event_id=eid_s,
+                                pool_id=pool_id,
+                                event_type=LiquidityEventType.SWEEP,
+                                timestamp_utc=c_ts,
+                                price_at_event=c.close,
+                                breach_distance=breach_dist,
+                                metadata={"source_timeframe": c.timeframe.name, "reclaim": True},
+                            )
+                        )
 
     return events
 

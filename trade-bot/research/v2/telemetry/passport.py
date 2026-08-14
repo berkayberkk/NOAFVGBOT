@@ -278,24 +278,42 @@ class TradePassport:
         return event
 
     def add_observation(self, obs: PathObservation) -> None:
-        """Appends path observation chronologically and updates path telemetry."""
+        """Appends path observation chronologically and updates path telemetry.
+
+        V2.10C.2 -- performance only. Every timestamp in this codebase is generated via
+        strftime("%Y-%m-%d %H:%M:%S") (fixed-width, zero-padded), whose lexicographic string
+        order is identical to chronological order -- the same invariant V2.10C.1's liquidity
+        bisect optimization already relies on. Both chronology checks below therefore compare
+        the timestamp strings directly instead of parsing them into datetime objects (which
+        this call previously did unconditionally, including RE-parsing self._created_at -- an
+        invariant that never changes after construction -- on every single call).
+
+        Also replaces `self._pre_entry_path + self._post_entry_path` (an O(total observations
+        so far) list concatenation done on every call just to read its last element) with an
+        O(1) lookup: once entry is touched, every subsequent observation -- including the
+        touching one itself -- is appended to _post_entry_path (see the branches below), so
+        post_entry_path[-1] is always the true last-added observation whenever it is
+        non-empty; only before any touch can _pre_entry_path hold the tail. This is the same
+        fact the original code computed the expensive way.
+        """
         if self._is_censored:
             raise CensoredPassportError(f"Passport {self._passport_id} is censored; cannot append observations")
 
         if obs.observation_id in self._obs_ids:
             raise DuplicateObservationError(f"Observation {obs.observation_id} already added")
 
-        t_obs = datetime.fromisoformat(obs.timestamp_utc).replace(tzinfo=timezone.utc)
-        t_create = datetime.fromisoformat(self._created_at).replace(tzinfo=timezone.utc)
-
-        if t_obs < t_create:
+        if obs.timestamp_utc < self._created_at:
             raise ValueError(f"Observation timestamp ({obs.timestamp_utc}) cannot be before passport created_at ({self._created_at})")
 
-        all_obs = self._pre_entry_path + self._post_entry_path
-        if all_obs:
-            t_last = datetime.fromisoformat(all_obs[-1].timestamp_utc).replace(tzinfo=timezone.utc)
-            if t_obs < t_last:
-                raise ValueError(f"Observation chronology violation: {obs.timestamp_utc} < previous {all_obs[-1].timestamp_utc}")
+        if self._post_entry_path:
+            last_ts = self._post_entry_path[-1].timestamp_utc
+        elif self._pre_entry_path:
+            last_ts = self._pre_entry_path[-1].timestamp_utc
+        else:
+            last_ts = None
+
+        if last_ts is not None and obs.timestamp_utc < last_ts:
+            raise ValueError(f"Observation chronology violation: {obs.timestamp_utc} < previous {last_ts}")
 
         self._obs_ids.add(obs.observation_id)
 

@@ -71,11 +71,24 @@ def calculate_excursion_as_of(
     if risk_distance < 0:
         raise ValueError(f"Risk distance cannot be negative, got: {risk_distance}")
 
-    t_as_of = datetime.fromisoformat(as_of_utc).replace(tzinfo=timezone.utc)
-    valid_obs = [
-        o for o in observations
-        if datetime.fromisoformat(o.timestamp_utc).replace(tzinfo=timezone.utc) <= t_as_of
-    ]
+    # V2.10C.2 -- fast path, performance only. `observations` is always chronologically
+    # non-decreasing (both current callers -- TradePassport.get_excursion()'s post_entry_path,
+    # and evaluate_scenario()'s post_entry_obs -- build it that way), so whenever as_of_utc is
+    # at/after the last observation's own timestamp, EVERY observation already satisfies
+    # "<= as_of_utc" and the filter is a guaranteed no-op. Both current callers hit this path
+    # every time (get_excursion()'s default as_of IS the last post-entry observation;
+    # evaluate_scenario() passes exactly valid_obs[-1]). Falls back to the original exact
+    # per-observation datetime filter, unchanged, whenever as_of_utc is strictly earlier.
+    if not observations:
+        valid_obs = observations
+    elif as_of_utc >= observations[-1].timestamp_utc:
+        valid_obs = observations
+    else:
+        t_as_of = datetime.fromisoformat(as_of_utc).replace(tzinfo=timezone.utc)
+        valid_obs = [
+            o for o in observations
+            if datetime.fromisoformat(o.timestamp_utc).replace(tzinfo=timezone.utc) <= t_as_of
+        ]
 
     if not valid_obs:
         return ExcursionMetrics(

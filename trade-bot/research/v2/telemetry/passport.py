@@ -115,6 +115,55 @@ class DecisionSnapshot:
             raise ValueError("SHORT candidate stop_loss must be > entry price")
 
 
+def compute_feature_state_fingerprint(snapshot: "DecisionSnapshot") -> str:
+    """V2.10C -- Deterministic semantic fingerprint of a DecisionSnapshot's feature state.
+
+    Depends ONLY on canonical semantic content (feature/liquidity/mtf values), never on
+    object identity, memory address, process id, or accidental list/dict iteration order:
+    every collection is explicitly sorted by its own content before hashing. Equivalent
+    feature states (same records in any order) produce identical fingerprints; any causally
+    meaningful difference (a different feature, value, or known_at_timestamp) changes it.
+    """
+    hasher = hashlib.sha256()
+
+    sorted_features = sorted(
+        snapshot.feature_records,
+        key=lambda f: (f.source_timeframe.name, f.known_at_timestamp, f.feature_type, f.source_object_id, f.feature_id),
+    )
+    for f in sorted_features:
+        rec = {
+            "feature_type": f.feature_type,
+            "source_object_id": f.source_object_id,
+            "source_timeframe": f.source_timeframe.name,
+            "timestamp_utc": f.timestamp_utc,
+            "known_at_timestamp": f.known_at_timestamp,
+            "phase": f.phase.value,
+            "values": f.values,
+        }
+        hasher.update(json.dumps(rec, sort_keys=True, default=str).encode("utf-8"))
+
+    sorted_pools = sorted(
+        snapshot.liquidity_pools,
+        key=lambda p: (p.source_timeframe.name, p.known_at_timestamp, p.liquidity_type.value, p.pool_id),
+    )
+    for p in sorted_pools:
+        pool_dict = {
+            "liquidity_type": p.liquidity_type.value,
+            "side": p.side.value,
+            "price": p.price,
+            "source_timeframe": p.source_timeframe.name,
+            "origin_timestamp": p.origin_timestamp,
+            "known_at_timestamp": p.known_at_timestamp,
+            "member_count": p.member_count,
+            "state": p.state.value,
+        }
+        hasher.update(json.dumps(pool_dict, sort_keys=True, default=str).encode("utf-8"))
+
+    hasher.update(json.dumps(dict(sorted(snapshot.mtf_trace.items())), sort_keys=True).encode("utf-8"))
+
+    return "fsfp_" + hasher.hexdigest()[:32]
+
+
 def compute_passport_id(
     thesis_id: str,
     candidate_id: str,

@@ -64,6 +64,38 @@ FEATURE_MANIFEST: Dict[str, FeatureManifestItem] = {
     "ob.displacement_distance": FeatureManifestItem("ob.displacement_distance", "Displacement distance", "OB", "PRICE_DIFF", True, "EXACT"),
     "liquidity_nearest_buy_distance": FeatureManifestItem("liquidity_nearest_buy_distance", "Distance to nearest known buy-side liquidity pool as of decision time", "LIQUIDITY", "PRICE_DIFF", True, "MIN_DISTANCE"),
     "liquidity_nearest_sell_distance": FeatureManifestItem("liquidity_nearest_sell_distance", "Distance to nearest known sell-side liquidity pool as of decision time", "LIQUIDITY", "PRICE_DIFF", True, "MIN_DISTANCE"),
+
+    # V2.10C -- real engine wiring. These match the ACTUAL feature_type strings emitted by
+    # research/v2/features/fvg_quality.py:extract_fvg_features ("FVG_RAW_FEATURES") and
+    # research/v2/features/ob_quality.py:extract_ob_features ("OB_RAW_FEATURES") and
+    # research/v2/features/structure.py:extract_structure_features ("STRUCTURE_EVENT").
+    # Added additively: the pre-existing "fvg."/"ob." entries above stay registered unchanged
+    # for backward compatibility with fixtures that construct FeatureRecords by hand.
+    "fvg_raw_features.gap_size": FeatureManifestItem("fvg_raw_features.gap_size", "Fair value gap absolute size", "FVG", "PRICE_DIFF", True, "EXACT"),
+    "fvg_raw_features.gap_to_atr_ratio": FeatureManifestItem("fvg_raw_features.gap_to_atr_ratio", "Fair value gap size to ATR ratio", "FVG", "RATIO", True, "EXACT"),
+    "fvg_raw_features.middle_candle_range": FeatureManifestItem("fvg_raw_features.middle_candle_range", "Middle candle high - low", "FVG", "PRICE_DIFF", True, "EXACT"),
+    "fvg_raw_features.middle_candle_body": FeatureManifestItem("fvg_raw_features.middle_candle_body", "Middle candle |close - open|", "FVG", "PRICE_DIFF", True, "EXACT"),
+    "fvg_raw_features.middle_body_to_range_ratio": FeatureManifestItem("fvg_raw_features.middle_body_to_range_ratio", "Middle candle body-to-range ratio", "FVG", "RATIO", True, "EXACT"),
+    "fvg_raw_features.displacement_range": FeatureManifestItem("fvg_raw_features.displacement_range", "Displacement candle range", "FVG", "PRICE_DIFF", True, "EXACT"),
+    "fvg_raw_features.displacement_body": FeatureManifestItem("fvg_raw_features.displacement_body", "Displacement candle body", "FVG", "PRICE_DIFF", True, "EXACT"),
+    "fvg_raw_features.source_zone_width": FeatureManifestItem("fvg_raw_features.source_zone_width", "Source zone width", "FVG", "PRICE_DIFF", True, "EXACT"),
+    "ob_raw_features.zone_width": FeatureManifestItem("ob_raw_features.zone_width", "Order block zone width", "OB", "PRICE_DIFF", True, "EXACT"),
+    "ob_raw_features.zone_width_to_atr": FeatureManifestItem("ob_raw_features.zone_width_to_atr", "Order block zone width to ATR ratio", "OB", "RATIO", True, "EXACT"),
+    "ob_raw_features.source_candle_range": FeatureManifestItem("ob_raw_features.source_candle_range", "Source candle range", "OB", "PRICE_DIFF", True, "EXACT"),
+    "ob_raw_features.source_candle_body": FeatureManifestItem("ob_raw_features.source_candle_body", "Source candle body", "OB", "PRICE_DIFF", True, "EXACT"),
+    "ob_raw_features.source_body_to_range": FeatureManifestItem("ob_raw_features.source_body_to_range", "Source candle body-to-range ratio", "OB", "RATIO", True, "EXACT"),
+    "ob_raw_features.impulse_range": FeatureManifestItem("ob_raw_features.impulse_range", "Impulse candle range", "OB", "PRICE_DIFF", True, "EXACT"),
+    "ob_raw_features.impulse_body": FeatureManifestItem("ob_raw_features.impulse_body", "Impulse candle body", "OB", "PRICE_DIFF", True, "EXACT"),
+    "ob_raw_features.displacement_distance": FeatureManifestItem("ob_raw_features.displacement_distance", "Displacement distance", "OB", "PRICE_DIFF", True, "EXACT"),
+    "structure_event.event_type": FeatureManifestItem("structure_event.event_type", "Structure event type (SWING_HIGH_CONFIRMED/SWING_LOW_CONFIRMED/STRUCTURE_BREAK_UP/STRUCTURE_BREAK_DOWN)", "STRUCTURE", "CATEGORY", True, "EXACT"),
+    "structure_event.price": FeatureManifestItem("structure_event.price", "Price at which the structure event was confirmed", "STRUCTURE", "PRICE", True, "EXACT"),
+    "structure_event.broken_level": FeatureManifestItem("structure_event.broken_level", "Swing level broken by a STRUCTURE_BREAK event (None for swing-confirmation events)", "STRUCTURE", "PRICE", True, "EXACT"),
+    "liquidity_sweep_event.event_type": FeatureManifestItem("liquidity_sweep_event.event_type", "Liquidity event type (TOUCH/BREACH/SWEEP/RECLAIM)", "LIQUIDITY", "CATEGORY", True, "EXACT"),
+    "liquidity_sweep_event.pool_liquidity_type": FeatureManifestItem("liquidity_sweep_event.pool_liquidity_type", "Liquidity pool type swept (SWING_HIGH/SWING_LOW/EQUAL_HIGHS/EQUAL_LOWS)", "LIQUIDITY", "CATEGORY", True, "EXACT"),
+    "liquidity_sweep_event.pool_side": FeatureManifestItem("liquidity_sweep_event.pool_side", "Liquidity side swept (BUY_SIDE/SELL_SIDE)", "LIQUIDITY", "CATEGORY", True, "EXACT"),
+    "liquidity_sweep_event.pool_price": FeatureManifestItem("liquidity_sweep_event.pool_price", "Price level of the swept liquidity pool", "LIQUIDITY", "PRICE", True, "EXACT"),
+    "liquidity_sweep_event.price_at_event": FeatureManifestItem("liquidity_sweep_event.price_at_event", "Price at which the sweep event occurred", "LIQUIDITY", "PRICE", True, "EXACT"),
+    "liquidity_sweep_event.breach_distance": FeatureManifestItem("liquidity_sweep_event.breach_distance", "Absolute breach distance beyond the pool level", "LIQUIDITY", "PRICE_DIFF", True, "EXACT"),
 }
 
 # Canonical Label Manifest (y.* fields)

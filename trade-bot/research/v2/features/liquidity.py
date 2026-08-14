@@ -21,6 +21,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from research.v2.data.models import CandleV2, Timeframe
 from research.v2.core.thesis import ThesisEvidence, EvidenceType
+from research.v2.features.models import FeatureRecord, FeaturePhase, compute_feature_id
 
 
 class LiquiditySide(Enum):
@@ -500,6 +501,35 @@ def active_pools_as_of(pools: List[LiquidityPool], as_of_utc: str) -> List[Liqui
         if t_known <= t_as_of:
             res.append(p)
     return res
+
+
+def extract_liquidity_event_features(event: LiquidityEvent, pool: LiquidityPool) -> FeatureRecord:
+    """Thin adapter: wraps a LiquidityEvent (TOUCH/BREACH/SWEEP/RECLAIM) as a decision-time
+    FeatureRecord so it can flow through the existing generic FeatureRecord contract into
+    DecisionSnapshot.feature_records, without inventing new sweep-detection logic. The event
+    fires exactly at the evaluated candle's close, so known_at_timestamp == timestamp_utc."""
+    tf = Timeframe[event.metadata["source_timeframe"]] if "source_timeframe" in event.metadata else pool.source_timeframe
+
+    values: Dict[str, Any] = {
+        "event_type": event.event_type.value,
+        "pool_liquidity_type": pool.liquidity_type.value,
+        "pool_side": pool.side.value,
+        "pool_price": pool.price,
+        "price_at_event": event.price_at_event,
+        "breach_distance": event.breach_distance,
+    }
+
+    return FeatureRecord(
+        feature_id=compute_feature_id("LIQUIDITY_SWEEP_EVENT", event.event_id, tf, event.timestamp_utc),
+        feature_type="LIQUIDITY_SWEEP_EVENT",
+        source_object_id=event.pool_id,
+        source_timeframe=tf,
+        timestamp_utc=event.timestamp_utc,
+        known_at_timestamp=event.timestamp_utc,
+        phase=FeaturePhase.DECISION_TIME,
+        values=values,
+        provenance={"pool_id": event.pool_id, "event_type": event.event_type.value},
+    )
 
 
 def distance_to_nearest_pool(

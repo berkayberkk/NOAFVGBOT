@@ -31,6 +31,7 @@ V2.10A — Bounded lifecycle (engineering fix, not a strategy change):
 """
 
 import bisect
+from collections import deque
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -40,7 +41,17 @@ from research.v2.data.models import CandleV2, Timeframe
 from research.v2.data.clock import MultiTimeframeClock, MarketEvent
 from research.v2.core.thesis import ParentThesis, ChildEntryCandidate, ThesisDirection, ThesisLifecycleState
 from research.v2.features.models import FeatureRecord
-from research.v2.features.liquidity import LiquidityPool
+from research.v2.features.liquidity import (
+    LiquidityPool,
+    detect_swings,
+    detect_equal_highs_lows,
+    analyze_sweeps_and_touches,
+    extract_liquidity_event_features,
+    LiquidityEventType,
+)
+from research.v2.features.fvg_quality import detect_fvgs, extract_fvg_features
+from research.v2.features.ob_quality import detect_order_blocks, extract_ob_features
+from research.v2.features.structure import detect_structure_events, extract_structure_features
 from research.v2.telemetry.excursion import PathObservation
 from research.v2.telemetry.passport import (
     TradePassport,
@@ -86,6 +97,29 @@ from research.v2.engine.models import (
 # V2MultiTimeframeBacktester(thesis_max_active_m30_bars=...) for engineering experiments;
 # do not tune this to affect research results.
 REFERENCE_ENGINEERING_LIFETIME_M30_BARS = 24
+
+# V2.10C -- MTF timeframes wired for FVG/OB/liquidity/structure feature telemetry, matching
+# section 14's explicit MTF list. M1 is intentionally excluded: no feature family in this
+# phase's inventory (section 5) was requested at M1 granularity, and running 3/5/15/30-minute
+# swing/FVG/OB detection additionally over the full M1 stream would add cost with no requested
+# consumer.
+MTF_FEATURE_TIMEFRAMES = (Timeframe.M30, Timeframe.M15, Timeframe.M5, Timeframe.M3)
+
+# ENGINEERING_SAFETY_BOUND — analogous in kind to REFERENCE_ENGINEERING_LIFETIME_M30_BARS
+# above: a per-feature-type rolling-window cap on how much accumulated feature/liquidity
+# history a DecisionSnapshot carries. Without a bound, market_state["feature_records"] grows
+# for the entire run and every new DecisionSnapshot copies + the dataset builder later
+# re-scans the ENTIRE accumulated history-so-far -- profiling a 3,000-M1-row smoke run showed
+# this alone accounts for ~77% of runtime and tens of millions of redundant iterations
+# (classic O(candidates x accumulated_feature_count) blowup). Dropping OLD, already-causally-
+# valid entries from the window is a pure memory/compute bound: it never adds anything, never
+# removes a feature/pool that was known at the time it was in the window, and never affects
+# WHICH already-released objects are eligible -- only how much past history is still being
+# carried forward. Never compared against outcome/PnL/profitability to pick this size, exactly
+# like the thesis-lifetime bound above (see also section 18 of the V2.10C mission: "Do not
+# duplicate enormous feature payloads unnecessarily").
+FEATURE_WINDOW_MAXLEN_PER_TYPE = 20
+LIQUIDITY_POOL_WINDOW_MAXLEN = 50
 
 
 def compute_backtest_fingerprint(
@@ -240,6 +274,27 @@ class V2MultiTimeframeBacktester:
         }
         self.total_events = 0
 
+        # V2.10C causal feature-release index: known_at_timestamp -> [(kind, obj), ...].
+        # Populated once per run() call by _precompute_feature_release_index(); consumed
+        # (popped) incrementally in _process_event() as the event stream reaches each
+        # timestamp, so market_state never contains a feature/pool before it was knowable.
+        self._feature_release_index: Dict[str, List[Tuple[str, Any]]] = {}
+        self.feature_release_stats: Dict[str, int] = {"feature_records": 0, "liquidity_pools": 0}
+
+        # Bounded rolling windows backing market_state["feature_records"]/["liquidity_pools"]
+        # (see FEATURE_WINDOW_MAXLEN_PER_TYPE docs above). Keyed per feature_type so a
+        # high-frequency family (e.g. M3 structure events) cannot starve a low-frequency one
+        # (e.g. M30 FVGs) out of the window.
+        self._feature_windows: Dict[str, deque] = {}
+        self._liquidity_pool_window: deque = deque(maxlen=LIQUIDITY_POOL_WINDOW_MAXLEN)
+
+        # V2.10C coverage telemetry (ENGINEERING_SMOKE_ONLY -- observation counts, never
+        # profitability). Keyed by feature_type (for feature_records) / liquidity_type (for
+        # liquidity_pools); tracks total-ever-released count, first/last known_at_timestamp,
+        # and the set of source timeframes observed -- independent of the bounded windows
+        # above, which only retain recent state for DecisionSnapshot construction.
+        self.feature_type_telemetry: Dict[str, Dict[str, Any]] = {}
+
         # V2.10A lifecycle bookkeeping
         self.m30_bar_index = 0
         self.thesis_created_m30_index: Dict[str, int] = {}
@@ -257,6 +312,99 @@ class V2MultiTimeframeBacktester:
         self.scenario_states: Dict[str, ScenarioTrackingState] = {}
         self.open_scenario_ids: Set[str] = set()
         self.pending_pairs: List[Tuple[CounterfactualScenario, CounterfactualScenario, ThesisDirection]] = []
+
+    def _precompute_feature_release_index(self, datasets: Dict[Timeframe, List[CandleV2]]) -> Dict[str, List[Tuple[str, Any]]]:
+        """
+        V2.10C -- Causal feature wiring (FVG / Order Block / liquidity / structure).
+
+        For each MTF timeframe, runs the EXISTING feature engines once over that timeframe's
+        full candle list (a precomputation), then indexes every resulting object under the
+        exact known_at_timestamp at which it becomes causally knowable -- never under when it
+        was computed. Each of these known_at_timestamp values is itself always the
+        timestamp_close_utc of some candle in that same timeframe's series (that is how
+        detect_fvgs/detect_order_blocks/detect_swings/detect_structure_events define
+        known_at), and MultiTimeframeClock guarantees an event fires at that exact timestamp
+        before any later event is processed. _process_event() only ever releases an object
+        into market_state when the event stream actually reaches its known_at_timestamp, so a
+        full-history precomputation cannot leak anything early -- this is option (B) from the
+        V2.10C causality requirements: "precomputation whose availability timestamps
+        mathematically prevent access before the source bar closes."
+
+        No FVG/OB/liquidity/structure rule is redesigned here -- this only calls the existing
+        engines and adapts their outputs into the existing FeatureRecord / LiquidityPool
+        contracts already accepted by DecisionSnapshot.
+        """
+        index: Dict[str, List[Tuple[str, Any]]] = {}
+
+        def release(known_at: str, kind: str, obj: Any) -> None:
+            index.setdefault(known_at, []).append((kind, obj))
+
+        for tf in MTF_FEATURE_TIMEFRAMES:
+            candles = datasets.get(tf, [])
+            if len(candles) < 3:
+                continue
+            by_close_ts = {c.timestamp_close_utc: c for c in candles}
+
+            # FVG (3-candle pattern; known_at = c3 close)
+            for fvg in detect_fvgs(candles):
+                c1 = by_close_ts.get(fvg.c1_ts)
+                c2 = by_close_ts.get(fvg.c2_ts)
+                c3 = by_close_ts.get(fvg.c3_ts)
+                if not (c1 and c2 and c3):
+                    continue
+                rec = extract_fvg_features(fvg, c1, c2, c3, atr=None)
+                release(fvg.known_at_timestamp, "feature_record", rec)
+
+            # Order Block (2-candle pattern; known_at = impulse candle close)
+            for ob in detect_order_blocks(candles):
+                c_src = by_close_ts.get(ob.source_c_ts)
+                c_imp = by_close_ts.get(ob.impulse_c_ts)
+                if not (c_src and c_imp):
+                    continue
+                rec = extract_ob_features(ob, c_src, c_imp, atr=None)
+                release(ob.known_at_timestamp, "feature_record", rec)
+
+            # Liquidity: swing highs/lows (known_at delayed by right_bars confirmation) +
+            # equal-highs/equal-lows clusters derived from them.
+            swing_pools = detect_swings(candles)
+            for p in swing_pools:
+                release(p.known_at_timestamp, "liquidity_pool", p)
+            eq_pools = detect_equal_highs_lows(swing_pools)
+            for p in eq_pools:
+                release(p.known_at_timestamp, "liquidity_pool", p)
+
+            # Liquidity sweep events against swing + equal-high/low pools (known_at = the
+            # evaluated candle's own close -- see analyze_sweeps_and_touches).
+            all_pools = swing_pools + eq_pools
+            pool_by_id = {p.pool_id: p for p in all_pools}
+            for ev in analyze_sweeps_and_touches(all_pools, candles):
+                if ev.event_type != LiquidityEventType.SWEEP:
+                    continue  # scope: SWEEP only (explicit section 12 ask); TOUCH/BREACH skipped
+                pool = pool_by_id.get(ev.pool_id)
+                if pool is None:
+                    continue
+                rec = extract_liquidity_event_features(ev, pool)
+                release(ev.timestamp_utc, "feature_record", rec)
+
+            # Structure: confirmed swing events + structure breaks (causality-fixed detector).
+            for se in detect_structure_events(candles):
+                rec = extract_structure_features(se)
+                release(se.known_at_timestamp, "feature_record", rec)
+
+        return index
+
+    def _record_feature_telemetry(self, type_key: str, source_timeframe_name: str, known_at_timestamp: str) -> None:
+        """ENGINEERING_SMOKE_ONLY coverage bookkeeping -- counts and timestamps only, never
+        profitability/outcome. See feature_type_telemetry docs in __init__."""
+        t = self.feature_type_telemetry.setdefault(type_key, {
+            "count": 0, "timeframes": set(), "first_known_at": known_at_timestamp, "last_known_at": known_at_timestamp,
+        })
+        t["count"] += 1
+        t["timeframes"].add(source_timeframe_name)
+        if known_at_timestamp < t["first_known_at"]:
+            t["first_known_at"] = known_at_timestamp
+        if known_at_timestamp > t["last_known_at"]:
+            t["last_known_at"] = known_at_timestamp
 
     def _terminalize_thesis(self, th: ParentThesis) -> None:
         """Moves a now-terminal thesis out of active_theses so it can no longer receive candidates."""
@@ -301,6 +449,9 @@ class V2MultiTimeframeBacktester:
         # 2. Build canonical chronological event stream
         clock = MultiTimeframeClock(datasets)
         event_stream = clock.build_event_stream()
+
+        # 2b. Precompute the causal FVG/OB/liquidity/structure feature-release index (V2.10C).
+        self._feature_release_index = self._precompute_feature_release_index(datasets)
 
         for ev in event_stream:
             self.total_events += 1
@@ -369,6 +520,29 @@ class V2MultiTimeframeBacktester:
     def _process_event(self, ev: MarketEvent) -> None:
         c = ev.candle
         tf = ev.timeframe
+
+        # 0. Release any FVG/OB/liquidity/structure features that become knowable exactly at
+        # this event's timestamp (V2.10C). Popped (not merely read) so each object is
+        # released into market_state exactly once, the first time the event stream reaches
+        # its known_at_timestamp -- regardless of which timeframe's event triggers that
+        # timestamp when multiple timeframes close simultaneously.
+        released = self._feature_release_index.pop(ev.timestamp_utc, None)
+        if released:
+            for kind, obj in released:
+                if kind == "feature_record":
+                    self._feature_windows.setdefault(obj.feature_type, deque(maxlen=FEATURE_WINDOW_MAXLEN_PER_TYPE)).append(obj)
+                    self.feature_release_stats["feature_records"] += 1
+                    self._record_feature_telemetry(obj.feature_type, obj.source_timeframe.name, obj.known_at_timestamp)
+                elif kind == "liquidity_pool":
+                    self._liquidity_pool_window.append(obj)
+                    self.feature_release_stats["liquidity_pools"] += 1
+                    self._record_feature_telemetry(obj.liquidity_type.value, obj.source_timeframe.name, obj.known_at_timestamp)
+            # Rebuild the flat, policy/snapshot-visible views only when something actually
+            # changed (not on every event) -- cheap because each is bounded, never O(total
+            # history): at most len(feature_types) * FEATURE_WINDOW_MAXLEN_PER_TYPE and
+            # LIQUIDITY_POOL_WINDOW_MAXLEN respectively.
+            self.market_state["feature_records"] = [f for w in self._feature_windows.values() for f in w]
+            self.market_state["liquidity_pools"] = list(self._liquidity_pool_window)
 
         # 1. If M1 candle: update path observations for active passports
         if tf == Timeframe.M1:

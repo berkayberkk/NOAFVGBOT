@@ -35,6 +35,7 @@ from backtest.forward import (
     AccountModeStatus,
 )
 from backtest.forward_store import ForwardStore
+from backtest.telegram_notifier import TelegramNotifier
 
 
 @dataclass
@@ -69,6 +70,7 @@ class MT5ShadowAdapter:
         reconnect_attempts: int = 3,
         reconnect_delay_sec: float = 2.0,
         mt5_module: Any = None,
+        notifier: Optional[TelegramNotifier] = None,
     ):
         self.engine = engine
         if self.engine.mode != ForwardMode.SHADOW:
@@ -79,6 +81,7 @@ class MT5ShadowAdapter:
         self.max_stale_seconds = max_stale_seconds
         self.reconnect_attempts = reconnect_attempts
         self.reconnect_delay_sec = reconnect_delay_sec
+        self.notifier = notifier or TelegramNotifier()
 
         # Müşteri veya Test için MT5 Modül Enjeksiyonu
         self._mt5 = mt5_module if mt5_module is not None else mt5
@@ -282,6 +285,7 @@ class MT5ShadowAdapter:
                 }
                 res = self.engine.process_signal(sig_payload)
                 processed_results.append(res)
+                self.notifier.notify_signal(sig_payload, res)
 
         return processed_results
 

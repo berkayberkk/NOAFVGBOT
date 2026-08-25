@@ -80,8 +80,9 @@ def build_research_row(passport: TradePassport) -> ResearchRow:
 
     # Extract decision features from FeatureRecords
     for rec in snap.feature_records:
+        feature_type_lower = rec.feature_type.lower()
         for val_key, val in rec.values.items():
-            feat_col_name = f"{rec.feature_type.lower()}.{val_key}"
+            feat_col_name = f"{feature_type_lower}.{val_key}"
             x_features[feat_col_name] = val
             feature_known_at[feat_col_name] = rec.known_at_timestamp
             feature_lineage[feat_col_name] = {

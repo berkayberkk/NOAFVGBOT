@@ -138,10 +138,12 @@ class ResearchRow:
 
     def __post_init__(self) -> None:
         try:
-            json.dumps(self.id_fields)
-            json.dumps(self.x_features)
-            json.dumps(self.y_labels)
-            json.dumps(self.meta_fields)
+            json.dumps({
+                "id_fields": self.id_fields,
+                "x_features": self.x_features,
+                "y_labels": self.y_labels,
+                "meta_fields": self.meta_fields,
+            })
         except Exception as e:
             raise ValueError(f"ResearchRow fields must be JSON-serializable: {e}")
 

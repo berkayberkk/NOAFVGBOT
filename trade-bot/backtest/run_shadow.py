@@ -35,6 +35,7 @@ from backtest.forward import (
 )
 from backtest.forward_store import ForwardStore
 from backtest.mt5_shadow import MT5ShadowAdapter
+from backtest.telegram_notifier import TelegramNotifier
 
 
 class SingleInstanceLock:
@@ -149,6 +150,7 @@ class ShadowRunner:
         db_path: str = "forward.db",
         lock_file_path: str = "forward_runner.lock",
         mt5_module: Any = None,
+        notifier: Optional[TelegramNotifier] = None,
     ):
         if mode != ForwardMode.SHADOW:
             raise ValueError(f"ShadowRunner ONLY supports SHADOW mode! Requested: {mode}")
@@ -175,11 +177,14 @@ class ShadowRunner:
             store=self.store,
         )
 
+        self.notifier = notifier or TelegramNotifier()
+
         self.adapter = MT5ShadowAdapter(
             engine=self.engine,
             research_symbol=self.symbol,
             broker_symbol=self.broker_symbol,
             mt5_module=mt5_module,
+            notifier=self.notifier,
         )
 
         self.start_time = time.time()
@@ -190,6 +195,7 @@ class ShadowRunner:
         self.stale_ticks_count = 0
         self.duplicate_bars_count = 0
         self.recovered_bars_count = 0
+        self._last_health_state: Optional[HealthState] = None
 
         self.assert_read_only_safety()
 
@@ -204,6 +210,8 @@ class ShadowRunner:
         init_ok = self.adapter.initialize()
         if not init_ok:
             self.reconnect_count += 1
+        else:
+            self.notifier.notify_runner_started(self.engine.run_id, self.symbol, self.timeframe)
         return init_ok
 
     def catch_up_missing_bars(self, historical_warmup: Optional[List[Dict[str, Any]]] = None) -> int:
@@ -258,6 +266,11 @@ class ShadowRunner:
     def run_heartbeat(self) -> None:
         """Hafif sıklet periyodik kalp atışı (heartbeat) kaydeder."""
         health = self.get_health_state()
+        if health != HealthState.HEALTHY and health != self._last_health_state:
+            self.notifier.notify_health_degraded(
+                health.value, f"run_id={self.engine.run_id}, symbol={self.symbol}"
+            )
+        self._last_health_state = health
         self.store.add_event({
             "run_id": self.engine.run_id,
             "timestamp_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
@@ -334,6 +347,7 @@ class ShadowRunner:
         """Güvenli kapatma işlemini yürütür."""
         self.running = False
         self.run_heartbeat()
+        self.notifier.notify_runner_stopped(self.engine.run_id)
         self.lock.release()
         if hasattr(self.adapter, "shutdown") and callable(self.adapter.shutdown):
             self.adapter.shutdown()

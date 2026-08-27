@@ -1,0 +1,5619 @@
+{
+  "chunk_count": 51,
+  "size_actual_total": 1003676,
+  "first_timestamp": "2021-01-04 01:00:00",
+  "last_timestamp": "2023-10-31 22:58:00",
+  "runtime_seconds_total": 5692.1688113212585,
+  "total_events": 1636672,
+  "peak_active_theses_max_across_chunks": 14,
+  "peak_active_passports_max_across_chunks": 7423,
+  "created_theses_total": 17095,
+  "invalidated_theses_total": 16975,
+  "expired_theses_total": 29,
+  "passport_count_total": 989729,
+  "feature_coverage_merged": {
+    "EQUAL_HIGHS": {
+      "observations": 11911,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 09:00:00",
+      "last_availability_timestamp": "2023-10-31 22:50:00"
+    },
+    "EQUAL_LOWS": {
+      "observations": 12043,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 14:12:00",
+      "last_availability_timestamp": "2023-10-31 22:54:00"
+    },
+    "FVG_RAW_FEATURES": {
+      "observations": 138660,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:33:00",
+      "last_availability_timestamp": "2023-10-31 22:45:00"
+    },
+    "LIQUIDITY_SWEEP_EVENT": {
+      "observations": 4277663,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 03:03:00",
+      "last_availability_timestamp": "2023-10-31 22:55:00"
+    },
+    "OB_RAW_FEATURES": {
+      "observations": 96061,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:15:00",
+      "last_availability_timestamp": "2023-10-31 22:57:00"
+    },
+    "STRUCTURE_EVENT": {
+      "observations": 229726,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:21:00",
+      "last_availability_timestamp": "2023-10-31 22:54:00"
+    },
+    "SWING_HIGH": {
+      "observations": 84699,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:42:00",
+      "last_availability_timestamp": "2023-10-31 22:50:00"
+    },
+    "SWING_LOW": {
+      "observations": 85010,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:21:00",
+      "last_availability_timestamp": "2023-10-31 22:54:00"
+    }
+  },
+  "per_chunk_reports": [
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-01-04 01:00:00",
+      "last_timestamp": "2021-01-22 16:40:00",
+      "runtime_seconds": 99.19290685653687,
+      "total_events": 32616,
+      "peak_active_theses": 7,
+      "peak_active_passports": 2300,
+      "created_theses": 413,
+      "invalidated_theses": 412,
+      "expired_theses": 0,
+      "passport_count": 20369,
+      "feature_release_stats": {
+        "feature_records": 82534,
+        "liquidity_pools": 4138
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 311,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-04 09:00:00",
+          "last_availability_timestamp": "2021-01-22 16:40:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 308,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-04 14:12:00",
+          "last_availability_timestamp": "2021-01-22 16:25:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2741,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-04 01:33:00",
+          "last_availability_timestamp": "2021-01-22 16:40:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 73130,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-04 03:03:00",
+          "last_availability_timestamp": "2021-01-22 16:40:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1982,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-04 01:15:00",
+          "last_availability_timestamp": "2021-01-22 16:35:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4681,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-04 01:21:00",
+          "last_availability_timestamp": "2021-01-22 16:40:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1722,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-04 01:42:00",
+          "last_availability_timestamp": "2021-01-22 16:40:00"
+        },
+        "SWING_LOW": {
+          "observations": 1797,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-04 01:21:00",
+          "last_availability_timestamp": "2021-01-22 16:25:00"
+        }
+      },
+      "backtest_fingerprint": "70a64a822516e433696a766ba81bf2733506d001b685997a1842958edfdced19"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-01-22 16:41:00",
+      "last_timestamp": "2021-02-12 05:19:00",
+      "runtime_seconds": 80.9366660118103,
+      "total_events": 32611,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3133,
+      "created_theses": 374,
+      "invalidated_theses": 371,
+      "expired_theses": 0,
+      "passport_count": 19632,
+      "feature_release_stats": {
+        "feature_records": 121491,
+        "liquidity_pools": 3877
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 230,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-22 23:00:00",
+          "last_availability_timestamp": "2021-02-12 04:30:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 236,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-26 03:30:00",
+          "last_availability_timestamp": "2021-02-12 05:09:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2676,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-22 16:51:00",
+          "last_availability_timestamp": "2021-02-12 05:20:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 112311,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-22 17:30:00",
+          "last_availability_timestamp": "2021-02-12 05:20:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1906,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-22 17:00:00",
+          "last_availability_timestamp": "2021-02-12 05:09:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4598,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-22 17:03:00",
+          "last_availability_timestamp": "2021-02-12 05:12:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1677,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-22 17:24:00",
+          "last_availability_timestamp": "2021-02-12 04:54:00"
+        },
+        "SWING_LOW": {
+          "observations": 1734,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-01-22 17:03:00",
+          "last_availability_timestamp": "2021-02-12 05:09:00"
+        }
+      },
+      "backtest_fingerprint": "a8afaeba12c1461bd3c67c5e193ccf0522fa93f6525964457751d1ac375a079b"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-02-12 05:20:00",
+      "last_timestamp": "2021-03-04 20:59:00",
+      "runtime_seconds": 66.27792143821716,
+      "total_events": 32621,
+      "peak_active_theses": 6,
+      "peak_active_passports": 2283,
+      "created_theses": 437,
+      "invalidated_theses": 436,
+      "expired_theses": 0,
+      "passport_count": 18536,
+      "feature_release_stats": {
+        "feature_records": 67027,
+        "liquidity_pools": 3947
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 318,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-02-15 06:05:00",
+          "last_availability_timestamp": "2021-03-04 20:40:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 324,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-02-12 16:50:00",
+          "last_availability_timestamp": "2021-03-04 20:45:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2851,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-02-12 05:51:00",
+          "last_availability_timestamp": "2021-03-04 21:00:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 57659,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-02-12 06:35:00",
+          "last_availability_timestamp": "2021-03-04 20:45:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 2008,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-02-12 05:30:00",
+          "last_availability_timestamp": "2021-03-04 21:00:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4509,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-02-12 05:39:00",
+          "last_availability_timestamp": "2021-03-04 20:51:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1663,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-02-12 06:03:00",
+          "last_availability_timestamp": "2021-03-04 20:48:00"
+        },
+        "SWING_LOW": {
+          "observations": 1642,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-02-12 05:39:00",
+          "last_availability_timestamp": "2021-03-04 20:45:00"
+        }
+      },
+      "backtest_fingerprint": "50af954ab8579d296b08c77a86d4f6cfa10cca44f1963251b12b503cdd31772a"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-03-04 21:00:00",
+      "last_timestamp": "2021-03-25 08:37:00",
+      "runtime_seconds": 97.70794916152954,
+      "total_events": 32616,
+      "peak_active_theses": 11,
+      "peak_active_passports": 3289,
+      "created_theses": 383,
+      "invalidated_theses": 382,
+      "expired_theses": 0,
+      "passport_count": 20109,
+      "feature_release_stats": {
+        "feature_records": 123802,
+        "liquidity_pools": 3882
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 224,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-05 05:45:00",
+          "last_availability_timestamp": "2021-03-25 08:30:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 236,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-05 09:45:00",
+          "last_availability_timestamp": "2021-03-25 08:35:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2678,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-04 21:09:00",
+          "last_availability_timestamp": "2021-03-25 08:30:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 114654,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-04 21:27:00",
+          "last_availability_timestamp": "2021-03-25 08:36:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1879,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-04 21:12:00",
+          "last_availability_timestamp": "2021-03-25 08:35:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4591,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-04 21:21:00",
+          "last_availability_timestamp": "2021-03-25 08:35:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1724,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-04 21:21:00",
+          "last_availability_timestamp": "2021-03-25 08:30:00"
+        },
+        "SWING_LOW": {
+          "observations": 1698,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-04 21:27:00",
+          "last_availability_timestamp": "2021-03-25 08:35:00"
+        }
+      },
+      "backtest_fingerprint": "8d0ecd6021d96e5ae4a22ea64de5740810f22ca7ff667c11cab9ef662b8dbe02"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-03-25 08:38:00",
+      "last_timestamp": "2021-04-15 21:13:00",
+      "runtime_seconds": 102.37767958641052,
+      "total_events": 32616,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3676,
+      "created_theses": 307,
+      "invalidated_theses": 306,
+      "expired_theses": 0,
+      "passport_count": 20304,
+      "feature_release_stats": {
+        "feature_records": 99192,
+        "liquidity_pools": 3851
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 226,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-29 03:15:00",
+          "last_availability_timestamp": "2021-04-15 21:00:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 218,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-30 08:55:00",
+          "last_availability_timestamp": "2021-04-15 21:03:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2740,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-25 08:57:00",
+          "last_availability_timestamp": "2021-04-15 21:10:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 89830,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-25 09:57:00",
+          "last_availability_timestamp": "2021-04-15 21:12:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 2012,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-25 08:54:00",
+          "last_availability_timestamp": "2021-04-15 21:12:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4610,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-25 08:57:00",
+          "last_availability_timestamp": "2021-04-15 21:06:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1715,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-25 08:57:00",
+          "last_availability_timestamp": "2021-04-15 21:00:00"
+        },
+        "SWING_LOW": {
+          "observations": 1692,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-03-25 09:21:00",
+          "last_availability_timestamp": "2021-04-15 21:03:00"
+        }
+      },
+      "backtest_fingerprint": "1d0fe1ea19e360e535c1557414e840b5eeaced453cbbb0bd4c350d03b054d3db"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-04-15 21:14:00",
+      "last_timestamp": "2021-05-06 09:51:00",
+      "runtime_seconds": 90.97401738166809,
+      "total_events": 32615,
+      "peak_active_theses": 6,
+      "peak_active_passports": 2817,
+      "created_theses": 325,
+      "invalidated_theses": 321,
+      "expired_theses": 2,
+      "passport_count": 19508,
+      "feature_release_stats": {
+        "feature_records": 145496,
+        "liquidity_pools": 3684
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 156,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-04-16 06:48:00",
+          "last_availability_timestamp": "2021-05-06 09:51:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 151,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-04-16 05:54:00",
+          "last_availability_timestamp": "2021-05-06 09:35:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2891,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-04-15 21:24:00",
+          "last_availability_timestamp": "2021-05-06 09:45:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 135987,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-04-15 21:54:00",
+          "last_availability_timestamp": "2021-05-06 09:51:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 2025,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-04-15 21:55:00",
+          "last_availability_timestamp": "2021-05-06 09:30:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4593,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-04-15 21:39:00",
+          "last_availability_timestamp": "2021-05-06 09:51:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1676,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-04-15 21:39:00",
+          "last_availability_timestamp": "2021-05-06 09:51:00"
+        },
+        "SWING_LOW": {
+          "observations": 1701,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-04-15 21:39:00",
+          "last_availability_timestamp": "2021-05-06 09:35:00"
+        }
+      },
+      "backtest_fingerprint": "e94d9939ed7a3e9c48b25ec19709c45055ff9936ef5b114056f7e5e12334ed1b"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-05-06 09:52:00",
+      "last_timestamp": "2021-05-26 21:28:00",
+      "runtime_seconds": 87.04126572608948,
+      "total_events": 32616,
+      "peak_active_theses": 7,
+      "peak_active_passports": 3582,
+      "created_theses": 344,
+      "invalidated_theses": 341,
+      "expired_theses": 0,
+      "passport_count": 19874,
+      "feature_release_stats": {
+        "feature_records": 79575,
+        "liquidity_pools": 3972
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 280,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-06 14:09:00",
+          "last_availability_timestamp": "2021-05-26 21:20:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 277,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-06 13:20:00",
+          "last_availability_timestamp": "2021-05-26 21:05:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2656,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-06 10:09:00",
+          "last_availability_timestamp": "2021-05-26 21:27:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 70463,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-06 10:39:00",
+          "last_availability_timestamp": "2021-05-26 21:27:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1870,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-06 10:00:00",
+          "last_availability_timestamp": "2021-05-26 21:25:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4586,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-06 10:18:00",
+          "last_availability_timestamp": "2021-05-26 21:27:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1716,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-06 10:18:00",
+          "last_availability_timestamp": "2021-05-26 21:20:00"
+        },
+        "SWING_LOW": {
+          "observations": 1699,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-06 10:27:00",
+          "last_availability_timestamp": "2021-05-26 21:27:00"
+        }
+      },
+      "backtest_fingerprint": "ce649ab7387393ee892dab8c856f15fee1bb60f78db6c6b008321a36113afdea"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-05-26 21:29:00",
+      "last_timestamp": "2021-06-16 14:09:00",
+      "runtime_seconds": 106.67532110214233,
+      "total_events": 32617,
+      "peak_active_theses": 9,
+      "peak_active_passports": 3151,
+      "created_theses": 310,
+      "invalidated_theses": 308,
+      "expired_theses": 0,
+      "passport_count": 21831,
+      "feature_release_stats": {
+        "feature_records": 104104,
+        "liquidity_pools": 3883
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 209,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-31 14:45:00",
+          "last_availability_timestamp": "2021-06-16 14:00:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 221,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-31 15:30:00",
+          "last_availability_timestamp": "2021-06-16 14:00:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2480,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-26 21:45:00",
+          "last_availability_timestamp": "2021-06-16 14:00:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 95053,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-26 22:18:00",
+          "last_availability_timestamp": "2021-06-16 14:10:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1921,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-26 21:36:00",
+          "last_availability_timestamp": "2021-06-16 14:00:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4650,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-26 21:48:00",
+          "last_availability_timestamp": "2021-06-16 14:03:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1708,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-26 22:15:00",
+          "last_availability_timestamp": "2021-06-16 14:00:00"
+        },
+        "SWING_LOW": {
+          "observations": 1745,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-05-26 21:48:00",
+          "last_availability_timestamp": "2021-06-16 14:00:00"
+        }
+      },
+      "backtest_fingerprint": "f54b116d72766f39d9a55fe2eb76bfc3422721bf565d06436576468569f0c759"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-06-16 14:10:00",
+      "last_timestamp": "2021-07-07 06:50:00",
+      "runtime_seconds": 116.76077103614807,
+      "total_events": 32616,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3960,
+      "created_theses": 335,
+      "invalidated_theses": 332,
+      "expired_theses": 1,
+      "passport_count": 20043,
+      "feature_release_stats": {
+        "feature_records": 132615,
+        "liquidity_pools": 3834
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 220,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-06-16 16:45:00",
+          "last_availability_timestamp": "2021-07-07 06:50:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 205,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-06-16 16:57:00",
+          "last_availability_timestamp": "2021-07-07 06:05:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2666,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-06-16 14:33:00",
+          "last_availability_timestamp": "2021-07-07 06:40:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 123473,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-06-16 14:57:00",
+          "last_availability_timestamp": "2021-07-07 06:40:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1897,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-06-16 14:18:00",
+          "last_availability_timestamp": "2021-07-07 06:30:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4579,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-06-16 14:42:00",
+          "last_availability_timestamp": "2021-07-07 06:50:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1694,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-06-16 14:54:00",
+          "last_availability_timestamp": "2021-07-07 06:50:00"
+        },
+        "SWING_LOW": {
+          "observations": 1715,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-06-16 14:42:00",
+          "last_availability_timestamp": "2021-07-07 06:45:00"
+        }
+      },
+      "backtest_fingerprint": "4fff15df7be596051d61bc79d7fd02c911ddfb06682d67cc3dd3bcdb83793d48"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-07-07 06:51:00",
+      "last_timestamp": "2021-07-27 18:27:00",
+      "runtime_seconds": 110.4708309173584,
+      "total_events": 32617,
+      "peak_active_theses": 5,
+      "peak_active_passports": 4135,
+      "created_theses": 320,
+      "invalidated_theses": 319,
+      "expired_theses": 0,
+      "passport_count": 18210,
+      "feature_release_stats": {
+        "feature_records": 153684,
+        "liquidity_pools": 3726
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 162,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-15 13:00:00",
+          "last_availability_timestamp": "2021-07-27 18:06:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 154,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-12 11:00:00",
+          "last_availability_timestamp": "2021-07-27 18:27:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2569,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-07 07:06:00",
+          "last_availability_timestamp": "2021-07-27 18:27:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 144692,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-07 07:36:00",
+          "last_availability_timestamp": "2021-07-27 18:27:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1845,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-07 07:09:00",
+          "last_availability_timestamp": "2021-07-27 18:21:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4578,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-07 07:15:00",
+          "last_availability_timestamp": "2021-07-27 18:27:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1674,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-07 07:15:00",
+          "last_availability_timestamp": "2021-07-27 18:06:00"
+        },
+        "SWING_LOW": {
+          "observations": 1736,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-07 07:15:00",
+          "last_availability_timestamp": "2021-07-27 18:27:00"
+        }
+      },
+      "backtest_fingerprint": "624d3e39167bbd81169621676fb83e2f8f89da04159164ffa9bae80146b01e83"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-07-27 18:28:00",
+      "last_timestamp": "2021-08-17 07:09:00",
+      "runtime_seconds": 93.92122626304626,
+      "total_events": 32609,
+      "peak_active_theses": 10,
+      "peak_active_passports": 3245,
+      "created_theses": 304,
+      "invalidated_theses": 302,
+      "expired_theses": 1,
+      "passport_count": 17884,
+      "feature_release_stats": {
+        "feature_records": 66732,
+        "liquidity_pools": 3911
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 279,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-28 09:35:00",
+          "last_availability_timestamp": "2021-08-17 07:00:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 260,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-28 14:00:00",
+          "last_availability_timestamp": "2021-08-17 07:09:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2543,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-27 18:51:00",
+          "last_availability_timestamp": "2021-08-17 07:06:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 57788,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-27 19:27:00",
+          "last_availability_timestamp": "2021-08-17 07:10:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1853,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-27 18:48:00",
+          "last_availability_timestamp": "2021-08-17 07:03:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4548,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-27 18:54:00",
+          "last_availability_timestamp": "2021-08-17 07:09:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1672,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-27 18:54:00",
+          "last_availability_timestamp": "2021-08-17 07:00:00"
+        },
+        "SWING_LOW": {
+          "observations": 1700,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-07-27 19:12:00",
+          "last_availability_timestamp": "2021-08-17 07:09:00"
+        }
+      },
+      "backtest_fingerprint": "bf7c3e1da7ac30a48ba4b1fb617e92844dff5261ee6f5a4a18f0e46b1658ffad"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-08-17 07:10:00",
+      "last_timestamp": "2021-09-06 18:47:00",
+      "runtime_seconds": 126.66752099990845,
+      "total_events": 32615,
+      "peak_active_theses": 6,
+      "peak_active_passports": 5286,
+      "created_theses": 255,
+      "invalidated_theses": 253,
+      "expired_theses": 1,
+      "passport_count": 18819,
+      "feature_release_stats": {
+        "feature_records": 97860,
+        "liquidity_pools": 3750
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 192,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-08-17 17:00:00",
+          "last_availability_timestamp": "2021-09-06 18:48:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 209,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-08-17 20:00:00",
+          "last_availability_timestamp": "2021-09-06 18:30:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2538,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-08-17 07:21:00",
+          "last_availability_timestamp": "2021-09-06 18:45:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 88903,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-08-17 07:36:00",
+          "last_availability_timestamp": "2021-09-06 18:48:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1913,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-08-17 07:18:00",
+          "last_availability_timestamp": "2021-09-06 18:36:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4506,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-08-17 07:27:00",
+          "last_availability_timestamp": "2021-09-06 18:48:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1673,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-08-17 07:33:00",
+          "last_availability_timestamp": "2021-09-06 18:48:00"
+        },
+        "SWING_LOW": {
+          "observations": 1676,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-08-17 07:27:00",
+          "last_availability_timestamp": "2021-09-06 18:30:00"
+        }
+      },
+      "backtest_fingerprint": "1e46b645a2689869245784d1a8de29ea3588b9421a1a7e160d0bce96d36cd87b"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-09-06 18:48:00",
+      "last_timestamp": "2021-09-27 11:28:00",
+      "runtime_seconds": 118.97628378868103,
+      "total_events": 32614,
+      "peak_active_theses": 14,
+      "peak_active_passports": 4003,
+      "created_theses": 320,
+      "invalidated_theses": 319,
+      "expired_theses": 0,
+      "passport_count": 19827,
+      "feature_release_stats": {
+        "feature_records": 79251,
+        "liquidity_pools": 3814
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 235,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-07 02:50:00",
+          "last_availability_timestamp": "2021-09-27 11:15:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 241,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-07 01:45:00",
+          "last_availability_timestamp": "2021-09-27 11:09:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2709,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-06 19:00:00",
+          "last_availability_timestamp": "2021-09-27 11:25:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 70092,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-06 19:48:00",
+          "last_availability_timestamp": "2021-09-27 11:27:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1889,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-06 19:18:00",
+          "last_availability_timestamp": "2021-09-27 11:27:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4561,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-06 19:09:00",
+          "last_availability_timestamp": "2021-09-27 11:21:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1644,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-06 19:18:00",
+          "last_availability_timestamp": "2021-09-27 11:15:00"
+        },
+        "SWING_LOW": {
+          "observations": 1694,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-06 19:09:00",
+          "last_availability_timestamp": "2021-09-27 11:09:00"
+        }
+      },
+      "backtest_fingerprint": "5436bcc7c79798afb5710edaf1032a0218ac0d5d5d322ced1e5708999b0ab7b5"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-09-27 11:29:00",
+      "last_timestamp": "2021-10-15 23:06:00",
+      "runtime_seconds": 97.95134735107422,
+      "total_events": 32614,
+      "peak_active_theses": 10,
+      "peak_active_passports": 3788,
+      "created_theses": 326,
+      "invalidated_theses": 324,
+      "expired_theses": 0,
+      "passport_count": 18822,
+      "feature_release_stats": {
+        "feature_records": 115469,
+        "liquidity_pools": 3785
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 204,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-28 06:30:00",
+          "last_availability_timestamp": "2021-10-15 23:05:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 205,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-29 01:45:00",
+          "last_availability_timestamp": "2021-10-15 22:45:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2925,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-27 11:39:00",
+          "last_availability_timestamp": "2021-10-15 22:55:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 106071,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-27 11:57:00",
+          "last_availability_timestamp": "2021-10-15 23:06:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1919,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-27 12:06:00",
+          "last_availability_timestamp": "2021-10-15 22:57:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4554,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-27 11:45:00",
+          "last_availability_timestamp": "2021-10-15 23:05:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1665,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-27 11:48:00",
+          "last_availability_timestamp": "2021-10-15 23:05:00"
+        },
+        "SWING_LOW": {
+          "observations": 1711,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-09-27 11:45:00",
+          "last_availability_timestamp": "2021-10-15 22:45:00"
+        }
+      },
+      "backtest_fingerprint": "dbe79438cad12aed75418d283cf1bed3b2b8ae867c3aba054b43619534b03b73"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-10-15 23:07:00",
+      "last_timestamp": "2021-11-05 10:44:00",
+      "runtime_seconds": 108.18037700653076,
+      "total_events": 32615,
+      "peak_active_theses": 9,
+      "peak_active_passports": 3509,
+      "created_theses": 310,
+      "invalidated_theses": 309,
+      "expired_theses": 0,
+      "passport_count": 20000,
+      "feature_release_stats": {
+        "feature_records": 103802,
+        "liquidity_pools": 3783
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 201,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-10-18 06:15:00",
+          "last_availability_timestamp": "2021-11-05 10:40:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 212,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-10-18 22:30:00",
+          "last_availability_timestamp": "2021-11-05 10:45:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2802,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-10-15 23:24:00",
+          "last_availability_timestamp": "2021-11-05 10:45:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 94449,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-10-15 23:51:00",
+          "last_availability_timestamp": "2021-11-05 10:45:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1950,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-10-15 23:20:00",
+          "last_availability_timestamp": "2021-11-05 10:30:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4601,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-10-15 23:24:00",
+          "last_availability_timestamp": "2021-11-05 10:45:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1688,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-10-15 23:24:00",
+          "last_availability_timestamp": "2021-11-05 10:40:00"
+        },
+        "SWING_LOW": {
+          "observations": 1682,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-10-15 23:42:00",
+          "last_availability_timestamp": "2021-11-05 10:45:00"
+        }
+      },
+      "backtest_fingerprint": "33bf94c4eef48862d4c7551c22d81b435dd8706cf8fbeeb97732b913471b4c19"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-11-05 10:45:00",
+      "last_timestamp": "2021-11-26 04:26:00",
+      "runtime_seconds": 110.94644236564636,
+      "total_events": 32615,
+      "peak_active_theses": 7,
+      "peak_active_passports": 3817,
+      "created_theses": 352,
+      "invalidated_theses": 349,
+      "expired_theses": 0,
+      "passport_count": 20441,
+      "feature_release_stats": {
+        "feature_records": 89286,
+        "liquidity_pools": 3939
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 253,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-05 20:00:00",
+          "last_availability_timestamp": "2021-11-26 04:20:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 261,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-08 11:06:00",
+          "last_availability_timestamp": "2021-11-26 04:18:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2809,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-05 10:57:00",
+          "last_availability_timestamp": "2021-11-26 04:15:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 79942,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-05 11:15:00",
+          "last_availability_timestamp": "2021-11-26 04:27:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1895,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-05 10:55:00",
+          "last_availability_timestamp": "2021-11-26 04:24:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4640,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-05 11:09:00",
+          "last_availability_timestamp": "2021-11-26 04:24:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1705,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-05 11:12:00",
+          "last_availability_timestamp": "2021-11-26 04:20:00"
+        },
+        "SWING_LOW": {
+          "observations": 1720,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-05 11:09:00",
+          "last_availability_timestamp": "2021-11-26 04:18:00"
+        }
+      },
+      "backtest_fingerprint": "07e2b71e51f8f184b0830a08acdace0b1b6fa14d037bcdd563871d559df4d483"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-11-26 04:27:00",
+      "last_timestamp": "2021-12-16 19:20:00",
+      "runtime_seconds": 132.9009461402893,
+      "total_events": 32617,
+      "peak_active_theses": 6,
+      "peak_active_passports": 4340,
+      "created_theses": 314,
+      "invalidated_theses": 312,
+      "expired_theses": 0,
+      "passport_count": 17590,
+      "feature_release_stats": {
+        "feature_records": 143887,
+        "liquidity_pools": 3766
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 167,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-26 09:20:00",
+          "last_availability_timestamp": "2021-12-16 19:21:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 166,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-26 11:03:00",
+          "last_availability_timestamp": "2021-12-16 19:20:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2596,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-26 04:36:00",
+          "last_availability_timestamp": "2021-12-16 18:55:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 134726,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-26 05:27:00",
+          "last_availability_timestamp": "2021-12-16 19:21:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1914,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-26 04:33:00",
+          "last_availability_timestamp": "2021-12-16 19:20:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4651,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-26 05:00:00",
+          "last_availability_timestamp": "2021-12-16 19:21:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1712,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-26 05:00:00",
+          "last_availability_timestamp": "2021-12-16 19:21:00"
+        },
+        "SWING_LOW": {
+          "observations": 1721,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-11-26 05:24:00",
+          "last_availability_timestamp": "2021-12-16 19:20:00"
+        }
+      },
+      "backtest_fingerprint": "8fb236f26321459f8696dd1c758f7b7c2d92f827da17bcd800efc25f16fab063"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2021-12-16 19:21:00",
+      "last_timestamp": "2022-01-07 13:08:00",
+      "runtime_seconds": 110.02280163764954,
+      "total_events": 32609,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3253,
+      "created_theses": 286,
+      "invalidated_theses": 285,
+      "expired_theses": 0,
+      "passport_count": 18880,
+      "feature_release_stats": {
+        "feature_records": 105175,
+        "liquidity_pools": 3649
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 170,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-12-21 14:30:00",
+          "last_availability_timestamp": "2022-01-07 12:55:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 184,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-12-20 11:30:00",
+          "last_availability_timestamp": "2022-01-07 13:00:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2737,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-12-16 20:30:00",
+          "last_availability_timestamp": "2022-01-07 13:06:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 96108,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-12-16 20:09:00",
+          "last_availability_timestamp": "2022-01-07 13:09:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1844,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-12-16 19:35:00",
+          "last_availability_timestamp": "2022-01-07 13:09:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4486,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-12-16 19:42:00",
+          "last_availability_timestamp": "2022-01-07 13:03:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1655,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-12-16 19:42:00",
+          "last_availability_timestamp": "2022-01-07 12:55:00"
+        },
+        "SWING_LOW": {
+          "observations": 1640,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2021-12-16 19:45:00",
+          "last_availability_timestamp": "2022-01-07 13:00:00"
+        }
+      },
+      "backtest_fingerprint": "d2715f65323e56a6f884756c28a05446893c279ed1c18abfa07b12001ae7a371"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-01-07 13:09:00",
+      "last_timestamp": "2022-01-28 04:21:00",
+      "runtime_seconds": 153.4811532497406,
+      "total_events": 32609,
+      "peak_active_theses": 9,
+      "peak_active_passports": 6418,
+      "created_theses": 291,
+      "invalidated_theses": 286,
+      "expired_theses": 3,
+      "passport_count": 20336,
+      "feature_release_stats": {
+        "feature_records": 91957,
+        "liquidity_pools": 3818
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 207,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-07 15:27:00",
+          "last_availability_timestamp": "2022-01-28 03:39:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 222,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-07 16:06:00",
+          "last_availability_timestamp": "2022-01-28 03:42:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2781,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-07 13:30:00",
+          "last_availability_timestamp": "2022-01-28 04:18:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 82629,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-07 14:45:00",
+          "last_availability_timestamp": "2022-01-28 04:21:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1947,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-07 13:39:00",
+          "last_availability_timestamp": "2022-01-28 04:03:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4600,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-07 13:39:00",
+          "last_availability_timestamp": "2022-01-28 04:15:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1702,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-07 13:39:00",
+          "last_availability_timestamp": "2022-01-28 04:15:00"
+        },
+        "SWING_LOW": {
+          "observations": 1687,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-07 14:30:00",
+          "last_availability_timestamp": "2022-01-28 03:42:00"
+        }
+      },
+      "backtest_fingerprint": "0347c49bf0ad9ebe4543e18b02360a5855c0aa1d43aef13701d2542225892297"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-01-28 04:22:00",
+      "last_timestamp": "2022-02-17 16:02:00",
+      "runtime_seconds": 98.91659569740295,
+      "total_events": 32608,
+      "peak_active_theses": 6,
+      "peak_active_passports": 3304,
+      "created_theses": 281,
+      "invalidated_theses": 274,
+      "expired_theses": 4,
+      "passport_count": 16602,
+      "feature_release_stats": {
+        "feature_records": 65788,
+        "liquidity_pools": 4023
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 265,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-28 18:50:00",
+          "last_availability_timestamp": "2022-02-17 15:00:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 275,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-28 16:33:00",
+          "last_availability_timestamp": "2022-02-17 15:06:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2639,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-28 04:45:00",
+          "last_availability_timestamp": "2022-02-17 16:00:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 56585,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-28 05:09:00",
+          "last_availability_timestamp": "2022-02-17 16:03:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1884,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-28 04:35:00",
+          "last_availability_timestamp": "2022-02-17 16:03:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4680,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-28 04:42:00",
+          "last_availability_timestamp": "2022-02-17 16:00:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1770,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-28 05:00:00",
+          "last_availability_timestamp": "2022-02-17 16:00:00"
+        },
+        "SWING_LOW": {
+          "observations": 1713,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-01-28 04:42:00",
+          "last_availability_timestamp": "2022-02-17 15:30:00"
+        }
+      },
+      "backtest_fingerprint": "6228cce07e290368748810a0c9d2783ac47a0233f0d00e9178128f394a705a88"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-02-17 16:03:00",
+      "last_timestamp": "2022-03-10 07:14:00",
+      "runtime_seconds": 72.45824909210205,
+      "total_events": 32613,
+      "peak_active_theses": 8,
+      "peak_active_passports": 2627,
+      "created_theses": 455,
+      "invalidated_theses": 453,
+      "expired_theses": 0,
+      "passport_count": 20807,
+      "feature_release_stats": {
+        "feature_records": 84388,
+        "liquidity_pools": 3955
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 315,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-02-18 07:30:00",
+          "last_availability_timestamp": "2022-03-10 07:15:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 305,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-02-21 01:45:00",
+          "last_availability_timestamp": "2022-03-10 07:15:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2923,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-02-17 16:15:00",
+          "last_availability_timestamp": "2022-03-10 07:06:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 75080,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-02-17 16:50:00",
+          "last_availability_timestamp": "2022-03-10 07:15:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1869,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-02-17 16:12:00",
+          "last_availability_timestamp": "2022-03-10 07:05:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4516,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-02-17 16:18:00",
+          "last_availability_timestamp": "2022-03-10 07:15:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1681,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-02-17 16:39:00",
+          "last_availability_timestamp": "2022-03-10 07:15:00"
+        },
+        "SWING_LOW": {
+          "observations": 1654,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-02-17 16:18:00",
+          "last_availability_timestamp": "2022-03-10 07:15:00"
+        }
+      },
+      "backtest_fingerprint": "4f5a644c901776d9593ed896367958b79991935bf871896014718e981c498758"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-03-10 07:15:00",
+      "last_timestamp": "2022-03-30 18:51:00",
+      "runtime_seconds": 78.942622423172,
+      "total_events": 32619,
+      "peak_active_theses": 9,
+      "peak_active_passports": 2602,
+      "created_theses": 440,
+      "invalidated_theses": 439,
+      "expired_theses": 0,
+      "passport_count": 21189,
+      "feature_release_stats": {
+        "feature_records": 100553,
+        "liquidity_pools": 3972
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 278,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-10 15:24:00",
+          "last_availability_timestamp": "2022-03-30 18:45:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 270,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-10 11:18:00",
+          "last_availability_timestamp": "2022-03-30 18:45:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2800,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-10 07:36:00",
+          "last_availability_timestamp": "2022-03-30 18:50:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 91168,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-10 07:45:00",
+          "last_availability_timestamp": "2022-03-30 18:51:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1950,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-10 07:33:00",
+          "last_availability_timestamp": "2022-03-30 18:45:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4635,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-10 07:42:00",
+          "last_availability_timestamp": "2022-03-30 18:45:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1714,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-10 07:42:00",
+          "last_availability_timestamp": "2022-03-30 18:45:00"
+        },
+        "SWING_LOW": {
+          "observations": 1710,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-10 08:09:00",
+          "last_availability_timestamp": "2022-03-30 18:45:00"
+        }
+      },
+      "backtest_fingerprint": "7fe3da28f835bc7213bfebe757803a7031f4b502b4875a7e904b6b0b93e4d656"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-03-30 18:52:00",
+      "last_timestamp": "2022-04-21 07:28:00",
+      "runtime_seconds": 77.50229549407959,
+      "total_events": 32612,
+      "peak_active_theses": 7,
+      "peak_active_passports": 2360,
+      "created_theses": 408,
+      "invalidated_theses": 405,
+      "expired_theses": 0,
+      "passport_count": 19164,
+      "feature_release_stats": {
+        "feature_records": 95161,
+        "liquidity_pools": 3855
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 249,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-01 09:15:00",
+          "last_availability_timestamp": "2022-04-21 07:15:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 266,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-30 23:00:00",
+          "last_availability_timestamp": "2022-04-21 07:15:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2932,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-30 19:09:00",
+          "last_availability_timestamp": "2022-04-21 07:27:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 85697,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-30 19:45:00",
+          "last_availability_timestamp": "2022-04-21 07:27:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1959,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-30 19:03:00",
+          "last_availability_timestamp": "2022-04-21 07:20:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4573,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-30 19:15:00",
+          "last_availability_timestamp": "2022-04-21 07:20:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1660,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-30 19:24:00",
+          "last_availability_timestamp": "2022-04-21 07:15:00"
+        },
+        "SWING_LOW": {
+          "observations": 1680,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-03-30 19:15:00",
+          "last_availability_timestamp": "2022-04-21 07:15:00"
+        }
+      },
+      "backtest_fingerprint": "211d944187141768e6957448c8e958f8daa02f051f5af48cf94528daf2605657"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-04-21 07:29:00",
+      "last_timestamp": "2022-05-11 19:05:00",
+      "runtime_seconds": 71.37935280799866,
+      "total_events": 32620,
+      "peak_active_theses": 7,
+      "peak_active_passports": 2698,
+      "created_theses": 411,
+      "invalidated_theses": 410,
+      "expired_theses": 0,
+      "passport_count": 20179,
+      "feature_release_stats": {
+        "feature_records": 78551,
+        "liquidity_pools": 3980
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 296,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-21 12:15:00",
+          "last_availability_timestamp": "2022-05-11 18:50:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 311,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-21 15:03:00",
+          "last_availability_timestamp": "2022-05-11 19:06:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2822,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-21 07:45:00",
+          "last_availability_timestamp": "2022-05-11 18:51:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 69166,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-21 08:03:00",
+          "last_availability_timestamp": "2022-05-11 19:06:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1986,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-21 07:42:00",
+          "last_availability_timestamp": "2022-05-11 19:06:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4577,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-21 07:48:00",
+          "last_availability_timestamp": "2022-05-11 19:06:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1671,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-21 08:03:00",
+          "last_availability_timestamp": "2022-05-11 18:50:00"
+        },
+        "SWING_LOW": {
+          "observations": 1702,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-04-21 07:48:00",
+          "last_availability_timestamp": "2022-05-11 19:06:00"
+        }
+      },
+      "backtest_fingerprint": "8e338d19c75c7d19f5e1a99713b5a28decdfc16633029a3656583da51455fb1c"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-05-11 19:06:00",
+      "last_timestamp": "2022-06-01 10:16:00",
+      "runtime_seconds": 98.75393652915955,
+      "total_events": 32615,
+      "peak_active_theses": 7,
+      "peak_active_passports": 4458,
+      "created_theses": 352,
+      "invalidated_theses": 350,
+      "expired_theses": 0,
+      "passport_count": 19558,
+      "feature_release_stats": {
+        "feature_records": 99125,
+        "liquidity_pools": 3863
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 225,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-05-16 06:45:00",
+          "last_availability_timestamp": "2022-06-01 09:50:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 230,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-05-13 09:45:00",
+          "last_availability_timestamp": "2022-06-01 10:15:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2896,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-05-11 19:33:00",
+          "last_availability_timestamp": "2022-06-01 10:10:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 89650,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-05-11 20:15:00",
+          "last_availability_timestamp": "2022-06-01 10:15:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1953,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-05-11 19:12:00",
+          "last_availability_timestamp": "2022-06-01 10:15:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4626,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-05-11 19:24:00",
+          "last_availability_timestamp": "2022-06-01 10:15:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1708,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-05-11 19:24:00",
+          "last_availability_timestamp": "2022-06-01 09:50:00"
+        },
+        "SWING_LOW": {
+          "observations": 1700,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-05-11 19:42:00",
+          "last_availability_timestamp": "2022-06-01 10:15:00"
+        }
+      },
+      "backtest_fingerprint": "f8a40007998cf5f2f8852f4b67b6d988ebef001d9d9a129bfcb306af42bc36c0"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-06-01 10:17:00",
+      "last_timestamp": "2022-06-22 01:30:00",
+      "runtime_seconds": 99.64109206199646,
+      "total_events": 32606,
+      "peak_active_theses": 7,
+      "peak_active_passports": 3615,
+      "created_theses": 346,
+      "invalidated_theses": 345,
+      "expired_theses": 0,
+      "passport_count": 19535,
+      "feature_release_stats": {
+        "feature_records": 105809,
+        "liquidity_pools": 3847
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 221,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-03 03:00:00",
+          "last_availability_timestamp": "2022-06-22 01:06:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 240,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-01 15:45:00",
+          "last_availability_timestamp": "2022-06-22 01:30:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2881,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-01 10:27:00",
+          "last_availability_timestamp": "2022-06-22 01:30:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 96359,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-01 11:21:00",
+          "last_availability_timestamp": "2022-06-22 01:30:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1980,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-01 10:24:00",
+          "last_availability_timestamp": "2022-06-22 01:25:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4589,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-01 10:33:00",
+          "last_availability_timestamp": "2022-06-22 01:30:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1695,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-01 10:33:00",
+          "last_availability_timestamp": "2022-06-22 01:30:00"
+        },
+        "SWING_LOW": {
+          "observations": 1691,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-01 10:45:00",
+          "last_availability_timestamp": "2022-06-22 01:30:00"
+        }
+      },
+      "backtest_fingerprint": "4b87ccdfab47d6e08820e5b53025053063a9bac78da6b1ce931e12e09b717cd9"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-06-22 01:31:00",
+      "last_timestamp": "2022-07-12 15:44:00",
+      "runtime_seconds": 99.3729305267334,
+      "total_events": 32607,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3439,
+      "created_theses": 347,
+      "invalidated_theses": 345,
+      "expired_theses": 0,
+      "passport_count": 19651,
+      "feature_release_stats": {
+        "feature_records": 82553,
+        "liquidity_pools": 4040
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 252,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-22 12:00:00",
+          "last_availability_timestamp": "2022-07-12 15:36:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 280,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-22 17:09:00",
+          "last_availability_timestamp": "2022-07-12 15:40:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2627,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-22 01:42:00",
+          "last_availability_timestamp": "2022-07-12 15:30:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 73260,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-22 02:12:00",
+          "last_availability_timestamp": "2022-07-12 15:45:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1935,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-22 01:45:00",
+          "last_availability_timestamp": "2022-07-12 15:30:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4731,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-22 01:48:00",
+          "last_availability_timestamp": "2022-07-12 15:40:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1719,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-22 01:54:00",
+          "last_availability_timestamp": "2022-07-12 15:36:00"
+        },
+        "SWING_LOW": {
+          "observations": 1789,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-06-22 01:48:00",
+          "last_availability_timestamp": "2022-07-12 15:40:00"
+        }
+      },
+      "backtest_fingerprint": "6e4f088fa9a0d85c7c217e0f13bb151854e8f8ea9537a63cdce844eec29b5eb1"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-07-12 15:45:00",
+      "last_timestamp": "2022-08-02 04:25:00",
+      "runtime_seconds": 89.22924733161926,
+      "total_events": 32606,
+      "peak_active_theses": 6,
+      "peak_active_passports": 3411,
+      "created_theses": 346,
+      "invalidated_theses": 342,
+      "expired_theses": 0,
+      "passport_count": 19558,
+      "feature_release_stats": {
+        "feature_records": 91100,
+        "liquidity_pools": 3859
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 244,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-07-13 04:00:00",
+          "last_availability_timestamp": "2022-08-02 03:15:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 242,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-07-14 06:00:00",
+          "last_availability_timestamp": "2022-08-02 03:45:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2678,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-07-12 16:12:00",
+          "last_availability_timestamp": "2022-08-02 04:21:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 82097,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-07-12 16:27:00",
+          "last_availability_timestamp": "2022-08-02 04:15:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1778,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-07-12 15:51:00",
+          "last_availability_timestamp": "2022-08-02 04:25:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4547,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-07-12 16:15:00",
+          "last_availability_timestamp": "2022-08-02 04:18:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1680,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-07-12 16:15:00",
+          "last_availability_timestamp": "2022-08-02 04:18:00"
+        },
+        "SWING_LOW": {
+          "observations": 1693,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-07-12 16:24:00",
+          "last_availability_timestamp": "2022-08-02 04:03:00"
+        }
+      },
+      "backtest_fingerprint": "5e7d2f44c4a55a96835fbe7df55a219d1d4c6f4cf85b9651e010adb7a15d1a64"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-08-02 04:26:00",
+      "last_timestamp": "2022-08-22 16:03:00",
+      "runtime_seconds": 113.72928953170776,
+      "total_events": 32615,
+      "peak_active_theses": 10,
+      "peak_active_passports": 3998,
+      "created_theses": 343,
+      "invalidated_theses": 340,
+      "expired_theses": 0,
+      "passport_count": 22027,
+      "feature_release_stats": {
+        "feature_records": 88616,
+        "liquidity_pools": 3751
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 218,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-08 04:00:00",
+          "last_availability_timestamp": "2022-08-22 15:30:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 224,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-04 10:00:00",
+          "last_availability_timestamp": "2022-08-22 15:35:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2976,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-02 04:36:00",
+          "last_availability_timestamp": "2022-08-22 16:00:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 79110,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-02 05:33:00",
+          "last_availability_timestamp": "2022-08-22 16:03:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 2004,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-02 04:40:00",
+          "last_availability_timestamp": "2022-08-22 15:35:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4526,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-02 04:42:00",
+          "last_availability_timestamp": "2022-08-22 16:00:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1622,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-02 04:42:00",
+          "last_availability_timestamp": "2022-08-22 15:35:00"
+        },
+        "SWING_LOW": {
+          "observations": 1687,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-02 04:54:00",
+          "last_availability_timestamp": "2022-08-22 16:00:00"
+        }
+      },
+      "backtest_fingerprint": "70d5e6e511cd74e6c34f0e8bb4212e0d5ab87089dc43dec1b355d608807c4c1f"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-08-22 16:04:00",
+      "last_timestamp": "2022-09-12 07:14:00",
+      "runtime_seconds": 113.14591956138611,
+      "total_events": 32616,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3636,
+      "created_theses": 323,
+      "invalidated_theses": 318,
+      "expired_theses": 2,
+      "passport_count": 21397,
+      "feature_release_stats": {
+        "feature_records": 72469,
+        "liquidity_pools": 3727
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 251,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-24 09:00:00",
+          "last_availability_timestamp": "2022-09-12 07:10:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 241,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-23 15:15:00",
+          "last_availability_timestamp": "2022-09-12 07:15:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 3066,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-22 16:15:00",
+          "last_availability_timestamp": "2022-09-12 07:10:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 63006,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-22 16:33:00",
+          "last_availability_timestamp": "2022-09-12 07:15:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1963,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-22 16:35:00",
+          "last_availability_timestamp": "2022-09-12 07:00:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4434,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-22 16:30:00",
+          "last_availability_timestamp": "2022-09-12 07:15:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1655,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-22 16:30:00",
+          "last_availability_timestamp": "2022-09-12 07:10:00"
+        },
+        "SWING_LOW": {
+          "observations": 1580,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-08-22 16:39:00",
+          "last_availability_timestamp": "2022-09-12 07:15:00"
+        }
+      },
+      "backtest_fingerprint": "8a577ec31ef0b0faa251c6f14d49f8df6de5fbaac5d00f476948cd8837560b6c"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-09-12 07:15:00",
+      "last_timestamp": "2022-09-30 18:50:00",
+      "runtime_seconds": 100.69067573547363,
+      "total_events": 32619,
+      "peak_active_theses": 8,
+      "peak_active_passports": 2671,
+      "created_theses": 388,
+      "invalidated_theses": 386,
+      "expired_theses": 0,
+      "passport_count": 18674,
+      "feature_release_stats": {
+        "feature_records": 83872,
+        "liquidity_pools": 3868
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 276,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-12 09:09:00",
+          "last_availability_timestamp": "2022-09-30 18:48:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 279,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-12 09:12:00",
+          "last_availability_timestamp": "2022-09-30 18:45:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2849,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-12 07:24:00",
+          "last_availability_timestamp": "2022-09-30 18:42:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 74548,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-12 08:48:00",
+          "last_availability_timestamp": "2022-09-30 18:51:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1942,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-12 07:40:00",
+          "last_availability_timestamp": "2022-09-30 18:40:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4533,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-12 07:36:00",
+          "last_availability_timestamp": "2022-09-30 18:48:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1660,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-12 07:48:00",
+          "last_availability_timestamp": "2022-09-30 18:48:00"
+        },
+        "SWING_LOW": {
+          "observations": 1653,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-12 07:36:00",
+          "last_availability_timestamp": "2022-09-30 18:45:00"
+        }
+      },
+      "backtest_fingerprint": "43e9566fed2ea0532400f1838c5fc00ce2d71032db57bd6e33523a370815bf11"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-09-30 18:51:00",
+      "last_timestamp": "2022-10-21 07:28:00",
+      "runtime_seconds": 108.21575784683228,
+      "total_events": 32613,
+      "peak_active_theses": 7,
+      "peak_active_passports": 2980,
+      "created_theses": 385,
+      "invalidated_theses": 384,
+      "expired_theses": 0,
+      "passport_count": 20676,
+      "feature_release_stats": {
+        "feature_records": 78276,
+        "liquidity_pools": 4014
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 289,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-03 02:30:00",
+          "last_availability_timestamp": "2022-10-21 06:36:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 295,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-03 20:10:00",
+          "last_availability_timestamp": "2022-10-21 07:24:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2632,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-30 19:09:00",
+          "last_availability_timestamp": "2022-10-21 07:27:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 69002,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-30 19:39:00",
+          "last_availability_timestamp": "2022-10-21 07:25:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1943,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-30 18:57:00",
+          "last_availability_timestamp": "2022-10-21 07:25:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4699,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-30 19:30:00",
+          "last_availability_timestamp": "2022-10-21 07:27:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1695,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-30 19:48:00",
+          "last_availability_timestamp": "2022-10-21 07:18:00"
+        },
+        "SWING_LOW": {
+          "observations": 1735,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-09-30 19:30:00",
+          "last_availability_timestamp": "2022-10-21 07:24:00"
+        }
+      },
+      "backtest_fingerprint": "27dc45f30c85db7e4e6e28dea40d48e44beff7d8392a0fc63350387f2d7570c7"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-10-21 07:29:00",
+      "last_timestamp": "2022-11-10 19:05:00",
+      "runtime_seconds": 91.30365943908691,
+      "total_events": 32620,
+      "peak_active_theses": 7,
+      "peak_active_passports": 2863,
+      "created_theses": 370,
+      "invalidated_theses": 369,
+      "expired_theses": 0,
+      "passport_count": 21395,
+      "feature_release_stats": {
+        "feature_records": 79484,
+        "liquidity_pools": 3867
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 261,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-21 13:45:00",
+          "last_availability_timestamp": "2022-11-10 18:48:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 259,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-21 13:42:00",
+          "last_availability_timestamp": "2022-11-10 15:30:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2731,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-21 07:39:00",
+          "last_availability_timestamp": "2022-11-10 19:06:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 70327,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-21 08:18:00",
+          "last_availability_timestamp": "2022-11-10 19:06:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1879,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-21 08:00:00",
+          "last_availability_timestamp": "2022-11-10 18:55:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4547,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-21 07:48:00",
+          "last_availability_timestamp": "2022-11-10 19:03:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1700,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-21 08:09:00",
+          "last_availability_timestamp": "2022-11-10 19:03:00"
+        },
+        "SWING_LOW": {
+          "observations": 1647,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-10-21 07:48:00",
+          "last_availability_timestamp": "2022-11-10 19:00:00"
+        }
+      },
+      "backtest_fingerprint": "f4a36eda1bf6ca81f4c858273baf7c90219520dbc6f33a1ba7aa3fa10bcd9da0"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-11-10 19:06:00",
+      "last_timestamp": "2022-12-01 13:33:00",
+      "runtime_seconds": 100.62245416641235,
+      "total_events": 32616,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3217,
+      "created_theses": 366,
+      "invalidated_theses": 365,
+      "expired_theses": 0,
+      "passport_count": 19371,
+      "feature_release_stats": {
+        "feature_records": 105533,
+        "liquidity_pools": 3750
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 203,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-11-15 06:00:00",
+          "last_availability_timestamp": "2022-12-01 13:21:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 209,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-11-15 03:30:00",
+          "last_availability_timestamp": "2022-12-01 13:24:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2715,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-11-10 19:36:00",
+          "last_availability_timestamp": "2022-12-01 13:33:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 96337,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-11-10 19:54:00",
+          "last_availability_timestamp": "2022-12-01 13:33:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1911,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-11-10 19:15:00",
+          "last_availability_timestamp": "2022-12-01 13:30:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4570,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-11-10 19:27:00",
+          "last_availability_timestamp": "2022-12-01 13:30:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1702,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-11-10 19:27:00",
+          "last_availability_timestamp": "2022-12-01 13:21:00"
+        },
+        "SWING_LOW": {
+          "observations": 1636,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-11-10 19:48:00",
+          "last_availability_timestamp": "2022-12-01 13:24:00"
+        }
+      },
+      "backtest_fingerprint": "1a4ae1f289ff06728d4e772dd43805baf1ea4a745d7b16ee113d7af73f45e523"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-12-01 13:34:00",
+      "last_timestamp": "2022-12-22 02:11:00",
+      "runtime_seconds": 97.1355140209198,
+      "total_events": 32614,
+      "peak_active_theses": 7,
+      "peak_active_passports": 2850,
+      "created_theses": 332,
+      "invalidated_theses": 331,
+      "expired_theses": 0,
+      "passport_count": 20654,
+      "feature_release_stats": {
+        "feature_records": 90650,
+        "liquidity_pools": 3731
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 214,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-02 02:00:00",
+          "last_availability_timestamp": "2022-12-22 02:12:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 209,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-05 02:30:00",
+          "last_availability_timestamp": "2022-12-22 02:09:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2865,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-01 14:09:00",
+          "last_availability_timestamp": "2022-12-22 02:10:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 81405,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-01 14:54:00",
+          "last_availability_timestamp": "2022-12-22 02:12:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1865,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-01 13:45:00",
+          "last_availability_timestamp": "2022-12-22 02:06:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4515,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-01 13:51:00",
+          "last_availability_timestamp": "2022-12-22 02:12:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1641,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-01 13:51:00",
+          "last_availability_timestamp": "2022-12-22 02:12:00"
+        },
+        "SWING_LOW": {
+          "observations": 1667,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-01 13:54:00",
+          "last_availability_timestamp": "2022-12-22 02:09:00"
+        }
+      },
+      "backtest_fingerprint": "1c5663156d86d0a243a34aee5737056583266e91804b8fb4d4a6725a1955ecc7"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2022-12-22 02:12:00",
+      "last_timestamp": "2023-01-13 13:49:00",
+      "runtime_seconds": 113.69428849220276,
+      "total_events": 32615,
+      "peak_active_theses": 6,
+      "peak_active_passports": 3606,
+      "created_theses": 373,
+      "invalidated_theses": 372,
+      "expired_theses": 0,
+      "passport_count": 18388,
+      "feature_release_stats": {
+        "feature_records": 59395,
+        "liquidity_pools": 3905
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 307,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-22 21:39:00",
+          "last_availability_timestamp": "2023-01-13 12:45:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 282,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-22 21:06:00",
+          "last_availability_timestamp": "2023-01-13 13:00:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2792,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-22 02:51:00",
+          "last_availability_timestamp": "2023-01-13 13:45:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 50232,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-22 03:33:00",
+          "last_availability_timestamp": "2023-01-13 13:50:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1890,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-22 02:21:00",
+          "last_availability_timestamp": "2023-01-13 13:50:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4481,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-22 02:30:00",
+          "last_availability_timestamp": "2023-01-13 13:45:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1665,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-22 03:09:00",
+          "last_availability_timestamp": "2023-01-13 13:45:00"
+        },
+        "SWING_LOW": {
+          "observations": 1651,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2022-12-22 02:30:00",
+          "last_availability_timestamp": "2023-01-13 13:15:00"
+        }
+      },
+      "backtest_fingerprint": "8f2be4341f9fa35f80294fc9c0651250597425c88fa45660b4f288eddcf57dab"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-01-13 13:50:00",
+      "last_timestamp": "2023-02-03 05:00:00",
+      "runtime_seconds": 124.37853646278381,
+      "total_events": 32617,
+      "peak_active_theses": 8,
+      "peak_active_passports": 2844,
+      "created_theses": 375,
+      "invalidated_theses": 374,
+      "expired_theses": 0,
+      "passport_count": 20815,
+      "feature_release_stats": {
+        "feature_records": 133556,
+        "liquidity_pools": 3778
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 205,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-01-13 16:00:00",
+          "last_availability_timestamp": "2023-02-03 04:45:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 213,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-01-13 15:12:00",
+          "last_availability_timestamp": "2023-02-03 05:00:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2930,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-01-13 14:03:00",
+          "last_availability_timestamp": "2023-02-03 04:15:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 124139,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-01-13 14:21:00",
+          "last_availability_timestamp": "2023-02-03 05:00:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1885,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-01-13 14:00:00",
+          "last_availability_timestamp": "2023-02-03 04:54:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4602,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-01-13 14:06:00",
+          "last_availability_timestamp": "2023-02-03 05:00:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1684,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-01-13 14:15:00",
+          "last_availability_timestamp": "2023-02-03 04:45:00"
+        },
+        "SWING_LOW": {
+          "observations": 1676,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-01-13 14:06:00",
+          "last_availability_timestamp": "2023-02-03 05:00:00"
+        }
+      },
+      "backtest_fingerprint": "bd676ba133650dae6618e2a1de377ba4c9be780684722ede14b89e36ccdf1918"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-02-03 05:01:00",
+      "last_timestamp": "2023-02-23 19:10:00",
+      "runtime_seconds": 240.42987751960754,
+      "total_events": 32617,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3069,
+      "created_theses": 354,
+      "invalidated_theses": 350,
+      "expired_theses": 0,
+      "passport_count": 19728,
+      "feature_release_stats": {
+        "feature_records": 96785,
+        "liquidity_pools": 3968
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 251,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-03 08:35:00",
+          "last_availability_timestamp": "2023-02-23 19:09:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 272,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-03 05:54:00",
+          "last_availability_timestamp": "2023-02-23 19:09:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2686,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-03 05:30:00",
+          "last_availability_timestamp": "2023-02-23 19:00:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 87529,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-03 05:27:00",
+          "last_availability_timestamp": "2023-02-23 19:09:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1913,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-03 05:33:00",
+          "last_availability_timestamp": "2023-02-23 19:10:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4657,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-03 05:21:00",
+          "last_availability_timestamp": "2023-02-23 19:10:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1710,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-03 05:30:00",
+          "last_availability_timestamp": "2023-02-23 19:09:00"
+        },
+        "SWING_LOW": {
+          "observations": 1735,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-03 05:21:00",
+          "last_availability_timestamp": "2023-02-23 19:09:00"
+        }
+      },
+      "backtest_fingerprint": "335a2457fb775cd007d3f4a760635a65ffb56eb9af2461be687a399333187b2b"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-02-23 19:11:00",
+      "last_timestamp": "2023-03-16 06:48:00",
+      "runtime_seconds": 204.24229788780212,
+      "total_events": 32614,
+      "peak_active_theses": 11,
+      "peak_active_passports": 3606,
+      "created_theses": 341,
+      "invalidated_theses": 339,
+      "expired_theses": 0,
+      "passport_count": 20912,
+      "feature_release_stats": {
+        "feature_records": 71021,
+        "liquidity_pools": 3982
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 279,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-27 08:45:00",
+          "last_availability_timestamp": "2023-03-16 06:48:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 267,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-24 08:15:00",
+          "last_availability_timestamp": "2023-03-16 06:27:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2515,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-23 19:27:00",
+          "last_availability_timestamp": "2023-03-16 06:39:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 61951,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-23 19:51:00",
+          "last_availability_timestamp": "2023-03-16 06:48:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1963,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-23 19:18:00",
+          "last_availability_timestamp": "2023-03-16 06:24:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4592,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-23 19:45:00",
+          "last_availability_timestamp": "2023-03-16 06:48:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1718,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-23 19:45:00",
+          "last_availability_timestamp": "2023-03-16 06:48:00"
+        },
+        "SWING_LOW": {
+          "observations": 1718,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-02-23 19:48:00",
+          "last_availability_timestamp": "2023-03-16 06:27:00"
+        }
+      },
+      "backtest_fingerprint": "364ec70f8200c647b31398739b74438cc4eeeb1225599d76fa5bae598ffb9996"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-03-16 06:49:00",
+      "last_timestamp": "2023-04-05 19:32:00",
+      "runtime_seconds": 166.59611058235168,
+      "total_events": 32620,
+      "peak_active_theses": 7,
+      "peak_active_passports": 2949,
+      "created_theses": 419,
+      "invalidated_theses": 418,
+      "expired_theses": 0,
+      "passport_count": 19490,
+      "feature_release_stats": {
+        "feature_records": 88498,
+        "liquidity_pools": 3968
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 275,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-03-16 18:24:00",
+          "last_availability_timestamp": "2023-04-05 19:33:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 275,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-03-16 09:24:00",
+          "last_availability_timestamp": "2023-04-05 19:25:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2826,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-03-16 07:15:00",
+          "last_availability_timestamp": "2023-04-05 19:33:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 79089,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-03-16 07:18:00",
+          "last_availability_timestamp": "2023-04-05 19:33:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1947,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-03-16 07:09:00",
+          "last_availability_timestamp": "2023-04-05 19:30:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4636,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-03-16 07:12:00",
+          "last_availability_timestamp": "2023-04-05 19:33:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1709,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-03-16 07:30:00",
+          "last_availability_timestamp": "2023-04-05 19:33:00"
+        },
+        "SWING_LOW": {
+          "observations": 1709,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-03-16 07:12:00",
+          "last_availability_timestamp": "2023-04-05 19:25:00"
+        }
+      },
+      "backtest_fingerprint": "0c78cc16757dcd3f838255fb7637526f19030369f5b6c9391fba3a17b76f6d00"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-04-05 19:33:00",
+      "last_timestamp": "2023-04-27 08:10:00",
+      "runtime_seconds": 110.35243558883667,
+      "total_events": 32610,
+      "peak_active_theses": 8,
+      "peak_active_passports": 2110,
+      "created_theses": 364,
+      "invalidated_theses": 363,
+      "expired_theses": 0,
+      "passport_count": 20345,
+      "feature_release_stats": {
+        "feature_records": 113669,
+        "liquidity_pools": 3857
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 220,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-06 16:15:00",
+          "last_availability_timestamp": "2023-04-27 08:06:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 236,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-05 22:15:00",
+          "last_availability_timestamp": "2023-04-27 08:00:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2837,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-05 20:15:00",
+          "last_availability_timestamp": "2023-04-27 08:05:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 104339,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-05 20:05:00",
+          "last_availability_timestamp": "2023-04-27 08:10:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1916,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-05 19:39:00",
+          "last_availability_timestamp": "2023-04-27 07:45:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4577,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-05 19:57:00",
+          "last_availability_timestamp": "2023-04-27 08:10:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1734,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-05 19:57:00",
+          "last_availability_timestamp": "2023-04-27 08:06:00"
+        },
+        "SWING_LOW": {
+          "observations": 1667,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-05 20:03:00",
+          "last_availability_timestamp": "2023-04-27 08:00:00"
+        }
+      },
+      "backtest_fingerprint": "c61f8f7de5034bd1d6ecc21b1508ec56a476865e778818a989436f84eee8d823"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-04-27 08:11:00",
+      "last_timestamp": "2023-05-17 19:47:00",
+      "runtime_seconds": 135.84850549697876,
+      "total_events": 32618,
+      "peak_active_theses": 7,
+      "peak_active_passports": 3154,
+      "created_theses": 347,
+      "invalidated_theses": 345,
+      "expired_theses": 1,
+      "passport_count": 20509,
+      "feature_release_stats": {
+        "feature_records": 93879,
+        "liquidity_pools": 3822
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 217,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-27 12:21:00",
+          "last_availability_timestamp": "2023-05-17 19:42:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 250,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-27 12:00:00",
+          "last_availability_timestamp": "2023-05-17 19:48:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2676,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-27 08:21:00",
+          "last_availability_timestamp": "2023-05-17 19:45:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 84869,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-27 09:03:00",
+          "last_availability_timestamp": "2023-05-17 19:48:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1847,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-27 08:18:00",
+          "last_availability_timestamp": "2023-05-17 19:48:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4487,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-27 08:30:00",
+          "last_availability_timestamp": "2023-05-17 19:48:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1662,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-27 08:51:00",
+          "last_availability_timestamp": "2023-05-17 19:42:00"
+        },
+        "SWING_LOW": {
+          "observations": 1693,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-04-27 08:30:00",
+          "last_availability_timestamp": "2023-05-17 19:48:00"
+        }
+      },
+      "backtest_fingerprint": "e0f8630a4feb454726a0641d437d8cd66b5ee8423c1383d23cf9c5b5c0c7f6d2"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-05-17 19:48:00",
+      "last_timestamp": "2023-06-07 11:04:00",
+      "runtime_seconds": 125.02618479728699,
+      "total_events": 32613,
+      "peak_active_theses": 7,
+      "peak_active_passports": 2544,
+      "created_theses": 330,
+      "invalidated_theses": 324,
+      "expired_theses": 0,
+      "passport_count": 19211,
+      "feature_release_stats": {
+        "feature_records": 115177,
+        "liquidity_pools": 3698
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 184,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-05-19 18:50:00",
+          "last_availability_timestamp": "2023-06-07 11:05:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 187,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-05-18 04:00:00",
+          "last_availability_timestamp": "2023-06-07 11:00:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2770,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-05-17 20:12:00",
+          "last_availability_timestamp": "2023-06-07 11:03:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 105991,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-05-17 21:21:00",
+          "last_availability_timestamp": "2023-06-07 11:05:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1894,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-05-17 19:57:00",
+          "last_availability_timestamp": "2023-06-07 11:05:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4522,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-05-17 20:12:00",
+          "last_availability_timestamp": "2023-06-07 11:05:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1671,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-05-17 20:12:00",
+          "last_availability_timestamp": "2023-06-07 11:05:00"
+        },
+        "SWING_LOW": {
+          "observations": 1656,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-05-17 20:36:00",
+          "last_availability_timestamp": "2023-06-07 11:00:00"
+        }
+      },
+      "backtest_fingerprint": "415e6113ac85207fe1da02390e4b0fb57202c4853dbc48f5ce765a9f4de19110"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-06-07 11:05:00",
+      "last_timestamp": "2023-06-28 02:15:00",
+      "runtime_seconds": 120.42985606193542,
+      "total_events": 32616,
+      "peak_active_theses": 6,
+      "peak_active_passports": 2454,
+      "created_theses": 296,
+      "invalidated_theses": 295,
+      "expired_theses": 0,
+      "passport_count": 18320,
+      "feature_release_stats": {
+        "feature_records": 88335,
+        "liquidity_pools": 3857
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 240,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-08 02:10:00",
+          "last_availability_timestamp": "2023-06-28 02:15:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 223,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-08 16:00:00",
+          "last_availability_timestamp": "2023-06-28 02:05:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2733,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-07 11:18:00",
+          "last_availability_timestamp": "2023-06-28 02:12:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 79157,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-07 11:30:00",
+          "last_availability_timestamp": "2023-06-28 02:15:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1848,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-07 11:30:00",
+          "last_availability_timestamp": "2023-06-28 01:30:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4597,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-07 11:21:00",
+          "last_availability_timestamp": "2023-06-28 02:15:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1698,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-07 11:21:00",
+          "last_availability_timestamp": "2023-06-28 02:15:00"
+        },
+        "SWING_LOW": {
+          "observations": 1696,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-07 11:30:00",
+          "last_availability_timestamp": "2023-06-28 02:05:00"
+        }
+      },
+      "backtest_fingerprint": "1cabe42e0747a6ad99a0d978e65523b0649d27d0267bb5f6d71570de820aab91"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-06-28 02:16:00",
+      "last_timestamp": "2023-07-18 16:26:00",
+      "runtime_seconds": 118.75000071525574,
+      "total_events": 32616,
+      "peak_active_theses": 6,
+      "peak_active_passports": 4700,
+      "created_theses": 279,
+      "invalidated_theses": 277,
+      "expired_theses": 0,
+      "passport_count": 19358,
+      "feature_release_stats": {
+        "feature_records": 83805,
+        "liquidity_pools": 3800
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 211,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-29 09:50:00",
+          "last_availability_timestamp": "2023-07-18 16:24:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 198,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-29 16:24:00",
+          "last_availability_timestamp": "2023-07-18 16:15:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2717,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-28 02:51:00",
+          "last_availability_timestamp": "2023-07-18 16:24:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 74646,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-28 03:35:00",
+          "last_availability_timestamp": "2023-07-18 16:21:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1885,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-28 02:24:00",
+          "last_availability_timestamp": "2023-07-18 16:27:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4557,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-28 02:39:00",
+          "last_availability_timestamp": "2023-07-18 16:24:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1694,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-28 02:54:00",
+          "last_availability_timestamp": "2023-07-18 16:24:00"
+        },
+        "SWING_LOW": {
+          "observations": 1697,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-06-28 02:39:00",
+          "last_availability_timestamp": "2023-07-18 16:15:00"
+        }
+      },
+      "backtest_fingerprint": "e9457d5890ef0c580ad8603c17894fffb01c5cb451b68e5d6115c7123883c215"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-07-18 16:27:00",
+      "last_timestamp": "2023-08-08 05:06:00",
+      "runtime_seconds": 110.690993309021,
+      "total_events": 32609,
+      "peak_active_theses": 7,
+      "peak_active_passports": 3592,
+      "created_theses": 292,
+      "invalidated_theses": 289,
+      "expired_theses": 0,
+      "passport_count": 18237,
+      "feature_release_stats": {
+        "feature_records": 87573,
+        "liquidity_pools": 3806
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 209,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-07-20 06:57:00",
+          "last_availability_timestamp": "2023-08-08 05:00:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 222,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-07-20 02:30:00",
+          "last_availability_timestamp": "2023-08-08 04:50:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2762,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-07-18 16:36:00",
+          "last_availability_timestamp": "2023-08-08 05:00:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 78330,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-07-18 16:51:00",
+          "last_availability_timestamp": "2023-08-08 05:06:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1918,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-07-18 16:45:00",
+          "last_availability_timestamp": "2023-08-08 04:54:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4563,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-07-18 16:42:00",
+          "last_availability_timestamp": "2023-08-08 05:00:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1697,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-07-18 16:48:00",
+          "last_availability_timestamp": "2023-08-08 05:00:00"
+        },
+        "SWING_LOW": {
+          "observations": 1678,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-07-18 16:42:00",
+          "last_availability_timestamp": "2023-08-08 04:50:00"
+        }
+      },
+      "backtest_fingerprint": "4c23749935e91543043a3f5d76955675f4d6320fe5576cf6f2a2f0f07993f200"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-08-08 05:07:00",
+      "last_timestamp": "2023-08-28 17:04:00",
+      "runtime_seconds": 158.29189014434814,
+      "total_events": 32586,
+      "peak_active_theses": 6,
+      "peak_active_passports": 5826,
+      "created_theses": 245,
+      "invalidated_theses": 244,
+      "expired_theses": 0,
+      "passport_count": 19900,
+      "feature_release_stats": {
+        "feature_records": 97963,
+        "liquidity_pools": 3847
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 203,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-08 10:35:00",
+          "last_availability_timestamp": "2023-08-28 17:00:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 195,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-08 06:45:00",
+          "last_availability_timestamp": "2023-08-28 16:57:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2641,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-08 05:18:00",
+          "last_availability_timestamp": "2023-08-28 16:50:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 88785,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-08 06:09:00",
+          "last_availability_timestamp": "2023-08-28 17:05:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1898,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-08 05:33:00",
+          "last_availability_timestamp": "2023-08-28 17:00:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4639,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-08 05:30:00",
+          "last_availability_timestamp": "2023-08-28 17:00:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1710,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-08 05:30:00",
+          "last_availability_timestamp": "2023-08-28 17:00:00"
+        },
+        "SWING_LOW": {
+          "observations": 1739,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-08 05:54:00",
+          "last_availability_timestamp": "2023-08-28 16:57:00"
+        }
+      },
+      "backtest_fingerprint": "c4f5ae8b28b03917426b19d740deb707621d09f91366f5334f02b8c2b4eec651"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-08-28 17:05:00",
+      "last_timestamp": "2023-09-18 08:17:00",
+      "runtime_seconds": 186.93688797950745,
+      "total_events": 32609,
+      "peak_active_theses": 6,
+      "peak_active_passports": 7423,
+      "created_theses": 194,
+      "invalidated_theses": 184,
+      "expired_theses": 8,
+      "passport_count": 20249,
+      "feature_release_stats": {
+        "feature_records": 82481,
+        "liquidity_pools": 3734
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 175,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-30 08:30:00",
+          "last_availability_timestamp": "2023-09-18 08:18:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 177,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-30 07:30:00",
+          "last_availability_timestamp": "2023-09-18 08:05:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2734,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-28 17:27:00",
+          "last_availability_timestamp": "2023-09-18 08:15:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 73341,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-28 18:03:00",
+          "last_availability_timestamp": "2023-09-18 08:18:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1864,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-28 17:25:00",
+          "last_availability_timestamp": "2023-09-18 08:18:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4542,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-28 17:27:00",
+          "last_availability_timestamp": "2023-09-18 08:18:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1670,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-28 17:36:00",
+          "last_availability_timestamp": "2023-09-18 08:18:00"
+        },
+        "SWING_LOW": {
+          "observations": 1712,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-08-28 17:27:00",
+          "last_availability_timestamp": "2023-09-18 08:05:00"
+        }
+      },
+      "backtest_fingerprint": "b061d1aa33e74fefc6211642ac8066bf1221d57316fe6c8ba7cfe8e01faee3ec"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-09-18 08:18:00",
+      "last_timestamp": "2023-10-06 20:00:00",
+      "runtime_seconds": 138.82880330085754,
+      "total_events": 32612,
+      "peak_active_theses": 8,
+      "peak_active_passports": 5067,
+      "created_theses": 277,
+      "invalidated_theses": 270,
+      "expired_theses": 6,
+      "passport_count": 18796,
+      "feature_release_stats": {
+        "feature_records": 55844,
+        "liquidity_pools": 3807
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 261,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-09-19 16:57:00",
+          "last_availability_timestamp": "2023-10-06 20:00:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 249,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-09-19 12:30:00",
+          "last_availability_timestamp": "2023-10-06 19:48:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 3133,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-09-18 08:36:00",
+          "last_availability_timestamp": "2023-10-06 20:00:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 46380,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-09-18 09:24:00",
+          "last_availability_timestamp": "2023-10-06 20:00:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1854,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-09-18 08:30:00",
+          "last_availability_timestamp": "2023-10-06 19:45:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4477,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-09-18 08:36:00",
+          "last_availability_timestamp": "2023-10-06 20:00:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1638,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-09-18 09:03:00",
+          "last_availability_timestamp": "2023-10-06 20:00:00"
+        },
+        "SWING_LOW": {
+          "observations": 1659,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-09-18 08:36:00",
+          "last_availability_timestamp": "2023-10-06 19:48:00"
+        }
+      },
+      "backtest_fingerprint": "487a1605cbaee0e0c27f090bda28453e2e04c928ac424876adc082d13e9b2a35"
+    },
+    {
+      "size_actual": 20000,
+      "first_timestamp": "2023-10-06 20:01:00",
+      "last_timestamp": "2023-10-27 08:39:00",
+      "runtime_seconds": 107.21876382827759,
+      "total_events": 32610,
+      "peak_active_theses": 8,
+      "peak_active_passports": 3202,
+      "created_theses": 346,
+      "invalidated_theses": 345,
+      "expired_theses": 0,
+      "passport_count": 20777,
+      "feature_release_stats": {
+        "feature_records": 60801,
+        "liquidity_pools": 3975
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 306,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-06 21:48:00",
+          "last_availability_timestamp": "2023-10-27 08:39:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 303,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-06 22:30:00",
+          "last_availability_timestamp": "2023-10-27 08:40:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 2983,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-06 20:33:00",
+          "last_availability_timestamp": "2023-10-27 08:30:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 51316,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-06 20:48:00",
+          "last_availability_timestamp": "2023-10-27 08:40:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 1937,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-06 20:15:00",
+          "last_availability_timestamp": "2023-10-27 08:25:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 4565,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-06 20:18:00",
+          "last_availability_timestamp": "2023-10-27 08:40:00"
+        },
+        "SWING_HIGH": {
+          "observations": 1682,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-06 20:30:00",
+          "last_availability_timestamp": "2023-10-27 08:39:00"
+        },
+        "SWING_LOW": {
+          "observations": 1684,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-06 20:18:00",
+          "last_availability_timestamp": "2023-10-27 08:40:00"
+        }
+      },
+      "backtest_fingerprint": "dce97ce455782f42a41a6f52fff9be1797f59d2068639d98cec636f41cbf0d64"
+    },
+    {
+      "size_actual": 3676,
+      "first_timestamp": "2023-10-27 08:40:00",
+      "last_timestamp": "2023-10-31 22:58:00",
+      "runtime_seconds": 7.950358867645264,
+      "total_events": 5993,
+      "peak_active_theses": 7,
+      "peak_active_passports": 1699,
+      "created_theses": 64,
+      "invalidated_theses": 63,
+      "expired_theses": 0,
+      "passport_count": 3242,
+      "feature_release_stats": {
+        "feature_records": 8461,
+        "liquidity_pools": 748
+      },
+      "feature_coverage": {
+        "EQUAL_HIGHS": {
+          "observations": 67,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-27 09:57:00",
+          "last_availability_timestamp": "2023-10-31 22:50:00"
+        },
+        "EQUAL_LOWS": {
+          "observations": 69,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-27 12:05:00",
+          "last_availability_timestamp": "2023-10-31 22:54:00"
+        },
+        "FVG_RAW_FEATURES": {
+          "observations": 505,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-27 08:57:00",
+          "last_availability_timestamp": "2023-10-31 22:45:00"
+        },
+        "LIQUIDITY_SWEEP_EVENT": {
+          "observations": 6812,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-27 09:24:00",
+          "last_availability_timestamp": "2023-10-31 22:55:00"
+        },
+        "OB_RAW_FEATURES": {
+          "observations": 332,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-27 08:51:00",
+          "last_availability_timestamp": "2023-10-31 22:57:00"
+        },
+        "STRUCTURE_EVENT": {
+          "observations": 812,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-27 09:00:00",
+          "last_availability_timestamp": "2023-10-31 22:54:00"
+        },
+        "SWING_HIGH": {
+          "observations": 299,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-27 09:18:00",
+          "last_availability_timestamp": "2023-10-31 22:50:00"
+        },
+        "SWING_LOW": {
+          "observations": 313,
+          "timeframes_represented": [
+            "M15",
+            "M3",
+            "M30",
+            "M5"
+          ],
+          "first_availability_timestamp": "2023-10-27 09:00:00",
+          "last_availability_timestamp": "2023-10-31 22:54:00"
+        }
+      },
+      "backtest_fingerprint": "415e762a10d639d5b325282086d0a7a03c88b0834b7dd190fa862d8a79bbd730"
+    }
+  ],
+  "quarantine_label": "ENGINEERING_SMOKE_ONLY / QUARANTINED / NOT_RESEARCH_EVIDENCE",
+  "chunking_caveat": "Theses/candidates spanning a chunk boundary are dropped, not carried over. Thesis lifetime cap is 720 M1 candles vs chunk_size=20000, so boundary effect is bounded to ~3.6% of each chunk.",
+  "train_end_boundary_utc": "2023-11-01 00:00:00",
+  "dataset_fingerprint": "e42c13ebe1207474bb99554e627d1ef8c41f19c64428728025ed7dcb0b9fd05c",
+  "full_train_run": true
+}

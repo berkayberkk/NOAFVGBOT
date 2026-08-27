@@ -41,6 +41,22 @@ hemen hepsi kodda yok.
 **Ana Kural:** Fiyat %90-95 oranında Eski Alan'ın **Katman 1**'inden
 tepki verir.
 
+**Katman 1'in iç alt-bölünmesi (`KONDİSYONLAR.pdf` madde 12, `_FİZİK KURALLARI.pdf`):**
+K1'in kendisi de ikiye ayrılır — **0-0.15** ve **0.15-0.25**. Fiyat
+K1'e ilerlerken yolda "enerji dolumu" (konsolidasyon) YAPTIYSA, tepki
+0-0.15'te (en derin/en garanti alt-bant) beklenir; enerji dolumu
+YAPMADIYSA 0.15-0.25'te beklenir. Yani hangi alt-bandın seçileceği,
+K1'e giden yoldaki fiyat davranışına bağlı — sabit bir eşik değil.
+Kodda hiç yok (Katman'ın kendisi bile yok).
+
+**Mini Yeni Alan (`_ALAN GÜCÜ.pdf`) — iç içe zon kavramı:**
+Aktif Yeni Alan'ın İÇİNDE, daha küçük ölçekli bir "Mini Yeni Alan"
+oluşabilir. Bu mini-alanın kendi Katman 1'inden gelen bir tepki,
+"Enerji Dolumu" puanına katkı sağlar (bkz. Alan Gücü). Yani Alan/
+Katman yapısı kaynakta ÖZYİNELEMELİ (recursive/nested) — sadece tek
+seviyeli bir N/O çifti değil. Kodda hiç yok, `strategy/zone.py` şu an
+tek seviyeli.
+
 **Eylem 1 / Eylem 2 — giriş stili — `EYLEM 1-2 - KATMANLAR.pdf`, `KONDİSYONLAR.pdf`**
 - **Eylem 1:** "garanti" (S+ setup kalitesi + hesaplı Alan Gücü) bir
   Katman 1'den **direkt** buy/sell limit emri — onay beklemeden.
@@ -51,18 +67,31 @@ tepki verir.
   bekleyip ondan sonra giriş. En önemli kural: "modülden tepki gelip
   yapı oluşturursa, Eylem 2."
 
-**Modüller — güç sıralaması (`SETUP KALİTESİ.pdf`, `NOA'NIN FVG'Sİ.pdf`, `WICK IMBALANCE ROP.pdf`, `0.38.pdf`)**
-1. **0.38 modülü** (en güçlü, puan=3) — Alan/leg'in (swing high→low)
+**Modüller — güç sıralaması / numaralandırma M1-M4 (`SETUP KALİTESİ.pdf`, `NOA'NIN FVG'Sİ.pdf`, `WICK IMBALANCE ROP.pdf`, `0.38.pdf`)**
+1. **0.38 modülü (M1)** (en güçlü, puan=3) — Alan/leg'in (swing high→low)
    kendi fib'inde **0.382-0.5 bandı**, tek bir FVG gap'i değil. Rejection
-   (reddiye) mumu ile teyit şart, kör giriş yok. 2 kullanılabilir seviye.
-2. **Wick Imbalance** (puan=2) — mum fitillerinden çizilen FVG-benzeri
-   yapı, kendi fib'i var, 2 seviye kullanılabilir, mesafe kuralı 5-9 /
-   9-75 / 75-210 bar aralıklı.
-3. **FVG** (puan=1) — mevcut kodun tek implement ettiği modül, ama
+   (reddiye) mumu ile teyit şart, kör giriş yok. 2 kullanılabilir seviye
+   (tipik olarak 0.382 ve 0.5), mesafe kuralına göre hangisi kullanılabilir
+   belirlenir.
+2. **Wick Imbalance (M2)** (puan=2) — mum fitillerinden çizilen FVG-benzeri
+   yapı, kendi fib'i var (0/0.15/0.25/0.38/0.5/0.62/0.75/0.85/1 referans
+   ızgarası), 2 seviye kullanılabilir, mesafe kuralı **5-9 bar (yakın,
+   1. seviye) / 9-75 bar (orta, 2. seviye) / 75-210 bar (uzak, 1. seviye
+   tekrar) / 210+ geçersiz**. Ek şartlar: **"Alanın en dip modülüdür —
+   altında/üstünde başka modül kalamaz"** (Alan'ın en uç noktasını
+   tanımlar); **"önünde mum veya fitil bulunmamalı"** (en ekstrem,
+   önünde engelsiz olmalı); **"mumun fitili, aktif süreçteki diğer
+   mumların fitillerinden büyük olmalı"** (göze çarpan, aykırı bir
+   fitil — sıradan bir fitil yeterli değil).
+3. **FVG (M3)** (puan=1) — mevcut kodun tek implement ettiği modül, ama
    kaynaktaki tanımın sadece bir kısmını karşılıyor (bkz. alt madde).
    Sadece 1 kez kullanılır (dolunca tekrar kullanılmaz, kaynak: KONDİSYONLAR.pdf).
-4. **R.O.P (Rejection Of Price)** (puan=0 taban + zaman dilimi bonusu) —
-   fitil ucu kırılım + retest, ICT "Breaker Block" analogu.
+4. **R.O.P — Rejection Of Price (M4)** (puan=0 taban + zaman dilimi bonusu)
+   — bir fitil önce bir tepe/dip yapar, sonra fiyat o fitili kırıp geçer;
+   kırılan fitilin ucu artık bir modül adayı olur (ICT "Breaker Block"
+   analogu). **KENDİ BAŞINA işlem açılabilecek bir modül DEĞİLDİR** —
+   ancak FVG ile birleştiğinde veya Alan'ın en uç noktasıyla çakıştığında
+   kullanılabilir. Mesafe kavramı yok (sadece fitil ucu konumu önemli).
 
 **FVG modülü (detaylı) — `NOA'NIN FVG'Sİ.pdf`**
 
@@ -109,11 +138,49 @@ değil (bkz. `_tag_katman` fonksiyonu, `signal.index`'teki `close`
 fiyatını kullanıyor, FVG'nin kendi seviyesini değil). Bu farkın sonucu
 ne kadar değiştirdiği test edilmedi — potansiyel bir sonraki adım.
 
-**Alan Gücü — `_ALAN GÜCÜ.pdf`**
-Eski Alan puanı vs Yeni Alan puanı karşılaştırması: modül reaksiyon
-puanı + katman puanı + yapı-oluşum bonusu + enerji-dolumu bonusu +
-zaman dilimi bonusu toplanır, hangi alan daha yüksek puanlıysa o
-"kazanır" ve beklenen reaksiyon ona göre belirlenir. Kodda hiç yok.
+**Alan Gücü — `_ALAN GÜCÜ.pdf`** — TAM FORMÜL (örneklerden ters
+mühendislikle kesin doğrulandı, iki bağımsız örnek toplamı tutuyor):
+
+Her Alan (Eski ve Yeni ayrı ayrı) için puan = şu bileşenlerin toplamı:
+
+1. **Katman puanı** (o alanın tepkisi kaçıncı katmandan geldi):
+   Katman 1 = **+2**, Katman 2 = **+1**.
+2. **Modül puanı + zaman dilimi puanı** (tepkiyi başlatan modül, hangi
+   zaman diliminde): modül tabanı — 0.38=+3, Wick Imbalance=+2, FVG=+1,
+   R.O.P=+0 — **artı** zaman dilimi bonusu — H1=+1, H4=+2, Günlük=+3,
+   Haftalık=+4. İkisi toplanır (ör. "Daily Wick Imbalance" = 2+3 = +5).
+3. **Yapı oluştu mu?**: tepki başladıktan sonra orada bir modül/yapı
+   oluştuysa **+2**.
+4. **Enerji Dolumu** (bkz. Fizik Kuralları — sadece H1+ zaman
+   diliminde sayılır): modül-bazlı enerji dolumu tespit edildiyse
+   **+2**; Katman-1-bazlı (Mini Yeni Alan'ın K1'inden) enerji dolumu
+   tespit edildiyse **+1**. İkisi aynı anda da uygulanabilir (görülen
+   örnekte ikisi birden +2 ve +1 olarak eklenmiş).
+
+Örnek (kaynaktan, doğrulandı): Modül tepkisi (Daily R.O.P, +0+3=+3) +
+Katman 2 tepkisi (+1) + Yapı oluştu (+2) + 0.38 Enerji D. (+2) +
+Katman 1 Enerji D. (+1) = **9**. İkinci örnek: Modül tepkisi & Katman 1
+(Daily Wick Imbalance +5, +2) = +7, + Yapı var (+2) + Katman 1 Enerji
+D. (+1) = **10**.
+
+**Karar tablosu — Eski Alan puanı − Yeni Alan puanı farkına göre**
+(kaynakta "YENİ ALAN GEÇERSİZLİĞİ" başlığı ile örnek birbirini
+doğruluyor; gövde metnindeki tek bir cümle bunlarla çelişiyor —
+muhtemelen kaynağın kendi yazım hatası, başlık+örnek esas alındı):
+
+| Fark (Eski − Yeni) | Sonuç |
+|---|---|
+| ≤ −2 | **Eski Alan biter** (geçersiz olur) |
+| −1, 0, veya +1 | Eski Alan'ın **Katman 1**'inden tepki beklenir |
+| +2 veya +3 | Eski Alan'ın **Katman 2**'sinden tepki beklenir |
+| ≥ +4 | **Yeni Alan biter** (geçersiz olur), örnek: Eski=10 Yeni=6 → fark=+4 → "Yeni Alan Ölür" |
+
+Bir K1/K2 tepkisi çözüldükten sonra, önceki "Yeni Alan" yeni bir
+"Eski Alan" olur ve hesap sıfırdan tekrarlanır (özyinelemeli).
+
+**Bu formül ve karar tablosu kodda tamamen yok** — `strategy/zone.py`
+sadece geometrik Kural 1'i (fitil %50 kırılımı) uyguluyor, hiçbir
+puanlama/karşılaştırma yapmıyor.
 
 **Setup Kalitesi — `SETUP KALİTESİ.pdf`**
 Modül puanı + Katman puanı + Zaman dilimi puanı (Haftalık=4, Günlük=3,
@@ -133,12 +200,52 @@ Kodda karşılığı yok — `strategy/signal_engine.py`'deki `Confidence`
 (muhtemelen LOW/MEDIUM/HIGH) çok daha basit bir kavram, bu puanlama
 sistemine denk gelmiyor, TP/lot'u dinamik olarak buna göre ayarlamıyor.
 
-**İdeal TP-SL — `_İDEAL TP - SL.pdf`**
-TP, sabit R:R değil; Katman 1 modülü / "Alan Bitiren" nokta / HTF
-alternatifleri bazlı belirleniyor. Giriş kesinliğine (sniper mı değil
-mi) göre TP'nin %30-%70'ine gelince breakeven'e çekme kuralı var.
-`backtest/engine.py`'deki `_find_take_profit` mantığı bu kaynak kuralla
-karşılaştırılmadı — muhtemelen uyumsuz.
+**İşleme girmeden önce kontrol listesi (`SETUP KALİTESİ.pdf`):**
+1. Alan Gücü hesaplaması yap.
+2. Kondisyonları kontrol et (bkz. Fizik Kuralları/Kondisyonlar).
+3. SL-TP paraya göre değil, **konsepte göre** belirlenmeli (bkz. İdeal TP-SL).
+4. Spread-slippage önlemi al.
+5. **Yakında enerji dolumu varsa uzak dur / daha alt (düşük güçlü) bir
+   modülden beklenmeli** — yakındaki çözülmemiş konsolidasyon, riski artırır.
+
+Kodda hiçbiri implement değil — mevcut EA/backtest hiçbir pre-trade
+checklist uygulamıyor, sinyal üretilir üretilmez (confidence filtresi
+dışında) işlem açılıyor.
+
+**İdeal TP-SL — `_İDEAL TP - SL.pdf`** — TAM KURALLAR:
+
+**TP için 3 seçenek (öncelik sırasıyla değil, bağlama göre):**
+1. **Katman 1 Modülü** — modülün TAM tepki vermeden ÖNCEKİ (spread
+   dahil, "bir tık önce") kısmına TP koy. En güvenli, kısa vadeli
+   (≤5 gün) pozisyonlar için tercih edilir.
+2. **Alan Bitiren** — Eski Alan'daki bir MODÜLE göre (Alan'ın en tepe/
+   dip NOKTASINA göre DEĞİL — kaynak bunu açıkça bir hata olarak
+   işaretliyor: "TP, fiyatın gerçekten tepki verebileceği bir yer
+   olmalı", Alan'ın mutlak ekstremi orada değil). ATH/ATL durumunda:
+   ATH + 20-30 pip (veya ATL − 20-30 pip).
+3. **HTF Alternatifleri** — bir üst zaman diliminin (Günlük/Haftalık)
+   modülüne kadar; zaman kazanmak veya swap maliyetinden kaçmak için.
+
+**SL için 3 seçenek:**
+1. **Katman 1'in son noktası** — en garanti fallback; Alan Gücü/modül
+   seçimi yanlış çıksa bile bu SL kurtarır.
+2. **Alternatif tepki potansiyeline sahip modül(ler) & HTF Alternatifleri.**
+3. **Modül Bitişi** — o modülün dışında başka bir modül yoksa, veya
+   istatistiksel olarak sabit bir risk sınırı isteniyorsa.
+
+Her iki durumda da: modül seviyesinin **bir tık ötesine/önüne** SL/TP
+koy (spread/slippage payı bırak, tam seviyeye değil).
+
+**Breakeven kuralı (sayısal, net):**
+- Giriş **"sniper"** ise (tam tepki noktasından, sıfır sapmayla
+  girildiyse) → TP'nin **%30**'una ulaşınca pozisyonu breakeven'e çek.
+- Giriş sniper DEĞİLSE (daha kötü/geç bir fiyattan girildiyse) → TP'nin
+  **%70**'ine ulaşınca breakeven'e çek.
+
+`backtest/engine.py`'deki `_find_take_profit` mantığı bunların
+HİÇBİRİNE uymuyor — sonraki karşıt S/R seviyesini kullanıyor (Katman/
+Alan/HTF modülü değil), ve **breakeven kavramı kodda hiç yok** (SL/TP
+sabit, pozisyon açıldıktan sonra hiç güncellenmiyor).
 
 **DXY Korelasyonu — `_DXY KORELASYONU.pdf`**
 EURUSD/GBPUSD gibi majörler DXY ile ters korele (sabit offset ile:
@@ -147,9 +254,20 @@ bağımsız/dominant, basit ters korelasyon uygulanmaz. Kodda hiçbir DXY
 veri hattı veya korelasyon mantığı yok.
 
 **Fizik Kuralları / Kondisyonlar — `_FİZİK KURALLARI.pdf`, `KONDİSYONLAR.pdf`**
-- Enerji Dolumu: fiyat sabit hızla sonsuza kadar hareket edemez —
+- **Enerji Dolumu:** fiyat sabit hızla sonsuza kadar hareket edemez —
   "enerji dolumu" (konsolidasyon) olmadan uzayan bir leg'den modül
-  sinyali beklenmez.
+  sinyali beklenmez. **Kritik kısıtlama: enerji dolumu SADECE H1 veya
+  daha üst zaman diliminde hesaba katılır** — M30/M15 gibi düşük zaman
+  dilimlerinde bu kavram hiç uygulanmaz. Mevcut kod altyapısı (`research/
+  v2/data/resampler.py`'deki `Timeframe` enum'u) M30'un üstüne
+  çıkmıyor — yani bu bileşen, mevcut pipeline'da hiçbir zaman
+  hesaplanabilir durumda değil (0 olarak sabit kalır).
+- **Kuvvet rekabeti (Alan Gücü'nün sezgisel versiyonu):** hangi yönde
+  (bullish/bearish) daha fazla VEYA daha güçlü modül/zaman dilimi
+  varsa o yön kazanır. Basit durum: 2 modül vs 1 modül → açık galip.
+  Karmaşık durum: bir modül daha büyük zaman diliminde VE daha güçlü
+  bir modül tipinde VE Katman 1'deyse ("Günlük Wick Imbalance, K1"),
+  bu tek başına karşıt yöndeki daha zayıf/küçük modülleri kırabilir.
 - Bir modül seviyesine erken (tam mesafeye ulaşmadan) tepki verilirse,
   o modül ikinci kez kullanılmaz — bir sonraki denemede kırılacağı
   varsayılır.
@@ -173,11 +291,18 @@ veri hattı veya korelasyon mantığı yok.
 | 0.38 modülü | Var (1. güç sırası) | Yok (önceki oturumdaki fib-prototip denemesi bunu FVG gap'inden türetmeye çalışmıştı — kavramsal olarak yanlış, bkz. aşağıdaki not) | **eksik** |
 | R.O.P modülü | Var (4. sıra) | Yok | **eksik** |
 | Setup Kalitesi (S+/S/A+/A/B+/B/C) | Var, TP/lot'u belirliyor | Yok | **büyük eksik** |
-| Alan Gücü puanlaması | Var | Yok | **büyük eksik** |
+| Setup Kalitesi — pre-trade checklist (5 madde) | Var | Yok | **eksik** |
+| Alan Gücü puanlaması (tam formül + karar tablosu artık biliniyor) | Var | Yok | **büyük eksik** |
+| Katman 1 iç alt-bölünmesi (0-0.15/0.15-0.25) | Var | Yok (Katman'ın kendisi bile yok üretimde) | **eksik** |
+| Mini Yeni Alan (özyinelemeli zon) | Var | Yok — `strategy/zone.py` tek seviyeli | **eksik** |
 | Eylem 1 / Eylem 2 | Var | Yok — kod her zaman aynı şekilde limit emri koyuyor | **eksik** |
-| İdeal TP-SL (katman/alan bazlı + BE) | Var | Muhtemelen farklı (kontrol edilmedi) | **kontrol edilmeli** |
-| DXY korelasyonu | Var | Yok | **eksik** |
-| Enerji Dolumu / modül tekrar kullanım kısıtı | Var | Yok | **eksik** |
+| İdeal TP (Katman1-modül / Alan Bitiren / HTF) | Var, 3 net seçenek | **Uyumsuz** — `_find_take_profit` sonraki S/R seviyesini kullanıyor | **uyumsuz** |
+| İdeal SL (Katman1 son nokta / alternatif modül / modül bitişi) | Var, 3 net seçenek | **Uyumsuz** — SL `signal.stop_loss`'tan sabit geliyor | **uyumsuz** |
+| Breakeven kuralı (%30 sniper / %70 non-sniper) | Var, sayısal | **Yok** — pozisyon açıldıktan sonra hiç güncellenmiyor | **eksik** |
+| DXY korelasyonu (sabit offset formülü artık biliniyor) | Var | Yok — DXY veri hattı hiç yok | **eksik** |
+| Enerji Dolumu (SADECE H1+ zaman diliminde geçerli) | Var | Yok, ayrıca mevcut altyapı M30 üstünü desteklemiyor | **eksik + altyapısal engel** |
+| Modül tekrar kullanım kısıtı (FVG 1x, 0.38/WI 2x) | Var | Yok | **eksik** |
+| Kuvvet rekabeti (modül+zaman dilimi gücü karşılaştırması) | Var | Yok | **eksik** |
 
 ## Önceki fib-retracement prototipiyle bağlantı
 

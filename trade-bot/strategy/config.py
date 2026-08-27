@@ -33,6 +33,16 @@ class StrategyConfig:
     # --- Trend Parametreleri ---
     ema_period: int = 50
 
+    # --- Alan / Katman Parametreleri ---
+    # SR'nin swing_lookback'inden (5) BİLEREK farklı/geniş tutuldu -- Alan'lar
+    # SR seviyelerinden daha büyük ölçekli trend leg'lerini temsil ediyor.
+    zone_swing_lookback: int = 10
+    # Donmuş (Eski Alan/O) bir alanın "geniş" sayılması için minimum boyut,
+    # start_index'teki ATR'nin katı cinsinden. Kaynak yalnızca nitel olarak
+    # ("2-3 mumluk alan geçersiz") belirtiyor -- bu sayısal eşik kod tarafında
+    # bir varsayımdır, gerçek veriyle kalibre edilmesi gerekir.
+    zone_min_size_atr_ratio: float = 3.0
+
 
 # Global varsayılan yapılandırma nesnesi
 DEFAULT_CONFIG = StrategyConfig()

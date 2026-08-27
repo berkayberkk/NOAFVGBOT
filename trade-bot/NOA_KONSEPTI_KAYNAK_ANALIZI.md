@@ -148,3 +148,37 @@ Kapsam: swing/zone dedektörü (Alan), katman sınıflandırıcı, 3 yeni modül
 (0.38, Wick Imbalance, R.O.P), Alan Gücü puanlayıcı, Setup Kalitesi
 grade motoru, Eylem 1/2 karar mantığı, DXY veri hattı + korelasyon
 modülü. Hangi parçadan başlanacağı ayrı bir karar gerektiriyor.
+
+## Güncelleme — Alan/Katman dedektörü implement edildi
+
+`strategy/zone.py` yazıldı: N/O Area (Yeni/Eski Alan), 4 Katman
+sınıflandırması, sadece **Kural 1** (aktif alanın 0.50 seviyesinin
+fitille kırılması) ile zone geçişi. **Kural 2 bilinçli olarak kapsam
+dışı bırakıldı** — kaynak hangi modülün/ne kadar teyidin sayılacağını
+hiç netleştirmiyor, ve şu an kodda sadece FVG modülü var; Wick
+Imbalance/0.38/R.O.P eklenince ayrı bir işte ele alınacak. 15 birim
+testi + tam test paketi (439 test) regresyon olmadan geçiyor.
+
+**Gerçek GOLD M30 verisiyle doğrulama sonucu** (`scratch_zone_katman_validation.py`,
+son 35.000 mum): 157 çözülmüş alan geçişinin **%31.2'si Katman 1'den,
+%68.8'i Katman 2'den** tepki veriyor; Katman 3/4'ten **hiç** tepki
+gözlenmedi (%0/%0).
+
+Bu son nokta önemli bir metodolojik bulgu: `first_reaction_katman`
+metriği ("bir sonraki alanın nihai ucu hangi katmana düştü") **yapısal
+olarak K3/K4'ü hiç gösteremez** — çünkü Kural 1'in kendisi zaten "0.50
+kırıldı mı" (K2/K3 sınırı) şartına dayanıyor; ölçüm ancak bu kırılma
+GERÇEKLEŞTİKTEN sonra başlıyor, bu da otomatik olarak K1/K2 tarafına
+yanlı hale getiriyor. Yani bu, kaynağın "%90-95 Katman 1'den tepki
+verir" iddiasının **temiz/doğrudan bir testi değil** — kısmen destekler
+(K1+K2 = tepkilerin tamamı, "derin" tarafta), ama K1 tek başına
+sadece %31 (iddia edilen %90-95'in çok altında). Bu farkın nedeni
+(a) kaynağın muhtemelen H4/Günlük/Haftalık ölçekte kalibre edilmiş
+olması (burada sadece M30 test edilebiliyor, `Timeframe` enum'u daha
+yükseğe çıkmıyor), (b) Kural 2'nin eksik olması, (c) `zone_swing_lookback`/
+`zone_min_size_atr_ratio` varsayılanlarının kalibre edilmemiş olması,
+veya (d) metrik tanımının kendisinin kaynağın kastettiği "ilk temas
+noktası" yerine "nihai geri çekilme derinliği"ni ölçmesi olabilir.
+Sonraki adım için: metriği "ilk temas + tepki teyidi" şeklinde
+yeniden tanımlamak, ya da daha yüksek zaman diliminde (mevcut kod
+M30'un üstünü desteklemiyor) test etmek gerekir.

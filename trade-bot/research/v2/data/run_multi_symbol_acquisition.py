@@ -96,9 +96,49 @@ SYMBOLS: List[Tuple[str, str]] = [
     ("NZDCHF", "NZDCHF"),
     ("BTCUSD", "BTCUSD"),
     ("WTI", "OILCash"),
+    # GOLD refresh -- separate identity from the frozen V2_10B1_XAUUSD_GOLD_M1_raw.csv /
+    # data/manifest.json artifacts (never touched). Gives a directly comparable entry in
+    # the same 32-symbol validation table using this pipeline's own fresh acquisition.
+    ("GOLD", "GOLD"),
+
+    # Round 3 -- maximum breadth pass. Every symbol below was confirmed present via a live
+    # mt5.symbols_get() survey. Deliberately excludes: individual Stocks/Turbo Stocks (1381
+    # symbols, not suited to this macro FX/commodity strategy), ETF Derivatives (equity-hours,
+    # mostly redundant with instruments already covered), Thematic Indices (broker-proprietary
+    # synthetic baskets), and every dated/expiring futures contract (symbols with a "-SEP26"/
+    # "-OCT26"/"-NOV26"/"-DEC26" suffix -- not continuous, unsuited to a 2010-2026 backtest).
+
+    # Exotic FX crosses (27) -- minor/EM currencies, expect wider spreads than majors.
+    ("CHFSGD", "CHFSGD"), ("EURDKK", "EURDKK"), ("EURHKD", "EURHKD"), ("EURHUF", "EURHUF"),
+    ("EURNOK", "EURNOK"), ("EURPLN", "EURPLN"), ("EURSEK", "EURSEK"), ("EURSGD", "EURSGD"),
+    ("EURTRY", "EURTRY"), ("EURZAR", "EURZAR"), ("GBPDKK", "GBPDKK"), ("GBPNOK", "GBPNOK"),
+    ("GBPSEK", "GBPSEK"), ("GBPSGD", "GBPSGD"), ("NZDSGD", "NZDSGD"), ("SGDJPY", "SGDJPY"),
+    ("USDCNH", "USDCNH"), ("USDDKK", "USDDKK"), ("USDHKD", "USDHKD"), ("USDHUF", "USDHUF"),
+    ("USDMXN", "USDMXN"), ("USDNOK", "USDNOK"), ("USDPLN", "USDPLN"), ("USDSEK", "USDSEK"),
+    ("USDSGD", "USDSGD"), ("USDTRY", "USDTRY"), ("USDZAR", "USDZAR"),
+
+    # Global equity indices (23) -- continuous "Cash" contracts only.
+    ("AUS200", "AUS200Cash"), ("CA60", "CA60Cash"), ("CHN50", "CHN50Cash"), ("CHINAH", "ChinaHCash"),
+    ("EU50", "EU50Cash"), ("FRA40", "FRA40Cash"), ("GER40", "GER40Cash"), ("GERMID50", "GerMid50Cash"),
+    ("GERTECH30", "GerTech30Cash"), ("HK50", "HK50Cash"), ("IT40", "IT40Cash"), ("JP225", "JP225Cash"),
+    ("NETH25", "NETH25Cash"), ("SA40", "SA40Cash"), ("SWI20", "SWI20Cash"), ("SING30", "Sing30Cash"),
+    ("SPAIN35", "SpainCash"), ("TAIWAN", "TaiwanCash"), ("UK100", "UK100Cash"), ("US2000", "US2000Cash"),
+    ("US30", "US30Cash"), ("US500", "US500Cash"), ("USFANG", "USFANGCash"),
+
+    # Metals (2) and energy (1) not yet covered.
+    ("PLATINUM", "XPTUSD"), ("PALLADIUM", "XPDUSD"), ("BRENT", "BRENTCash"),
+
+    # Major cryptocurrencies (15) -- top of this broker's 60-symbol crypto list by relevance,
+    # excluding long-tail low-cap altcoins.
+    ("ETHUSD", "ETHUSD"), ("XRPUSD", "XRPUSD"), ("SOLUSD", "SOLUSD"), ("DOGEUSD", "DOGEUSD"),
+    ("ADAUSD", "ADAUSD"), ("DOTUSD", "DOTUSD"), ("LINKUSD", "LINKUSD"), ("AVAXUSD", "AVAXUSD"),
+    ("MATICUSD", "MATICUSD"), ("BCHUSD", "BCHUSD"), ("LTCUSD", "LTCUSD"), ("ATOMUSD", "ATOMUSD"),
+    ("UNIUSD", "UNIUSD"), ("XLMUSD", "XLMUSD"), ("ETCUSD", "ETCUSD"),
 ]
 
-REQUESTED_START_UTC = "2021-01-04 01:00:00"  # matches the existing GOLD dataset window
+REQUESTED_START_UTC = "2010-01-01 00:00:00"  # maximum depth this broker offers (verified available for
+                                              # EURUSD/GOLD back to late 2009); a symbol with a shorter
+                                              # real history simply yields fewer rows, no error.
 CHUNK_DAYS = 30
 OVERLAP_WINDOW = timedelta(hours=2)
 RAW_FIELDS = ["time", "timestamp_open_utc", "open", "high", "low", "close", "tick_volume", "spread"]
@@ -234,6 +274,21 @@ def fetch_chunk_rows(mt5, symbol: str, chunk_start: datetime, chunk_end: datetim
     if rates is None or len(rates) == 0:
         return []
 
+    # last_verified_ts is only meaningful as a dedup watermark when it falls inside this
+    # chunk's own overlap-lookback window -- i.e. it was set by the chunk immediately
+    # preceding this one in the SAME chronological pass. When depth is extended backward
+    # (REQUESTED_START_UTC moved earlier than an existing checkpoint's watermark), the
+    # stale watermark from the old forward-only run sits far in the future relative to
+    # these older chunks; applying it unconditionally silently discarded every row of the
+    # 2010-2021 backfill (all timestamps <= a 2026 watermark) while still marking those
+    # chunks "complete" with zero rows written. Only trust it inside [request_start, chunk_end).
+    request_start_str = request_start.strftime("%Y-%m-%d %H:%M:%S")
+    chunk_end_str = chunk_end.strftime("%Y-%m-%d %H:%M:%S")
+    watermark_applies = (
+        last_verified_ts is not None
+        and request_start_str <= last_verified_ts < chunk_end_str
+    )
+
     rows: List[Dict[str, Any]] = []
     seen_ts = set()
     for r in rates:
@@ -241,7 +296,7 @@ def fetch_chunk_rows(mt5, symbol: str, chunk_start: datetime, chunk_end: datetim
         ts_open_str = dt_open.strftime("%Y-%m-%d %H:%M:%S")
         if dt_open + timedelta(seconds=60) > now_utc:
             continue
-        if last_verified_ts is not None and ts_open_str <= last_verified_ts:
+        if watermark_applies and ts_open_str <= last_verified_ts:
             continue
         if dt_open >= chunk_end:
             continue
@@ -273,8 +328,11 @@ def acquire_symbol_raw(mt5, research_symbol: str, broker_symbol: str, end_utc: d
         existing_cp = load_checkpoint(paths["checkpoint"])
         if existing_cp is not None and existing_cp.broker_symbol == broker_symbol and existing_cp.raw_file_path == paths["raw"]:
             cp = existing_cp
-            # extend the end boundary forward on resume (this run's "now") without discarding progress
+            # extend the end boundary forward on resume (this run's "now"), and the start boundary
+            # backward if REQUESTED_START_UTC has been moved earlier since the checkpoint was created
+            # (e.g. depth-extension re-runs) -- without discarding any already-completed chunk progress.
             cp.requested_end_utc = end_str
+            cp.requested_start_utc = REQUESTED_START_UTC
         else:
             cp = Checkpoint(
                 requested_start_utc=REQUESTED_START_UTC,

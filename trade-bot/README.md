@@ -66,33 +66,59 @@ V2'den henüz kanıtlanmış bir strateji sonucu yok.
 
 ## Çoklu-sembol genelleme testi
 
-`research/v2/data/run_multi_symbol_acquisition.py` ile GOLD dışında 32
-sembolün (major FX çaprazları + BTCUSD + WTI + Nasdaq/Silver) gerçek
-MT5 M1 verisi toplandı; `backtest/run_multi_symbol_validation.py` ile
-V1 stratejisi her sembolde kendi train/val/test bölünmesiyle test
-edildi (sonuçlar `backtest/results/V2_MULTI_*_validation.json`).
-32 sembolün 11'inde %95 block-bootstrap güven aralığı sıfırı
-kapsamıyor — GBPJPY, GBPUSD, GBPAUD, EURAUD, BTCUSD, SILVER, EURJPY,
-EURNZD, USDCHF istatistiksel olarak sağlam pozitif; NASDAQ ve NZDCHF
-sağlam negatif (strateji bu enstrümanlarda gerçekten işlemiyor).
-USDCHF hariç tüm CHF çaprazları başarısız — muhtemelen GOLD'a göre
-kalibre edilmiş ATR eşiklerinin CHF'nin düşük volatilitesine uymaması.
+`research/v2/data/run_multi_symbol_acquisition.py` ile gerçek MT5 M1
+verisi toplanıyor; `backtest/run_multi_symbol_validation.py` ile V1
+stratejisi her sembolde kendi train/val/test bölünmesiyle test
+ediliyor (sonuçlar `backtest/results/V2_MULTI_*_validation.json`,
+özet `backtest/results/V2_MULTI_validation_summary.json`).
 
-`mql5/TradeBot_NOA_MultiSymbol.mq5` bu 9 sağlam sembol + GOLD'u tek EA
-instance'ında (OnTimer tabanlı, sembol başına ayrı ATR/EMA handle,
-portföy risk tavanlı) işlem yapacak şekilde genişletir. Strateji
-mantığı `TradeBot_NOA.mq5` (tek sembol, kanıtlanmış GOLD versiyonu)
-ile birebir aynı — o dosyaya dokunulmadı, ayrı ve kanıtlanmış haliyle
-duruyor. Derlendi (0 hata), henüz demo hesapta çalıştırılmadı.
+**Round 1–2 (32 sembol, major FX + BTCUSD/WTI/Nasdaq/Silver):** 11
+sembol %95 block-bootstrap güven aralığı sıfırı kapsamıyor —
+istatistiksel olarak sağlam pozitif. USDCHF hariç tüm CHF çaprazları
+başarısız (muhtemelen GOLD'a göre kalibre ATR eşiklerinin CHF'nin
+düşük volatilitesine uymaması).
+
+**Round 3 (maksimum genişlik, 101 sembol, veri derinliği 2010'a
+kadar):** major/exotic FX çaprazları, 23 global endeks (US30, GER40,
+JP225, HK50, UK100 vb.), metal/enerji (PLATINUM, PALLADIUM, BRENT) ve
+15 büyük kripto para eklendi. Sonuç: **54/101 sembol validated** (17
+STRONG + 37 MODERATE), 47 generalize olamadı. Öne çıkan bulgu: STRONG
+sınıfının 11/17'si global endeks (CA60, GER40, IT40, US30, CHINAH,
+NETH25, FRA40, HK50, JP225, EU50, US500) — strateji FX'ten çok endeks
+piyasalarında güçlü genelleme gösteriyor. (İstisna: USFANG "STRONG"
+etiketli ama sadece 1 trade/pf=inf — örneklem gürültüsü, kanıt olarak
+sayılmamalı.) Şu an canlı EA'da olan 10 sembolün (GOLD, GBPJPY,
+GBPUSD, GBPAUD, EURAUD, BTCUSD, SILVER, EURJPY, EURNZD, USDCHF)
+tamamı Round 3'te de validated çıktı — regresyon yok.
+
+`mql5/TradeBot_NOA_MultiSymbol.mq5` bu 9 sağlam sembol (Round 1-2) +
+GOLD'u tek EA instance'ında (OnTimer tabanlı, sembol başına ayrı
+ATR/EMA handle, portföy risk tavanlı) işlem yapacak şekilde genişletir.
+Strateji mantığı `TradeBot_NOA.mq5` (tek sembol, kanıtlanmış GOLD
+versiyonu) ile birebir aynı — o dosyaya dokunulmadı, ayrı ve kanıtlanmış
+haliyle duruyor. Derlendi (0 hata), demo hesapta forward-test'te
+(bkz. `backtest/ea_monitor.py`).
+
+**EA'ya eklenmeye aday, Round 3'te STRONG çıkan yeni semboller**
+(henüz canlıda değil): USDJPY, BRENT + endeks grubu (CA60, GER40,
+IT40, US30, CHINAH, NETH25, FRA40, HK50, JP225, EU50, US500). Karar
+verilmedi — endekslerin işlem saatleri/swap/margin rejimi FX'ten
+farklı, EA'nın portföy risk mantığının bunlara uyarlanması gerekip
+gerekmediği ayrıca değerlendirilmeli.
 
 ## Sıradaki adım
 
-1. `TradeBot_NOA_MultiSymbol.mq5`'i demo hesapta bir grafiğe ekleyip
-   (AutoTrading açık) uzun süreli forward-test'e sokmak — örneklem
-   büyütmenin tek yolu bu.
-2. V2 discovery koşusunu gerçek veride (smoke fixture değil) TRAIN
-   partition'ında çalıştırmak — ama önce 100k-mum ölçeğinde tespit
-   edilen ~11GB RAM / 48dk+ performans sorunu profillenip çözülmeli.
+1. Demo hesaptaki forward-test'i sürdürmek ve `ea_monitor.py` ile
+   izlemeye devam etmek — örneklem büyütmenin tek yolu bu.
+2. Round 3'te STRONG çıkan endeks/USDJPY/BRENT'in
+   `TradeBot_NOA_MultiSymbol.mq5`'e eklenip eklenmeyeceğine karar
+   vermek (işlem saati/margin/swap farklarını değerlendirdikten sonra).
+3. V2 discovery koşusunu gerçek veride (smoke fixture değil) TRAIN
+   partition'ında çalıştırmak. RAM/süre sorunu chunked engineering-
+   coverage koşusuyla (`research/v2/engine/run_v2_train_chunked.py`)
+   aşıldı (1.003M mum, 51 chunk, tam TRAIN, ~95dk) ama bu sadece
+   ENGINEERING_SMOKE_ONLY/QUARANTINED telemetri — gerçek strateji
+   skorlaması (win-rate/expectancy) chunk bazında henüz üretilmedi.
 
 ## Kurulum
 

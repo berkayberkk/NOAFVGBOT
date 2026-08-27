@@ -58,13 +58,56 @@ tepki verir.
 2. **Wick Imbalance** (puan=2) — mum fitillerinden çizilen FVG-benzeri
    yapı, kendi fib'i var, 2 seviye kullanılabilir, mesafe kuralı 5-9 /
    9-75 / 75-210 bar aralıklı.
-3. **FVG** (puan=1) — mevcut kodun tek implement ettiği modül. Kaynağa
-   göre mesafe kuralı **bar sayısı bazlı** (1-210 bar bearish, 1-280 bar
-   bullish yapı için geçerli, ötesi geçersiz) — koddaki ATR-bazlı mesafe
-   kuralı farklı bir kavram, aynı adı taşıyor ama aynı şeyi ölçmüyor.
-   Sadece 1 kez kullanılır (dolunca tekrar kullanılmaz).
+3. **FVG** (puan=1) — mevcut kodun tek implement ettiği modül, ama
+   kaynaktaki tanımın sadece bir kısmını karşılıyor (bkz. alt madde).
+   Sadece 1 kez kullanılır (dolunca tekrar kullanılmaz, kaynak: KONDİSYONLAR.pdf).
 4. **R.O.P (Rejection Of Price)** (puan=0 taban + zaman dilimi bonusu) —
    fitil ucu kırılım + retest, ICT "Breaker Block" analogu.
+
+**FVG modülü (detaylı) — `NOA'NIN FVG'Sİ.pdf`**
+
+Geometri: 3 mumluk yapı, fitiller arası boşluk baz alınır. Bullish'te
+1. mumun **üst fitili** ile 3. mumun **alt fitili** arasındaki boşluk,
+giriş 3. mumun alt fitilinden. Bearish ayna simetrik (kodla uyumlu).
+
+Mesafe kuralı **bar sayısı bazlı**, fib seviyeleri kullanılmaz: 1-210
+bar Bearish yapı için geçerli, 1-280 bar Bullish yapı için geçerli,
+ötesi geçersiz. **Koddaki ATR-bazlı mesafe kuralı bambaşka bir kavram**
+— aynı ismi taşıyor ama farklı bir şeyi ölçüyor (gap büyüklüğü/ATR
+oranı, formasyonun oluştuğu andan itibaren geçen bar sayısı değil).
+
+Genel ilke: "Alanın her noktasında bulunabilen, ama alanın en
+düşük/yüksek kısmında çalışan modüldür" — yani bir FVG Alan'ın
+HERHANGİ bir yerinde oluşabilir, ama gerçekten tepki üretmesi
+(çalışması) sadece Alan'ın uç noktasına (Katman 1'e) yakın olduğunda
+bekleniyor. Bu genel ilke, kaynağın adlandırdığı şu 6 alt-modelde
+somutlaşıyor — **kodda sadece 2'si (Dengesiz, Multi FVG) karşılığa
+sahip, diğer 4'ü tamamen eksik**:
+
+| Alt-model | Geçerli mi | Kod karşılığı |
+|---|---|---|
+| Dengesiz FVG Tarzı (ortadaki mum çok büyük) | Geçersiz | Var (`max_middle_candle_ratio`) |
+| **Yüksek Katman FVG Tarzı** (FVG, Alan'ın yüksek Katman'ında) | **Geçersiz — "KESİNLİKLE işlem açmayın", "herkesi stop eden FVG bunlardır"** | **Yok** — Alan/Katman yapısına bağlı |
+| 3. Büyük Mum Tarzı (3. mum çok büyük, fiyat mesafeyi "uçurumla" aşıyor) | Geçersiz | Yok |
+| Multi FVG Modeli (yan yana birden fazla FVG) | Geçersiz | Var (`_apply_multi_fvg_rule`) |
+| Baskın Dip FVG Modeli (güçlü bir "Uzak Mesafe" tepkisinden sonra oluşan İLK FVG, ağırlıklı Bearish) | Geçerli | Yok |
+| **Alanın dibindeki FVG** | **En ideal** | Yok — Alan/Katman yapısına bağlı |
+
+**Bu, `strategy/zone.py` çalışmasıyla doğrudan bağlantılı bir bulgu:**
+"Yüksek Katman FVG" kuralı, bir FVG sinyalinin **kendi gap seviyesinin**
+(current_katman ile "sinyal anındaki fiyatın hangi katmanda olduğu"
+değil) hangi Katman'a düştüğüne göre reddedilmesini/kabul edilmesini
+söylüyor. Önceki oturumdaki `scratch_katman_signal_filter_multisymbol.py`
+testi bunu ölçmedi — o, sinyalin oluştuğu bardaki FİYATIN (ör. FVG_ONLY
+için `fvg.entry_price`) en son donmuş Alan'a göre katmanını etiketledi,
+FVG'nin KENDİ gap aralığının (top-bottom) o Alan'daki konumunu değil.
+Bu iki şey çoğu zaman örtüşür ama aynı değildir — kaynağın "Yüksek
+Katman FVG" kuralının daha doğru/sadık bir testi, FVG'nin
+`(top+bottom)/2` (veya `entry_price`) değerini `classify_katman`'a
+vermek olurdu, ki bu zaten yapılan teste çok yakın ama birebir aynı
+değil (bkz. `_tag_katman` fonksiyonu, `signal.index`'teki `close`
+fiyatını kullanıyor, FVG'nin kendi seviyesini değil). Bu farkın sonucu
+ne kadar değiştirdiği test edilmedi — potansiyel bir sonraki adım.
 
 **Alan Gücü — `_ALAN GÜCÜ.pdf`**
 Eski Alan puanı vs Yeni Alan puanı karşılaştırması: modül reaksiyon
@@ -118,11 +161,17 @@ veri hattı veya korelasyon mantığı yok.
 | Kavram | Kaynakta | Kodda | Durum |
 |---|---|---|---|
 | Alan/Katman (zone/swing fib yapısı) | Merkezi kavram | Yok — `strategy/fvg.py` docstring'i zaten bunu "henüz kodlamadığımız swing/zone yapısı" diye not ediyor | **büyük eksik** |
-| FVG modülü | Var, bar-count mesafe kuralı | Var, ama ATR-bazlı farklı mesafe kuralı | **uyumsuz** |
+| FVG — geometri (3 mumluk gap) | Var | Var | uyumlu |
+| FVG — mesafe kuralı | Var, **bar-count bazlı** (1-210 bearish/1-280 bullish) | Var, ama **ATR-bazlı** — farklı kavram, aynı isim | **uyumsuz** |
+| FVG — Dengesiz FVG Tarzı | Geçersiz | Var (`max_middle_candle_ratio`) | uyumlu |
+| FVG — Multi FVG Modeli | Geçersiz | Var (`_apply_multi_fvg_rule`) | uyumlu |
+| FVG — Yüksek Katman FVG Tarzı | **Geçersiz, kesinlikle işlem açma** | Yok — Alan/Katman'a bağlı | **eksik** |
+| FVG — Alanın dibindeki FVG | **En ideal** | Yok — Alan/Katman'a bağlı | **eksik** |
+| FVG — 3. Büyük Mum Tarzı | Geçersiz | Yok | **eksik** |
+| FVG — Baskın Dip FVG Modeli | Geçerli (özel bağlam) | Yok | **eksik** |
 | Wick Imbalance modülü | Var (2. güç sırası) | Yok | **eksik** |
 | 0.38 modülü | Var (1. güç sırası) | Yok (önceki oturumdaki fib-prototip denemesi bunu FVG gap'inden türetmeye çalışmıştı — kavramsal olarak yanlış, bkz. aşağıdaki not) | **eksik** |
 | R.O.P modülü | Var (4. sıra) | Yok | **eksik** |
-| Multi-FVG kuralı | Var | Var (`_apply_multi_fvg_rule`) | uyumlu |
 | Setup Kalitesi (S+/S/A+/A/B+/B/C) | Var, TP/lot'u belirliyor | Yok | **büyük eksik** |
 | Alan Gücü puanlaması | Var | Yok | **büyük eksik** |
 | Eylem 1 / Eylem 2 | Var | Yok — kod her zaman aynı şekilde limit emri koyuyor | **eksik** |

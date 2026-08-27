@@ -14,3 +14,4 @@ build/
 *.lock
 forward_*.log
 ea_monitor_state.json
+scratch_katman_pool_checkpoint.json

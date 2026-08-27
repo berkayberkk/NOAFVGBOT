@@ -182,3 +182,51 @@ noktası" yerine "nihai geri çekilme derinliği"ni ölçmesi olabilir.
 Sonraki adım için: metriği "ilk temas + tepki teyidi" şeklinde
 yeniden tanımlamak, ya da daha yüksek zaman diliminde (mevcut kod
 M30'un üstünü desteklemiyor) test etmek gerekir.
+
+## Güncelleme — Katman'ın V1 sinyallerine pratik etkisi test edildi (çok sembollü)
+
+Farklı bir soru: "Ana Kural" istatistiksel olarak doğrulanmasa bile,
+Katman etiketi mevcut V1 (FVG+OB) sinyallerini filtrelemek için pratik
+bir değer taşıyor mu? `scratch_katman_signal_filter_multisymbol.py`
+ile test edildi: `generate_signals()`'ın ürettiği her sinyal, oluştuğu
+bardaki fiyatın en son donmuş Eski Alan'ın hangi Katman'ında olduğuna
+göre etiketlendi, 18 çeşitli sembolde (FX majör, endeks, kripto, metal/
+enerji, her biri son 10.000 M30 mum) trade'ler aynı katman kovasında
+birleştirildi (checkpoint'li, kesintiye dayanıklı çalıştırıldı).
+
+**Sonuç (561 toplam filled trade, kovalar n=43-212 arası — artık
+istatistiksel olarak anlamlı bir örneklem):**
+
+| Grup | filled | win% | exp_r | pf |
+|---|---|---|---|---|
+| TÜMÜ (baseline) | 561 | 89.1% | 0.504 | 7.26 |
+| K1 | 43 | **81.4%** | **0.168** | 2.23 |
+| K2 | 65 | 90.8% | 0.511 | 8.07 |
+| K3 | 109 | 88.1% | 0.486 | 6.71 |
+| K4 | 132 | 88.6% | 0.487 | 6.68 |
+| NONE (katman yok) | 212 | **91.0%** | **0.590** | 9.91 |
+
+**Bu, kaynağın iddiasını doğrulamıyor — tersini gösteriyor.** K1
+("işlem alınmalı, maksimum reaksiyon") kovalar arasında en KÖTÜ
+performansı gösteriyor (en düşük win rate, expectancy, profit factor);
+hiçbir katman bağlamı olmayan sinyaller (NONE) en İYİ performansı
+gösteriyor. K2/K3/K4 birbirine yakın ve baseline'a benzer.
+
+Olası açıklamalar (hiçbiri doğrulanmadı, sadece olasılıklar):
+1. Bu implementasyon sadece Kural 1'i içeriyor, Kural 2 yok — gerçek
+   Katman sınıflandırması eksik/yanlış olabilir.
+2. `zone_swing_lookback`/`zone_min_size_atr_ratio` varsayılanları
+   kalibre edilmedi.
+3. Confound: Katman etiketi ile hangi SetupType'ın (A+/FVG_ONLY/
+   OB_ONLY) ateşlendiği arasında kontrol edilmemiş bir korelasyon
+   olabilir.
+4. Kaynağın iddiası, yazarın kendi manuel trading deneyimine dayanıyor
+   olabilir ve bu haliyle (V1 stratejisiyle, M30'da, mevcut Katman
+   tanımıyla) istatistiksel olarak doğrulanmıyor olabilir.
+
+**Sonuç:** Mevcut haliyle Katman etiketi, V1 stratejisine bir filtre
+olarak eklenmemeli — veri bunu desteklemiyor. Alan Gücü / Setup
+Kalitesi / Eylem 1-2 gibi bu temelin üzerine inşa edilecek katmanlara
+geçmeden önce, ya Kural 2 + diğer modüller (0.38/Wick Imbalance/R.O.P)
+tamamlanıp tüm sistem birlikte test edilmeli, ya da bu bulgunun
+kaynağın iddiasını gerçekten çürüttüğü kabul edilip yön değiştirilmeli.

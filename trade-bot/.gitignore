@@ -13,3 +13,4 @@ build/
 *.db-shm
 *.lock
 forward_*.log
+ea_monitor_state.json

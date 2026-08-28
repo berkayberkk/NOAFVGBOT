@@ -481,3 +481,26 @@ da çok daha uzun bir koşuya (saatler) izin verilmeli).
 **Canlı EA:** `TradeBot_NOA_MultiSymbol.mq5` demo hesapta bu geçersiz
 çıkan "VALIDATED STRONG" varsayımına dayanarak çalışıyor. Bu bulgu
 ışığında gözden geçirilmeli.
+
+**Çok sembollü doğrulama (2026-08-28) — kesinleşti, GOLD'a özgü değil:**
+Aynı metodoloji (`scratch_causal_fix_revalidation_multisymbol.py`) 5
+farklı varlık sınıfında (metal, FX, kripto, endeks) çalıştırıldı —
+**5/5 sembol "FAILED TO GENERALIZE", 5/5'inde %95 güven aralığı
+TAMAMEN negatif** (sıfırı hiç kapsamıyor):
+
+| Sembol | Sınıf | test win% | test exp_r | %95 CI |
+|---|---|---|---|---|
+| GOLD | Metal | 41.6% | -0.162 | [-0.295, -0.024] |
+| EURUSD | FX majör | 29.2% | -0.682 | [-0.782, -0.583] |
+| BTCUSD | Kripto | 41.0% | -0.998 | [-1.788, -0.409] |
+| US500 | Endeks | 47.0% | -0.159 | [-0.272, -0.018] |
+| GBPJPY | FX çapraz | 36.4% | -0.421 | [-0.548, -0.284] |
+
+**Bu, GOLD'a özgü bir tesadüf değil — düzeltilmiş (causal) sinyal
+üretimiyle V1 stratejisi (A+/FVG/OB birleşik) test edilen HER varlık
+sınıfında sistematik olarak negatif çıkıyor.** Round 1-3'teki "54/101
+sembol validated" iddiasının tamamı, bu analizde gösterilen buggy
+(lookahead/survivorship bias'lı) sinyal üretimiyle hesaplandığı için
+geçersiz sayılmalı. Mevcut haliyle V1'in gerçek bir pozitif edge'i
+olduğuna dair hiçbir güvenilir kanıt yok — aksine, düzeltilmiş ölçüm
+sistematik bir NEGATİF edge gösteriyor.

@@ -33,11 +33,15 @@ execution-ready" durumu ve Round 1-3'teki "54/101 sembol validated"
 sonuçları (`backtest/results/V2_MULTI_*.json`) **hepsi eski, buggy
 sinyal üretimiyle hesaplandı ve artık güvenilir değil.**
 
+**Bu GOLD'a özgü değil.** Aynı metodoloji 5 farklı varlık sınıfında
+(GOLD, EURUSD, BTCUSD, US500, GBPJPY) tekrarlandı — **5/5 sembol
+"FAILED TO GENERALIZE", 5/5'inde %95 güven aralığı tamamen negatif.**
+Düzeltilmiş (causal) ölçümle V1 stratejisinin gerçek bir pozitif
+edge'i olduğuna dair hiçbir kanıt yok; sistematik negatif edge
+gösteriyor. Ayrıntı: `NOA_KONSEPTI_KAYNAK_ANALIZI.md`.
+
 **Demo hesapta çalışan `TradeBot_NOA_MultiSymbol.mq5`, bu geçersiz
-çıkan varsayıma dayanıyor — gözden geçirilmeli.** Tüm sembollerin
-düzeltilmiş kodla yeniden validasyonu henüz yapılmadı (performans
-nedeniyle tam geçmiş yerine küçültülmüş pencerede test edildi, ayrıntı
-için `NOA_KONSEPTI_KAYNAK_ANALIZI.md`).
+çıkan varsayıma dayanıyor — durdurulması ciddi şekilde düşünülmeli.**
 
 ## Klasör yapısı
 

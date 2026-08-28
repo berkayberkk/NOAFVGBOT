@@ -16,3 +16,4 @@ forward_*.log
 ea_monitor_state.json
 scratch_katman_pool_checkpoint.json
 scratch_fvg_own_level_katman_checkpoint.json
+scratch_causal_fix_revalidation_multisymbol_checkpoint.json

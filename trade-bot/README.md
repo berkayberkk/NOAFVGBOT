@@ -4,6 +4,41 @@ Kişisel trade stratejisini (FVG + Order Block + Destek/Direnç confluence)
 kural tabanlı bir algoritmaya dönüştürüp önce backtest, sonra manuel sinyal,
 sonra tam otomatik işlem seviyesine taşımayı hedefleyen proje.
 
+## ⚠️ KRİTİK — 2026-08-28: V1'in "VALIDATED" sonuçları geçersiz çıktı
+
+`strategy/fvg.py`/`strategy/signal_engine.py`'de ciddi bir **lookahead/
+survivorship bias** bulundu ve düzeltildi (bkz. commit geçmişi ve
+`NOA_KONSEPTI_KAYNAK_ANALIZI.md`'deki "Kritik bulgu" bölümü). Özet:
+sinyal üretimi, bir FVG/Order Block'un **candles dizisinin TAMAMINA
+(geleceğe de) bakarak** "hiç dolmadı/kırılmadı mı" diye kontrol ediyordu
+— bu hem FVG için matematiksel olarak sinyalleri hiç doldurulamaz hale
+getiriyordu (FVG_ONLY sinyalleri **156K'lık tam GOLD geçmişinde tek bir
+kez bile dolmamış**), hem de OB için gelecekte hiç kırılmayan (yani
+zaten "doğru çıkmış") kurulumları seçerek win rate'i yapay şekilde
+şişiriyordu.
+
+Düzeltme sonrası GOLD'da resmi metodoloji (train/val/holdout + block-
+bootstrap) ile yeniden koşulan sonuç (son 20.000 M30 mum,
+`scratch_causal_fix_revalidation.py`):
+
+```
+TEST (holdout): win=41.6%  expectancy_r=-0.1624  profit_factor=0.71
+evidence_classification: FAILED TO GENERALIZE
+block_bootstrap 95% CI: [-0.2949, -0.0241]  (tamamen negatif, sıfırı kapsamıyor)
+```
+
+**Bu, önceki "VALIDATED STRONG, %92.7 win rate" sonucunun tam tersi ve
+istatistiksel olarak sağlam (CI sıfırı kapsamıyor).** Aşağıdaki "V1 —
+execution-ready" durumu ve Round 1-3'teki "54/101 sembol validated"
+sonuçları (`backtest/results/V2_MULTI_*.json`) **hepsi eski, buggy
+sinyal üretimiyle hesaplandı ve artık güvenilir değil.**
+
+**Demo hesapta çalışan `TradeBot_NOA_MultiSymbol.mq5`, bu geçersiz
+çıkan varsayıma dayanıyor — gözden geçirilmeli.** Tüm sembollerin
+düzeltilmiş kodla yeniden validasyonu henüz yapılmadı (performans
+nedeniyle tam geçmiş yerine küçültülmüş pencerede test edildi, ayrıntı
+için `NOA_KONSEPTI_KAYNAK_ANALIZI.md`).
+
 ## Klasör yapısı
 
 ```

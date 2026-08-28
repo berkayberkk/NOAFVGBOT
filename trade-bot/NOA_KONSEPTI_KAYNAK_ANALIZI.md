@@ -404,3 +404,80 @@ Kalitesi / Eylem 1-2 gibi bu temelin üzerine inşa edilecek katmanlara
 geçmeden önce, ya Kural 2 + diğer modüller (0.38/Wick Imbalance/R.O.P)
 tamamlanıp tüm sistem birlikte test edilmeli, ya da bu bulgunun
 kaynağın iddiasını gerçekten çürüttüğü kabul edilip yön değiştirilmeli.
+
+## KRİTİK BULGU — V1'in sinyal üretiminde lookahead/survivorship bias (2026-08-28)
+
+"FVG'nin kendi seviyesi Katman'a göre nasıl filtrelenir" sorusunu test
+ederken (bkz. bir önceki güncelleme), `scratch_fvg_own_level_katman_multisymbol.py`
+her sembolde **0 filled trade** üretti. Bu, veri sorunu değil, kodun
+kendisindeki bir hataydı.
+
+**Kök neden:** `strategy/fvg.py`'deki `mark_filled_fvgs`, bir FVG'yi
+"dolmuş" sayarken candles dizisinin **TAMAMINA (geleceğe de) bakıyordu**
+(`for candle in candles[fvg.end_index+1:]`). `strategy/signal_engine.py`'deki
+`generate_signals`, sinyal adaylarını `valid_fvgs = [f for f in fvgs
+if f.valid and not f.filled]` ile seçiyordu — yani sinyal havuzuna
+sadece **"kalan tüm geçmişte bir daha ASLA kendi seviyesine dönmeyen"**
+FVG'ler giriyordu. Ama `FVG_ONLY` sinyalinin giriş fiyatı
+(`fvg.entry_price`) **tam olarak o seviyenin kendisi**. Sonuç:
+matematiksel olarak, FVG_ONLY sinyalleri hiçbir zaman dolamazdı (spread=0
+ile kanıtlandı, spread>0 ile de aynı — spread sadece dolum eşiğini daha
+da katılaştırıyor, kurtarmıyor). GOLD'un tam 137K'lık M30 geçmişinde
+doğrudan test edildi: **144 FVG_ONLY sinyalinin 0'ı doldu, 138 A+
+sinyalinin sadece 1'i doldu** — tüm "VALIDATED STRONG" sonucu 229
+OB_ONLY sinyalinden gelen 193 trade'e dayanıyordu.
+
+Aynı sınıftan (daha hafif ama aynı yapıda) bir kusur OB tarafında da
+vardı: `mark_mitigated_blocks` da tüm geleceğe bakıyor, `valid_obs =
+[o for o in obs if not o.mitigated]` de aynı şekilde global bir
+ön-filtreydi. OB_ONLY'de bu matematiksel olarak %0'a yol açmıyordu
+(entry=yakın kenar, mitigation-check=uzak kenar, farklı seviyeler) ama
+**gelecekte hiç tam kırılmayan (invalidated olmayan) OB'leri seçerek**
+win rate'i ciddi şekilde şişiriyordu — bir bölgenin hiç kırılmaması,
+zaten "doğru" bir yapı okuması olduğunun güçlü bir işareti, bu yüzden
+bu filtre saf bir survivorship bias'tı.
+
+**Ek olarak:** bu, canlı MQL5 EA'nın davranışıyla da tutarsızdı.
+`mql5/TradeBot_NOA.mq5` sadece SON mumda oluşan FVG'leri değerlendiriyor
+(`filled` alanı orada hiç set edilmiyor, hep `false`) — yani EA zaten
+CAUSAL çalışıyordu (geleceğe bakamaz), backtest ise bakıyordu. Backtest,
+EA'nın gerçekte nasıl davrandığını hiç doğru yansıtmıyordu.
+
+**Düzeltme** (`strategy/fvg.py`, `strategy/order_block.py` (mevcut
+`mitigated_index` alanı kullanıldı), `strategy/signal_engine.py`):
+`FVG`'ye `filled_at_index: int | None` eklendi, `FVG.is_unfilled_as_of(index)`
+metodu eklendi — "bu FVG, verilen bar'a kadar (bar dahil) dolmuş mu"
+sorusunu CAUSAL olarak yanıtlıyor. `generate_signals`, artık global
+"hiç dolmadı mı" ön-filtresi yerine, her sinyal KENDİ oluştuğu bar'a
+göre causal kontrol yapıyor (A+ için `signal_index = max(fvg.end_index,
+ob.index)`'e göre; FVG_ONLY/OB_ONLY için kendi formasyon barına göre —
+ki bu ikisi için kontrol her zaman tautolojik olarak True döner, çünkü
+formasyon barında henüz hiçbir gelecek test edilmemiştir).
+
+**Düzeltme sonrası GOLD'da (resmi train/val/holdout + block-bootstrap
+metodolojisi, son 20.000 M30 mum — tam 137K geçmiş performans nedeniyle
+bu oturumda pratik değildi, `scratch_causal_fix_revalidation.py`):**
+
+```
+TRAIN: win=43.5%  expectancy_r=-0.1994  pf=0.63
+VAL:   win=46.8%  expectancy_r=-0.1184  pf=0.73
+TEST:  win=41.6%  expectancy_r=-0.1624  pf=0.71  (holdout)
+evidence_classification: FAILED TO GENERALIZE
+block_bootstrap 95% CI: [-0.2949, -0.0241]  -- tamamen negatif
+```
+
+**Sonuç: GOLD'un "VALIDATED STRONG" sınıflandırması geçersiz.**
+İstatistiksel olarak sağlam (CI sıfırı kapsamıyor) NEGATİF bir
+expectancy var. Round 1-3'teki "54/101 sembol validated" iddiası da
+aynı buggy kodla hesaplandığı için **artık güvenilir değil** — tam
+yeniden validasyon gerekiyor (performans: düzeltme sonrası sinyal
+sayısı ~30-40x arttı — GOLD'da FVG=6382, A+=5559, OB=7280 aday sinyal,
+eskiden FVG=144, A+=138, OB=229 idi — `run_backtest`'in sinyal başına
+`build_levels` yeniden hesaplayan O(n) maliyeti bu ölçekte tam
+137K'lık geçmiş için pratik olmayan bir süreye çıkıyor; tam yeniden
+validasyon için ya backtest motorunun performansı iyileştirilmeli ya
+da çok daha uzun bir koşuya (saatler) izin verilmeli).
+
+**Canlı EA:** `TradeBot_NOA_MultiSymbol.mq5` demo hesapta bu geçersiz
+çıkan "VALIDATED STRONG" varsayımına dayanarak çalışıyor. Bu bulgu
+ışığında gözden geçirilmeli.

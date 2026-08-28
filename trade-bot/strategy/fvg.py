@@ -38,7 +38,8 @@ class FVG:
     top: float                      # gap'in üst sınırı
     bottom: float                   # gap'in alt sınırı
     direction: FVGDirection
-    filled: bool = False             # fiyat bu gap'i sonradan doldurdu mu
+    filled: bool = False             # fiyat bu gap'i (verilen candle dizisinin SONUNA kadar) hiç doldurdu mu
+    filled_at_index: int | None = None  # ilk dolum barının index'i (hiç dolmadıysa None) -- causal sorgular için
     valid: bool = True               # tüm geçerlilik kurallarını geçti mi
     invalid_reason: str | None = None  # geçersizse hangi kural yüzünden
 
@@ -46,6 +47,20 @@ class FVG:
     def entry_price(self) -> float:
         """Kurala göre giriş fiyatı: bullish'te gap'in altı, bearish'te üstü."""
         return self.bottom if self.direction == FVGDirection.BULLISH else self.top
+
+    def is_unfilled_as_of(self, index: int) -> bool:
+        """
+        FVG'nin, verilen bar'a kadar (bar dahil, sonrası hariç) henüz
+        dolmamış olup olmadığını CAUSAL olarak kontrol eder -- yani sadece
+        `index`'ten önce/onda gerçekleşmiş bir dolum sayılır, `filled`
+        alanının aksine (o, candles dizisinin TAMAMINA -- geleceğe de --
+        bakarak hesaplanmıştı). Bir sinyal, kendi oluştuğu bar'da bu
+        kontrolü kullanmalı; `filled_at_index` (varsa) her zaman
+        `end_index`'ten SONRAKİ bir bar olduğundan, bu kontrol formasyonun
+        kendi oluşum barında her zaman True döner -- doğru davranış,
+        çünkü henüz hiçbir gelecek bar test edilmemiştir.
+        """
+        return self.filled_at_index is None or self.filled_at_index > index
 
 
 from strategy.config import DEFAULT_CONFIG, StrategyConfig
@@ -171,16 +186,28 @@ def _apply_multi_fvg_rule(fvgs: list[FVG]) -> None:
 def mark_filled_fvgs(fvgs: list[FVG], candles: list[dict]) -> list[FVG]:
     """
     Her FVG için, oluştuktan sonraki mumlardan biri gap'in tamamını
-    (top-bottom aralığını) geçtiyse filled=True işaretler.
+    (top-bottom aralığını) geçtiyse filled=True işaretler ve o barın
+    index'ini filled_at_index'e kaydeder.
+
+    NOT: `filled`/`filled_at_index` burada candles dizisinin TAMAMINA
+    (geleceğe de) bakılarak hesaplanır -- bu, "FVG şu ana kadar dolmuş
+    mu" gibi tarihsel/analiz amaçlı sorular için doğrudan kullanılabilir,
+    ama SİNYAL ÜRETİMİNDE (bir bar'da bu FVG hâlâ geçerli mi?) doğrudan
+    `not fvg.filled` olarak kullanmak causal değildir -- `fvg.is_unfilled_as_of(bar_index)`
+    kullanılmalı (bkz. o metodun docstring'i, ve bunun neden önemli
+    olduğuna dair not: NOA_KONSEPTI_KAYNAK_ANALIZI.md).
     """
     for fvg in fvgs:
-        for candle in candles[fvg.end_index + 1:]:
+        for i in range(fvg.end_index + 1, len(candles)):
+            candle = candles[i]
             if fvg.direction == FVGDirection.BULLISH:
                 if candle["low"] <= fvg.bottom:
                     fvg.filled = True
+                    fvg.filled_at_index = i
                     break
             else:
                 if candle["high"] >= fvg.top:
                     fvg.filled = True
+                    fvg.filled_at_index = i
                     break
     return fvgs

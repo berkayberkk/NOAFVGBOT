@@ -90,15 +90,24 @@ def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFI
     mark_mitigated_blocks(obs, candles)
     trend_states = detect_trend(candles, config=config)
 
-    valid_fvgs = [f for f in fvgs if f.valid and not f.filled]
-    valid_obs = [o for o in obs if not o.mitigated]
+    # NOT: burada "hiç dolmadı/mitigated olmadı mı" diye TÜM geçmişe (geleceğe)
+    # bakan bir ön-filtre YOK -- FVG.filled/OB.mitigated'ın kendisi candles
+    # dizisinin tamamına bakarak hesaplanıyor, ama bunu sinyal üretiminde
+    # global bir ön-filtre olarak kullanmak causal DEĞİL (bkz. FVG.is_unfilled_as_of
+    # docstring'i): entry seviyesi tam olarak "gelecekte bir daha asla
+    # dokunulmayacak" seviyeyle çakıştığında (fvg.entry_price = fvg.bottom/top),
+    # bu ön-filtre sinyal havuzunu tanım gereği DOLDURULAMAZ hale getiriyordu
+    # (her aday, "gelecekte asla o seviyeye dönmeyecek" olanlardan seçiliyordu).
+    # Bunun yerine her sinyal, KENDİ oluştuğu bar'a göre causal kontrol ediyor.
+    valid_fvgs = [f for f in fvgs if f.valid]
+    valid_obs_geo = [o for o in obs]
 
     signals: list[Signal] = []
 
     # --- A+ : FVG + OB confluence ---
     for fvg in valid_fvgs:
         fvg_dir = SignalType.BUY if fvg.direction == FVGDirection.BULLISH else SignalType.SELL
-        for ob in valid_obs:
+        for ob in valid_obs_geo:
             ob_dir = SignalType.BUY if ob.direction == OBDirection.BULLISH else SignalType.SELL
             if fvg_dir != ob_dir:
                 continue
@@ -107,6 +116,10 @@ def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFI
 
             signal_index = max(fvg.end_index, ob.index)
             if signal_index >= len(candles):
+                continue
+            if not fvg.is_unfilled_as_of(signal_index):
+                continue
+            if ob.mitigated_index is not None and ob.mitigated_index <= signal_index:
                 continue
 
             confidence = _trend_confidence(trend_states[signal_index], fvg_dir == SignalType.BUY)
@@ -125,6 +138,10 @@ def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFI
             ))
 
     # --- Tek başına FVG ---
+    # (fvg.is_unfilled_as_of(fvg.end_index) her zaman True döner -- filled_at_index
+    # varsa her zaman end_index'ten SONRAKİ bir bar olduğundan, FVG kendi
+    # oluşum barında henüz dolmamıştır; dolayısıyla burada ayrıca kontrol
+    # edilmesine gerek yok, sadece geometrik gecerlilik -- fvg.valid -- geçerli.)
     for fvg in valid_fvgs:
         fvg_dir = SignalType.BUY if fvg.direction == FVGDirection.BULLISH else SignalType.SELL
         if fvg.end_index >= len(candles):
@@ -148,7 +165,9 @@ def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFI
         ))
 
     # --- Tek başına Order Block ---
-    for ob in valid_obs:
+    # (ob.mitigated_index de aynı nedenle her zaman ob.index'ten sonradır --
+    # OB kendi oluşum barında henüz mitigated olamaz.)
+    for ob in valid_obs_geo:
         ob_dir = SignalType.BUY if ob.direction == OBDirection.BULLISH else SignalType.SELL
         if ob.index >= len(candles):
             continue

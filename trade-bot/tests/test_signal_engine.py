@@ -74,7 +74,11 @@ def test_standalone_signals_confidence_cap():
     candles = _make_dummy_candles(candles_data)
     signals = generate_signals(candles)
 
-    fvg_signals = [s for s in signals if s.setup_type == SetupType.FVG_ONLY]
+    # idx10/20/30/40'taki dolgu mumları da (causal olarak, kendi oluştukları
+    # barda henüz dolmamış) ayrı, ilgisiz bir bearish FVG_ONLY sinyali
+    # üretiyor (idx32) -- testin asıl konusu olan bullish FVG'yi (idx52)
+    # yön filtresiyle izole ediyoruz.
+    fvg_signals = [s for s in signals if s.setup_type == SetupType.FVG_ONLY and s.type == SignalType.BUY]
     assert len(fvg_signals) >= 1
     assert fvg_signals[0].confidence == Confidence.MEDIUM
 
@@ -95,5 +99,10 @@ def test_opposite_trend_signal_filtering():
     candles = _make_dummy_candles(candles_data)
     signals = generate_signals(candles)
 
-    buy_signals = [s for s in signals if s.type == SignalType.BUY]
+    # idx30'daki dolgu mumu, düşüş trendi henüz kurulmadan (idx41+) önce
+    # kendi barında geçerli bir bullish OB oluşturuyor -- bu, testin konusu
+    # olan "kurulmuş düşüş trendine ters sinyal" durumu değil (o mum
+    # oluştuğunda trend henüz ters değil). Asıl kontrol, trend kurulduktan
+    # SONRAKİ barlarda BUY sinyali üretilmediği.
+    buy_signals = [s for s in signals if s.type == SignalType.BUY and s.index >= 41]
     assert len(buy_signals) == 0

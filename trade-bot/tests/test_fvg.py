@@ -125,13 +125,16 @@ def test_multi_fvg_proximity_cancellation():
 
 
 def test_mark_filled_fvgs():
+    # Bullish FVG gap = [101.0, 102.0] (bottom=101.0, top=102.0). "Doldu" artık
+    # KAPANIŞ bazlı: bir mumun kapanışı bottom'un tamamen ALTINA çıkmadıkça
+    # (sadece fitille değmek/içine girmek dahil) FVG geçersiz sayılmaz.
     neutral_candles = [(100.0, 101.0, 99.0, 100.0)] * 14
     fvg_candles = [
         (100.0, 101.0, 99.0, 100.5),   # c1 (14)
         (101.0, 103.0, 100.5, 102.8),  # c2 (15)
         (102.8, 104.0, 102.0, 103.5),  # c3 (16) -> Bullish FVG gap [101.0, 102.0]
-        (103.5, 104.0, 103.0, 103.8),  # 17 -> does not fill (low 103 > 101)
-        (103.8, 104.0, 100.0, 101.0),  # 18 -> fills gap (low 100 <= 101.0)
+        (103.5, 104.0, 103.0, 103.8),  # 17 -> gap'e hic degmiyor
+        (103.8, 104.0, 100.0, 100.5),  # 18 -> kapanis 100.5 < 101.0 (bottom) -> doldu
     ]
     candles = _make_dummy_candles(neutral_candles + fvg_candles)
     fvgs = detect_fvgs(candles)
@@ -139,3 +142,24 @@ def test_mark_filled_fvgs():
 
     bullish_fvg = [f for f in fvgs if f.direction == FVGDirection.BULLISH][0]
     assert bullish_fvg.filled is True
+    assert bullish_fvg.filled_at_index == 18
+
+
+def test_wick_touch_into_fvg_does_not_invalidate_it():
+    # Fitil gap'in en dibine kadar girip (hatta bottom'a esit low ile) geri
+    # donerse -- kapanis bottom'un USTUNDE kaldigi surece -- FVG hala
+    # kullanilabilir sayilmali (kullanici duzeltmesi: "degmesi veya biraz
+    # icine girmesi sikinti cikarmaz, yeterki disina cikmasin").
+    neutral_candles = [(100.0, 101.0, 99.0, 100.0)] * 14
+    fvg_candles = [
+        (100.0, 101.0, 99.0, 100.5),   # c1 (14)
+        (101.0, 103.0, 100.5, 102.8),  # c2 (15)
+        (102.8, 104.0, 102.0, 103.5),  # c3 (16) -> Bullish FVG gap [101.0, 102.0]
+        (103.5, 104.0, 101.0, 103.0),  # 17 -> fitil tam bottom'a (101.0) iniyor, kapanis 103.0 (gap ustunde)
+    ]
+    candles = _make_dummy_candles(neutral_candles + fvg_candles)
+    fvgs = detect_fvgs(candles)
+    mark_filled_fvgs(fvgs, candles)
+
+    bullish_fvg = [f for f in fvgs if f.direction == FVGDirection.BULLISH][0]
+    assert bullish_fvg.filled is False

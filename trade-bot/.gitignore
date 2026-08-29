@@ -18,3 +18,6 @@ scratch_katman_pool_checkpoint.json
 scratch_fvg_own_level_katman_checkpoint.json
 scratch_causal_fix_revalidation_multisymbol_checkpoint.json
 fvg_scan_results.json
+fvg_report_data.json
+gold_d1_chart_data.json
+*_chart_data.json

@@ -185,9 +185,19 @@ def _apply_multi_fvg_rule(fvgs: list[FVG]) -> None:
 
 def mark_filled_fvgs(fvgs: list[FVG], candles: list[dict]) -> list[FVG]:
     """
-    Her FVG için, oluştuktan sonraki mumlardan biri gap'in tamamını
-    (top-bottom aralığını) geçtiyse filled=True işaretler ve o barın
-    index'ini filled_at_index'e kaydeder.
+    Her FVG için, oluştuktan sonraki mumlardan biri KAPANIŞLA gap'in
+    tamamının (uzak kenarının) dışına çıktıysa filled=True işaretler ve
+    o barın index'ini filled_at_index'e kaydeder.
+
+    ÖNEMLİ (kullanıcı düzeltmesi): fitilin gap'e değmesi ya da gap'in
+    içine (hatta en dibine/tepesine kadar) girmesi FVG'yi GEÇERSİZ
+    kılmaz -- bu normal bir retest/reaksiyon. Ancak bir mumun KAPANIŞI
+    gap'in tamamını geçip uzak kenarın dışına çıkarsa FVG artık
+    kullanılamaz sayılır. Bu, "FVG doldu" ile "FVG invert oldu" (bkz.
+    iFVG -- scratch_multi_timeframe_fvg_scan.py:detect_ifvgs) olayının
+    AYNI tetikleyiciye sahip olduğu anlamına gelir -- sadece bakış
+    açısı farklı (kendi yönünde geçersiz mi, yoksa ters yönde yeni bir
+    bölge mi).
 
     NOT: `filled`/`filled_at_index` burada candles dizisinin TAMAMINA
     (geleceğe de) bakılarak hesaplanır -- bu, "FVG şu ana kadar dolmuş
@@ -201,12 +211,12 @@ def mark_filled_fvgs(fvgs: list[FVG], candles: list[dict]) -> list[FVG]:
         for i in range(fvg.end_index + 1, len(candles)):
             candle = candles[i]
             if fvg.direction == FVGDirection.BULLISH:
-                if candle["low"] <= fvg.bottom:
+                if candle["close"] < fvg.bottom:
                     fvg.filled = True
                     fvg.filled_at_index = i
                     break
             else:
-                if candle["high"] >= fvg.top:
+                if candle["close"] > fvg.top:
                     fvg.filled = True
                     fvg.filled_at_index = i
                     break

@@ -166,7 +166,16 @@ def _load_checkpoint() -> dict:
 def _save_checkpoint(data: dict) -> None:
     tmp = RESULTS_PATH.with_suffix(".tmp")
     tmp.write_text(json.dumps(data, indent=2, default=str))
-    tmp.replace(RESULTS_PATH)
+    # Windows'ta OneDrive/AV taramasi gibi seyler dosyayi gecici olarak
+    # kilitleyebiliyor -- birkac kez kisa bir bekleme ile tekrar dene.
+    for attempt in range(5):
+        try:
+            tmp.replace(RESULTS_PATH)
+            return
+        except PermissionError:
+            if attempt == 4:
+                raise
+            time.sleep(0.5 * (attempt + 1))
 
 
 def main():

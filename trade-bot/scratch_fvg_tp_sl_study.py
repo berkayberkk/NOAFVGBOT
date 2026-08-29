@@ -169,44 +169,48 @@ def _save_checkpoint(data: dict) -> None:
     tmp.replace(RESULTS_PATH)
 
 
-def _process_symbol(symbol: str) -> dict | None:
-    path = f"data/canonical/V2_MULTI_{symbol}_M1_canonical.csv"
-    try:
-        m1 = load_m1_canonical_as_candlev2(path)
-    except FileNotFoundError:
-        return None
-    if len(m1) < 2000:
-        return {"error": "yetersiz veri"}
-
-    result = {}
-    m30_candles = None
-    for tf in TIMEFRAMES:
-        if tf in (Timeframe.D1, Timeframe.W1):
-            if m30_candles is None:
-                m30_v2, _ = resample_m1(m1, Timeframe.M30)
-                m30_candles = [candlev2_to_strategy_dict(c) for c in m30_v2]
-            tf_candles = _aggregate_by_calendar(m30_candles, "day" if tf == Timeframe.D1 else "week")
-        else:
-            tf_v2, _ = resample_m1(m1, tf)
-            tf_candles = [candlev2_to_strategy_dict(c) for c in tf_v2]
-            if tf == Timeframe.M30:
-                m30_candles = tf_candles
-        result[tf.name] = _process_symbol_timeframe(tf_candles)
-    return result
-
-
 def main():
     checkpoint = _load_checkpoint()
-    remaining = [s for s in ALL_SYMBOLS if s not in checkpoint]
-    print(f"Checkpoint'te {len(checkpoint)} sembol var, {len(remaining)} sembol kaldi.", flush=True)
+    total_units = len(ALL_SYMBOLS) * len(TIMEFRAMES)
+    done_units = sum(len(v) for v in checkpoint.values() if isinstance(v, dict) and "error" not in v)
 
-    for symbol in remaining:
-        t0 = time.time()
-        result = _process_symbol(symbol)
-        if result is not None:
-            checkpoint[symbol] = result
+    for symbol in ALL_SYMBOLS:
+        sym_result = checkpoint.get(symbol, {})
+        if "error" in sym_result:
+            continue
+        pending_tfs = [tf for tf in TIMEFRAMES if tf.name not in sym_result]
+        if not pending_tfs:
+            continue
+
+        path = f"data/canonical/V2_MULTI_{symbol}_M1_canonical.csv"
+        try:
+            m1 = load_m1_canonical_as_candlev2(path)
+        except FileNotFoundError:
+            continue
+        if len(m1) < 2000:
+            checkpoint[symbol] = {"error": "yetersiz veri"}
             _save_checkpoint(checkpoint)
-        print(f"[{len(checkpoint)}/{len(ALL_SYMBOLS)}] {symbol}: {time.time()-t0:.1f}sn -- kaydedildi", flush=True)
+            continue
+
+        m30_candles = None
+        for tf in pending_tfs:
+            t0 = time.time()
+            if tf in (Timeframe.D1, Timeframe.W1):
+                if m30_candles is None:
+                    m30_v2, _ = resample_m1(m1, Timeframe.M30)
+                    m30_candles = [candlev2_to_strategy_dict(c) for c in m30_v2]
+                tf_candles = _aggregate_by_calendar(m30_candles, "day" if tf == Timeframe.D1 else "week")
+            else:
+                tf_v2, _ = resample_m1(m1, tf)
+                tf_candles = [candlev2_to_strategy_dict(c) for c in tf_v2]
+                if tf == Timeframe.M30:
+                    m30_candles = tf_candles
+
+            sym_result[tf.name] = _process_symbol_timeframe(tf_candles)
+            checkpoint[symbol] = sym_result
+            _save_checkpoint(checkpoint)
+            done_units += 1
+            print(f"[{done_units}/{total_units}] {symbol}/{tf.name}: {time.time()-t0:.1f}sn -- kaydedildi", flush=True)
 
     print("\nTUM SEMBOLLER TAMAMLANDI.", flush=True)
 

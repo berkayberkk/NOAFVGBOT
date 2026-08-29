@@ -504,3 +504,53 @@ sembol validated" iddiasının tamamı, bu analizde gösterilen buggy
 geçersiz sayılmalı. Mevcut haliyle V1'in gerçek bir pozitif edge'i
 olduğuna dair hiçbir güvenilir kanıt yok — aksine, düzeltilmiş ölçüm
 sistematik bir NEGATİF edge gösteriyor.
+
+## V1'i baştan kurma: FVG modülü (2026-08-29)
+
+Kullanıcı kararı: V1 stratejisi PDF kaynaklarına göre sıfırdan
+kurulacak — sıra: **FVG → Order Block → Trendline**, her modül gerçek
+grafik örnekleri üzerinden karşılıklı gözden geçirilerek (kullanıcı
+kuralları netleştiriyor, kod buna göre düzeltiliyor).
+
+**FVG geçerlilik kuralı düzeltildi:** GOLD D1 grafiği üzerinde inceleme
+sırasında kullanıcı düzeltmesi: fitilin FVG'nin içine girmesi (hatta en
+dibine/tepesine kadar) FVG'yi geçersiz kılmaz — normal bir retest. Sadece
+bir mumun **kapanışı** gap'in tamamının dışına çıkarsa FVG artık
+kullanılamaz. Bu, iFVG'nin invert olma tetikleyicisiyle birebir aynı
+olay — "FVG doldu" ve "FVG invert oldu" tek bir olayın iki farklı adı.
+`mark_filled_fvgs` buna göre güncellendi (`candle.low/high` yerine
+`candle.close`).
+
+**TP/SL çalışması — kullanıcı kuralı test edildi:** Giriş=`fvg.entry_price`,
+SL=uzak kenarın (invalidation seviyesinin) biraz ötesi, TP=sabit R
+katları. 101 sembol × 6 zaman dilimi (M30/H1/H2/H4/D1/W1), tam causal
+simülasyon (lookahead yok), `scratch_fvg_tp_sl_study.py`.
+
+*SL tampon kalibrasyonu (GOLD tam geçmiş, önce):* "biraz ötesi" gap
+boyutunun **%10'u** alınırsa exp_r=&minus;0.61 (her R'de) — tampon o kadar
+dar ki sıradan gürültüyle hemen stop oluyor. Tampon %50'ye çıkınca
+pozitife dönüyor (+0.23, R=3'te pik); %100'e (tam gap boyutu) çıkınca en
+iyi profit factor'e ulaşıyor (1.52, R=1.0-1.5'te pik). Tam çalışma
+%100 tampon ile koşuldu.
+
+*Ana bulgu (1.42 milyon trade, tüm zaman dilimleri havuzlanmış):*
+**R=1.0-1.5 bölgesi 6 zaman diliminin TAMAMINDA optimal** — tesadüf
+değil, çok tutarlı bir örüntü:
+
+| Zaman dilimi | en iyi R | win% | exp_r | pf |
+|---|---|---|---|---|
+| M30 | 1.5 | 49.7% | 0.242 | 1.48 |
+| H1 | 1.5 | 49.5% | 0.236 | 1.47 |
+| H2 | 1.5 | 49.0% | 0.225 | 1.44 |
+| H4 | 1.5 | 48.2% | 0.206 | 1.40 |
+| D1 | 1.5 | 51.3% | 0.283 | 1.58 |
+| W1 | 1.5 | 53.6% | 0.339 | 1.73 |
+
+R=1.0 her yerde en yüksek profit factor'ü veriyor (1.47-1.84) ama R=1.5
+biraz daha yüksek toplam expectancy veriyor. R=2.0 ve üzerinde performans
+her zaman diliminde düzenli düşüyor. **Üst zaman dilimleri (D1/W1) alt
+zaman dilimlerinden (M30/H1) belirgin şekilde daha güçlü** — ayrı bir
+bulgu olarak not edildi.
+
+Rapor: `fvg_tp_sl_report_data.json` (gitignore'da, üretilebilir) +
+Artifact (oturumda paylaşıldı). Sıradaki adım: Order Block modülü.

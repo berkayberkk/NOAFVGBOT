@@ -217,12 +217,13 @@ def _load_checkpoint() -> dict:
 
 def _save_checkpoint(data: dict) -> None:
     tmp = RESULTS_PATH.with_suffix(".tmp")
-    tmp.write_text(json.dumps(data, indent=2, default=str))
+    payload = json.dumps(data, indent=2, default=str)
     for attempt in range(5):
         try:
+            tmp.write_text(payload)
             tmp.replace(RESULTS_PATH)
             return
-        except PermissionError:
+        except (PermissionError, FileNotFoundError):
             if attempt == 4:
                 raise
             time.sleep(0.5 * (attempt + 1))

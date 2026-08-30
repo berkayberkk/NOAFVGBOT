@@ -554,3 +554,46 @@ bulgu olarak not edildi.
 
 Rapor: `fvg_tp_sl_report_data.json` (gitignore'da, üretilebilir) +
 Artifact (oturumda paylaşıldı). Sıradaki adım: Order Block modülü.
+
+## TP karşılaştırması: RR vs Likidite (2026-08-30)
+
+Kullanıcı talebi: ikinci bir TP yöntemi test edildi — **Likidite TP**:
+yükselişte yukarıda henüz alınmamış en yakın likidite (swing high),
+düşüşte aşağıda henüz alınmamış en yakın likidite (swing low). Giriş
+ve SL, RR TP çalışmasıyla birebir aynı (`fvg.entry_price`, uzak kenar +
+gap boyutunun %100'ü tampon) — tek değişken TP yöntemi.
+`scratch_fvg_liquidity_tp_study.py`, 101 sembol × 6 zaman dilimi, tam
+causal simülasyon (swing bir noktası kendi lookback penceresi
+tamamlanmadan "bilinen" sayılmaz, ileri tarama yok).
+
+**Sonuç: Likidite TP, RR TP'den belirgin şekilde daha kötü.**
+
+| | RR TP (R=1.0) | RR TP (R=1.5) | Likidite TP |
+|---|---|---|---|
+| n | 1.419.293 | 1.419.256 | 1.404.461 |
+| win rate | %60.0 | %49.5 | **%16.4** |
+| expectancy_r | +0.1997 | +0.2370 | **&minus;0.0047** |
+| profit factor | 1.50 | 1.47 | **0.99** |
+| toplam R | +283.397 | +336.369 | **&minus;6.546** |
+
+Likidite TP pratikte break-even'in az altında (pf=0.99) — anlamlı bir
+edge sağlamıyor. Muhtemel neden: en yakın "alınmamış" likidite genelde
+çok uzak bir hedef (ortalama kazanan trade'in hedefi ~5R'ye denk
+geliyordu, `avg_target_r` alanı) — fiyatın oraya varmadan önce SL'e
+(1R) çarpma ihtimali çok daha yüksek, bu da win rate'i %16'ya
+düşürüyor. Ayrıca 58.631 sinyal o anda "alınmamış likidite yok"
+gerekçesiyle hiç test edilemedi (`n_skipped_no_liquidity`).
+
+Bu, "likidite hedefi kavramsal olarak kötü" anlamına gelmiyor —
+mevcut haliyle (en yakınının SEÇİLMESİ, mesafe sınırı olmadan) test
+edildi ve kaybetti. Zaman dilimi kırılımında W1 hâlâ pozitif çıktı
+(exp_r=+0.104) — üst zaman dilimlerinde likidite hedefleri daha
+gerçekçi/ulaşılabilir olabilir. Daha küçük/sınırlı bir likidite seçimi
+(ör. bir R tavanıyla sınırlı, ya da ilk N bar içindeki en yakın swing)
+ayrı bir varyant olarak test edilebilir — bu oturumda yapılmadı.
+
+**Karar için:** Mevcut kanıta göre RR TP (R=1.0-1.5) tercih edilmeli,
+Likidite TP bu haliyle kullanılmamalı.
+
+Rapor: `fvg_tp_comparison_report_data.json` (gitignore'da, üretilebilir)
++ Artifact (oturumda paylaşıldı).

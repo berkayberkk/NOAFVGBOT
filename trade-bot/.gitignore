@@ -35,3 +35,14 @@ gold_d1_strict_ifvg_events.json
 gold_d1_strong_ifvg_data.json
 ifvg_vs_fvg_report_data.json
 ob_tp_sl_study_results.json
+ob_tp_sl_report_data.json
+ob_study_log.txt
+ob_study_err.txt
+ob_study_pid.txt
+ob_top_trades_checkpoint.json
+ob_top_trades_data.json
+ob_top_trades_log.txt
+ob_top_trades_err.txt
+ob_top_trades_pid.txt
+master_report_data.json
+leaderboard_data.json

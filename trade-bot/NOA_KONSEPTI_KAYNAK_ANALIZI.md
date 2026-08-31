@@ -669,3 +669,55 @@ kendi testimizle karşılaştırılacak).
 `strategy/order_block.py` düzeltilecek, FVG/iFVG'de izlenen aynı
 disiplinle (önce basit/temel tanım, gerçek veriyle test, sonra
 filtreler eklenerek iyileştirme) 101 sembolde test edilecek.
+
+## Order Block — 101 sembol P&L çalışması sonuçları (2026-08-31)
+
+Düzeltilmiş tanımla (`strategy/order_block.py`, son zıt mum + gövde
+bölgesi) `scratch_ob_tp_sl_study.py` ile 101 sembol × 6 zaman dilimi
+(M30/H1/H2/H4/D1/W1) tarandı, 0.5R–5.0R arası sabit R-katları test
+edildi. SL tamponu GOLD M30 tam geçmişinde kalibre edildi (0.5x–10x
+sweep, tepe 3.0-4.0x arası) → `SL_BUFFER_RATIO = 3.0` (OB gövdesinin
+3 katı — FVG/iFVG'nin kendi gap boyutu tamponundan (1.0x) farklı,
+çünkü OB gövdeleri FVG gap'inden küçük). Toplam **1.557.075 Order
+Block** tespit edildi. Detaylı rapor: `ob_report.html` artifact'ı
+(havuzlanmış + zaman dilimi kırılımlı tablo ve OB/iFVG/FVG karşılaştırma
+grafiği).
+
+**Havuzlanmış sonuçlar (n = o R'ye ulaşan işlem sayısı):**
+
+| R | n | Kazanma% | Beklenti (R) | Profit Factor |
+|---|---|---|---|---|
+| 0.5 | 1.522.794 | %72.5 | +0.088R | 1.32 |
+| 1.0 | 1.522.259 | %62.0 | +0.240R | 1.63 |
+| 1.5 | 1.521.497 | %52.9 | +0.323R | 1.69 |
+| 2.0 | 1.520.679 | %45.9 | +0.377R | 1.70 |
+| 2.5 | 1.519.847 | %40.4 | +0.415R | 1.70 |
+| 3.0 | 1.518.950 | %36.0 | +0.442R | 1.69 |
+| 4.0 | 1.516.978 | %29.5 | +0.476R | 1.68 |
+| 5.0 | 1.514.930 | %25.0 | +0.499R | 1.67 |
+
+**Bulgular:**
+
+1. **Beklenti (expectancy_r) test edilen tüm aralıkta (0.5–5.0R) hiç
+   tepe yapmadan artıyor** — FVG/iFVG'de R≈1.5'te tepe yapıp gerileyen
+   davranıştan farklı. Gerçek optimal R muhtemelen 5.0'ın üzerinde,
+   bu çalışmada ölçülmedi.
+2. **Profit factor R≈2.0-3.0'da zaten tepe yapmış** (H2/H4'te ~1.80-1.82)
+   ve R=5.0'a doğru hafifçe geriliyor — "en tutarlı" R ile "en yüksek
+   beklenti" R'si aynı nokta değil.
+3. Aynı R'de OB'nin profit factor'ü iFVG'den düşük (R=1.0: OB 1.63 /
+   iFVG 1.88), ama R büyüdükçe beklentide OB öne geçiyor (R=5.0: OB
+   0.499 / iFVG 0.281). Olası sebep: OB'nin risk birimi (gövde × 3
+   tampon) iFVG'nin gap tabanlı risk biriminden mutlak fiyatta genelde
+   daha küçük — "OB'de 5R" ile "iFVG'de 5R" aynı mutlak hareket
+   anlamına gelmiyor, doğrudan R karşılaştırması bu farkı gizliyor.
+4. **H2/H4 en yüksek profit factor'ü veriyor**, M30 en yüksek işlem
+   hacmine sahip (843k işlem @ R=1.0) ama PF en düşük seviyelerde —
+   FVG/iFVG'de de gözlenen "yüksek zaman diliminde daha temiz sinyal"
+   örüntüsü tekrarlanıyor.
+
+**Sonraki adım (henüz yapılmadı):** kullanıcıyla bu 4 bulgu üzerinden
+"OB'yi nasıl daha sağlıklı ve karlı hale getiririz" tartışması — özellikle
+R>5.0 taraması ve likidite süpürmesi/HTF premium-discount gibi kod ile
+uyum tablosunda "eksik" işaretlenen filtrelerin eklenmesinin PF üzerindeki
+etkisi.

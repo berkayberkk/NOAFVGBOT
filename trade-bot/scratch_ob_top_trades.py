@@ -1,15 +1,18 @@
 """
-PROTOTIP (scratch, kalici degil): iFVG (kirilma+retest+reddiye onayli)
-sinyalleriyle, D1 zaman diliminde, R=1.5'te (en iyi expectancy -- bkz.
-scratch_ifvg_tp_sl_study.py sonuclari) tum 101 sembolde GERCEK islem
-kayitlarini (entry/SL/TP fiyatlari, tarihler, sembol) toplar.
+PROTOTIP (scratch, kalici degil): scratch_ifvg_top_trades.py'nin Order
+Block karsiligi. Fark: iFVG'de GLOBAL en karli/en zararli 10 isleniyordu
+-- burada kullanici "her pariteden en karli islemi" istedi, yani HER
+sembol icin (varsa) o sembolun en karli (en yuksek gercek fiyat hareketi
+yuzdeli) KAZANAN Order Block islemi ayri ayri secilip goruntuleniyor.
 
-"En karli" / "en zararli" siralamasi R-multiple'a gore YAPILAMAZ --
-sabit R'li bir sistemde her kazanan ayni R'yi (1.5R), her kaybeden ayni
--1R'yi kazaniyor/kaybediyor, R bazinda hepsi esit. Bunun yerine GERCEK
-FIYAT HAREKETI YUZDESI (entry'ye gore TP/SL mesafesi, %) kullanilir --
-boylece GOLD ile BTCUSD gibi cok farkli fiyat olceklerindeki islemler
-adil sekilde karsilastirilir.
+Yontem, iFVG calismasindaki gibi: R sabit oldugu icin (R=2.0, bkz.
+scratch_ob_tp_sl_study.py sonuclari -- PF bu R civarinda tepe yapiyor)
+"en karli" R'ye gore degil GERCEK FIYAT HAREKETI YUZDESINE gore
+sirlaniyor (entry'ye gore TP mesafesi, %) -- GOLD ile XRPUSD gibi cok
+farkli fiyat olcekleri adil karsilastirilsin diye.
+
+Zaman dilimi: D1 (gorsellestirme icin okunakli mum sayisi, iFVG
+galerisiyle ayni secim).
 """
 
 import json
@@ -21,12 +24,13 @@ from backtest.run_multi_symbol_validation import load_m1_canonical_as_candlev2, 
 from research.v2.data.models import Timeframe
 from research.v2.data.resampler import resample_m1
 from strategy.config import StrategyConfig, MODULE_R_MULTIPLE
-from scratch_ifvg_tp_sl_study import detect_confirmed_ifvgs, SL_BUFFER_RATIO
+from strategy.order_block import detect_order_blocks, OBDirection
 from scratch_multi_timeframe_fvg_scan import _aggregate_by_calendar
 
-R_MULTIPLE = MODULE_R_MULTIPLE["ifvg"]  # = 1.5, resmi iFVG TP hedefi (2026-08-31)
+R_MULTIPLE = MODULE_R_MULTIPLE["ob"]  # = 3.0, resmi OB TP hedefi (2026-08-31)
+SL_BUFFER_RATIO = 3.0  # scratch_ob_tp_sl_study.py'de kalibre edildi
 MAX_WAIT_BARS = 3000
-CHECKPOINT_PATH = Path("ifvg_top_trades_checkpoint.json")
+CHECKPOINT_PATH = Path("ob_top_trades_checkpoint.json")
 
 # EXCLUDED_SYMBOLS (strategy/config.py): FVG, iFVG ve Order Block'un ucunun de
 # aynı anda en kötü 10 sembol arasında bulduğu, yapısal olarak bu stratejiye
@@ -56,25 +60,25 @@ class TradeRecord:
     entry: float
     stop_loss: float
     take_profit: float
-    entry_index: int
+    ob_index: int          # OB mumunun (son zit mumun) index'i -- pencere baslangici bu
     fill_index: int
     exit_index: int
     won: bool
     pct_move: float  # kazandiysa TP mesafesi, kaybettiyse SL mesafesi -- entry'ye gore %
 
 
-def simulate_and_record(candles: list[dict], event: dict, symbol: str) -> TradeRecord | None:
-    is_bull = event["new_dir"] == "bullish"
-    entry = event["consequent_encroachment"]
-    gap_size = event["top"] - event["bottom"]
-    buffer = gap_size * SL_BUFFER_RATIO
-    stop_loss = (event["bottom"] - buffer) if is_bull else (event["top"] + buffer)
+def simulate_and_record(candles: list[dict], ob, symbol: str) -> TradeRecord | None:
+    is_bull = ob.direction == OBDirection.BULLISH
+    entry = (ob.top + ob.bottom) / 2.0
+    body_size = ob.top - ob.bottom
+    buffer = body_size * SL_BUFFER_RATIO
+    stop_loss = (ob.bottom - buffer) if is_bull else (ob.top + buffer)
     risk = abs(entry - stop_loss)
     if risk <= 0:
         return None
     take_profit = entry + R_MULTIPLE * risk if is_bull else entry - R_MULTIPLE * risk
 
-    start = event["retest_idx"]
+    start = ob.impulse_index
     end = min(len(candles), start + MAX_WAIT_BARS)
     fill_index = None
     for i in range(start, end):
@@ -97,11 +101,11 @@ def simulate_and_record(candles: list[dict], event: dict, symbol: str) -> TradeR
         if hit_sl:
             pct = abs(stop_loss - entry) / entry * 100
             return TradeRecord(symbol, is_bull, entry, stop_loss, take_profit,
-                                event["broken_idx"], fill_index, i, False, pct)
+                                ob.index, fill_index, i, False, pct)
         if hit_tp:
             pct = abs(take_profit - entry) / entry * 100
             return TradeRecord(symbol, is_bull, entry, stop_loss, take_profit,
-                                event["broken_idx"], fill_index, i, True, pct)
+                                ob.index, fill_index, i, True, pct)
     return None
 
 
@@ -139,83 +143,63 @@ def _load_d1_candles(symbol: str) -> list[dict] | None:
 
 
 def main():
-    # FAZ 1 (checkpoint'li): her sembol icin hafif islem kayitlarini (mum
-    # penceresi OLMADAN -- checkpoint'i kucuk/hizli tutmak icin) topla.
+    # FAZ 1 (checkpoint'li): her sembol icin, o sembolun EN KARLI (en
+    # yuksek pct_move'lu) KAZANAN islemini (varsa) hafif kayit olarak sakla.
     checkpoint = _load_checkpoint()
     for si, symbol in enumerate(ALL_SYMBOLS, 1):
         if symbol in checkpoint:
             continue
         d1_candles = _load_d1_candles(symbol)
         if d1_candles is None:
-            checkpoint[symbol] = []
+            checkpoint[symbol] = None
             _save_checkpoint(checkpoint)
             continue
 
-        events = detect_confirmed_ifvgs(d1_candles)
-        records = []
-        for e in events:
-            rec = simulate_and_record(d1_candles, e, symbol)
-            if rec is not None:
-                records.append(vars(rec))
-        checkpoint[symbol] = records
+        obs = detect_order_blocks(d1_candles, config=CONFIG)
+        best = None
+        for ob in obs:
+            rec = simulate_and_record(d1_candles, ob, symbol)
+            if rec is not None and rec.won:
+                if best is None or rec.pct_move > best.pct_move:
+                    best = rec
+        checkpoint[symbol] = vars(best) if best is not None else None
         _save_checkpoint(checkpoint)
-        print(f"[{si}/{len(ALL_SYMBOLS)}] {symbol}: {len(events)} iFVG, {len(records)} trade -- kaydedildi", flush=True)
+        print(f"[{si}/{len(ALL_SYMBOLS)}] {symbol}: {len(obs)} OB -- "
+              f"{'en iyi %.2f%%' % best.pct_move if best else 'kazanan yok'} -- kaydedildi", flush=True)
 
     print("\nFAZ 1 TAMAMLANDI -- tum semboller tarandi.", flush=True)
 
-    # FAZ 2: en karli/zararli 10'ari bul, SADECE o sembollerin mumlarini
-    # (goruntuleme penceresi icin) tekrar yukle.
-    all_records = []
-    for symbol, records in checkpoint.items():
-        for r in records:
-            all_records.append(r)
+    # FAZ 2: her sembolun en karli islemi icin goruntuleme penceresini
+    # (mum listesi) tekrar yukle ve tek bir JSON'a serilestir.
+    best_records = {sym: rec for sym, rec in checkpoint.items() if rec is not None}
 
-    winners_meta = sorted([r for r in all_records if r["won"]], key=lambda r: -r["pct_move"])[:10]
-    losers_meta = sorted([r for r in all_records if not r["won"]], key=lambda r: -r["pct_move"])[:10]
+    trades_out = []
+    for symbol, rec_dict in sorted(best_records.items(), key=lambda kv: -kv[1]["pct_move"]):
+        rec = TradeRecord(**rec_dict)
+        candles = _load_d1_candles(symbol)
+        if candles is None:
+            continue
+        lo = max(0, rec.ob_index - 15)
+        hi = min(len(candles), rec.exit_index + 10)
+        window = candles[lo:hi]
+        trades_out.append({
+            "symbol": rec.symbol, "is_bull": rec.is_bull, "entry": rec.entry,
+            "stop_loss": rec.stop_loss, "take_profit": rec.take_profit,
+            "won": rec.won, "pct_move": rec.pct_move,
+            "entry_index_in_window": rec.ob_index - lo,
+            "fill_index_in_window": rec.fill_index - lo,
+            "exit_index_in_window": rec.exit_index - lo,
+            "candles": [{"t": c["time"].isoformat() if hasattr(c["time"], "isoformat") else str(c["time"]),
+                         "o": c["open"], "h": c["high"], "l": c["low"], "c": c["close"]} for c in window],
+        })
+        print(f"pencere hazir: {symbol} (+{rec.pct_move:.2f}%)", flush=True)
 
-    needed_symbols = {r["symbol"] for r in winners_meta + losers_meta}
-    candles_by_symbol = {}
-    for symbol in needed_symbols:
-        d1 = _load_d1_candles(symbol)
-        if d1 is not None:
-            candles_by_symbol[symbol] = d1
+    with open("ob_top_trades_data.json", "w") as f:
+        json.dump({"trades": trades_out}, f)
 
-    def to_trade_tuple(r):
-        rec = TradeRecord(**r)
-        candles = candles_by_symbol.get(rec.symbol)
-        return (rec, candles) if candles is not None else None
-
-    winners = [t for t in (to_trade_tuple(r) for r in winners_meta) if t is not None]
-    losers = [t for t in (to_trade_tuple(r) for r in losers_meta) if t is not None]
-
-    def serialize(trade_list):
-        out = []
-        for rec, candles in trade_list:
-            lo = max(0, rec.entry_index - 15)
-            hi = min(len(candles), rec.exit_index + 10)
-            window = candles[lo:hi]
-            out.append({
-                "symbol": rec.symbol, "is_bull": rec.is_bull, "entry": rec.entry,
-                "stop_loss": rec.stop_loss, "take_profit": rec.take_profit,
-                "won": rec.won, "pct_move": rec.pct_move,
-                "entry_index_in_window": rec.entry_index - lo,
-                "fill_index_in_window": rec.fill_index - lo,
-                "exit_index_in_window": rec.exit_index - lo,
-                "candles": [{"t": c["time"].isoformat() if hasattr(c["time"], "isoformat") else str(c["time"]),
-                             "o": c["open"], "h": c["high"], "l": c["low"], "c": c["close"]} for c in window],
-            })
-        return out
-
-    result = {"winners": serialize(winners), "losers": serialize(losers)}
-    with open("ifvg_top_trades_data.json", "w") as f:
-        json.dump(result, f)
-
-    print("\n=== TOP 10 KARLI ===")
-    for rec, _ in winners:
-        print(f"{rec.symbol:10} {'BUY' if rec.is_bull else 'SELL':5} pct={rec.pct_move:6.2f}%")
-    print("\n=== TOP 10 ZARARLI ===")
-    for rec, _ in losers:
-        print(f"{rec.symbol:10} {'BUY' if rec.is_bull else 'SELL':5} pct={rec.pct_move:6.2f}%")
+    print(f"\n=== {len(trades_out)} SEMBOL, HER BIRININ EN KARLI OB ISLEMI ===")
+    for t in trades_out:
+        print(f"{t['symbol']:10} {'BUY' if t['is_bull'] else 'SELL':5} pct=+{t['pct_move']:6.2f}%")
 
 
 if __name__ == "__main__":

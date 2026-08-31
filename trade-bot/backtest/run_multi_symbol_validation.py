@@ -25,7 +25,7 @@ from research.v2.data.models import CandleV2, Timeframe
 from research.v2.data.acquisition import convert_raw_to_canonical_m1
 from research.v2.data.resampler import resample_m1
 
-from strategy.config import StrategyConfig
+from strategy.config import StrategyConfig, EXCLUDED_SYMBOLS
 from strategy.signal_engine import generate_signals
 from backtest.engine import run_backtest
 from backtest.validation import split_chronological, calculate_metrics, WalkForwardWindowResult
@@ -41,7 +41,7 @@ CANONICAL_DIR = os.path.join(REPO_ROOT, "data", "canonical")
 RESULTS_DIR = os.path.join(REPO_ROOT, "backtest", "results")
 SUMMARY_PATH = os.path.join(RESULTS_DIR, "V2_MULTI_validation_summary.json")
 
-SYMBOLS = [
+_ALL_SYMBOLS = [
     "EURUSD", "GBPUSD", "USDCHF", "USDCAD", "AUDCAD",
     "EURGBP", "USDJPY", "EURJPY", "EURCAD", "NASDAQ", "SILVER",
     "AUDUSD", "NZDUSD", "GBPJPY", "AUDJPY", "CADJPY", "CHFJPY", "NZDJPY",
@@ -59,6 +59,11 @@ SYMBOLS = [
     "ETHUSD", "XRPUSD", "SOLUSD", "DOGEUSD", "ADAUSD", "DOTUSD", "LINKUSD", "AVAXUSD",
     "MATICUSD", "BCHUSD", "LTCUSD", "ATOMUSD", "UNIUSD", "XLMUSD", "ETCUSD",
 ]
+
+# EXCLUDED_SYMBOLS (strategy/config.py): FVG, iFVG ve Order Block'un ucunun
+# de aynı anda en kötü 10 sembol arasında bulduğu, yapısal olarak bu
+# stratejiye uygun olmayan semboller (2026-08-31 R-katı çalışması).
+SYMBOLS = [s for s in _ALL_SYMBOLS if s not in EXCLUDED_SYMBOLS]
 
 
 def _log(msg: str) -> None:

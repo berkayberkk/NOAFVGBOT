@@ -34,13 +34,19 @@ from pathlib import Path
 from backtest.run_multi_symbol_validation import load_m1_canonical_as_candlev2, candlev2_to_strategy_dict
 from research.v2.data.models import Timeframe
 from research.v2.data.resampler import resample_m1
-from strategy.config import StrategyConfig
+from strategy.config import StrategyConfig, MODULE_R_MULTIPLE, MODULE_DISABLED_TIMEFRAMES
 from strategy.fvg import detect_fvgs, FVGDirection
 from scratch_multi_timeframe_fvg_scan import _aggregate_by_calendar
 
 RESULTS_PATH = Path("fvg_tp_sl_study_results.json")
-TIMEFRAMES = [Timeframe.M30, Timeframe.H1, Timeframe.H2, Timeframe.H4, Timeframe.D1, Timeframe.W1]
+# W1/H4/vb tum zaman dilimleri sweep icin taranmaya devam ediyor (R
+# duyarliligi arastirmasi hala faydali), ama FVG'nin kendi R'sinde (asagida)
+# en cok SL yedigi zaman dilimi (strategy/config.py:MODULE_DISABLED_TIMEFRAMES)
+# artik TARANMIYOR -- 2026-08-31 karariyla FVG bu zaman diliminde islem acmiyor.
+TIMEFRAMES = [tf for tf in (Timeframe.M30, Timeframe.H1, Timeframe.H2, Timeframe.H4, Timeframe.D1, Timeframe.W1)
+              if tf.name not in MODULE_DISABLED_TIMEFRAMES["fvg"]]
 R_MULTIPLES = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0]
+FVG_OFFICIAL_R_MULTIPLE = MODULE_R_MULTIPLE["fvg"]  # = 1.5 -- beklenti (expectancy_r) tepe noktasi, resmi TP hedefi
 SL_BUFFER_RATIO = 1.0  # gap boyutunun %100'u -- GOLD M30 tam gecmiste sweep
                         # edildi (0.10/0.25/0.5/0.75/1.0): %10 tampon exp_r=-0.61
                         # (siradan gurultuyle hemen stop oluyor), %50=+0.23 (R=3'te
@@ -51,18 +57,22 @@ SL_BUFFER_RATIO = 1.0  # gap boyutunun %100'u -- GOLD M30 tam gecmiste sweep
                         # veren deger olarak secildi.
 MAX_WAIT_BARS = 3000    # entry doldurma + SL/TP cozumleme icin max ileri tarama
 
+# EXCLUDED_SYMBOLS (strategy/config.py): FVG, iFVG ve Order Block'un ucunun de
+# aynı anda en kötü 10 sembol arasında bulduğu, yapısal olarak bu stratejiye
+# uygun olmayan semboller çıkarıldı (2026-08-31 R-katı çalışması) --
+# GERTECH30, NASDAQ, IT40, GERMID50, EURDKK, USFANG.
 ALL_SYMBOLS = [
     "ADAUSD", "ATOMUSD", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AVAXUSD",
-    "BCHUSD", "BRENT", "BTCUSD", "CA60", "CADCHF", "CADJPY", "CHFJPY", "CHFSGD", "CHINAH", "CHN50",
-    "DOGEUSD", "DOTUSD", "ETCUSD", "ETHUSD", "EU50", "EURAUD", "EURCAD", "EURCHF", "EURDKK",
+    "BCHUSD", "BRENT", "BTCUSD", "CA60", "CADCHF", "CADJPY", "CHFJPY", "CHFSGD", "CHINAH",
+    "CHN50", "DOGEUSD", "DOTUSD", "ETCUSD", "ETHUSD", "EU50", "EURAUD", "EURCAD", "EURCHF",
     "EURGBP", "EURHKD", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURSGD",
     "EURTRY", "EURUSD", "EURZAR", "FRA40", "GBPAUD", "GBPCAD", "GBPCHF", "GBPDKK", "GBPJPY",
-    "GBPNOK", "GBPNZD", "GBPSEK", "GBPSGD", "GBPUSD", "GER40", "GERMID50", "GERTECH30", "GOLD",
-    "HK50", "IT40", "JP225", "LINKUSD", "LTCUSD", "MATICUSD", "NASDAQ", "NETH25", "NZDCAD",
-    "NZDCHF", "NZDJPY", "NZDSGD", "NZDUSD", "PALLADIUM", "PLATINUM", "SA40", "SGDJPY", "SILVER",
-    "SING30", "SOLUSD", "SPAIN35", "SWI20", "TAIWAN", "UK100", "UNIUSD", "US2000", "US30", "US500",
-    "USDCAD", "USDCHF", "USDCNH", "USDDKK", "USDHKD", "USDHUF", "USDJPY", "USDMXN", "USDNOK",
-    "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR", "USFANG", "WTI", "XLMUSD", "XRPUSD",
+    "GBPNOK", "GBPNZD", "GBPSEK", "GBPSGD", "GBPUSD", "GER40", "GOLD", "HK50", "JP225",
+    "LINKUSD", "LTCUSD", "MATICUSD", "NETH25", "NZDCAD", "NZDCHF", "NZDJPY", "NZDSGD", "NZDUSD",
+    "PALLADIUM", "PLATINUM", "SA40", "SGDJPY", "SILVER", "SING30", "SOLUSD", "SPAIN35", "SWI20",
+    "TAIWAN", "UK100", "UNIUSD", "US2000", "US30", "US500", "USDCAD", "USDCHF", "USDCNH",
+    "USDDKK", "USDHKD", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD",
+    "USDTRY", "USDZAR", "WTI", "XLMUSD", "XRPUSD",
 ]
 
 CONFIG = StrategyConfig()

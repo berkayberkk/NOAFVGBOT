@@ -1,17 +1,31 @@
 """
 Order Block (OB) tespit modülü.
 
-Kurallar (kullanıcının kendi tanımına göre, PDF kaynağı yok):
-- Order block, güçlü hareketi BAŞLATAN mumun kendisidir (klasik ICT
-  tanımındaki "son zıt mum" değil — burada mumun kendisi OB sayılıyor).
-- "Güçlü hareket", mumun boyu (high-low aralığı) son N mumun ortalama
-  boyundan belirgin şekilde büyükse anlaşılıyor.
-- Order block'un bölgesi, o mumun tüm high-low aralığıdır.
-- Yön: mum yükselişte kapandıysa (close > open) bullish OB, düşüşte
-  kapandıysa (close < open) bearish OB.
-- Geçersizlik: fiyat bölgeyi tamamen geçip kapanış verirse (bullish OB
-  için bir mumun close'u OB'nin altına, bearish OB için üstüne
-  geçerse) order block geçersiz sayılır.
+DÜZELTME (2026-08-31): Bu modül önceden "kullanıcının kendi tanımı" adı
+altında, güçlü hareketi BAŞLATAN mumun kendisini OB sayıyordu -- bu,
+FVG/iFVG'de izlenen yöntemle (derin araştırma + gerçek trade örneğiyle
+doğrulama) kontrol edildiğinde standart tanımdan saptığı görüldü.
+Kaynak: LuxAlgo, ICTKillzone, InnerCircleTrader, TradingWyckoff, ATAS
+(bkz. NOA_KONSEPTI_KAYNAK_ANALIZI.md "Order Block" bölümü) -- hepsi
+aynı tanımda hemfikir:
+
+- Order Block, güçlü hareketten (displacement) HEMEN ÖNCEKİ SON ZIT
+  YÖNLÜ mumdur -- hareketi başlatan mumun KENDİSİ DEĞİL.
+- Bullish OB: güçlü YÜKSELİŞ hareketinden önceki son DÜŞÜŞ mumu.
+  Bearish OB: güçlü DÜŞÜŞ hareketinden önceki son YÜKSELİŞ mumu.
+- Bölge, o mumun SADECE GÖVDESİYLE sınırlıdır (open-close arası) --
+  fitil dahil tüm high-low aralığı değil.
+- "Güçlü hareket" (displacement), impuls mumun boyu (high-low aralığı)
+  son N mumun ortalama boyundan belirgin şekilde büyükse anlaşılıyor
+  (bu kısım değişmedi).
+- Geçersizlik (mitigation): fiyat bölgeyi tamamen geçip KAPANIŞ
+  verirse (fitille değmek yetmez) order block geçersiz sayılır (bu
+  kural zaten koddaki gibiydi, değişmedi).
+
+Bilinçli olarak kapsam dışı bırakılanlar (FVG/iFVG'deki gibi, önce
+temel tanımı test edip sonra ampirik olarak filtre eklemek için):
+likidite süpürmesi şartı, engulfing şartı, HTF premium/discount uyumu,
+Breaker/Mitigation Block ayrımı. Bunlar ayrı bir çalışmada eklenecek.
 """
 
 from dataclasses import dataclass
@@ -25,9 +39,10 @@ class OBDirection(Enum):
 
 @dataclass
 class OrderBlock:
-    index: int                     # order block mumunun index'i
-    top: float
-    bottom: float
+    index: int                     # OB mumunun (son zıt mumun) index'i -- impuls mumunun değil
+    impulse_index: int              # OB'yi doğrulayan displacement mumunun index'i
+    top: float                      # mumun GÖVDESİNİN üst sınırı (max(open,close))
+    bottom: float                   # mumun GÖVDESİNİN alt sınırı (min(open,close))
     direction: OBDirection
     mitigated: bool = False         # fiyat bu bölgeyi tamamen geçip geçersiz kıldı mı
     mitigated_index: int | None = None
@@ -57,10 +72,21 @@ def _average_range_series(candles: list[dict], period: int) -> list[float | None
 from dataclasses import replace
 
 
+def _candle_direction(candle: dict) -> OBDirection | None:
+    """Mumun kendi rengi -- dogu (close==open) ise None (ne bullish ne bearish)."""
+    if candle["close"] > candle["open"]:
+        return OBDirection.BULLISH
+    if candle["close"] < candle["open"]:
+        return OBDirection.BEARISH
+    return None
+
+
 def detect_order_blocks(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG,
                         period: int | None = None, strong_move_ratio: float | None = None) -> list[OrderBlock]:
     """
-    Verilen mum listesinden order block'ları tespit eder.
+    Verilen mum listesinden order block'ları tespit eder: her displacement
+    (impuls) mumu için, ONDAN HEMEN ÖNCEKİ SON ZIT YÖNLÜ mum OB sayılır --
+    impuls mumunun kendisi değil (bkz. modül docstring'i).
     """
     if period is not None or strong_move_ratio is not None:
         p = period if period is not None else config.avg_range_period
@@ -76,14 +102,35 @@ def detect_order_blocks(candles: list[dict], config: StrategyConfig = DEFAULT_CO
 
         candle_range = candle["high"] - candle["low"]
         if candle_range < avg_range * config.strong_move_ratio:
-            continue  # yeterince güçlü değil
+            continue  # yeterince güçlü değil (displacement yok)
 
-        direction = OBDirection.BULLISH if candle["close"] > candle["open"] else OBDirection.BEARISH
+        impulse_dir = _candle_direction(candle)
+        if impulse_dir is None:
+            continue  # doji impuls mumu -- yön belirsiz
+
+        # Ondan hemen once, impuls ile AYNI yonde olmayan (zit veya doji
+        # olmayan) ilk mumu bul -- standart "son zit mum" tanimi.
+        ob_index = None
+        for j in range(i - 1, -1, -1):
+            d = _candle_direction(candles[j])
+            if d is not None and d != impulse_dir:
+                ob_index = j
+                break
+            if d == impulse_dir:
+                continue  # ayni yonde kucuk bir mum -- atla, geriye bakmaya devam et
+        if ob_index is None:
+            continue  # veri basinda zit mum bulunamadi
+
+        ob_candle = candles[ob_index]
+        top = max(ob_candle["open"], ob_candle["close"])
+        bottom = min(ob_candle["open"], ob_candle["close"])
+        direction = OBDirection.BULLISH if impulse_dir == OBDirection.BULLISH else OBDirection.BEARISH
 
         blocks.append(OrderBlock(
-            index=i,
-            top=candle["high"],
-            bottom=candle["low"],
+            index=ob_index,
+            impulse_index=i,
+            top=top,
+            bottom=bottom,
             direction=direction,
         ))
 

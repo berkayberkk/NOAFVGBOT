@@ -597,3 +597,75 @@ Likidite TP bu haliyle kullanılmamalı.
 
 Rapor: `fvg_tp_comparison_report_data.json` (gitignore'da, üretilebilir)
 + Artifact (oturumda paylaşıldı).
+
+## Order Block — derin araştırma ve mevcut kodla karşılaştırma (2026-08-31)
+
+Kullanıcı talebi: FVG/iFVG'de izlenen yöntemle (derin araştır → gerçek
+örnekle doğrula → koda uygula → tüm sembollerde test et) Order Block'a
+geçildi. Çoklu kaynak (LuxAlgo, ICTKillzone, InnerCircleTrader,
+TradingWyckoff, ATAS) tarandı, gerçek bir NQ trade örneğiyle
+doğrulandı.
+
+**KRİTİK BULGU: `strategy/order_block.py`'nin mevcut tanımı standart
+tanımdan SAPIYOR — ve bu sapma zaten dosyanın kendi docstring'inde
+itiraf ediliyor** ("kullanıcının kendi tanımına göre, PDF kaynağı yok
+... klasik ICT tanımındaki 'son zıt mum' değil — burada mumun kendisi
+OB sayılıyor").
+
+**Standart tanım (tüm kaynaklarda hemfikir):**
+- Order Block = güçlü hareketten (displacement) **HEMEN ÖNCEKİ SON ZIT
+  YÖNLÜ mum** — hareketi başlatan mumun KENDİSİ değil.
+- Bullish OB: güçlü YÜKSELİŞ hareketinden önceki **son düşüş (bearish)
+  mumu**. Bearish OB: güçlü DÜŞÜŞ hareketinden önceki **son yükseliş
+  (bullish) mumu**.
+- Bölge, mumun **GÖVDESİYLE** sınırlı (fitil dahil tüm aralık değil) —
+  bazı kaynaklar "gövdeden gövdeye + fitilden fitile tam yutma
+  (engulfing)" şartı da arıyor: hareketi başlatan mum, önceki zıt
+  mumun hem gövdesini hem fitilini tam kapsamalı.
+- Ek geçerlilik şartları (kaynaklara göre "güçlü" bir OB için):
+  1. **Likidite süpürmesi önce** — displacement'tan hemen önce yakın
+     bir high/low süpürülmüş olmalı (iFVG'de doğruladığımız aynı
+     kavram).
+  2. **Gerçek displacement** — büyük gövdeli, kısa fitilli mumlar
+     (fitil, mum boyunun %25'inden az), FVG bırakan bir hareket.
+  3. **Sadece gövde kapanışı geçersiz kılar** (mitigation) — fitille
+     dokunmak geçersiz kılmaz, bizim FVG'de kullandığımız kuralla
+     birebir aynı mantık.
+  4. **HTF premium/discount uyumu** — bullish OB sadece "discount"
+     bölgesinde (günlük aralığın %50'sinin altında), bearish OB sadece
+     "premium" bölgesinde (%50'sinin üstünde) geçerli sayılıyor.
+
+**Breaker Block / Mitigation Block ayrımı** (OB başarısız olduğunda,
+iFVG'nin OB karşılığı): Bir OB kırılıp (invalidated) tekrar test
+edildiğinde ters yönde çalışırsa — eğer kırılmadan ÖNCE bir likidite
+süpürmesi olduysa **Breaker Block**, olmadıysa **Mitigation Block**
+denir. Bu, iFVG'de yaptığımız "kırılma+retest+reddiye" çalışmasının
+doğrudan OB karşılığı — Order Block'un kendi "inverted" versiyonu.
+
+**Gerçek NQ örneği (doğrulama):** Buy-side likidite süpürüldü (19180)
+→ bearish displacement mumu (19185→19115) → **süpürmeden önceki son
+bullish mum** OB oluyor (19120-19172, GÖVDE ile) → giriş OB'nin orta
+noktasından (19146), FVG confluence'ıyla.
+
+**Gold örneği (genel):** "Order Block Trading Strategy" kaynağı, GOLD'u
+"order block trader'ın cenneti" diye tanımlıyor — 5 dakikalık GOLD
+scalping stratejisinde win rate %60-70, ortalama R:R 2.0-2.5 bildiriliyor
+(kaynak kendi backtestine dayanıyor, bağımsız doğrulanmadı — bizim
+kendi testimizle karşılaştırılacak).
+
+**Kod ile uyum tablosu:**
+
+| Kavram | Standart | Mevcut kod | Durum |
+|---|---|---|---|
+| OB = hangi mum | Son ZIT mum (displacement'tan ÖNCE) | Displacement mumunun KENDİSİ | **temel tanım sapması** |
+| Bölge sınırı | Sadece GÖVDE | Tüm high-low aralığı (fitil dahil) | **uyumsuz** |
+| Engulfing şartı | Var (gövde+fitil tam yutma) | Yok | **eksik** |
+| Likidite süpürmesi şartı | Var | Yok | **eksik** (iFVG'de test ettik, karışık sonuç verebilir) |
+| Mitigation (geçersizlik) | Sadece gövde kapanışı | Zaten sadece gövde kapanışı kullanılıyor (`candle["close"]`) | **uyumlu** |
+| HTF premium/discount | Var | Yok | **eksik** |
+| Breaker/Mitigation Block ayrımı | Var (iFVG'nin OB karşılığı) | Yok | **eksik** |
+
+**Sonraki adım:** Standart tanıma göre (son zıt mum, gövde bölgesi)
+`strategy/order_block.py` düzeltilecek, FVG/iFVG'de izlenen aynı
+disiplinle (önce basit/temel tanım, gerçek veriyle test, sonra
+filtreler eklenerek iyileştirme) 101 sembolde test edilecek.

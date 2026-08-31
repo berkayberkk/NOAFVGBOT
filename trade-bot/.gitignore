@@ -29,3 +29,8 @@ fvg_tp_comparison_report_data.json
 ifvg_tp_sl_study_results.json
 ifvg_top_trades_data.json
 ifvg_top_trades_checkpoint.json
+gold_d1_confirmed_ifvg_data.json
+gold_d1_final_ifvg_data.json
+gold_d1_strict_ifvg_events.json
+gold_d1_strong_ifvg_data.json
+ifvg_vs_fvg_report_data.json

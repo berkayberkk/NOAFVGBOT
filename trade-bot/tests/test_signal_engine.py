@@ -37,9 +37,16 @@ def test_aplus_confluence_signal_generation():
     candles_data[30] = (105.0, 120.0, 105.0, 115.0)
     candles_data[40] = (100.0, 100.0, 95.0, 98.0)
 
-    candles_data[50] = (100.0, 101.0, 99.5, 100.5)   # c1 high = 101.0
-    candles_data[51] = (101.0, 103.0, 100.5, 102.8)  # c2 (OB range=2.5)
-    candles_data[52] = (102.8, 104.0, 102.0, 103.5)  # c3 low = 102.0 -> FVG zone [101.0, 102.0]
+    # idx49: OB mumu -- impuls (idx51, bullish) mumundan hemen once son ZIT
+    # (bearish) mum, govdesi [100.9, 101.3] -- FVG zonuyla [101.0, 102.0]
+    # cakisiyor (standart "son zit mum" OB tanimi, bkz. strategy/order_block.py).
+    # idx50 (c1, FVG'nin ilk mumu) kasitli olarak impuls ile AYNI yonde
+    # (bullish) -- OB aramasinda atlanmali -- VE kapanisi OB.bottom'un
+    # (100.9) altina dusmemeli, yoksa OB impuls gelmeden erken gecersiz olur.
+    candles_data[49] = (101.3, 101.35, 100.85, 100.9)
+    candles_data[50] = (100.9, 101.0, 99.5, 100.95)   # c1 high = 101.0
+    candles_data[51] = (100.95, 103.0, 100.5, 102.8)  # c2 -- impuls (displacement) mumu
+    candles_data[52] = (102.8, 104.0, 102.0, 103.5)   # c3 low = 102.0 -> FVG zone [101.0, 102.0]
     for i in range(53, 60):
         candles_data[i] = (103.0 + i * 0.1, 104.0 + i * 0.1, 102.5, 103.5)
 
@@ -53,7 +60,7 @@ def test_aplus_confluence_signal_generation():
     assert sig.type == SignalType.BUY
     assert sig.confidence == Confidence.HIGH
     assert sig.entry == 101.0
-    assert sig.stop_loss == 100.5
+    assert sig.stop_loss == 100.9  # OB govdesinin alt siniri (min(fvg.bottom, ob.bottom))
 
 
 def test_standalone_signals_confidence_cap():

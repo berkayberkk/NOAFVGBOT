@@ -1,0 +1,263 @@
+{
+  "GOLD_fvg": {
+    "symbol": "GOLD",
+    "module": "fvg",
+    "n_events": 8506,
+    "baseline": {
+      "n": 8175,
+      "wins": 4103,
+      "losses": 4072,
+      "breakevens": 0,
+      "win_rate": 0.5018960244648318,
+      "loss_rate": 0.4981039755351682,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.25474006116207953,
+      "profit_factor": 1.5114194499017681,
+      "total_r": 2082.5
+    },
+    "breakeven": {
+      "n": 8175,
+      "wins": 3533,
+      "losses": 3113,
+      "breakevens": 1529,
+      "win_rate": 0.43217125382263,
+      "loss_rate": 0.38079510703363917,
+      "breakeven_rate": 0.1870336391437309,
+      "expectancy_r": 0.2674617737003058,
+      "profit_factor": 1.7023771281721811,
+      "total_r": 2186.5
+    }
+  },
+  "GOLD_ifvg": {
+    "symbol": "GOLD",
+    "module": "ifvg",
+    "n_events": 3785,
+    "baseline": {
+      "n": 3729,
+      "wins": 1952,
+      "losses": 1777,
+      "breakevens": 0,
+      "win_rate": 0.5234647358541163,
+      "loss_rate": 0.4765352641458836,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.308661839635291,
+      "profit_factor": 1.6477208778840742,
+      "total_r": 1151.0
+    },
+    "breakeven": {
+      "n": 3729,
+      "wins": 1610,
+      "losses": 1193,
+      "breakevens": 926,
+      "win_rate": 0.43175113971574147,
+      "loss_rate": 0.3199249128452668,
+      "breakeven_rate": 0.2483239474389917,
+      "expectancy_r": 0.3277017967283454,
+      "profit_factor": 2.02430846605197,
+      "total_r": 1222.0
+    }
+  },
+  "GOLD_ob": {
+    "symbol": "GOLD",
+    "module": "ob",
+    "n_events": 9833,
+    "baseline": {
+      "n": 9518,
+      "wins": 3502,
+      "losses": 6016,
+      "breakevens": 0,
+      "win_rate": 0.36793444000840514,
+      "loss_rate": 0.6320655599915949,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.4717377600336205,
+      "profit_factor": 1.746343085106383,
+      "total_r": 4490.0
+    },
+    "breakeven": {
+      "n": 9526,
+      "wins": 3152,
+      "losses": 4753,
+      "breakevens": 1621,
+      "win_rate": 0.3308838967037581,
+      "loss_rate": 0.49895024144446776,
+      "breakeven_rate": 0.1701658618517741,
+      "expectancy_r": 0.49370144866680665,
+      "profit_factor": 1.9894803282137596,
+      "total_r": 4703.0
+    }
+  },
+  "BTCUSD_fvg": {
+    "symbol": "BTCUSD",
+    "module": "fvg",
+    "n_events": 6745,
+    "baseline": {
+      "n": 6436,
+      "wins": 3089,
+      "losses": 3347,
+      "breakevens": 0,
+      "win_rate": 0.4799564947172157,
+      "loss_rate": 0.5200435052827843,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.19989123679303916,
+      "profit_factor": 1.384374066328055,
+      "total_r": 1286.5
+    },
+    "breakeven": {
+      "n": 6436,
+      "wins": 2637,
+      "losses": 2510,
+      "breakevens": 1289,
+      "win_rate": 0.40972653822249844,
+      "loss_rate": 0.38999378495960224,
+      "breakeven_rate": 0.20027967681789932,
+      "expectancy_r": 0.22459602237414544,
+      "profit_factor": 1.5758964143426295,
+      "total_r": 1445.5
+    }
+  },
+  "BTCUSD_ifvg": {
+    "symbol": "BTCUSD",
+    "module": "ifvg",
+    "n_events": 3001,
+    "baseline": {
+      "n": 2936,
+      "wins": 1596,
+      "losses": 1340,
+      "breakevens": 0,
+      "win_rate": 0.5435967302452316,
+      "loss_rate": 0.4564032697547684,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.358991825613079,
+      "profit_factor": 1.7865671641791045,
+      "total_r": 1054.0
+    },
+    "breakeven": {
+      "n": 2936,
+      "wins": 1304,
+      "losses": 908,
+      "breakevens": 724,
+      "win_rate": 0.444141689373297,
+      "loss_rate": 0.30926430517711173,
+      "breakeven_rate": 0.24659400544959129,
+      "expectancy_r": 0.3569482288828338,
+      "profit_factor": 2.154185022026432,
+      "total_r": 1048.0
+    }
+  },
+  "BTCUSD_ob": {
+    "symbol": "BTCUSD",
+    "module": "ob",
+    "n_events": 9169,
+    "baseline": {
+      "n": 8800,
+      "wins": 3118,
+      "losses": 5682,
+      "breakevens": 0,
+      "win_rate": 0.3543181818181818,
+      "loss_rate": 0.6456818181818181,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.4172727272727273,
+      "profit_factor": 1.6462513199577613,
+      "total_r": 3672.0
+    },
+    "breakeven": {
+      "n": 8804,
+      "wins": 2835,
+      "losses": 4699,
+      "breakevens": 1270,
+      "win_rate": 0.3220127214902317,
+      "loss_rate": 0.5337346660608814,
+      "breakeven_rate": 0.14425261244888687,
+      "expectancy_r": 0.43230349840981375,
+      "profit_factor": 1.8099595658650778,
+      "total_r": 3806.0
+    }
+  },
+  "EURGBP_fvg": {
+    "symbol": "EURGBP",
+    "module": "fvg",
+    "n_events": 10405,
+    "baseline": {
+      "n": 10163,
+      "wins": 5181,
+      "losses": 4982,
+      "breakevens": 0,
+      "win_rate": 0.5097904162156843,
+      "loss_rate": 0.4902095837843157,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.2744760405392109,
+      "profit_factor": 1.5599156965074268,
+      "total_r": 2789.5
+    },
+    "breakeven": {
+      "n": 10163,
+      "wins": 4465,
+      "losses": 3764,
+      "breakevens": 1934,
+      "win_rate": 0.43933877791990555,
+      "loss_rate": 0.37036308176719474,
+      "breakeven_rate": 0.19029814031289974,
+      "expectancy_r": 0.28864508511266357,
+      "profit_factor": 1.7793570669500531,
+      "total_r": 2933.5
+    }
+  },
+  "EURGBP_ifvg": {
+    "symbol": "EURGBP",
+    "module": "ifvg",
+    "n_events": 4747,
+    "baseline": {
+      "n": 4700,
+      "wins": 2543,
+      "losses": 2157,
+      "breakevens": 0,
+      "win_rate": 0.541063829787234,
+      "loss_rate": 0.45893617021276595,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.3526595744680851,
+      "profit_factor": 1.7684283727399166,
+      "total_r": 1657.5
+    },
+    "breakeven": {
+      "n": 4700,
+      "wins": 2081,
+      "losses": 1454,
+      "breakevens": 1165,
+      "win_rate": 0.4427659574468085,
+      "loss_rate": 0.30936170212765957,
+      "breakeven_rate": 0.2478723404255319,
+      "expectancy_r": 0.3547872340425532,
+      "profit_factor": 2.1468363136176065,
+      "total_r": 1667.5
+    }
+  },
+  "EURGBP_ob": {
+    "symbol": "EURGBP",
+    "module": "ob",
+    "n_events": 17033,
+    "baseline": {
+      "n": 16728,
+      "wins": 5868,
+      "losses": 10860,
+      "breakevens": 0,
+      "win_rate": 0.35078909612625536,
+      "loss_rate": 0.6492109038737446,
+      "breakeven_rate": 0.0,
+      "expectancy_r": 0.4031563845050215,
+      "profit_factor": 1.6209944751381216,
+      "total_r": 6744.0
+    },
+    "breakeven": {
+      "n": 16738,
+      "wins": 5190,
+      "losses": 8700,
+      "breakevens": 2848,
+      "win_rate": 0.31007288803919225,
+      "loss_rate": 0.5197753614529812,
+      "breakeven_rate": 0.1701517505078265,
+      "expectancy_r": 0.41044330266459556,
+      "profit_factor": 1.789655172413793,
+      "total_r": 6870.0
+    }
+  }
+}

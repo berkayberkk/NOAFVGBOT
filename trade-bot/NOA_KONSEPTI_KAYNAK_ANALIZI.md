@@ -721,3 +721,644 @@ grafiği).
 R>5.0 taraması ve likidite süpürmesi/HTF premium-discount gibi kod ile
 uyum tablosunda "eksik" işaretlenen filtrelerin eklenmesinin PF üzerindeki
 etkisi.
+
+**Güncelleme (2026-08-31):** Ortak zayıf 6 sembol (GERTECH30, NASDAQ, IT40,
+GERMID50, EURDKK, USFANG) `strategy/config.py:EXCLUDED_SYMBOLS`'a taşındı;
+modül başına R hedefi (`MODULE_R_MULTIPLE`: FVG/iFVG=1.5R, OB=3.0R) ve
+modül başına devre dışı zaman dilimi (`MODULE_DISABLED_TIMEFRAMES`:
+FVG/iFVG→H4 hariç, OB→W1 hariç) merkezi config'e eklendi ve üç ana
+R-katı çalışma scriptine bağlandı. Detaylar için bkz. git log
+("Exclude structurally weak symbols...", 2026-08-31).
+
+## Trendline — derin araştırma (2026-08-31)
+
+Kullanıcının orijinal planı **FVG → Order Block → Trendline** sırasıyla
+kuruluyordu; OB tamamlandı, sıra Trendline'da. Aynı disiplin: önce derin
+araştırma (platformlar/bloglar), gerçek trade örneğiyle doğrulama, sonra
+kod, sonra 101 sembol testi.
+
+**Kaynaklar:** TrendSpider, Tradeciety, LuxAlgo (Trendline Liquidity —
+SMC/ICT konsepti), FX Replay, Capital.com.
+
+**Standart tanım (kaynaklar hemfikir):**
+- **İnşa:** Yükselen trendline = art arda YÜKSELEN swing low'ları birleştirir
+  (destek diyagonali). Düşen trendline = art arda DÜŞEN swing high'ları
+  birleştirir (direnç diyagonali).
+- **Geçerlilik eşiği:** "İki nokta çizer, üç nokta doğrular" (TrendSpider,
+  Tradeciety'de birebir aynı ifade) — 2 swing noktası geometrik olarak bir
+  çizgi tanımlar ama bu "aday", gerçek/tradeable sayılması için 3. bir
+  swing noktasının çizgiye saygı göstermesi (dokunup tersine dönmesi)
+  gerekiyor.
+- **Fitil mi gövde mi:** Dokunuş noktaları için FİTİL kullanılıyor ("most
+  traders use wicks because they show true rejection levels", "OK to cut
+  through wicks, never cut through bodies"). Kırılma (break) için ise
+  KAPANIŞ esas — bu, projede FVG/OB'de zaten kullanılan "sadece kapanış
+  geçersiz kılar" kuralıyla birebir tutarlı.
+- **Üç oynanabilir setup (Tradeciety):**
+  1. **Bounce (sekme):** Trend yönünde çizgiden tekrar tepki — en temel,
+     en literal "trendline trade".
+  2. **Break + Retest:** Çizgi kapanışla kırılır, fiyat geri dönüp kırılan
+     çizgiyi ZIT taraftan test eder, sonra kırılma yönünde devam eder.
+  3. **Trendline Flag:** Trend içi konsolidasyonun kendi mini-trendline'ı,
+     konsolidasyon yönünde kırılınca giriş.
+
+**ICT/SMC açısı — "Trendline Likiditesi" (LuxAlgo):** Belirgin/gözle görülür
+trendline'lar, altlarında/üstlerinde stop-loss kümelendiği için likidite
+mıknatısı sayılıyor. İki senaryo net biçimde ayrılıyor:
+- **Süpürme (sweep):** Çizgiden keskin bir "delme" olur, hızla başarısız
+  olur, birkaç mum içinde çizgiyi TERS yönde displacement ile geri kazanır
+  — bizim iFVG'de doğruladığımız "kırılma+retest+reddiye" örüntüsüyle
+  KAVRAMSAL OLARAK BİREBİR AYNI.
+  - **Gerçek kırılma:** Çizginin ötesinde kabul (acceptance) var, kapanışlar
+  çizginin öbür tarafında kalıcı, devam (follow-through) geliyor.
+- **Dürüst kısıtlama (kaynağın kendi itirafı):** "no reliable rule
+  identifies in advance which break is a sweep" — FVG/OB'nin aksine
+  (kesin 3-mum gap / son-zıt-mum tanımı), trendline'ın kırılma-mı-süpürme-mi
+  ayrımı GERÇEK ZAMANLI olarak mekanik biçimde %100 çözülemiyor; sadece
+  geriye dönük ("after the fact") netleşiyor. Bu, projenin FVG/OB'de
+  ulaştığı hassasiyetin trendline'da mümkün olmadığını, en iyi ihtimalle
+  ampirik/istatistiksel bir yaklaşım (causal touch/break kuralları + geriye
+  dönük ölçüm) olacağını gösteriyor — dürüstçe belgeleniyor.
+- **Gerçek trade örneği (GOLD, ICT kaynağından):** XAU/USD, NY seansı 08:30
+  ET veri açıklamaları civarında süpürme sonrası temiz reversal'lar
+  veriyor. Giriş, süpürme sonrası bırakılan PD array'in (OB/FVG/breaker)
+  retest'inde; SL süpürülen seviyenin biraz ötesinde (fitil retest'i stop
+  olmasın diye); hedef bir sonraki likidite seviyesi. Çoklu zaman dilimi:
+  D1/H4 yön (bias), M15 bağlam, M5/M1 giriş tetiği.
+
+**Kod ile uyum tablosu:**
+
+| Kavram | Standart | Mevcut kod | Durum |
+|---|---|---|---|
+| Diyagonal trendline (swing'leri birleştiren eğik çizgi) | Var, temel yapı taşı | Yok — `support_resistance.py` sadece YATAY seviyeler kümeliyor | **eksik (yeni modül)** |
+| Min. dokunuş eşiği (3) | Var | N/A | **eksik** |
+| Fitil-temas / kapanış-kırılma ayrımı | Var | FVG/OB'de zaten aynı desen (kapanış-bazlı invalidation) var, trendline'a taşınacak | **desen zaten kanıtlı, uygulanacak** |
+| Bounce sinyali | Var | Yok | **eksik** |
+| Break+Retest sinyali | Var (iFVG'nin kavramsal karşılığı) | Yok | **eksik** |
+| Süpürme/gerçek-kırılma ayrımı | Kaynak kendi de "önceden kesin ayrılamaz" diyor | Yok | **kasıtlı olarak MVP kapsamı dışı — belirsizliği kodda gizlemek yerine açıkça belgelendi** |
+
+**MVP kapsam kararı:** FVG'nin kendi gelişim sırasını tekrarlıyoruz (önce
+temel/gürültüsüz tanım, sonra ampirik iyileştirme). İlk aşamada SADECE
+temel yapı: `detect_trendlines` (swing çiftlerinden aday çizgi + 3.
+dokunuşla causal doğrulama) + `mark_broken_trendlines` (kapanış-bazlı
+kırılma). Süpürme/gerçek-kırılma ayrımı, break+retest sinyali ve bounce
+sinyali — FVG→iFVG geçişindeki gibi — ayrı bir ikinci aşamada, gerçek
+veriyle görsel doğrulama sonrası eklenecek.
+
+Sources:
+- [How to Draw Trendlines — TrendSpider](https://trendspider.com/learning-center/how-to-draw-trendlines/)
+- [3 Trendline Strategies — Tradeciety](https://tradeciety.com/3-trendline-strategies)
+- [Trendline Liquidity — LuxAlgo](https://www.luxalgo.com/library/concept/trendline-liquidity/)
+
+## Trendline — TP/SL araştırması ve 10 örnek doğrulama (2026-08-31)
+
+Kullanıcı 8 örneği "gayet güzel" onayladıktan sonra: TP/SL mekaniği için
+derin araştırma + SADECE 10 örnek (5 kazanan/5 kaybeden, tek sembolde,
+tüm paritelere taramadan) görselleştirme istendi. 101 sembol testi bu
+10 örnek onaylanana kadar ERTELENDİ.
+
+**Kaynaklar:** Monkeytrade ("Trend Line Trading: How to Draw, Trade, and
+Manage Risk"), Capital.com, AskTraders, ForTraders (Risk-Reward Ratio).
+
+**SL (stop loss) — kaynaklardan:**
+- Sekme (bounce) mumunun oluşturduğu swing noktasının BİRAZ ötesine
+  konur -- "if price prints a new low below the swing low, the
+  trendline structure is broken and the reason for the trade no longer
+  exists." Örnek: swing low 1.2685 → SL 1.2675 (3 pip ötesi).
+- ATR/volatilite tamponu kaynaklarda belirtilmiyor -- yapısal
+  (swing noktasına göre) bir tampon, sabit pip.
+
+**TP (take profit) — kaynaklardan:**
+- Birincil yöntem: bir sonraki görünür swing high/low (zıt yapı
+  seviyesi) -- işlem öncesi belirli bir R:R veriyor.
+- Minimum hedef R:R oranı: 1:2 (kaynaklarda tutarlı tavsiye).
+
+**Proje metodolojisiyle uyarlama kararı:** "Bir sonraki swing seviyesi"
+TP yöntemi, projenin FVG için zaten test ettiği "en yakın alınmamış
+likidite" TP fikriyle AYNI KATEGORİDE -- ve o çalışma (bkz. "TP
+karşılaştırması: RR vs Likidite", 2026-08-30) likidite-bazlı TP'nin
+sabit R-katlı TP'den AÇIK ARAYLA daha kötü performans gösterdiğini
+kanıtladı. Bu bulgu tekrar test edilmeden, aynı disiplinle Trendline
+için de SABİT R-KATLI TP kullanılacak (FVG/iFVG/OB ile birebir aynı
+deneysel tasarım, 101 sembol çalışmasında karşılaştırılabilir olması
+için). SL için ise kaynakların "yapısal, swing noktasına göre" tavsiyesi
+ATR tamponuna çevrildi (FVG/iFVG/OB'de zaten kullanılan desen):
+
+- **Giriş:** Dokunuş barının kendi fiyatı (swing low/high -- "sekme"
+  anı).
+- **SL:** Dokunuş fiyatının ATR × tampon kadar ötesi (yön: yükselen için
+  aşağı, düşen için yukarı). Tampon oranı henüz kalibre edilmedi --
+  10 örnek için geçici olarak 1.0× ATR kullanıldı (FVG'nin ilk
+  kalibrasyon değeriyle aynı başlangıç noktası).
+- **TP:** Sabit R katı. 10 örnek için geçici olarak R=1.5 kullanıldı
+  (FVG/iFVG'nin zaten doğrulanmış optimal R'si) -- 101 sembol
+  çalışmasında Trendline'ın KENDİ optimal R'si (muhtemelen farklı)
+  ayrıca ölçülecek.
+- **Hangi dokunuş oynanabilir:** Doğrulama (3.) dokunuşu ve ondan
+  sonraki her ek dokunuş (kırılana kadar) birer bağımsız sekme işlemi
+  adayı sayıldı.
+
+**10 örnek nasıl seçildi:** Sadece GOLD M30 (tüm paritelere tarama
+YAPILMADI, kullanıcı talimatı). `detect_trendlines` çıktısındaki her
+doğrulanmış çizginin dokunuşları kronolojik sırayla simüle edildi, ilk
+5 TP'ye ulaşan ve ilk 5 SL'e takılan işlem bulununca durduruldu.
+
+## Trendline — Kırılım+Retest (reversal) eklendi, 20 örnek (2026-08-31)
+
+Kullanıcı 10 örneği inceledikten sonra: "düşüş trendi kırıldığında long
+açmak" gibi kırılım-sonrası-reversal setup'ının da eklenmesini istedi --
+bu, MVP kapsam kararında bilinçli olarak ERTELENMİŞ olan tam da o ikinci
+aşama (bkz. modül docstring'i, "Süpürme/gerçek-kırılma ayrımı... ikinci
+aşamada eklenecek").
+
+**Derin araştırma (Break and Retest -- Capital.com, MQL5 blog, FXOpen,
+HorizonAI, EBC, StockGro):**
+- Kırılma SONRASI, fiyat kırılan çizgiye GERİ DÖNÜP retest eder --
+  çizgi artık ROL DEĞİŞTİRİR (düşen direnç kırılınca yeni destek olur,
+  yükselen destek kırılınca yeni direnç olur).
+- **Onay:** Retest barında REDDİYE mumu (pin bar/engulfing) -- kapanış
+  eski bölgeye GERİ DÖNMEMELİ. "Traders typically enter once the
+  rejection candle closes."
+- **SL:** Retest ekstremumunun (fitilinin) biraz ötesi.
+- **TP:** Bir sonraki swing seviyesi VEYA sabit R:R -- proje disiplini
+  geregi yine SABİT R kullanılacak (bkz. yukarıdaki TP/SL kararı).
+
+Bu tanım, iFVG'de zaten doğrulanmış "kırılma + retest + aynı-bar
+reddiye" örüntüsüyle YAPISAL OLARAK BİREBİR AYNI -- sadece kaynak
+FVG yerine Trendline. `detect_trendline_reversals` bu yüzden
+`scratch_ifvg_tp_sl_study.py`'nin `detect_confirmed_ifvgs`
+mantığından ("ilk temasta karar verilir -- ilk temas reddetmezse o
+sinyal başarısız sayılır", "süre önemli değil") birebir esinlenerek
+yazıldı.
+
+**20 örnek (10 TP + 10 SL):** Sekme (bounce) VE kırılım+retest
+(reversal) işlemleri BİRLİKTE, kronolojik sırayla, sadece GOLD'da
+(tüm paritelere tarama yok) taranıp ilk 10 kazanan + ilk 10 kaybeden
+bulununca durduruldu.
+
+## KRİTİK BULGU — Trendline SL kalibrasyonunda 2 lookahead/optimizm hatası (2026-09-01)
+
+101 sembol testine geçmeden önce (OB'de yapıldığı gibi) GOLD'un tam
+geçmişinde SL tamponu kalibre edilirken bulundu: kazanma oranı %92.8,
+profit factor 12.88 gibi GERÇEK OLMAYAN sonuçlar çıktı. İki ayrı hata
+tespit edilip düzeltildi:
+
+**Hata 1 — swing noktası lookahead'i (bounce işlemleri):**
+`find_swing_points` bir mumun swing high/low olduğunu ancak
+SONRASINDAKİ `lookback` kadar mumu da görünce onaylayabiliyor (simetrik
+pencere, bkz. `support_resistance.py`). 10 örnek/20 örnek çalışmalarında
+dokunuş barının KENDİ fiyatını SL için kullanmıştım -- ama o fiyatın
+"gelecekte de düşmeyecek" bilgisi zaten dokunuşun "resmi swing noktası"
+sayılmasına gömülüydü, bu da SL'in neredeyse hiç çalışmamasına yol açtı.
+
+**Düzeltme:** `Trendline`'a `swing_lookback` alanı ve `known_index`
+property'si eklendi (`validated_index + swing_lookback` -- çizginin
+CAUSAL olarak "bilinebildiği" ilk bar). Trade simülasyonu artık:
+(a) `tl.known_index`'ten ÖNCEKİ hiçbir olayı kullanmıyor, (b) dokunuşlar
+artık find_swing_points pivotlarıyla SINIRLI DEĞİL -- known_index'ten
+kırılmaya kadar HER mum, fiyatın çizgiye (toleransla) değip değmediği
+için tek tek taranıyor (daha gerçekçi, gerçek traderların "her yaklaşımı"
+değerlendirmesine daha yakın).
+
+**Hata 2 — reversal girişinde "ulaşılmamış" fiyat (kırılım+retest
+işlemleri):** Giriş, retest anındaki TEORİK çizgi fiyatı (`line_price`)
+olarak ayarlanmıştı -- ama tolerans payı yüzünden bazı retest mumları bu
+fiyata GERÇEKTEN ulaşmadan "dokunuş" sayılıyordu (ör. short işlemde giriş
+1282.62 iken mumun gerçek en yükseği sadece 1281.78 -- piyasa hiç o
+fiyata gelmemiş). Bu, gerçekte doldurulamayacak kadar iyi bir fiyattan
+giriş varsayarak sonuçları şişiriyordu.
+
+**Düzeltme (araştırmayla da uyumlu -- "traders typically enter once the
+rejection candle closes"):** Reversal girişi artık `line_price` değil,
+retest mumunun KENDİ KAPANIŞI -- gerçekten gerçekleşmiş bir fiyat.
+
+**Düzeltme sonrası GOLD kalibrasyonu (SL tamponu × ATR, birleşik
+bounce+reversal, R sabit):**
+
+| Tampon | R=1.0 exp_r | R=1.5 exp_r | R=2.0 exp_r |
+|---|---|---|---|
+| 0.10× | 0.092 | 0.313 | 0.487 |
+| 0.25× | 0.231 | 0.447 | 0.653 |
+| **0.50×** | **0.362** | **0.516** | 0.570 |
+| 0.75× | 0.331 | 0.382 | 0.414 |
+| 1.00× | 0.307 | 0.326 | 0.326 |
+| 2.00× | 0.140 | 0.118 | 0.118 |
+| 3.00× | 0.064 | 0.040 | 0.009 |
+
+**Seçilen değer: SL_BUFFER_RATIO = 0.5× ATR** (R=1.5'te en yüksek
+beklenti, +0.516R, PF=2.31 -- FVG/iFVG/OB ile aynı büyüklük mertebesinde,
+artık şüpheli derecede yüksek değil). Bu, iki hatanın da gerçek bir
+lookahead/optimizm kaynağı olduğunu, düzeltmenin sonuçları makul bir
+aralığa çektiğini doğruluyor. 101 sembol çalışması bu düzeltilmiş
+mantıkla başlatıldı.
+
+## Trendline — 95 sembol P&L çalışması sonuçları (2026-09-01)
+
+`scratch_trendline_tp_sl_study.py` ile 95 sembol (6 zayıf sembol
+`EXCLUDED_SYMBOLS` ile hariç) × 6 zaman dilimi tarandı, düzeltilmiş
+causal mantıkla (known_index gating, gerçek fiyat girişleri), 0.5R-5.0R
+sabit R-katları test edildi. Toplam **50.726 trendline** tespit edildi,
+bunların **32.407'si (%64)** bir kırılım+retest reversal sinyaline
+dönüştü. Detaylı rapor: `trendline_report.html` artifact'ı.
+
+**Havuzlanmış sonuçlar (sekme+reversal birlikte):**
+
+| R | n | Kazanma% | Beklenti (R) | Profit Factor |
+|---|---|---|---|---|
+| 0.5 | 96.403 | %74.9 | +0.124R | 1.49 |
+| 1.0 | 96.402 | %67.5 | +0.349R | 2.07 |
+| 1.5 | 96.400 | %60.3 | +0.507R | 2.28 |
+| 2.0 | 96.392 | %53.4 | +0.603R | **2.30** |
+| 3.0 | 96.385 | %42.5 | +0.700R | 2.22 |
+| 5.0 | 96.372 | %29.2 | +0.750R | 2.06 |
+
+**Bulgular:**
+
+1. **Trendline, test edilen HER R değerinde FVG/iFVG/OB'nin hepsinden
+   daha yüksek beklenti veriyor** -- dört modül arasında şimdiye kadarki
+   en güçlü sonuç (R=1.5: Trendline +0.507R vs OB +0.323R, iFVG +0.326R,
+   FVG +0.237R).
+2. **Profit factor R=2.0'da tepe yapıyor (2.30)** -- dört modülün de en
+   yüksek PF'i (iFVG'nin en iyisi 1.99, OB'nin ~1.70, FVG'nin ~1.52 idi).
+3. **Zaman dilimleri arasında dikkat çekici tutarlılık** -- FVG/iFVG/OB'de
+   görülen "bir dilimde iyi, diğerinde kötü" örüntüsü yok (D1 hafif önde,
+   ama W1 dışında hepsi güçlü ve birbirine yakın).
+4. Bounce/reversal ayrı ayrı kırılmadı bu ilk raporda (havuzlanmış) --
+   merak edilirse ayrıca çıkarılabilir.
+
+**Önemli uyarı:** Kullanıcının daha önce onayladığı 10/20 örnek galerisi,
+eski (hatalı, lookahead içeren) mantıkla üretilmişti -- bu rapor
+düzeltilmiş mantığı kullanıyor, sayılar daha önce gösterilenlerden
+farklı (daha düşük ama hâlâ güçlü ve artık güvenilir).
+
+## Sembol eleme turu 2 ve 3 (2026-09-02)
+
+95 sembollük $10.000 hesap simülasyonunun (2020-2025, 4 modül birlikte,
+tek-pozisyon, sabit-$ risk modeli) sonuçlarına göre kullanıcı iki ek
+eleme turu yaptı, `strategy/config.py:EXCLUDED_SYMBOLS`'a eklendi:
+
+**Tur 2 -- en düşük getirili 10 sembol** (sabit-$ risk modelinde):
+EURTRY, SPAIN35, SA40, TAIWAN, HK50, PALLADIUM, CHN50, CA60, USDTRY,
+USDHKD (hepsi pozitifti ama en zayıf onda birdi).
+
+**Tur 3 -- kazanma oranı eşiği:** İlk denenen %49.6 eşiği 70/94 sembolü
+(GOLD dahil) eleyip sadece 24 sembol bırakıyordu -- kullanıcı bunu aşırı
+bulup eşiği %47'ye indirdi. %47'nin altındaki 15 YENİ sembol (tur 2'yle
+çakışanlar hariç) çıkarıldı: EURPLN, CHINAH, EU50, GER40, EURHUF,
+NETH25, BTCUSD, EURSEK, EURCHF, USDNOK, GBPNOK, SING30, DOGEUSD, UK100,
+EURGBP. GOLD (%47.9 kazanma oranıyla) eşiğin hemen üstünde kaldı.
+
+**Sonuç (tur 3):** `EXCLUDED_SYMBOLS` 31 sembol, kanonik liste 101'den
+70'e indi. Tüm aktif test scriptleri (9 dosya) güncellendi.
+
+## Sembol eleme turu 4 -- kapsam 3 sembole daraltıldı (2026-09-02)
+
+Kullanıcı kararıyla kapsam **GOLD, BTCUSD, EURGBP** üçlüsüne daraltıldı --
+geri kalan TÜM semboller (BTCUSD ve EURGBP dahil, onlar tur 3'te
+çıkarılmıştı, bu turda geri eklendi) çıkarıldı. `strategy/config.py`
+yeniden yapılandırıldı: `KEPT_SYMBOLS = ("GOLD", "BTCUSD", "EURGBP")`
+tanımlandı, `EXCLUDED_SYMBOLS` artık kanonik 101 sembollük evrenin
+(`_ALL_101_SYMBOLS`) bu üçü hariç TAMAMI (98 sembol) -- önceki kademeli
+tur yapısı (6+10+15) yerine tek, temiz bir tanıma geçildi (geçmiş
+turların gerekçeleri yorum olarak korundu).
+
+Tüm 9 aktif test scriptindeki `ALL_SYMBOLS` artık
+`list(KEPT_SYMBOLS)` olarak `strategy/config.py`'den import ediliyor --
+tek kaynaktan besleniyor, gelecekte tekrar genişletilirse tek yerden
+değişecek.
+
+## Breakeven-stop eklendi (2026-09-02)
+
+Kullanıcı isteği: "TP'ye giderken SL'i girişe çekelim, işlem dönerse
+zarar etmeyelim -- TP'nin %60'ına ulaştıysa SL girişe çekilsin."
+`scratch_breakeven_sl_study.py` ile GOLD/BTCUSD/EURGBP'de (KEPT_SYMBOLS)
+FVG/iFVG/OB için baseline (sabit SL) ile breakeven-stop karşılaştırıldı.
+
+**Causal tasarım:** Her barda ÖNCE bir önceki bardan kalma `effective_sl`
+kontrol edilir (vuruldu mu), SONRA TP, SONRA (ikisi de olmadıysa) bu
+barın kendi hareketi %60 eşiğini geçtiyse SL bir SONRAKİ bar için girişe
+çekilir -- aynı-bar lookahead'i yok.
+
+**Sonuç (3 sembol havuzu):**
+
+| Modül | Baseline exp | Breakeven exp | Baseline PF (GOLD) | Breakeven PF (GOLD) |
+|---|---|---|---|---|
+| FVG | 0.249 | 0.265 | 1.51 | 1.70 |
+| iFVG | 0.340 | 0.346 | 1.65 | 2.02 |
+| OB | 0.425 | 0.439 | 1.75 | 1.99 |
+
+Üç modülde de PF belirgin artış (kayıpların bir kısmı -1R yerine 0R
+oluyor), beklenti hafif artış, hiçbir yerde kötüleşme yok. Ham kazanma
+oranı düşüyor görünüyor (bazı eski "kazananlar" artık breakeven
+sayılıyor) ama bu yanıltıcı -- toplam R (expectancy) her modülde arttı.
+
+**Uygulandı:** `strategy/config.py` -- `BREAKEVEN_TRIGGER_PCT = 0.6`,
+`BREAKEVEN_ENABLED_MODULES = ("fvg", "ifvg", "ob")` (Trendline dahil
+değil, kullanıcının sorusu bu üç modülle sınırlıydı). Üç resmi çalışma
+scriptine (`scratch_fvg_tp_sl_study.py`, `scratch_ifvg_tp_sl_study.py`,
+`scratch_ob_tp_sl_study.py`) aynı mantık gömüldü -- gelecekteki tüm
+çalışmalar artık breakeven-stop'lu.
+
+## Trendline kalibrasyonu tamamlandı (2026-09-01)
+
+FVG/iFVG/OB'ye uygulanan "sağlıklı hale getirme" turu Trendline'a da
+uygulandı, `strategy/config.py`'ye eklendi:
+
+- **MODULE_R_MULTIPLE["trendline"] = 2.0** -- profit factor tam bu
+  noktada tepe yapıyor (2.30), R=2.5'te zaten gerilemeye başlıyor
+  (2.27). Beklenti (expectancy_r) OB'deki gibi 5.0R'ye kadar hiç tepe
+  yapmadan artmaya devam ediyor (+0.75R'de), ama PF tepe noktası daha
+  net ve dengeli bir seçim.
+- **MODULE_SL_BUFFER_RATIO["trendline"] = 0.5** -- GOLD kalibrasyonundan
+  (yukarıdaki tablo).
+- **MODULE_DISABLED_TIMEFRAMES["trendline"] = ("H4",)** -- R=2.0'da
+  win=%51.9, PF=2.16 ile 6 dilim içinde en düşük (diğerleri 2.16-2.35
+  aralığında birbirine çok yakın olsa da H4 en zayıfı).
+
+**Sembol bazlı liderlik tablosu -- kritik fark:** FVG/iFVG/OB'nin
+aksine, Trendline'ın en kötü 10 sembolü bile (en düşük: AUS200
+exp=+0.390R, PF=1.73) **pozitif beklenti** veriyor -- negatif hiçbir
+sembol yok. Bu, `EXCLUDED_SYMBOLS`'daki 6 sembolün (GERTECH30, NASDAQ,
+IT40, GERMID50, EURDKK, USFANG) hiçbiri Trendline'ın kendi en kötü
+10'unda bile çıkmadı, dolayısıyla listeye Trendline kaynaklı yeni bir
+sembol eklenmedi. Trendline, dört modül arasında hem en yüksek
+beklentili hem de sembol bazında en tutarlı/sağlam modül.
+
+## Order Block'un eksik ICT filtreleri -- ablation testi SONUCU: HİÇBİRİ BENİMSENMEDİ (2026-09-02)
+
+"OB filtreleri → Katman entegrasyonu → confluence testi" sırasının ilk
+adımı olarak, standart ICT tanımında olup kodda eksik olan üç filtre
+(bkz. modül docstring'i, `strategy/order_block.py`) her `OrderBlock`
+üzerinde bilgi amaçlı boolean alan olarak eklendi:
+
+- **`engulfing`** -- impuls mumu, OB mumunun fitil dahil tüm high-low
+  aralığını kapsıyor mu.
+- **`swept_liquidity`** -- OB mumu, kendinden önceki
+  `ob_liquidity_sweep_lookback` (=10) barın en dip/tepe seviyesini
+  geçti mi (likidite süpürmesi).
+- **`htf_discount_aligned`** -- entry seviyesi, `ob_premium_discount_lookback`
+  (=48 bar, M30'da ~1 gün, gerçek bir HTF mumu değil proxy) barlık
+  aralığın doğru yarısında mı (bullish→discount/alt yarı,
+  bearish→premium/üst yarı).
+
+`scratch_ob_filters_study.py` ile GOLD/BTCUSD/EURGBP'de (M30, resmi
+R=3.0/SL=gövde×3.0/breakeven-stop açık metodolojiyle) baseline (tüm
+OB'ler) karşısında bu üç filtrenin tek başına ve ikili/üçlü tüm
+kombinasyonları test edildi. **Sonuç beklenmedik ve tek yönlü:
+HER filtre ve HER kombinasyon, istisnasız, baseline'a göre win rate/
+beklenti/PF'yi DÜŞÜRÜYOR** -- havuzlanmış (3 sembol, n=35068 baseline):
+
+| Filtre seti | n | win_rate | expectancy_r |
+|---|---|---|---|
+| baseline_all | 35068 | 31.9% | 0.439 |
+| engulfing_only | 8056 | 28.5% | 0.304 |
+| swept_liquidity_only | 11694 | 28.1% | 0.292 |
+| htf_discount_only | 17993 | 30.9% | 0.398 |
+| engulfing_AND_sweep | 2295 | 24.4% | 0.158 |
+| engulfing_AND_htf | 4284 | 26.8% | 0.233 |
+| sweep_AND_htf | 8205 | 27.8% | 0.280 |
+| all_three | 1622 | 24.0% | 0.139 |
+
+Desen tüm 3 sembolde ayrı ayrı da aynı yönde (bkz.
+`ob_filters_study_results.json`) -- ne kadar çok filtre üst üste
+binerse beklenti o kadar düşüyor, en kötüsü `all_three` (0.439→0.139).
+Bu, standart ICT kaynaklarının iddiasının (bu filtreler "kaliteyi
+artırır") **bu kod tabanının OB tanımıyla/veri setiyle DOĞRULANMADIĞI**
+anlamına geliyor -- muhtemel neden: bu üç filtre zaten en GÜÇLÜ/en
+temiz displacement'ları seçiyor, ama OB'nin resmi R=3.0 hedefi için asıl
+belirleyici olan şey mumun "ICT-kalitesi" değil, basitçe daha FAZLA
+örneklem/çeşitlilik (mevcut baseline zaten iyi çalışıyor, R=3.0'da
+PF=1.99 GOLD'da) -- filtreler örneklemi daraltırken sinyalin kendi
+doğasında bir iyileşme getirmiyor.
+
+**Karar (ablation disiplinine göre):** Hiçbiri `detect_order_blocks`'un
+ELEME mantığına veya resmi metodolojiye (`strategy/config.py`)
+işlenmedi -- üç alan (`engulfing`, `swept_liquidity`,
+`htf_discount_aligned`) sadece bilgi amaçlı `OrderBlock` üzerinde
+duruyor, gelecekte confluence/Katman çalışmalarında farklı bir
+kombinasyonla yeniden değerlendirilebilir ama şu an OB sinyal
+üretiminde hiçbir değişiklik yok. Sıradaki adıma (Alan/Katman
+entegrasyonu) geçildi.
+
+## "sırasıyla yapalım" sıralamasının 3. ve son adımı: Confluence testi -- SONUÇ: BAŞKA BİR NEGATİF BULGU (2026-09-02)
+
+Sıralamanın son sorusu: `strategy/signal_engine.py`'nin A+ fikri
+(FVG+OB aynı bölgede/yönde çakışırsa daha güçlü sinyal) 4 modüle
+(FVG, iFVG, Order Block, Trendline) genellenip ölçekli test edilirse
+gerçekten kalite artıyor mu? `scratch_confluence_study.py` ile
+GOLD/BTCUSD/EURGBP'de (M30, her modülün resmi R/SL/breakeven
+parametreleriyle), her sinyalin kendi tetiklenme barında kaç BAŞKA
+modülün aynı yönde/bölgede aktif sinyali olduğu (`confluence` sayısı,
+0-3 arası) sayılıp bucket'landı. Aktiflik penceresi modeli: gerçek
+invalidation biliniyorsa (FVG.filled_at_index, OB.mitigated_index) o
+kullanıldı, iFVG/Trendline'da (kod tabanında invalidation izlenmiyor)
+`MAX_ACTIVE_BARS=500` varsayımı kullanıldı (kalibre edilmedi, açıkça
+belirtildi).
+
+**Havuzlanmış (3 sembol) sonuç:**
+
+| confluence | n | win% | exp_r |
+|---|---|---|---|
+| 0 (tek modül) | 43008 | 38.8% | 0.389 |
+| 1 (2 modül aynı fikirde) | 26216 | 38.0% | 0.369 |
+| 2 (3 modül aynı fikirde) | 3610 | 36.1% | 0.362 |
+| 3 (4 modül aynı fikirde) | 73 | 43.8% | 0.589 |
+
+**Desen, OB filtreleri ve Katman'daki AYNI negatif bulguyu tekrarlıyor:**
+confluence=1 ve confluence=2, baseline'a (confluence=0) göre DAHA
+KÖTÜ -- "daha çok modül aynı fikirde = daha kaliteli sinyal" hipotezi
+burada da doğrulanmıyor. confluence=3'teki iyileşme (0.589) tek
+başına çekici görünse de örneklem (n=73, tek sembolde n=11-42 arası)
+istatistiksel olarak güvenilmez -- BTCUSD'de confluence=3'ün PF=12.00
+çıkması (n=11) klasik küçük-örneklem aşırı-değeri, gerçek bir sinyal
+değil.
+
+**Üç ayrı ampirik testin (OB filtreleri, Katman, confluence) tutarlı
+ortak sonucu:** V1'in temel sinyal havuzu (FVG/iFVG/OB/Trendline,
+kendi resmi R/SL/breakeven parametreleriyle) zaten kendi başına
+sağlıklı çalışıyor (PF 1.7-2.2 aralığında, tüm bucket'larda pozitif
+beklenti) -- üstüne eklenen HİÇBİR ek filtre/teyit katmanı (ICT
+filtreleri, Katman/Alan konumu, çoklu-modül confluence) örneklem
+büyüklüğünü feda etmeye değecek bir kalite artışı getirmiyor. Bu,
+kaynağın ("N/O-A Konsepti") daha üst katmanlarına (Alan Gücü, Setup
+Kalitesi, Eylem 1/2) geçmeden önce ciddiye alınması gereken bir sinyal:
+mevcut basit V1 tanımları muhtemelen zaten kaynaktaki daha karmaşık
+puanlama sisteminin yakaladığı "iyi setup"ları kabaca kapsıyor,
+üstüne konan ek koşullar sadece örneklemi daraltıp gürültüyü artırıyor.
+
+**Karar:** `strategy/signal_engine.py`'ye confluence-sayısı bazlı hiçbir
+filtre/ağırlıklandırma eklenmedi. "sırasıyla yapalım" sıralamasının
+üç adımı da (OB filtreleri, Katman entegrasyonu, confluence testi)
+tamamlandı -- üçü de mevcut metodolojiyi DEĞİŞTİRMEME kararıyla sonuçlandı.
+
+## 95 sembollük tam işlem arşivi + Breakeven eşik taraması (2026-09-02)
+
+**Tam işlem arşivi:** Kullanıcı "son genel test"in (95 sembollük $10k
+hesap simülasyonu) SL'e takılan işlemlerini hatırlamak istedi -- o
+testte sadece sembol başına tek en iyi/en kötü işlem kaydedilmişti, tam
+liste hiç saklanmamıştı. `scratch_trade_archive.py` ile AYNI 95 sembol
+kapsamıyla (Tur 1'in 6 sembol çıkarmasından sonraki tam evren, MEVCUT
+KEPT_SYMBOLS'un 3 sembolünden BİLEREK farklı -- kullanıcı özellikle
+geniş kapsamı istedi), güncel resmi metodolojiyle (breakeven-stop dahil)
+yeniden çalıştırıldı, HER gerçekleşen işlem (sadece en iyi/en kötü değil)
++ görselleştirme için bir mum penceresi `trade_archive/{SEMBOL}.json`
+altına kaydedildi. Sonuç: **230.068 gerçek işlem** (95.298 kazanan,
+88.719 SL/zarar, 46.051 breakeven), 618MB, checkpoint'li/kesintiye
+dayanıklı (detached PowerShell process, ~5 saat sürdü, 1 sembolde --
+LTCUSD -- anormal bir yavaşlama (~2.8 saat) gözlendi ama hatasız
+tamamlandı, nedeni araştırılmadı).
+
+**Breakeven eşik taraması:** Kullanıcı sordu -- "TP'ye giden yolun
+yarısını (%50) kat ettiyse SL girişe çekilirse win rate/kâr nasıl
+etkilenir?" Üç aşamalı sweep yapıldı (GOLD/BTCUSD/EURGBP, FVG/iFVG/OB,
+`scratch_breakeven_trigger_sweep_study.py` + `_spread_sweep_study.py`):
+
+1. **Kaba tarama (%30-80, spread=0):** mevcut resmi eşik olan %60
+   OPTIMAL DEĞİL -- expectancy eşik düştükçe monoton artıyor. %50 bile
+   %60'tan iyi (havuzlanmış exp: 0.368 vs 0.363).
+2. **İnce tarama (%5-30, spread=0):** eğri düzleşiyor (azalan getiri)
+   ama tepe %5'te bile bulunamadı (exp=0.393) -- ama breakeven oranı
+   %46.3'e çıkıyor (işlemlerin neredeyse yarısı sıfır sonuçlanıyor).
+3. **Spread-DAHİL tarama** (temsili spread -- veri kaynağında
+   (`data/canonical/*.csv`) SPREAD sütunu tamamen sıfır, GERÇEK spread
+   veriden türetilemedi; GOLD=0.25, BTCUSD=20, EURGBP=0.0002 gibi tipik
+   piyasa değerleri kullanıldı, kalibre edilmedi): **sıralama
+   DEĞİŞMEDİ** (düşük eşik hala daha iyi, %10 en iyisiydi tüm testte),
+   ama mutlak değerler çok kötüleşti -- havuzlanmış expectancy TÜM
+   eşiklerde NEGATİFE döndü (BTCUSD/EURGBP'nin FVG/OB modüllerinde
+   spread, dar SL'lere göre orantısız büyük çıktı -- ör. BTCUSD OB
+   baseline exp=-0.389R). GOLD tek başına her eşikte pozitif kaldı.
+   Bu, ayrı ve daha büyük bir bulgu: gerçekçi spread varsayımıyla
+   FVG/OB'nin bazı sembol/enstrüman kombinasyonları hiç kârlı
+   olmayabilir -- eşik seçiminden bağımsız bir konu, ayrıca
+   araştırılmalı.
+
+**Karar:** Sıralama üç testte de tutarlı olduğu (düşük eşik daha iyi)
+ama en agresif uç (%5-10, %46 breakeven oranı) hiç kalibre edilmediği
+ve gerçek spread verisiyle doğrulanmadığı için, kullanıcının özgün
+sorusu olan VE üç testte de açıkça %60'tan iyi çıkan **%50** resmi
+değer olarak benimsendi (`strategy/config.py:BREAKEVEN_TRIGGER_PCT`,
+0.6 → 0.5). Daha agresif (%10-30) uç, gerçek spread verisi veya daha
+geniş sembol kapsamı olmadan resmi hale getirilmedi -- ileride ayrı bir
+çalışmayla değerlendirilebilir.
+
+## KRİTİK BULGU — Bu oturumun tüm kalibrasyonu, projenin mevcut rigorous walk-forward/holdout altyapısından hiç geçirilmemişti (2026-09-02)
+
+Kullanıcı "finans uzmanı/trader/yazılım mühendisi" bakış açısıyla
+sağlamlık testleri önerisi istedi (bkz. "Sağlamlık Testleri Yol
+Haritası" sunumu). En yüksek öncelikli önerilen adımı (walk-forward/
+holdout) uygulamaya başlarken, **projenin bunun için zaten eksiksiz,
+daha önce kurulmuş bir altyapısı olduğu** keşfedildi: `backtest/
+final_holdout.py` (Phase 4F, "Sacred Holdout"), `validation.py`
+(chronological train/val/holdout split + walk-forward), `robustness.py`
+(parametre pertürbasyon testi), `regime.py` (rejim/zaman/volatilite
+bucket'ları + block-bootstrap güven aralığı). Bu altyapı DAHA ÖNCE
+(2026-08-28, bkz. README.md) V1'in ("eski" FVG+OB+Destek/Direnç, trend
+filtreli) sahte "%92.7 win rate" iddiasını "FAILED TO GENERALIZE"e
+çevirmişti.
+
+**Ama bu oturumun TÜM işi** (FVG/iFVG/Order Block/Trendline'ın yeniden
+kalibre edilen R-katı hedefleri, SL tamponları, breakeven-stop eşiği,
+95 sembollük işlem arşivi, GOLD $10k hesap simülasyonu -- hepsi) bu
+altyapıyı HİÇ kullanmadan, ~100 bağımsız `scratch_*.py` script'inin
+kendi basit (walk-forward'suz, block-bootstrap'suz) simülasyon
+mantığıyla yapılmıştı. `strategy/signal_engine.py` hâlâ eski (A+/
+trend-filtreli, sadece FVG+OB, Destek/Direnç tabanlı TP) tasarımdaydı
+-- bu oturumun kalibre ettiği stratejiyle hiçbir bağlantısı yoktu.
+
+### Yapılan entegrasyon
+
+1. `strategy/ifvg.py` -- `detect_confirmed_ifvgs` (önceden sadece
+   `scratch_ifvg_tp_sl_study.py` içinde gömülüydü) gerçek bir strateji
+   modülüne taşındı, `IFVGEvent` dataclass'ı ile (7 yeni birim testi,
+   `_mark_chop_clusters` ayrı test edilebilir fonksiyona çıkarıldı).
+2. `strategy/signal_engine.py` TAMAMEN yeniden yazıldı: A+ confluence
+   ve trend/EMA filtresi kaldırıldı (confluence ablation'ın ve bu
+   oturumun hiçbir kalibrasyon çalışmasının bunları kullanmadığı
+   gerekçesiyle) -- artık FVG/iFVG/Order Block/Trendline (bounce +
+   kırılım-retest) BAĞIMSIZ sinyal üretiyor, her biri kendi resmi
+   `MODULE_R_MULTIPLE`/`MODULE_SL_BUFFER_RATIO`/`BREAKEVEN_TRIGGER_PCT`
+   parametresini `Signal.take_profit`/`breakeven_trigger_pct` alanlarına
+   yazıyor (5 yeni birim testi).
+3. `backtest/engine.py`: `Signal.take_profit` doluysa DOĞRUDAN
+   kullanılıyor (Destek/Direnç aramasına düşmüyor); breakeven-stop
+   mantığı (nedensel sıra korunarak -- önce eski SL, sonra TP, sonra
+   bu barın arm kontrolü) pozisyon-çıkış döngüsüne eklendi (4 yeni
+   birim testi, mevcut 30 test regresyon olmadan geçti).
+4. `backtest/final_holdout.py`: `run_final_holdout_evaluation`'a
+   `val_metrics` parametresi eklendi -- önceden GÖMÜLÜ, V1'e ait eski
+   sabitlere (expectancy=0.5253 vb.) karşı delta hesaplıyordu, artık
+   TAZE `build_validation_report` sonucu geçirilebiliyor (sınıflandırmanın
+   kendisini etkilemiyordu ama delta raporlamasını yanlış taban
+   çizgisiyle yapıyordu).
+
+Tam test paketi: 469/470 geçti (1 önceden var olan, ilgisiz Telegram
+hatası).
+
+### Kutsal holdout sonucu (TEK ATIMLIK, `scratch_holdout_validation_run.py`)
+
+GOLD/BTCUSD/EURGBP, tam geçmiş (2010/2013/2017'den 2026'ya), temsili
+spread (GOLD=0.25, BTCUSD=20, EURGBP=0.0002 -- veri kaynağında gerçek
+spread hiç yok):
+
+| Sembol | TRAIN exp | VAL exp | Walk-forward exp | HOLDOUT exp | HOLDOUT PF | Sınıflandırma | %95 Bootstrap CI |
+|---|---|---|---|---|---|---|---|
+| GOLD | -0.339 | -0.294 | -0.307 | -0.185 | 0.70 | FAILED TO GENERALIZE | [-0.226, -0.145] |
+| BTCUSD | -0.350 | -0.323 | -0.394 | -0.265 | 0.62 | FAILED TO GENERALIZE | [-0.313, -0.219] |
+| EURGBP | -0.545 | -0.638 | -0.571 | -0.833 | 0.21 | FAILED TO GENERALIZE | [-0.872, -0.790] |
+
+**3/3 sembolde, TRAIN partisyonunda (in-sample!) bile expectancy
+negatif.** Bu, "holdout'a genellenmiyor" değil, daha temel bir şey
+söylüyor: rigorous motorla (aynı-barda-iyimser-TP-yok, aynı-barda-
+sinyal-barıyla-dolum-yok) ölçüldüğünde stratejinin in-sample bile
+pozitif edge'i yok.
+
+### Kök neden araştırması (kod hatası DEĞİL -- iki ayrı metodolojik iyimserlik)
+
+Sonuç ilk bakışta "entegrasyon bozuk" şüphesi uyandırdı (bu oturumun
+TÜM diğer çalışmaları pozitifti). GOLD'un son 6.000 M30 mumluk
+diliminde, AYNI sinyaller üzerinde eski scratch mantığı ile yeni motor
+doğrudan karşılaştırılarak araştırıldı (bkz. bu oturumun sohbet
+geçmişi -- ayrıntılı adım adım karşılaştırma):
+
+1. **Order Block -- "impuls barının kendisiyle aynı barda dolum"**:
+   `scratch_gold_account_simulation.py`'nin `_ob_trades`'i, dolum
+   taramasını `ob.impulse_index`'ten (DAHİL) başlatıyordu. Ama impuls
+   barının "güçlü hareket" sayılabilmesi için TAM aralığının (kapanışa
+   kadar) bilinmesi gerekiyor -- o barın kendi dip/tepe noktasını
+   (kapanmadan önce oluşmuş) "aynı zamanda girişe geri çekildi" diye
+   kullanmak, gerçek işlemde ASLA mümkün olmayan bir bilgiyi kullanmak
+   demek. Tek başına `impulse_index+1`'den başlatmak: win rate
+   %33.8→%23.3, expectancy +0.35R→-0.07R.
+2. **TÜM modüller -- "aynı barda iyimser TP kabul etme"**: scratch
+   script'lerin ortak `_scan_fill_and_exit` deseni, dolum barının
+   KENDİSİNDE hem SL hem TP'ye ulaşılabiliyorsa TP'nin önce vurulduğunu
+   varsayıyordu. `backtest/engine.py` (bu oturumdan bağımsız, çok daha
+   önce yazılmış ve test edilmiş -- `test_same_bar_entry_and_tp_ambiguity_no_optimistic_tp`)
+   bunu HİÇBİR ZAMAN yapmıyor -- dolum barında sadece pesimistik SL
+   kontrolü yapılıyor, TP her zaman bir SONRAKİ bara erteleniyor (çünkü
+   tek bir OHLC barından hangisinin ÖNCE geldiği kesin bilinemez). Bu
+   TEK kuralı FVG'de izole edip test etmek (fill mantığı birebir aynı
+   tutularak): win rate %51.8→%36.0, expectancy +0.29R→-0.10R -- OB'de
+   gözlenen toplam farkın neredeyse tamamını tek başına açıklıyor.
+
+Her iki iyimserlik de sonucu YUKARI yanlı hale getiriyordu. Yeni
+`strategy/signal_engine.py`/`backtest/engine.py` entegrasyonu HİÇBİRİNİ
+içermiyor -- düzeltilecek bir kod hatası yok, holdout'u tekrar
+çalıştırmak (deterministik, aynı kod+veri) aynı sonucu verir.
+
+### Karar ve kapsam
+
+Bu bulgu, README.md'nin en üstüne ikinci bir "KRİTİK" bölüm olarak
+eklendi (2026-08-28'deki V1 bulgusuyla aynı ağırlıkta ama farklı bir
+strateji/oturuma ait). Bu oturumun ürettiği TÜM pozitif sonuçlar
+(breakeven-stop eşiği seçimi, R-katı/SL tamponu kalibrasyonları, GOLD
+$10k hesap simülasyonu, 95 sembollük tam işlem arşivi) bu iki
+iyimserlik yüzünden gerçek olandan daha iyi görünüyor olabilir --
+kesin miktar sembol/modüle göre değişir, sistematik olarak
+ölçülmedi. `results/holdout_validation/holdout_validation_results.json`
+tam train/val/walk-forward/holdout/block-bootstrap verisini içeriyor.
+
+Bu, kullanıcının "sağlamlık testleri" talebinin doğrudan ve en değerli
+sonucu -- tam olarak arananı buldu: bu oturumun sonuçlarının ne kadar
+güvenilir olduğu sorusuna kesin, istatistiksel olarak sağlam bir cevap.

@@ -26,6 +26,19 @@ Bilinçli olarak kapsam dışı bırakılanlar (FVG/iFVG'deki gibi, önce
 temel tanımı test edip sonra ampirik olarak filtre eklemek için):
 likidite süpürmesi şartı, engulfing şartı, HTF premium/discount uyumu,
 Breaker/Mitigation Block ayrımı. Bunlar ayrı bir çalışmada eklenecek.
+
+EKLENTİ (2026-09-02): yukarıdaki üç filtre artık her OrderBlock için
+BİLGİ AMAÇLI (informational) boolean alan olarak hesaplanıyor --
+`engulfing`, `swept_liquidity`, `htf_discount_aligned`. detect_order_blocks
+davranışı DEĞİŞMEDİ (hiçbir OB bu alanlara göre elenmiyor) -- sadece
+scratch_ob_filters_study.py'nin ablation testi yapabilmesi için sinyal
+üzerine etiket ekleniyor. Filtrelerden hangisinin gerçekten PF/beklenti
+artırdığı ölçülmeden hiçbiri detect_order_blocks'un ELEME mantığına
+dahil edilmeyecek (bkz. NOA_KONSEPTI_KAYNAK_ANALIZI.md "Order Block
+filtre ablasyonu" bölümü). Tüm üç hesaplama da CAUSAL'dır -- sadece
+OB mumu (ob_index) ve impuls mumu (i, zaten OB'nin kendisini
+doğrulamak için kullanılan aynı bar) ile ONDAN ÖNCEKİ mumlara bakar,
+gelecek veri kullanmaz.
 """
 
 from dataclasses import dataclass
@@ -46,6 +59,13 @@ class OrderBlock:
     direction: OBDirection
     mitigated: bool = False         # fiyat bu bölgeyi tamamen geçip geçersiz kıldı mı
     mitigated_index: int | None = None
+    # 2026-09-02 eklendi -- bilgi amaçlı ICT filtre etiketleri (bkz. modül
+    # docstring'i). Hiçbiri detect_order_blocks tarafından ELEME için
+    # kullanılmıyor, sadece scratch_ob_filters_study.py'nin ablation
+    # testi yapabilmesi için işaretleniyor.
+    engulfing: bool = False           # impuls mumu, OB mumunun tum high-low araligini (fitil dahil) yutuyor mu
+    swept_liquidity: bool = False     # OB mumu, kendinden onceki N barin en dip/tepe seviyesini gecti mi (likidite supurmesi)
+    htf_discount_aligned: bool = False  # entry seviyesi, N barlik HTF-proxy araligin dogru yarisinda mi (bullish->discount, bearish->premium)
 
 
 from strategy.config import DEFAULT_CONFIG, StrategyConfig
@@ -126,12 +146,48 @@ def detect_order_blocks(candles: list[dict], config: StrategyConfig = DEFAULT_CO
         bottom = min(ob_candle["open"], ob_candle["close"])
         direction = OBDirection.BULLISH if impulse_dir == OBDirection.BULLISH else OBDirection.BEARISH
 
+        # Engulfing: impuls mumu, OB mumunun TUM high-low araligini (govde
+        # degil, fitil dahil) yutuyor mu -- standart ICT engulfing sarti.
+        engulfing = candle["high"] >= ob_candle["high"] and candle["low"] <= ob_candle["low"]
+
+        # Likidite supurmesi: OB mumu, kendinden ONCEKI N barin (ob_index
+        # haric) en dusuk dip/en yuksek tepe seviyesini gecti mi.
+        sweep_start = max(0, ob_index - config.ob_liquidity_sweep_lookback)
+        prior_window = candles[sweep_start:ob_index]
+        if prior_window:
+            if direction == OBDirection.BULLISH:
+                prior_low = min(c["low"] for c in prior_window)
+                swept_liquidity = ob_candle["low"] < prior_low
+            else:
+                prior_high = max(c["high"] for c in prior_window)
+                swept_liquidity = ob_candle["high"] > prior_high
+        else:
+            swept_liquidity = False
+
+        # HTF premium/discount (proxy): OB mumuna kadar olan N barlik
+        # aralik gercek bir HTF mumu degil ama yerine gecen bir pencere --
+        # bullish OB sadece araligin ALT yarisinda (discount), bearish
+        # sadece UST yarisinda (premium) gecerli sayilir.
+        pd_start = max(0, ob_index - config.ob_premium_discount_lookback + 1)
+        pd_window = candles[pd_start:ob_index + 1]
+        range_high = max(c["high"] for c in pd_window)
+        range_low = min(c["low"] for c in pd_window)
+        midpoint = (range_high + range_low) / 2.0
+        entry_level = (top + bottom) / 2.0
+        if direction == OBDirection.BULLISH:
+            htf_discount_aligned = entry_level < midpoint
+        else:
+            htf_discount_aligned = entry_level > midpoint
+
         blocks.append(OrderBlock(
             index=ob_index,
             impulse_index=i,
             top=top,
             bottom=bottom,
             direction=direction,
+            engulfing=engulfing,
+            swept_liquidity=swept_liquidity,
+            htf_discount_aligned=htf_discount_aligned,
         ))
 
     return blocks

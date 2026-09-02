@@ -46,7 +46,7 @@ from pathlib import Path
 from backtest.run_multi_symbol_validation import load_m1_canonical_as_candlev2, candlev2_to_strategy_dict
 from research.v2.data.models import Timeframe
 from research.v2.data.resampler import resample_m1
-from strategy.config import StrategyConfig, MODULE_R_MULTIPLE, MODULE_DISABLED_TIMEFRAMES
+from strategy.config import StrategyConfig, MODULE_R_MULTIPLE, MODULE_DISABLED_TIMEFRAMES, KEPT_SYMBOLS, BREAKEVEN_TRIGGER_PCT, BREAKEVEN_ENABLED_MODULES
 from strategy.fvg import detect_fvgs, FVGDirection
 from scratch_multi_timeframe_fvg_scan import _aggregate_by_calendar
 
@@ -66,19 +66,10 @@ CHOP_CLUSTER_BARS = 15
 # aynı anda en kötü 10 sembol arasında bulduğu, yapısal olarak bu stratejiye
 # uygun olmayan semboller çıkarıldı (2026-08-31 R-katı çalışması) --
 # GERTECH30, NASDAQ, IT40, GERMID50, EURDKK, USFANG.
-ALL_SYMBOLS = [
-    "ADAUSD", "ATOMUSD", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AVAXUSD",
-    "BCHUSD", "BRENT", "BTCUSD", "CA60", "CADCHF", "CADJPY", "CHFJPY", "CHFSGD", "CHINAH",
-    "CHN50", "DOGEUSD", "DOTUSD", "ETCUSD", "ETHUSD", "EU50", "EURAUD", "EURCAD", "EURCHF",
-    "EURGBP", "EURHKD", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURSGD",
-    "EURTRY", "EURUSD", "EURZAR", "FRA40", "GBPAUD", "GBPCAD", "GBPCHF", "GBPDKK", "GBPJPY",
-    "GBPNOK", "GBPNZD", "GBPSEK", "GBPSGD", "GBPUSD", "GER40", "GOLD", "HK50", "JP225",
-    "LINKUSD", "LTCUSD", "MATICUSD", "NETH25", "NZDCAD", "NZDCHF", "NZDJPY", "NZDSGD", "NZDUSD",
-    "PALLADIUM", "PLATINUM", "SA40", "SGDJPY", "SILVER", "SING30", "SOLUSD", "SPAIN35", "SWI20",
-    "TAIWAN", "UK100", "UNIUSD", "US2000", "US30", "US500", "USDCAD", "USDCHF", "USDCNH",
-    "USDDKK", "USDHKD", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD",
-    "USDTRY", "USDZAR", "WTI", "XLMUSD", "XRPUSD",
-]
+# + 2026-09-02, TUR 4 (kullanici karariyla): kapsam GOLD, BTCUSD, EURGBP
+# UCLUSUNE daraltildi -- strategy/config.py:KEPT_SYMBOLS. Bkz.
+# NOA_KONSEPTI_KAYNAK_ANALIZI.md "Sembol eleme turu 2 ve 3" bolumu.
+ALL_SYMBOLS = list(KEPT_SYMBOLS)
 
 CONFIG = StrategyConfig()
 
@@ -167,19 +158,33 @@ def simulate_ifvg_trade(candles: list[dict], event: dict, r_multiple: float) -> 
     if fill_index is None:
         return None
 
+    # Breakeven-stop (kullanici karariyla, 2026-09-02, bkz.
+    # strategy/config.py:BREAKEVEN_TRIGGER_PCT + scratch_breakeven_sl_study.py).
+    use_be = "ifvg" in BREAKEVEN_ENABLED_MODULES
+    arm_level = entry + BREAKEVEN_TRIGGER_PCT * (take_profit - entry) if is_bull else entry - BREAKEVEN_TRIGGER_PCT * (entry - take_profit)
+    effective_sl = stop_loss
+    armed = False
+
     scan_end = min(len(candles), fill_index + MAX_WAIT_BARS)
     for i in range(fill_index, scan_end):
         c = candles[i]
         if is_bull:
-            hit_sl = c["low"] <= stop_loss
+            hit_sl = c["low"] <= effective_sl
             hit_tp = c["high"] >= take_profit
         else:
-            hit_sl = c["high"] >= stop_loss
+            hit_sl = c["high"] >= effective_sl
             hit_tp = c["low"] <= take_profit
         if hit_sl:
+            if armed:
+                return TradeOutcome(won=False, r_multiple=0.0)
             return TradeOutcome(won=False, r_multiple=-1.0)
         if hit_tp:
             return TradeOutcome(won=True, r_multiple=r_multiple)
+        if use_be and not armed:
+            reached_arm = (c["high"] >= arm_level) if is_bull else (c["low"] <= arm_level)
+            if reached_arm:
+                armed = True
+                effective_sl = entry
     return None
 
 

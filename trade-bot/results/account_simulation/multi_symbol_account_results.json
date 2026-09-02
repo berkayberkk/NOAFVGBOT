@@ -1,0 +1,4705 @@
+{
+  "GOLD": {
+    "n_candidate_trades": 10890,
+    "n_skipped_overlap": 8794,
+    "total_trades": 2096,
+    "win_rate": 0.47853053435114506,
+    "final_equity": 25440029.598376714,
+    "net_pnl": 25430029.598376714,
+    "net_pnl_pct": 2543.0029598376714,
+    "max_drawdown_pct": 0.22591995901744946,
+    "max_drawdown_dollar": 1864001.2745015938,
+    "fixed_final_equity": 90950.0,
+    "fixed_net_pnl": 80950.0,
+    "fixed_net_pnl_pct": 8.095,
+    "fixed_max_drawdown_pct": 0.06796116504854369,
+    "fixed_max_drawdown_dollar": 2450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 971,
+        "pnl": 10582482.821937403,
+        "win_rate": 0.5262615859938208
+      },
+      "ifvg": {
+        "n": 381,
+        "pnl": 3218315.1168444166,
+        "win_rate": 0.5406824146981627
+      },
+      "ob": {
+        "n": 697,
+        "pnl": 10574609.820036216,
+        "win_rate": 0.36585365853658536
+      },
+      "trendline": {
+        "n": 47,
+        "pnl": 1054621.8395586486,
+        "win_rate": 0.6595744680851063
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 716453.2286545668,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-23T15:30:00"
+    },
+    "worst_trade": {
+      "module": "trendline",
+      "pnl": -256969.99594319914,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T15:30:00"
+    }
+  },
+  "ADAUSD": {
+    "n_candidate_trades": 10169,
+    "n_skipped_overlap": 7911,
+    "total_trades": 2258,
+    "win_rate": 0.504428697962799,
+    "final_equity": 176191164.6431841,
+    "net_pnl": 176181164.6431841,
+    "net_pnl_pct": 17618.11646431841,
+    "max_drawdown_pct": 0.14026306011008313,
+    "max_drawdown_dollar": 9706427.319015175,
+    "fixed_final_equity": 110500.0,
+    "fixed_net_pnl": 100500.0,
+    "fixed_net_pnl_pct": 10.05,
+    "fixed_max_drawdown_pct": 0.059907834101382486,
+    "fixed_max_drawdown_dollar": 1500.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1100,
+        "pnl": 68113110.9129485,
+        "win_rate": 0.5363636363636364
+      },
+      "ifvg": {
+        "n": 443,
+        "pnl": 16195334.52051014,
+        "win_rate": 0.5327313769751693
+      },
+      "ob": {
+        "n": 636,
+        "pnl": 86897846.4322575,
+        "win_rate": 0.40723270440251574
+      },
+      "trendline": {
+        "n": 79,
+        "pnl": 4974872.777467942,
+        "win_rate": 0.6835443037974683
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 5239893.143310526,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-29T05:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1799029.9792032808,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-29T08:00:00"
+    }
+  },
+  "ATOMUSD": {
+    "n_candidate_trades": 9845,
+    "n_skipped_overlap": 7544,
+    "total_trades": 2301,
+    "win_rate": 0.4915254237288136,
+    "final_equity": 52583952.9884707,
+    "net_pnl": 52573952.9884707,
+    "net_pnl_pct": 5257.39529884707,
+    "max_drawdown_pct": 0.12736700601173462,
+    "max_drawdown_dollar": 2536767.9815807194,
+    "fixed_final_equity": 98300.0,
+    "fixed_net_pnl": 88300.0,
+    "fixed_net_pnl_pct": 8.83,
+    "fixed_max_drawdown_pct": 0.055299539170506916,
+    "fixed_max_drawdown_dollar": 1350.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1179,
+        "pnl": 31451127.200879257,
+        "win_rate": 0.5368956743002544
+      },
+      "ifvg": {
+        "n": 457,
+        "pnl": 4954013.734572613,
+        "win_rate": 0.5185995623632386
+      },
+      "ob": {
+        "n": 612,
+        "pnl": 10424544.06167439,
+        "win_rate": 0.369281045751634
+      },
+      "trendline": {
+        "n": 53,
+        "pnl": 5744267.9913444165,
+        "win_rate": 0.660377358490566
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1563252.757867491,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-27T04:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -544767.5319041895,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-27T07:30:00"
+    }
+  },
+  "AUDCAD": {
+    "n_candidate_trades": 9896,
+    "n_skipped_overlap": 7613,
+    "total_trades": 2283,
+    "win_rate": 0.489706526500219,
+    "final_equity": 45801284.98752616,
+    "net_pnl": 45791284.98752616,
+    "net_pnl_pct": 4579.128498752616,
+    "max_drawdown_pct": 0.15095260897650753,
+    "max_drawdown_dollar": 2197067.7855343893,
+    "fixed_final_equity": 96900.0,
+    "fixed_net_pnl": 86900.0,
+    "fixed_net_pnl_pct": 8.69,
+    "fixed_max_drawdown_pct": 0.13852813852813853,
+    "fixed_max_drawdown_dollar": 1600.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1103,
+        "pnl": 18886109.267768007,
+        "win_rate": 0.5312783318223028
+      },
+      "ifvg": {
+        "n": 455,
+        "pnl": 10796289.40351601,
+        "win_rate": 0.5758241758241758
+      },
+      "ob": {
+        "n": 660,
+        "pnl": 13891297.75871492,
+        "win_rate": 0.33636363636363636
+      },
+      "trendline": {
+        "n": 65,
+        "pnl": 2217588.557527252,
+        "win_rate": 0.7384615384615385
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1390082.056658161,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-15T04:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -477261.506119302,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-16T01:00:00"
+    }
+  },
+  "AUDCHF": {
+    "n_candidate_trades": 10304,
+    "n_skipped_overlap": 7279,
+    "total_trades": 3025,
+    "win_rate": 0.502809917355372,
+    "final_equity": 1256371221.0631251,
+    "net_pnl": 1256361221.0631251,
+    "net_pnl_pct": 125636.12210631251,
+    "max_drawdown_pct": 0.1756197099536547,
+    "max_drawdown_dollar": 50541134.0204761,
+    "fixed_final_equity": 130800.0,
+    "fixed_net_pnl": 120800.0,
+    "fixed_net_pnl_pct": 12.08,
+    "fixed_max_drawdown_pct": 0.047979797979797977,
+    "fixed_max_drawdown_dollar": 1900.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1578,
+        "pnl": 634548166.478208,
+        "win_rate": 0.5348542458808618
+      },
+      "ifvg": {
+        "n": 626,
+        "pnl": 176508828.322746,
+        "win_rate": 0.5814696485623003
+      },
+      "ob": {
+        "n": 762,
+        "pnl": 401518417.8392001,
+        "win_rate": 0.35958005249343833
+      },
+      "trendline": {
+        "n": 59,
+        "pnl": 43785808.422970414,
+        "win_rate": 0.6610169491525424
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 36962966.19779716,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T12:30:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -12826400.072803812,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-30T04:30:00"
+    }
+  },
+  "AUDJPY": {
+    "n_candidate_trades": 11145,
+    "n_skipped_overlap": 8302,
+    "total_trades": 2843,
+    "win_rate": 0.4952514948997538,
+    "final_equity": 490765986.20494294,
+    "net_pnl": 490755986.20494294,
+    "net_pnl_pct": 49075.5986204943,
+    "max_drawdown_pct": 0.1620654916396997,
+    "max_drawdown_dollar": 75926330.58766925,
+    "fixed_final_equity": 121250.0,
+    "fixed_net_pnl": 111250.0,
+    "fixed_net_pnl_pct": 11.125,
+    "fixed_max_drawdown_pct": 0.07,
+    "fixed_max_drawdown_dollar": 1750.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1499,
+        "pnl": 151998979.0314516,
+        "win_rate": 0.5276851234156104
+      },
+      "ifvg": {
+        "n": 566,
+        "pnl": 111115539.66996014,
+        "win_rate": 0.5300353356890459
+      },
+      "ob": {
+        "n": 714,
+        "pnl": 227742195.56986922,
+        "win_rate": 0.38795518207282914
+      },
+      "trendline": {
+        "n": 64,
+        "pnl": -100728.06633836869,
+        "win_rate": 0.625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 14662752.896582786,
+      "r_multiple": 3.0,
+      "fill_time": "2025-10-15T23:00:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -5034211.827826757,
+      "r_multiple": -1.0,
+      "fill_time": "2025-10-16T03:30:00"
+    }
+  },
+  "AUDNZD": {
+    "n_candidate_trades": 9416,
+    "n_skipped_overlap": 6959,
+    "total_trades": 2457,
+    "win_rate": 0.48595848595848595,
+    "final_equity": 74326820.07346793,
+    "net_pnl": 74316820.07346793,
+    "net_pnl_pct": 7431.6820073467925,
+    "max_drawdown_pct": 0.15126990879066127,
+    "max_drawdown_dollar": 6774465.471824348,
+    "fixed_final_equity": 101950.0,
+    "fixed_net_pnl": 91950.0,
+    "fixed_net_pnl_pct": 9.195,
+    "fixed_max_drawdown_pct": 0.07571801566579635,
+    "fixed_max_drawdown_dollar": 1600.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1179,
+        "pnl": 25861983.930807956,
+        "win_rate": 0.5207803223070399
+      },
+      "ifvg": {
+        "n": 480,
+        "pnl": 22598910.81118905,
+        "win_rate": 0.5895833333333333
+      },
+      "ob": {
+        "n": 720,
+        "pnl": 20789317.483607367,
+        "win_rate": 0.3375
+      },
+      "trendline": {
+        "n": 78,
+        "pnl": 5066607.847863546,
+        "win_rate": 0.6923076923076923
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2258513.6027442655,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-18T17:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -775423.0036088646,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-18T18:00:00"
+    }
+  },
+  "AUDUSD": {
+    "n_candidate_trades": 11608,
+    "n_skipped_overlap": 9159,
+    "total_trades": 2449,
+    "win_rate": 0.5010208248264598,
+    "final_equity": 103935882.81593093,
+    "net_pnl": 103925882.81593093,
+    "net_pnl_pct": 10392.588281593093,
+    "max_drawdown_pct": 0.1501320432125883,
+    "max_drawdown_dollar": 6330711.800039433,
+    "fixed_final_equity": 105200.0,
+    "fixed_net_pnl": 95200.0,
+    "fixed_net_pnl_pct": 9.52,
+    "fixed_max_drawdown_pct": 0.06827309236947791,
+    "fixed_max_drawdown_dollar": 1600.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1297,
+        "pnl": 49895768.85460452,
+        "win_rate": 0.5397070161912105
+      },
+      "ifvg": {
+        "n": 520,
+        "pnl": 20228435.905567646,
+        "win_rate": 0.5615384615384615
+      },
+      "ob": {
+        "n": 601,
+        "pnl": 32478541.58979895,
+        "win_rate": 0.3594009983361065
+      },
+      "trendline": {
+        "n": 31,
+        "pnl": 1323136.4659597646,
+        "win_rate": 0.6129032258064516
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 3106025.7390318126,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-03T17:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1076771.3558988646,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-11T11:30:00"
+    }
+  },
+  "AUS200": {
+    "n_candidate_trades": 9048,
+    "n_skipped_overlap": 6798,
+    "total_trades": 2250,
+    "win_rate": 0.48355555555555557,
+    "final_equity": 9289125.894507352,
+    "net_pnl": 9279125.894507352,
+    "net_pnl_pct": 927.9125894507353,
+    "max_drawdown_pct": 0.1630045809680877,
+    "max_drawdown_dollar": 1036598.3328692652,
+    "fixed_final_equity": 80650.0,
+    "fixed_net_pnl": 70650.0,
+    "fixed_net_pnl_pct": 7.065,
+    "fixed_max_drawdown_pct": 0.0528169014084507,
+    "fixed_max_drawdown_dollar": 1750.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1274,
+        "pnl": 4303406.428094654,
+        "win_rate": 0.5117739403453689
+      },
+      "ifvg": {
+        "n": 468,
+        "pnl": 2969925.7190820905,
+        "win_rate": 0.5534188034188035
+      },
+      "ob": {
+        "n": 458,
+        "pnl": 1461611.1334546967,
+        "win_rate": 0.3231441048034934
+      },
+      "trendline": {
+        "n": 50,
+        "pnl": 544182.6138759126,
+        "win_rate": 0.58
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 271104.09345605876,
+      "r_multiple": 3.0,
+      "fill_time": "2025-10-15T18:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -93079.07208658017,
+      "r_multiple": -1.0,
+      "fill_time": "2025-10-15T21:30:00"
+    }
+  },
+  "AVAXUSD": {
+    "n_candidate_trades": 9093,
+    "n_skipped_overlap": 6631,
+    "total_trades": 2462,
+    "win_rate": 0.4967506092607636,
+    "final_equity": 102434279.38035396,
+    "net_pnl": 102424279.38035396,
+    "net_pnl_pct": 10242.427938035396,
+    "max_drawdown_pct": 0.16678555966786068,
+    "max_drawdown_dollar": 8828258.852119073,
+    "fixed_final_equity": 105100.0,
+    "fixed_net_pnl": 95100.0,
+    "fixed_net_pnl_pct": 9.51,
+    "fixed_max_drawdown_pct": 0.07665505226480836,
+    "fixed_max_drawdown_dollar": 1800.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1308,
+        "pnl": 45892175.852085225,
+        "win_rate": 0.5198776758409785
+      },
+      "ifvg": {
+        "n": 505,
+        "pnl": 18658885.13049718,
+        "win_rate": 0.5425742574257426
+      },
+      "ob": {
+        "n": 572,
+        "pnl": 32339134.201836903,
+        "win_rate": 0.38636363636363635
+      },
+      "trendline": {
+        "n": 77,
+        "pnl": 5534084.195934581,
+        "win_rate": 0.6233766233766234
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2940530.1454534633,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-29T05:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1034689.6907106461,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-30T16:30:00"
+    }
+  },
+  "BCHUSD": {
+    "n_candidate_trades": 13631,
+    "n_skipped_overlap": 10839,
+    "total_trades": 2792,
+    "win_rate": 0.4717048710601719,
+    "final_equity": 145055576.00619793,
+    "net_pnl": 145045576.00619793,
+    "net_pnl_pct": 14504.557600619793,
+    "max_drawdown_pct": 0.13949350633052415,
+    "max_drawdown_dollar": 17815427.290183127,
+    "fixed_final_equity": 109100.0,
+    "fixed_net_pnl": 99100.0,
+    "fixed_net_pnl_pct": 9.91,
+    "fixed_max_drawdown_pct": 0.09090909090909091,
+    "fixed_max_drawdown_dollar": 1450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1282,
+        "pnl": 55153815.88096177,
+        "win_rate": 0.49765990639625585
+      },
+      "ifvg": {
+        "n": 566,
+        "pnl": 40298054.173874326,
+        "win_rate": 0.568904593639576
+      },
+      "ob": {
+        "n": 872,
+        "pnl": 43557032.08618532,
+        "win_rate": 0.3577981651376147
+      },
+      "trendline": {
+        "n": 72,
+        "pnl": 6036673.865176715,
+        "win_rate": 0.625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 4211738.5876044,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-02T05:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1538545.6857842472,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-20T19:00:00"
+    }
+  },
+  "BRENT": {
+    "n_candidate_trades": 10549,
+    "n_skipped_overlap": 8153,
+    "total_trades": 2396,
+    "win_rate": 0.5104340567612687,
+    "final_equity": 313192019.12027025,
+    "net_pnl": 313182019.12027025,
+    "net_pnl_pct": 31318.201912027027,
+    "max_drawdown_pct": 0.1925643792431042,
+    "max_drawdown_dollar": 31699223.6880908,
+    "fixed_final_equity": 116350.0,
+    "fixed_net_pnl": 106350.0,
+    "fixed_net_pnl_pct": 10.635,
+    "fixed_max_drawdown_pct": 0.06624605678233439,
+    "fixed_max_drawdown_dollar": 2100.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1210,
+        "pnl": 118551068.75038122,
+        "win_rate": 0.5256198347107438
+      },
+      "ifvg": {
+        "n": 502,
+        "pnl": 63320791.24092469,
+        "win_rate": 0.599601593625498
+      },
+      "ob": {
+        "n": 645,
+        "pnl": 115528006.48242795,
+        "win_rate": 0.4015503875968992
+      },
+      "trendline": {
+        "n": 39,
+        "pnl": 15782152.646536047,
+        "win_rate": 0.6923076923076923
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 9142578.688839866,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-17T10:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -3448912.4280836107,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-19T13:00:00"
+    }
+  },
+  "BTCUSD": {
+    "n_candidate_trades": 13236,
+    "n_skipped_overlap": 10571,
+    "total_trades": 2665,
+    "win_rate": 0.46153846153846156,
+    "final_equity": 54878684.215945885,
+    "net_pnl": 54868684.215945885,
+    "net_pnl_pct": 5486.868421594589,
+    "max_drawdown_pct": 0.15800150927415205,
+    "max_drawdown_dollar": 9616986.826143377,
+    "fixed_final_equity": 99250.0,
+    "fixed_net_pnl": 89250.0,
+    "fixed_net_pnl_pct": 8.925,
+    "fixed_max_drawdown_pct": 0.1148936170212766,
+    "fixed_max_drawdown_dollar": 1700.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1145,
+        "pnl": 27033486.34463455,
+        "win_rate": 0.5283842794759825
+      },
+      "ifvg": {
+        "n": 519,
+        "pnl": 8210871.677826684,
+        "win_rate": 0.5510597302504817
+      },
+      "ob": {
+        "n": 962,
+        "pnl": 17527956.000021804,
+        "win_rate": 0.32536382536382535
+      },
+      "trendline": {
+        "n": 39,
+        "pnl": 2096370.193462837,
+        "win_rate": 0.6666666666666666
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1764251.8390738908,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-04T16:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -608664.2381027337,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-07T17:00:00"
+    }
+  },
+  "CA60": {
+    "n_candidate_trades": 4223,
+    "n_skipped_overlap": 2901,
+    "total_trades": 1322,
+    "win_rate": 0.4122541603630862,
+    "final_equity": 58270.88671625685,
+    "net_pnl": 48270.88671625685,
+    "net_pnl_pct": 4.827088671625685,
+    "max_drawdown_pct": 0.189557613927471,
+    "max_drawdown_dollar": 10095.96557025046,
+    "fixed_final_equity": 28950.0,
+    "fixed_net_pnl": 18950.0,
+    "fixed_net_pnl_pct": 1.895,
+    "fixed_max_drawdown_pct": 0.14385964912280702,
+    "fixed_max_drawdown_dollar": 2050.0,
+    "module_summary": {
+      "fvg": {
+        "n": 690,
+        "pnl": 10741.743724162063,
+        "win_rate": 0.4420289855072464
+      },
+      "ifvg": {
+        "n": 262,
+        "pnl": 18952.101900770398,
+        "win_rate": 0.5267175572519084
+      },
+      "ob": {
+        "n": 359,
+        "pnl": 17254.74541998137,
+        "win_rate": 0.27298050139275765
+      },
+      "trendline": {
+        "n": 11,
+        "pnl": 1322.29567134307,
+        "win_rate": 0.36363636363636365
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1811.3029593301744,
+      "r_multiple": 3.0,
+      "fill_time": "2025-09-15T17:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -624.8968040144712,
+      "r_multiple": -1.0,
+      "fill_time": "2025-09-22T14:00:00"
+    }
+  },
+  "CADCHF": {
+    "n_candidate_trades": 11259,
+    "n_skipped_overlap": 9041,
+    "total_trades": 2218,
+    "win_rate": 0.47294860234445446,
+    "final_equity": 20494189.57504522,
+    "net_pnl": 20484189.57504522,
+    "net_pnl_pct": 2048.418957504522,
+    "max_drawdown_pct": 0.16337013879168752,
+    "max_drawdown_dollar": 1929663.0511887297,
+    "fixed_final_equity": 88850.0,
+    "fixed_net_pnl": 78850.0,
+    "fixed_net_pnl_pct": 7.885,
+    "fixed_max_drawdown_pct": 0.12681159420289856,
+    "fixed_max_drawdown_dollar": 1750.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1051,
+        "pnl": 8868699.227474272,
+        "win_rate": 0.5156993339676499
+      },
+      "ifvg": {
+        "n": 430,
+        "pnl": 5043836.967617376,
+        "win_rate": 0.5558139534883721
+      },
+      "ob": {
+        "n": 712,
+        "pnl": 5894305.991174174,
+        "win_rate": 0.351123595505618
+      },
+      "trendline": {
+        "n": 25,
+        "pnl": 677347.3887794099,
+        "win_rate": 0.72
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 560906.4975998367,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-12T10:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -222249.58728595366,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-18T07:00:00"
+    }
+  },
+  "CADJPY": {
+    "n_candidate_trades": 11139,
+    "n_skipped_overlap": 8454,
+    "total_trades": 2685,
+    "win_rate": 0.48268156424581005,
+    "final_equity": 116856798.00352664,
+    "net_pnl": 116846798.00352664,
+    "net_pnl_pct": 11684.679800352664,
+    "max_drawdown_pct": 0.14441265871531425,
+    "max_drawdown_dollar": 12163515.349773258,
+    "fixed_final_equity": 106700.0,
+    "fixed_net_pnl": 96700.0,
+    "fixed_net_pnl_pct": 9.67,
+    "fixed_max_drawdown_pct": 0.07692307692307693,
+    "fixed_max_drawdown_dollar": 1550.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1366,
+        "pnl": 39963168.7555561,
+        "win_rate": 0.5036603221083455
+      },
+      "ifvg": {
+        "n": 540,
+        "pnl": 8952225.20253211,
+        "win_rate": 0.5666666666666667
+      },
+      "ob": {
+        "n": 719,
+        "pnl": 51221308.54942235,
+        "win_rate": 0.36300417246175243
+      },
+      "trendline": {
+        "n": 60,
+        "pnl": 16710095.49601602,
+        "win_rate": 0.6833333333333333
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 3424702.0235955995,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-22T15:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1235212.2145546027,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-24T01:30:00"
+    }
+  },
+  "CHFJPY": {
+    "n_candidate_trades": 10328,
+    "n_skipped_overlap": 8011,
+    "total_trades": 2317,
+    "win_rate": 0.4859732412602503,
+    "final_equity": 68314287.65624,
+    "net_pnl": 68304287.65624,
+    "net_pnl_pct": 6830.428765624,
+    "max_drawdown_pct": 0.1617522277805183,
+    "max_drawdown_dollar": 4084380.730028011,
+    "fixed_final_equity": 101050.0,
+    "fixed_net_pnl": 91050.0,
+    "fixed_net_pnl_pct": 9.105,
+    "fixed_max_drawdown_pct": 0.059113300492610835,
+    "fixed_max_drawdown_dollar": 1750.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1120,
+        "pnl": 29314433.233111467,
+        "win_rate": 0.5339285714285714
+      },
+      "ifvg": {
+        "n": 434,
+        "pnl": 16257660.892742492,
+        "win_rate": 0.5599078341013825
+      },
+      "ob": {
+        "n": 737,
+        "pnl": 23066671.208333228,
+        "win_rate": 0.36635006784260515
+      },
+      "trendline": {
+        "n": 26,
+        "pnl": -334477.6779470701,
+        "win_rate": 0.5769230769230769
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2009834.8825019123,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-29T02:00:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -697947.9079698472,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-19T15:30:00"
+    }
+  },
+  "CHFSGD": {
+    "n_candidate_trades": 9441,
+    "n_skipped_overlap": 7526,
+    "total_trades": 1915,
+    "win_rate": 0.4939947780678851,
+    "final_equity": 25722346.388993055,
+    "net_pnl": 25712346.388993055,
+    "net_pnl_pct": 2571.2346388993055,
+    "max_drawdown_pct": 0.11460851686683059,
+    "max_drawdown_dollar": 2434892.130405981,
+    "fixed_final_equity": 90850.0,
+    "fixed_net_pnl": 80850.0,
+    "fixed_net_pnl_pct": 8.085,
+    "fixed_max_drawdown_pct": 0.05405405405405406,
+    "fixed_max_drawdown_dollar": 1200.0,
+    "module_summary": {
+      "fvg": {
+        "n": 850,
+        "pnl": 13354030.644692518,
+        "win_rate": 0.5564705882352942
+      },
+      "ifvg": {
+        "n": 376,
+        "pnl": 4587418.184472431,
+        "win_rate": 0.5851063829787234
+      },
+      "ob": {
+        "n": 651,
+        "pnl": 6421861.673914029,
+        "win_rate": 0.3563748079877112
+      },
+      "trendline": {
+        "n": 38,
+        "pnl": 1349035.8859140708,
+        "win_rate": 0.5526315789473685
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 813616.174953104,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-05T17:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -279341.55340056564,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-11T15:00:00"
+    }
+  },
+  "CHINAH": {
+    "n_candidate_trades": 8956,
+    "n_skipped_overlap": 7172,
+    "total_trades": 1784,
+    "win_rate": 0.44506726457399104,
+    "final_equity": 1450854.9143178873,
+    "net_pnl": 1440854.9143178873,
+    "net_pnl_pct": 144.08549143178874,
+    "max_drawdown_pct": 0.17904730352346976,
+    "max_drawdown_dollar": 207650.54837323562,
+    "fixed_final_equity": 61850.0,
+    "fixed_net_pnl": 51850.0,
+    "fixed_net_pnl_pct": 5.185,
+    "fixed_max_drawdown_pct": 0.07518796992481203,
+    "fixed_max_drawdown_dollar": 1950.0,
+    "module_summary": {
+      "fvg": {
+        "n": 817,
+        "pnl": 429743.8049565322,
+        "win_rate": 0.46878824969400246
+      },
+      "ifvg": {
+        "n": 345,
+        "pnl": 405951.81662561843,
+        "win_rate": 0.5449275362318841
+      },
+      "ob": {
+        "n": 592,
+        "pnl": 532018.084019982,
+        "win_rate": 0.34797297297297297
+      },
+      "trendline": {
+        "n": 30,
+        "pnl": 73141.20871575715,
+        "win_rate": 0.5666666666666667
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 42282.94289644669,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-29T16:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -14517.14372778003,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-30T04:00:00"
+    }
+  },
+  "CHN50": {
+    "n_candidate_trades": 12355,
+    "n_skipped_overlap": 11430,
+    "total_trades": 925,
+    "win_rate": 0.41405405405405404,
+    "final_equity": 92152.70810632996,
+    "net_pnl": 82152.70810632996,
+    "net_pnl_pct": 8.215270810632996,
+    "max_drawdown_pct": 0.19447478632063392,
+    "max_drawdown_dollar": 7027.57584976418,
+    "fixed_final_equity": 33350.0,
+    "fixed_net_pnl": 23350.0,
+    "fixed_net_pnl_pct": 2.335,
+    "fixed_max_drawdown_pct": 0.10192837465564739,
+    "fixed_max_drawdown_dollar": 2100.0,
+    "module_summary": {
+      "fvg": {
+        "n": 354,
+        "pnl": 30707.038860515462,
+        "win_rate": 0.4774011299435028
+      },
+      "ifvg": {
+        "n": 158,
+        "pnl": 11894.773620740849,
+        "win_rate": 0.5063291139240507
+      },
+      "ob": {
+        "n": 411,
+        "pnl": 40065.411604882225,
+        "win_rate": 0.3260340632603406
+      },
+      "trendline": {
+        "n": 2,
+        "pnl": -514.5159798086011,
+        "win_rate": 0.0
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2517.6134977339134,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-03T16:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -930.8354354174744,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-10T04:00:00"
+    }
+  },
+  "DOGEUSD": {
+    "n_candidate_trades": 11243,
+    "n_skipped_overlap": 9359,
+    "total_trades": 1884,
+    "win_rate": 0.46709129511677283,
+    "final_equity": 6325927.848808465,
+    "net_pnl": 6315927.848808465,
+    "net_pnl_pct": 631.5927848808465,
+    "max_drawdown_pct": 0.18276253106186344,
+    "max_drawdown_dollar": 855813.4576652814,
+    "fixed_final_equity": 76750.0,
+    "fixed_net_pnl": 66750.0,
+    "fixed_net_pnl_pct": 6.675,
+    "fixed_max_drawdown_pct": 0.052702702702702706,
+    "fixed_max_drawdown_dollar": 1950.0,
+    "module_summary": {
+      "fvg": {
+        "n": 909,
+        "pnl": 1168487.223584514,
+        "win_rate": 0.48514851485148514
+      },
+      "ifvg": {
+        "n": 358,
+        "pnl": 1124573.8697067448,
+        "win_rate": 0.5195530726256983
+      },
+      "ob": {
+        "n": 578,
+        "pnl": 3748989.312496295,
+        "win_rate": 0.3892733564013841
+      },
+      "trendline": {
+        "n": 39,
+        "pnl": 273877.44302091224,
+        "win_rate": 0.717948717948718
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 186111.44009439435,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-26T18:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -63898.2610990754,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-28T01:00:00"
+    }
+  },
+  "DOTUSD": {
+    "n_candidate_trades": 10886,
+    "n_skipped_overlap": 8541,
+    "total_trades": 2345,
+    "win_rate": 0.5040511727078891,
+    "final_equity": 138896181.50892285,
+    "net_pnl": 138886181.50892285,
+    "net_pnl_pct": 13888.618150892284,
+    "max_drawdown_pct": 0.14613202611093973,
+    "max_drawdown_dollar": 9984311.976425268,
+    "fixed_final_equity": 108100.0,
+    "fixed_net_pnl": 98100.0,
+    "fixed_net_pnl_pct": 9.81,
+    "fixed_max_drawdown_pct": 0.05755395683453238,
+    "fixed_max_drawdown_dollar": 1550.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1188,
+        "pnl": 45872315.81613433,
+        "win_rate": 0.5361952861952862
+      },
+      "ifvg": {
+        "n": 526,
+        "pnl": 34765426.95616571,
+        "win_rate": 0.5304182509505704
+      },
+      "ob": {
+        "n": 584,
+        "pnl": 51129825.75160953,
+        "win_rate": 0.4075342465753425
+      },
+      "trendline": {
+        "n": 47,
+        "pnl": 7118612.985013215,
+        "win_rate": 0.5957446808510638
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 4066660.3837795295,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-17T17:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1402991.732413362,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-18T16:00:00"
+    }
+  },
+  "ETCUSD": {
+    "n_candidate_trades": 15140,
+    "n_skipped_overlap": 12322,
+    "total_trades": 2818,
+    "win_rate": 0.4751596877217885,
+    "final_equity": 192491895.40520465,
+    "net_pnl": 192481895.40520465,
+    "net_pnl_pct": 19248.189540520467,
+    "max_drawdown_pct": 0.145626211196755,
+    "max_drawdown_dollar": 8577615.373715162,
+    "fixed_final_equity": 111950.0,
+    "fixed_net_pnl": 101950.0,
+    "fixed_net_pnl_pct": 10.195,
+    "fixed_max_drawdown_pct": 0.03968253968253968,
+    "fixed_max_drawdown_dollar": 1550.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1298,
+        "pnl": 82021456.49347325,
+        "win_rate": 0.5084745762711864
+      },
+      "ifvg": {
+        "n": 559,
+        "pnl": 43955883.20307352,
+        "win_rate": 0.552772808586762
+      },
+      "ob": {
+        "n": 857,
+        "pnl": 60229845.451787256,
+        "win_rate": 0.3558926487747958
+      },
+      "trendline": {
+        "n": 104,
+        "pnl": 6274710.256870622,
+        "win_rate": 0.625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 5579499.487829791,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-27T13:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1944362.5798505521,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-28T02:00:00"
+    }
+  },
+  "ETHUSD": {
+    "n_candidate_trades": 13092,
+    "n_skipped_overlap": 10424,
+    "total_trades": 2668,
+    "win_rate": 0.47301349325337333,
+    "final_equity": 122362423.16827975,
+    "net_pnl": 122352423.16827975,
+    "net_pnl_pct": 12235.242316827975,
+    "max_drawdown_pct": 0.15768672608525422,
+    "max_drawdown_dollar": 16001562.487706318,
+    "fixed_final_equity": 107300.0,
+    "fixed_net_pnl": 97300.0,
+    "fixed_net_pnl_pct": 9.73,
+    "fixed_max_drawdown_pct": 0.06129032258064516,
+    "fixed_max_drawdown_dollar": 1700.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1204,
+        "pnl": 36626946.27764848,
+        "win_rate": 0.5224252491694352
+      },
+      "ifvg": {
+        "n": 516,
+        "pnl": 45009632.7778887,
+        "win_rate": 0.5794573643410853
+      },
+      "ob": {
+        "n": 921,
+        "pnl": 39859246.60754282,
+        "win_rate": 0.3463626492942454
+      },
+      "trendline": {
+        "n": 27,
+        "pnl": 856597.5051997651,
+        "win_rate": 0.5555555555555556
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 3636316.77671923,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-04T16:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1248468.7600069356,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-06T17:00:00"
+    }
+  },
+  "EU50": {
+    "n_candidate_trades": 6289,
+    "n_skipped_overlap": 4556,
+    "total_trades": 1733,
+    "win_rate": 0.45066358915175997,
+    "final_equity": 636800.9288344587,
+    "net_pnl": 626800.9288344587,
+    "net_pnl_pct": 62.68009288344587,
+    "max_drawdown_pct": 0.22870097402678616,
+    "max_drawdown_dollar": 52673.65406579687,
+    "fixed_final_equity": 53350.0,
+    "fixed_net_pnl": 43350.0,
+    "fixed_net_pnl_pct": 4.335,
+    "fixed_max_drawdown_pct": 0.1,
+    "fixed_max_drawdown_dollar": 2550.0,
+    "module_summary": {
+      "fvg": {
+        "n": 988,
+        "pnl": 186128.7747473544,
+        "win_rate": 0.45040485829959515
+      },
+      "ifvg": {
+        "n": 326,
+        "pnl": 123959.82183999332,
+        "win_rate": 0.5214723926380368
+      },
+      "ob": {
+        "n": 375,
+        "pnl": 252952.8866480373,
+        "win_rate": 0.34933333333333333
+      },
+      "trendline": {
+        "n": 44,
+        "pnl": 63759.44559907324,
+        "win_rate": 0.7954545454545454
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 18547.599868964815,
+      "r_multiple": 3.0,
+      "fill_time": "2025-10-10T18:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -6152.692729914851,
+      "r_multiple": -1.0,
+      "fill_time": "2025-10-08T10:00:00"
+    }
+  },
+  "EURAUD": {
+    "n_candidate_trades": 10125,
+    "n_skipped_overlap": 7148,
+    "total_trades": 2977,
+    "win_rate": 0.49546523345649984,
+    "final_equity": 809071101.157352,
+    "net_pnl": 809061101.157352,
+    "net_pnl_pct": 80906.1101157352,
+    "max_drawdown_pct": 0.1953842621833521,
+    "max_drawdown_dollar": 43940904.495744824,
+    "fixed_final_equity": 126400.0,
+    "fixed_net_pnl": 116400.0,
+    "fixed_net_pnl_pct": 11.64,
+    "fixed_max_drawdown_pct": 0.03571428571428571,
+    "fixed_max_drawdown_dollar": 2150.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1518,
+        "pnl": 352911012.9996897,
+        "win_rate": 0.5197628458498024
+      },
+      "ifvg": {
+        "n": 612,
+        "pnl": 204362040.39477074,
+        "win_rate": 0.5964052287581699
+      },
+      "ob": {
+        "n": 813,
+        "pnl": 173700115.78366,
+        "win_rate": 0.36039360393603936
+      },
+      "trendline": {
+        "n": 34,
+        "pnl": 78087931.97923104,
+        "win_rate": 0.8235294117647058
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 23565177.703612193,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-21T10:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -7934403.267209493,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-18T18:00:00"
+    }
+  },
+  "EURCAD": {
+    "n_candidate_trades": 11248,
+    "n_skipped_overlap": 9063,
+    "total_trades": 2185,
+    "win_rate": 0.4993135011441648,
+    "final_equity": 130196346.61424044,
+    "net_pnl": 130186346.61424044,
+    "net_pnl_pct": 13018.634661424045,
+    "max_drawdown_pct": 0.11361512828387078,
+    "max_drawdown_dollar": 12467894.964973137,
+    "fixed_final_equity": 107450.0,
+    "fixed_net_pnl": 97450.0,
+    "fixed_net_pnl_pct": 9.745,
+    "fixed_max_drawdown_pct": 0.03805496828752643,
+    "fixed_max_drawdown_dollar": 1200.0,
+    "module_summary": {
+      "fvg": {
+        "n": 961,
+        "pnl": 48646002.598762915,
+        "win_rate": 0.5816857440166493
+      },
+      "ifvg": {
+        "n": 392,
+        "pnl": 19942538.559323404,
+        "win_rate": 0.5663265306122449
+      },
+      "ob": {
+        "n": 781,
+        "pnl": 49632759.68227377,
+        "win_rate": 0.3546734955185659
+      },
+      "trendline": {
+        "n": 51,
+        "pnl": 11965045.773880322,
+        "win_rate": 0.6470588235294118
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 3833005.1609835364,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-16T15:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1335738.4151834126,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-17T12:30:00"
+    }
+  },
+  "EURCHF": {
+    "n_candidate_trades": 11806,
+    "n_skipped_overlap": 9950,
+    "total_trades": 1856,
+    "win_rate": 0.46336206896551724,
+    "final_equity": 5692967.7029407,
+    "net_pnl": 5682967.7029407,
+    "net_pnl_pct": 568.2967702940699,
+    "max_drawdown_pct": 0.1280191122469791,
+    "max_drawdown_dollar": 671256.2453000285,
+    "fixed_final_equity": 75700.0,
+    "fixed_net_pnl": 65700.0,
+    "fixed_net_pnl_pct": 6.57,
+    "fixed_max_drawdown_pct": 0.04716981132075472,
+    "fixed_max_drawdown_dollar": 1350.0,
+    "module_summary": {
+      "fvg": {
+        "n": 823,
+        "pnl": 3342003.367320807,
+        "win_rate": 0.543134872417983
+      },
+      "ifvg": {
+        "n": 301,
+        "pnl": 1206207.315692289,
+        "win_rate": 0.5548172757475083
+      },
+      "ob": {
+        "n": 714,
+        "pnl": 1130445.7782940185,
+        "win_rate": 0.33613445378151263
+      },
+      "trendline": {
+        "n": 18,
+        "pnl": 4311.241633586498,
+        "win_rate": 0.3333333333333333
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 174490.3607164127,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-04T23:30:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -63094.01317770299,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-05T09:30:00"
+    }
+  },
+  "EURGBP": {
+    "n_candidate_trades": 12067,
+    "n_skipped_overlap": 10103,
+    "total_trades": 1964,
+    "win_rate": 0.46894093686354377,
+    "final_equity": 12522350.417554853,
+    "net_pnl": 12512350.417554853,
+    "net_pnl_pct": 1251.2350417554853,
+    "max_drawdown_pct": 0.15043888135700426,
+    "max_drawdown_dollar": 725213.8560732808,
+    "fixed_final_equity": 83750.0,
+    "fixed_net_pnl": 73750.0,
+    "fixed_net_pnl_pct": 7.375,
+    "fixed_max_drawdown_pct": 0.07659574468085106,
+    "fixed_max_drawdown_dollar": 1600.0,
+    "module_summary": {
+      "fvg": {
+        "n": 834,
+        "pnl": 4305760.482243622,
+        "win_rate": 0.539568345323741
+      },
+      "ifvg": {
+        "n": 333,
+        "pnl": 2256335.77553437,
+        "win_rate": 0.5735735735735735
+      },
+      "ob": {
+        "n": 765,
+        "pnl": 5489824.598439556,
+        "win_rate": 0.338562091503268
+      },
+      "trendline": {
+        "n": 32,
+        "pnl": 460429.56133730756,
+        "win_rate": 0.65625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 364728.65293849085,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-12T11:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -122877.00712317726,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-07T10:00:00"
+    }
+  },
+  "EURHKD": {
+    "n_candidate_trades": 11701,
+    "n_skipped_overlap": 9552,
+    "total_trades": 2149,
+    "win_rate": 0.48766868310842254,
+    "final_equity": 39997595.72644834,
+    "net_pnl": 39987595.72644834,
+    "net_pnl_pct": 3998.7595726448344,
+    "max_drawdown_pct": 0.13724999758103654,
+    "max_drawdown_dollar": 4478005.545301668,
+    "fixed_final_equity": 95500.0,
+    "fixed_net_pnl": 85500.0,
+    "fixed_net_pnl_pct": 8.55,
+    "fixed_max_drawdown_pct": 0.03734439834024896,
+    "fixed_max_drawdown_dollar": 1450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1046,
+        "pnl": 21564601.93343518,
+        "win_rate": 0.5372848948374761
+      },
+      "ifvg": {
+        "n": 392,
+        "pnl": 5986492.416526811,
+        "win_rate": 0.5459183673469388
+      },
+      "ob": {
+        "n": 672,
+        "pnl": 10558143.445564926,
+        "win_rate": 0.36904761904761907
+      },
+      "trendline": {
+        "n": 39,
+        "pnl": 1878357.9309214433,
+        "win_rate": 0.6153846153846154
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1164978.5163043207,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-16T17:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -392248.65868832346,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-16T16:30:00"
+    }
+  },
+  "EURHUF": {
+    "n_candidate_trades": 11894,
+    "n_skipped_overlap": 10418,
+    "total_trades": 1476,
+    "win_rate": 0.4546070460704607,
+    "final_equity": 1770811.1995502852,
+    "net_pnl": 1760811.1995502852,
+    "net_pnl_pct": 176.08111995502853,
+    "max_drawdown_pct": 0.24977134818092586,
+    "max_drawdown_dollar": 127094.87263415055,
+    "fixed_final_equity": 63650.0,
+    "fixed_net_pnl": 53650.0,
+    "fixed_net_pnl_pct": 5.365,
+    "fixed_max_drawdown_pct": 0.10305343511450382,
+    "fixed_max_drawdown_dollar": 2800.0,
+    "module_summary": {
+      "fvg": {
+        "n": 583,
+        "pnl": 545958.9332943184,
+        "win_rate": 0.5214408233276158
+      },
+      "ifvg": {
+        "n": 219,
+        "pnl": 261353.37702302783,
+        "win_rate": 0.589041095890411
+      },
+      "ob": {
+        "n": 638,
+        "pnl": 811109.598755383,
+        "win_rate": 0.3385579937304075
+      },
+      "trendline": {
+        "n": 36,
+        "pnl": 142389.29047755696,
+        "win_rate": 0.6111111111111112
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 52420.86550909414,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-11T15:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -17997.830491455657,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-12T02:00:00"
+    }
+  },
+  "EURJPY": {
+    "n_candidate_trades": 11398,
+    "n_skipped_overlap": 9163,
+    "total_trades": 2235,
+    "win_rate": 0.5042505592841163,
+    "final_equity": 137923486.98099244,
+    "net_pnl": 137913486.98099244,
+    "net_pnl_pct": 13791.348698099244,
+    "max_drawdown_pct": 0.14058435474467235,
+    "max_drawdown_dollar": 9498296.87541075,
+    "fixed_final_equity": 108000.0,
+    "fixed_net_pnl": 98000.0,
+    "fixed_net_pnl_pct": 9.8,
+    "fixed_max_drawdown_pct": 0.07017543859649122,
+    "fixed_max_drawdown_dollar": 1500.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1099,
+        "pnl": 62092471.214589395,
+        "win_rate": 0.532302092811647
+      },
+      "ifvg": {
+        "n": 430,
+        "pnl": 28353682.646944232,
+        "win_rate": 0.6069767441860465
+      },
+      "ob": {
+        "n": 671,
+        "pnl": 45800947.05574755,
+        "win_rate": 0.3830104321907601
+      },
+      "trendline": {
+        "n": 35,
+        "pnl": 1666386.063711295,
+        "win_rate": 0.6857142857142857
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 3997799.6130705616,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-26T17:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1393166.5351615397,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-29T02:30:00"
+    }
+  },
+  "EURNOK": {
+    "error": "2020-2025 araliginda islem yok"
+  },
+  "EURNZD": {
+    "n_candidate_trades": 10313,
+    "n_skipped_overlap": 7514,
+    "total_trades": 2799,
+    "win_rate": 0.49517684887459806,
+    "final_equity": 420356735.1446808,
+    "net_pnl": 420346735.1446808,
+    "net_pnl_pct": 42034.67351446808,
+    "max_drawdown_pct": 0.11907437466986416,
+    "max_drawdown_dollar": 29913601.089426994,
+    "fixed_final_equity": 119650.0,
+    "fixed_net_pnl": 109650.0,
+    "fixed_net_pnl_pct": 10.965,
+    "fixed_max_drawdown_pct": 0.06153846153846154,
+    "fixed_max_drawdown_dollar": 1250.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1435,
+        "pnl": 155472351.08878148,
+        "win_rate": 0.5226480836236934
+      },
+      "ifvg": {
+        "n": 559,
+        "pnl": 73928138.20191912,
+        "win_rate": 0.552772808586762
+      },
+      "ob": {
+        "n": 720,
+        "pnl": 153192160.93215358,
+        "win_rate": 0.37083333333333335
+      },
+      "trendline": {
+        "n": 85,
+        "pnl": 37754084.921826735,
+        "win_rate": 0.7058823529411765
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 12316583.975690424,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-24T03:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -4288916.795680857,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-29T17:30:00"
+    }
+  },
+  "EURPLN": {
+    "n_candidate_trades": 10690,
+    "n_skipped_overlap": 9218,
+    "total_trades": 1472,
+    "win_rate": 0.44429347826086957,
+    "final_equity": 642108.8239808899,
+    "net_pnl": 632108.8239808899,
+    "net_pnl_pct": 63.210882398088984,
+    "max_drawdown_pct": 0.13609333595161724,
+    "max_drawdown_dollar": 74957.46901819069,
+    "fixed_final_equity": 53350.0,
+    "fixed_net_pnl": 43350.0,
+    "fixed_net_pnl_pct": 4.335,
+    "fixed_max_drawdown_pct": 0.08936170212765958,
+    "fixed_max_drawdown_dollar": 1450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 666,
+        "pnl": 150786.1940766878,
+        "win_rate": 0.46096096096096095
+      },
+      "ifvg": {
+        "n": 259,
+        "pnl": 156458.19517003268,
+        "win_rate": 0.5714285714285714
+      },
+      "ob": {
+        "n": 507,
+        "pnl": 226479.71882635614,
+        "win_rate": 0.33727810650887574
+      },
+      "trendline": {
+        "n": 40,
+        "pnl": 98384.71590781304,
+        "win_rate": 0.7
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 18268.84736519499,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-09T11:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -6719.414439254487,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-29T10:30:00"
+    }
+  },
+  "EURSEK": {
+    "n_candidate_trades": 12405,
+    "n_skipped_overlap": 10838,
+    "total_trades": 1567,
+    "win_rate": 0.46266751754945756,
+    "final_equity": 2936231.355565453,
+    "net_pnl": 2926231.355565453,
+    "net_pnl_pct": 292.6231355565453,
+    "max_drawdown_pct": 0.15787068637221133,
+    "max_drawdown_dollar": 208493.70450895652,
+    "fixed_final_equity": 68800.0,
+    "fixed_net_pnl": 58800.0,
+    "fixed_net_pnl_pct": 5.88,
+    "fixed_max_drawdown_pct": 0.09,
+    "fixed_max_drawdown_dollar": 1700.0,
+    "module_summary": {
+      "fvg": {
+        "n": 625,
+        "pnl": 1182323.9681235696,
+        "win_rate": 0.5472
+      },
+      "ifvg": {
+        "n": 251,
+        "pnl": 392259.90558089875,
+        "win_rate": 0.5338645418326693
+      },
+      "ob": {
+        "n": 648,
+        "pnl": 976321.6137458913,
+        "win_rate": 0.33641975308641975
+      },
+      "trendline": {
+        "n": 43,
+        "pnl": 375325.8681150925,
+        "win_rate": 0.7209302325581395
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 85521.30161841126,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-29T01:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -28369.50842361588,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-24T11:30:00"
+    }
+  },
+  "EURSGD": {
+    "n_candidate_trades": 8844,
+    "n_skipped_overlap": 6861,
+    "total_trades": 1983,
+    "win_rate": 0.49067070095814425,
+    "final_equity": 55145039.013227716,
+    "net_pnl": 55135039.013227716,
+    "net_pnl_pct": 5513.5039013227715,
+    "max_drawdown_pct": 0.1406347229674486,
+    "max_drawdown_dollar": 2765428.087466061,
+    "fixed_final_equity": 98700.0,
+    "fixed_net_pnl": 88700.0,
+    "fixed_net_pnl_pct": 8.87,
+    "fixed_max_drawdown_pct": 0.05504587155963303,
+    "fixed_max_drawdown_dollar": 1450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 829,
+        "pnl": 32556773.586408556,
+        "win_rate": 0.5741857659831122
+      },
+      "ifvg": {
+        "n": 339,
+        "pnl": 5267086.50273799,
+        "win_rate": 0.56047197640118
+      },
+      "ob": {
+        "n": 774,
+        "pnl": 16790387.01400052,
+        "win_rate": 0.3669250645994832
+      },
+      "trendline": {
+        "n": 41,
+        "pnl": 520791.91008067894,
+        "win_rate": 0.5609756097560976
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1545185.3557927564,
+      "r_multiple": 3.0,
+      "fill_time": "2025-10-20T23:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -577070.9847926996,
+      "r_multiple": -1.0,
+      "fill_time": "2025-10-24T10:30:00"
+    }
+  },
+  "EURTRY": {
+    "n_candidate_trades": 10776,
+    "n_skipped_overlap": 9510,
+    "total_trades": 1266,
+    "win_rate": 0.44470774091627174,
+    "final_equity": 608994.8087824897,
+    "net_pnl": 598994.8087824897,
+    "net_pnl_pct": 59.89948087824897,
+    "max_drawdown_pct": 0.1346843717236488,
+    "max_drawdown_dollar": 29432.087556332466,
+    "fixed_final_equity": 52700.0,
+    "fixed_net_pnl": 42700.0,
+    "fixed_net_pnl_pct": 4.27,
+    "fixed_max_drawdown_pct": 0.05734767025089606,
+    "fixed_max_drawdown_dollar": 1400.0,
+    "module_summary": {
+      "fvg": {
+        "n": 517,
+        "pnl": 177429.22912267983,
+        "win_rate": 0.5087040618955513
+      },
+      "ifvg": {
+        "n": 173,
+        "pnl": 140677.82898891158,
+        "win_rate": 0.6184971098265896
+      },
+      "ob": {
+        "n": 569,
+        "pnl": 266149.11418817873,
+        "win_rate": 0.3321616871704745
+      },
+      "trendline": {
+        "n": 7,
+        "pnl": 14738.636482720376,
+        "win_rate": 0.5714285714285714
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 17737.712877159895,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-12T01:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -5972.293898033635,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-11T23:30:00"
+    }
+  },
+  "EURUSD": {
+    "n_candidate_trades": 12364,
+    "n_skipped_overlap": 9761,
+    "total_trades": 2603,
+    "win_rate": 0.5009604302727622,
+    "final_equity": 732110666.452342,
+    "net_pnl": 732100666.452342,
+    "net_pnl_pct": 73210.0666452342,
+    "max_drawdown_pct": 0.17672345077338328,
+    "max_drawdown_dollar": 21021637.174797416,
+    "fixed_final_equity": 125200.0,
+    "fixed_net_pnl": 115200.0,
+    "fixed_net_pnl_pct": 11.52,
+    "fixed_max_drawdown_pct": 0.053763440860215055,
+    "fixed_max_drawdown_dollar": 1900.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1220,
+        "pnl": 273327332.9211625,
+        "win_rate": 0.5418032786885246
+      },
+      "ifvg": {
+        "n": 501,
+        "pnl": 201468141.09839314,
+        "win_rate": 0.592814371257485
+      },
+      "ob": {
+        "n": 839,
+        "pnl": 218775563.53226587,
+        "win_rate": 0.3837902264600715
+      },
+      "trendline": {
+        "n": 43,
+        "pnl": 38529628.900520034,
+        "win_rate": 0.5581395348837209
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 21323611.644242972,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-16T17:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -7077754.006530918,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-11T15:00:00"
+    }
+  },
+  "EURZAR": {
+    "n_candidate_trades": 11579,
+    "n_skipped_overlap": 9702,
+    "total_trades": 1877,
+    "win_rate": 0.472562599893447,
+    "final_equity": 8652108.761438385,
+    "net_pnl": 8642108.761438385,
+    "net_pnl_pct": 864.2108761438385,
+    "max_drawdown_pct": 0.13157884859604393,
+    "max_drawdown_dollar": 393586.5481815245,
+    "fixed_final_equity": 79900.0,
+    "fixed_net_pnl": 69900.0,
+    "fixed_net_pnl_pct": 6.99,
+    "fixed_max_drawdown_pct": 0.06374501992031872,
+    "fixed_max_drawdown_dollar": 1400.0,
+    "module_summary": {
+      "fvg": {
+        "n": 831,
+        "pnl": 4043649.2667330424,
+        "win_rate": 0.5354993983152828
+      },
+      "ifvg": {
+        "n": 325,
+        "pnl": 1428140.77263905,
+        "win_rate": 0.5876923076923077
+      },
+      "ob": {
+        "n": 692,
+        "pnl": 2556556.0085458304,
+        "win_rate": 0.33670520231213874
+      },
+      "trendline": {
+        "n": 29,
+        "pnl": 613762.7135204586,
+        "win_rate": 0.6206896551724138
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 248278.9830629409,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T09:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -82409.00258496233,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-12T17:30:00"
+    }
+  },
+  "FRA40": {
+    "n_candidate_trades": 7336,
+    "n_skipped_overlap": 5638,
+    "total_trades": 1698,
+    "win_rate": 0.4882214369846879,
+    "final_equity": 3769652.55806783,
+    "net_pnl": 3759652.55806783,
+    "net_pnl_pct": 375.965255806783,
+    "max_drawdown_pct": 0.12313473599089177,
+    "max_drawdown_dollar": 126335.17249450134,
+    "fixed_final_equity": 71200.0,
+    "fixed_net_pnl": 61200.0,
+    "fixed_net_pnl_pct": 6.12,
+    "fixed_max_drawdown_pct": 0.075,
+    "fixed_max_drawdown_dollar": 1300.0,
+    "module_summary": {
+      "fvg": {
+        "n": 898,
+        "pnl": 1987736.0744051896,
+        "win_rate": 0.5066815144766147
+      },
+      "ifvg": {
+        "n": 359,
+        "pnl": 1024244.9929355839,
+        "win_rate": 0.5654596100278552
+      },
+      "ob": {
+        "n": 408,
+        "pnl": 630545.563110945,
+        "win_rate": 0.37254901960784315
+      },
+      "trendline": {
+        "n": 33,
+        "pnl": 117125.92761610783,
+        "win_rate": 0.5757575757575758
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 108738.38543737716,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-29T10:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -38461.917743779515,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T10:00:00"
+    }
+  },
+  "GBPAUD": {
+    "n_candidate_trades": 9671,
+    "n_skipped_overlap": 6725,
+    "total_trades": 2946,
+    "win_rate": 0.5125594025797692,
+    "final_equity": 3932867467.497487,
+    "net_pnl": 3932857467.497487,
+    "net_pnl_pct": 393285.7467497487,
+    "max_drawdown_pct": 0.1337135077813572,
+    "max_drawdown_dollar": 109968680.7966268,
+    "fixed_final_equity": 142300.0,
+    "fixed_net_pnl": 132300.0,
+    "fixed_net_pnl_pct": 13.23,
+    "fixed_max_drawdown_pct": 0.040229885057471264,
+    "fixed_max_drawdown_dollar": 1400.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1465,
+        "pnl": 1789903769.433293,
+        "win_rate": 0.552901023890785
+      },
+      "ifvg": {
+        "n": 588,
+        "pnl": 551247955.6477485,
+        "win_rate": 0.564625850340136
+      },
+      "ob": {
+        "n": 807,
+        "pnl": 1422322278.9451754,
+        "win_rate": 0.38413878562577447
+      },
+      "trendline": {
+        "n": 86,
+        "pnl": 169383463.47126812,
+        "win_rate": 0.6744186046511628
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 113996654.11581463,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T10:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -39725934.01512613,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T17:30:00"
+    }
+  },
+  "GBPCAD": {
+    "n_candidate_trades": 11320,
+    "n_skipped_overlap": 9172,
+    "total_trades": 2148,
+    "win_rate": 0.4860335195530726,
+    "final_equity": 49279272.29380653,
+    "net_pnl": 49269272.29380653,
+    "net_pnl_pct": 4926.927229380653,
+    "max_drawdown_pct": 0.21215752935246115,
+    "max_drawdown_dollar": 3176263.239399761,
+    "fixed_final_equity": 97650.0,
+    "fixed_net_pnl": 87650.0,
+    "fixed_net_pnl_pct": 8.765,
+    "fixed_max_drawdown_pct": 0.03985507246376811,
+    "fixed_max_drawdown_dollar": 2350.0,
+    "module_summary": {
+      "fvg": {
+        "n": 966,
+        "pnl": 17440906.47533406,
+        "win_rate": 0.5600414078674948
+      },
+      "ifvg": {
+        "n": 378,
+        "pnl": 7019501.102034415,
+        "win_rate": 0.5502645502645502
+      },
+      "ob": {
+        "n": 758,
+        "pnl": 20933633.75777776,
+        "win_rate": 0.35224274406332456
+      },
+      "trendline": {
+        "n": 46,
+        "pnl": 3875230.958660302,
+        "win_rate": 0.6086956521739131
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1435318.6104992195,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T11:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -483272.2594273466,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T09:30:00"
+    }
+  },
+  "GBPCHF": {
+    "n_candidate_trades": 11636,
+    "n_skipped_overlap": 9385,
+    "total_trades": 2251,
+    "win_rate": 0.48911594846734785,
+    "final_equity": 98213403.16158395,
+    "net_pnl": 98203403.16158395,
+    "net_pnl_pct": 9820.340316158394,
+    "max_drawdown_pct": 0.1273670060117346,
+    "max_drawdown_dollar": 3914547.591890052,
+    "fixed_final_equity": 104700.0,
+    "fixed_net_pnl": 94700.0,
+    "fixed_net_pnl_pct": 9.47,
+    "fixed_max_drawdown_pct": 0.04878048780487805,
+    "fixed_max_drawdown_dollar": 1350.0,
+    "module_summary": {
+      "fvg": {
+        "n": 997,
+        "pnl": 52816124.89798775,
+        "win_rate": 0.5586760280842528
+      },
+      "ifvg": {
+        "n": 369,
+        "pnl": 16391149.084367907,
+        "win_rate": 0.6097560975609756
+      },
+      "ob": {
+        "n": 833,
+        "pnl": 24129756.680520065,
+        "win_rate": 0.3433373349339736
+      },
+      "trendline": {
+        "n": 52,
+        "pnl": 4866372.498708198,
+        "win_rate": 0.6346153846153846
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2860584.558104387,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-12T00:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -881701.5622824167,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-08T00:30:00"
+    }
+  },
+  "GBPDKK": {
+    "n_candidate_trades": 10396,
+    "n_skipped_overlap": 8754,
+    "total_trades": 1642,
+    "win_rate": 0.47868453105968334,
+    "final_equity": 9171315.766075034,
+    "net_pnl": 9161315.766075034,
+    "net_pnl_pct": 916.1315766075033,
+    "max_drawdown_pct": 0.11874503847677358,
+    "max_drawdown_dollar": 652812.6630912889,
+    "fixed_final_equity": 80350.0,
+    "fixed_net_pnl": 70350.0,
+    "fixed_net_pnl_pct": 7.035,
+    "fixed_max_drawdown_pct": 0.05019305019305019,
+    "fixed_max_drawdown_dollar": 1250.0,
+    "module_summary": {
+      "fvg": {
+        "n": 642,
+        "pnl": 2988609.69592496,
+        "win_rate": 0.5545171339563862
+      },
+      "ifvg": {
+        "n": 286,
+        "pnl": 1482693.0682420512,
+        "win_rate": 0.5629370629370629
+      },
+      "ob": {
+        "n": 676,
+        "pnl": 4823125.143370147,
+        "win_rate": 0.363905325443787
+      },
+      "trendline": {
+        "n": 38,
+        "pnl": -133112.14146213312,
+        "win_rate": 0.6052631578947368
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 267125.70192451554,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-26T14:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -89941.31377929816,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-26T13:30:00"
+    }
+  },
+  "GBPJPY": {
+    "n_candidate_trades": 11216,
+    "n_skipped_overlap": 8502,
+    "total_trades": 2714,
+    "win_rate": 0.505526897568165,
+    "final_equity": 771623850.5952661,
+    "net_pnl": 771613850.5952661,
+    "net_pnl_pct": 77161.38505952661,
+    "max_drawdown_pct": 0.14083329760899715,
+    "max_drawdown_dollar": 42689778.59705961,
+    "fixed_final_equity": 125700.0,
+    "fixed_net_pnl": 115700.0,
+    "fixed_net_pnl_pct": 11.57,
+    "fixed_max_drawdown_pct": 0.04824561403508772,
+    "fixed_max_drawdown_dollar": 1450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1331,
+        "pnl": 340040887.1510957,
+        "win_rate": 0.5574755822689706
+      },
+      "ifvg": {
+        "n": 549,
+        "pnl": 170885168.19886687,
+        "win_rate": 0.5610200364298725
+      },
+      "ob": {
+        "n": 769,
+        "pnl": 207915334.60842934,
+        "win_rate": 0.3641092327698309
+      },
+      "trendline": {
+        "n": 65,
+        "pnl": 52772460.63687351,
+        "win_rate": 0.6461538461538462
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 22944387.85256316,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-21T10:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -7877573.162713352,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-22T01:00:00"
+    }
+  },
+  "GBPNOK": {
+    "n_candidate_trades": 10813,
+    "n_skipped_overlap": 9218,
+    "total_trades": 1595,
+    "win_rate": 0.46394984326018807,
+    "final_equity": 4174318.5740942243,
+    "net_pnl": 4164318.5740942243,
+    "net_pnl_pct": 416.43185740942243,
+    "max_drawdown_pct": 0.2049678870479419,
+    "max_drawdown_dollar": 223558.5469678184,
+    "fixed_final_equity": 72400.0,
+    "fixed_net_pnl": 62400.0,
+    "fixed_net_pnl_pct": 6.24,
+    "fixed_max_drawdown_pct": 0.21634615384615385,
+    "fixed_max_drawdown_dollar": 2250.0,
+    "module_summary": {
+      "fvg": {
+        "n": 608,
+        "pnl": 1609423.695419727,
+        "win_rate": 0.5625
+      },
+      "ifvg": {
+        "n": 235,
+        "pnl": 926517.969109296,
+        "win_rate": 0.5617021276595745
+      },
+      "ob": {
+        "n": 713,
+        "pnl": 1571840.6638958694,
+        "win_rate": 0.33099579242636745
+      },
+      "trendline": {
+        "n": 39,
+        "pnl": 56536.24566933313,
+        "win_rate": 0.7692307692307693
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 121582.09439109391,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-19T10:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -38976.56184639632,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-18T11:00:00"
+    }
+  },
+  "GBPNZD": {
+    "n_candidate_trades": 9984,
+    "n_skipped_overlap": 7289,
+    "total_trades": 2695,
+    "win_rate": 0.4975881261595547,
+    "final_equity": 420669695.38887465,
+    "net_pnl": 420659695.38887465,
+    "net_pnl_pct": 42065.96953888747,
+    "max_drawdown_pct": 0.17617016553729584,
+    "max_drawdown_dollar": 25222813.867472738,
+    "fixed_final_equity": 119600.0,
+    "fixed_net_pnl": 109600.0,
+    "fixed_net_pnl_pct": 10.96,
+    "fixed_max_drawdown_pct": 0.058823529411764705,
+    "fixed_max_drawdown_dollar": 1900.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1363,
+        "pnl": 207610052.1061704,
+        "win_rate": 0.5443873807776962
+      },
+      "ifvg": {
+        "n": 533,
+        "pnl": 54353264.52793913,
+        "win_rate": 0.525328330206379
+      },
+      "ob": {
+        "n": 737,
+        "pnl": 156275612.65393168,
+        "win_rate": 0.378561736770692
+      },
+      "trendline": {
+        "n": 62,
+        "pnl": 2420766.1008327436,
+        "win_rate": 0.6451612903225806
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 12501291.092415018,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-26T03:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -4292109.941729156,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-26T04:00:00"
+    }
+  },
+  "GBPSEK": {
+    "n_candidate_trades": 10974,
+    "n_skipped_overlap": 9458,
+    "total_trades": 1516,
+    "win_rate": 0.4742744063324538,
+    "final_equity": 4018834.9705501297,
+    "net_pnl": 4008834.9705501297,
+    "net_pnl_pct": 400.883497055013,
+    "max_drawdown_pct": 0.11525894310264558,
+    "max_drawdown_dollar": 260374.0583486082,
+    "fixed_final_equity": 71900.0,
+    "fixed_net_pnl": 61900.0,
+    "fixed_net_pnl_pct": 6.19,
+    "fixed_max_drawdown_pct": 0.059800664451827246,
+    "fixed_max_drawdown_dollar": 1200.0,
+    "module_summary": {
+      "fvg": {
+        "n": 598,
+        "pnl": 2074442.138407141,
+        "win_rate": 0.5769230769230769
+      },
+      "ifvg": {
+        "n": 234,
+        "pnl": 991469.6113720629,
+        "win_rate": 0.5683760683760684
+      },
+      "ob": {
+        "n": 648,
+        "pnl": 667184.7793906038,
+        "win_rate": 0.33487654320987653
+      },
+      "trendline": {
+        "n": 36,
+        "pnl": 275738.44138032605,
+        "win_rate": 0.6666666666666666
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 119013.00790454622,
+      "r_multiple": 3.0,
+      "fill_time": "2025-10-06T23:30:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -41059.30920755659,
+      "r_multiple": -1.0,
+      "fill_time": "2025-10-07T20:30:00"
+    }
+  },
+  "GBPSGD": {
+    "n_candidate_trades": 9542,
+    "n_skipped_overlap": 7598,
+    "total_trades": 1944,
+    "win_rate": 0.4881687242798354,
+    "final_equity": 43989661.040090196,
+    "net_pnl": 43979661.040090196,
+    "net_pnl_pct": 4397.96610400902,
+    "max_drawdown_pct": 0.11050867453114001,
+    "max_drawdown_dollar": 3520615.403222643,
+    "fixed_final_equity": 96400.0,
+    "fixed_net_pnl": 86400.0,
+    "fixed_net_pnl_pct": 8.64,
+    "fixed_max_drawdown_pct": 0.04319654427645788,
+    "fixed_max_drawdown_dollar": 1150.0,
+    "module_summary": {
+      "fvg": {
+        "n": 814,
+        "pnl": 7643166.257590681,
+        "win_rate": 0.5442260442260443
+      },
+      "ifvg": {
+        "n": 330,
+        "pnl": 9202441.291658795,
+        "win_rate": 0.5969696969696969
+      },
+      "ob": {
+        "n": 752,
+        "pnl": 24143252.255680323,
+        "win_rate": 0.37367021276595747
+      },
+      "trendline": {
+        "n": 48,
+        "pnl": 2990801.23516036,
+        "win_rate": 0.5833333333333334
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1321253.811892387,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-23T11:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -453630.4754163862,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-23T20:30:00"
+    }
+  },
+  "GBPUSD": {
+    "n_candidate_trades": 12581,
+    "n_skipped_overlap": 10038,
+    "total_trades": 2543,
+    "win_rate": 0.49154541879669683,
+    "final_equity": 175516942.72438842,
+    "net_pnl": 175506942.72438842,
+    "net_pnl_pct": 17550.694272438843,
+    "max_drawdown_pct": 0.12280691777378196,
+    "max_drawdown_dollar": 13698427.282221109,
+    "fixed_final_equity": 110700.0,
+    "fixed_net_pnl": 100700.0,
+    "fixed_net_pnl_pct": 10.07,
+    "fixed_max_drawdown_pct": 0.06923076923076923,
+    "fixed_max_drawdown_dollar": 1300.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1206,
+        "pnl": 85466492.77390662,
+        "win_rate": 0.548922056384743
+      },
+      "ifvg": {
+        "n": 516,
+        "pnl": 25175884.635715984,
+        "win_rate": 0.5542635658914729
+      },
+      "ob": {
+        "n": 774,
+        "pnl": 64731150.984408505,
+        "win_rate": 0.35400516795865633
+      },
+      "trendline": {
+        "n": 47,
+        "pnl": 133414.33035761514,
+        "win_rate": 0.5957446808510638
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 5175701.9508818,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-17T08:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1776991.0031360846,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-17T09:00:00"
+    }
+  },
+  "GER40": {
+    "n_candidate_trades": 10781,
+    "n_skipped_overlap": 8318,
+    "total_trades": 2463,
+    "win_rate": 0.45066991473812423,
+    "final_equity": 4535491.445623975,
+    "net_pnl": 4525491.445623975,
+    "net_pnl_pct": 452.54914456239754,
+    "max_drawdown_pct": 0.19226251746742226,
+    "max_drawdown_dollar": 496933.90627233963,
+    "fixed_final_equity": 73800.0,
+    "fixed_net_pnl": 63800.0,
+    "fixed_net_pnl_pct": 6.38,
+    "fixed_max_drawdown_pct": 0.08284023668639054,
+    "fixed_max_drawdown_dollar": 2100.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1282,
+        "pnl": 1425120.5348666178,
+        "win_rate": 0.4836193447737909
+      },
+      "ifvg": {
+        "n": 500,
+        "pnl": 801240.8059654892,
+        "win_rate": 0.516
+      },
+      "ob": {
+        "n": 646,
+        "pnl": 2046462.2782699105,
+        "win_rate": 0.32507739938080493
+      },
+      "trendline": {
+        "n": 35,
+        "pnl": 252667.82652195642,
+        "win_rate": 0.6285714285714286
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 131806.8443484079,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-07T13:00:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -46324.21466190913,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-09T13:00:00"
+    }
+  },
+  "HK50": {
+    "n_candidate_trades": 9005,
+    "n_skipped_overlap": 7642,
+    "total_trades": 1363,
+    "win_rate": 0.4203961848862803,
+    "final_equity": 158432.16484232125,
+    "net_pnl": 148432.16484232125,
+    "net_pnl_pct": 14.843216484232125,
+    "max_drawdown_pct": 0.17586217474484453,
+    "max_drawdown_dollar": 20298.397102659743,
+    "fixed_final_equity": 39150.0,
+    "fixed_net_pnl": 29150.0,
+    "fixed_net_pnl_pct": 2.915,
+    "fixed_max_drawdown_pct": 0.0821917808219178,
+    "fixed_max_drawdown_dollar": 1900.0,
+    "module_summary": {
+      "fvg": {
+        "n": 607,
+        "pnl": 70943.92362875698,
+        "win_rate": 0.48105436573311366
+      },
+      "ifvg": {
+        "n": 264,
+        "pnl": 34712.06106943765,
+        "win_rate": 0.48863636363636365
+      },
+      "ob": {
+        "n": 483,
+        "pnl": 33328.08279738906,
+        "win_rate": 0.3022774327122153
+      },
+      "trendline": {
+        "n": 9,
+        "pnl": 9448.09734673729,
+        "win_rate": 0.6666666666666666
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 4827.076973275587,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-05T16:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1657.2964274912852,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-06T03:30:00"
+    }
+  },
+  "JP225": {
+    "n_candidate_trades": 10512,
+    "n_skipped_overlap": 8348,
+    "total_trades": 2164,
+    "win_rate": 0.4967652495378928,
+    "final_equity": 22019463.145955276,
+    "net_pnl": 22009463.145955276,
+    "net_pnl_pct": 2200.9463145955274,
+    "max_drawdown_pct": 0.13274155455237704,
+    "max_drawdown_dollar": 1675080.1450352836,
+    "fixed_final_equity": 89300.0,
+    "fixed_net_pnl": 79300.0,
+    "fixed_net_pnl_pct": 7.93,
+    "fixed_max_drawdown_pct": 0.06310679611650485,
+    "fixed_max_drawdown_dollar": 1400.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1141,
+        "pnl": 10373785.994975353,
+        "win_rate": 0.530236634531113
+      },
+      "ifvg": {
+        "n": 457,
+        "pnl": 4525552.339116234,
+        "win_rate": 0.5798687089715536
+      },
+      "ob": {
+        "n": 510,
+        "pnl": 5550394.584185989,
+        "win_rate": 0.32745098039215687
+      },
+      "trendline": {
+        "n": 56,
+        "pnl": 1559730.2276777113,
+        "win_rate": 0.6785714285714286
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 667651.7288213558,
+      "r_multiple": 3.0,
+      "fill_time": "2025-10-29T02:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -229227.09356199883,
+      "r_multiple": -1.0,
+      "fill_time": "2025-10-29T16:00:00"
+    }
+  },
+  "LINKUSD": {
+    "n_candidate_trades": 9940,
+    "n_skipped_overlap": 7233,
+    "total_trades": 2707,
+    "win_rate": 0.5282600664942741,
+    "final_equity": 2462382890.516598,
+    "net_pnl": 2462372890.516598,
+    "net_pnl_pct": 246237.2890516598,
+    "max_drawdown_pct": 0.12736700601173467,
+    "max_drawdown_dollar": 121658019.62888575,
+    "fixed_final_equity": 137250.0,
+    "fixed_net_pnl": 127250.0,
+    "fixed_net_pnl_pct": 12.725,
+    "fixed_max_drawdown_pct": 0.03361344537815126,
+    "fixed_max_drawdown_dollar": 1350.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1428,
+        "pnl": 1234392882.2652073,
+        "win_rate": 0.5637254901960784
+      },
+      "ifvg": {
+        "n": 558,
+        "pnl": 649807033.211164,
+        "win_rate": 0.5591397849462365
+      },
+      "ob": {
+        "n": 617,
+        "pnl": 378828400.9619153,
+        "win_rate": 0.4019448946515397
+      },
+      "trendline": {
+        "n": 104,
+        "pnl": 199344574.078309,
+        "win_rate": 0.625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 72844610.90492326,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-26T17:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -25009983.077356987,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-29T08:30:00"
+    }
+  },
+  "LTCUSD": {
+    "n_candidate_trades": 13362,
+    "n_skipped_overlap": 10415,
+    "total_trades": 2947,
+    "win_rate": 0.4855785544621649,
+    "final_equity": 847121957.2496434,
+    "net_pnl": 847111957.2496434,
+    "net_pnl_pct": 84711.19572496435,
+    "max_drawdown_pct": 0.1197326778706625,
+    "max_drawdown_dollar": 49445843.258135796,
+    "fixed_final_equity": 127000.0,
+    "fixed_net_pnl": 117000.0,
+    "fixed_net_pnl_pct": 11.7,
+    "fixed_max_drawdown_pct": 0.10300429184549356,
+    "fixed_max_drawdown_dollar": 1250.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1409,
+        "pnl": 344632729.1137275,
+        "win_rate": 0.5301632363378282
+      },
+      "ifvg": {
+        "n": 533,
+        "pnl": 176734598.82984948,
+        "win_rate": 0.5384615384615384
+      },
+      "ob": {
+        "n": 909,
+        "pnl": 264547555.30617067,
+        "win_rate": 0.37513751375137516
+      },
+      "trendline": {
+        "n": 96,
+        "pnl": 61197073.99989583,
+        "win_rate": 0.5833333333333334
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 24570868.2170159,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-16T16:00:00"
+    },
+    "worst_trade": {
+      "module": "trendline",
+      "pnl": -8604718.049598968,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-17T11:30:00"
+    }
+  },
+  "MATICUSD": {
+    "n_candidate_trades": 10970,
+    "n_skipped_overlap": 8497,
+    "total_trades": 2473,
+    "win_rate": 0.5050545895673272,
+    "final_equity": 194315725.72645786,
+    "net_pnl": 194305725.72645786,
+    "net_pnl_pct": 19430.572572645786,
+    "max_drawdown_pct": 0.12365386653314271,
+    "max_drawdown_dollar": 18895036.402644575,
+    "fixed_final_equity": 111550.0,
+    "fixed_net_pnl": 101550.0,
+    "fixed_net_pnl_pct": 10.155,
+    "fixed_max_drawdown_pct": 0.06926406926406926,
+    "fixed_max_drawdown_dollar": 1300.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1299,
+        "pnl": 113959926.6230035,
+        "win_rate": 0.5481139337952271
+      },
+      "ifvg": {
+        "n": 500,
+        "pnl": 25201823.677283335,
+        "win_rate": 0.538
+      },
+      "ob": {
+        "n": 614,
+        "pnl": 42942955.01668644,
+        "win_rate": 0.3778501628664495
+      },
+      "trendline": {
+        "n": 60,
+        "pnl": 12201020.40948436,
+        "win_rate": 0.6
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 5444801.910843553,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-10T22:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -2002637.5965187834,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-17T11:00:00"
+    }
+  },
+  "NETH25": {
+    "n_candidate_trades": 6876,
+    "n_skipped_overlap": 4825,
+    "total_trades": 2051,
+    "win_rate": 0.4597757191613847,
+    "final_equity": 1349294.7830811644,
+    "net_pnl": 1339294.7830811644,
+    "net_pnl_pct": 133.92947830811644,
+    "max_drawdown_pct": 0.15975720970275448,
+    "max_drawdown_dollar": 155109.80425435805,
+    "fixed_final_equity": 61100.0,
+    "fixed_net_pnl": 51100.0,
+    "fixed_net_pnl_pct": 5.11,
+    "fixed_max_drawdown_pct": 0.07725321888412018,
+    "fixed_max_drawdown_dollar": 1700.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1167,
+        "pnl": 543594.291362733,
+        "win_rate": 0.4884318766066838
+      },
+      "ifvg": {
+        "n": 429,
+        "pnl": 476155.6519082137,
+        "win_rate": 0.5174825174825175
+      },
+      "ob": {
+        "n": 414,
+        "pnl": 242289.32900566372,
+        "win_rate": 0.3115942028985507
+      },
+      "trendline": {
+        "n": 41,
+        "pnl": 77255.5108045546,
+        "win_rate": 0.5365853658536586
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 37508.04047338214,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-25T14:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -14204.235475263493,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-10T17:00:00"
+    }
+  },
+  "NZDCAD": {
+    "n_candidate_trades": 10552,
+    "n_skipped_overlap": 7885,
+    "total_trades": 2667,
+    "win_rate": 0.5181852268466441,
+    "final_equity": 1002955351.5292873,
+    "net_pnl": 1002945351.5292873,
+    "net_pnl_pct": 100294.53515292873,
+    "max_drawdown_pct": 0.122806917773782,
+    "max_drawdown_dollar": 51688018.96102619,
+    "fixed_final_equity": 128200.0,
+    "fixed_net_pnl": 118200.0,
+    "fixed_net_pnl_pct": 11.82,
+    "fixed_max_drawdown_pct": 0.03508771929824561,
+    "fixed_max_drawdown_dollar": 1300.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1365,
+        "pnl": 507320425.2453881,
+        "win_rate": 0.5633699633699634
+      },
+      "ifvg": {
+        "n": 527,
+        "pnl": 335865497.5275042,
+        "win_rate": 0.6053130929791272
+      },
+      "ob": {
+        "n": 698,
+        "pnl": 156551031.11111984,
+        "win_rate": 0.3538681948424069
+      },
+      "trendline": {
+        "n": 77,
+        "pnl": 3208397.645275194,
+        "win_rate": 0.6103896103896104
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 30717768.072533406,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-24T11:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -10546433.704903135,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-24T12:30:00"
+    }
+  },
+  "NZDCHF": {
+    "n_candidate_trades": 10422,
+    "n_skipped_overlap": 7834,
+    "total_trades": 2588,
+    "win_rate": 0.5,
+    "final_equity": 220893282.74676827,
+    "net_pnl": 220883282.74676827,
+    "net_pnl_pct": 22088.328274676827,
+    "max_drawdown_pct": 0.15455008178594756,
+    "max_drawdown_dollar": 24836489.30288115,
+    "fixed_final_equity": 112950.0,
+    "fixed_net_pnl": 102950.0,
+    "fixed_net_pnl_pct": 10.295,
+    "fixed_max_drawdown_pct": 0.07662835249042145,
+    "fixed_max_drawdown_dollar": 1650.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1317,
+        "pnl": 106147026.39152873,
+        "win_rate": 0.5489749430523918
+      },
+      "ifvg": {
+        "n": 508,
+        "pnl": 42387761.527167335,
+        "win_rate": 0.5551181102362205
+      },
+      "ob": {
+        "n": 681,
+        "pnl": 73809269.10739636,
+        "win_rate": 0.34948604992657856
+      },
+      "trendline": {
+        "n": 82,
+        "pnl": -1460774.2793239402,
+        "win_rate": 0.6219512195121951
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 6638163.587648976,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-17T11:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -2299544.037735159,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-29T02:30:00"
+    }
+  },
+  "NZDJPY": {
+    "n_candidate_trades": 10976,
+    "n_skipped_overlap": 8277,
+    "total_trades": 2699,
+    "win_rate": 0.4905520563171545,
+    "final_equity": 174564199.565678,
+    "net_pnl": 174554199.565678,
+    "net_pnl_pct": 17455.4199565678,
+    "max_drawdown_pct": 0.17874038835606942,
+    "max_drawdown_dollar": 29318568.258131534,
+    "fixed_final_equity": 110700.0,
+    "fixed_net_pnl": 100700.0,
+    "fixed_net_pnl_pct": 10.07,
+    "fixed_max_drawdown_pct": 0.06824925816023739,
+    "fixed_max_drawdown_dollar": 1950.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1348,
+        "pnl": 73317465.6263507,
+        "win_rate": 0.5385756676557863
+      },
+      "ifvg": {
+        "n": 565,
+        "pnl": 24899694.633487858,
+        "win_rate": 0.5309734513274337
+      },
+      "ob": {
+        "n": 703,
+        "pnl": 63477096.49009863,
+        "win_rate": 0.35135135135135137
+      },
+      "trendline": {
+        "n": 83,
+        "pnl": 12859942.815740814,
+        "win_rate": 0.6144578313253012
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 5187627.958480896,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-26T17:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1781085.599078441,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-30T01:00:00"
+    }
+  },
+  "NZDSGD": {
+    "n_candidate_trades": 9933,
+    "n_skipped_overlap": 7376,
+    "total_trades": 2557,
+    "win_rate": 0.4790770434102464,
+    "final_equity": 30602618.65356783,
+    "net_pnl": 30592618.65356783,
+    "net_pnl_pct": 3059.261865356783,
+    "max_drawdown_pct": 0.21445037100580686,
+    "max_drawdown_dollar": 2272777.0845956802,
+    "fixed_final_equity": 93000.0,
+    "fixed_net_pnl": 83000.0,
+    "fixed_net_pnl_pct": 8.3,
+    "fixed_max_drawdown_pct": 0.054945054945054944,
+    "fixed_max_drawdown_dollar": 2350.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1297,
+        "pnl": 18127650.96700724,
+        "win_rate": 0.5558982266769468
+      },
+      "ifvg": {
+        "n": 495,
+        "pnl": 6147751.737469904,
+        "win_rate": 0.5191919191919192
+      },
+      "ob": {
+        "n": 688,
+        "pnl": 3420061.314143288,
+        "win_rate": 0.2921511627906977
+      },
+      "trendline": {
+        "n": 77,
+        "pnl": 2897154.6349473805,
+        "win_rate": 0.5974025974025974
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 883348.177894696,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-23T12:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -318579.48955636227,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T09:30:00"
+    }
+  },
+  "NZDUSD": {
+    "n_candidate_trades": 11880,
+    "n_skipped_overlap": 8936,
+    "total_trades": 2944,
+    "win_rate": 0.4938858695652174,
+    "final_equity": 213693135.12357062,
+    "net_pnl": 213683135.12357062,
+    "net_pnl_pct": 21368.31351235706,
+    "max_drawdown_pct": 0.11921122449189885,
+    "max_drawdown_dollar": 14910065.55551672,
+    "fixed_final_equity": 112800.0,
+    "fixed_net_pnl": 102800.0,
+    "fixed_net_pnl_pct": 10.28,
+    "fixed_max_drawdown_pct": 0.1059322033898305,
+    "fixed_max_drawdown_dollar": 1250.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1618,
+        "pnl": 123023311.83808213,
+        "win_rate": 0.5333745364647713
+      },
+      "ifvg": {
+        "n": 639,
+        "pnl": 28432751.662904643,
+        "win_rate": 0.539906103286385
+      },
+      "ob": {
+        "n": 639,
+        "pnl": 49286039.13712161,
+        "win_rate": 0.3348982785602504
+      },
+      "trendline": {
+        "n": 48,
+        "pnl": 12941032.48546214,
+        "win_rate": 0.6666666666666666
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 6132090.538722195,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-26T17:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -2086311.9531077335,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-23T04:00:00"
+    }
+  },
+  "PALLADIUM": {
+    "n_candidate_trades": 7425,
+    "n_skipped_overlap": 6280,
+    "total_trades": 1145,
+    "win_rate": 0.42882096069868997,
+    "final_equity": 132762.49722911604,
+    "net_pnl": 122762.49722911604,
+    "net_pnl_pct": 12.276249722911604,
+    "max_drawdown_pct": 0.14186833301273633,
+    "max_drawdown_dollar": 13184.930738352661,
+    "fixed_final_equity": 37150.0,
+    "fixed_net_pnl": 27150.0,
+    "fixed_net_pnl_pct": 2.715,
+    "fixed_max_drawdown_pct": 0.07511737089201878,
+    "fixed_max_drawdown_dollar": 1500.0,
+    "module_summary": {
+      "fvg": {
+        "n": 572,
+        "pnl": 10710.618752453393,
+        "win_rate": 0.43356643356643354
+      },
+      "ifvg": {
+        "n": 214,
+        "pnl": 49093.224550726736,
+        "win_rate": 0.5280373831775701
+      },
+      "ob": {
+        "n": 340,
+        "pnl": 62559.664645530516,
+        "win_rate": 0.36470588235294116
+      },
+      "trendline": {
+        "n": 19,
+        "pnl": 398.98928040544456,
+        "win_rate": 0.3157894736842105
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 4070.7128201353457,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-22T13:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1439.8542061925516,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-23T03:30:00"
+    }
+  },
+  "PLATINUM": {
+    "n_candidate_trades": 9866,
+    "n_skipped_overlap": 7677,
+    "total_trades": 2189,
+    "win_rate": 0.47555961626313387,
+    "final_equity": 13645024.733673302,
+    "net_pnl": 13635024.733673302,
+    "net_pnl_pct": 1363.5024733673301,
+    "max_drawdown_pct": 0.19304240535366066,
+    "max_drawdown_dollar": 860910.8058454264,
+    "fixed_final_equity": 84650.0,
+    "fixed_net_pnl": 74650.0,
+    "fixed_net_pnl_pct": 7.465,
+    "fixed_max_drawdown_pct": 0.10632911392405063,
+    "fixed_max_drawdown_dollar": 2100.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1068,
+        "pnl": 7187739.669946434,
+        "win_rate": 0.5355805243445693
+      },
+      "ifvg": {
+        "n": 432,
+        "pnl": 1801543.202495033,
+        "win_rate": 0.5393518518518519
+      },
+      "ob": {
+        "n": 653,
+        "pnl": 3859974.153175246,
+        "win_rate": 0.32924961715160794
+      },
+      "trendline": {
+        "n": 36,
+        "pnl": 785767.7080565864,
+        "win_rate": 0.5833333333333334
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 380209.14820543944,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-29T07:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -138548.7784883383,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-29T22:30:00"
+    }
+  },
+  "SA40": {
+    "n_candidate_trades": 4542,
+    "n_skipped_overlap": 3028,
+    "total_trades": 1514,
+    "win_rate": 0.452443857331572,
+    "final_equity": 406885.3215781852,
+    "net_pnl": 396885.3215781852,
+    "net_pnl_pct": 39.68853215781852,
+    "max_drawdown_pct": 0.18410355299739622,
+    "max_drawdown_dollar": 52104.68508946203,
+    "fixed_final_equity": 48650.0,
+    "fixed_net_pnl": 38650.0,
+    "fixed_net_pnl_pct": 3.865,
+    "fixed_max_drawdown_pct": 0.18137254901960784,
+    "fixed_max_drawdown_dollar": 2000.0,
+    "module_summary": {
+      "fvg": {
+        "n": 871,
+        "pnl": 117938.03375060679,
+        "win_rate": 0.46383467278989665
+      },
+      "ifvg": {
+        "n": 305,
+        "pnl": 86331.88279035321,
+        "win_rate": 0.4819672131147541
+      },
+      "ob": {
+        "n": 313,
+        "pnl": 170620.01224682984,
+        "win_rate": 0.3865814696485623
+      },
+      "trendline": {
+        "n": 25,
+        "pnl": 21995.39279039561,
+        "win_rate": 0.52
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 12446.925099705273,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-11T10:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -4395.071493381181,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-26T16:30:00"
+    }
+  },
+  "SGDJPY": {
+    "n_candidate_trades": 9945,
+    "n_skipped_overlap": 7638,
+    "total_trades": 2307,
+    "win_rate": 0.5145210229735587,
+    "final_equity": 334384135.9520678,
+    "net_pnl": 334374135.9520678,
+    "net_pnl_pct": 33437.41359520678,
+    "max_drawdown_pct": 0.12704077003909214,
+    "max_drawdown_dollar": 15858721.72999847,
+    "fixed_final_equity": 116950.0,
+    "fixed_net_pnl": 106950.0,
+    "fixed_net_pnl_pct": 10.695,
+    "fixed_max_drawdown_pct": 0.04830053667262969,
+    "fixed_max_drawdown_dollar": 1350.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1139,
+        "pnl": 182337680.56789973,
+        "win_rate": 0.5557506584723442
+      },
+      "ifvg": {
+        "n": 442,
+        "pnl": 31817998.65614972,
+        "win_rate": 0.5746606334841629
+      },
+      "ob": {
+        "n": 659,
+        "pnl": 93898843.70787287,
+        "win_rate": 0.3930197268588771
+      },
+      "trendline": {
+        "n": 67,
+        "pnl": 26319613.020145435,
+        "win_rate": 0.6119402985074627
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 9739343.765594209,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-24T01:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -3312363.9647635305,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-23T15:00:00"
+    }
+  },
+  "SILVER": {
+    "n_candidate_trades": 11864,
+    "n_skipped_overlap": 9614,
+    "total_trades": 2250,
+    "win_rate": 0.48977777777777776,
+    "final_equity": 98769771.27255294,
+    "net_pnl": 98759771.27255294,
+    "net_pnl_pct": 9875.977127255293,
+    "max_drawdown_pct": 0.16224849560910537,
+    "max_drawdown_dollar": 10991886.486816153,
+    "fixed_final_equity": 104750.0,
+    "fixed_net_pnl": 94750.0,
+    "fixed_net_pnl_pct": 9.475,
+    "fixed_max_drawdown_pct": 0.06341463414634146,
+    "fixed_max_drawdown_dollar": 1750.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1040,
+        "pnl": 31979012.782106496,
+        "win_rate": 0.5384615384615384
+      },
+      "ifvg": {
+        "n": 421,
+        "pnl": 15839999.329784054,
+        "win_rate": 0.5344418052256532
+      },
+      "ob": {
+        "n": 744,
+        "pnl": 42956383.507363975,
+        "win_rate": 0.3817204301075269
+      },
+      "trendline": {
+        "n": 45,
+        "pnl": 7984375.653298349,
+        "win_rate": 0.7333333333333333
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2983873.763558651,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-26T12:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1036425.1329438445,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-16T15:30:00"
+    }
+  },
+  "SING30": {
+    "n_candidate_trades": 6247,
+    "n_skipped_overlap": 4752,
+    "total_trades": 1495,
+    "win_rate": 0.4642140468227425,
+    "final_equity": 911590.849945638,
+    "net_pnl": 901590.849945638,
+    "net_pnl_pct": 90.1590849945638,
+    "max_drawdown_pct": 0.14441265871531425,
+    "max_drawdown_dollar": 51134.705168729764,
+    "fixed_final_equity": 56800.0,
+    "fixed_net_pnl": 46800.0,
+    "fixed_net_pnl_pct": 4.68,
+    "fixed_max_drawdown_pct": 0.05240174672489083,
+    "fixed_max_drawdown_dollar": 1550.0,
+    "module_summary": {
+      "fvg": {
+        "n": 813,
+        "pnl": 190764.79779253292,
+        "win_rate": 0.4661746617466175
+      },
+      "ifvg": {
+        "n": 261,
+        "pnl": 302459.4953005308,
+        "win_rate": 0.5862068965517241
+      },
+      "ob": {
+        "n": 399,
+        "pnl": 405991.27131950314,
+        "win_rate": 0.3684210526315789
+      },
+      "trendline": {
+        "n": 22,
+        "pnl": 2375.28553307155,
+        "win_rate": 0.6818181818181818
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 26295.504870980047,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-21T12:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -9028.123339036483,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-30T13:30:00"
+    }
+  },
+  "SOLUSD": {
+    "n_candidate_trades": 10463,
+    "n_skipped_overlap": 7753,
+    "total_trades": 2710,
+    "win_rate": 0.5025830258302583,
+    "final_equity": 707340900.9096984,
+    "net_pnl": 707330900.9096984,
+    "net_pnl_pct": 70733.09009096984,
+    "max_drawdown_pct": 0.14999999761678431,
+    "max_drawdown_dollar": 35846611.93930018,
+    "fixed_final_equity": 124850.0,
+    "fixed_net_pnl": 114850.0,
+    "fixed_net_pnl_pct": 11.485,
+    "fixed_max_drawdown_pct": 0.06167400881057269,
+    "fixed_max_drawdown_dollar": 1600.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1387,
+        "pnl": 147973823.115634,
+        "win_rate": 0.517664023071377
+      },
+      "ifvg": {
+        "n": 558,
+        "pnl": 184017347.27545953,
+        "win_rate": 0.5645161290322581
+      },
+      "ob": {
+        "n": 701,
+        "pnl": 374793702.7144638,
+        "win_rate": 0.4122681883024251
+      },
+      "trendline": {
+        "n": 64,
+        "pnl": 546027.8041416071,
+        "win_rate": 0.625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 20602162.1624184,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T16:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -6975610.973233381,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-25T22:00:00"
+    }
+  },
+  "SPAIN35": {
+    "n_candidate_trades": 5514,
+    "n_skipped_overlap": 4112,
+    "total_trades": 1402,
+    "win_rate": 0.4686162624821683,
+    "final_equity": 515551.82423488237,
+    "net_pnl": 505551.82423488237,
+    "net_pnl_pct": 50.55518242348824,
+    "max_drawdown_pct": 0.17199375519252041,
+    "max_drawdown_dollar": 49999.63965546811,
+    "fixed_final_equity": 50900.0,
+    "fixed_net_pnl": 40900.0,
+    "fixed_net_pnl_pct": 4.09,
+    "fixed_max_drawdown_pct": 0.07939914163090128,
+    "fixed_max_drawdown_dollar": 1850.0,
+    "module_summary": {
+      "fvg": {
+        "n": 769,
+        "pnl": 147536.75624561275,
+        "win_rate": 0.49934980494148246
+      },
+      "ifvg": {
+        "n": 296,
+        "pnl": 78397.82502489229,
+        "win_rate": 0.5067567567567568
+      },
+      "ob": {
+        "n": 306,
+        "pnl": 250784.17546378277,
+        "win_rate": 0.34967320261437906
+      },
+      "trendline": {
+        "n": 31,
+        "pnl": 28833.067500594843,
+        "win_rate": 0.5161290322580645
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 15694.993648798365,
+      "r_multiple": 3.0,
+      "fill_time": "2025-03-14T17:30:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -5388.614486087438,
+      "r_multiple": -1.0,
+      "fill_time": "2025-03-14T18:30:00"
+    }
+  },
+  "SWI20": {
+    "n_candidate_trades": 6710,
+    "n_skipped_overlap": 4855,
+    "total_trades": 1855,
+    "win_rate": 0.47115902964959566,
+    "final_equity": 2156989.092496581,
+    "net_pnl": 2146989.092496581,
+    "net_pnl_pct": 214.6989092496581,
+    "max_drawdown_pct": 0.14683472913004345,
+    "max_drawdown_dollar": 192935.75286942162,
+    "fixed_final_equity": 65700.0,
+    "fixed_net_pnl": 55700.0,
+    "fixed_net_pnl_pct": 5.57,
+    "fixed_max_drawdown_pct": 0.09734513274336283,
+    "fixed_max_drawdown_dollar": 1550.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1013,
+        "pnl": 965179.1357661417,
+        "win_rate": 0.4906219151036525
+      },
+      "ifvg": {
+        "n": 385,
+        "pnl": 533317.0403211754,
+        "win_rate": 0.548051948051948
+      },
+      "ob": {
+        "n": 418,
+        "pnl": 526753.4458879452,
+        "win_rate": 0.3444976076555024
+      },
+      "trendline": {
+        "n": 39,
+        "pnl": 121739.47052131798,
+        "win_rate": 0.5641025641025641
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 62326.63669900471,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-26T12:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -21998.05175023671,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-14T11:00:00"
+    }
+  },
+  "TAIWAN": {
+    "n_candidate_trades": 5653,
+    "n_skipped_overlap": 4280,
+    "total_trades": 1373,
+    "win_rate": 0.4406409322651129,
+    "final_equity": 266925.85963271663,
+    "net_pnl": 256925.85963271663,
+    "net_pnl_pct": 25.692585963271664,
+    "max_drawdown_pct": 0.2091638316863436,
+    "max_drawdown_dollar": 56303.35456190302,
+    "fixed_final_equity": 44350.0,
+    "fixed_net_pnl": 34350.0,
+    "fixed_net_pnl_pct": 3.435,
+    "fixed_max_drawdown_pct": 0.1288888888888889,
+    "fixed_max_drawdown_dollar": 2300.0,
+    "module_summary": {
+      "fvg": {
+        "n": 701,
+        "pnl": 117709.28309845133,
+        "win_rate": 0.4693295292439372
+      },
+      "ifvg": {
+        "n": 257,
+        "pnl": 71308.79628038147,
+        "win_rate": 0.5136186770428015
+      },
+      "ob": {
+        "n": 392,
+        "pnl": 59738.92098132187,
+        "win_rate": 0.336734693877551
+      },
+      "trendline": {
+        "n": 23,
+        "pnl": 8168.859272562103,
+        "win_rate": 0.5217391304347826
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 7908.875018184324,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-10T18:00:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -2811.020442253938,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-12T03:00:00"
+    }
+  },
+  "UK100": {
+    "n_candidate_trades": 11621,
+    "n_skipped_overlap": 9461,
+    "total_trades": 2160,
+    "win_rate": 0.4685185185185185,
+    "final_equity": 9490181.163815057,
+    "net_pnl": 9480181.163815057,
+    "net_pnl_pct": 948.0181163815057,
+    "max_drawdown_pct": 0.15530240841820406,
+    "max_drawdown_dollar": 1022172.8185624676,
+    "fixed_final_equity": 81000.0,
+    "fixed_net_pnl": 71000.0,
+    "fixed_net_pnl_pct": 7.1,
+    "fixed_max_drawdown_pct": 0.07920792079207921,
+    "fixed_max_drawdown_dollar": 1650.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1090,
+        "pnl": 4952273.727554952,
+        "win_rate": 0.5045871559633027
+      },
+      "ifvg": {
+        "n": 385,
+        "pnl": 3001085.430971867,
+        "win_rate": 0.561038961038961
+      },
+      "ob": {
+        "n": 636,
+        "pnl": 1058216.3663260061,
+        "win_rate": 0.3411949685534591
+      },
+      "trendline": {
+        "n": 49,
+        "pnl": 468605.63896223716,
+        "win_rate": 0.5918367346938775
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 286916.5263177897,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-12T10:30:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -99110.97152912401,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-26T16:30:00"
+    }
+  },
+  "UNIUSD": {
+    "n_candidate_trades": 10292,
+    "n_skipped_overlap": 8384,
+    "total_trades": 1908,
+    "win_rate": 0.4942348008385744,
+    "final_equity": 10938755.597655978,
+    "net_pnl": 10928755.597655978,
+    "net_pnl_pct": 1092.8755597655977,
+    "max_drawdown_pct": 0.10031935520812875,
+    "max_drawdown_dollar": 474173.1817953978,
+    "fixed_final_equity": 82100.0,
+    "fixed_net_pnl": 72100.0,
+    "fixed_net_pnl_pct": 7.21,
+    "fixed_max_drawdown_pct": 0.044444444444444446,
+    "fixed_max_drawdown_dollar": 1050.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1011,
+        "pnl": 4948409.099587287,
+        "win_rate": 0.5272007912957468
+      },
+      "ifvg": {
+        "n": 392,
+        "pnl": 2098228.51089523,
+        "win_rate": 0.5280612244897959
+      },
+      "ob": {
+        "n": 454,
+        "pnl": 3439469.6169819627,
+        "win_rate": 0.3744493392070485
+      },
+      "trendline": {
+        "n": 51,
+        "pnl": 442648.37019149656,
+        "win_rate": 0.6470588235294118
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 318604.5319705625,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-28T17:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -99600.18574298144,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-25T10:00:00"
+    }
+  },
+  "US2000": {
+    "n_candidate_trades": 12716,
+    "n_skipped_overlap": 11083,
+    "total_trades": 1633,
+    "win_rate": 0.4733619105939988,
+    "final_equity": 3129662.611904797,
+    "net_pnl": 3119662.611904797,
+    "net_pnl_pct": 311.9662611904797,
+    "max_drawdown_pct": 0.1704448367233025,
+    "max_drawdown_dollar": 283082.3077842314,
+    "fixed_final_equity": 69400.0,
+    "fixed_net_pnl": 59400.0,
+    "fixed_net_pnl_pct": 5.94,
+    "fixed_max_drawdown_pct": 0.07,
+    "fixed_max_drawdown_dollar": 1850.0,
+    "module_summary": {
+      "fvg": {
+        "n": 726,
+        "pnl": 928051.0595379401,
+        "win_rate": 0.5385674931129476
+      },
+      "ifvg": {
+        "n": 304,
+        "pnl": 891870.0342234187,
+        "win_rate": 0.5888157894736842
+      },
+      "ob": {
+        "n": 587,
+        "pnl": 1227552.8924033437,
+        "win_rate": 0.3287904599659284
+      },
+      "trendline": {
+        "n": 16,
+        "pnl": 72188.62574009379,
+        "win_rate": 0.625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 94929.91784118887,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-29T10:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -33241.9394492384,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-30T17:30:00"
+    }
+  },
+  "US30": {
+    "n_candidate_trades": 13527,
+    "n_skipped_overlap": 11601,
+    "total_trades": 1926,
+    "win_rate": 0.4797507788161994,
+    "final_equity": 14959811.5274068,
+    "net_pnl": 14949811.5274068,
+    "net_pnl_pct": 1494.98115274068,
+    "max_drawdown_pct": 0.15568203216981283,
+    "max_drawdown_dollar": 907502.4546591602,
+    "fixed_final_equity": 85450.0,
+    "fixed_net_pnl": 75450.0,
+    "fixed_net_pnl_pct": 7.545,
+    "fixed_max_drawdown_pct": 0.1,
+    "fixed_max_drawdown_dollar": 1650.0,
+    "module_summary": {
+      "fvg": {
+        "n": 901,
+        "pnl": 4614029.810664883,
+        "win_rate": 0.51165371809101
+      },
+      "ifvg": {
+        "n": 361,
+        "pnl": 5163627.861294536,
+        "win_rate": 0.5706371191135734
+      },
+      "ob": {
+        "n": 640,
+        "pnl": 5017998.447450949,
+        "win_rate": 0.378125
+      },
+      "trendline": {
+        "n": 24,
+        "pnl": 154155.40799641376,
+        "win_rate": 0.625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 381649.8523228447,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-12T17:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -152635.56297731661,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T14:30:00"
+    }
+  },
+  "US500": {
+    "n_candidate_trades": 12302,
+    "n_skipped_overlap": 9904,
+    "total_trades": 2398,
+    "win_rate": 0.4870725604670559,
+    "final_equity": 68226044.73381087,
+    "net_pnl": 68216044.73381087,
+    "net_pnl_pct": 6821.604473381087,
+    "max_drawdown_pct": 0.14058435474467296,
+    "max_drawdown_dollar": 5101519.7807805315,
+    "fixed_final_equity": 101050.0,
+    "fixed_net_pnl": 91050.0,
+    "fixed_net_pnl_pct": 9.105,
+    "fixed_max_drawdown_pct": 0.04833836858006042,
+    "fixed_max_drawdown_dollar": 1500.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1196,
+        "pnl": 15986800.162556177,
+        "win_rate": 0.5209030100334449
+      },
+      "ifvg": {
+        "n": 471,
+        "pnl": 21583390.109265,
+        "win_rate": 0.5817409766454352
+      },
+      "ob": {
+        "n": 703,
+        "pnl": 27874017.984081276,
+        "win_rate": 0.35988620199146515
+      },
+      "trendline": {
+        "n": 28,
+        "pnl": 2771836.477908376,
+        "win_rate": 0.6428571428571429
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1979054.0311288936,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-26T18:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -700950.8402146669,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-03T16:30:00"
+    }
+  },
+  "USDCAD": {
+    "n_candidate_trades": 12170,
+    "n_skipped_overlap": 9710,
+    "total_trades": 2460,
+    "win_rate": 0.4959349593495935,
+    "final_equity": 148361717.1659034,
+    "net_pnl": 148351717.1659034,
+    "net_pnl_pct": 14835.17171659034,
+    "max_drawdown_pct": 0.13802864452093638,
+    "max_drawdown_dollar": 10576337.374534577,
+    "fixed_final_equity": 108900.0,
+    "fixed_net_pnl": 98900.0,
+    "fixed_net_pnl_pct": 9.89,
+    "fixed_max_drawdown_pct": 0.07983193277310924,
+    "fixed_max_drawdown_dollar": 1450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1253,
+        "pnl": 41662844.30307154,
+        "win_rate": 0.5339185953711093
+      },
+      "ifvg": {
+        "n": 479,
+        "pnl": 41490633.857576795,
+        "win_rate": 0.5448851774530271
+      },
+      "ob": {
+        "n": 679,
+        "pnl": 55855486.11775911,
+        "win_rate": 0.374079528718704
+      },
+      "trendline": {
+        "n": 49,
+        "pnl": 9342752.88749603,
+        "win_rate": 0.7346938775510204
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 4364863.700085418,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T17:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -1498603.2036959936,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T17:30:00"
+    }
+  },
+  "USDCHF": {
+    "n_candidate_trades": 12803,
+    "n_skipped_overlap": 10443,
+    "total_trades": 2360,
+    "win_rate": 0.48686440677966103,
+    "final_equity": 74594813.3856482,
+    "net_pnl": 74584813.3856482,
+    "net_pnl_pct": 7458.48133856482,
+    "max_drawdown_pct": 0.13577036233870127,
+    "max_drawdown_dollar": 5743021.106124997,
+    "fixed_final_equity": 101950.0,
+    "fixed_net_pnl": 91950.0,
+    "fixed_net_pnl_pct": 9.195,
+    "fixed_max_drawdown_pct": 0.07462686567164178,
+    "fixed_max_drawdown_dollar": 1450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1136,
+        "pnl": 28298252.202440526,
+        "win_rate": 0.5184859154929577
+      },
+      "ifvg": {
+        "n": 477,
+        "pnl": 20030912.62587118,
+        "win_rate": 0.5660377358490566
+      },
+      "ob": {
+        "n": 703,
+        "pnl": 26337145.77789033,
+        "win_rate": 0.37268847795163584
+      },
+      "trendline": {
+        "n": 44,
+        "pnl": -81497.22055382488,
+        "win_rate": 0.6363636363636364
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2199196.2463320903,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-24T10:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -781651.7002423005,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-17T06:30:00"
+    }
+  },
+  "USDCNH": {
+    "n_candidate_trades": 11460,
+    "n_skipped_overlap": 9392,
+    "total_trades": 2068,
+    "win_rate": 0.4912959381044487,
+    "final_equity": 27095243.006222516,
+    "net_pnl": 27085243.006222516,
+    "net_pnl_pct": 2708.5243006222518,
+    "max_drawdown_pct": 0.16642149418141072,
+    "max_drawdown_dollar": 2660547.2032509167,
+    "fixed_final_equity": 91450.0,
+    "fixed_net_pnl": 81450.0,
+    "fixed_net_pnl_pct": 8.145,
+    "fixed_max_drawdown_pct": 0.06,
+    "fixed_max_drawdown_dollar": 1800.0,
+    "module_summary": {
+      "fvg": {
+        "n": 958,
+        "pnl": 14076657.84339849,
+        "win_rate": 0.5438413361169102
+      },
+      "ifvg": {
+        "n": 405,
+        "pnl": 9077097.243487326,
+        "win_rate": 0.5925925925925926
+      },
+      "ob": {
+        "n": 641,
+        "pnl": 3179952.171440235,
+        "win_rate": 0.33541341653666146
+      },
+      "trendline": {
+        "n": 64,
+        "pnl": 751535.7478964456,
+        "win_rate": 0.625
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 785372.777163452,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T03:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -269644.6534927852,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T09:00:00"
+    }
+  },
+  "USDDKK": {
+    "n_candidate_trades": 11871,
+    "n_skipped_overlap": 9559,
+    "total_trades": 2312,
+    "win_rate": 0.4865916955017301,
+    "final_equity": 91266381.4795834,
+    "net_pnl": 91256381.4795834,
+    "net_pnl_pct": 9125.63814795834,
+    "max_drawdown_pct": 0.13209297997030942,
+    "max_drawdown_dollar": 4477283.715702951,
+    "fixed_final_equity": 104000.0,
+    "fixed_net_pnl": 94000.0,
+    "fixed_net_pnl_pct": 9.4,
+    "fixed_max_drawdown_pct": 0.053811659192825115,
+    "fixed_max_drawdown_dollar": 1400.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1043,
+        "pnl": 29513986.14711524,
+        "win_rate": 0.5282837967401726
+      },
+      "ifvg": {
+        "n": 439,
+        "pnl": 25688092.502259735,
+        "win_rate": 0.5990888382687927
+      },
+      "ob": {
+        "n": 779,
+        "pnl": 28571927.719995297,
+        "win_rate": 0.3645699614890886
+      },
+      "trendline": {
+        "n": 51,
+        "pnl": 7482375.11021308,
+        "win_rate": 0.5294117647058824
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2685095.0714793587,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-30T17:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -921882.6412079132,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T11:00:00"
+    }
+  },
+  "USDHKD": {
+    "n_candidate_trades": 6353,
+    "n_skipped_overlap": 5605,
+    "total_trades": 748,
+    "win_rate": 0.42513368983957217,
+    "final_equity": 40194.2403819479,
+    "net_pnl": 30194.2403819479,
+    "net_pnl_pct": 3.01942403819479,
+    "max_drawdown_pct": 0.22443239790955735,
+    "max_drawdown_dollar": 5932.687938889027,
+    "fixed_final_equity": 24700.0,
+    "fixed_net_pnl": 14700.0,
+    "fixed_net_pnl_pct": 1.47,
+    "fixed_max_drawdown_pct": 0.11910669975186104,
+    "fixed_max_drawdown_dollar": 2400.0,
+    "module_summary": {
+      "fvg": {
+        "n": 430,
+        "pnl": 7375.779449635519,
+        "win_rate": 0.42790697674418604
+      },
+      "ifvg": {
+        "n": 114,
+        "pnl": 8710.078641550972,
+        "win_rate": 0.543859649122807
+      },
+      "ob": {
+        "n": 194,
+        "pnl": 11530.152547356009,
+        "win_rate": 0.32989690721649484
+      },
+      "trendline": {
+        "n": 10,
+        "pnl": 2578.2297434054235,
+        "win_rate": 0.8
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1099.7503483138767,
+      "r_multiple": 3.0,
+      "fill_time": "2025-09-02T09:00:00"
+    },
+    "worst_trade": {
+      "module": "trendline",
+      "pnl": -416.4106326209137,
+      "r_multiple": -1.0,
+      "fill_time": "2025-09-23T05:00:00"
+    }
+  },
+  "USDHUF": {
+    "n_candidate_trades": 12287,
+    "n_skipped_overlap": 10123,
+    "total_trades": 2164,
+    "win_rate": 0.4731977818853974,
+    "final_equity": 30530671.284535494,
+    "net_pnl": 30520671.284535494,
+    "net_pnl_pct": 3052.0671284535492,
+    "max_drawdown_pct": 0.2059155027577901,
+    "max_drawdown_dollar": 2271453.18952927,
+    "fixed_final_equity": 92900.0,
+    "fixed_net_pnl": 82900.0,
+    "fixed_net_pnl_pct": 8.29,
+    "fixed_max_drawdown_pct": 0.07174887892376682,
+    "fixed_max_drawdown_dollar": 2200.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1006,
+        "pnl": 9739702.296918232,
+        "win_rate": 0.49403578528827036
+      },
+      "ifvg": {
+        "n": 392,
+        "pnl": 5253319.684838526,
+        "win_rate": 0.5688775510204082
+      },
+      "ob": {
+        "n": 726,
+        "pnl": 13903414.954827966,
+        "win_rate": 0.38705234159779617
+      },
+      "trendline": {
+        "n": 40,
+        "pnl": 1624234.3479508087,
+        "win_rate": 0.575
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 889242.8529476358,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-23T09:30:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -299408.36799583695,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-19T10:00:00"
+    }
+  },
+  "USDJPY": {
+    "n_candidate_trades": 9606,
+    "n_skipped_overlap": 7431,
+    "total_trades": 2175,
+    "win_rate": 0.49885057471264366,
+    "final_equity": 60383432.266765475,
+    "net_pnl": 60373432.266765475,
+    "net_pnl_pct": 6037.343226676548,
+    "max_drawdown_pct": 0.1877379988268806,
+    "max_drawdown_dollar": 4237334.850814499,
+    "fixed_final_equity": 99600.0,
+    "fixed_net_pnl": 89600.0,
+    "fixed_net_pnl_pct": 8.96,
+    "fixed_max_drawdown_pct": 0.08852459016393442,
+    "fixed_max_drawdown_dollar": 2050.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1086,
+        "pnl": 30781248.396098252,
+        "win_rate": 0.5423572744014733
+      },
+      "ifvg": {
+        "n": 427,
+        "pnl": 16198256.87299857,
+        "win_rate": 0.5737704918032787
+      },
+      "ob": {
+        "n": 639,
+        "pnl": 11740641.457749901,
+        "win_rate": 0.3646322378716745
+      },
+      "trendline": {
+        "n": 23,
+        "pnl": 1653285.5399187282,
+        "win_rate": 0.782608695652174
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1666962.7232104088,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-17T16:00:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -628603.8213584239,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-24T00:00:00"
+    }
+  },
+  "USDMXN": {
+    "n_candidate_trades": 13895,
+    "n_skipped_overlap": 11516,
+    "total_trades": 2379,
+    "win_rate": 0.48255569567044976,
+    "final_equity": 91970460.40479274,
+    "net_pnl": 91960460.40479274,
+    "net_pnl_pct": 9196.046040479274,
+    "max_drawdown_pct": 0.16691499766421036,
+    "max_drawdown_dollar": 5919688.220557705,
+    "fixed_final_equity": 104150.0,
+    "fixed_net_pnl": 94150.0,
+    "fixed_net_pnl_pct": 9.415,
+    "fixed_max_drawdown_pct": 0.09782608695652174,
+    "fixed_max_drawdown_dollar": 1800.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1140,
+        "pnl": 49199998.06254058,
+        "win_rate": 0.5342105263157895
+      },
+      "ifvg": {
+        "n": 421,
+        "pnl": 8683171.902801642,
+        "win_rate": 0.5320665083135392
+      },
+      "ob": {
+        "n": 781,
+        "pnl": 35666004.66021394,
+        "win_rate": 0.37516005121638923
+      },
+      "trendline": {
+        "n": 37,
+        "pnl": -1588714.2207635147,
+        "win_rate": 0.5945945945945946
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 2738253.5534927826,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-18T09:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -949275.1314122666,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-04T10:30:00"
+    }
+  },
+  "USDNOK": {
+    "n_candidate_trades": 12689,
+    "n_skipped_overlap": 10367,
+    "total_trades": 2322,
+    "win_rate": 0.46382428940568476,
+    "final_equity": 21849497.257808328,
+    "net_pnl": 21839497.257808328,
+    "net_pnl_pct": 2183.949725780833,
+    "max_drawdown_pct": 0.25671819076600244,
+    "max_drawdown_dollar": 1415620.8907928132,
+    "fixed_final_equity": 89650.0,
+    "fixed_net_pnl": 79650.0,
+    "fixed_net_pnl_pct": 7.965,
+    "fixed_max_drawdown_pct": 0.09956709956709957,
+    "fixed_max_drawdown_dollar": 2900.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1107,
+        "pnl": 8550664.173696019,
+        "win_rate": 0.4977416440831075
+      },
+      "ifvg": {
+        "n": 406,
+        "pnl": 3325259.070596386,
+        "win_rate": 0.5517241379310345
+      },
+      "ob": {
+        "n": 774,
+        "pnl": 9404018.902946223,
+        "win_rate": 0.355297157622739
+      },
+      "trendline": {
+        "n": 35,
+        "pnl": 559555.1105696968,
+        "win_rate": 0.7714285714285715
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 628533.2922511131,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-17T11:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -222931.30555870142,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-30T09:00:00"
+    }
+  },
+  "USDPLN": {
+    "n_candidate_trades": 13247,
+    "n_skipped_overlap": 11058,
+    "total_trades": 2189,
+    "win_rate": 0.49748743718592964,
+    "final_equity": 119524237.01060688,
+    "net_pnl": 119514237.01060688,
+    "net_pnl_pct": 11951.423701060688,
+    "max_drawdown_pct": 0.19027213177874155,
+    "max_drawdown_dollar": 14172735.079428554,
+    "fixed_final_equity": 106600.0,
+    "fixed_net_pnl": 96600.0,
+    "fixed_net_pnl_pct": 9.66,
+    "fixed_max_drawdown_pct": 0.08,
+    "fixed_max_drawdown_dollar": 2100.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1019,
+        "pnl": 44432814.71622764,
+        "win_rate": 0.5338567222767419
+      },
+      "ifvg": {
+        "n": 408,
+        "pnl": 26752408.02239674,
+        "win_rate": 0.5980392156862745
+      },
+      "ob": {
+        "n": 729,
+        "pnl": 49077256.52727707,
+        "win_rate": 0.3868312757201646
+      },
+      "trendline": {
+        "n": 33,
+        "pnl": -748242.2552946298,
+        "win_rate": 0.5757575757575758
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 3481288.456619618,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-18T16:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1138010.67523769,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-17T06:00:00"
+    }
+  },
+  "USDSEK": {
+    "n_candidate_trades": 13046,
+    "n_skipped_overlap": 10950,
+    "total_trades": 2096,
+    "win_rate": 0.48139312977099236,
+    "final_equity": 17673561.509742115,
+    "net_pnl": 17663561.509742115,
+    "net_pnl_pct": 1766.3561509742115,
+    "max_drawdown_pct": 0.19525924751060944,
+    "max_drawdown_dollar": 1083482.9494349416,
+    "fixed_final_equity": 87200.0,
+    "fixed_net_pnl": 77200.0,
+    "fixed_net_pnl_pct": 7.72,
+    "fixed_max_drawdown_pct": 0.0398406374501992,
+    "fixed_max_drawdown_dollar": 2150.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1005,
+        "pnl": 8317575.310194779,
+        "win_rate": 0.5303482587064676
+      },
+      "ifvg": {
+        "n": 417,
+        "pnl": 3607821.201013577,
+        "win_rate": 0.5683453237410072
+      },
+      "ob": {
+        "n": 655,
+        "pnl": 5172085.41897923,
+        "win_rate": 0.3450381679389313
+      },
+      "trendline": {
+        "n": 19,
+        "pnl": 566079.5795545505,
+        "win_rate": 0.6842105263157895
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 519963.5630992091,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-19T10:00:00"
+    },
+    "worst_trade": {
+      "module": "ob",
+      "pnl": -178520.82333072845,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-29T01:00:00"
+    }
+  },
+  "USDSGD": {
+    "n_candidate_trades": 12141,
+    "n_skipped_overlap": 9596,
+    "total_trades": 2545,
+    "win_rate": 0.5009823182711198,
+    "final_equity": 118302901.04594496,
+    "net_pnl": 118292901.04594496,
+    "net_pnl_pct": 11829.290104594496,
+    "max_drawdown_pct": 0.1501320432125874,
+    "max_drawdown_dollar": 9115896.263875335,
+    "fixed_final_equity": 106550.0,
+    "fixed_net_pnl": 96550.0,
+    "fixed_net_pnl_pct": 9.655,
+    "fixed_max_drawdown_pct": 0.10158730158730159,
+    "fixed_max_drawdown_dollar": 1600.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1386,
+        "pnl": 71475328.74412869,
+        "win_rate": 0.5447330447330447
+      },
+      "ifvg": {
+        "n": 533,
+        "pnl": 9880721.156689119,
+        "win_rate": 0.551594746716698
+      },
+      "ob": {
+        "n": 594,
+        "pnl": 36772298.62701727,
+        "win_rate": 0.35353535353535354
+      },
+      "trendline": {
+        "n": 32,
+        "pnl": 164552.51810992789,
+        "win_rate": 0.5
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 3378408.3789139898,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T09:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1194978.7984438885,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-31T17:30:00"
+    }
+  },
+  "USDTRY": {
+    "n_candidate_trades": 9278,
+    "n_skipped_overlap": 8160,
+    "total_trades": 1118,
+    "win_rate": 0.37835420393559926,
+    "final_equity": 53381.12204577938,
+    "net_pnl": 43381.12204577938,
+    "net_pnl_pct": 4.338112204577938,
+    "max_drawdown_pct": 0.25187328972494943,
+    "max_drawdown_dollar": 7948.198453001227,
+    "fixed_final_equity": 28100.0,
+    "fixed_net_pnl": 18100.0,
+    "fixed_net_pnl_pct": 1.81,
+    "fixed_max_drawdown_pct": 0.135678391959799,
+    "fixed_max_drawdown_dollar": 2800.0,
+    "module_summary": {
+      "fvg": {
+        "n": 420,
+        "pnl": -810.4779775917278,
+        "win_rate": 0.4023809523809524
+      },
+      "ifvg": {
+        "n": 170,
+        "pnl": 14062.601420389452,
+        "win_rate": 0.5352941176470588
+      },
+      "ob": {
+        "n": 522,
+        "pnl": 29098.726892935058,
+        "win_rate": 0.3065134099616858
+      },
+      "trendline": {
+        "n": 6,
+        "pnl": 1030.271710046686,
+        "win_rate": 0.5
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1586.9515605725223,
+      "r_multiple": 3.0,
+      "fill_time": "2025-03-17T16:00:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -555.7083465897321,
+      "r_multiple": -1.0,
+      "fill_time": "2025-03-18T11:30:00"
+    }
+  },
+  "USDZAR": {
+    "n_candidate_trades": 12709,
+    "n_skipped_overlap": 10414,
+    "total_trades": 2295,
+    "win_rate": 0.48366013071895425,
+    "final_equity": 36461956.43510929,
+    "net_pnl": 36451956.43510929,
+    "net_pnl_pct": 3645.1956435109287,
+    "max_drawdown_pct": 0.1499999976167846,
+    "max_drawdown_dollar": 2115995.804484844,
+    "fixed_final_equity": 94650.0,
+    "fixed_net_pnl": 84650.0,
+    "fixed_net_pnl_pct": 8.465,
+    "fixed_max_drawdown_pct": 0.05964912280701754,
+    "fixed_max_drawdown_dollar": 1600.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1177,
+        "pnl": 18976156.20893454,
+        "win_rate": 0.5131690739167375
+      },
+      "ifvg": {
+        "n": 428,
+        "pnl": 8774171.196764674,
+        "win_rate": 0.5911214953271028
+      },
+      "ob": {
+        "n": 674,
+        "pnl": 7092347.077899024,
+        "win_rate": 0.3560830860534125
+      },
+      "trendline": {
+        "n": 16,
+        "pnl": 1609281.951511053,
+        "win_rate": 0.8125
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 1061998.7311196881,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-31T09:30:00"
+    },
+    "worst_trade": {
+      "module": "ifvg",
+      "pnl": -357575.3303433293,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-30T20:30:00"
+    }
+  },
+  "WTI": {
+    "n_candidate_trades": 11344,
+    "n_skipped_overlap": 8813,
+    "total_trades": 2531,
+    "win_rate": 0.49901224812327144,
+    "final_equity": 282014410.55680144,
+    "net_pnl": 282004410.55680144,
+    "net_pnl_pct": 28200.441055680145,
+    "max_drawdown_pct": 0.16642149418141072,
+    "max_drawdown_dollar": 18368110.19051987,
+    "fixed_final_equity": 115450.0,
+    "fixed_net_pnl": 105450.0,
+    "fixed_net_pnl_pct": 10.545,
+    "fixed_max_drawdown_pct": 0.05698005698005698,
+    "fixed_max_drawdown_dollar": 1800.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1249,
+        "pnl": 86392739.09921294,
+        "win_rate": 0.5364291433146517
+      },
+      "ifvg": {
+        "n": 491,
+        "pnl": 52203309.83617921,
+        "win_rate": 0.5845213849287169
+      },
+      "ob": {
+        "n": 742,
+        "pnl": 139740424.57004723,
+        "win_rate": 0.3706199460916442
+      },
+      "trendline": {
+        "n": 49,
+        "pnl": 3667937.051362152,
+        "win_rate": 0.6326530612244898
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 8110792.27339858,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-14T04:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -2880632.8348584734,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-26T17:30:00"
+    }
+  },
+  "XLMUSD": {
+    "n_candidate_trades": 12041,
+    "n_skipped_overlap": 9401,
+    "total_trades": 2640,
+    "win_rate": 0.48787878787878786,
+    "final_equity": 173393313.14713758,
+    "net_pnl": 173383313.14713758,
+    "net_pnl_pct": 17338.33131471376,
+    "max_drawdown_pct": 0.23316141512902264,
+    "max_drawdown_dollar": 9314447.786694765,
+    "fixed_final_equity": 110650.0,
+    "fixed_net_pnl": 100650.0,
+    "fixed_net_pnl_pct": 10.065,
+    "fixed_max_drawdown_pct": 0.06472081218274112,
+    "fixed_max_drawdown_dollar": 2550.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1335,
+        "pnl": 68146775.16865963,
+        "win_rate": 0.5280898876404494
+      },
+      "ifvg": {
+        "n": 535,
+        "pnl": 47365338.85717289,
+        "win_rate": 0.5046728971962616
+      },
+      "ob": {
+        "n": 707,
+        "pnl": 51748858.092480585,
+        "win_rate": 0.38189533239038187
+      },
+      "trendline": {
+        "n": 63,
+        "pnl": 6122341.028824488,
+        "win_rate": 0.6825396825396826
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 5310561.003997391,
+      "r_multiple": 3.0,
+      "fill_time": "2025-12-18T04:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1823292.6113724376,
+      "r_multiple": -1.0,
+      "fill_time": "2025-12-18T06:00:00"
+    }
+  },
+  "XRPUSD": {
+    "n_candidate_trades": 12912,
+    "n_skipped_overlap": 10568,
+    "total_trades": 2344,
+    "win_rate": 0.4970136518771331,
+    "final_equity": 171744264.38161287,
+    "net_pnl": 171734264.38161287,
+    "net_pnl_pct": 17173.42643816129,
+    "max_drawdown_pct": 0.13609333595161713,
+    "max_drawdown_dollar": 8533945.428099364,
+    "fixed_final_equity": 110350.0,
+    "fixed_net_pnl": 100350.0,
+    "fixed_net_pnl_pct": 10.035,
+    "fixed_max_drawdown_pct": 0.04918032786885246,
+    "fixed_max_drawdown_dollar": 1450.0,
+    "module_summary": {
+      "fvg": {
+        "n": 1072,
+        "pnl": 67184193.44441812,
+        "win_rate": 0.5270522388059702
+      },
+      "ifvg": {
+        "n": 476,
+        "pnl": 56422696.63086883,
+        "win_rate": 0.5966386554621849
+      },
+      "ob": {
+        "n": 731,
+        "pnl": 45855941.57118761,
+        "win_rate": 0.3789329685362517
+      },
+      "trendline": {
+        "n": 65,
+        "pnl": 2271432.7351382277,
+        "win_rate": 0.6
+      }
+    },
+    "best_trade": {
+      "module": "ob",
+      "pnl": 4954088.932418421,
+      "r_multiple": 3.0,
+      "fill_time": "2025-11-16T20:00:00"
+    },
+    "worst_trade": {
+      "module": "fvg",
+      "pnl": -1752313.6861709303,
+      "r_multiple": -1.0,
+      "fill_time": "2025-11-17T16:30:00"
+    }
+  }
+}

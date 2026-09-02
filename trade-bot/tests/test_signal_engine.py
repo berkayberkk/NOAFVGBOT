@@ -1,17 +1,21 @@
 """
 Sinyal Motoru Entegrasyon Testleri (Integration Tests for strategy/signal_engine.py).
+
+2026-09-02 tamamen yeniden yazıldı -- eski A+/trend-filtreli tasarım
+kaldırıldığı için (bkz. modül docstring'i), her testin amacı artık
+"generate_signals doğru modülü tetikliyor mu VE bu oturumda kalibre
+edilen resmi parametreleri (MODULE_R_MULTIPLE/MODULE_SL_BUFFER_RATIO/
+BREAKEVEN_TRIGGER_PCT) doğru uyguluyor mu" sorusuna cevap veriyor --
+tespit doğruluğunun kendisi zaten strategy/fvg.py, ifvg.py,
+order_block.py, trendline.py'nin kendi birim testlerinde kanıtlanmış.
 """
 
+from dataclasses import replace
 from datetime import datetime, timedelta
 import pytest
 
-from strategy.signal_engine import (
-    generate_signals,
-    SignalType,
-    Confidence,
-    SetupType,
-    Signal,
-)
+from strategy.signal_engine import generate_signals, SignalType, Confidence, SetupType
+from strategy.config import DEFAULT_CONFIG
 
 
 def _make_dummy_candles(ohlc_list: list[tuple[float, float, float, float]]) -> list[dict]:
@@ -20,96 +24,113 @@ def _make_dummy_candles(ohlc_list: list[tuple[float, float, float, float]]) -> l
     for i, (o, h, l, c) in enumerate(ohlc_list):
         candles.append({
             "time": base_time + timedelta(minutes=30 * i),
-            "open": o,
-            "high": h,
-            "low": l,
-            "close": c,
-            "tick_volume": 100,
-            "spread": 10,
+            "open": o, "high": h, "low": l, "close": c,
+            "tick_volume": 100, "spread": 10,
         })
     return candles
 
 
-def test_aplus_confluence_signal_generation():
-    candles_data = [(100.0 + i * 0.01, 100.25 + i * 0.01, 99.75 + i * 0.01, 100.0 + i * 0.01) for i in range(60)]
-    candles_data[10] = (100.0, 110.0, 102.0, 105.0)
-    candles_data[20] = (100.0, 100.0, 90.0, 95.0)
-    candles_data[30] = (105.0, 120.0, 105.0, 115.0)
-    candles_data[40] = (100.0, 100.0, 95.0, 98.0)
-
-    # idx49: OB mumu -- impuls (idx51, bullish) mumundan hemen once son ZIT
-    # (bearish) mum, govdesi [100.9, 101.3] -- FVG zonuyla [101.0, 102.0]
-    # cakisiyor (standart "son zit mum" OB tanimi, bkz. strategy/order_block.py).
-    # idx50 (c1, FVG'nin ilk mumu) kasitli olarak impuls ile AYNI yonde
-    # (bullish) -- OB aramasinda atlanmali -- VE kapanisi OB.bottom'un
-    # (100.9) altina dusmemeli, yoksa OB impuls gelmeden erken gecersiz olur.
-    candles_data[49] = (101.3, 101.35, 100.85, 100.9)
-    candles_data[50] = (100.9, 101.0, 99.5, 100.95)   # c1 high = 101.0
-    candles_data[51] = (100.95, 103.0, 100.5, 102.8)  # c2 -- impuls (displacement) mumu
-    candles_data[52] = (102.8, 104.0, 102.0, 103.5)   # c3 low = 102.0 -> FVG zone [101.0, 102.0]
-    for i in range(53, 60):
-        candles_data[i] = (103.0 + i * 0.1, 104.0 + i * 0.1, 102.5, 103.5)
-
-    candles = _make_dummy_candles(candles_data)
+def test_fvg_signal_uses_official_r_multiple_and_sl_buffer():
+    # test_fvg.py::test_bullish_fvg_detection ile ayni FVG (top=102.0, bottom=101.0).
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 14
+    fvg = [
+        (100.0, 101.0, 99.0, 100.5),
+        (101.0, 103.0, 100.5, 102.8),
+        (102.8, 104.0, 102.0, 103.5),
+    ]
+    candles = _make_dummy_candles(neutral + fvg)
     signals = generate_signals(candles)
 
-    aplus_signals = [s for s in signals if s.setup_type == SetupType.A_PLUS]
-    assert len(aplus_signals) >= 1
+    fvg_signals = [s for s in signals if s.setup_type == SetupType.FVG_ONLY]
+    assert len(fvg_signals) == 1
+    s = fvg_signals[0]
+    assert s.index == 16
+    assert s.type == SignalType.BUY
+    assert s.confidence == Confidence.MEDIUM
+    assert s.entry == 101.0
+    assert s.stop_loss == 100.0        # bottom(101.0) - gap(1.0)*SL_BUFFER_RATIO["fvg"](1.0)
+    assert s.take_profit == pytest.approx(102.5)  # entry + R(1.5)*risk(1.0)
+    assert s.breakeven_trigger_pct == 0.5           # "fvg" BREAKEVEN_ENABLED_MODULES icinde
 
-    sig = aplus_signals[0]
-    assert sig.type == SignalType.BUY
-    assert sig.confidence == Confidence.HIGH
-    assert sig.entry == 101.0
-    assert sig.stop_loss == 100.9  # OB govdesinin alt siniri (min(fvg.bottom, ob.bottom))
 
-
-def test_standalone_signals_confidence_cap():
-    candles_data = [(100.0 + i * 0.01, 100.25 + i * 0.01, 99.75 + i * 0.01, 100.0 + i * 0.01) for i in range(60)]
-    candles_data[10] = (100.0, 110.0, 102.0, 105.0)
-    candles_data[20] = (100.0, 100.0, 90.0, 95.0)
-    candles_data[30] = (105.0, 120.0, 105.0, 115.0)
-    candles_data[40] = (100.0, 100.0, 95.0, 98.0)
-
-    # Sadece Bullish FVG (c2 range = 0.8 < OB threshold, c3 idx 53 low=101.2 prevents 2nd FVG)
-    candles_data[50] = (100.0, 101.0, 99.5, 100.5)   # c1 high = 101.0
-    candles_data[51] = (101.0, 101.3, 100.5, 101.2)  # c2 range = 0.8 (NOT an OB)
-    candles_data[52] = (101.2, 103.5, 102.0, 103.0)  # c3 low = 102.0 -> Bullish FVG [101.0, 102.0]
-    candles_data[53] = (103.0, 104.0, 101.2, 103.5)
-    for i in range(54, 60):
-        candles_data[i] = (103.0 + i * 0.1, 104.0 + i * 0.1, 102.5, 103.5)
-
-    candles = _make_dummy_candles(candles_data)
+def test_ifvg_signal_uses_official_r_multiple_and_sl_buffer():
+    # test_ifvg.py::test_confirmed_ifvg_on_break_and_rejection ile ayni senaryo.
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 14
+    fvg = [
+        (100.0, 101.0, 99.0, 100.5),
+        (101.0, 103.0, 100.5, 102.8),
+        (102.8, 104.0, 102.0, 103.5),
+    ]
+    broken = [(100.9, 100.9, 99.5, 100.0)]
+    retest = [(100.0, 101.5, 99.8, 100.5)]
+    candles = _make_dummy_candles(neutral + fvg + broken + retest)
     signals = generate_signals(candles)
 
-    # idx10/20/30/40'taki dolgu mumları da (causal olarak, kendi oluştukları
-    # barda henüz dolmamış) ayrı, ilgisiz bir bearish FVG_ONLY sinyali
-    # üretiyor (idx32) -- testin asıl konusu olan bullish FVG'yi (idx52)
-    # yön filtresiyle izole ediyoruz.
-    fvg_signals = [s for s in signals if s.setup_type == SetupType.FVG_ONLY and s.type == SignalType.BUY]
-    assert len(fvg_signals) >= 1
-    assert fvg_signals[0].confidence == Confidence.MEDIUM
+    ifvg_signals = [s for s in signals if s.setup_type == SetupType.IFVG_ONLY]
+    assert len(ifvg_signals) == 1
+    s = ifvg_signals[0]
+    assert s.index == 18
+    assert s.type == SignalType.SELL   # bullish FVG asagi kirildi -> bearish reversal
+    assert s.entry == 101.5             # consequent_encroachment
+    assert s.stop_loss == 103.0          # top(102.0) + gap(1.0)*SL_BUFFER_RATIO["ifvg"](1.0)
+    assert s.take_profit == pytest.approx(99.25)  # entry - R(1.5)*risk(1.5)
+    assert s.breakeven_trigger_pct == 0.5
 
 
-def test_opposite_trend_signal_filtering():
-    candles_data = [(100.0 + i * 0.01, 100.1 + i * 0.01, 99.9 + i * 0.01, 100.0 + i * 0.01) for i in range(60)]
-    candles_data[10] = (115.0, 120.0, 112.0, 118.0)
-    candles_data[20] = (100.0, 100.0, 95.0, 98.0)
-    candles_data[30] = (105.0, 110.0, 105.0, 108.0)
-    candles_data[40] = (100.0, 100.0, 90.0, 92.0)
-    for i in range(41, 60):
-        candles_data[i] = (85.0, 86.0 - (i - 40) * 0.05, 75.0, 80.0)
-
-    candles_data[50] = (100.0, 101.0, 99.0, 100.5)
-    candles_data[51] = (101.0, 103.0, 100.5, 102.5)
-    candles_data[52] = (102.5, 104.0, 102.0, 103.5)
-
-    candles = _make_dummy_candles(candles_data)
+def test_ob_signal_uses_official_r_multiple_and_sl_buffer():
+    # test_order_block.py::test_bullish_order_block_detection ile ayni senaryo.
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 13
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]
+    impulse = [(99.5, 106.0, 99.4, 105.5)]
+    candles = _make_dummy_candles(neutral + last_opposite + impulse)
     signals = generate_signals(candles)
 
-    # idx30'daki dolgu mumu, düşüş trendi henüz kurulmadan (idx41+) önce
-    # kendi barında geçerli bir bullish OB oluşturuyor -- bu, testin konusu
-    # olan "kurulmuş düşüş trendine ters sinyal" durumu değil (o mum
-    # oluştuğunda trend henüz ters değil). Asıl kontrol, trend kurulduktan
-    # SONRAKİ barlarda BUY sinyali üretilmediği.
-    buy_signals = [s for s in signals if s.type == SignalType.BUY and s.index >= 41]
-    assert len(buy_signals) == 0
+    ob_signals = [s for s in signals if s.setup_type == SetupType.OB_ONLY]
+    assert len(ob_signals) == 1
+    s = ob_signals[0]
+    assert s.index == 14                 # ob.impulse_index -- ob.index DEGIL (bu oturumun kalibrasyonuyla uyumlu)
+    assert s.type == SignalType.BUY
+    assert s.entry == 100.0               # (top+bottom)/2 = (100.5+99.5)/2
+    assert s.stop_loss == 96.5             # bottom(99.5) - govde(1.0)*SL_BUFFER_RATIO["ob"](3.0)
+    assert s.take_profit == pytest.approx(110.5)  # entry + R(3.0)*risk(3.5)
+    assert s.breakeven_trigger_pct == 0.5
+
+
+def test_trendline_bounce_signal_breakeven_disabled():
+    # test_trendline.py::test_ascending_trendline_validated_on_third_touch
+    # tabanini (slope=0.2/bar) genisletip known_index'ten SONRA cizgiye
+    # geri donen bir "sicrama" (bounce) mumu ekliyor.
+    config = replace(DEFAULT_CONFIG, trendline_swing_lookback=3)
+    n = 35
+    data = []
+    for i in range(n):
+        low = 100.0 + 0.5 * i
+        high = low + 1.0
+        data.append((low + 0.3, high, low, low + 0.5))
+    data[10] = (100.2, 101.0, 100.0, 100.3)
+    data[20] = (102.2, 103.0, 102.0, 102.3)
+    data[30] = (104.2, 105.0, 104.0, 104.3)
+    data.append((105.0, 105.5, 104.8, 105.2))  # idx35 -- cizgiye donus (dokunus)
+    candles = _make_dummy_candles(data)
+
+    signals = generate_signals(candles, config=config)
+    tl_signals = [s for s in signals if s.setup_type == SetupType.TRENDLINE_ONLY]
+    assert len(tl_signals) == 1
+    s = tl_signals[0]
+    assert s.index == 34                # tetikleme bari (35) - 1 -- ayni barda dolum icin
+    assert s.type == SignalType.BUY
+    assert s.entry == 104.8              # dokunus barinin (idx35) low'u
+    assert s.breakeven_trigger_pct is None  # "trendline" BREAKEVEN_ENABLED_MODULES'ta yok
+
+
+def test_no_a_plus_signals_ever_generated():
+    # Confluence ablation (results/confluence_and_filters/) fayda bulamadi --
+    # A+ artik hicbir kosulda uretilmemeli, FVG+OB cakissa bile.
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 13
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]  # OB govdesi [99.5,100.5]
+    impulse = [(99.5, 106.0, 99.4, 105.5)]         # ayni zamanda FVG'yi tetikleyen guclu hareket
+    tail = [(105.5, 108.0, 104.0, 107.0), (107.0, 110.0, 106.5, 109.0)]
+    candles = _make_dummy_candles(neutral + last_opposite + impulse + tail)
+    signals = generate_signals(candles)
+
+    assert all(s.setup_type != SetupType.A_PLUS for s in signals)

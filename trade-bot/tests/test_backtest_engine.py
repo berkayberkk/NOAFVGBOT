@@ -573,3 +573,82 @@ def test_small_slippage_consumes_some_gap_improvement():
 
     assert len(res.trades) == 1
     assert res.trades[0].executed_entry == pytest.approx(99.70)
+
+
+# --- 2026-09-02: acik (explicit) take_profit + breakeven-stop testleri ---
+# (bkz. strategy/signal_engine.py -- artik FVG/iFVG/OB/Trendline kendi
+# resmi TP/breakeven parametrelerini Signal uzerinden bildiriyor)
+
+def test_explicit_take_profit_bypasses_support_resistance():
+    # S/R seviyesi kurulumu YOK (candles_data[5]/[15] atlaniyor) -- sinyal
+    # kendi take_profit'ini bildirdigi icin _find_take_profit hic cagrilmiyor.
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.FVG_ONLY,
+                    entry=100.0, stop_loss=98.0, take_profit=105.0, reason="explicit-tp")
+    candles_data[22] = (100.0, 106.0, 99.5, 105.5)
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    trade = result.trades[0]
+    assert trade.won is True
+    assert trade.exit_price == 105.0
+    assert trade.r_multiple == pytest.approx((105.0 - 100.0) / (100.0 - 98.0))
+
+
+def test_breakeven_arm_converts_reversal_to_zero_r():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.FVG_ONLY,
+                    entry=100.0, stop_loss=98.0, take_profit=106.0, breakeven_trigger_pct=0.5, reason="be")
+    # idx21: dolum (arka plan, low=99.5<=100.0)
+    candles_data[22] = (100.0, 103.5, 99.8, 103.0)   # arm_level=103.0 asiliyor -- SL/TP vurulmuyor
+    candles_data[23] = (103.0, 103.2, 99.0, 99.5)     # geri donup ORIJINAL SL(98.0) yerine effective_sl(entry=100.0)'e takiliyor
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    trade = result.trades[0]
+    assert trade.won is False
+    assert trade.is_breakeven is True
+    assert trade.exit_price == 100.0          # entry'ye cekilmis effective_sl
+    assert trade.r_multiple == pytest.approx(0.0)
+
+
+def test_breakeven_not_armed_when_arm_level_never_reached():
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.FVG_ONLY,
+                    entry=100.0, stop_loss=98.0, take_profit=106.0, breakeven_trigger_pct=0.5, reason="be")
+    candles_data[22] = (100.0, 101.0, 99.7, 100.5)    # arm_level(103.0)'e ulasmiyor
+    candles_data[23] = (100.5, 100.6, 97.5, 98.0)      # dogrudan ORIJINAL SL(98.0)'e takiliyor
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    trade = result.trades[0]
+    assert trade.won is False
+    assert trade.is_breakeven is False
+    assert trade.exit_price == 98.0
+    assert trade.r_multiple == pytest.approx(-1.0)
+
+
+def test_no_breakeven_when_trigger_pct_is_none():
+    # breakeven_trigger_pct verilmediyse (varsayilan None) -- arm hic olmaz,
+    # arm seviyesini asan bir hareket sonrasi bile orijinal SL'e takilir.
+    candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
+    signal = Signal(index=20, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.FVG_ONLY,
+                    entry=100.0, stop_loss=98.0, take_profit=106.0, reason="no-be")
+    candles_data[22] = (100.0, 103.5, 99.8, 103.0)     # breakeven acik olsaydi arm olurdu -- ama kapali
+    candles_data[23] = (103.0, 103.2, 99.0, 99.5)       # orijinal SL(98.0)'e HENUZ ulasmiyor (low=99.0)
+    candles_data[24] = (99.5, 99.6, 97.5, 98.0)          # simdi orijinal SL(98.0)'e takiliyor
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    trade = result.trades[0]
+    assert trade.is_breakeven is False
+    assert trade.exit_price == 98.0
+    assert trade.r_multiple == pytest.approx(-1.0)

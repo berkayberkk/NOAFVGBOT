@@ -1,0 +1,6832 @@
+{
+  "ADAUSD": {
+    "M30": {
+      "n": 5005,
+      "wins": 856,
+      "losses": 4149,
+      "win_rate": 0.17102897102897102,
+      "total_r": 397.4453796807977,
+      "expectancy_r": 0.07940966626988955,
+      "profit_factor": 1.0957930536709561,
+      "avg_target_r": 5.3112679669168195,
+      "n_skipped_no_liquidity": 200
+    },
+    "H1": {
+      "n": 2265,
+      "wins": 358,
+      "losses": 1907,
+      "win_rate": 0.15805739514348785,
+      "total_r": -208.4417696171928,
+      "expectancy_r": -0.0920272713541691,
+      "profit_factor": 0.8906965025604652,
+      "avg_target_r": 4.744576062521808,
+      "n_skipped_no_liquidity": 114
+    },
+    "H2": {
+      "n": 1101,
+      "wins": 202,
+      "losses": 899,
+      "win_rate": 0.18346957311534967,
+      "total_r": 61.630538376275595,
+      "expectancy_r": 0.055976874092893314,
+      "profit_factor": 1.0685545476932987,
+      "avg_target_r": 4.755596724635027,
+      "n_skipped_no_liquidity": 64
+    },
+    "H4": {
+      "n": 565,
+      "wins": 96,
+      "losses": 469,
+      "win_rate": 0.16991150442477876,
+      "total_r": -32.9557684449913,
+      "expectancy_r": -0.0583287937079493,
+      "profit_factor": 0.929731837004283,
+      "avg_target_r": 4.54212741203134,
+      "n_skipped_no_liquidity": 33
+    },
+    "D1": {
+      "n": 91,
+      "wins": 12,
+      "losses": 79,
+      "win_rate": 0.13186813186813187,
+      "total_r": -5.2051076533119,
+      "expectancy_r": -0.05719898520122968,
+      "profit_factor": 0.9341125613504823,
+      "avg_target_r": 6.149574362224008,
+      "n_skipped_no_liquidity": 10
+    },
+    "W1": {
+      "n": 8,
+      "wins": 1,
+      "losses": 7,
+      "win_rate": 0.125,
+      "total_r": 7.704610951008661,
+      "expectancy_r": 0.9630763688760826,
+      "profit_factor": 2.1006587072869514,
+      "avg_target_r": 14.704610951008661,
+      "n_skipped_no_liquidity": 3
+    }
+  },
+  "ATOMUSD": {
+    "M30": {
+      "n": 5208,
+      "wins": 799,
+      "losses": 4409,
+      "win_rate": 0.1534178187403994,
+      "total_r": -122.90986598191857,
+      "expectancy_r": -0.023600204681627934,
+      "profit_factor": 0.9721229607661787,
+      "avg_target_r": 5.364318065103982,
+      "n_skipped_no_liquidity": 215
+    },
+    "H1": {
+      "n": 2409,
+      "wins": 397,
+      "losses": 2012,
+      "win_rate": 0.16479867164798673,
+      "total_r": -3.9636548743205635,
+      "expectancy_r": -0.0016453527913325994,
+      "profit_factor": 0.9980299926071965,
+      "avg_target_r": 5.058026058251082,
+      "n_skipped_no_liquidity": 92
+    },
+    "H2": {
+      "n": 1219,
+      "wins": 210,
+      "losses": 1009,
+      "win_rate": 0.1722723543888433,
+      "total_r": 73.24645686241604,
+      "expectancy_r": 0.060087331306329705,
+      "profit_factor": 1.0725931187932765,
+      "avg_target_r": 5.153554556487695,
+      "n_skipped_no_liquidity": 44
+    },
+    "H4": {
+      "n": 581,
+      "wins": 109,
+      "losses": 472,
+      "win_rate": 0.18760757314974183,
+      "total_r": 38.041716687527945,
+      "expectancy_r": 0.06547627657061617,
+      "profit_factor": 1.0805968573888303,
+      "avg_target_r": 4.679281804472733,
+      "n_skipped_no_liquidity": 33
+    },
+    "D1": {
+      "n": 98,
+      "wins": 20,
+      "losses": 78,
+      "win_rate": 0.20408163265306123,
+      "total_r": 11.9279093039918,
+      "expectancy_r": 0.12171336024481427,
+      "profit_factor": 1.152921914153741,
+      "avg_target_r": 4.49639546519959,
+      "n_skipped_no_liquidity": 20
+    },
+    "W1": {
+      "n": 11,
+      "wins": 4,
+      "losses": 7,
+      "win_rate": 0.36363636363636365,
+      "total_r": 9.766795318069676,
+      "expectancy_r": 0.8878904834608797,
+      "profit_factor": 2.395256474009954,
+      "avg_target_r": 4.191698829517419,
+      "n_skipped_no_liquidity": 5
+    }
+  },
+  "AUDCAD": {
+    "M30": {
+      "n": 9996,
+      "wins": 1671,
+      "losses": 8325,
+      "win_rate": 0.16716686674669867,
+      "total_r": -160.57648752957817,
+      "expectancy_r": -0.016064074382710958,
+      "profit_factor": 0.9807115330294801,
+      "avg_target_r": 4.885950635829097,
+      "n_skipped_no_liquidity": 273
+    },
+    "H1": {
+      "n": 4903,
+      "wins": 874,
+      "losses": 4029,
+      "win_rate": 0.17825820925963695,
+      "total_r": 294.64108545352406,
+      "expectancy_r": 0.06009404149572184,
+      "profit_factor": 1.073130078295737,
+      "avg_target_r": 4.946957763676801,
+      "n_skipped_no_liquidity": 124
+    },
+    "H2": {
+      "n": 2793,
+      "wins": 484,
+      "losses": 2309,
+      "win_rate": 0.17329036877909057,
+      "total_r": -15.790987854860223,
+      "expectancy_r": -0.005653772951973002,
+      "profit_factor": 0.9931611139649804,
+      "avg_target_r": 4.738035149060206,
+      "n_skipped_no_liquidity": 78
+    },
+    "H4": {
+      "n": 1479,
+      "wins": 248,
+      "losses": 1231,
+      "win_rate": 0.16768086544962812,
+      "total_r": -114.66876061359206,
+      "expectancy_r": -0.07753127830533602,
+      "profit_factor": 0.9068490977956198,
+      "avg_target_r": 4.501335642687129,
+      "n_skipped_no_liquidity": 43
+    },
+    "D1": {
+      "n": 214,
+      "wins": 39,
+      "losses": 175,
+      "win_rate": 0.1822429906542056,
+      "total_r": 36.99103560109568,
+      "expectancy_r": 0.17285530654717607,
+      "profit_factor": 1.2113773462919755,
+      "avg_target_r": 5.4356675795152745,
+      "n_skipped_no_liquidity": 17
+    },
+    "W1": {
+      "n": 28,
+      "wins": 5,
+      "losses": 23,
+      "win_rate": 0.17857142857142858,
+      "total_r": -0.38085628766982627,
+      "expectancy_r": -0.013602010273922271,
+      "profit_factor": 0.9834410309708772,
+      "avg_target_r": 4.523828742466035,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "AUDCHF": {
+    "M30": {
+      "n": 11284,
+      "wins": 1803,
+      "losses": 9481,
+      "win_rate": 0.1597837646224743,
+      "total_r": -497.5639270783925,
+      "expectancy_r": -0.04409464082580583,
+      "profit_factor": 0.9475198895603426,
+      "avg_target_r": 4.982493662186139,
+      "n_skipped_no_liquidity": 381
+    },
+    "H1": {
+      "n": 5559,
+      "wins": 964,
+      "losses": 4595,
+      "win_rate": 0.17341248425975894,
+      "total_r": 204.81467792023153,
+      "expectancy_r": 0.03684379887034206,
+      "profit_factor": 1.0445733793079939,
+      "avg_target_r": 4.9790608692118585,
+      "n_skipped_no_liquidity": 183
+    },
+    "H2": {
+      "n": 3110,
+      "wins": 557,
+      "losses": 2553,
+      "win_rate": 0.17909967845659164,
+      "total_r": 200.55631141679106,
+      "expectancy_r": 0.06448755994109034,
+      "profit_factor": 1.0785571137551082,
+      "avg_target_r": 4.9435481353981885,
+      "n_skipped_no_liquidity": 103
+    },
+    "H4": {
+      "n": 1613,
+      "wins": 250,
+      "losses": 1363,
+      "win_rate": 0.15499070055796652,
+      "total_r": -120.60745578081598,
+      "expectancy_r": -0.07477213625593071,
+      "profit_factor": 0.9115132386054174,
+      "avg_target_r": 4.9695701768767355,
+      "n_skipped_no_liquidity": 71
+    },
+    "D1": {
+      "n": 257,
+      "wins": 33,
+      "losses": 224,
+      "win_rate": 0.12840466926070038,
+      "total_r": -73.06931269221971,
+      "expectancy_r": -0.2843163917985203,
+      "profit_factor": 0.6737977111954477,
+      "avg_target_r": 4.573657191144857,
+      "n_skipped_no_liquidity": 26
+    },
+    "W1": {
+      "n": 34,
+      "wins": 5,
+      "losses": 29,
+      "win_rate": 0.14705882352941177,
+      "total_r": -8.19083175586751,
+      "expectancy_r": -0.24090681634904432,
+      "profit_factor": 0.7175575256597411,
+      "avg_target_r": 4.161833648826498,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "AUDJPY": {
+    "M30": {
+      "n": 11960,
+      "wins": 2000,
+      "losses": 9960,
+      "win_rate": 0.16722408026755853,
+      "total_r": 107.41549373778999,
+      "expectancy_r": 0.008981228573393896,
+      "profit_factor": 1.010784688126284,
+      "avg_target_r": 5.033707746868895,
+      "n_skipped_no_liquidity": 414
+    },
+    "H1": {
+      "n": 5917,
+      "wins": 1003,
+      "losses": 4914,
+      "win_rate": 0.16951157681257395,
+      "total_r": 35.765659720350534,
+      "expectancy_r": 0.006044559695851048,
+      "profit_factor": 1.0072783190314103,
+      "avg_target_r": 4.934960777388186,
+      "n_skipped_no_liquidity": 193
+    },
+    "H2": {
+      "n": 3124,
+      "wins": 522,
+      "losses": 2602,
+      "win_rate": 0.16709346991037133,
+      "total_r": -155.37215584473944,
+      "expectancy_r": -0.04973500507193962,
+      "profit_factor": 0.9402874112818065,
+      "avg_target_r": 4.687026521370231,
+      "n_skipped_no_liquidity": 125
+    },
+    "H4": {
+      "n": 1637,
+      "wins": 267,
+      "losses": 1370,
+      "win_rate": 0.16310323762981063,
+      "total_r": -5.604023647240806,
+      "expectancy_r": -0.0034233498150524344,
+      "profit_factor": 0.9959094717903352,
+      "avg_target_r": 5.110097289710708,
+      "n_skipped_no_liquidity": 79
+    },
+    "D1": {
+      "n": 300,
+      "wins": 41,
+      "losses": 259,
+      "win_rate": 0.13666666666666666,
+      "total_r": 31.076163414144336,
+      "expectancy_r": 0.1035872113804811,
+      "profit_factor": 1.1199851869271982,
+      "avg_target_r": 7.07502837595474,
+      "n_skipped_no_liquidity": 18
+    },
+    "W1": {
+      "n": 50,
+      "wins": 11,
+      "losses": 39,
+      "win_rate": 0.22,
+      "total_r": 2.7295726180687505,
+      "expectancy_r": 0.05459145236137497,
+      "profit_factor": 1.0699890414889424,
+      "avg_target_r": 3.7935975107335227,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "AUDNZD": {
+    "M30": {
+      "n": 9080,
+      "wins": 1558,
+      "losses": 7522,
+      "win_rate": 0.17158590308370045,
+      "total_r": 60.45439135954735,
+      "expectancy_r": 0.006657972616690211,
+      "profit_factor": 1.0080370102844387,
+      "avg_target_r": 4.866787157483663,
+      "n_skipped_no_liquidity": 220
+    },
+    "H1": {
+      "n": 4515,
+      "wins": 823,
+      "losses": 3692,
+      "win_rate": 0.182281284606866,
+      "total_r": 295.27385510248513,
+      "expectancy_r": 0.06539841751993025,
+      "profit_factor": 1.0799766671458517,
+      "avg_target_r": 4.8448041981804195,
+      "n_skipped_no_liquidity": 119
+    },
+    "H2": {
+      "n": 2483,
+      "wins": 435,
+      "losses": 2048,
+      "win_rate": 0.1751913008457511,
+      "total_r": -3.7835601525806157,
+      "expectancy_r": -0.001523785804502853,
+      "profit_factor": 0.9981525585192478,
+      "avg_target_r": 4.699348137580275,
+      "n_skipped_no_liquidity": 80
+    },
+    "H4": {
+      "n": 1327,
+      "wins": 241,
+      "losses": 1086,
+      "win_rate": 0.1816126601356443,
+      "total_r": 154.79413394969922,
+      "expectancy_r": 0.11664968647302132,
+      "profit_factor": 1.1425360349444744,
+      "avg_target_r": 5.148523377384644,
+      "n_skipped_no_liquidity": 48
+    },
+    "D1": {
+      "n": 225,
+      "wins": 41,
+      "losses": 184,
+      "win_rate": 0.18222222222222223,
+      "total_r": 12.392312678019062,
+      "expectancy_r": 0.05507694523564044,
+      "profit_factor": 1.0673495254240166,
+      "avg_target_r": 4.790056406780953,
+      "n_skipped_no_liquidity": 14
+    },
+    "W1": {
+      "n": 36,
+      "wins": 5,
+      "losses": 31,
+      "win_rate": 0.1388888888888889,
+      "total_r": -4.7062889398096015,
+      "expectancy_r": -0.13073024832804447,
+      "profit_factor": 0.8481842277480774,
+      "avg_target_r": 5.25874221203808,
+      "n_skipped_no_liquidity": 11
+    }
+  },
+  "AUDUSD": {
+    "M30": {
+      "n": 13128,
+      "wins": 2126,
+      "losses": 11002,
+      "win_rate": 0.16194393662400974,
+      "total_r": -242.10856204583214,
+      "expectancy_r": -0.018442151283198815,
+      "profit_factor": 0.9779941317900533,
+      "avg_target_r": 5.061096631210803,
+      "n_skipped_no_liquidity": 394
+    },
+    "H1": {
+      "n": 6324,
+      "wins": 1067,
+      "losses": 5257,
+      "win_rate": 0.16872232764073372,
+      "total_r": 85.63014106166835,
+      "expectancy_r": 0.013540503014179084,
+      "profit_factor": 1.0162887846797923,
+      "avg_target_r": 5.007151022550767,
+      "n_skipped_no_liquidity": 198
+    },
+    "H2": {
+      "n": 3314,
+      "wins": 584,
+      "losses": 2730,
+      "win_rate": 0.17622208811104406,
+      "total_r": 113.36627590488655,
+      "expectancy_r": 0.03420829085844501,
+      "profit_factor": 1.0415261083900684,
+      "avg_target_r": 4.868777869700148,
+      "n_skipped_no_liquidity": 133
+    },
+    "H4": {
+      "n": 1663,
+      "wins": 265,
+      "losses": 1398,
+      "win_rate": 0.15935057125676488,
+      "total_r": -21.306344823679904,
+      "expectancy_r": -0.012811993279422618,
+      "profit_factor": 0.9847594099973678,
+      "avg_target_r": 5.195070396891774,
+      "n_skipped_no_liquidity": 92
+    },
+    "D1": {
+      "n": 299,
+      "wins": 65,
+      "losses": 234,
+      "win_rate": 0.21739130434782608,
+      "total_r": 86.97673581059142,
+      "expectancy_r": 0.29089209301201147,
+      "profit_factor": 1.3716954521820146,
+      "avg_target_r": 4.938103627855253,
+      "n_skipped_no_liquidity": 21
+    },
+    "W1": {
+      "n": 42,
+      "wins": 8,
+      "losses": 34,
+      "win_rate": 0.19047619047619047,
+      "total_r": 6.408993395291933,
+      "expectancy_r": 0.15259508084028395,
+      "profit_factor": 1.1884998057438803,
+      "avg_target_r": 5.051124174411491,
+      "n_skipped_no_liquidity": 14
+    }
+  },
+  "AUS200": {
+    "M30": {
+      "n": 5920,
+      "wins": 868,
+      "losses": 5052,
+      "win_rate": 0.14662162162162162,
+      "total_r": -63.18059622610396,
+      "expectancy_r": -0.010672398011166151,
+      "profit_factor": 0.9874939437398844,
+      "avg_target_r": 5.74748779236624,
+      "n_skipped_no_liquidity": 217
+    },
+    "H1": {
+      "n": 2477,
+      "wins": 383,
+      "losses": 2094,
+      "win_rate": 0.1546225272507065,
+      "total_r": -103.81221106321406,
+      "expectancy_r": -0.04191046066338888,
+      "profit_factor": 0.9504239679736323,
+      "avg_target_r": 5.196312764848005,
+      "n_skipped_no_liquidity": 109
+    },
+    "H2": {
+      "n": 1031,
+      "wins": 137,
+      "losses": 894,
+      "win_rate": 0.13288069835111543,
+      "total_r": -162.344808985483,
+      "expectancy_r": -0.15746344227495912,
+      "profit_factor": 0.818406253931227,
+      "avg_target_r": 5.340548839522022,
+      "n_skipped_no_liquidity": 54
+    },
+    "H4": {
+      "n": 306,
+      "wins": 38,
+      "losses": 268,
+      "win_rate": 0.12418300653594772,
+      "total_r": -39.481082604586064,
+      "expectancy_r": -0.1290231457666211,
+      "profit_factor": 0.8526825275948282,
+      "avg_target_r": 6.013655720931946,
+      "n_skipped_no_liquidity": 27
+    },
+    "D1": {
+      "n": 201,
+      "wins": 30,
+      "losses": 171,
+      "win_rate": 0.14925373134328357,
+      "total_r": -10.850919878095603,
+      "expectancy_r": -0.053984676010426,
+      "profit_factor": 0.9365443281982714,
+      "avg_target_r": 5.338302670730147,
+      "n_skipped_no_liquidity": 27
+    },
+    "W1": {
+      "n": 20,
+      "wins": 4,
+      "losses": 16,
+      "win_rate": 0.2,
+      "total_r": -1.0951771949187548,
+      "expectancy_r": -0.05475885974593775,
+      "profit_factor": 0.9315514253175778,
+      "avg_target_r": 3.7262057012703114,
+      "n_skipped_no_liquidity": 11
+    }
+  },
+  "AVAXUSD": {
+    "M30": {
+      "n": 4882,
+      "wins": 810,
+      "losses": 4072,
+      "win_rate": 0.16591560835723065,
+      "total_r": 170.5152857203876,
+      "expectancy_r": 0.03492734242531503,
+      "profit_factor": 1.0418750701670894,
+      "avg_target_r": 5.237673192247392,
+      "n_skipped_no_liquidity": 215
+    },
+    "H1": {
+      "n": 2122,
+      "wins": 354,
+      "losses": 1768,
+      "win_rate": 0.16682375117813383,
+      "total_r": 106.63574060970666,
+      "expectancy_r": 0.05025246965584662,
+      "profit_factor": 1.060314332924042,
+      "avg_target_r": 5.295581188163013,
+      "n_skipped_no_liquidity": 108
+    },
+    "H2": {
+      "n": 1029,
+      "wins": 149,
+      "losses": 880,
+      "win_rate": 0.14480077745383868,
+      "total_r": -179.22472658449922,
+      "expectancy_r": -0.17417368958649093,
+      "profit_factor": 0.7963355379721601,
+      "avg_target_r": 4.7031897544664485,
+      "n_skipped_no_liquidity": 49
+    },
+    "H4": {
+      "n": 476,
+      "wins": 78,
+      "losses": 398,
+      "win_rate": 0.1638655462184874,
+      "total_r": -10.036395606692714,
+      "expectancy_r": -0.021084864719942753,
+      "profit_factor": 0.9747829256113247,
+      "avg_target_r": 4.97389236401676,
+      "n_skipped_no_liquidity": 34
+    },
+    "D1": {
+      "n": 121,
+      "wins": 24,
+      "losses": 97,
+      "win_rate": 0.19834710743801653,
+      "total_r": 42.9680180183937,
+      "expectancy_r": 0.35510758692887356,
+      "profit_factor": 1.4429692579215847,
+      "avg_target_r": 5.8320007507664045,
+      "n_skipped_no_liquidity": 15
+    },
+    "W1": {
+      "n": 9,
+      "wins": 1,
+      "losses": 8,
+      "win_rate": 0.1111111111111111,
+      "total_r": -4.716287215411559,
+      "expectancy_r": -0.5240319128235065,
+      "profit_factor": 0.4104640980735551,
+      "avg_target_r": 3.283712784588441,
+      "n_skipped_no_liquidity": 3
+    }
+  },
+  "BCHUSD": {
+    "M30": {
+      "n": 7074,
+      "wins": 1144,
+      "losses": 5930,
+      "win_rate": 0.16171897087927622,
+      "total_r": -116.62948038298651,
+      "expectancy_r": -0.0164870625364697,
+      "profit_factor": 0.9803322967313681,
+      "avg_target_r": 5.081617587077809,
+      "n_skipped_no_liquidity": 249
+    },
+    "H1": {
+      "n": 3223,
+      "wins": 554,
+      "losses": 2669,
+      "win_rate": 0.17188954390319577,
+      "total_r": 281.45026591209984,
+      "expectancy_r": 0.08732555566618061,
+      "profit_factor": 1.1054515795849007,
+      "avg_target_r": 5.32572250164639,
+      "n_skipped_no_liquidity": 141
+    },
+    "H2": {
+      "n": 1591,
+      "wins": 282,
+      "losses": 1309,
+      "win_rate": 0.17724701445631677,
+      "total_r": 153.3072463049438,
+      "expectancy_r": 0.09635904858890243,
+      "profit_factor": 1.1171178352215003,
+      "avg_target_r": 5.185486689024624,
+      "n_skipped_no_liquidity": 76
+    },
+    "H4": {
+      "n": 843,
+      "wins": 132,
+      "losses": 711,
+      "win_rate": 0.15658362989323843,
+      "total_r": -79.19655726030315,
+      "expectancy_r": -0.09394609402171206,
+      "profit_factor": 0.8886124370459871,
+      "avg_target_r": 4.786389717724976,
+      "n_skipped_no_liquidity": 41
+    },
+    "D1": {
+      "n": 144,
+      "wins": 26,
+      "losses": 118,
+      "win_rate": 0.18055555555555555,
+      "total_r": 30.593101751918965,
+      "expectancy_r": 0.21245209549943733,
+      "profit_factor": 1.2592635741688047,
+      "avg_target_r": 5.7151192981507295,
+      "n_skipped_no_liquidity": 12
+    },
+    "W1": {
+      "n": 21,
+      "wins": 0,
+      "losses": 21,
+      "win_rate": 0.0,
+      "total_r": -21.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 12
+    }
+  },
+  "BRENT": {
+    "M30": {
+      "n": 6172,
+      "wins": 1026,
+      "losses": 5146,
+      "win_rate": 0.1662346079066753,
+      "total_r": 301.81417253468237,
+      "expectancy_r": 0.048900546424932356,
+      "profit_factor": 1.05865024728618,
+      "avg_target_r": 5.309760402080587,
+      "n_skipped_no_liquidity": 222
+    },
+    "H1": {
+      "n": 2932,
+      "wins": 488,
+      "losses": 2444,
+      "win_rate": 0.1664392905866303,
+      "total_r": 70.00938406374543,
+      "expectancy_r": 0.023877688971263855,
+      "profit_factor": 1.0286454108280465,
+      "avg_target_r": 5.151658573901118,
+      "n_skipped_no_liquidity": 125
+    },
+    "H2": {
+      "n": 1299,
+      "wins": 230,
+      "losses": 1069,
+      "win_rate": 0.17705927636643573,
+      "total_r": 138.58766772993508,
+      "expectancy_r": 0.1066879659198885,
+      "profit_factor": 1.1296423458652338,
+      "avg_target_r": 5.250381164043196,
+      "n_skipped_no_liquidity": 75
+    },
+    "H4": {
+      "n": 580,
+      "wins": 86,
+      "losses": 494,
+      "win_rate": 0.1482758620689655,
+      "total_r": -100.08892312332947,
+      "expectancy_r": -0.1725671088333267,
+      "profit_factor": 0.7973908438798998,
+      "avg_target_r": 4.580361359031053,
+      "n_skipped_no_liquidity": 41
+    },
+    "D1": {
+      "n": 164,
+      "wins": 22,
+      "losses": 142,
+      "win_rate": 0.13414634146341464,
+      "total_r": -23.17767932611996,
+      "expectancy_r": -0.14132731296414602,
+      "profit_factor": 0.8367769061540848,
+      "avg_target_r": 5.401014576085457,
+      "n_skipped_no_liquidity": 18
+    },
+    "W1": {
+      "n": 21,
+      "wins": 2,
+      "losses": 19,
+      "win_rate": 0.09523809523809523,
+      "total_r": -5.388874101676879,
+      "expectancy_r": -0.2566130524608038,
+      "profit_factor": 0.7163750472801642,
+      "avg_target_r": 6.80556294916156,
+      "n_skipped_no_liquidity": 10
+    }
+  },
+  "BTCUSD": {
+    "M30": {
+      "n": 6395,
+      "wins": 1026,
+      "losses": 5369,
+      "win_rate": 0.1604378420641126,
+      "total_r": -473.41964742323484,
+      "expectancy_r": -0.07402965557830088,
+      "profit_factor": 0.9118234964754638,
+      "avg_target_r": 4.771520811478329,
+      "n_skipped_no_liquidity": 350
+    },
+    "H1": {
+      "n": 3017,
+      "wins": 491,
+      "losses": 2526,
+      "win_rate": 0.16274444812727876,
+      "total_r": -301.25702397028317,
+      "expectancy_r": -0.09985317334116117,
+      "profit_factor": 0.8807375202017881,
+      "avg_target_r": 4.531044757697997,
+      "n_skipped_no_liquidity": 178
+    },
+    "H2": {
+      "n": 1655,
+      "wins": 274,
+      "losses": 1381,
+      "win_rate": 0.16555891238670695,
+      "total_r": -167.64040091957654,
+      "expectancy_r": -0.1012932936069949,
+      "profit_factor": 0.8786094128026238,
+      "avg_target_r": 4.428319704673078,
+      "n_skipped_no_liquidity": 113
+    },
+    "H4": {
+      "n": 920,
+      "wins": 149,
+      "losses": 771,
+      "win_rate": 0.16195652173913044,
+      "total_r": -107.75897997162005,
+      "expectancy_r": -0.1171293260561087,
+      "profit_factor": 0.8602347860290271,
+      "avg_target_r": 4.451282013613288,
+      "n_skipped_no_liquidity": 90
+    },
+    "D1": {
+      "n": 187,
+      "wins": 22,
+      "losses": 165,
+      "win_rate": 0.11764705882352941,
+      "total_r": -49.77911618126263,
+      "expectancy_r": -0.26619848225274134,
+      "profit_factor": 0.6983083867802264,
+      "avg_target_r": 5.237312900851698,
+      "n_skipped_no_liquidity": 39
+    },
+    "W1": {
+      "n": 31,
+      "wins": 4,
+      "losses": 27,
+      "win_rate": 0.12903225806451613,
+      "total_r": -16.07831616045436,
+      "expectancy_r": -0.5186553600146568,
+      "profit_factor": 0.40450680887206075,
+      "avg_target_r": 2.73042095988641,
+      "n_skipped_no_liquidity": 17
+    }
+  },
+  "CA60": {
+    "M30": {
+      "n": 2106,
+      "wins": 279,
+      "losses": 1827,
+      "win_rate": 0.13247863247863248,
+      "total_r": -220.4766922015875,
+      "expectancy_r": -0.10468978737017443,
+      "profit_factor": 0.8793231022432472,
+      "avg_target_r": 5.758148056625135,
+      "n_skipped_no_liquidity": 200
+    },
+    "H1": {
+      "n": 1047,
+      "wins": 136,
+      "losses": 911,
+      "win_rate": 0.12989493791786055,
+      "total_r": -135.52196067023607,
+      "expectancy_r": -0.12943835785122837,
+      "profit_factor": 0.85123824295254,
+      "avg_target_r": 5.7020444068364995,
+      "n_skipped_no_liquidity": 129
+    },
+    "H2": {
+      "n": 407,
+      "wins": 46,
+      "losses": 361,
+      "win_rate": 0.11302211302211303,
+      "total_r": -26.53624404846212,
+      "expectancy_r": -0.06519961682668807,
+      "profit_factor": 0.9264923987577227,
+      "avg_target_r": 7.270951216337781,
+      "n_skipped_no_liquidity": 78
+    },
+    "H4": {
+      "n": 47,
+      "wins": 4,
+      "losses": 43,
+      "win_rate": 0.0851063829787234,
+      "total_r": -6.841505675062951,
+      "expectancy_r": -0.14556395053325422,
+      "profit_factor": 0.8408952168590013,
+      "avg_target_r": 9.039623581234263,
+      "n_skipped_no_liquidity": 22
+    },
+    "D1": {
+      "n": 127,
+      "wins": 26,
+      "losses": 101,
+      "win_rate": 0.2047244094488189,
+      "total_r": 39.75742830869985,
+      "expectancy_r": 0.3130506166039356,
+      "profit_factor": 1.3936379040465332,
+      "avg_target_r": 5.413747242642302,
+      "n_skipped_no_liquidity": 43
+    },
+    "W1": {
+      "n": 18,
+      "wins": 5,
+      "losses": 13,
+      "win_rate": 0.2777777777777778,
+      "total_r": 16.447169549291708,
+      "expectancy_r": 0.9137316416273172,
+      "profit_factor": 2.2651668884070544,
+      "avg_target_r": 5.889433909858342,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "CADCHF": {
+    "M30": {
+      "n": 10516,
+      "wins": 1715,
+      "losses": 8801,
+      "win_rate": 0.16308482312666414,
+      "total_r": 144.2288768977493,
+      "expectancy_r": 0.01371518418578821,
+      "profit_factor": 1.0163877828539654,
+      "avg_target_r": 5.215876896150291,
+      "n_skipped_no_liquidity": 294
+    },
+    "H1": {
+      "n": 4958,
+      "wins": 822,
+      "losses": 4136,
+      "win_rate": 0.16579265832997175,
+      "total_r": 54.11902859615433,
+      "expectancy_r": 0.010915495884662119,
+      "profit_factor": 1.0130848715174456,
+      "avg_target_r": 5.097468404618193,
+      "n_skipped_no_liquidity": 165
+    },
+    "H2": {
+      "n": 2684,
+      "wins": 489,
+      "losses": 2195,
+      "win_rate": 0.18219076005961252,
+      "total_r": 237.34358603424803,
+      "expectancy_r": 0.08842905589949623,
+      "profit_factor": 1.1081291963709559,
+      "avg_target_r": 4.974117762851223,
+      "n_skipped_no_liquidity": 107
+    },
+    "H4": {
+      "n": 1456,
+      "wins": 270,
+      "losses": 1186,
+      "win_rate": 0.18543956043956045,
+      "total_r": 93.99214565636287,
+      "expectancy_r": 0.06455504509365595,
+      "profit_factor": 1.0792513875686027,
+      "avg_target_r": 4.740711650579122,
+      "n_skipped_no_liquidity": 78
+    },
+    "D1": {
+      "n": 218,
+      "wins": 30,
+      "losses": 188,
+      "win_rate": 0.13761467889908258,
+      "total_r": -39.235310698373446,
+      "expectancy_r": -0.17997848944207995,
+      "profit_factor": 0.7913015388384391,
+      "avg_target_r": 4.958822976720885,
+      "n_skipped_no_liquidity": 26
+    },
+    "W1": {
+      "n": 34,
+      "wins": 4,
+      "losses": 30,
+      "win_rate": 0.11764705882352941,
+      "total_r": -10.39132589037886,
+      "expectancy_r": -0.30562723206996645,
+      "profit_factor": 0.6536224703207048,
+      "avg_target_r": 4.902168527405285,
+      "n_skipped_no_liquidity": 12
+    }
+  },
+  "CADJPY": {
+    "M30": {
+      "n": 12069,
+      "wins": 1963,
+      "losses": 10106,
+      "win_rate": 0.1626481067196951,
+      "total_r": 313.88421908063356,
+      "expectancy_r": 0.026007475273894687,
+      "profit_factor": 1.0310591944469258,
+      "avg_target_r": 5.308142750423145,
+      "n_skipped_no_liquidity": 438
+    },
+    "H1": {
+      "n": 5836,
+      "wins": 967,
+      "losses": 4869,
+      "win_rate": 0.16569568197395476,
+      "total_r": 50.68138475757672,
+      "expectancy_r": 0.008684267436185222,
+      "profit_factor": 1.0104089925564956,
+      "avg_target_r": 5.087571235530069,
+      "n_skipped_no_liquidity": 222
+    },
+    "H2": {
+      "n": 3089,
+      "wins": 501,
+      "losses": 2588,
+      "win_rate": 0.16218841048883134,
+      "total_r": -198.68694650949544,
+      "expectancy_r": -0.06432079848154593,
+      "profit_factor": 0.9232276095403804,
+      "avg_target_r": 4.769087931118771,
+      "n_skipped_no_liquidity": 129
+    },
+    "H4": {
+      "n": 1660,
+      "wins": 263,
+      "losses": 1397,
+      "win_rate": 0.15843373493975904,
+      "total_r": -76.9154829464989,
+      "expectancy_r": -0.046334628281023416,
+      "profit_factor": 0.9449423887283472,
+      "avg_target_r": 5.019332764461981,
+      "n_skipped_no_liquidity": 90
+    },
+    "D1": {
+      "n": 271,
+      "wins": 39,
+      "losses": 232,
+      "win_rate": 0.14391143911439114,
+      "total_r": -6.397020090248044,
+      "expectancy_r": -0.023605240185417098,
+      "profit_factor": 0.9724266375420343,
+      "avg_target_r": 5.784691792557743,
+      "n_skipped_no_liquidity": 22
+    },
+    "W1": {
+      "n": 52,
+      "wins": 14,
+      "losses": 38,
+      "win_rate": 0.2692307692307692,
+      "total_r": 13.93878773823319,
+      "expectancy_r": 0.2680536103506381,
+      "profit_factor": 1.3668102036377154,
+      "avg_target_r": 3.709913409873799,
+      "n_skipped_no_liquidity": 9
+    }
+  },
+  "CHFJPY": {
+    "M30": {
+      "n": 10416,
+      "wins": 1873,
+      "losses": 8543,
+      "win_rate": 0.1798195084485407,
+      "total_r": 992.9088305912554,
+      "expectancy_r": 0.09532534855906827,
+      "profit_factor": 1.1162248426303705,
+      "avg_target_r": 5.091248708270825,
+      "n_skipped_no_liquidity": 452
+    },
+    "H1": {
+      "n": 4997,
+      "wins": 880,
+      "losses": 4117,
+      "win_rate": 0.17610566339803882,
+      "total_r": -52.4071006908622,
+      "expectancy_r": -0.010487712765832047,
+      "profit_factor": 0.9872705609203638,
+      "avg_target_r": 4.618855567396747,
+      "n_skipped_no_liquidity": 241
+    },
+    "H2": {
+      "n": 2696,
+      "wins": 464,
+      "losses": 2232,
+      "win_rate": 0.17210682492581603,
+      "total_r": -60.8020700981364,
+      "expectancy_r": -0.022552696623937885,
+      "profit_factor": 0.9727589291675016,
+      "avg_target_r": 4.679305883409189,
+      "n_skipped_no_liquidity": 169
+    },
+    "H4": {
+      "n": 1423,
+      "wins": 230,
+      "losses": 1193,
+      "win_rate": 0.16163035839775122,
+      "total_r": 38.57114267300567,
+      "expectancy_r": 0.027105511365429047,
+      "profit_factor": 1.0323312176638773,
+      "avg_target_r": 5.3546571420565465,
+      "n_skipped_no_liquidity": 117
+    },
+    "D1": {
+      "n": 218,
+      "wins": 46,
+      "losses": 172,
+      "win_rate": 0.21100917431192662,
+      "total_r": 57.57864656502501,
+      "expectancy_r": 0.2641222319496561,
+      "profit_factor": 1.3347595730524708,
+      "avg_target_r": 4.990840142717935,
+      "n_skipped_no_liquidity": 39
+    },
+    "W1": {
+      "n": 34,
+      "wins": 6,
+      "losses": 28,
+      "win_rate": 0.17647058823529413,
+      "total_r": 1.476589690082867,
+      "expectancy_r": 0.043429108531849225,
+      "profit_factor": 1.0527353460743882,
+      "avg_target_r": 4.912764948347145,
+      "n_skipped_no_liquidity": 23
+    }
+  },
+  "CHFSGD": {
+    "M30": {
+      "n": 6539,
+      "wins": 1096,
+      "losses": 5443,
+      "win_rate": 0.1676097262578376,
+      "total_r": 109.84599580358828,
+      "expectancy_r": 0.016798592415291136,
+      "profit_factor": 1.0201811493300732,
+      "avg_target_r": 5.066465324638311,
+      "n_skipped_no_liquidity": 192
+    },
+    "H1": {
+      "n": 3091,
+      "wins": 549,
+      "losses": 2542,
+      "win_rate": 0.1776124231640246,
+      "total_r": 193.3335436998963,
+      "expectancy_r": 0.0625472480426712,
+      "profit_factor": 1.076055682021989,
+      "avg_target_r": 4.9823926114752215,
+      "n_skipped_no_liquidity": 98
+    },
+    "H2": {
+      "n": 1688,
+      "wins": 285,
+      "losses": 1403,
+      "win_rate": 0.16883886255924171,
+      "total_r": 28.351781010998966,
+      "expectancy_r": 0.01679607879798528,
+      "profit_factor": 1.0202079693592296,
+      "avg_target_r": 5.022286950915786,
+      "n_skipped_no_liquidity": 62
+    },
+    "H4": {
+      "n": 884,
+      "wins": 139,
+      "losses": 745,
+      "win_rate": 0.15723981900452488,
+      "total_r": -116.94421943516836,
+      "expectancy_r": -0.1322898409900095,
+      "profit_factor": 0.8430278933756129,
+      "avg_target_r": 4.518386910538357,
+      "n_skipped_no_liquidity": 42
+    },
+    "D1": {
+      "n": 140,
+      "wins": 28,
+      "losses": 112,
+      "win_rate": 0.2,
+      "total_r": 21.62903651748837,
+      "expectancy_r": 0.15449311798205978,
+      "profit_factor": 1.1931163974775747,
+      "avg_target_r": 4.772465589910299,
+      "n_skipped_no_liquidity": 8
+    },
+    "W1": {
+      "n": 29,
+      "wins": 7,
+      "losses": 22,
+      "win_rate": 0.2413793103448276,
+      "total_r": 6.248517029940865,
+      "expectancy_r": 0.21546610448071957,
+      "profit_factor": 1.2840235013609484,
+      "avg_target_r": 4.035502432848695,
+      "n_skipped_no_liquidity": 5
+    }
+  },
+  "CHINAH": {
+    "M30": {
+      "n": 3561,
+      "wins": 500,
+      "losses": 3061,
+      "win_rate": 0.14040999719180006,
+      "total_r": 69.76838127629068,
+      "expectancy_r": 0.01959235643816082,
+      "profit_factor": 1.0227926760131627,
+      "avg_target_r": 6.2615367625525815,
+      "n_skipped_no_liquidity": 149
+    },
+    "H1": {
+      "n": 1788,
+      "wins": 271,
+      "losses": 1517,
+      "win_rate": 0.15156599552572708,
+      "total_r": -20.88352508606527,
+      "expectancy_r": -0.011679823873638084,
+      "profit_factor": 0.9862336683677883,
+      "avg_target_r": 5.520724999682416,
+      "n_skipped_no_liquidity": 89
+    },
+    "H2": {
+      "n": 887,
+      "wins": 131,
+      "losses": 756,
+      "win_rate": 0.14768883878241262,
+      "total_r": -34.12472778297799,
+      "expectancy_r": -0.03847207190865609,
+      "profit_factor": 0.9548614711865371,
+      "avg_target_r": 5.5104982611986415,
+      "n_skipped_no_liquidity": 65
+    },
+    "H4": {
+      "n": 237,
+      "wins": 30,
+      "losses": 207,
+      "win_rate": 0.12658227848101267,
+      "total_r": -83.75064371574442,
+      "expectancy_r": -0.3533782435263477,
+      "profit_factor": 0.5954075182814279,
+      "avg_target_r": 4.108311876141853,
+      "n_skipped_no_liquidity": 20
+    },
+    "D1": {
+      "n": 114,
+      "wins": 19,
+      "losses": 95,
+      "win_rate": 0.16666666666666666,
+      "total_r": 7.95120373831659,
+      "expectancy_r": 0.06974740121330336,
+      "profit_factor": 1.0836968814559642,
+      "avg_target_r": 5.418484407279821,
+      "n_skipped_no_liquidity": 15
+    },
+    "W1": {
+      "n": 20,
+      "wins": 3,
+      "losses": 17,
+      "win_rate": 0.15,
+      "total_r": -5.339092133288691,
+      "expectancy_r": -0.2669546066644346,
+      "profit_factor": 0.6859357568653711,
+      "avg_target_r": 3.8869692889037695,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "CHN50": {
+    "M30": {
+      "n": 5446,
+      "wins": 735,
+      "losses": 4711,
+      "win_rate": 0.13496143958868895,
+      "total_r": -105.39177003495026,
+      "expectancy_r": -0.019352142863560462,
+      "profit_factor": 0.9776285777892273,
+      "avg_target_r": 6.266133646210952,
+      "n_skipped_no_liquidity": 200
+    },
+    "H1": {
+      "n": 2642,
+      "wins": 380,
+      "losses": 2262,
+      "win_rate": 0.14383043149129449,
+      "total_r": -175.0293589024615,
+      "expectancy_r": -0.06624881109101477,
+      "profit_factor": 0.9226218572491329,
+      "avg_target_r": 5.49202800288826,
+      "n_skipped_no_liquidity": 91
+    },
+    "H2": {
+      "n": 1336,
+      "wins": 221,
+      "losses": 1115,
+      "win_rate": 0.16541916167664672,
+      "total_r": -159.16379796931682,
+      "expectancy_r": -0.11913457931835081,
+      "profit_factor": 0.8572521991306576,
+      "avg_target_r": 4.325050687921643,
+      "n_skipped_no_liquidity": 44
+    },
+    "H4": {
+      "n": 524,
+      "wins": 82,
+      "losses": 442,
+      "win_rate": 0.15648854961832062,
+      "total_r": -29.69520269981975,
+      "expectancy_r": -0.05667023415996131,
+      "profit_factor": 0.9328162834845708,
+      "avg_target_r": 5.02810728414854,
+      "n_skipped_no_liquidity": 33
+    },
+    "D1": {
+      "n": 159,
+      "wins": 29,
+      "losses": 130,
+      "win_rate": 0.18238993710691823,
+      "total_r": -5.036378855170984,
+      "expectancy_r": -0.03167533871176731,
+      "profit_factor": 0.9612586241909925,
+      "avg_target_r": 4.309090384304449,
+      "n_skipped_no_liquidity": 15
+    },
+    "W1": {
+      "n": 27,
+      "wins": 3,
+      "losses": 24,
+      "win_rate": 0.1111111111111111,
+      "total_r": -13.047810783403929,
+      "expectancy_r": -0.4832522512371825,
+      "profit_factor": 0.4563412173581696,
+      "avg_target_r": 3.650729738865357,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "DOGEUSD": {
+    "M30": {
+      "n": 5043,
+      "wins": 787,
+      "losses": 4256,
+      "win_rate": 0.15605790204243505,
+      "total_r": -179.88965953579387,
+      "expectancy_r": -0.035671159931745744,
+      "profit_factor": 0.9577326927782439,
+      "avg_target_r": 5.1793015761934,
+      "n_skipped_no_liquidity": 168
+    },
+    "H1": {
+      "n": 2261,
+      "wins": 362,
+      "losses": 1899,
+      "win_rate": 0.1601061477222468,
+      "total_r": -67.1436045637007,
+      "expectancy_r": -0.029696419532817653,
+      "profit_factor": 0.9646426516252234,
+      "avg_target_r": 5.0603767829732025,
+      "n_skipped_no_liquidity": 80
+    },
+    "H2": {
+      "n": 1196,
+      "wins": 202,
+      "losses": 994,
+      "win_rate": 0.1688963210702341,
+      "total_r": -52.87332409051482,
+      "expectancy_r": -0.044208464958624516,
+      "profit_factor": 0.9468075210356993,
+      "avg_target_r": 4.659042950046956,
+      "n_skipped_no_liquidity": 38
+    },
+    "H4": {
+      "n": 604,
+      "wins": 88,
+      "losses": 516,
+      "win_rate": 0.1456953642384106,
+      "total_r": -96.49190662759025,
+      "expectancy_r": -0.1597548122973349,
+      "profit_factor": 0.8130001809542825,
+      "avg_target_r": 4.767137424686474,
+      "n_skipped_no_liquidity": 23
+    },
+    "D1": {
+      "n": 92,
+      "wins": 14,
+      "losses": 78,
+      "win_rate": 0.15217391304347827,
+      "total_r": -18.852650101244848,
+      "expectancy_r": -0.20492010979613962,
+      "profit_factor": 0.7582993576763482,
+      "avg_target_r": 4.22481070705394,
+      "n_skipped_no_liquidity": 10
+    },
+    "W1": {
+      "n": 7,
+      "wins": 1,
+      "losses": 6,
+      "win_rate": 0.14285714285714285,
+      "total_r": -4.030368763557485,
+      "expectancy_r": -0.575766966222498,
+      "profit_factor": 0.3282718727404192,
+      "avg_target_r": 1.969631236442515,
+      "n_skipped_no_liquidity": 3
+    }
+  },
+  "DOTUSD": {
+    "M30": {
+      "n": 5507,
+      "wins": 901,
+      "losses": 4606,
+      "win_rate": 0.16360995097149084,
+      "total_r": 16.294217409516737,
+      "expectancy_r": 0.0029588192136402736,
+      "profit_factor": 1.0035376069061044,
+      "avg_target_r": 5.130182261275824,
+      "n_skipped_no_liquidity": 207
+    },
+    "H1": {
+      "n": 2500,
+      "wins": 410,
+      "losses": 2090,
+      "win_rate": 0.164,
+      "total_r": -24.696487787152673,
+      "expectancy_r": -0.00987859511486111,
+      "profit_factor": 0.9881834986664341,
+      "avg_target_r": 5.037325639543529,
+      "n_skipped_no_liquidity": 113
+    },
+    "H2": {
+      "n": 1212,
+      "wins": 194,
+      "losses": 1018,
+      "win_rate": 0.16006600660066006,
+      "total_r": -109.6994277105644,
+      "expectancy_r": -0.09051107896911248,
+      "profit_factor": 0.8922402478285223,
+      "avg_target_r": 4.681961712832143,
+      "n_skipped_no_liquidity": 61
+    },
+    "H4": {
+      "n": 596,
+      "wins": 86,
+      "losses": 510,
+      "win_rate": 0.14429530201342283,
+      "total_r": -110.1129694274111,
+      "expectancy_r": -0.18475330440840787,
+      "profit_factor": 0.7840922168089979,
+      "avg_target_r": 4.649849192704522,
+      "n_skipped_no_liquidity": 33
+    },
+    "D1": {
+      "n": 92,
+      "wins": 10,
+      "losses": 82,
+      "win_rate": 0.10869565217391304,
+      "total_r": -32.10680490934119,
+      "expectancy_r": -0.34898700988414333,
+      "profit_factor": 0.6084535986665708,
+      "avg_target_r": 4.989319509065881,
+      "n_skipped_no_liquidity": 27
+    },
+    "W1": {
+      "n": 10,
+      "wins": 3,
+      "losses": 7,
+      "win_rate": 0.3,
+      "total_r": 9.845004464941434,
+      "expectancy_r": 0.9845004464941434,
+      "profit_factor": 2.4064292092773476,
+      "avg_target_r": 5.615001488313811,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "ETCUSD": {
+    "M30": {
+      "n": 7622,
+      "wins": 1331,
+      "losses": 6291,
+      "win_rate": 0.17462608239307267,
+      "total_r": 853.3659950106037,
+      "expectancy_r": 0.11196090199561837,
+      "profit_factor": 1.1356487037053893,
+      "avg_target_r": 5.3676679151093944,
+      "n_skipped_no_liquidity": 253
+    },
+    "H1": {
+      "n": 3403,
+      "wins": 598,
+      "losses": 2805,
+      "win_rate": 0.17572729944166912,
+      "total_r": 253.54728062631278,
+      "expectancy_r": 0.07450698813585444,
+      "profit_factor": 1.09039118738906,
+      "avg_target_r": 5.114627559575774,
+      "n_skipped_no_liquidity": 95
+    },
+    "H2": {
+      "n": 1563,
+      "wins": 261,
+      "losses": 1302,
+      "win_rate": 0.16698656429942418,
+      "total_r": 64.7613233984989,
+      "expectancy_r": 0.041433988098847574,
+      "profit_factor": 1.0497398797223494,
+      "avg_target_r": 5.236633422982754,
+      "n_skipped_no_liquidity": 59
+    },
+    "H4": {
+      "n": 754,
+      "wins": 133,
+      "losses": 621,
+      "win_rate": 0.17639257294429708,
+      "total_r": 81.73503547273495,
+      "expectancy_r": 0.10840190380999337,
+      "profit_factor": 1.131618414609879,
+      "avg_target_r": 5.283722071223571,
+      "n_skipped_no_liquidity": 32
+    },
+    "D1": {
+      "n": 134,
+      "wins": 25,
+      "losses": 109,
+      "win_rate": 0.1865671641791045,
+      "total_r": -18.306906089209864,
+      "expectancy_r": -0.13661870215828253,
+      "profit_factor": 0.832046733126515,
+      "avg_target_r": 3.6277237564316054,
+      "n_skipped_no_liquidity": 12
+    },
+    "W1": {
+      "n": 13,
+      "wins": 0,
+      "losses": 13,
+      "win_rate": 0.0,
+      "total_r": -13.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 5
+    }
+  },
+  "ETHUSD": {
+    "M30": {
+      "n": 7167,
+      "wins": 1199,
+      "losses": 5968,
+      "win_rate": 0.1672945444397935,
+      "total_r": -155.70884001719526,
+      "expectancy_r": -0.02172580438359084,
+      "profit_factor": 0.973909376672722,
+      "avg_target_r": 4.847615646357635,
+      "n_skipped_no_liquidity": 394
+    },
+    "H1": {
+      "n": 3425,
+      "wins": 603,
+      "losses": 2822,
+      "win_rate": 0.17605839416058394,
+      "total_r": 32.126504161581565,
+      "expectancy_r": 0.00938000121506033,
+      "profit_factor": 1.0113843033882288,
+      "avg_target_r": 4.7332114496875315,
+      "n_skipped_no_liquidity": 207
+    },
+    "H2": {
+      "n": 1803,
+      "wins": 299,
+      "losses": 1504,
+      "win_rate": 0.165834719911259,
+      "total_r": -162.499583039334,
+      "expectancy_r": -0.09012733390978045,
+      "profit_factor": 0.8919550644685279,
+      "avg_target_r": 4.486623468095873,
+      "n_skipped_no_liquidity": 126
+    },
+    "H4": {
+      "n": 932,
+      "wins": 156,
+      "losses": 776,
+      "win_rate": 0.16738197424892703,
+      "total_r": 35.290507501675314,
+      "expectancy_r": 0.03786535139664737,
+      "profit_factor": 1.0454774581207156,
+      "avg_target_r": 5.200580176292791,
+      "n_skipped_no_liquidity": 62
+    },
+    "D1": {
+      "n": 212,
+      "wins": 25,
+      "losses": 187,
+      "win_rate": 0.1179245283018868,
+      "total_r": -70.7118899270328,
+      "expectancy_r": -0.3335466505992113,
+      "profit_factor": 0.621861551192338,
+      "avg_target_r": 4.651524402918688,
+      "n_skipped_no_liquidity": 30
+    },
+    "W1": {
+      "n": 37,
+      "wins": 3,
+      "losses": 34,
+      "win_rate": 0.08108108108108109,
+      "total_r": -1.400578710889432,
+      "expectancy_r": -0.03785347867268729,
+      "profit_factor": 0.958806508503252,
+      "avg_target_r": 10.866473763036856,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "EU50": {
+    "M30": {
+      "n": 3835,
+      "wins": 571,
+      "losses": 3264,
+      "win_rate": 0.14889178617992177,
+      "total_r": -57.43906111719062,
+      "expectancy_r": -0.014977590904091564,
+      "profit_factor": 0.9824022484322332,
+      "avg_target_r": 5.6156934131047445,
+      "n_skipped_no_liquidity": 177
+    },
+    "H1": {
+      "n": 1717,
+      "wins": 236,
+      "losses": 1481,
+      "win_rate": 0.1374490390215492,
+      "total_r": -261.06177437302847,
+      "expectancy_r": -0.1520452966645479,
+      "profit_factor": 0.8237260132525128,
+      "avg_target_r": 5.169229769605811,
+      "n_skipped_no_liquidity": 88
+    },
+    "H2": {
+      "n": 696,
+      "wins": 104,
+      "losses": 592,
+      "win_rate": 0.14942528735632185,
+      "total_r": -27.42732398494763,
+      "expectancy_r": -0.039407074691016564,
+      "profit_factor": 0.9536700608362371,
+      "avg_target_r": 5.428583423221657,
+      "n_skipped_no_liquidity": 63
+    },
+    "H4": {
+      "n": 204,
+      "wins": 16,
+      "losses": 188,
+      "win_rate": 0.0784313725490196,
+      "total_r": -107.24172826957434,
+      "expectancy_r": -0.5256947464194821,
+      "profit_factor": 0.4295652751618386,
+      "avg_target_r": 5.047391983151604,
+      "n_skipped_no_liquidity": 26
+    },
+    "D1": {
+      "n": 217,
+      "wins": 35,
+      "losses": 182,
+      "win_rate": 0.16129032258064516,
+      "total_r": 2.042682051874092,
+      "expectancy_r": 0.009413281345041935,
+      "profit_factor": 1.0112235277575499,
+      "avg_target_r": 5.25836234433926,
+      "n_skipped_no_liquidity": 37
+    },
+    "W1": {
+      "n": 36,
+      "wins": 7,
+      "losses": 29,
+      "win_rate": 0.19444444444444445,
+      "total_r": 5.9303320244413555,
+      "expectancy_r": 0.164731445123371,
+      "profit_factor": 1.204494207739357,
+      "avg_target_r": 4.990047432063051,
+      "n_skipped_no_liquidity": 16
+    }
+  },
+  "EURAUD": {
+    "M30": {
+      "n": 10896,
+      "wins": 1864,
+      "losses": 9032,
+      "win_rate": 0.171071953010279,
+      "total_r": 314.6848727434963,
+      "expectancy_r": 0.028880770259131494,
+      "profit_factor": 1.0348411063710692,
+      "avg_target_r": 5.014315918853807,
+      "n_skipped_no_liquidity": 402
+    },
+    "H1": {
+      "n": 5688,
+      "wins": 953,
+      "losses": 4735,
+      "win_rate": 0.16754571026722925,
+      "total_r": -88.98384660054377,
+      "expectancy_r": -0.015644136181530155,
+      "profit_factor": 0.9812072129671502,
+      "avg_target_r": 4.875148114794812,
+      "n_skipped_no_liquidity": 200
+    },
+    "H2": {
+      "n": 3162,
+      "wins": 542,
+      "losses": 2620,
+      "win_rate": 0.17141049968374447,
+      "total_r": 135.39855622721532,
+      "expectancy_r": 0.042820542766355385,
+      "profit_factor": 1.0516788382546625,
+      "avg_target_r": 5.083761173850951,
+      "n_skipped_no_liquidity": 112
+    },
+    "H4": {
+      "n": 1685,
+      "wins": 276,
+      "losses": 1409,
+      "win_rate": 0.16379821958456972,
+      "total_r": -128.0703541729036,
+      "expectancy_r": -0.07600614490973512,
+      "profit_factor": 0.9091054973932551,
+      "avg_target_r": 4.641049441402523,
+      "n_skipped_no_liquidity": 83
+    },
+    "D1": {
+      "n": 289,
+      "wins": 39,
+      "losses": 250,
+      "win_rate": 0.13494809688581316,
+      "total_r": -71.4411988849908,
+      "expectancy_r": -0.24720138022488147,
+      "profit_factor": 0.7142352044600369,
+      "avg_target_r": 4.578430797820749,
+      "n_skipped_no_liquidity": 25
+    },
+    "W1": {
+      "n": 46,
+      "wins": 7,
+      "losses": 39,
+      "win_rate": 0.15217391304347827,
+      "total_r": -9.221807739465532,
+      "expectancy_r": -0.20047408129272892,
+      "profit_factor": 0.7635433912957555,
+      "avg_target_r": 4.254027465790638,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "EURCAD": {
+    "M30": {
+      "n": 10331,
+      "wins": 1688,
+      "losses": 8643,
+      "win_rate": 0.16339173361726841,
+      "total_r": -30.427793285009624,
+      "expectancy_r": -0.002945290222147845,
+      "profit_factor": 0.9964794870664111,
+      "avg_target_r": 5.102234719617885,
+      "n_skipped_no_liquidity": 309
+    },
+    "H1": {
+      "n": 5044,
+      "wins": 780,
+      "losses": 4264,
+      "win_rate": 0.15463917525773196,
+      "total_r": -174.7377547456779,
+      "expectancy_r": -0.03464269523110186,
+      "profit_factor": 0.9590202263729648,
+      "avg_target_r": 5.2426439041722075,
+      "n_skipped_no_liquidity": 179
+    },
+    "H2": {
+      "n": 2809,
+      "wins": 464,
+      "losses": 2345,
+      "win_rate": 0.16518333926664294,
+      "total_r": -198.48225342046982,
+      "expectancy_r": -0.07065939958008893,
+      "profit_factor": 0.9153593802044904,
+      "avg_target_r": 4.626115833145539,
+      "n_skipped_no_liquidity": 98
+    },
+    "H4": {
+      "n": 1545,
+      "wins": 268,
+      "losses": 1277,
+      "win_rate": 0.17346278317152103,
+      "total_r": 5.331840503635278,
+      "expectancy_r": 0.003451029452191001,
+      "profit_factor": 1.0041752862205444,
+      "avg_target_r": 4.7848203003866985,
+      "n_skipped_no_liquidity": 61
+    },
+    "D1": {
+      "n": 267,
+      "wins": 49,
+      "losses": 218,
+      "win_rate": 0.18352059925093633,
+      "total_r": 25.850020158399843,
+      "expectancy_r": 0.096816554900374,
+      "profit_factor": 1.1185780741211002,
+      "avg_target_r": 4.976531023640813,
+      "n_skipped_no_liquidity": 20
+    },
+    "W1": {
+      "n": 41,
+      "wins": 9,
+      "losses": 32,
+      "win_rate": 0.21951219512195122,
+      "total_r": 10.645096129741027,
+      "expectancy_r": 0.2596364909692934,
+      "profit_factor": 1.332659254054407,
+      "avg_target_r": 4.73834401441567,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "EURCHF": {
+    "M30": {
+      "n": 9379,
+      "wins": 1581,
+      "losses": 7798,
+      "win_rate": 0.16856807762021536,
+      "total_r": -177.10117309048036,
+      "expectancy_r": -0.01888273516264849,
+      "profit_factor": 0.9772888980391793,
+      "avg_target_r": 4.8203028633203795,
+      "n_skipped_no_liquidity": 297
+    },
+    "H1": {
+      "n": 4275,
+      "wins": 744,
+      "losses": 3531,
+      "win_rate": 0.17403508771929824,
+      "total_r": 109.7879898183176,
+      "expectancy_r": 0.02568140112709183,
+      "profit_factor": 1.0310926054427407,
+      "avg_target_r": 4.893532244379459,
+      "n_skipped_no_liquidity": 161
+    },
+    "H2": {
+      "n": 2221,
+      "wins": 406,
+      "losses": 1815,
+      "win_rate": 0.18280054029716344,
+      "total_r": 164.05132910664065,
+      "expectancy_r": 0.07386372314571843,
+      "profit_factor": 1.0903864072212897,
+      "avg_target_r": 4.874510662824238,
+      "n_skipped_no_liquidity": 108
+    },
+    "H4": {
+      "n": 1180,
+      "wins": 223,
+      "losses": 957,
+      "win_rate": 0.18898305084745762,
+      "total_r": 74.45274568803548,
+      "expectancy_r": 0.06309554719325028,
+      "profit_factor": 1.077798062369943,
+      "avg_target_r": 4.625348635372356,
+      "n_skipped_no_liquidity": 75
+    },
+    "D1": {
+      "n": 175,
+      "wins": 28,
+      "losses": 147,
+      "win_rate": 0.16,
+      "total_r": -7.870622205159384,
+      "expectancy_r": -0.04497498402948208,
+      "profit_factor": 0.9464583523458545,
+      "avg_target_r": 4.968906349815737,
+      "n_skipped_no_liquidity": 29
+    },
+    "W1": {
+      "n": 32,
+      "wins": 6,
+      "losses": 26,
+      "win_rate": 0.1875,
+      "total_r": 3.9523282638909105,
+      "expectancy_r": 0.12351025824659101,
+      "profit_factor": 1.1520126255342658,
+      "avg_target_r": 4.992054710648485,
+      "n_skipped_no_liquidity": 9
+    }
+  },
+  "EURDKK": {
+    "M30": {
+      "n": 2213,
+      "wins": 341,
+      "losses": 1872,
+      "win_rate": 0.15408947130591957,
+      "total_r": -160.6813122770509,
+      "expectancy_r": -0.07260791336513817,
+      "profit_factor": 0.9141659656639686,
+      "avg_target_r": 5.018529876020379,
+      "n_skipped_no_liquidity": 15
+    },
+    "H1": {
+      "n": 666,
+      "wins": 112,
+      "losses": 554,
+      "win_rate": 0.16816816816816818,
+      "total_r": -15.187992941677503,
+      "expectancy_r": -0.02280479420672299,
+      "profit_factor": 0.9725848502857807,
+      "avg_target_r": 4.810821491592165,
+      "n_skipped_no_liquidity": 16
+    },
+    "H2": {
+      "n": 201,
+      "wins": 46,
+      "losses": 155,
+      "win_rate": 0.22885572139303484,
+      "total_r": 36.54342957120439,
+      "expectancy_r": 0.18180810731942498,
+      "profit_factor": 1.2357640617497059,
+      "avg_target_r": 4.163987599374009,
+      "n_skipped_no_liquidity": 6
+    },
+    "H4": {
+      "n": 56,
+      "wins": 15,
+      "losses": 41,
+      "win_rate": 0.26785714285714285,
+      "total_r": 32.53184526872208,
+      "expectancy_r": 0.580925808370037,
+      "profit_factor": 1.7934596407005385,
+      "avg_target_r": 4.902123017914805,
+      "n_skipped_no_liquidity": 1
+    },
+    "D1": {
+      "n": 173,
+      "wins": 28,
+      "losses": 145,
+      "win_rate": 0.16184971098265896,
+      "total_r": -49.25562926683194,
+      "expectancy_r": -0.2847146200394909,
+      "profit_factor": 0.6603060050563315,
+      "avg_target_r": 3.4194418118988597,
+      "n_skipped_no_liquidity": 5
+    },
+    "W1": {
+      "n": 28,
+      "wins": 5,
+      "losses": 23,
+      "win_rate": 0.17857142857142858,
+      "total_r": 4.698865548966964,
+      "expectancy_r": 0.16781662674882014,
+      "profit_factor": 1.2042985021289985,
+      "avg_target_r": 5.539773109793392,
+      "n_skipped_no_liquidity": 2
+    }
+  },
+  "EURGBP": {
+    "M30": {
+      "n": 10135,
+      "wins": 1603,
+      "losses": 8532,
+      "win_rate": 0.15816477553034042,
+      "total_r": -593.6768292324349,
+      "expectancy_r": -0.05857689484286477,
+      "profit_factor": 0.9304176243281252,
+      "avg_target_r": 4.9521666692249315,
+      "n_skipped_no_liquidity": 270
+    },
+    "H1": {
+      "n": 4833,
+      "wins": 774,
+      "losses": 4059,
+      "win_rate": 0.1601489757914339,
+      "total_r": -252.48833203451966,
+      "expectancy_r": -0.05224256818425821,
+      "profit_factor": 0.9377954343349298,
+      "avg_target_r": 4.917973731221551,
+      "n_skipped_no_liquidity": 133
+    },
+    "H2": {
+      "n": 2682,
+      "wins": 450,
+      "losses": 2232,
+      "win_rate": 0.16778523489932887,
+      "total_r": -138.4027842952955,
+      "expectancy_r": -0.05160431927490505,
+      "profit_factor": 0.9379915840970898,
+      "avg_target_r": 4.652438257121566,
+      "n_skipped_no_liquidity": 84
+    },
+    "H4": {
+      "n": 1536,
+      "wins": 310,
+      "losses": 1226,
+      "win_rate": 0.20182291666666666,
+      "total_r": 237.68986325478423,
+      "expectancy_r": 0.15474600472316669,
+      "profit_factor": 1.1938742767167898,
+      "avg_target_r": 4.721580204047691,
+      "n_skipped_no_liquidity": 51
+    },
+    "D1": {
+      "n": 253,
+      "wins": 50,
+      "losses": 203,
+      "win_rate": 0.1976284584980237,
+      "total_r": 31.515728017642132,
+      "expectancy_r": 0.12456809493139187,
+      "profit_factor": 1.155249891712523,
+      "avg_target_r": 4.690314560352843,
+      "n_skipped_no_liquidity": 14
+    },
+    "W1": {
+      "n": 32,
+      "wins": 6,
+      "losses": 26,
+      "win_rate": 0.1875,
+      "total_r": 2.7753638385413923,
+      "expectancy_r": 0.08673011995441848,
+      "profit_factor": 1.1067447630208227,
+      "avg_target_r": 4.795893973090232,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "EURHKD": {
+    "M30": {
+      "n": 11383,
+      "wins": 1843,
+      "losses": 9540,
+      "win_rate": 0.1619081085829746,
+      "total_r": -232.16354852048943,
+      "expectancy_r": -0.020395638102476576,
+      "profit_factor": 0.9756641982682925,
+      "avg_target_r": 5.050372464177705,
+      "n_skipped_no_liquidity": 358
+    },
+    "H1": {
+      "n": 5281,
+      "wins": 875,
+      "losses": 4406,
+      "win_rate": 0.16568831660670327,
+      "total_r": 32.742342877602475,
+      "expectancy_r": 0.006200027055027868,
+      "profit_factor": 1.0074313079613262,
+      "avg_target_r": 5.072848391860117,
+      "n_skipped_no_liquidity": 185
+    },
+    "H2": {
+      "n": 2797,
+      "wins": 465,
+      "losses": 2332,
+      "win_rate": 0.1662495530925992,
+      "total_r": -16.58177583604025,
+      "expectancy_r": -0.005928414671448334,
+      "profit_factor": 0.9928894614768266,
+      "avg_target_r": 4.979394030460128,
+      "n_skipped_no_liquidity": 121
+    },
+    "H4": {
+      "n": 1550,
+      "wins": 256,
+      "losses": 1294,
+      "win_rate": 0.16516129032258065,
+      "total_r": -100.4953428764228,
+      "expectancy_r": -0.06483570508156322,
+      "profit_factor": 0.9223374475452683,
+      "avg_target_r": 4.662127566888973,
+      "n_skipped_no_liquidity": 59
+    },
+    "D1": {
+      "n": 241,
+      "wins": 46,
+      "losses": 195,
+      "win_rate": 0.1908713692946058,
+      "total_r": 2.521758851220277,
+      "expectancy_r": 0.010463729673113042,
+      "profit_factor": 1.0129320966729245,
+      "avg_target_r": 4.293951279374354,
+      "n_skipped_no_liquidity": 28
+    },
+    "W1": {
+      "n": 30,
+      "wins": 6,
+      "losses": 24,
+      "win_rate": 0.2,
+      "total_r": 5.613481446279901,
+      "expectancy_r": 0.18711604820933003,
+      "profit_factor": 1.2338950602616625,
+      "avg_target_r": 4.93558024104665,
+      "n_skipped_no_liquidity": 12
+    }
+  },
+  "EURHUF": {
+    "M30": {
+      "n": 7506,
+      "wins": 1244,
+      "losses": 6262,
+      "win_rate": 0.16573407940314416,
+      "total_r": -144.98052089441558,
+      "expectancy_r": -0.019315283892141655,
+      "profit_factor": 0.9768475693237919,
+      "avg_target_r": 4.917218230792271,
+      "n_skipped_no_liquidity": 173
+    },
+    "H1": {
+      "n": 3211,
+      "wins": 525,
+      "losses": 2686,
+      "win_rate": 0.16350046714419184,
+      "total_r": -183.15225574462698,
+      "expectancy_r": -0.05703900832906483,
+      "profit_factor": 0.9318122651732588,
+      "avg_target_r": 4.767329036676901,
+      "n_skipped_no_liquidity": 110
+    },
+    "H2": {
+      "n": 1325,
+      "wins": 213,
+      "losses": 1112,
+      "win_rate": 0.16075471698113208,
+      "total_r": -151.28729189159816,
+      "expectancy_r": -0.11417908822007394,
+      "profit_factor": 0.863950277075901,
+      "avg_target_r": 4.510388300978413,
+      "n_skipped_no_liquidity": 54
+    },
+    "H4": {
+      "n": 546,
+      "wins": 85,
+      "losses": 461,
+      "win_rate": 0.15567765567765568,
+      "total_r": -129.63940601289306,
+      "expectancy_r": -0.23743480954742324,
+      "profit_factor": 0.7187865379329869,
+      "avg_target_r": 3.8983599292600815,
+      "n_skipped_no_liquidity": 31
+    },
+    "D1": {
+      "n": 131,
+      "wins": 24,
+      "losses": 107,
+      "win_rate": 0.183206106870229,
+      "total_r": -1.3632691502539145,
+      "expectancy_r": -0.010406634734762776,
+      "profit_factor": 0.9872591668200569,
+      "avg_target_r": 4.401530452072754,
+      "n_skipped_no_liquidity": 22
+    },
+    "W1": {
+      "n": 16,
+      "wins": 2,
+      "losses": 14,
+      "win_rate": 0.125,
+      "total_r": -0.06435440899340872,
+      "expectancy_r": -0.0040221505620881,
+      "profit_factor": 0.9954032565004708,
+      "avg_target_r": 6.967822795503295,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "EURJPY": {
+    "M30": {
+      "n": 11671,
+      "wins": 1995,
+      "losses": 9676,
+      "win_rate": 0.170936509296547,
+      "total_r": 348.34749843101815,
+      "expectancy_r": 0.029847270879189258,
+      "profit_factor": 1.0360011883454958,
+      "avg_target_r": 5.024735588185973,
+      "n_skipped_no_liquidity": 439
+    },
+    "H1": {
+      "n": 5814,
+      "wins": 970,
+      "losses": 4844,
+      "win_rate": 0.16683866529067767,
+      "total_r": -260.3564467048882,
+      "expectancy_r": -0.04478095058563614,
+      "profit_factor": 0.946251765750436,
+      "avg_target_r": 4.725405725046507,
+      "n_skipped_no_liquidity": 247
+    },
+    "H2": {
+      "n": 3057,
+      "wins": 505,
+      "losses": 2552,
+      "win_rate": 0.16519463526333006,
+      "total_r": -36.99319321174908,
+      "expectancy_r": -0.012101142692754197,
+      "profit_factor": 0.9855042346348944,
+      "avg_target_r": 4.980211498590595,
+      "n_skipped_no_liquidity": 167
+    },
+    "H4": {
+      "n": 1604,
+      "wins": 264,
+      "losses": 1340,
+      "win_rate": 0.16458852867830423,
+      "total_r": 12.646777758065712,
+      "expectancy_r": 0.007884524786823999,
+      "profit_factor": 1.009437893849303,
+      "avg_target_r": 5.12366203696237,
+      "n_skipped_no_liquidity": 97
+    },
+    "D1": {
+      "n": 276,
+      "wins": 55,
+      "losses": 221,
+      "win_rate": 0.19927536231884058,
+      "total_r": 59.80216308186969,
+      "expectancy_r": 0.21667450391981768,
+      "profit_factor": 1.2705980229948854,
+      "avg_target_r": 5.105493874215813,
+      "n_skipped_no_liquidity": 35
+    },
+    "W1": {
+      "n": 44,
+      "wins": 9,
+      "losses": 35,
+      "win_rate": 0.20454545454545456,
+      "total_r": 14.097337676099398,
+      "expectancy_r": 0.32039403809316824,
+      "profit_factor": 1.4027810764599828,
+      "avg_target_r": 5.455259741788822,
+      "n_skipped_no_liquidity": 18
+    }
+  },
+  "EURNOK": {
+    "M30": {
+      "n": 16,
+      "wins": 6,
+      "losses": 10,
+      "win_rate": 0.375,
+      "total_r": 15.19083694057597,
+      "expectancy_r": 0.9494273087859981,
+      "profit_factor": 2.519083694057597,
+      "avg_target_r": 4.198472823429328,
+      "n_skipped_no_liquidity": 14
+    },
+    "H1": {
+      "n": 8,
+      "wins": 2,
+      "losses": 6,
+      "win_rate": 0.25,
+      "total_r": 3.989406713505197,
+      "expectancy_r": 0.4986758391881496,
+      "profit_factor": 1.664901118917533,
+      "avg_target_r": 4.9947033567525985,
+      "n_skipped_no_liquidity": 5
+    },
+    "H2": {
+      "n": 3,
+      "wins": 0,
+      "losses": 3,
+      "win_rate": 0.0,
+      "total_r": -3.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 6
+    },
+    "H4": {
+      "n": 0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 2
+    },
+    "D1": {},
+    "W1": {}
+  },
+  "EURNZD": {
+    "M30": {
+      "n": 11006,
+      "wins": 1718,
+      "losses": 9288,
+      "win_rate": 0.15609667454115936,
+      "total_r": -1131.288761293562,
+      "expectancy_r": -0.10278836646316214,
+      "profit_factor": 0.8781988844429843,
+      "avg_target_r": 4.747794667465913,
+      "n_skipped_no_liquidity": 351
+    },
+    "H1": {
+      "n": 5444,
+      "wins": 917,
+      "losses": 4527,
+      "win_rate": 0.16844232182218957,
+      "total_r": -128.54249200589507,
+      "expectancy_r": -0.023611772962140787,
+      "profit_factor": 0.9716053695591131,
+      "avg_target_r": 4.796573073057912,
+      "n_skipped_no_liquidity": 163
+    },
+    "H2": {
+      "n": 2993,
+      "wins": 515,
+      "losses": 2478,
+      "win_rate": 0.17206815903775477,
+      "total_r": -94.12455057918253,
+      "expectancy_r": -0.031448229394982485,
+      "profit_factor": 0.9620159198631224,
+      "avg_target_r": 4.628884367807412,
+      "n_skipped_no_liquidity": 104
+    },
+    "H4": {
+      "n": 1478,
+      "wins": 259,
+      "losses": 1219,
+      "win_rate": 0.17523680649526388,
+      "total_r": 85.21232741805912,
+      "expectancy_r": 0.057653807454708605,
+      "profit_factor": 1.069903467939343,
+      "avg_target_r": 5.035568831729958,
+      "n_skipped_no_liquidity": 63
+    },
+    "D1": {
+      "n": 245,
+      "wins": 46,
+      "losses": 199,
+      "win_rate": 0.18775510204081633,
+      "total_r": -5.124846504098076,
+      "expectancy_r": -0.02091774083305331,
+      "profit_factor": 0.9742470024919694,
+      "avg_target_r": 4.2146772499109115,
+      "n_skipped_no_liquidity": 24
+    },
+    "W1": {
+      "n": 42,
+      "wins": 7,
+      "losses": 35,
+      "win_rate": 0.16666666666666666,
+      "total_r": -8.908859206413036,
+      "expectancy_r": -0.21211569539078656,
+      "profit_factor": 0.7454611655310561,
+      "avg_target_r": 3.727305827655281,
+      "n_skipped_no_liquidity": 10
+    }
+  },
+  "EURPLN": {
+    "M30": {
+      "n": 7403,
+      "wins": 1210,
+      "losses": 6193,
+      "win_rate": 0.16344725111441308,
+      "total_r": -485.33138369966844,
+      "expectancy_r": -0.06555874425228536,
+      "profit_factor": 0.9216322648636092,
+      "avg_target_r": 4.717081501074654,
+      "n_skipped_no_liquidity": 151
+    },
+    "H1": {
+      "n": 3008,
+      "wins": 513,
+      "losses": 2495,
+      "win_rate": 0.17054521276595744,
+      "total_r": -72.28587170910365,
+      "expectancy_r": -0.024031207350101003,
+      "profit_factor": 0.9710277067298182,
+      "avg_target_r": 4.722639626298044,
+      "n_skipped_no_liquidity": 58
+    },
+    "H2": {
+      "n": 1317,
+      "wins": 211,
+      "losses": 1106,
+      "win_rate": 0.16021260440394836,
+      "total_r": -135.950476579457,
+      "expectancy_r": -0.10322739299882855,
+      "profit_factor": 0.8770791350999484,
+      "avg_target_r": 4.597391106258497,
+      "n_skipped_no_liquidity": 46
+    },
+    "H4": {
+      "n": 607,
+      "wins": 103,
+      "losses": 504,
+      "win_rate": 0.1696869851729819,
+      "total_r": -43.18145805030183,
+      "expectancy_r": -0.07113914011581846,
+      "profit_factor": 0.9143225038684487,
+      "avg_target_r": 4.473966426696099,
+      "n_skipped_no_liquidity": 24
+    },
+    "D1": {
+      "n": 96,
+      "wins": 18,
+      "losses": 78,
+      "win_rate": 0.1875,
+      "total_r": -0.7730118575410212,
+      "expectancy_r": -0.008052206849385568,
+      "profit_factor": 0.9900895915699869,
+      "avg_target_r": 4.29038823013661,
+      "n_skipped_no_liquidity": 9
+    },
+    "W1": {
+      "n": 30,
+      "wins": 3,
+      "losses": 27,
+      "win_rate": 0.1,
+      "total_r": -16.402049415279492,
+      "expectancy_r": -0.5467349805093165,
+      "profit_factor": 0.3925166883229817,
+      "avg_target_r": 3.5326501949068354,
+      "n_skipped_no_liquidity": 5
+    }
+  },
+  "EURSEK": {
+    "M30": {
+      "n": 8239,
+      "wins": 1327,
+      "losses": 6912,
+      "win_rate": 0.16106323582959098,
+      "total_r": -111.69596937007887,
+      "expectancy_r": -0.013556981353329167,
+      "profit_factor": 0.98384028220919,
+      "avg_target_r": 5.124569729186074,
+      "n_skipped_no_liquidity": 186
+    },
+    "H1": {
+      "n": 3540,
+      "wins": 625,
+      "losses": 2915,
+      "win_rate": 0.1765536723163842,
+      "total_r": 125.99046768939166,
+      "expectancy_r": 0.035590527595873445,
+      "profit_factor": 1.043221429739071,
+      "avg_target_r": 4.865584748303027,
+      "n_skipped_no_liquidity": 88
+    },
+    "H2": {
+      "n": 1740,
+      "wins": 345,
+      "losses": 1395,
+      "win_rate": 0.19827586206896552,
+      "total_r": 180.99171981240488,
+      "expectancy_r": 0.10401822977724429,
+      "profit_factor": 1.1297431683243047,
+      "avg_target_r": 4.568091941485232,
+      "n_skipped_no_liquidity": 68
+    },
+    "H4": {
+      "n": 995,
+      "wins": 184,
+      "losses": 811,
+      "win_rate": 0.1849246231155779,
+      "total_r": 34.099374454480916,
+      "expectancy_r": 0.03427072809495557,
+      "profit_factor": 1.042046084407498,
+      "avg_target_r": 4.592931382904787,
+      "n_skipped_no_liquidity": 47
+    },
+    "D1": {
+      "n": 112,
+      "wins": 24,
+      "losses": 88,
+      "win_rate": 0.21428571428571427,
+      "total_r": 14.722999080455702,
+      "expectancy_r": 0.13145534893264021,
+      "profit_factor": 1.1673068077324513,
+      "avg_target_r": 4.2801249616856545,
+      "n_skipped_no_liquidity": 12
+    },
+    "W1": {
+      "n": 13,
+      "wins": 1,
+      "losses": 12,
+      "win_rate": 0.07692307692307693,
+      "total_r": -8.381081645437495,
+      "expectancy_r": -0.6446985881105766,
+      "profit_factor": 0.3015765295468754,
+      "avg_target_r": 3.618918354562505,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "EURSGD": {
+    "M30": {
+      "n": 6080,
+      "wins": 1033,
+      "losses": 5047,
+      "win_rate": 0.16990131578947368,
+      "total_r": 44.65300537598487,
+      "expectancy_r": 0.007344244305260705,
+      "profit_factor": 1.0088474351844632,
+      "avg_target_r": 4.928996132987401,
+      "n_skipped_no_liquidity": 166
+    },
+    "H1": {
+      "n": 2801,
+      "wins": 521,
+      "losses": 2280,
+      "win_rate": 0.18600499821492325,
+      "total_r": 420.0496840147199,
+      "expectancy_r": 0.1499641856532381,
+      "profit_factor": 1.1842323175503158,
+      "avg_target_r": 5.182437013463954,
+      "n_skipped_no_liquidity": 98
+    },
+    "H2": {
+      "n": 1557,
+      "wins": 262,
+      "losses": 1295,
+      "win_rate": 0.1682723185613359,
+      "total_r": -68.93900557546341,
+      "expectancy_r": -0.04427681796754235,
+      "profit_factor": 0.9467652466598738,
+      "avg_target_r": 4.679622116124185,
+      "n_skipped_no_liquidity": 65
+    },
+    "H4": {
+      "n": 863,
+      "wins": 145,
+      "losses": 718,
+      "win_rate": 0.16801853997682503,
+      "total_r": -76.16182676904408,
+      "expectancy_r": -0.08825240645312182,
+      "profit_factor": 0.8939250323550918,
+      "avg_target_r": 4.426470160213489,
+      "n_skipped_no_liquidity": 31
+    },
+    "D1": {
+      "n": 108,
+      "wins": 29,
+      "losses": 79,
+      "win_rate": 0.26851851851851855,
+      "total_r": 46.159253453229546,
+      "expectancy_r": 0.4274004949373109,
+      "profit_factor": 1.5842943475092348,
+      "avg_target_r": 4.315836325973433,
+      "n_skipped_no_liquidity": 12
+    },
+    "W1": {
+      "n": 28,
+      "wins": 5,
+      "losses": 23,
+      "win_rate": 0.17857142857142858,
+      "total_r": -2.202829769255835,
+      "expectancy_r": -0.07867249175913682,
+      "profit_factor": 0.9042247926410506,
+      "avg_target_r": 4.159434046148833,
+      "n_skipped_no_liquidity": 1
+    }
+  },
+  "EURTRY": {
+    "M30": {
+      "n": 7948,
+      "wins": 1319,
+      "losses": 6629,
+      "win_rate": 0.1659536990437846,
+      "total_r": 279.7904101894671,
+      "expectancy_r": 0.03520261829258531,
+      "profit_factor": 1.042207031255011,
+      "avg_target_r": 5.23790023517018,
+      "n_skipped_no_liquidity": 447
+    },
+    "H1": {
+      "n": 3611,
+      "wins": 620,
+      "losses": 2991,
+      "win_rate": 0.17169759069509832,
+      "total_r": 58.23053072024707,
+      "expectancy_r": 0.016125873918650613,
+      "profit_factor": 1.0194685826547132,
+      "avg_target_r": 4.9181137592262045,
+      "n_skipped_no_liquidity": 307
+    },
+    "H2": {
+      "n": 1840,
+      "wins": 310,
+      "losses": 1530,
+      "win_rate": 0.16847826086956522,
+      "total_r": -99.6576345170712,
+      "expectancy_r": -0.05416175788971267,
+      "profit_factor": 0.9348642911653129,
+      "avg_target_r": 4.614007630590093,
+      "n_skipped_no_liquidity": 248
+    },
+    "H4": {
+      "n": 866,
+      "wins": 130,
+      "losses": 736,
+      "win_rate": 0.15011547344110854,
+      "total_r": -199.84673691638233,
+      "expectancy_r": -0.2307699040604878,
+      "profit_factor": 0.7284691074505674,
+      "avg_target_r": 4.1242558698739815,
+      "n_skipped_no_liquidity": 190
+    },
+    "D1": {
+      "n": 125,
+      "wins": 18,
+      "losses": 107,
+      "win_rate": 0.144,
+      "total_r": -7.699808419118645,
+      "expectancy_r": -0.06159846735294916,
+      "profit_factor": 0.9280391736530968,
+      "avg_target_r": 5.516677310048965,
+      "n_skipped_no_liquidity": 62
+    },
+    "W1": {
+      "n": 25,
+      "wins": 7,
+      "losses": 18,
+      "win_rate": 0.28,
+      "total_r": 3.069983386966303,
+      "expectancy_r": 0.12279933547865218,
+      "profit_factor": 1.170554632609239,
+      "avg_target_r": 3.0099976267094717,
+      "n_skipped_no_liquidity": 34
+    }
+  },
+  "EURUSD": {
+    "M30": {
+      "n": 12180,
+      "wins": 2036,
+      "losses": 10144,
+      "win_rate": 0.16715927750410509,
+      "total_r": 73.1837532050515,
+      "expectancy_r": 0.006008518325537948,
+      "profit_factor": 1.0072144867118544,
+      "avg_target_r": 5.018263140081067,
+      "n_skipped_no_liquidity": 380
+    },
+    "H1": {
+      "n": 5723,
+      "wins": 939,
+      "losses": 4784,
+      "win_rate": 0.16407478595142408,
+      "total_r": 13.135636682596196,
+      "expectancy_r": 0.002295236184273297,
+      "profit_factor": 1.00274574345372,
+      "avg_target_r": 5.108770646094351,
+      "n_skipped_no_liquidity": 217
+    },
+    "H2": {
+      "n": 3013,
+      "wins": 518,
+      "losses": 2495,
+      "win_rate": 0.17192167275141054,
+      "total_r": 1.6966601045939491,
+      "expectancy_r": 0.0005631132109504833,
+      "profit_factor": 1.0006800240900176,
+      "avg_target_r": 4.8198777222096405,
+      "n_skipped_no_liquidity": 128
+    },
+    "H4": {
+      "n": 1585,
+      "wins": 269,
+      "losses": 1316,
+      "win_rate": 0.16971608832807572,
+      "total_r": -59.28204982154081,
+      "expectancy_r": -0.03740192417762811,
+      "profit_factor": 0.9549528496796802,
+      "avg_target_r": 4.6718139411838635,
+      "n_skipped_no_liquidity": 72
+    },
+    "D1": {
+      "n": 268,
+      "wins": 52,
+      "losses": 216,
+      "win_rate": 0.19402985074626866,
+      "total_r": 14.521833239723442,
+      "expectancy_r": 0.054185944924341145,
+      "profit_factor": 1.0672307094431641,
+      "avg_target_r": 4.433112177686989,
+      "n_skipped_no_liquidity": 28
+    },
+    "W1": {
+      "n": 35,
+      "wins": 8,
+      "losses": 27,
+      "win_rate": 0.22857142857142856,
+      "total_r": 6.1037299152507485,
+      "expectancy_r": 0.17439228329287837,
+      "profit_factor": 1.2260640709352129,
+      "avg_target_r": 4.137966239406343,
+      "n_skipped_no_liquidity": 12
+    }
+  },
+  "EURZAR": {
+    "M30": {
+      "n": 7755,
+      "wins": 1273,
+      "losses": 6482,
+      "win_rate": 0.16415215989684076,
+      "total_r": -197.5502026545214,
+      "expectancy_r": -0.025473913946424287,
+      "profit_factor": 0.9695232640150384,
+      "avg_target_r": 4.936724114175553,
+      "n_skipped_no_liquidity": 219
+    },
+    "H1": {
+      "n": 3436,
+      "wins": 609,
+      "losses": 2827,
+      "win_rate": 0.17724097788125728,
+      "total_r": 203.85379208666237,
+      "expectancy_r": 0.05932881026969217,
+      "profit_factor": 1.072109583334511,
+      "avg_target_r": 4.976771415577442,
+      "n_skipped_no_liquidity": 116
+    },
+    "H2": {
+      "n": 1728,
+      "wins": 306,
+      "losses": 1422,
+      "win_rate": 0.17708333333333334,
+      "total_r": 118.37094389482377,
+      "expectancy_r": 0.06850170364283792,
+      "profit_factor": 1.0832425765786384,
+      "avg_target_r": 5.033891973512496,
+      "n_skipped_no_liquidity": 64
+    },
+    "H4": {
+      "n": 960,
+      "wins": 169,
+      "losses": 791,
+      "win_rate": 0.17604166666666668,
+      "total_r": 26.14279245164588,
+      "expectancy_r": 0.027232075470464467,
+      "profit_factor": 1.0330503065128267,
+      "avg_target_r": 4.835164452376603,
+      "n_skipped_no_liquidity": 37
+    },
+    "D1": {
+      "n": 165,
+      "wins": 28,
+      "losses": 137,
+      "win_rate": 0.1696969696969697,
+      "total_r": 9.691261581122664,
+      "expectancy_r": 0.05873491867347069,
+      "profit_factor": 1.0707391356286327,
+      "avg_target_r": 5.238973627897238,
+      "n_skipped_no_liquidity": 11
+    },
+    "W1": {
+      "n": 28,
+      "wins": 4,
+      "losses": 24,
+      "win_rate": 0.14285714285714285,
+      "total_r": -12.649344768485795,
+      "expectancy_r": -0.45176231316020704,
+      "profit_factor": 0.4729439679797585,
+      "avg_target_r": 2.837663807878551,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "FRA40": {
+    "M30": {
+      "n": 5205,
+      "wins": 802,
+      "losses": 4403,
+      "win_rate": 0.15408261287223823,
+      "total_r": -270.04463431869374,
+      "expectancy_r": -0.05188177412462902,
+      "profit_factor": 0.9386680367207145,
+      "avg_target_r": 5.15331092977719,
+      "n_skipped_no_liquidity": 205
+    },
+    "H1": {
+      "n": 2582,
+      "wins": 394,
+      "losses": 2188,
+      "win_rate": 0.15259488768396592,
+      "total_r": 85.62633178343789,
+      "expectancy_r": 0.033162793099704824,
+      "profit_factor": 1.0391345209247886,
+      "avg_target_r": 5.770625207572177,
+      "n_skipped_no_liquidity": 115
+    },
+    "H2": {
+      "n": 1176,
+      "wins": 167,
+      "losses": 1009,
+      "win_rate": 0.14200680272108843,
+      "total_r": -94.99340956051003,
+      "expectancy_r": -0.08077670880995746,
+      "profit_factor": 0.9058539052918632,
+      "avg_target_r": 5.47309335592509,
+      "n_skipped_no_liquidity": 77
+    },
+    "H4": {
+      "n": 431,
+      "wins": 57,
+      "losses": 374,
+      "win_rate": 0.13225058004640372,
+      "total_r": -74.46302382712136,
+      "expectancy_r": -0.17276803672185925,
+      "profit_factor": 0.8009010058098358,
+      "avg_target_r": 5.255034669699625,
+      "n_skipped_no_liquidity": 33
+    },
+    "D1": {
+      "n": 204,
+      "wins": 32,
+      "losses": 172,
+      "win_rate": 0.1568627450980392,
+      "total_r": 30.775572815667115,
+      "expectancy_r": 0.1508606510571917,
+      "profit_factor": 1.1789277489282972,
+      "avg_target_r": 6.3367366504895974,
+      "n_skipped_no_liquidity": 34
+    },
+    "W1": {
+      "n": 29,
+      "wins": 7,
+      "losses": 22,
+      "win_rate": 0.2413793103448276,
+      "total_r": 38.17782138239044,
+      "expectancy_r": 1.316476599392774,
+      "profit_factor": 2.7353555173813837,
+      "avg_target_r": 8.596831626055778,
+      "n_skipped_no_liquidity": 21
+    }
+  },
+  "GBPAUD": {
+    "M30": {
+      "n": 10323,
+      "wins": 1767,
+      "losses": 8556,
+      "win_rate": 0.17117117117117117,
+      "total_r": 136.1102635109572,
+      "expectancy_r": 0.013185146131062364,
+      "profit_factor": 1.0159081654407383,
+      "avg_target_r": 4.91913427476568,
+      "n_skipped_no_liquidity": 355
+    },
+    "H1": {
+      "n": 5193,
+      "wins": 908,
+      "losses": 4285,
+      "win_rate": 0.17485076063932217,
+      "total_r": 19.379010854174386,
+      "expectancy_r": 0.0037317563747688576,
+      "profit_factor": 1.004522522953133,
+      "avg_target_r": 4.740505518561866,
+      "n_skipped_no_liquidity": 196
+    },
+    "H2": {
+      "n": 2942,
+      "wins": 509,
+      "losses": 2433,
+      "win_rate": 0.17301155676410604,
+      "total_r": -51.79137993533122,
+      "expectancy_r": -0.01760414001880739,
+      "profit_factor": 0.9787129552259222,
+      "avg_target_r": 4.678209469675184,
+      "n_skipped_no_liquidity": 135
+    },
+    "H4": {
+      "n": 1587,
+      "wins": 287,
+      "losses": 1300,
+      "win_rate": 0.1808443604284814,
+      "total_r": 87.95107221513402,
+      "expectancy_r": 0.05541970523952988,
+      "profit_factor": 1.0676546709347186,
+      "avg_target_r": 4.836066453711268,
+      "n_skipped_no_liquidity": 78
+    },
+    "D1": {
+      "n": 232,
+      "wins": 41,
+      "losses": 191,
+      "win_rate": 0.17672413793103448,
+      "total_r": 35.18299412616347,
+      "expectancy_r": 0.15165083675070445,
+      "profit_factor": 1.1842041577286044,
+      "avg_target_r": 5.51665839332106,
+      "n_skipped_no_liquidity": 19
+    },
+    "W1": {
+      "n": 42,
+      "wins": 9,
+      "losses": 33,
+      "win_rate": 0.21428571428571427,
+      "total_r": 33.53202817726544,
+      "expectancy_r": 0.7983816232682249,
+      "profit_factor": 2.016122065977741,
+      "avg_target_r": 7.392447575251716,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "GBPCAD": {
+    "M30": {
+      "n": 9863,
+      "wins": 1672,
+      "losses": 8191,
+      "win_rate": 0.1695224576700801,
+      "total_r": 248.73617373649222,
+      "expectancy_r": 0.025219119308171112,
+      "profit_factor": 1.0303670093683912,
+      "avg_target_r": 5.047689099124696,
+      "n_skipped_no_liquidity": 270
+    },
+    "H1": {
+      "n": 4810,
+      "wins": 822,
+      "losses": 3988,
+      "win_rate": 0.1708939708939709,
+      "total_r": 153.39101516080112,
+      "expectancy_r": 0.031890023941954726,
+      "profit_factor": 1.0384631432198599,
+      "avg_target_r": 5.038188582920683,
+      "n_skipped_no_liquidity": 148
+    },
+    "H2": {
+      "n": 2683,
+      "wins": 488,
+      "losses": 2195,
+      "win_rate": 0.18188594856503915,
+      "total_r": 40.8036125819545,
+      "expectancy_r": 0.015208204465879449,
+      "profit_factor": 1.0185893451398427,
+      "avg_target_r": 4.581564779881054,
+      "n_skipped_no_liquidity": 79
+    },
+    "H4": {
+      "n": 1430,
+      "wins": 269,
+      "losses": 1161,
+      "win_rate": 0.18811188811188811,
+      "total_r": -8.866020586002202,
+      "expectancy_r": -0.006200014395805753,
+      "profit_factor": 0.9923634620275605,
+      "avg_target_r": 4.283025945776943,
+      "n_skipped_no_liquidity": 64
+    },
+    "D1": {
+      "n": 218,
+      "wins": 37,
+      "losses": 181,
+      "win_rate": 0.16972477064220184,
+      "total_r": -0.021942395661677105,
+      "expectancy_r": -0.000100653191108524,
+      "profit_factor": 0.9998787712946868,
+      "avg_target_r": 4.891298854171306,
+      "n_skipped_no_liquidity": 15
+    },
+    "W1": {
+      "n": 40,
+      "wins": 9,
+      "losses": 31,
+      "win_rate": 0.225,
+      "total_r": 21.880421145959133,
+      "expectancy_r": 0.5470105286489783,
+      "profit_factor": 1.7058200369664236,
+      "avg_target_r": 5.875602349551015,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "GBPCHF": {
+    "M30": {
+      "n": 9637,
+      "wins": 1576,
+      "losses": 8061,
+      "win_rate": 0.16353637023970116,
+      "total_r": -89.1262413125874,
+      "expectancy_r": -0.009248338830817326,
+      "profit_factor": 0.9889435254543372,
+      "avg_target_r": 5.058295532162064,
+      "n_skipped_no_liquidity": 304
+    },
+    "H1": {
+      "n": 4526,
+      "wins": 728,
+      "losses": 3798,
+      "win_rate": 0.16084843128590368,
+      "total_r": -212.51816907451254,
+      "expectancy_r": -0.04695496444421399,
+      "profit_factor": 0.944044715883488,
+      "avg_target_r": 4.925112405117428,
+      "n_skipped_no_liquidity": 168
+    },
+    "H2": {
+      "n": 2545,
+      "wins": 477,
+      "losses": 2068,
+      "win_rate": 0.187426326129666,
+      "total_r": 339.0237478159546,
+      "expectancy_r": 0.13321168872925526,
+      "profit_factor": 1.1639379825028795,
+      "avg_target_r": 5.046171379069087,
+      "n_skipped_no_liquidity": 97
+    },
+    "H4": {
+      "n": 1496,
+      "wins": 269,
+      "losses": 1227,
+      "win_rate": 0.17981283422459893,
+      "total_r": 62.542784627559364,
+      "expectancy_r": 0.041806674216282924,
+      "profit_factor": 1.0509721146108877,
+      "avg_target_r": 4.793839348057841,
+      "n_skipped_no_liquidity": 68
+    },
+    "D1": {
+      "n": 236,
+      "wins": 35,
+      "losses": 201,
+      "win_rate": 0.1483050847457627,
+      "total_r": -6.143769087830469,
+      "expectancy_r": -0.026032919863688386,
+      "profit_factor": 0.9694339846376594,
+      "avg_target_r": 5.567320883204844,
+      "n_skipped_no_liquidity": 19
+    },
+    "W1": {
+      "n": 42,
+      "wins": 8,
+      "losses": 34,
+      "win_rate": 0.19047619047619047,
+      "total_r": 5.902474367814717,
+      "expectancy_r": 0.14053510399558844,
+      "profit_factor": 1.1736021872886682,
+      "avg_target_r": 4.98780929597684,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "GBPDKK": {
+    "M30": {
+      "n": 6433,
+      "wins": 1022,
+      "losses": 5411,
+      "win_rate": 0.1588683351468988,
+      "total_r": -119.41264431298119,
+      "expectancy_r": -0.018562512717702706,
+      "profit_factor": 0.9779315016978413,
+      "avg_target_r": 5.177678430222132,
+      "n_skipped_no_liquidity": 177
+    },
+    "H1": {
+      "n": 3146,
+      "wins": 528,
+      "losses": 2618,
+      "win_rate": 0.16783216783216784,
+      "total_r": 28.846660778952362,
+      "expectancy_r": 0.009169313661459677,
+      "profit_factor": 1.0110185870049475,
+      "avg_target_r": 5.012967160566197,
+      "n_skipped_no_liquidity": 88
+    },
+    "H2": {
+      "n": 1758,
+      "wins": 313,
+      "losses": 1445,
+      "win_rate": 0.17804323094425484,
+      "total_r": 35.689039110693315,
+      "expectancy_r": 0.02030093237240793,
+      "profit_factor": 1.0246982969624174,
+      "avg_target_r": 4.730635907701895,
+      "n_skipped_no_liquidity": 55
+    },
+    "H4": {
+      "n": 1057,
+      "wins": 183,
+      "losses": 874,
+      "win_rate": 0.17313150425733206,
+      "total_r": -58.26107085478402,
+      "expectancy_r": -0.05511927233186764,
+      "profit_factor": 0.9333397358640915,
+      "avg_target_r": 4.457589776749814,
+      "n_skipped_no_liquidity": 29
+    },
+    "D1": {
+      "n": 161,
+      "wins": 26,
+      "losses": 135,
+      "win_rate": 0.16149068322981366,
+      "total_r": -27.281926442381852,
+      "expectancy_r": -0.16945295926945259,
+      "profit_factor": 0.7979116559823566,
+      "avg_target_r": 4.143002829139159,
+      "n_skipped_no_liquidity": 10
+    },
+    "W1": {
+      "n": 25,
+      "wins": 5,
+      "losses": 20,
+      "win_rate": 0.2,
+      "total_r": 1.1089007196764475,
+      "expectancy_r": 0.04435602878705791,
+      "profit_factor": 1.0554450359838223,
+      "avg_target_r": 4.221780143935289,
+      "n_skipped_no_liquidity": 5
+    }
+  },
+  "GBPJPY": {
+    "M30": {
+      "n": 11475,
+      "wins": 1875,
+      "losses": 9600,
+      "win_rate": 0.16339869281045752,
+      "total_r": -202.68686956438938,
+      "expectancy_r": -0.017663343752888028,
+      "profit_factor": 0.978886784420376,
+      "avg_target_r": 5.011900336232325,
+      "n_skipped_no_liquidity": 445
+    },
+    "H1": {
+      "n": 5535,
+      "wins": 920,
+      "losses": 4615,
+      "win_rate": 0.16621499548328816,
+      "total_r": -57.541132375103906,
+      "expectancy_r": -0.010395868541120956,
+      "profit_factor": 0.9875317156283632,
+      "avg_target_r": 4.953759638722713,
+      "n_skipped_no_liquidity": 240
+    },
+    "H2": {
+      "n": 3056,
+      "wins": 514,
+      "losses": 2542,
+      "win_rate": 0.16819371727748691,
+      "total_r": -197.11954686762428,
+      "expectancy_r": -0.06450246952474614,
+      "profit_factor": 0.9224549382896836,
+      "avg_target_r": 4.562024227884,
+      "n_skipped_no_liquidity": 142
+    },
+    "H4": {
+      "n": 1536,
+      "wins": 255,
+      "losses": 1281,
+      "win_rate": 0.166015625,
+      "total_r": -17.938891643926564,
+      "expectancy_r": -0.011678965914014627,
+      "profit_factor": 0.9859961813864742,
+      "avg_target_r": 4.953180817082641,
+      "n_skipped_no_liquidity": 93
+    },
+    "D1": {
+      "n": 303,
+      "wins": 38,
+      "losses": 265,
+      "win_rate": 0.1254125412541254,
+      "total_r": -81.94358318438513,
+      "expectancy_r": -0.27044086859533045,
+      "profit_factor": 0.6907789313796788,
+      "avg_target_r": 4.817274126726708,
+      "n_skipped_no_liquidity": 20
+    },
+    "W1": {
+      "n": 51,
+      "wins": 5,
+      "losses": 46,
+      "win_rate": 0.09803921568627451,
+      "total_r": -18.800287886367347,
+      "expectancy_r": -0.36863309581112447,
+      "profit_factor": 0.5912980894267968,
+      "avg_target_r": 5.4399424227265305,
+      "n_skipped_no_liquidity": 9
+    }
+  },
+  "GBPNOK": {
+    "M30": {
+      "n": 6072,
+      "wins": 1076,
+      "losses": 4996,
+      "win_rate": 0.1772068511198946,
+      "total_r": 199.96156845015904,
+      "expectancy_r": 0.03293174710970981,
+      "profit_factor": 1.040024333156557,
+      "avg_target_r": 4.828960565474125,
+      "n_skipped_no_liquidity": 184
+    },
+    "H1": {
+      "n": 2836,
+      "wins": 491,
+      "losses": 2345,
+      "win_rate": 0.1731311706629055,
+      "total_r": 20.27444381158322,
+      "expectancy_r": 0.007148957620445429,
+      "profit_factor": 1.0086458182565388,
+      "avg_target_r": 4.8172595596977255,
+      "n_skipped_no_liquidity": 84
+    },
+    "H2": {
+      "n": 1468,
+      "wins": 298,
+      "losses": 1170,
+      "win_rate": 0.20299727520435967,
+      "total_r": 237.78617459251714,
+      "expectancy_r": 0.16197968296493004,
+      "profit_factor": 1.2032360466602712,
+      "avg_target_r": 4.724114679840662,
+      "n_skipped_no_liquidity": 73
+    },
+    "H4": {
+      "n": 818,
+      "wins": 154,
+      "losses": 664,
+      "win_rate": 0.1882640586797066,
+      "total_r": 10.529427736304395,
+      "expectancy_r": 0.01287216104682698,
+      "profit_factor": 1.0158575718920246,
+      "avg_target_r": 4.380061219066912,
+      "n_skipped_no_liquidity": 50
+    },
+    "D1": {
+      "n": 97,
+      "wins": 17,
+      "losses": 80,
+      "win_rate": 0.17525773195876287,
+      "total_r": -0.4645282767539949,
+      "expectancy_r": -0.004788951306742284,
+      "profit_factor": 0.994193396540575,
+      "avg_target_r": 4.678557160190941,
+      "n_skipped_no_liquidity": 7
+    },
+    "W1": {
+      "n": 29,
+      "wins": 5,
+      "losses": 24,
+      "win_rate": 0.1724137931034483,
+      "total_r": -4.449052934327328,
+      "expectancy_r": -0.15341561842508022,
+      "profit_factor": 0.8146227944030279,
+      "avg_target_r": 3.910189413134534,
+      "n_skipped_no_liquidity": 3
+    }
+  },
+  "GBPNZD": {
+    "M30": {
+      "n": 10211,
+      "wins": 1695,
+      "losses": 8516,
+      "win_rate": 0.1659974537263735,
+      "total_r": -56.531547919980774,
+      "expectancy_r": -0.005536338058954371,
+      "profit_factor": 0.9933617252325057,
+      "avg_target_r": 4.990836844884966,
+      "n_skipped_no_liquidity": 267
+    },
+    "H1": {
+      "n": 4882,
+      "wins": 821,
+      "losses": 4061,
+      "win_rate": 0.16816878328553872,
+      "total_r": -0.8547439567099953,
+      "expectancy_r": -0.00017508069576188667,
+      "profit_factor": 0.99978952377328,
+      "avg_target_r": 4.945365719906565,
+      "n_skipped_no_liquidity": 135
+    },
+    "H2": {
+      "n": 2681,
+      "wins": 480,
+      "losses": 2201,
+      "win_rate": 0.17903767251025737,
+      "total_r": 131.83731502566837,
+      "expectancy_r": 0.0491746792337443,
+      "profit_factor": 1.0598988255455104,
+      "avg_target_r": 4.860077739636809,
+      "n_skipped_no_liquidity": 92
+    },
+    "H4": {
+      "n": 1346,
+      "wins": 240,
+      "losses": 1106,
+      "win_rate": 0.17830609212481427,
+      "total_r": 79.6488514323185,
+      "expectancy_r": 0.05917448100469436,
+      "profit_factor": 1.0720152363764182,
+      "avg_target_r": 4.940203547634661,
+      "n_skipped_no_liquidity": 48
+    },
+    "D1": {
+      "n": 230,
+      "wins": 38,
+      "losses": 192,
+      "win_rate": 0.16521739130434782,
+      "total_r": -23.57002903149433,
+      "expectancy_r": -0.1024783870934537,
+      "profit_factor": 0.8772394321276337,
+      "avg_target_r": 4.432367657065939,
+      "n_skipped_no_liquidity": 14
+    },
+    "W1": {
+      "n": 40,
+      "wins": 6,
+      "losses": 34,
+      "win_rate": 0.15,
+      "total_r": -6.324029950118156,
+      "expectancy_r": -0.15810074875295388,
+      "profit_factor": 0.8139991191141719,
+      "avg_target_r": 4.612661674980307,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "GBPSEK": {
+    "M30": {
+      "n": 6409,
+      "wins": 1114,
+      "losses": 5295,
+      "win_rate": 0.1738180683413949,
+      "total_r": 165.20095486985778,
+      "expectancy_r": 0.025776401134320115,
+      "profit_factor": 1.0311994249046001,
+      "avg_target_r": 4.9014371228634275,
+      "n_skipped_no_liquidity": 189
+    },
+    "H1": {
+      "n": 2928,
+      "wins": 505,
+      "losses": 2423,
+      "win_rate": 0.17247267759562843,
+      "total_r": -32.4901525724952,
+      "expectancy_r": -0.011096363583502522,
+      "profit_factor": 0.9865909399205549,
+      "avg_target_r": 4.733682866193078,
+      "n_skipped_no_liquidity": 97
+    },
+    "H2": {
+      "n": 1562,
+      "wins": 271,
+      "losses": 1291,
+      "win_rate": 0.17349551856594111,
+      "total_r": -34.93459973528721,
+      "expectancy_r": -0.022365300726816417,
+      "profit_factor": 0.9729398917619773,
+      "avg_target_r": 4.634927676253552,
+      "n_skipped_no_liquidity": 53
+    },
+    "H4": {
+      "n": 930,
+      "wins": 190,
+      "losses": 740,
+      "win_rate": 0.20430107526881722,
+      "total_r": 119.40966482250975,
+      "expectancy_r": 0.1283974890564621,
+      "profit_factor": 1.1613644119223105,
+      "avg_target_r": 4.523208762223735,
+      "n_skipped_no_liquidity": 40
+    },
+    "D1": {
+      "n": 112,
+      "wins": 16,
+      "losses": 96,
+      "win_rate": 0.14285714285714285,
+      "total_r": -30.46172982410014,
+      "expectancy_r": -0.2719797305723227,
+      "profit_factor": 0.6826903143322903,
+      "avg_target_r": 4.096141885993742,
+      "n_skipped_no_liquidity": 8
+    },
+    "W1": {
+      "n": 26,
+      "wins": 3,
+      "losses": 23,
+      "win_rate": 0.11538461538461539,
+      "total_r": -11.065766296705206,
+      "expectancy_r": -0.42560639602712325,
+      "profit_factor": 0.5188797262302084,
+      "avg_target_r": 3.9780779010982648,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "GBPSGD": {
+    "M30": {
+      "n": 7206,
+      "wins": 1193,
+      "losses": 6013,
+      "win_rate": 0.165556480710519,
+      "total_r": -47.363348187949704,
+      "expectancy_r": -0.0065727654992990825,
+      "profit_factor": 0.9921231750893149,
+      "avg_target_r": 5.00053365617104,
+      "n_skipped_no_liquidity": 205
+    },
+    "H1": {
+      "n": 3340,
+      "wins": 549,
+      "losses": 2791,
+      "win_rate": 0.16437125748502995,
+      "total_r": 63.04681223733363,
+      "expectancy_r": 0.018876291089022113,
+      "profit_factor": 1.0225893272079303,
+      "avg_target_r": 5.1986280732920465,
+      "n_skipped_no_liquidity": 106
+    },
+    "H2": {
+      "n": 1844,
+      "wins": 338,
+      "losses": 1506,
+      "win_rate": 0.18329718004338394,
+      "total_r": 63.14023950610594,
+      "expectancy_r": 0.03424091079506819,
+      "profit_factor": 1.0419257898446919,
+      "avg_target_r": 4.642426744100905,
+      "n_skipped_no_liquidity": 68
+    },
+    "H4": {
+      "n": 955,
+      "wins": 175,
+      "losses": 780,
+      "win_rate": 0.18324607329842932,
+      "total_r": 17.801441645904127,
+      "expectancy_r": 0.018640253032360388,
+      "profit_factor": 1.0228223610844924,
+      "avg_target_r": 4.558865380833738,
+      "n_skipped_no_liquidity": 54
+    },
+    "D1": {
+      "n": 128,
+      "wins": 36,
+      "losses": 92,
+      "win_rate": 0.28125,
+      "total_r": 82.843127788623,
+      "expectancy_r": 0.6472119358486172,
+      "profit_factor": 1.9004687803111195,
+      "avg_target_r": 4.856753549683972,
+      "n_skipped_no_liquidity": 17
+    },
+    "W1": {
+      "n": 31,
+      "wins": 9,
+      "losses": 22,
+      "win_rate": 0.2903225806451613,
+      "total_r": 24.054858545333552,
+      "expectancy_r": 0.7759631788817276,
+      "profit_factor": 2.0934026611515253,
+      "avg_target_r": 5.117206505037061,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "GBPUSD": {
+    "M30": {
+      "n": 12312,
+      "wins": 1982,
+      "losses": 10330,
+      "win_rate": 0.1609811565951917,
+      "total_r": 27.792558908432408,
+      "expectancy_r": 0.0022573553369422683,
+      "profit_factor": 1.0026904703686768,
+      "avg_target_r": 5.225929646270652,
+      "n_skipped_no_liquidity": 357
+    },
+    "H1": {
+      "n": 5667,
+      "wins": 904,
+      "losses": 4763,
+      "win_rate": 0.15952002823363332,
+      "total_r": 104.50599673755404,
+      "expectancy_r": 0.018441149944865676,
+      "profit_factor": 1.021941212835934,
+      "avg_target_r": 5.384409288426498,
+      "n_skipped_no_liquidity": 184
+    },
+    "H2": {
+      "n": 3011,
+      "wins": 527,
+      "losses": 2484,
+      "win_rate": 0.17502490866821654,
+      "total_r": 87.25318354985062,
+      "expectancy_r": 0.02897814133173393,
+      "profit_factor": 1.0351260803340785,
+      "avg_target_r": 4.879038298956074,
+      "n_skipped_no_liquidity": 91
+    },
+    "H4": {
+      "n": 1621,
+      "wins": 271,
+      "losses": 1350,
+      "win_rate": 0.16718075262183837,
+      "total_r": -208.0126064008767,
+      "expectancy_r": -0.12832363133922053,
+      "profit_factor": 0.8459165878512025,
+      "avg_target_r": 4.213975622136987,
+      "n_skipped_no_liquidity": 57
+    },
+    "D1": {
+      "n": 289,
+      "wins": 55,
+      "losses": 234,
+      "win_rate": 0.1903114186851211,
+      "total_r": 28.094602692230307,
+      "expectancy_r": 0.09721315810460307,
+      "profit_factor": 1.1200624046676508,
+      "avg_target_r": 4.765356412586005,
+      "n_skipped_no_liquidity": 25
+    },
+    "W1": {
+      "n": 55,
+      "wins": 9,
+      "losses": 46,
+      "win_rate": 0.16363636363636364,
+      "total_r": 1.870074780386373,
+      "expectancy_r": 0.03400135964338857,
+      "profit_factor": 1.040653799573617,
+      "avg_target_r": 5.318897197820708,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "GER40": {
+    "M30": {
+      "n": 6625,
+      "wins": 983,
+      "losses": 5642,
+      "win_rate": 0.14837735849056605,
+      "total_r": -261.9278092181589,
+      "expectancy_r": -0.03953627308953345,
+      "profit_factor": 0.953575361712485,
+      "avg_target_r": 5.473115148302991,
+      "n_skipped_no_liquidity": 327
+    },
+    "H1": {
+      "n": 3113,
+      "wins": 449,
+      "losses": 2664,
+      "win_rate": 0.14423385801477676,
+      "total_r": -261.6849440452353,
+      "expectancy_r": -0.08406198009805177,
+      "profit_factor": 0.9017699158989357,
+      "avg_target_r": 5.350367607917071,
+      "n_skipped_no_liquidity": 184
+    },
+    "H2": {
+      "n": 1452,
+      "wins": 212,
+      "losses": 1240,
+      "win_rate": 0.14600550964187328,
+      "total_r": -246.73315803584435,
+      "expectancy_r": -0.16992641738005798,
+      "profit_factor": 0.8010216467452869,
+      "avg_target_r": 4.685220952661112,
+      "n_skipped_no_liquidity": 100
+    },
+    "H4": {
+      "n": 634,
+      "wins": 77,
+      "losses": 557,
+      "win_rate": 0.12145110410094637,
+      "total_r": -204.11669174602483,
+      "expectancy_r": -0.32195061789593826,
+      "profit_factor": 0.6335427437234742,
+      "avg_target_r": 4.582900107194482,
+      "n_skipped_no_liquidity": 71
+    },
+    "D1": {
+      "n": 173,
+      "wins": 26,
+      "losses": 147,
+      "win_rate": 0.15028901734104047,
+      "total_r": -12.601542761261056,
+      "expectancy_r": -0.07284128763734699,
+      "profit_factor": 0.9142752193111494,
+      "avg_target_r": 5.169171432259191,
+      "n_skipped_no_liquidity": 49
+    },
+    "W1": {
+      "n": 21,
+      "wins": 9,
+      "losses": 12,
+      "win_rate": 0.42857142857142855,
+      "total_r": 29.720441787185536,
+      "expectancy_r": 1.4152591327231208,
+      "profit_factor": 3.4767034822654614,
+      "avg_target_r": 4.635604643020615,
+      "n_skipped_no_liquidity": 22
+    }
+  },
+  "GERMID50": {
+    "M30": {
+      "n": 1753,
+      "wins": 255,
+      "losses": 1498,
+      "win_rate": 0.14546491728465488,
+      "total_r": -40.57913046326394,
+      "expectancy_r": -0.023148391593419193,
+      "profit_factor": 0.9729111278616396,
+      "avg_target_r": 5.715375958967592,
+      "n_skipped_no_liquidity": 94
+    },
+    "H1": {
+      "n": 615,
+      "wins": 89,
+      "losses": 526,
+      "win_rate": 0.14471544715447154,
+      "total_r": -22.1131486472154,
+      "expectancy_r": -0.03595633926376485,
+      "profit_factor": 0.9579597934463586,
+      "avg_target_r": 5.661650015199827,
+      "n_skipped_no_liquidity": 30
+    },
+    "H2": {
+      "n": 183,
+      "wins": 24,
+      "losses": 159,
+      "win_rate": 0.13114754098360656,
+      "total_r": -60.369499186797526,
+      "expectancy_r": -0.3298879736983471,
+      "profit_factor": 0.620317615177374,
+      "avg_target_r": 4.109604200550103,
+      "n_skipped_no_liquidity": 24
+    },
+    "H4": {
+      "n": 17,
+      "wins": 3,
+      "losses": 14,
+      "win_rate": 0.17647058823529413,
+      "total_r": 7.808681031970334,
+      "expectancy_r": 0.45933417835119617,
+      "profit_factor": 1.5577629308550238,
+      "avg_target_r": 7.269560343990111,
+      "n_skipped_no_liquidity": 8
+    },
+    "D1": {
+      "n": 179,
+      "wins": 27,
+      "losses": 152,
+      "win_rate": 0.15083798882681565,
+      "total_r": -13.324628679755577,
+      "expectancy_r": -0.07443926636734943,
+      "profit_factor": 0.9123379692121345,
+      "avg_target_r": 5.136124863712757,
+      "n_skipped_no_liquidity": 15
+    },
+    "W1": {
+      "n": 19,
+      "wins": 2,
+      "losses": 17,
+      "win_rate": 0.10526315789473684,
+      "total_r": -10.00471389425898,
+      "expectancy_r": -0.5265638891715252,
+      "profit_factor": 0.4114874179847659,
+      "avg_target_r": 3.4976430528705102,
+      "n_skipped_no_liquidity": 4
+    }
+  },
+  "GERTECH30": {
+    "M30": {
+      "n": 907,
+      "wins": 115,
+      "losses": 792,
+      "win_rate": 0.12679162072767364,
+      "total_r": -137.8095992739098,
+      "expectancy_r": -0.15194002125017636,
+      "profit_factor": 0.8259979807147603,
+      "avg_target_r": 5.688612180226871,
+      "n_skipped_no_liquidity": 33
+    },
+    "H1": {
+      "n": 250,
+      "wins": 28,
+      "losses": 222,
+      "win_rate": 0.112,
+      "total_r": -81.04174391641125,
+      "expectancy_r": -0.3241669756656451,
+      "profit_factor": 0.6349470994756249,
+      "avg_target_r": 5.0342234315567405,
+      "n_skipped_no_liquidity": 21
+    },
+    "H2": {
+      "n": 68,
+      "wins": 8,
+      "losses": 60,
+      "win_rate": 0.11764705882352941,
+      "total_r": -29.539171818473267,
+      "expectancy_r": -0.43439958556578334,
+      "profit_factor": 0.5076804696921122,
+      "avg_target_r": 3.8076035226908416,
+      "n_skipped_no_liquidity": 9
+    },
+    "H4": {
+      "n": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 2
+    },
+    "D1": {
+      "n": 163,
+      "wins": 27,
+      "losses": 136,
+      "win_rate": 0.1656441717791411,
+      "total_r": 8.822674403351106,
+      "expectancy_r": 0.05412683683037478,
+      "profit_factor": 1.0648726059069933,
+      "avg_target_r": 5.363802755679671,
+      "n_skipped_no_liquidity": 19
+    },
+    "W1": {
+      "n": 27,
+      "wins": 2,
+      "losses": 25,
+      "win_rate": 0.07407407407407407,
+      "total_r": -15.90834310547007,
+      "expectancy_r": -0.5891978927951877,
+      "profit_factor": 0.3636662757811972,
+      "avg_target_r": 4.545828447264965,
+      "n_skipped_no_liquidity": 4
+    }
+  },
+  "GOLD": {
+    "M30": {
+      "n": 8102,
+      "wins": 1318,
+      "losses": 6784,
+      "win_rate": 0.1626758824981486,
+      "total_r": -176.52522958114122,
+      "expectancy_r": -0.021787858501745583,
+      "profit_factor": 0.9739791819603271,
+      "avg_target_r": 5.013258551152396,
+      "n_skipped_no_liquidity": 404
+    },
+    "H1": {
+      "n": 3856,
+      "wins": 643,
+      "losses": 3213,
+      "win_rate": 0.166753112033195,
+      "total_r": 134.12125595142155,
+      "expectancy_r": 0.03478248338989143,
+      "profit_factor": 1.0417433102867792,
+      "avg_target_r": 5.2054762923039215,
+      "n_skipped_no_liquidity": 228
+    },
+    "H2": {
+      "n": 2104,
+      "wins": 352,
+      "losses": 1752,
+      "win_rate": 0.16730038022813687,
+      "total_r": -43.16533003214036,
+      "expectancy_r": -0.020515841270028812,
+      "profit_factor": 0.9753622545478651,
+      "avg_target_r": 4.8546439487723285,
+      "n_skipped_no_liquidity": 146
+    },
+    "H4": {
+      "n": 958,
+      "wins": 162,
+      "losses": 796,
+      "win_rate": 0.16910229645093947,
+      "total_r": -43.86325018226929,
+      "expectancy_r": -0.04578627367669019,
+      "profit_factor": 0.9448954143438828,
+      "avg_target_r": 4.6428194433193255,
+      "n_skipped_no_liquidity": 96
+    },
+    "D1": {
+      "n": 194,
+      "wins": 35,
+      "losses": 159,
+      "win_rate": 0.18041237113402062,
+      "total_r": 25.857044262065447,
+      "expectancy_r": 0.13328373330961574,
+      "profit_factor": 1.162622919887204,
+      "avg_target_r": 5.281629836059013,
+      "n_skipped_no_liquidity": 57
+    },
+    "W1": {
+      "n": 26,
+      "wins": 8,
+      "losses": 18,
+      "win_rate": 0.3076923076923077,
+      "total_r": 19.71132577727828,
+      "expectancy_r": 0.7581279145107034,
+      "profit_factor": 2.095073654293238,
+      "avg_target_r": 4.713915722159785,
+      "n_skipped_no_liquidity": 25
+    }
+  },
+  "HK50": {
+    "M30": {
+      "n": 4965,
+      "wins": 715,
+      "losses": 4250,
+      "win_rate": 0.14400805639476336,
+      "total_r": -36.95403275359807,
+      "expectancy_r": -0.0074429068990126135,
+      "profit_factor": 0.9913049334697417,
+      "avg_target_r": 5.8923719821628,
+      "n_skipped_no_liquidity": 225
+    },
+    "H1": {
+      "n": 2561,
+      "wins": 351,
+      "losses": 2210,
+      "win_rate": 0.13705583756345177,
+      "total_r": -317.0397759424285,
+      "expectancy_r": -0.12379530493652036,
+      "profit_factor": 0.8565430878088558,
+      "avg_target_r": 5.393049071389092,
+      "n_skipped_no_liquidity": 127
+    },
+    "H2": {
+      "n": 1284,
+      "wins": 164,
+      "losses": 1120,
+      "win_rate": 0.1277258566978193,
+      "total_r": -194.82191160586274,
+      "expectancy_r": -0.1517304607522295,
+      "profit_factor": 0.8260518646376226,
+      "avg_target_r": 5.641329807281325,
+      "n_skipped_no_liquidity": 64
+    },
+    "H4": {
+      "n": 346,
+      "wins": 32,
+      "losses": 314,
+      "win_rate": 0.09248554913294797,
+      "total_r": -130.34273850115562,
+      "expectancy_r": -0.37671311705536314,
+      "profit_factor": 0.5848957372574661,
+      "avg_target_r": 5.739289421838887,
+      "n_skipped_no_liquidity": 17
+    },
+    "D1": {
+      "n": 202,
+      "wins": 27,
+      "losses": 175,
+      "win_rate": 0.13366336633663367,
+      "total_r": -54.446674019395445,
+      "expectancy_r": -0.2695379901950269,
+      "profit_factor": 0.6888761484605974,
+      "avg_target_r": 4.46493799928165,
+      "n_skipped_no_liquidity": 19
+    },
+    "W1": {
+      "n": 39,
+      "wins": 6,
+      "losses": 33,
+      "win_rate": 0.15384615384615385,
+      "total_r": -5.523906846521511,
+      "expectancy_r": -0.14163863709029512,
+      "profit_factor": 0.8326088834387421,
+      "avg_target_r": 4.5793488589130815,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "IT40": {
+    "M30": {
+      "n": 3547,
+      "wins": 505,
+      "losses": 3042,
+      "win_rate": 0.14237383704539047,
+      "total_r": -229.4636577782302,
+      "expectancy_r": -0.06469231964427136,
+      "profit_factor": 0.9245681598362162,
+      "avg_target_r": 5.5693788954886525,
+      "n_skipped_no_liquidity": 213
+    },
+    "H1": {
+      "n": 1649,
+      "wins": 235,
+      "losses": 1414,
+      "win_rate": 0.14251061249241964,
+      "total_r": -69.05968404536911,
+      "expectancy_r": -0.04187973562484493,
+      "profit_factor": 0.9511600537161463,
+      "avg_target_r": 5.723150280658004,
+      "n_skipped_no_liquidity": 101
+    },
+    "H2": {
+      "n": 688,
+      "wins": 96,
+      "losses": 592,
+      "win_rate": 0.13953488372093023,
+      "total_r": -2.368158594179855,
+      "expectancy_r": -0.0034420909799125488,
+      "profit_factor": 0.9959997321044259,
+      "avg_target_r": 6.141998347977293,
+      "n_skipped_no_liquidity": 83
+    },
+    "H4": {
+      "n": 191,
+      "wins": 20,
+      "losses": 171,
+      "win_rate": 0.10471204188481675,
+      "total_r": -48.70069669540946,
+      "expectancy_r": -0.25497746960947365,
+      "profit_factor": 0.7152006041204125,
+      "avg_target_r": 6.114965165229527,
+      "n_skipped_no_liquidity": 43
+    },
+    "D1": {
+      "n": 216,
+      "wins": 32,
+      "losses": 184,
+      "win_rate": 0.14814814814814814,
+      "total_r": 21.773486676303765,
+      "expectancy_r": 0.1008031790569619,
+      "profit_factor": 1.1183341667190423,
+      "avg_target_r": 6.430421458634493,
+      "n_skipped_no_liquidity": 50
+    },
+    "W1": {
+      "n": 21,
+      "wins": 4,
+      "losses": 17,
+      "win_rate": 0.19047619047619047,
+      "total_r": 1.7962234819212313,
+      "expectancy_r": 0.08553445152005856,
+      "profit_factor": 1.105660204818896,
+      "avg_target_r": 4.699055870480308,
+      "n_skipped_no_liquidity": 29
+    }
+  },
+  "JP225": {
+    "M30": {
+      "n": 5997,
+      "wins": 937,
+      "losses": 5060,
+      "win_rate": 0.15624478906119726,
+      "total_r": 88.84783997471985,
+      "expectancy_r": 0.01481538101962987,
+      "profit_factor": 1.017558861655083,
+      "avg_target_r": 5.495035047998634,
+      "n_skipped_no_liquidity": 240
+    },
+    "H1": {
+      "n": 2693,
+      "wins": 431,
+      "losses": 2262,
+      "win_rate": 0.16004455997029335,
+      "total_r": 230.9026079168933,
+      "expectancy_r": 0.08574177791195448,
+      "profit_factor": 1.1020789601754613,
+      "avg_target_r": 5.783996770108802,
+      "n_skipped_no_liquidity": 131
+    },
+    "H2": {
+      "n": 1190,
+      "wins": 186,
+      "losses": 1004,
+      "win_rate": 0.15630252100840336,
+      "total_r": -11.258544031345103,
+      "expectancy_r": -0.009460961370878151,
+      "profit_factor": 0.988786310725752,
+      "avg_target_r": 5.337319655745457,
+      "n_skipped_no_liquidity": 82
+    },
+    "H4": {
+      "n": 442,
+      "wins": 63,
+      "losses": 379,
+      "win_rate": 0.1425339366515837,
+      "total_r": -38.76271889067177,
+      "expectancy_r": -0.08769845902866924,
+      "profit_factor": 0.8977236968583859,
+      "avg_target_r": 5.400591763640131,
+      "n_skipped_no_liquidity": 42
+    },
+    "D1": {
+      "n": 197,
+      "wins": 27,
+      "losses": 170,
+      "win_rate": 0.13705583756345177,
+      "total_r": -14.010893554534825,
+      "expectancy_r": -0.07112128707885701,
+      "profit_factor": 0.9175829790909716,
+      "avg_target_r": 5.777374312795007,
+      "n_skipped_no_liquidity": 31
+    },
+    "W1": {
+      "n": 27,
+      "wins": 5,
+      "losses": 22,
+      "win_rate": 0.18518518518518517,
+      "total_r": -0.9492503160480354,
+      "expectancy_r": -0.03515741911289039,
+      "profit_factor": 0.9568522583614528,
+      "avg_target_r": 4.210149936790392,
+      "n_skipped_no_liquidity": 22
+    }
+  },
+  "LINKUSD": {
+    "M30": {
+      "n": 5208,
+      "wins": 894,
+      "losses": 4314,
+      "win_rate": 0.1716589861751152,
+      "total_r": 463.36829395518697,
+      "expectancy_r": 0.0889724066734231,
+      "profit_factor": 1.1074103602121435,
+      "avg_target_r": 5.343812409345847,
+      "n_skipped_no_liquidity": 189
+    },
+    "H1": {
+      "n": 2289,
+      "wins": 384,
+      "losses": 1905,
+      "win_rate": 0.16775884665792923,
+      "total_r": -7.263657145253806,
+      "expectancy_r": -0.003173288398975016,
+      "profit_factor": 0.9961870566166647,
+      "avg_target_r": 4.942021726184235,
+      "n_skipped_no_liquidity": 88
+    },
+    "H2": {
+      "n": 1014,
+      "wins": 170,
+      "losses": 844,
+      "win_rate": 0.16765285996055226,
+      "total_r": -18.953318037637043,
+      "expectancy_r": -0.018691635145598684,
+      "profit_factor": 0.9775434620407144,
+      "avg_target_r": 4.853215776249194,
+      "n_skipped_no_liquidity": 37
+    },
+    "H4": {
+      "n": 457,
+      "wins": 76,
+      "losses": 381,
+      "win_rate": 0.16630196936542668,
+      "total_r": -42.291306185237694,
+      "expectancy_r": -0.09254115139001706,
+      "profit_factor": 0.8889991963642054,
+      "avg_target_r": 4.4566933396679245,
+      "n_skipped_no_liquidity": 18
+    },
+    "D1": {
+      "n": 112,
+      "wins": 21,
+      "losses": 91,
+      "win_rate": 0.1875,
+      "total_r": 15.167275417293938,
+      "expectancy_r": 0.1354221019401245,
+      "profit_factor": 1.1666733562339993,
+      "avg_target_r": 5.055584543680664,
+      "n_skipped_no_liquidity": 11
+    },
+    "W1": {
+      "n": 7,
+      "wins": 0,
+      "losses": 7,
+      "win_rate": 0.0,
+      "total_r": -7.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "LTCUSD": {
+    "M30": {
+      "n": 8035,
+      "wins": 1320,
+      "losses": 6715,
+      "win_rate": 0.164281269446173,
+      "total_r": -94.23183296569418,
+      "expectancy_r": -0.011727670562003079,
+      "profit_factor": 0.9859669645620708,
+      "avg_target_r": 5.015733459874474,
+      "n_skipped_no_liquidity": 258
+    },
+    "H1": {
+      "n": 3560,
+      "wins": 584,
+      "losses": 2976,
+      "win_rate": 0.16404494382022472,
+      "total_r": -61.568172534939755,
+      "expectancy_r": -0.017294430487342582,
+      "profit_factor": 0.9793117699815391,
+      "avg_target_r": 4.990465457988117,
+      "n_skipped_no_liquidity": 135
+    },
+    "H2": {
+      "n": 1707,
+      "wins": 281,
+      "losses": 1426,
+      "win_rate": 0.16461628588166374,
+      "total_r": -98.09445246773919,
+      "expectancy_r": -0.057465994415781485,
+      "profit_factor": 0.9312100613830722,
+      "avg_target_r": 4.725642517908402,
+      "n_skipped_no_liquidity": 54
+    },
+    "H4": {
+      "n": 866,
+      "wins": 134,
+      "losses": 732,
+      "win_rate": 0.15473441108545036,
+      "total_r": -181.1878377077512,
+      "expectancy_r": -0.20922383107130615,
+      "profit_factor": 0.752475631546788,
+      "avg_target_r": 4.110538524569021,
+      "n_skipped_no_liquidity": 16
+    },
+    "D1": {
+      "n": 157,
+      "wins": 26,
+      "losses": 131,
+      "win_rate": 0.16560509554140126,
+      "total_r": -19.639382913175798,
+      "expectancy_r": -0.12509161091194787,
+      "profit_factor": 0.8500810464643069,
+      "avg_target_r": 4.283100657185546,
+      "n_skipped_no_liquidity": 8
+    },
+    "W1": {
+      "n": 22,
+      "wins": 4,
+      "losses": 18,
+      "win_rate": 0.18181818181818182,
+      "total_r": -2.8338279424403385,
+      "expectancy_r": -0.1288103610200153,
+      "profit_factor": 0.84256511430887,
+      "avg_target_r": 3.7915430143899154,
+      "n_skipped_no_liquidity": 4
+    }
+  },
+  "MATICUSD": {
+    "M30": {
+      "n": 5634,
+      "wins": 909,
+      "losses": 4725,
+      "win_rate": 0.16134185303514376,
+      "total_r": -206.96318723990476,
+      "expectancy_r": -0.03673468002128244,
+      "profit_factor": 0.9561982672508138,
+      "avg_target_r": 4.9703375277888835,
+      "n_skipped_no_liquidity": 238
+    },
+    "H1": {
+      "n": 2559,
+      "wins": 416,
+      "losses": 2143,
+      "win_rate": 0.16256350136772177,
+      "total_r": 8.781640088333493,
+      "expectancy_r": 0.0034316686550736053,
+      "profit_factor": 1.004097825519521,
+      "avg_target_r": 5.172552019443109,
+      "n_skipped_no_liquidity": 140
+    },
+    "H2": {
+      "n": 1217,
+      "wins": 202,
+      "losses": 1015,
+      "win_rate": 0.16598192276088744,
+      "total_r": -108.53650678435616,
+      "expectancy_r": -0.08918365389018579,
+      "profit_factor": 0.8930674810006344,
+      "avg_target_r": 4.487443035721009,
+      "n_skipped_no_liquidity": 68
+    },
+    "H4": {
+      "n": 626,
+      "wins": 92,
+      "losses": 534,
+      "win_rate": 0.14696485623003194,
+      "total_r": -130.4178130807289,
+      "expectancy_r": -0.20833516466570123,
+      "profit_factor": 0.7557718856166125,
+      "avg_target_r": 4.386762901296424,
+      "n_skipped_no_liquidity": 40
+    },
+    "D1": {
+      "n": 83,
+      "wins": 12,
+      "losses": 71,
+      "win_rate": 0.14457831325301204,
+      "total_r": -24.530691483086912,
+      "expectancy_r": -0.29555049979622783,
+      "profit_factor": 0.6544973030551139,
+      "avg_target_r": 3.872442376409424,
+      "n_skipped_no_liquidity": 15
+    },
+    "W1": {
+      "n": 11,
+      "wins": 4,
+      "losses": 7,
+      "win_rate": 0.36363636363636365,
+      "total_r": 6.43781900950772,
+      "expectancy_r": 0.585256273591611,
+      "profit_factor": 1.9196884299296744,
+      "avg_target_r": 3.35945475237693,
+      "n_skipped_no_liquidity": 3
+    }
+  },
+  "NASDAQ": {
+    "M30": {
+      "n": 1461,
+      "wins": 196,
+      "losses": 1265,
+      "win_rate": 0.13415468856947296,
+      "total_r": -151.12654722632192,
+      "expectancy_r": -0.10344048407003559,
+      "profit_factor": 0.8805323737341328,
+      "avg_target_r": 5.6830278202738675,
+      "n_skipped_no_liquidity": 106
+    },
+    "H1": {
+      "n": 739,
+      "wins": 109,
+      "losses": 630,
+      "win_rate": 0.14749661705006767,
+      "total_r": 34.70673582807014,
+      "expectancy_r": 0.04696445984853881,
+      "profit_factor": 1.0550900568699526,
+      "avg_target_r": 6.098226934202478,
+      "n_skipped_no_liquidity": 57
+    },
+    "H2": {
+      "n": 217,
+      "wins": 23,
+      "losses": 194,
+      "win_rate": 0.10599078341013825,
+      "total_r": -13.71464470318363,
+      "expectancy_r": -0.06320112766444075,
+      "profit_factor": 0.9293059551382287,
+      "avg_target_r": 7.838493708557233,
+      "n_skipped_no_liquidity": 37
+    },
+    "H4": {
+      "n": 0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 2
+    },
+    "D1": {
+      "n": 232,
+      "wins": 23,
+      "losses": 209,
+      "win_rate": 0.09913793103448276,
+      "total_r": -58.05522045692719,
+      "expectancy_r": -0.25023801921089295,
+      "profit_factor": 0.7222238255649418,
+      "avg_target_r": 6.562816501872732,
+      "n_skipped_no_liquidity": 39
+    },
+    "W1": {
+      "n": 34,
+      "wins": 3,
+      "losses": 31,
+      "win_rate": 0.08823529411764706,
+      "total_r": -17.618229273860052,
+      "expectancy_r": -0.5181832139370603,
+      "profit_factor": 0.43167002342386923,
+      "avg_target_r": 4.460590242046648,
+      "n_skipped_no_liquidity": 26
+    }
+  },
+  "NETH25": {
+    "M30": {
+      "n": 4992,
+      "wins": 750,
+      "losses": 4242,
+      "win_rate": 0.1502403846153846,
+      "total_r": -253.50260463124852,
+      "expectancy_r": -0.05078177176106757,
+      "profit_factor": 0.9402398386064948,
+      "avg_target_r": 5.317996527158335,
+      "n_skipped_no_liquidity": 256
+    },
+    "H1": {
+      "n": 2390,
+      "wins": 371,
+      "losses": 2019,
+      "win_rate": 0.15523012552301255,
+      "total_r": 76.76358582513424,
+      "expectancy_r": 0.032118655156959774,
+      "profit_factor": 1.0380205972387986,
+      "avg_target_r": 5.648958452358852,
+      "n_skipped_no_liquidity": 145
+    },
+    "H2": {
+      "n": 1113,
+      "wins": 169,
+      "losses": 944,
+      "win_rate": 0.1518418688230009,
+      "total_r": -113.3274489087417,
+      "expectancy_r": -0.10182160728548217,
+      "profit_factor": 0.8799497363254855,
+      "avg_target_r": 4.915222195806262,
+      "n_skipped_no_liquidity": 89
+    },
+    "H4": {
+      "n": 437,
+      "wins": 57,
+      "losses": 380,
+      "win_rate": 0.13043478260869565,
+      "total_r": -65.15743074990235,
+      "expectancy_r": -0.1491016721965729,
+      "profit_factor": 0.8285330769739412,
+      "avg_target_r": 5.523553846492941,
+      "n_skipped_no_liquidity": 52
+    },
+    "D1": {
+      "n": 174,
+      "wins": 20,
+      "losses": 154,
+      "win_rate": 0.11494252873563218,
+      "total_r": -15.014995563754502,
+      "expectancy_r": -0.0862930779526121,
+      "profit_factor": 0.902500028806789,
+      "avg_target_r": 6.949250221812275,
+      "n_skipped_no_liquidity": 44
+    },
+    "W1": {
+      "n": 18,
+      "wins": 4,
+      "losses": 14,
+      "win_rate": 0.2222222222222222,
+      "total_r": 3.4013842827487295,
+      "expectancy_r": 0.18896579348604048,
+      "profit_factor": 1.2429560201963379,
+      "avg_target_r": 4.350346070687182,
+      "n_skipped_no_liquidity": 22
+    }
+  },
+  "NZDCAD": {
+    "M30": {
+      "n": 10741,
+      "wins": 1793,
+      "losses": 8948,
+      "win_rate": 0.1669304534028489,
+      "total_r": 242.32973416889865,
+      "expectancy_r": 0.022561189290466355,
+      "profit_factor": 1.027081999795362,
+      "avg_target_r": 5.125671909742833,
+      "n_skipped_no_liquidity": 299
+    },
+    "H1": {
+      "n": 5189,
+      "wins": 869,
+      "losses": 4320,
+      "win_rate": 0.16746964733089229,
+      "total_r": -13.180214740273987,
+      "expectancy_r": -0.0025400298208274608,
+      "profit_factor": 0.9969490243656773,
+      "avg_target_r": 4.956064194775289,
+      "n_skipped_no_liquidity": 124
+    },
+    "H2": {
+      "n": 2756,
+      "wins": 469,
+      "losses": 2287,
+      "win_rate": 0.17017416545718433,
+      "total_r": 87.26881254886418,
+      "expectancy_r": 0.03166502632397106,
+      "profit_factor": 1.0381586412544226,
+      "avg_target_r": 5.062406849784359,
+      "n_skipped_no_liquidity": 76
+    },
+    "H4": {
+      "n": 1530,
+      "wins": 233,
+      "losses": 1297,
+      "win_rate": 0.1522875816993464,
+      "total_r": -166.3676131937349,
+      "expectancy_r": -0.10873700208740855,
+      "profit_factor": 0.8717289027033654,
+      "avg_target_r": 4.8524995141899785,
+      "n_skipped_no_liquidity": 43
+    },
+    "D1": {
+      "n": 234,
+      "wins": 43,
+      "losses": 191,
+      "win_rate": 0.18376068376068377,
+      "total_r": 37.53498444277038,
+      "expectancy_r": 0.16040591642209567,
+      "profit_factor": 1.1965182431558659,
+      "avg_target_r": 5.314767080064427,
+      "n_skipped_no_liquidity": 13
+    },
+    "W1": {
+      "n": 36,
+      "wins": 9,
+      "losses": 27,
+      "win_rate": 0.25,
+      "total_r": 31.136396436069532,
+      "expectancy_r": 0.8648999010019314,
+      "profit_factor": 2.1531998680025755,
+      "avg_target_r": 6.4595996040077255,
+      "n_skipped_no_liquidity": 4
+    }
+  },
+  "NZDCHF": {
+    "M30": {
+      "n": 11065,
+      "wins": 1799,
+      "losses": 9266,
+      "win_rate": 0.16258472661545414,
+      "total_r": -254.20872607745372,
+      "expectancy_r": -0.02297412797807985,
+      "profit_factor": 0.972565429950631,
+      "avg_target_r": 5.00933367088524,
+      "n_skipped_no_liquidity": 312
+    },
+    "H1": {
+      "n": 5332,
+      "wins": 970,
+      "losses": 4362,
+      "win_rate": 0.18192048012003,
+      "total_r": 473.0096740193911,
+      "expectancy_r": 0.08871149175157378,
+      "profit_factor": 1.108438714814166,
+      "avg_target_r": 4.984546055690094,
+      "n_skipped_no_liquidity": 148
+    },
+    "H2": {
+      "n": 2909,
+      "wins": 515,
+      "losses": 2394,
+      "win_rate": 0.17703678239944998,
+      "total_r": 181.98647130033868,
+      "expectancy_r": 0.06255980450338205,
+      "profit_factor": 1.0760177407269584,
+      "avg_target_r": 5.001915478253085,
+      "n_skipped_no_liquidity": 96
+    },
+    "H4": {
+      "n": 1508,
+      "wins": 280,
+      "losses": 1228,
+      "win_rate": 0.1856763925729443,
+      "total_r": 284.7971270158651,
+      "expectancy_r": 0.1888575112837303,
+      "profit_factor": 1.2319194845406067,
+      "avg_target_r": 5.402846882199518,
+      "n_skipped_no_liquidity": 62
+    },
+    "D1": {
+      "n": 207,
+      "wins": 33,
+      "losses": 174,
+      "win_rate": 0.15942028985507245,
+      "total_r": -3.0979425918631875,
+      "expectancy_r": -0.014965906240885007,
+      "profit_factor": 0.9821957322306714,
+      "avg_target_r": 5.178850224488994,
+      "n_skipped_no_liquidity": 17
+    },
+    "W1": {
+      "n": 33,
+      "wins": 6,
+      "losses": 27,
+      "win_rate": 0.18181818181818182,
+      "total_r": 13.17598995152665,
+      "expectancy_r": 0.39927242277353514,
+      "profit_factor": 1.4879996278343204,
+      "avg_target_r": 6.695998325254442,
+      "n_skipped_no_liquidity": 13
+    }
+  },
+  "NZDJPY": {
+    "M30": {
+      "n": 11748,
+      "wins": 2006,
+      "losses": 9742,
+      "win_rate": 0.1707524685052775,
+      "total_r": 465.1635246405584,
+      "expectancy_r": 0.039595124671480963,
+      "profit_factor": 1.047748257507756,
+      "avg_target_r": 5.088316811884625,
+      "n_skipped_no_liquidity": 355
+    },
+    "H1": {
+      "n": 5743,
+      "wins": 965,
+      "losses": 4778,
+      "win_rate": 0.16803064600383075,
+      "total_r": -60.05723436228584,
+      "expectancy_r": -0.01045746724051655,
+      "profit_factor": 0.9874304658094838,
+      "avg_target_r": 4.88905986076447,
+      "n_skipped_no_liquidity": 160
+    },
+    "H2": {
+      "n": 2958,
+      "wins": 492,
+      "losses": 2466,
+      "win_rate": 0.1663286004056795,
+      "total_r": 60.63495183721259,
+      "expectancy_r": 0.020498631452742555,
+      "profit_factor": 1.0245883827401512,
+      "avg_target_r": 5.135436893978074,
+      "n_skipped_no_liquidity": 107
+    },
+    "H4": {
+      "n": 1583,
+      "wins": 253,
+      "losses": 1330,
+      "win_rate": 0.15982312065698043,
+      "total_r": -7.101114568959873,
+      "expectancy_r": -0.004485858855944214,
+      "profit_factor": 0.9946608161135639,
+      "avg_target_r": 5.228849349529803,
+      "n_skipped_no_liquidity": 68
+    },
+    "D1": {
+      "n": 261,
+      "wins": 46,
+      "losses": 215,
+      "win_rate": 0.17624521072796934,
+      "total_r": 24.306958322171525,
+      "expectancy_r": 0.093130108514067,
+      "profit_factor": 1.1130556201031232,
+      "avg_target_r": 5.202325180916772,
+      "n_skipped_no_liquidity": 22
+    },
+    "W1": {
+      "n": 58,
+      "wins": 11,
+      "losses": 47,
+      "win_rate": 0.1896551724137931,
+      "total_r": 9.231367904487632,
+      "expectancy_r": 0.15916151559461433,
+      "profit_factor": 1.1964120830742049,
+      "avg_target_r": 5.111942536771603,
+      "n_skipped_no_liquidity": 13
+    }
+  },
+  "NZDSGD": {
+    "M30": {
+      "n": 9390,
+      "wins": 1642,
+      "losses": 7748,
+      "win_rate": 0.17486687965921194,
+      "total_r": 824.5407010870132,
+      "expectancy_r": 0.08781051129787154,
+      "profit_factor": 1.1064198117045707,
+      "avg_target_r": 5.220792144389168,
+      "n_skipped_no_liquidity": 246
+    },
+    "H1": {
+      "n": 4327,
+      "wins": 726,
+      "losses": 3601,
+      "win_rate": 0.16778368384562053,
+      "total_r": 116.48691119529829,
+      "expectancy_r": 0.02692094088174235,
+      "profit_factor": 1.0323484896404607,
+      "avg_target_r": 5.120505387321348,
+      "n_skipped_no_liquidity": 127
+    },
+    "H2": {
+      "n": 2246,
+      "wins": 373,
+      "losses": 1873,
+      "win_rate": 0.16607301869991095,
+      "total_r": 48.062431495000766,
+      "expectancy_r": 0.021399123550757237,
+      "profit_factor": 1.0256606681767222,
+      "avg_target_r": 5.150301424919573,
+      "n_skipped_no_liquidity": 63
+    },
+    "H4": {
+      "n": 1081,
+      "wins": 185,
+      "losses": 896,
+      "win_rate": 0.1711378353376503,
+      "total_r": -45.548549803991996,
+      "expectancy_r": -0.04213556873634794,
+      "profit_factor": 0.9491645649509017,
+      "avg_target_r": 4.597034865924368,
+      "n_skipped_no_liquidity": 47
+    },
+    "D1": {
+      "n": 202,
+      "wins": 34,
+      "losses": 168,
+      "win_rate": 0.16831683168316833,
+      "total_r": -4.190308967354519,
+      "expectancy_r": -0.020744103798784663,
+      "profit_factor": 0.9750576847181278,
+      "avg_target_r": 4.817932089195455,
+      "n_skipped_no_liquidity": 20
+    },
+    "W1": {
+      "n": 38,
+      "wins": 9,
+      "losses": 29,
+      "win_rate": 0.23684210526315788,
+      "total_r": 19.06024520036312,
+      "expectancy_r": 0.5015854000095555,
+      "profit_factor": 1.65724983449528,
+      "avg_target_r": 5.340027244484791,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "NZDUSD": {
+    "M30": {
+      "n": 13428,
+      "wins": 2219,
+      "losses": 11209,
+      "win_rate": 0.1652517128388442,
+      "total_r": 468.65179207168336,
+      "expectancy_r": 0.034901086689878236,
+      "profit_factor": 1.0418103124339089,
+      "avg_target_r": 5.262574038788501,
+      "n_skipped_no_liquidity": 428
+    },
+    "H1": {
+      "n": 6350,
+      "wins": 1041,
+      "losses": 5309,
+      "win_rate": 0.16393700787401574,
+      "total_r": 69.66611532606368,
+      "expectancy_r": 0.010971041783632063,
+      "profit_factor": 1.0131222669666724,
+      "avg_target_r": 5.166826239506305,
+      "n_skipped_no_liquidity": 169
+    },
+    "H2": {
+      "n": 3294,
+      "wins": 559,
+      "losses": 2735,
+      "win_rate": 0.1697024893746205,
+      "total_r": 7.972609474929172,
+      "expectancy_r": 0.0024203428885637424,
+      "profit_factor": 1.0029150308866286,
+      "avg_target_r": 4.906927745035651,
+      "n_skipped_no_liquidity": 99
+    },
+    "H4": {
+      "n": 1621,
+      "wins": 268,
+      "losses": 1353,
+      "win_rate": 0.16533004318322023,
+      "total_r": 47.55878593908827,
+      "expectancy_r": 0.0293391646755633,
+      "profit_factor": 1.0351506178411591,
+      "avg_target_r": 5.225965619175702,
+      "n_skipped_no_liquidity": 63
+    },
+    "D1": {
+      "n": 272,
+      "wins": 46,
+      "losses": 226,
+      "win_rate": 0.16911764705882354,
+      "total_r": 11.411927460532805,
+      "expectancy_r": 0.041955615663723744,
+      "profit_factor": 1.0504952542501451,
+      "avg_target_r": 5.16112885783767,
+      "n_skipped_no_liquidity": 18
+    },
+    "W1": {
+      "n": 45,
+      "wins": 6,
+      "losses": 39,
+      "win_rate": 0.13333333333333333,
+      "total_r": -6.703111360166167,
+      "expectancy_r": -0.1489580302259148,
+      "profit_factor": 0.828125349739329,
+      "avg_target_r": 5.382814773305639,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "PALLADIUM": {
+    "M30": {
+      "n": 3185,
+      "wins": 457,
+      "losses": 2728,
+      "win_rate": 0.1434850863422292,
+      "total_r": -418.04931697150766,
+      "expectancy_r": -0.13125567251852677,
+      "profit_factor": 0.8467561154796526,
+      "avg_target_r": 5.05459668058751,
+      "n_skipped_no_liquidity": 96
+    },
+    "H1": {
+      "n": 1241,
+      "wins": 199,
+      "losses": 1042,
+      "win_rate": 0.16035455278001612,
+      "total_r": 8.373139018137394,
+      "expectancy_r": 0.00674709026441378,
+      "profit_factor": 1.0080356420519554,
+      "avg_target_r": 5.2782569799906405,
+      "n_skipped_no_liquidity": 49
+    },
+    "H2": {
+      "n": 519,
+      "wins": 65,
+      "losses": 454,
+      "win_rate": 0.1252408477842004,
+      "total_r": -78.19145697783749,
+      "expectancy_r": -0.15065791325209532,
+      "profit_factor": 0.8277721211941905,
+      "avg_target_r": 5.781669892648654,
+      "n_skipped_no_liquidity": 28
+    },
+    "H4": {
+      "n": 156,
+      "wins": 24,
+      "losses": 132,
+      "win_rate": 0.15384615384615385,
+      "total_r": -19.834233571675085,
+      "expectancy_r": -0.1271425228953531,
+      "profit_factor": 0.8497406547600372,
+      "avg_target_r": 4.6735736011802045,
+      "n_skipped_no_liquidity": 17
+    },
+    "D1": {
+      "n": 100,
+      "wins": 24,
+      "losses": 76,
+      "win_rate": 0.24,
+      "total_r": 64.95847713937178,
+      "expectancy_r": 0.6495847713937177,
+      "profit_factor": 1.854716804465418,
+      "avg_target_r": 5.8732698808071575,
+      "n_skipped_no_liquidity": 11
+    },
+    "W1": {
+      "n": 10,
+      "wins": 0,
+      "losses": 10,
+      "win_rate": 0.0,
+      "total_r": -10.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "PLATINUM": {
+    "M30": {
+      "n": 4374,
+      "wins": 700,
+      "losses": 3674,
+      "win_rate": 0.1600365797896662,
+      "total_r": 189.23883174272845,
+      "expectancy_r": 0.04326447913642628,
+      "profit_factor": 1.0515075753246403,
+      "avg_target_r": 5.518912616775326,
+      "n_skipped_no_liquidity": 150
+    },
+    "H1": {
+      "n": 1991,
+      "wins": 309,
+      "losses": 1682,
+      "win_rate": 0.15519839276745354,
+      "total_r": -76.09055290839265,
+      "expectancy_r": -0.03821725409763588,
+      "profit_factor": 0.9547618591507772,
+      "avg_target_r": 5.197117951752774,
+      "n_skipped_no_liquidity": 77
+    },
+    "H2": {
+      "n": 1006,
+      "wins": 161,
+      "losses": 845,
+      "win_rate": 0.16003976143141152,
+      "total_r": -67.0970737609756,
+      "expectancy_r": -0.06669689240653642,
+      "profit_factor": 0.920595178981094,
+      "avg_target_r": 4.831695194031208,
+      "n_skipped_no_liquidity": 46
+    },
+    "H4": {
+      "n": 458,
+      "wins": 75,
+      "losses": 383,
+      "win_rate": 0.16375545851528384,
+      "total_r": 13.21799753179339,
+      "expectancy_r": 0.028860256619636204,
+      "profit_factor": 1.0345117429028547,
+      "avg_target_r": 5.2829066337572455,
+      "n_skipped_no_liquidity": 35
+    },
+    "D1": {
+      "n": 70,
+      "wins": 10,
+      "losses": 60,
+      "win_rate": 0.14285714285714285,
+      "total_r": -28.425308123064873,
+      "expectancy_r": -0.4060758303294983,
+      "profit_factor": 0.5262448646155854,
+      "avg_target_r": 3.1574691876935126,
+      "n_skipped_no_liquidity": 16
+    },
+    "W1": {
+      "n": 6,
+      "wins": 0,
+      "losses": 6,
+      "win_rate": 0.0,
+      "total_r": -6.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "SA40": {
+    "M30": {
+      "n": 2441,
+      "wins": 348,
+      "losses": 2093,
+      "win_rate": 0.14256452273658338,
+      "total_r": -230.99894666993697,
+      "expectancy_r": -0.0946329154731409,
+      "profit_factor": 0.8896326102867,
+      "avg_target_r": 5.350577739454204,
+      "n_skipped_no_liquidity": 137
+    },
+    "H1": {
+      "n": 1100,
+      "wins": 168,
+      "losses": 932,
+      "win_rate": 0.15272727272727274,
+      "total_r": -15.043836013104245,
+      "expectancy_r": -0.01367621455736756,
+      "profit_factor": 0.9838585450503173,
+      "avg_target_r": 5.458072404683903,
+      "n_skipped_no_liquidity": 72
+    },
+    "H2": {
+      "n": 450,
+      "wins": 59,
+      "losses": 391,
+      "win_rate": 0.13111111111111112,
+      "total_r": -87.46924304099953,
+      "expectancy_r": -0.19437609564666547,
+      "profit_factor": 0.7762934960588248,
+      "avg_target_r": 5.144589101000008,
+      "n_skipped_no_liquidity": 50
+    },
+    "H4": {
+      "n": 185,
+      "wins": 24,
+      "losses": 161,
+      "win_rate": 0.12972972972972974,
+      "total_r": -51.702921021825844,
+      "expectancy_r": -0.2794752487666261,
+      "profit_factor": 0.6788638445849327,
+      "avg_target_r": 4.5540449574239235,
+      "n_skipped_no_liquidity": 38
+    },
+    "D1": {
+      "n": 164,
+      "wins": 31,
+      "losses": 133,
+      "win_rate": 0.18902439024390244,
+      "total_r": 27.20417285630056,
+      "expectancy_r": 0.16587910278232032,
+      "profit_factor": 1.2045426530548913,
+      "avg_target_r": 5.16787654375163,
+      "n_skipped_no_liquidity": 26
+    },
+    "W1": {
+      "n": 14,
+      "wins": 2,
+      "losses": 12,
+      "win_rate": 0.14285714285714285,
+      "total_r": -4.390608814644798,
+      "expectancy_r": -0.31361491533177144,
+      "profit_factor": 0.6341159321129335,
+      "avg_target_r": 3.804695592677601,
+      "n_skipped_no_liquidity": 12
+    }
+  },
+  "SGDJPY": {
+    "M30": {
+      "n": 10202,
+      "wins": 1675,
+      "losses": 8527,
+      "win_rate": 0.16418349343266025,
+      "total_r": -247.7917242452464,
+      "expectancy_r": -0.024288543838977272,
+      "profit_factor": 0.9709403395983058,
+      "avg_target_r": 4.942810910898361,
+      "n_skipped_no_liquidity": 445
+    },
+    "H1": {
+      "n": 4887,
+      "wins": 834,
+      "losses": 4053,
+      "win_rate": 0.17065684468999387,
+      "total_r": -148.4548020304587,
+      "expectancy_r": -0.030377491718939775,
+      "profit_factor": 0.9633716254551051,
+      "avg_target_r": 4.681708870467076,
+      "n_skipped_no_liquidity": 256
+    },
+    "H2": {
+      "n": 2542,
+      "wins": 466,
+      "losses": 2076,
+      "win_rate": 0.18332022029897718,
+      "total_r": 141.07768938853775,
+      "expectancy_r": 0.05549869763514459,
+      "profit_factor": 1.067956497778679,
+      "avg_target_r": 4.75767744503978,
+      "n_skipped_no_liquidity": 176
+    },
+    "H4": {
+      "n": 1268,
+      "wins": 207,
+      "losses": 1061,
+      "win_rate": 0.1632492113564669,
+      "total_r": 17.750705648986692,
+      "expectancy_r": 0.01399897921844373,
+      "profit_factor": 1.0167301655504115,
+      "avg_target_r": 5.211356065937133,
+      "n_skipped_no_liquidity": 110
+    },
+    "D1": {
+      "n": 198,
+      "wins": 35,
+      "losses": 163,
+      "win_rate": 0.17676767676767677,
+      "total_r": -16.17637736309111,
+      "expectancy_r": -0.08169887557116728,
+      "profit_factor": 0.9007584210853306,
+      "avg_target_r": 4.194960646768825,
+      "n_skipped_no_liquidity": 46
+    },
+    "W1": {
+      "n": 31,
+      "wins": 10,
+      "losses": 21,
+      "win_rate": 0.3225806451612903,
+      "total_r": 20.699781215026754,
+      "expectancy_r": 0.6677348779040886,
+      "profit_factor": 1.9857038673822263,
+      "avg_target_r": 4.169978121502675,
+      "n_skipped_no_liquidity": 21
+    }
+  },
+  "SILVER": {
+    "M30": {
+      "n": 8126,
+      "wins": 1320,
+      "losses": 6806,
+      "win_rate": 0.16244154565591928,
+      "total_r": -37.735589777537065,
+      "expectancy_r": -0.004643808734621779,
+      "profit_factor": 0.9944555407320692,
+      "avg_target_r": 5.12747303804732,
+      "n_skipped_no_liquidity": 315
+    },
+    "H1": {
+      "n": 3612,
+      "wins": 606,
+      "losses": 3006,
+      "win_rate": 0.16777408637873753,
+      "total_r": 107.47609662002404,
+      "expectancy_r": 0.029755286993362162,
+      "profit_factor": 1.0357538578243595,
+      "avg_target_r": 5.137749334356475,
+      "n_skipped_no_liquidity": 168
+    },
+    "H2": {
+      "n": 1759,
+      "wins": 315,
+      "losses": 1444,
+      "win_rate": 0.17907902217168845,
+      "total_r": 261.3184346539157,
+      "expectancy_r": 0.14856079286749035,
+      "profit_factor": 1.1809684450511881,
+      "avg_target_r": 5.413709316361637,
+      "n_skipped_no_liquidity": 103
+    },
+    "H4": {
+      "n": 752,
+      "wins": 128,
+      "losses": 624,
+      "win_rate": 0.1702127659574468,
+      "total_r": 29.16806077285397,
+      "expectancy_r": 0.03878731485751863,
+      "profit_factor": 1.046743687135984,
+      "avg_target_r": 5.102875474787922,
+      "n_skipped_no_liquidity": 53
+    },
+    "D1": {
+      "n": 214,
+      "wins": 42,
+      "losses": 172,
+      "win_rate": 0.19626168224299065,
+      "total_r": 7.888656312892953,
+      "expectancy_r": 0.036862879966789386,
+      "profit_factor": 1.0458642808889125,
+      "avg_target_r": 4.28306324554507,
+      "n_skipped_no_liquidity": 26
+    },
+    "W1": {
+      "n": 41,
+      "wins": 7,
+      "losses": 34,
+      "win_rate": 0.17073170731707318,
+      "total_r": 5.5057837054800345,
+      "expectancy_r": 0.13428740745073264,
+      "profit_factor": 1.1619348148670599,
+      "avg_target_r": 5.643683386497147,
+      "n_skipped_no_liquidity": 13
+    }
+  },
+  "SING30": {
+    "M30": {
+      "n": 3255,
+      "wins": 460,
+      "losses": 2795,
+      "win_rate": 0.141321044546851,
+      "total_r": 82.69122942535995,
+      "expectancy_r": 0.02540437155925024,
+      "profit_factor": 1.029585413032329,
+      "avg_target_r": 6.255850498750782,
+      "n_skipped_no_liquidity": 154
+    },
+    "H1": {
+      "n": 1374,
+      "wins": 186,
+      "losses": 1188,
+      "win_rate": 0.13537117903930132,
+      "total_r": -121.80010625847702,
+      "expectancy_r": -0.08864636554474303,
+      "profit_factor": 0.8974746580315851,
+      "avg_target_r": 5.732257493233995,
+      "n_skipped_no_liquidity": 88
+    },
+    "H2": {
+      "n": 505,
+      "wins": 77,
+      "losses": 428,
+      "win_rate": 0.15247524752475247,
+      "total_r": -44.64845113295356,
+      "expectancy_r": -0.08841277452070007,
+      "profit_factor": 0.8956811889416973,
+      "avg_target_r": 4.978591543727876,
+      "n_skipped_no_liquidity": 42
+    },
+    "H4": {
+      "n": 156,
+      "wins": 17,
+      "losses": 139,
+      "win_rate": 0.10897435897435898,
+      "total_r": -70.75287176838366,
+      "expectancy_r": -0.45354404979733104,
+      "profit_factor": 0.4909865340404054,
+      "avg_target_r": 4.0145369548009615,
+      "n_skipped_no_liquidity": 32
+    },
+    "D1": {
+      "n": 150,
+      "wins": 27,
+      "losses": 123,
+      "win_rate": 0.18,
+      "total_r": 23.679788607950666,
+      "expectancy_r": 0.1578652573863376,
+      "profit_factor": 1.1925186065687046,
+      "avg_target_r": 5.432584763257432,
+      "n_skipped_no_liquidity": 25
+    },
+    "W1": {
+      "n": 13,
+      "wins": 0,
+      "losses": 13,
+      "win_rate": 0.0,
+      "total_r": -13.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 9
+    }
+  },
+  "SOLUSD": {
+    "M30": {
+      "n": 5031,
+      "wins": 852,
+      "losses": 4179,
+      "win_rate": 0.1693500298151461,
+      "total_r": 114.98197749257298,
+      "expectancy_r": 0.02285469638095272,
+      "profit_factor": 1.0275142324701059,
+      "avg_target_r": 5.039884950108654,
+      "n_skipped_no_liquidity": 218
+    },
+    "H1": {
+      "n": 2237,
+      "wins": 392,
+      "losses": 1845,
+      "win_rate": 0.17523468931604827,
+      "total_r": 34.04444569050287,
+      "expectancy_r": 0.015218795570184573,
+      "profit_factor": 1.0184522740869935,
+      "avg_target_r": 4.793480728802304,
+      "n_skipped_no_liquidity": 130
+    },
+    "H2": {
+      "n": 1144,
+      "wins": 209,
+      "losses": 935,
+      "win_rate": 0.18269230769230768,
+      "total_r": 167.29695927418874,
+      "expectancy_r": 0.14623860076415096,
+      "profit_factor": 1.1789272291702555,
+      "avg_target_r": 5.274148130498511,
+      "n_skipped_no_liquidity": 65
+    },
+    "H4": {
+      "n": 535,
+      "wins": 113,
+      "losses": 422,
+      "win_rate": 0.21121495327102804,
+      "total_r": 117.10342464137459,
+      "expectancy_r": 0.21888490587172804,
+      "profit_factor": 1.2774962669226886,
+      "avg_target_r": 4.7708267667378275,
+      "n_skipped_no_liquidity": 36
+    },
+    "D1": {
+      "n": 102,
+      "wins": 22,
+      "losses": 80,
+      "win_rate": 0.21568627450980393,
+      "total_r": 18.394226176718103,
+      "expectancy_r": 0.18033555075213825,
+      "profit_factor": 1.2299278272089764,
+      "avg_target_r": 4.472464826214459,
+      "n_skipped_no_liquidity": 15
+    },
+    "W1": {
+      "n": 11,
+      "wins": 3,
+      "losses": 8,
+      "win_rate": 0.2727272727272727,
+      "total_r": -0.29385551685546596,
+      "expectancy_r": -0.026714137895951562,
+      "profit_factor": 0.9632680603930668,
+      "avg_target_r": 2.5687148277148446,
+      "n_skipped_no_liquidity": 9
+    }
+  },
+  "SPAIN35": {
+    "M30": {
+      "n": 4022,
+      "wins": 578,
+      "losses": 3444,
+      "win_rate": 0.14370959721531576,
+      "total_r": -145.6485791237152,
+      "expectancy_r": -0.036212973427079964,
+      "profit_factor": 0.9577094717991536,
+      "avg_target_r": 5.706490347536825,
+      "n_skipped_no_liquidity": 177
+    },
+    "H1": {
+      "n": 1886,
+      "wins": 278,
+      "losses": 1608,
+      "win_rate": 0.1474019088016967,
+      "total_r": 139.90533245468131,
+      "expectancy_r": 0.07418098221351066,
+      "profit_factor": 1.087005803765349,
+      "avg_target_r": 6.287429253434105,
+      "n_skipped_no_liquidity": 113
+    },
+    "H2": {
+      "n": 811,
+      "wins": 128,
+      "losses": 683,
+      "win_rate": 0.15782983970406905,
+      "total_r": -13.454834101982561,
+      "expectancy_r": -0.016590424293443373,
+      "profit_factor": 0.9803003893089567,
+      "avg_target_r": 5.230821608578261,
+      "n_skipped_no_liquidity": 82
+    },
+    "H4": {
+      "n": 273,
+      "wins": 34,
+      "losses": 239,
+      "win_rate": 0.12454212454212454,
+      "total_r": -58.32064608319793,
+      "expectancy_r": -0.21362874023149425,
+      "profit_factor": 0.7559805603213476,
+      "avg_target_r": 5.314098644611826,
+      "n_skipped_no_liquidity": 43
+    },
+    "D1": {
+      "n": 211,
+      "wins": 33,
+      "losses": 178,
+      "win_rate": 0.15639810426540285,
+      "total_r": -40.02632524720625,
+      "expectancy_r": -0.1896982239204087,
+      "profit_factor": 0.7751330042291784,
+      "avg_target_r": 4.181020447054356,
+      "n_skipped_no_liquidity": 40
+    },
+    "W1": {
+      "n": 29,
+      "wins": 6,
+      "losses": 23,
+      "win_rate": 0.20689655172413793,
+      "total_r": 5.154799700230519,
+      "expectancy_r": 0.17775171380105237,
+      "profit_factor": 1.224121726096979,
+      "avg_target_r": 4.692466616705087,
+      "n_skipped_no_liquidity": 12
+    }
+  },
+  "SWI20": {
+    "M30": {
+      "n": 4716,
+      "wins": 713,
+      "losses": 4003,
+      "win_rate": 0.1511874469889737,
+      "total_r": -30.990381427446824,
+      "expectancy_r": -0.006571327698779994,
+      "profit_factor": 0.9922582109848996,
+      "avg_target_r": 5.570840979765152,
+      "n_skipped_no_liquidity": 186
+    },
+    "H1": {
+      "n": 2236,
+      "wins": 353,
+      "losses": 1883,
+      "win_rate": 0.157871198568873,
+      "total_r": -46.943270274073704,
+      "expectancy_r": -0.020994306920426475,
+      "profit_factor": 0.9750699573690528,
+      "avg_target_r": 5.201293851914805,
+      "n_skipped_no_liquidity": 103
+    },
+    "H2": {
+      "n": 1017,
+      "wins": 165,
+      "losses": 852,
+      "win_rate": 0.16224188790560473,
+      "total_r": -70.18860764717282,
+      "expectancy_r": -0.0690153467523823,
+      "profit_factor": 0.9176190051089521,
+      "avg_target_r": 4.738250862744407,
+      "n_skipped_no_liquidity": 63
+    },
+    "H4": {
+      "n": 366,
+      "wins": 50,
+      "losses": 316,
+      "win_rate": 0.1366120218579235,
+      "total_r": -57.980930099281814,
+      "expectancy_r": -0.15841784180131635,
+      "profit_factor": 0.8165160439896145,
+      "avg_target_r": 5.160381398014364,
+      "n_skipped_no_liquidity": 25
+    },
+    "D1": {
+      "n": 177,
+      "wins": 28,
+      "losses": 149,
+      "win_rate": 0.15819209039548024,
+      "total_r": -27.449384437427206,
+      "expectancy_r": -0.15508126800806332,
+      "profit_factor": 0.8157759433729718,
+      "avg_target_r": 4.341093412949028,
+      "n_skipped_no_liquidity": 29
+    },
+    "W1": {
+      "n": 27,
+      "wins": 8,
+      "losses": 19,
+      "win_rate": 0.2962962962962963,
+      "total_r": 37.05587084153161,
+      "expectancy_r": 1.372439660797467,
+      "profit_factor": 2.950308991659558,
+      "avg_target_r": 7.006983855191451,
+      "n_skipped_no_liquidity": 15
+    }
+  },
+  "TAIWAN": {
+    "M30": {
+      "n": 2698,
+      "wins": 373,
+      "losses": 2325,
+      "win_rate": 0.13825055596738325,
+      "total_r": -249.17127813468525,
+      "expectancy_r": -0.09235406898987586,
+      "profit_factor": 0.8928295577915333,
+      "avg_target_r": 5.565224455402989,
+      "n_skipped_no_liquidity": 233
+    },
+    "H1": {
+      "n": 1163,
+      "wins": 168,
+      "losses": 995,
+      "win_rate": 0.14445399828030955,
+      "total_r": 39.80429370149327,
+      "expectancy_r": 0.034225531987526425,
+      "profit_factor": 1.0400043152778826,
+      "avg_target_r": 6.159549367270793,
+      "n_skipped_no_liquidity": 133
+    },
+    "H2": {
+      "n": 569,
+      "wins": 93,
+      "losses": 476,
+      "win_rate": 0.1634446397188049,
+      "total_r": 81.55922518938722,
+      "expectancy_r": 0.14333782985832555,
+      "profit_factor": 1.1713429100617379,
+      "avg_target_r": 5.99526048590739,
+      "n_skipped_no_liquidity": 85
+    },
+    "H4": {
+      "n": 177,
+      "wins": 18,
+      "losses": 159,
+      "win_rate": 0.1016949152542373,
+      "total_r": -80.55574731080671,
+      "expectancy_r": -0.4551172164452357,
+      "profit_factor": 0.49336007980624713,
+      "avg_target_r": 4.358014038288516,
+      "n_skipped_no_liquidity": 46
+    },
+    "D1": {
+      "n": 65,
+      "wins": 13,
+      "losses": 52,
+      "win_rate": 0.2,
+      "total_r": 51.72198446563466,
+      "expectancy_r": 0.7957228379328409,
+      "profit_factor": 1.9946535474160512,
+      "avg_target_r": 7.978614189664205,
+      "n_skipped_no_liquidity": 40
+    },
+    "W1": {
+      "n": 3,
+      "wins": 1,
+      "losses": 2,
+      "win_rate": 0.3333333333333333,
+      "total_r": 5.312923888470245,
+      "expectancy_r": 1.7709746294900814,
+      "profit_factor": 3.6564619442351227,
+      "avg_target_r": 7.312923888470245,
+      "n_skipped_no_liquidity": 17
+    }
+  },
+  "UK100": {
+    "M30": {
+      "n": 7215,
+      "wins": 1133,
+      "losses": 6082,
+      "win_rate": 0.15703395703395703,
+      "total_r": 134.48458908629686,
+      "expectancy_r": 0.018639582686943545,
+      "profit_factor": 1.0221119021845277,
+      "avg_target_r": 5.48674721013795,
+      "n_skipped_no_liquidity": 216
+    },
+    "H1": {
+      "n": 3293,
+      "wins": 485,
+      "losses": 2808,
+      "win_rate": 0.14728211357424842,
+      "total_r": -343.4111053091729,
+      "expectancy_r": -0.10428518229856454,
+      "profit_factor": 0.8777025978243687,
+      "avg_target_r": 5.081626586991396,
+      "n_skipped_no_liquidity": 156
+    },
+    "H2": {
+      "n": 1563,
+      "wins": 244,
+      "losses": 1319,
+      "win_rate": 0.1561100447856686,
+      "total_r": -79.50323729428597,
+      "expectancy_r": -0.05086579481400255,
+      "profit_factor": 0.9397246116040288,
+      "avg_target_r": 5.079904765187353,
+      "n_skipped_no_liquidity": 76
+    },
+    "H4": {
+      "n": 693,
+      "wins": 90,
+      "losses": 603,
+      "win_rate": 0.12987012987012986,
+      "total_r": -148.19932083209557,
+      "expectancy_r": -0.2138518338125478,
+      "profit_factor": 0.7542299820363257,
+      "avg_target_r": 5.0533408796433825,
+      "n_skipped_no_liquidity": 50
+    },
+    "D1": {
+      "n": 141,
+      "wins": 23,
+      "losses": 118,
+      "win_rate": 0.16312056737588654,
+      "total_r": -4.882268887085846,
+      "expectancy_r": -0.034626020475786,
+      "profit_factor": 0.9586248399399505,
+      "avg_target_r": 4.918162222300616,
+      "n_skipped_no_liquidity": 17
+    },
+    "W1": {
+      "n": 23,
+      "wins": 4,
+      "losses": 19,
+      "win_rate": 0.17391304347826086,
+      "total_r": -5.05291888042639,
+      "expectancy_r": -0.21969212523592996,
+      "profit_factor": 0.7340569010301901,
+      "avg_target_r": 3.4867702798934026,
+      "n_skipped_no_liquidity": 9
+    }
+  },
+  "UNIUSD": {
+    "M30": {
+      "n": 5522,
+      "wins": 945,
+      "losses": 4577,
+      "win_rate": 0.17113364722926475,
+      "total_r": 724.9522975507997,
+      "expectancy_r": 0.13128437116095604,
+      "profit_factor": 1.1583902769392178,
+      "avg_target_r": 5.610531531799788,
+      "n_skipped_no_liquidity": 176
+    },
+    "H1": {
+      "n": 2520,
+      "wins": 428,
+      "losses": 2092,
+      "win_rate": 0.16984126984126985,
+      "total_r": 8.022959883990533,
+      "expectancy_r": 0.003183714239678892,
+      "profit_factor": 1.0038350668661522,
+      "avg_target_r": 4.906595700663529,
+      "n_skipped_no_liquidity": 87
+    },
+    "H2": {
+      "n": 1075,
+      "wins": 189,
+      "losses": 886,
+      "win_rate": 0.1758139534883721,
+      "total_r": -5.926014782717002,
+      "expectancy_r": -0.005512571890899598,
+      "profit_factor": 0.9933114957305678,
+      "avg_target_r": 4.656476112260757,
+      "n_skipped_no_liquidity": 52
+    },
+    "H4": {
+      "n": 453,
+      "wins": 78,
+      "losses": 375,
+      "win_rate": 0.17218543046357615,
+      "total_r": -27.912127221979855,
+      "expectancy_r": -0.061616174882957675,
+      "profit_factor": 0.9255676607413871,
+      "avg_target_r": 4.44984452279513,
+      "n_skipped_no_liquidity": 20
+    },
+    "D1": {
+      "n": 120,
+      "wins": 21,
+      "losses": 99,
+      "win_rate": 0.175,
+      "total_r": -17.395542388487264,
+      "expectancy_r": -0.14496285323739377,
+      "profit_factor": 0.8242874506213408,
+      "avg_target_r": 3.8859265529291784,
+      "n_skipped_no_liquidity": 9
+    },
+    "W1": {
+      "n": 9,
+      "wins": 2,
+      "losses": 7,
+      "win_rate": 0.2222222222222222,
+      "total_r": -0.6024758578179574,
+      "expectancy_r": -0.06694176197977308,
+      "profit_factor": 0.9139320203117204,
+      "avg_target_r": 3.1987620710910214,
+      "n_skipped_no_liquidity": 3
+    }
+  },
+  "US2000": {
+    "M30": {
+      "n": 6355,
+      "wins": 911,
+      "losses": 5444,
+      "win_rate": 0.14335169158143193,
+      "total_r": -315.61301385346684,
+      "expectancy_r": -0.04966373152690284,
+      "profit_factor": 0.9420255301518246,
+      "avg_target_r": 5.629403936494548,
+      "n_skipped_no_liquidity": 242
+    },
+    "H1": {
+      "n": 2880,
+      "wins": 430,
+      "losses": 2450,
+      "win_rate": 0.14930555555555555,
+      "total_r": -160.89376137843087,
+      "expectancy_r": -0.05586588936751069,
+      "profit_factor": 0.9343290769883955,
+      "avg_target_r": 5.323502880515277,
+      "n_skipped_no_liquidity": 128
+    },
+    "H2": {
+      "n": 1465,
+      "wins": 224,
+      "losses": 1241,
+      "win_rate": 0.15290102389078497,
+      "total_r": -61.988127769894696,
+      "expectancy_r": -0.042312715201293316,
+      "profit_factor": 0.9500498567527038,
+      "avg_target_r": 5.263445858170114,
+      "n_skipped_no_liquidity": 82
+    },
+    "H4": {
+      "n": 632,
+      "wins": 106,
+      "losses": 526,
+      "win_rate": 0.16772151898734178,
+      "total_r": 18.295408694410668,
+      "expectancy_r": 0.028948431478497905,
+      "profit_factor": 1.0347821458068642,
+      "avg_target_r": 5.134862346173685,
+      "n_skipped_no_liquidity": 44
+    },
+    "D1": {
+      "n": 165,
+      "wins": 20,
+      "losses": 145,
+      "win_rate": 0.12121212121212122,
+      "total_r": -33.604044690264345,
+      "expectancy_r": -0.203660876910693,
+      "profit_factor": 0.7682479676533494,
+      "avg_target_r": 5.569797765486783,
+      "n_skipped_no_liquidity": 21
+    },
+    "W1": {
+      "n": 19,
+      "wins": 7,
+      "losses": 12,
+      "win_rate": 0.3684210526315789,
+      "total_r": 18.81424041845705,
+      "expectancy_r": 0.9902231799187919,
+      "profit_factor": 2.567853368204754,
+      "avg_target_r": 4.402034345493864,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "US30": {
+    "M30": {
+      "n": 7305,
+      "wins": 1146,
+      "losses": 6159,
+      "win_rate": 0.15687885010266941,
+      "total_r": 155.81809533013774,
+      "expectancy_r": 0.021330334747452273,
+      "profit_factor": 1.02529925236729,
+      "avg_target_r": 5.510312474110068,
+      "n_skipped_no_liquidity": 408
+    },
+    "H1": {
+      "n": 3414,
+      "wins": 490,
+      "losses": 2924,
+      "win_rate": 0.14352665495020503,
+      "total_r": -301.5826898671087,
+      "expectancy_r": -0.08833705034185968,
+      "profit_factor": 0.8968595451890874,
+      "avg_target_r": 5.351872061495697,
+      "n_skipped_no_liquidity": 219
+    },
+    "H2": {
+      "n": 1774,
+      "wins": 284,
+      "losses": 1490,
+      "win_rate": 0.1600901916572717,
+      "total_r": -60.44736282056151,
+      "expectancy_r": -0.03407404894056454,
+      "profit_factor": 0.9594313001204285,
+      "avg_target_r": 5.033636046406474,
+      "n_skipped_no_liquidity": 146
+    },
+    "H4": {
+      "n": 885,
+      "wins": 149,
+      "losses": 736,
+      "win_rate": 0.16836158192090395,
+      "total_r": 31.65900098552879,
+      "expectancy_r": 0.035772882469523926,
+      "profit_factor": 1.0430149469912076,
+      "avg_target_r": 5.152073832117643,
+      "n_skipped_no_liquidity": 96
+    },
+    "D1": {
+      "n": 175,
+      "wins": 24,
+      "losses": 151,
+      "win_rate": 0.13714285714285715,
+      "total_r": -0.6780571321901694,
+      "expectancy_r": -0.003874612183943804,
+      "profit_factor": 0.9955095554159592,
+      "avg_target_r": 6.263414286158743,
+      "n_skipped_no_liquidity": 47
+    },
+    "W1": {
+      "n": 25,
+      "wins": 5,
+      "losses": 20,
+      "win_rate": 0.2,
+      "total_r": -1.3408080083586382,
+      "expectancy_r": -0.05363232033434551,
+      "profit_factor": 0.9329595995820681,
+      "avg_target_r": 3.7318383983282724,
+      "n_skipped_no_liquidity": 20
+    }
+  },
+  "US500": {
+    "M30": {
+      "n": 6303,
+      "wins": 931,
+      "losses": 5372,
+      "win_rate": 0.14770744090115817,
+      "total_r": -403.3588600738452,
+      "expectancy_r": -0.0639947421979763,
+      "profit_factor": 0.9249145830093364,
+      "avg_target_r": 5.336886294227879,
+      "n_skipped_no_liquidity": 405
+    },
+    "H1": {
+      "n": 2847,
+      "wins": 421,
+      "losses": 2426,
+      "win_rate": 0.14787495609413417,
+      "total_r": -133.88515988011167,
+      "expectancy_r": -0.04702675092381858,
+      "profit_factor": 0.9448123825720892,
+      "avg_target_r": 5.444453301947479,
+      "n_skipped_no_liquidity": 246
+    },
+    "H2": {
+      "n": 1357,
+      "wins": 203,
+      "losses": 1154,
+      "win_rate": 0.14959469417833457,
+      "total_r": -44.46133480232829,
+      "expectancy_r": -0.032764432426181544,
+      "profit_factor": 0.9614719802406166,
+      "avg_target_r": 5.465707710333358,
+      "n_skipped_no_liquidity": 145
+    },
+    "H4": {
+      "n": 559,
+      "wins": 89,
+      "losses": 470,
+      "win_rate": 0.1592128801431127,
+      "total_r": -32.41636862081221,
+      "expectancy_r": -0.057989925976408285,
+      "profit_factor": 0.9310290029344421,
+      "avg_target_r": 4.916670015496492,
+      "n_skipped_no_liquidity": 95
+    },
+    "D1": {
+      "n": 167,
+      "wins": 24,
+      "losses": 143,
+      "win_rate": 0.1437125748502994,
+      "total_r": 5.826067694388192,
+      "expectancy_r": 0.03488663290052818,
+      "profit_factor": 1.0407417321285888,
+      "avg_target_r": 6.201086153932842,
+      "n_skipped_no_liquidity": 72
+    },
+    "W1": {
+      "n": 14,
+      "wins": 2,
+      "losses": 12,
+      "win_rate": 0.14285714285714285,
+      "total_r": 27.384052073862428,
+      "expectancy_r": 1.9560037195616018,
+      "profit_factor": 3.2820043394885356,
+      "avg_target_r": 19.692026036931214,
+      "n_skipped_no_liquidity": 26
+    }
+  },
+  "USDCAD": {
+    "M30": {
+      "n": 13010,
+      "wins": 2073,
+      "losses": 10937,
+      "win_rate": 0.1593389700230592,
+      "total_r": 5.576505303639866,
+      "expectancy_r": 0.00042863222933431366,
+      "profit_factor": 1.0005098752220571,
+      "avg_target_r": 5.278618671154674,
+      "n_skipped_no_liquidity": 376
+    },
+    "H1": {
+      "n": 5985,
+      "wins": 916,
+      "losses": 5069,
+      "win_rate": 0.15304928989139516,
+      "total_r": -260.12720754871276,
+      "expectancy_r": -0.043463192572884446,
+      "profit_factor": 0.9486827367234735,
+      "avg_target_r": 5.249861127130226,
+      "n_skipped_no_liquidity": 212
+    },
+    "H2": {
+      "n": 3064,
+      "wins": 517,
+      "losses": 2547,
+      "win_rate": 0.168733681462141,
+      "total_r": 116.15608626340291,
+      "expectancy_r": 0.03790994982487028,
+      "profit_factor": 1.0456050593888506,
+      "avg_target_r": 5.151172313855711,
+      "n_skipped_no_liquidity": 127
+    },
+    "H4": {
+      "n": 1543,
+      "wins": 244,
+      "losses": 1299,
+      "win_rate": 0.15813350615683733,
+      "total_r": -159.96444227633003,
+      "expectancy_r": -0.10367105785893083,
+      "profit_factor": 0.8768557026356196,
+      "avg_target_r": 4.668178515260942,
+      "n_skipped_no_liquidity": 76
+    },
+    "D1": {
+      "n": 281,
+      "wins": 58,
+      "losses": 223,
+      "win_rate": 0.20640569395017794,
+      "total_r": 34.379704194355874,
+      "expectancy_r": 0.12234770175927367,
+      "profit_factor": 1.154169077104735,
+      "avg_target_r": 4.4375811067992394,
+      "n_skipped_no_liquidity": 22
+    },
+    "W1": {
+      "n": 48,
+      "wins": 12,
+      "losses": 36,
+      "win_rate": 0.25,
+      "total_r": 14.443872665341095,
+      "expectancy_r": 0.3009140138612729,
+      "profit_factor": 1.401218685148364,
+      "avg_target_r": 4.203656055445092,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "USDCHF": {
+    "M30": {
+      "n": 12454,
+      "wins": 1932,
+      "losses": 10522,
+      "win_rate": 0.15513088164445157,
+      "total_r": -676.6156624017468,
+      "expectancy_r": -0.05432918439069756,
+      "profit_factor": 0.9356951470821376,
+      "avg_target_r": 5.095954626086052,
+      "n_skipped_no_liquidity": 385
+    },
+    "H1": {
+      "n": 5716,
+      "wins": 934,
+      "losses": 4782,
+      "win_rate": 0.16340097970608816,
+      "total_r": 61.913669354250366,
+      "expectancy_r": 0.010831642644200445,
+      "profit_factor": 1.0129472332401193,
+      "avg_target_r": 5.186203072113758,
+      "n_skipped_no_liquidity": 165
+    },
+    "H2": {
+      "n": 2969,
+      "wins": 491,
+      "losses": 2478,
+      "win_rate": 0.16537554732233076,
+      "total_r": 99.83123369463061,
+      "expectancy_r": 0.03362453138923216,
+      "profit_factor": 1.0402870192472278,
+      "avg_target_r": 5.250165445406579,
+      "n_skipped_no_liquidity": 88
+    },
+    "H4": {
+      "n": 1614,
+      "wins": 260,
+      "losses": 1354,
+      "win_rate": 0.161090458488228,
+      "total_r": -171.43914777905638,
+      "expectancy_r": -0.10622004199445867,
+      "profit_factor": 0.8733831995723365,
+      "avg_target_r": 4.548310970080553,
+      "n_skipped_no_liquidity": 54
+    },
+    "D1": {
+      "n": 288,
+      "wins": 54,
+      "losses": 234,
+      "win_rate": 0.1875,
+      "total_r": 19.483110357699267,
+      "expectancy_r": 0.0676496887420115,
+      "profit_factor": 1.0832611553747833,
+      "avg_target_r": 4.694131673290728,
+      "n_skipped_no_liquidity": 13
+    },
+    "W1": {
+      "n": 52,
+      "wins": 4,
+      "losses": 48,
+      "win_rate": 0.07692307692307693,
+      "total_r": -26.848855859790568,
+      "expectancy_r": -0.5163241511498187,
+      "profit_factor": 0.4406488362543632,
+      "avg_target_r": 5.287786035052358,
+      "n_skipped_no_liquidity": 8
+    }
+  },
+  "USDCNH": {
+    "M30": {
+      "n": 7520,
+      "wins": 1194,
+      "losses": 6326,
+      "win_rate": 0.15877659574468084,
+      "total_r": -255.14764190383642,
+      "expectancy_r": -0.033929207699978314,
+      "profit_factor": 0.9596668286588941,
+      "avg_target_r": 5.084465961554576,
+      "n_skipped_no_liquidity": 363
+    },
+    "H1": {
+      "n": 3386,
+      "wins": 569,
+      "losses": 2817,
+      "win_rate": 0.16804489072652096,
+      "total_r": -5.739998002483475,
+      "expectancy_r": -0.0016952150036867453,
+      "profit_factor": 0.9979623720260975,
+      "avg_target_r": 4.94070299120829,
+      "n_skipped_no_liquidity": 174
+    },
+    "H2": {
+      "n": 1640,
+      "wins": 269,
+      "losses": 1371,
+      "win_rate": 0.16402439024390245,
+      "total_r": -112.70145997965191,
+      "expectancy_r": -0.06872040242661692,
+      "profit_factor": 0.9177961633992328,
+      "avg_target_r": 4.677689739852595,
+      "n_skipped_no_liquidity": 100
+    },
+    "H4": {
+      "n": 757,
+      "wins": 135,
+      "losses": 622,
+      "win_rate": 0.178335535006605,
+      "total_r": 58.502085223950004,
+      "expectancy_r": 0.07728148642529709,
+      "profit_factor": 1.094054799395418,
+      "avg_target_r": 5.040756186844074,
+      "n_skipped_no_liquidity": 44
+    },
+    "D1": {
+      "n": 175,
+      "wins": 31,
+      "losses": 144,
+      "win_rate": 0.17714285714285713,
+      "total_r": 10.298071755845486,
+      "expectancy_r": 0.058846124319117066,
+      "profit_factor": 1.0715143871933714,
+      "avg_target_r": 4.977357153414371,
+      "n_skipped_no_liquidity": 24
+    },
+    "W1": {
+      "n": 37,
+      "wins": 8,
+      "losses": 29,
+      "win_rate": 0.21621621621621623,
+      "total_r": 10.650645140837078,
+      "expectancy_r": 0.28785527407667777,
+      "profit_factor": 1.3672636255461061,
+      "avg_target_r": 4.956330642604635,
+      "n_skipped_no_liquidity": 11
+    }
+  },
+  "USDDKK": {
+    "M30": {
+      "n": 11856,
+      "wins": 1990,
+      "losses": 9866,
+      "win_rate": 0.16784750337381915,
+      "total_r": 32.6457547373473,
+      "expectancy_r": 0.0027535218233253334,
+      "profit_factor": 1.0033089149338483,
+      "avg_target_r": 4.974193846601682,
+      "n_skipped_no_liquidity": 373
+    },
+    "H1": {
+      "n": 5601,
+      "wins": 945,
+      "losses": 4656,
+      "win_rate": 0.1687198714515265,
+      "total_r": -80.52228822420892,
+      "expectancy_r": -0.014376412823461693,
+      "profit_factor": 0.9827056941099208,
+      "avg_target_r": 4.841775356376498,
+      "n_skipped_no_liquidity": 210
+    },
+    "H2": {
+      "n": 2958,
+      "wins": 506,
+      "losses": 2452,
+      "win_rate": 0.17106152805949967,
+      "total_r": 11.431953639215555,
+      "expectancy_r": 0.003864757822588105,
+      "profit_factor": 1.0046622975690112,
+      "avg_target_r": 4.868442596124932,
+      "n_skipped_no_liquidity": 123
+    },
+    "H4": {
+      "n": 1628,
+      "wins": 292,
+      "losses": 1336,
+      "win_rate": 0.17936117936117937,
+      "total_r": 32.56041756222005,
+      "expectancy_r": 0.020000256487850088,
+      "profit_factor": 1.0243715700316018,
+      "avg_target_r": 4.686850745076096,
+      "n_skipped_no_liquidity": 73
+    },
+    "D1": {
+      "n": 258,
+      "wins": 51,
+      "losses": 207,
+      "win_rate": 0.19767441860465115,
+      "total_r": 13.461792018996192,
+      "expectancy_r": 0.052177488445721676,
+      "profit_factor": 1.065032811685972,
+      "avg_target_r": 4.322780235666592,
+      "n_skipped_no_liquidity": 31
+    },
+    "W1": {
+      "n": 31,
+      "wins": 6,
+      "losses": 25,
+      "win_rate": 0.1935483870967742,
+      "total_r": 1.9816849683114288,
+      "expectancy_r": 0.06392532155843322,
+      "profit_factor": 1.079267398732457,
+      "avg_target_r": 4.4969474947185715,
+      "n_skipped_no_liquidity": 11
+    }
+  },
+  "USDHKD": {
+    "M30": {
+      "n": 5288,
+      "wins": 856,
+      "losses": 4432,
+      "win_rate": 0.16187594553706505,
+      "total_r": -36.030104957357864,
+      "expectancy_r": -0.006813559938985914,
+      "profit_factor": 0.9918704636829065,
+      "avg_target_r": 5.135478849348881,
+      "n_skipped_no_liquidity": 116
+    },
+    "H1": {
+      "n": 1641,
+      "wins": 273,
+      "losses": 1368,
+      "win_rate": 0.1663619744058501,
+      "total_r": -3.7135770882720767,
+      "expectancy_r": -0.002262996397484507,
+      "profit_factor": 0.9972853968652982,
+      "avg_target_r": 4.997386164511823,
+      "n_skipped_no_liquidity": 58
+    },
+    "H2": {
+      "n": 480,
+      "wins": 65,
+      "losses": 415,
+      "win_rate": 0.13541666666666666,
+      "total_r": -91.76771641904068,
+      "expectancy_r": -0.19118274253966816,
+      "profit_factor": 0.7788729724842394,
+      "avg_target_r": 4.9728043627839895,
+      "n_skipped_no_liquidity": 32
+    },
+    "H4": {
+      "n": 139,
+      "wins": 21,
+      "losses": 118,
+      "win_rate": 0.1510791366906475,
+      "total_r": -27.761730541823948,
+      "expectancy_r": -0.19972468015700684,
+      "profit_factor": 0.7647310971031869,
+      "avg_target_r": 4.297060450389336,
+      "n_skipped_no_liquidity": 15
+    },
+    "D1": {
+      "n": 219,
+      "wins": 42,
+      "losses": 177,
+      "win_rate": 0.1917808219178082,
+      "total_r": 232.14420289471386,
+      "expectancy_r": 1.060019191300063,
+      "profit_factor": 2.3115491688966885,
+      "avg_target_r": 9.74152864035033,
+      "n_skipped_no_liquidity": 8
+    },
+    "W1": {
+      "n": 53,
+      "wins": 10,
+      "losses": 43,
+      "win_rate": 0.18867924528301888,
+      "total_r": 89.99947176683165,
+      "expectancy_r": 1.6981032408836163,
+      "profit_factor": 3.0930109713216662,
+      "avg_target_r": 13.299947176683165,
+      "n_skipped_no_liquidity": 9
+    }
+  },
+  "USDHUF": {
+    "M30": {
+      "n": 8798,
+      "wins": 1342,
+      "losses": 7456,
+      "win_rate": 0.15253466696976586,
+      "total_r": -589.676013399781,
+      "expectancy_r": -0.0670238705841989,
+      "profit_factor": 0.9209125518508877,
+      "avg_target_r": 5.116485832041891,
+      "n_skipped_no_liquidity": 286
+    },
+    "H1": {
+      "n": 4029,
+      "wins": 648,
+      "losses": 3381,
+      "win_rate": 0.16083395383469842,
+      "total_r": -68.99560012891017,
+      "expectancy_r": -0.017124745626435844,
+      "profit_factor": 0.9795931380866874,
+      "avg_target_r": 5.111117901035633,
+      "n_skipped_no_liquidity": 142
+    },
+    "H2": {
+      "n": 1975,
+      "wins": 328,
+      "losses": 1647,
+      "win_rate": 0.1660759493670886,
+      "total_r": 28.814169306767113,
+      "expectancy_r": 0.01458945281355295,
+      "profit_factor": 1.017494941898462,
+      "avg_target_r": 5.109189540569412,
+      "n_skipped_no_liquidity": 96
+    },
+    "H4": {
+      "n": 988,
+      "wins": 156,
+      "losses": 832,
+      "win_rate": 0.15789473684210525,
+      "total_r": -57.113933886430765,
+      "expectancy_r": -0.057807625391124384,
+      "profit_factor": 0.93135344484804,
+      "avg_target_r": 4.967218372522879,
+      "n_skipped_no_liquidity": 63
+    },
+    "D1": {
+      "n": 209,
+      "wins": 27,
+      "losses": 182,
+      "win_rate": 0.1291866028708134,
+      "total_r": -51.48219331937959,
+      "expectancy_r": -0.2463262838247826,
+      "profit_factor": 0.7171308059374749,
+      "avg_target_r": 4.833992840022979,
+      "n_skipped_no_liquidity": 25
+    },
+    "W1": {
+      "n": 38,
+      "wins": 10,
+      "losses": 28,
+      "win_rate": 0.2631578947368421,
+      "total_r": 18.099902506452906,
+      "expectancy_r": 0.47631322385402375,
+      "profit_factor": 1.6464250895161752,
+      "avg_target_r": 4.609990250645291,
+      "n_skipped_no_liquidity": 10
+    }
+  },
+  "USDJPY": {
+    "M30": {
+      "n": 4308,
+      "wins": 673,
+      "losses": 3635,
+      "win_rate": 0.1562209842154132,
+      "total_r": -160.1062244384964,
+      "expectancy_r": -0.03716486175452571,
+      "profit_factor": 0.9559542711310876,
+      "avg_target_r": 5.163289413910109,
+      "n_skipped_no_liquidity": 229
+    },
+    "H1": {
+      "n": 2060,
+      "wins": 361,
+      "losses": 1699,
+      "win_rate": 0.17524271844660194,
+      "total_r": 248.67942247646903,
+      "expectancy_r": 0.12071816625071297,
+      "profit_factor": 1.1463681121109293,
+      "avg_target_r": 5.395233857275537,
+      "n_skipped_no_liquidity": 137
+    },
+    "H2": {
+      "n": 1085,
+      "wins": 168,
+      "losses": 917,
+      "win_rate": 0.15483870967741936,
+      "total_r": -79.02841590138536,
+      "expectancy_r": -0.07283724967869631,
+      "profit_factor": 0.9138185213725349,
+      "avg_target_r": 4.987926095825086,
+      "n_skipped_no_liquidity": 85
+    },
+    "H4": {
+      "n": 575,
+      "wins": 89,
+      "losses": 486,
+      "win_rate": 0.15478260869565216,
+      "total_r": -24.228581356796933,
+      "expectancy_r": -0.04213666322921217,
+      "profit_factor": 0.950146951940747,
+      "avg_target_r": 5.188442906103405,
+      "n_skipped_no_liquidity": 54
+    },
+    "D1": {
+      "n": 88,
+      "wins": 18,
+      "losses": 70,
+      "win_rate": 0.20454545454545456,
+      "total_r": 25.513751326931313,
+      "expectancy_r": 0.2899289923514923,
+      "profit_factor": 1.3644821618133045,
+      "avg_target_r": 5.306319518162851,
+      "n_skipped_no_liquidity": 32
+    },
+    "W1": {
+      "n": 9,
+      "wins": 1,
+      "losses": 8,
+      "win_rate": 0.1111111111111111,
+      "total_r": 2.174413646055445,
+      "expectancy_r": 0.24160151622838266,
+      "profit_factor": 1.2718017057569306,
+      "avg_target_r": 10.174413646055445,
+      "n_skipped_no_liquidity": 13
+    }
+  },
+  "USDMXN": {
+    "M30": {
+      "n": 12756,
+      "wins": 1985,
+      "losses": 10771,
+      "win_rate": 0.15561304484164315,
+      "total_r": -283.46143488045203,
+      "expectancy_r": -0.022221812079057046,
+      "profit_factor": 0.9736829045696359,
+      "avg_target_r": 5.2833947431332735,
+      "n_skipped_no_liquidity": 391
+    },
+    "H1": {
+      "n": 5378,
+      "wins": 867,
+      "losses": 4511,
+      "win_rate": 0.16121234659724804,
+      "total_r": 41.47283334562696,
+      "expectancy_r": 0.007711571838160403,
+      "profit_factor": 1.0091937116705003,
+      "avg_target_r": 5.250833717815025,
+      "n_skipped_no_liquidity": 189
+    },
+    "H2": {
+      "n": 2483,
+      "wins": 418,
+      "losses": 2065,
+      "win_rate": 0.16834474426097462,
+      "total_r": 12.876366325763481,
+      "expectancy_r": 0.005185810038567773,
+      "profit_factor": 1.0062355284870526,
+      "avg_target_r": 4.97099609168843,
+      "n_skipped_no_liquidity": 128
+    },
+    "H4": {
+      "n": 1196,
+      "wins": 187,
+      "losses": 1009,
+      "win_rate": 0.15635451505016723,
+      "total_r": -90.05927326828424,
+      "expectancy_r": -0.07530039570926761,
+      "profit_factor": 0.9107440304575974,
+      "avg_target_r": 4.914121533324684,
+      "n_skipped_no_liquidity": 79
+    },
+    "D1": {
+      "n": 242,
+      "wins": 42,
+      "losses": 200,
+      "win_rate": 0.17355371900826447,
+      "total_r": 39.208614221639934,
+      "expectancy_r": 0.16201906703156999,
+      "profit_factor": 1.1960430711081995,
+      "avg_target_r": 5.695443195753332,
+      "n_skipped_no_liquidity": 34
+    },
+    "W1": {
+      "n": 35,
+      "wins": 4,
+      "losses": 31,
+      "win_rate": 0.11428571428571428,
+      "total_r": -3.632361428812965,
+      "expectancy_r": -0.10378175510894183,
+      "profit_factor": 0.8828270506834528,
+      "avg_target_r": 6.841909642796759,
+      "n_skipped_no_liquidity": 14
+    }
+  },
+  "USDNOK": {
+    "M30": {
+      "n": 11691,
+      "wins": 1924,
+      "losses": 9767,
+      "win_rate": 0.16457103755025232,
+      "total_r": -17.456723944970452,
+      "expectancy_r": -0.0014931762847464336,
+      "profit_factor": 0.9982126831222515,
+      "avg_target_r": 5.067330185059787,
+      "n_skipped_no_liquidity": 307
+    },
+    "H1": {
+      "n": 5252,
+      "wins": 948,
+      "losses": 4304,
+      "win_rate": 0.1805026656511805,
+      "total_r": 359.3577747527559,
+      "expectancy_r": 0.06842303403517835,
+      "profit_factor": 1.08349390677341,
+      "avg_target_r": 4.919153770836241,
+      "n_skipped_no_liquidity": 171
+    },
+    "H2": {
+      "n": 2730,
+      "wins": 494,
+      "losses": 2236,
+      "win_rate": 0.18095238095238095,
+      "total_r": 28.85315998196457,
+      "expectancy_r": 0.01056892307031665,
+      "profit_factor": 1.0129039177021308,
+      "avg_target_r": 4.584722995914908,
+      "n_skipped_no_liquidity": 105
+    },
+    "H4": {
+      "n": 1480,
+      "wins": 255,
+      "losses": 1225,
+      "win_rate": 0.17229729729729729,
+      "total_r": -116.04408466482475,
+      "expectancy_r": -0.07840816531407091,
+      "profit_factor": 0.90527013496749,
+      "avg_target_r": 4.3488467268046085,
+      "n_skipped_no_liquidity": 74
+    },
+    "D1": {
+      "n": 182,
+      "wins": 26,
+      "losses": 156,
+      "win_rate": 0.14285714285714285,
+      "total_r": -25.542047351717017,
+      "expectancy_r": -0.14034091951492877,
+      "profit_factor": 0.8362689272325832,
+      "avg_target_r": 5.017613563395499,
+      "n_skipped_no_liquidity": 24
+    },
+    "W1": {
+      "n": 36,
+      "wins": 7,
+      "losses": 29,
+      "win_rate": 0.19444444444444445,
+      "total_r": 6.244148160838244,
+      "expectancy_r": 0.17344856002328446,
+      "profit_factor": 1.2153154538220083,
+      "avg_target_r": 5.0348783086911775,
+      "n_skipped_no_liquidity": 10
+    }
+  },
+  "USDPLN": {
+    "M30": {
+      "n": 9604,
+      "wins": 1503,
+      "losses": 8101,
+      "win_rate": 0.1564972927946689,
+      "total_r": -355.6436782755381,
+      "expectancy_r": -0.0370307869924551,
+      "profit_factor": 0.9560987929545071,
+      "avg_target_r": 5.153264352444752,
+      "n_skipped_no_liquidity": 316
+    },
+    "H1": {
+      "n": 4369,
+      "wins": 727,
+      "losses": 3642,
+      "win_rate": 0.16639963378347447,
+      "total_r": 47.88854119238984,
+      "expectancy_r": 0.010960984479832736,
+      "profit_factor": 1.0131489679276193,
+      "avg_target_r": 5.0755000566607835,
+      "n_skipped_no_liquidity": 146
+    },
+    "H2": {
+      "n": 2199,
+      "wins": 357,
+      "losses": 1842,
+      "win_rate": 0.16234652114597545,
+      "total_r": -237.81421804099782,
+      "expectancy_r": -0.10814652935015812,
+      "profit_factor": 0.8708934755477754,
+      "avg_target_r": 4.493517596523816,
+      "n_skipped_no_liquidity": 98
+    },
+    "H4": {
+      "n": 1178,
+      "wins": 222,
+      "losses": 956,
+      "win_rate": 0.18845500848896435,
+      "total_r": 125.43904623286751,
+      "expectancy_r": 0.10648475911109301,
+      "profit_factor": 1.1312123914569743,
+      "avg_target_r": 4.871347055103007,
+      "n_skipped_no_liquidity": 78
+    },
+    "D1": {
+      "n": 218,
+      "wins": 38,
+      "losses": 180,
+      "win_rate": 0.1743119266055046,
+      "total_r": 8.632977298685766,
+      "expectancy_r": 0.039600813296723936,
+      "profit_factor": 1.0479609849926987,
+      "avg_target_r": 4.964025718386468,
+      "n_skipped_no_liquidity": 16
+    },
+    "W1": {
+      "n": 35,
+      "wins": 9,
+      "losses": 26,
+      "win_rate": 0.2571428571428571,
+      "total_r": 13.085435740182698,
+      "expectancy_r": 0.3738695925766484,
+      "profit_factor": 1.5032859900070268,
+      "avg_target_r": 4.342826193353633,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "USDSEK": {
+    "M30": {
+      "n": 12231,
+      "wins": 1981,
+      "losses": 10250,
+      "win_rate": 0.16196549750633635,
+      "total_r": -251.4045548911451,
+      "expectancy_r": -0.02055470156905781,
+      "profit_factor": 0.9754727263520834,
+      "avg_target_r": 5.047246564921179,
+      "n_skipped_no_liquidity": 359
+    },
+    "H1": {
+      "n": 5498,
+      "wins": 964,
+      "losses": 4534,
+      "win_rate": 0.17533648599490723,
+      "total_r": 356.65206409999377,
+      "expectancy_r": 0.06486941871589536,
+      "profit_factor": 1.078661681539478,
+      "avg_target_r": 5.073290522925304,
+      "n_skipped_no_liquidity": 202
+    },
+    "H2": {
+      "n": 2815,
+      "wins": 504,
+      "losses": 2311,
+      "win_rate": 0.17904085257548846,
+      "total_r": 55.15276058648558,
+      "expectancy_r": 0.019592454915270396,
+      "profit_factor": 1.023865322625048,
+      "avg_target_r": 4.694747540846202,
+      "n_skipped_no_liquidity": 135
+    },
+    "H4": {
+      "n": 1539,
+      "wins": 271,
+      "losses": 1268,
+      "win_rate": 0.1760883690708252,
+      "total_r": -7.679976069141372,
+      "expectancy_r": -0.004990237861690283,
+      "profit_factor": 0.9939432365385321,
+      "avg_target_r": 4.650627394578814,
+      "n_skipped_no_liquidity": 82
+    },
+    "D1": {
+      "n": 235,
+      "wins": 46,
+      "losses": 189,
+      "win_rate": 0.19574468085106383,
+      "total_r": 27.92662120691709,
+      "expectancy_r": 0.11883668598688135,
+      "profit_factor": 1.1477599005656989,
+      "avg_target_r": 4.71579611319385,
+      "n_skipped_no_liquidity": 24
+    },
+    "W1": {
+      "n": 39,
+      "wins": 4,
+      "losses": 35,
+      "win_rate": 0.10256410256410256,
+      "total_r": -16.88556226679737,
+      "expectancy_r": -0.4329631350460864,
+      "profit_factor": 0.5175553638057895,
+      "avg_target_r": 4.528609433300658,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "USDSGD": {
+    "M30": {
+      "n": 12438,
+      "wins": 2036,
+      "losses": 10402,
+      "win_rate": 0.16369191188293938,
+      "total_r": -3.6807505262421794,
+      "expectancy_r": -0.00029592784420662266,
+      "profit_factor": 0.9996461497282982,
+      "avg_target_r": 5.107229493847622,
+      "n_skipped_no_liquidity": 347
+    },
+    "H1": {
+      "n": 5378,
+      "wins": 900,
+      "losses": 4478,
+      "win_rate": 0.16734845667534398,
+      "total_r": 168.08142672232896,
+      "expectancy_r": 0.031253519286412845,
+      "profit_factor": 1.0375349322738563,
+      "avg_target_r": 5.162312696358143,
+      "n_skipped_no_liquidity": 158
+    },
+    "H2": {
+      "n": 2497,
+      "wins": 397,
+      "losses": 2100,
+      "win_rate": 0.15899078894673607,
+      "total_r": -171.5790904383497,
+      "expectancy_r": -0.06871409308704435,
+      "profit_factor": 0.9182956712198335,
+      "avg_target_r": 4.857483399399623,
+      "n_skipped_no_liquidity": 73
+    },
+    "H4": {
+      "n": 1184,
+      "wins": 185,
+      "losses": 999,
+      "win_rate": 0.15625,
+      "total_r": -125.53783956856171,
+      "expectancy_r": -0.10602858071669063,
+      "profit_factor": 0.8743364969283667,
+      "avg_target_r": 4.72141708341318,
+      "n_skipped_no_liquidity": 41
+    },
+    "D1": {
+      "n": 340,
+      "wins": 57,
+      "losses": 283,
+      "win_rate": 0.1676470588235294,
+      "total_r": 17.15978995068853,
+      "expectancy_r": 0.05046997044320156,
+      "profit_factor": 1.0606353001791116,
+      "avg_target_r": 5.265961227205063,
+      "n_skipped_no_liquidity": 26
+    },
+    "W1": {
+      "n": 51,
+      "wins": 6,
+      "losses": 45,
+      "win_rate": 0.11764705882352941,
+      "total_r": -1.3195305665524883,
+      "expectancy_r": -0.02587314836377419,
+      "profit_factor": 0.9706770985210559,
+      "avg_target_r": 7.280078238907919,
+      "n_skipped_no_liquidity": 6
+    }
+  },
+  "USDTRY": {
+    "M30": {
+      "n": 7618,
+      "wins": 1125,
+      "losses": 6493,
+      "win_rate": 0.14767655552638487,
+      "total_r": -287.7199517022156,
+      "expectancy_r": -0.03776843682097886,
+      "profit_factor": 0.9556876710762028,
+      "avg_target_r": 5.515804487375808,
+      "n_skipped_no_liquidity": 669
+    },
+    "H1": {
+      "n": 3179,
+      "wins": 480,
+      "losses": 2699,
+      "win_rate": 0.15099087763447624,
+      "total_r": -47.62707658550066,
+      "expectancy_r": -0.014981779360019098,
+      "profit_factor": 0.9823538063781028,
+      "avg_target_r": 5.523693590446873,
+      "n_skipped_no_liquidity": 420
+    },
+    "H2": {
+      "n": 1345,
+      "wins": 224,
+      "losses": 1121,
+      "win_rate": 0.16654275092936802,
+      "total_r": 25.70102911232897,
+      "expectancy_r": 0.019108571830727783,
+      "profit_factor": 1.0229268769958333,
+      "avg_target_r": 5.119201022822898,
+      "n_skipped_no_liquidity": 258
+    },
+    "H4": {
+      "n": 540,
+      "wins": 97,
+      "losses": 443,
+      "win_rate": 0.17962962962962964,
+      "total_r": 126.78710230725991,
+      "expectancy_r": 0.2347909301986295,
+      "profit_factor": 1.2862011338764332,
+      "avg_target_r": 5.874093838219174,
+      "n_skipped_no_liquidity": 134
+    },
+    "D1": {
+      "n": 148,
+      "wins": 26,
+      "losses": 122,
+      "win_rate": 0.17567567567567569,
+      "total_r": 70.04433344248685,
+      "expectancy_r": 0.4732725232600463,
+      "profit_factor": 1.5741338806761216,
+      "avg_target_r": 7.386320517018725,
+      "n_skipped_no_liquidity": 117
+    },
+    "W1": {
+      "n": 23,
+      "wins": 5,
+      "losses": 18,
+      "win_rate": 0.21739130434782608,
+      "total_r": 8.22854592027025,
+      "expectancy_r": 0.35776286609870656,
+      "profit_factor": 1.4571414400150138,
+      "avg_target_r": 5.24570918405405,
+      "n_skipped_no_liquidity": 66
+    }
+  },
+  "USDZAR": {
+    "M30": {
+      "n": 11844,
+      "wins": 1848,
+      "losses": 9996,
+      "win_rate": 0.15602836879432624,
+      "total_r": -483.915733474808,
+      "expectancy_r": -0.04085745807791363,
+      "profit_factor": 0.9515890622774301,
+      "avg_target_r": 5.14723174595519,
+      "n_skipped_no_liquidity": 354
+    },
+    "H1": {
+      "n": 5067,
+      "wins": 809,
+      "losses": 4258,
+      "win_rate": 0.15966054864811527,
+      "total_r": -86.92425836016635,
+      "expectancy_r": -0.017154975006940187,
+      "profit_factor": 0.9795856603193597,
+      "avg_target_r": 5.155841460617841,
+      "n_skipped_no_liquidity": 199
+    },
+    "H2": {
+      "n": 2363,
+      "wins": 382,
+      "losses": 1981,
+      "win_rate": 0.16165890816758358,
+      "total_r": -34.6131324023765,
+      "expectancy_r": -0.014647961236723073,
+      "profit_factor": 0.9825274445217685,
+      "avg_target_r": 5.095253580098491,
+      "n_skipped_no_liquidity": 131
+    },
+    "H4": {
+      "n": 1135,
+      "wins": 178,
+      "losses": 957,
+      "win_rate": 0.1568281938325991,
+      "total_r": -110.86718006036043,
+      "expectancy_r": -0.09768033485494332,
+      "profit_factor": 0.8841513270006683,
+      "avg_target_r": 4.753555168200222,
+      "n_skipped_no_liquidity": 87
+    },
+    "D1": {
+      "n": 233,
+      "wins": 41,
+      "losses": 192,
+      "win_rate": 0.1759656652360515,
+      "total_r": 20.55502521708113,
+      "expectancy_r": 0.08821899234798769,
+      "profit_factor": 1.107057423005631,
+      "avg_target_r": 5.184268907733686,
+      "n_skipped_no_liquidity": 41
+    },
+    "W1": {
+      "n": 34,
+      "wins": 7,
+      "losses": 27,
+      "win_rate": 0.20588235294117646,
+      "total_r": -4.311248855792902,
+      "expectancy_r": -0.1268014369350854,
+      "profit_factor": 0.8403241164521148,
+      "avg_target_r": 3.241250163458157,
+      "n_skipped_no_liquidity": 19
+    }
+  },
+  "USFANG": {
+    "M30": {
+      "n": 280,
+      "wins": 31,
+      "losses": 249,
+      "win_rate": 0.11071428571428571,
+      "total_r": -76.59475703824407,
+      "expectancy_r": -0.27355270370801443,
+      "profit_factor": 0.6923905339829556,
+      "avg_target_r": 5.561459450379224,
+      "n_skipped_no_liquidity": 36
+    },
+    "H1": {
+      "n": 157,
+      "wins": 20,
+      "losses": 137,
+      "win_rate": 0.12738853503184713,
+      "total_r": -24.00712755308037,
+      "expectancy_r": -0.15291164046548,
+      "profit_factor": 0.824765492313282,
+      "avg_target_r": 5.649643622345982,
+      "n_skipped_no_liquidity": 26
+    },
+    "H2": {
+      "n": 73,
+      "wins": 11,
+      "losses": 62,
+      "win_rate": 0.1506849315068493,
+      "total_r": -24.744511143917293,
+      "expectancy_r": -0.3389659060810589,
+      "profit_factor": 0.6008949815497211,
+      "avg_target_r": 3.386862623280246,
+      "n_skipped_no_liquidity": 19
+    },
+    "H4": {
+      "n": 0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 2
+    },
+    "D1": {
+      "n": 40,
+      "wins": 4,
+      "losses": 36,
+      "win_rate": 0.1,
+      "total_r": -7.406139558514275,
+      "expectancy_r": -0.18515348896285688,
+      "profit_factor": 0.7942739011523812,
+      "avg_target_r": 7.148465110371431,
+      "n_skipped_no_liquidity": 19
+    },
+    "W1": {
+      "n": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0,
+      "expectancy_r": -1.0,
+      "profit_factor": 0.0,
+      "avg_target_r": null,
+      "n_skipped_no_liquidity": 7
+    }
+  },
+  "WTI": {
+    "M30": {
+      "n": 6687,
+      "wins": 1053,
+      "losses": 5634,
+      "win_rate": 0.15746971736204576,
+      "total_r": 157.50844167259316,
+      "expectancy_r": 0.023554425253864752,
+      "profit_factor": 1.0279567699099383,
+      "avg_target_r": 5.50000801678309,
+      "n_skipped_no_liquidity": 229
+    },
+    "H1": {
+      "n": 3227,
+      "wins": 525,
+      "losses": 2702,
+      "win_rate": 0.16268980477223427,
+      "total_r": 244.239934956974,
+      "expectancy_r": 0.07568637587758731,
+      "profit_factor": 1.0903922779263413,
+      "avg_target_r": 5.611885590394237,
+      "n_skipped_no_liquidity": 137
+    },
+    "H2": {
+      "n": 1473,
+      "wins": 256,
+      "losses": 1217,
+      "win_rate": 0.17379497623896809,
+      "total_r": 179.1943753927468,
+      "expectancy_r": 0.12165266489663729,
+      "profit_factor": 1.1472427078001206,
+      "avg_target_r": 5.453884278877917,
+      "n_skipped_no_liquidity": 78
+    },
+    "H4": {
+      "n": 677,
+      "wins": 98,
+      "losses": 579,
+      "win_rate": 0.1447562776957164,
+      "total_r": -6.68328065866077,
+      "expectancy_r": -0.00987190643819913,
+      "profit_factor": 0.9884572009349555,
+      "avg_target_r": 5.839966523891216,
+      "n_skipped_no_liquidity": 44
+    },
+    "D1": {
+      "n": 167,
+      "wins": 27,
+      "losses": 140,
+      "win_rate": 0.16167664670658682,
+      "total_r": -9.673855096996167,
+      "expectancy_r": -0.057927276029917096,
+      "profit_factor": 0.9309010350214559,
+      "avg_target_r": 4.826894255666809,
+      "n_skipped_no_liquidity": 28
+    },
+    "W1": {
+      "n": 17,
+      "wins": 1,
+      "losses": 16,
+      "win_rate": 0.058823529411764705,
+      "total_r": -8.174496644295278,
+      "expectancy_r": -0.4808527437820751,
+      "profit_factor": 0.4890939597315452,
+      "avg_target_r": 7.825503355704723,
+      "n_skipped_no_liquidity": 15
+    }
+  },
+  "XLMUSD": {
+    "M30": {
+      "n": 6142,
+      "wins": 1034,
+      "losses": 5108,
+      "win_rate": 0.1683490719635298,
+      "total_r": 210.48078353294187,
+      "expectancy_r": 0.03426909533261835,
+      "profit_factor": 1.0412061048420012,
+      "avg_target_r": 5.143598436685631,
+      "n_skipped_no_liquidity": 204
+    },
+    "H1": {
+      "n": 2757,
+      "wins": 475,
+      "losses": 2282,
+      "win_rate": 0.1722887196227784,
+      "total_r": 200.56393762426453,
+      "expectancy_r": 0.072747166349026,
+      "profit_factor": 1.0878895432183455,
+      "avg_target_r": 5.2264503949984515,
+      "n_skipped_no_liquidity": 109
+    },
+    "H2": {
+      "n": 1377,
+      "wins": 214,
+      "losses": 1163,
+      "win_rate": 0.15541031227305738,
+      "total_r": -74.44284008254397,
+      "expectancy_r": -0.05406161226038042,
+      "profit_factor": 0.935990679206755,
+      "avg_target_r": 5.086715700548861,
+      "n_skipped_no_liquidity": 50
+    },
+    "H4": {
+      "n": 665,
+      "wins": 94,
+      "losses": 571,
+      "win_rate": 0.14135338345864662,
+      "total_r": -117.13786469356636,
+      "expectancy_r": -0.1761471649527313,
+      "profit_factor": 0.7948548779447174,
+      "avg_target_r": 4.828320588366315,
+      "n_skipped_no_liquidity": 25
+    },
+    "D1": {
+      "n": 97,
+      "wins": 16,
+      "losses": 81,
+      "win_rate": 0.16494845360824742,
+      "total_r": -10.304630047659522,
+      "expectancy_r": -0.1062332994604076,
+      "profit_factor": 0.8727823450906231,
+      "avg_target_r": 4.418460622021279,
+      "n_skipped_no_liquidity": 9
+    },
+    "W1": {
+      "n": 6,
+      "wins": 1,
+      "losses": 5,
+      "win_rate": 0.16666666666666666,
+      "total_r": 6.543032786885258,
+      "expectancy_r": 1.0905054644808763,
+      "profit_factor": 2.3086065573770513,
+      "avg_target_r": 11.543032786885258,
+      "n_skipped_no_liquidity": 4
+    }
+  },
+  "XRPUSD": {
+    "M30": {
+      "n": 7776,
+      "wins": 1233,
+      "losses": 6543,
+      "win_rate": 0.15856481481481483,
+      "total_r": -142.3571338505931,
+      "expectancy_r": -0.018307244579551574,
+      "profit_factor": 0.9782428345024311,
+      "avg_target_r": 5.191113435644287,
+      "n_skipped_no_liquidity": 224
+    },
+    "H1": {
+      "n": 3347,
+      "wins": 535,
+      "losses": 2812,
+      "win_rate": 0.15984463698834778,
+      "total_r": -36.29391398583315,
+      "expectancy_r": -0.010843714964395956,
+      "profit_factor": 0.9870932027077407,
+      "avg_target_r": 5.1882356747928355,
+      "n_skipped_no_liquidity": 106
+    },
+    "H2": {
+      "n": 1502,
+      "wins": 221,
+      "losses": 1281,
+      "win_rate": 0.14713715046604528,
+      "total_r": -102.75773702175496,
+      "expectancy_r": -0.06841393942859852,
+      "profit_factor": 0.9197831873366471,
+      "avg_target_r": 5.331412954652692,
+      "n_skipped_no_liquidity": 56
+    },
+    "H4": {
+      "n": 787,
+      "wins": 117,
+      "losses": 670,
+      "win_rate": 0.14866581956797967,
+      "total_r": -94.62598498636406,
+      "expectancy_r": -0.12023632145662522,
+      "profit_factor": 0.8587671865875163,
+      "avg_target_r": 4.9177266240481705,
+      "n_skipped_no_liquidity": 34
+    },
+    "D1": {
+      "n": 152,
+      "wins": 21,
+      "losses": 131,
+      "win_rate": 0.13815789473684212,
+      "total_r": -28.248759830293373,
+      "expectancy_r": -0.18584710414666672,
+      "profit_factor": 0.7843606119824934,
+      "avg_target_r": 4.892916198557459,
+      "n_skipped_no_liquidity": 5
+    },
+    "W1": {
+      "n": 21,
+      "wins": 1,
+      "losses": 20,
+      "win_rate": 0.047619047619047616,
+      "total_r": -11.843436754176608,
+      "expectancy_r": -0.5639731787703146,
+      "profit_factor": 0.4078281622911696,
+      "avg_target_r": 8.156563245823392,
+      "n_skipped_no_liquidity": 1
+    }
+  }
+}

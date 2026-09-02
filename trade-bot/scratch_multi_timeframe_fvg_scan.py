@@ -35,7 +35,7 @@ from pathlib import Path
 from backtest.run_multi_symbol_validation import load_m1_canonical_as_candlev2, candlev2_to_strategy_dict
 from research.v2.data.models import Timeframe
 from research.v2.data.resampler import resample_m1
-from strategy.config import StrategyConfig
+from strategy.config import StrategyConfig, KEPT_SYMBOLS
 from strategy.fvg import detect_fvgs, mark_filled_fvgs, FVGDirection
 
 RESULTS_PATH = Path("fvg_scan_results.json")
@@ -46,19 +46,10 @@ TIMEFRAMES = [Timeframe.M30, Timeframe.H1, Timeframe.H2, Timeframe.H4, Timeframe
 # aynı anda en kötü 10 sembol arasında bulduğu, yapısal olarak bu stratejiye
 # uygun olmayan semboller çıkarıldı (2026-08-31 R-katı çalışması) --
 # GERTECH30, NASDAQ, IT40, GERMID50, EURDKK, USFANG.
-ALL_SYMBOLS = [
-    "ADAUSD", "ATOMUSD", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AVAXUSD",
-    "BCHUSD", "BRENT", "BTCUSD", "CA60", "CADCHF", "CADJPY", "CHFJPY", "CHFSGD", "CHINAH",
-    "CHN50", "DOGEUSD", "DOTUSD", "ETCUSD", "ETHUSD", "EU50", "EURAUD", "EURCAD", "EURCHF",
-    "EURGBP", "EURHKD", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURSGD",
-    "EURTRY", "EURUSD", "EURZAR", "FRA40", "GBPAUD", "GBPCAD", "GBPCHF", "GBPDKK", "GBPJPY",
-    "GBPNOK", "GBPNZD", "GBPSEK", "GBPSGD", "GBPUSD", "GER40", "GOLD", "HK50", "JP225",
-    "LINKUSD", "LTCUSD", "MATICUSD", "NETH25", "NZDCAD", "NZDCHF", "NZDJPY", "NZDSGD", "NZDUSD",
-    "PALLADIUM", "PLATINUM", "SA40", "SGDJPY", "SILVER", "SING30", "SOLUSD", "SPAIN35", "SWI20",
-    "TAIWAN", "UK100", "UNIUSD", "US2000", "US30", "US500", "USDCAD", "USDCHF", "USDCNH",
-    "USDDKK", "USDHKD", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD",
-    "USDTRY", "USDZAR", "WTI", "XLMUSD", "XRPUSD",
-]
+# + 2026-09-02, TUR 4 (kullanici karariyla): kapsam GOLD, BTCUSD, EURGBP
+# UCLUSUNE daraltildi -- strategy/config.py:KEPT_SYMBOLS. Bkz.
+# NOA_KONSEPTI_KAYNAK_ANALIZI.md "Sembol eleme turu 2 ve 3" bolumu.
+ALL_SYMBOLS = list(KEPT_SYMBOLS)
 
 CONFIG = StrategyConfig()
 

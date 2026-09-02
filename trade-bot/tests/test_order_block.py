@@ -2,9 +2,11 @@
 Order Block Modülü Birim Testleri (Unit Tests for strategy/order_block.py).
 """
 
+from dataclasses import replace
 from datetime import datetime, timedelta
 import pytest
 
+from strategy.config import DEFAULT_CONFIG
 from strategy.order_block import (
     detect_order_blocks,
     mark_mitigated_blocks,
@@ -108,3 +110,80 @@ def test_order_block_mitigation():
     assert len(blocks) == 1
     assert blocks[0].mitigated is True
     assert blocks[0].mitigated_index == 16
+
+
+def test_engulfing_true_when_impulse_covers_ob_full_wick_range():
+    # Impuls mumu, OB mumunun fitil dahil TUM high-low araligini kapsiyor
+    # (impulse.high >= ob.high VE impulse.low <= ob.low).
+    neutral_candles = [(100.0, 101.0, 99.0, 100.0)] * 13
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]        # idx 13: high=100.8, low=99.2
+    impulse_candle = [(99.5, 106.0, 99.0, 105.5)]        # idx 14: high=106.0>=100.8, low=99.0<=99.2
+    candles = _make_dummy_candles(neutral_candles + last_opposite + impulse_candle)
+
+    blocks = detect_order_blocks(candles)
+    assert len(blocks) == 1
+    assert blocks[0].engulfing is True
+
+
+def test_engulfing_false_when_impulse_does_not_cover_ob_low():
+    neutral_candles = [(100.0, 101.0, 99.0, 100.0)] * 13
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]        # idx 13: low=99.2
+    impulse_candle = [(99.5, 106.0, 99.4, 105.5)]        # idx 14: low=99.4 > 99.2 -- kapsamiyor
+    candles = _make_dummy_candles(neutral_candles + last_opposite + impulse_candle)
+
+    blocks = detect_order_blocks(candles)
+    assert len(blocks) == 1
+    assert blocks[0].engulfing is False
+
+
+def test_swept_liquidity_true_when_ob_candle_breaks_prior_window_low():
+    # Onceki 10 barin (varsayilan ob_liquidity_sweep_lookback) en dusuk
+    # dip'i 99.0 -- OB mumunun kendi dip'i (98.0) bunun altina geciyor.
+    neutral_candles = [(100.0, 101.0, 99.0, 100.0)] * 13
+    last_opposite = [(100.5, 100.8, 98.0, 99.5)]        # idx 13: low=98.0 < 99.0
+    impulse_candle = [(99.5, 106.0, 99.4, 105.5)]        # idx 14
+    candles = _make_dummy_candles(neutral_candles + last_opposite + impulse_candle)
+
+    blocks = detect_order_blocks(candles)
+    assert len(blocks) == 1
+    assert blocks[0].swept_liquidity is True
+
+
+def test_swept_liquidity_false_when_ob_candle_stays_within_prior_window():
+    neutral_candles = [(100.0, 101.0, 99.0, 100.0)] * 13
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]        # idx 13: low=99.2 > 99.0 -- supurme yok
+    impulse_candle = [(99.5, 106.0, 99.4, 105.5)]        # idx 14
+    candles = _make_dummy_candles(neutral_candles + last_opposite + impulse_candle)
+
+    blocks = detect_order_blocks(candles)
+    assert len(blocks) == 1
+    assert blocks[0].swept_liquidity is False
+
+
+def test_htf_discount_aligned_true_for_bullish_ob_in_lower_half():
+    # ob_premium_discount_lookback=5 kucultulerek test kompakt tutuluyor.
+    # Pencere (idx 9-13) high=101.0/low=99.0 -> midpoint=100.0. OB
+    # mumunun govde orta noktasi (99.25) bunun ALTINDA -- discount.
+    cfg = replace(DEFAULT_CONFIG, ob_premium_discount_lookback=5)
+    neutral_candles = [(100.0, 101.0, 99.0, 100.0)] * 13
+    last_opposite = [(99.5, 99.5, 99.0, 99.0)]           # idx 13: bearish, top=99.5, bottom=99.0
+    impulse_candle = [(99.0, 106.0, 98.9, 105.5)]        # idx 14
+    candles = _make_dummy_candles(neutral_candles + last_opposite + impulse_candle)
+
+    blocks = detect_order_blocks(candles, config=cfg)
+    assert len(blocks) == 1
+    assert blocks[0].htf_discount_aligned is True
+
+
+def test_htf_discount_aligned_false_for_bullish_ob_in_upper_half():
+    # Ayni pencere/midpoint (100.0), ama OB mumunun govde orta noktasi
+    # (100.75) midpoint'in UZERINDE -- premium, bullish icin uyumsuz.
+    cfg = replace(DEFAULT_CONFIG, ob_premium_discount_lookback=5)
+    neutral_candles = [(100.0, 101.0, 99.0, 100.0)] * 13
+    last_opposite = [(101.0, 101.0, 100.5, 100.5)]       # idx 13: bearish, top=101.0, bottom=100.5
+    impulse_candle = [(100.5, 107.0, 100.4, 106.5)]      # idx 14
+    candles = _make_dummy_candles(neutral_candles + last_opposite + impulse_candle)
+
+    blocks = detect_order_blocks(candles, config=cfg)
+    assert len(blocks) == 1
+    assert blocks[0].htf_discount_aligned is False

@@ -104,8 +104,21 @@ def run_final_holdout_evaluation(
     baseline_fingerprint: str = "5a56639725048f3d",
     dataset_fingerprint: str = "gold_m30_2yil_clean",
     config: StrategyConfig = DEFAULT_CONFIG,
+    val_metrics: BacktestMetrics | None = None,
 ) -> FinalHoldoutReport:
-    """Nihai saklı test veri seti üzerinde TEK ATIMLIK değerlendirmeyi çalıştırır."""
+    """
+    Nihai saklı test veri seti üzerinde TEK ATIMLIK değerlendirmeyi çalıştırır.
+
+    `val_metrics` (2026-09-02 eklendi): karşılaştırma taban çizgisi olarak
+    kullanılacak TAZE doğrulama-kümesi metrikleri (bkz. `build_validation_report`'un
+    `val_metrics` alanı) -- verilmezse eski, GÖMÜLÜ V1 (FVG+OB+S/R, trend
+    filtreli) sabitlerine (expectancy=0.5253 vb.) düşülür. Bu sabitler
+    FARKLI bir stratejiye ait -- yeni/kalibre edilmiş bir stratejiyi
+    değerlendirirken MUTLAKA kendi `val_metrics`'i geçirilmeli, yoksa
+    delta raporlaması (`ValidationComparison`) yanlış taban çizgisiyle
+    karşılaştırma yapar (sınıflandırmanın kendisini -- `classify_holdout_evidence`
+    -- ETKİLEMEZ, o sadece `test_metrics`'e bakıyor, ama delta alanları yanıltıcı olur).
+    """
     split_def, (train_candles, val_candles, test_candles) = split_chronological(candles, 0.60, 0.20, 0.20)
 
     test_start_idx = split_def.val_end
@@ -132,22 +145,32 @@ def run_final_holdout_evaluation(
         skipped_no_tp=test_result.skipped_no_tp,
     )
 
-    # 3. Doğrulama ile Karşılaştırma
+    # 3. Doğrulama ile Karşılaştırma (bkz. val_metrics docstring notu -- taze
+    # gecirilmediyse eski V1 sabitlerine duser, SADECE delta alanlarini etkiler)
+    if val_metrics is not None:
+        base_expectancy = val_metrics.expectancy_r
+        base_total_r = val_metrics.total_net_r
+        base_pf = val_metrics.profit_factor
+        base_win_rate = val_metrics.win_rate
+        base_max_dd = val_metrics.max_drawdown_r
+    else:
+        base_expectancy, base_total_r, base_pf, base_win_rate, base_max_dd = 0.5253, 22.06, 4.42, 0.7857, 1.76
+
     val_comp = ValidationComparison(
-        val_expectancy_r=0.5253,
-        val_total_net_r=22.06,
-        val_profit_factor=4.42,
-        val_win_rate=0.7857,
-        val_max_drawdown_r=1.76,
+        val_expectancy_r=base_expectancy,
+        val_total_net_r=base_total_r,
+        val_profit_factor=base_pf,
+        val_win_rate=base_win_rate,
+        val_max_drawdown_r=base_max_dd,
         test_expectancy_r=round(test_metrics.expectancy_r, 4),
         test_total_net_r=round(test_metrics.total_net_r, 4),
         test_profit_factor=round(test_metrics.profit_factor, 4),
         test_win_rate=round(test_metrics.win_rate, 4),
         test_max_drawdown_r=round(test_metrics.max_drawdown_r, 4),
-        expectancy_delta_r=round(test_metrics.expectancy_r - 0.5253, 4),
-        pf_delta=round(test_metrics.profit_factor - 4.42, 4),
-        win_rate_delta=round(test_metrics.win_rate - 0.7857, 4),
-        max_dd_delta_r=round(test_metrics.max_drawdown_r - 1.76, 4),
+        expectancy_delta_r=round(test_metrics.expectancy_r - base_expectancy, 4),
+        pf_delta=round(test_metrics.profit_factor - base_pf, 4),
+        win_rate_delta=round(test_metrics.win_rate - base_win_rate, 4),
+        max_dd_delta_r=round(test_metrics.max_drawdown_r - base_max_dd, 4),
     )
 
     # 4. Zenginleştirilmiş İşlem Analizleri

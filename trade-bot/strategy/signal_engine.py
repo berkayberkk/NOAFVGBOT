@@ -1,26 +1,52 @@
 """
 Sinyal motoru.
 
-Kullanıcının A+ setup tanımı: FVG ve Order Block aynı bölgede üst üste
-gelirse ve aynı yöndeyse, bu A+ (en güçlü) setup sayılır.
+GÜNCELLEME (2026-09-02): Bu modül önceden A+ (FVG+OB confluence) ve
+trend/EMA teyidiyle güven seviyesi belirleyen bir tasarıma sahipti.
+Bu, `strategy/signal_engine.py`'nin walk-forward/holdout altyapısıyla
+(bkz. `backtest/final_holdout.py`) bağlantılı OLAN ama bu oturumda
+kalibre edilen (FVG/iFVG/Order Block/Trendline R-katı hedefleri, SL
+tamponları, breakeven-stop eşiği -- hepsi `strategy/config.py`'de)
+strateji ile HİÇ BAĞLANTISI OLMAYAN eski bir tasarımdı.
 
-Sistem gevşetildi: A+ dışında tek başına FVG ya da tek başına OB da
-(daha düşük güvenle) sinyal üretebiliyor. Her sinyalin `setup_type`
-alanı hangi kategoriden geldiğini gösterir — backtest/kullanım
-aşamasında istenirse sadece A+ ile, istenirse hepsiyle çalışılabilir.
+Bu oturumun tüm ampirik çalışması (100'ün üzerinde scratch script,
+`results/README.md`'de özetli) şunu gösterdi:
+- Dört modül (FVG/iFVG/OB/Trendline) BAĞIMSIZ sinyal üretir -- confluence
+  (A+ gibi birden fazla modülün aynı bölgede/yönde çakışması) ayrıca
+  test edildi (`results/confluence_and_filters/confluence_study_results.json`)
+  ve kaliteyi ARTIRMADIĞI bulundu. Bu yüzden A+ artık ÜRETİLMİYOR.
+- Trend/EMA filtresi bu oturumun HİÇBİR kalibrasyon/backtest çalışmasında
+  kullanılmadı -- eklemek, kalibre ETMEDİĞİMİZ bir değişkeni sessizce
+  strateji tanımına sokmak olurdu. Bu yüzden trend filtresi kaldırıldı.
+- Her modülün kendi resmi R-katı hedefi (`MODULE_R_MULTIPLE`), SL
+  tamponu (`MODULE_SL_BUFFER_RATIO`) ve (uygunsa) breakeven-stop eşiği
+  (`BREAKEVEN_TRIGGER_PCT`/`BREAKEVEN_ENABLED_MODULES`) burada, sinyal
+  üretim anında hesaplanıp `Signal.take_profit`/`breakeven_trigger_pct`
+  alanlarına yazılıyor -- `backtest/engine.py` artık bunları (varsa)
+  doğrudan kullanıyor, kendi Destek/Direnç tabanlı TP arayışına (eski
+  davranış, hâlâ `take_profit=None` durumunda devrede) düşmüyor.
 
-Trend, hiçbir zaman sert bir "ya hep ya hiç" filtresi değil (sadece tam
-ters yön elenir); yön+EMA teyidi durumuna göre güven seviyesini belirler.
-Tek başına (A+ olmayan) sinyallerde güven tavanı bir kademe daha düşük
-tutulur, çünkü confluence teyidi eksik.
+KAPSAM NOTU: Aşağıdaki formüller, bu oturumun `scratch_gold_account_simulation.py`/
+`scratch_trade_archive.py` gibi scriptlerinde M30 zaman diliminde
+doğrulanan AYNI formüllerdir -- burada TEKRAR üretilmedi, birebir
+taşındı. `MODULE_DISABLED_TIMEFRAMES` burada UYGULANMIYOR çünkü bu
+fonksiyon hangi zaman diliminde çalıştığını bilmiyor (çağıran taraf
+karar veriyor) -- tüm bu oturumun doğrulaması zaten sadece M30'da
+yapıldı, hiçbir modül M30'da devre dışı değil.
+
+`Confidence` alanı yapısal geriye-dönük uyumluluk için duruyor (bazı
+testler/backtest raporlama kodu bunu bekliyor) ama artık ayırt edici
+bir sinyal taşımıyor -- trend filtresi kaldırıldığı için her sinyale
+sabit `Confidence.MEDIUM` atanıyor.
 """
 
 from dataclasses import dataclass
 from enum import Enum
 
-from strategy.fvg import detect_fvgs, mark_filled_fvgs, FVGDirection, FVG
-from strategy.order_block import detect_order_blocks, mark_mitigated_blocks, OBDirection, OrderBlock
-from strategy.trend import detect_trend, TrendDirection, TrendState
+from strategy.fvg import detect_fvgs, FVGDirection, compute_atr_series
+from strategy.ifvg import detect_confirmed_ifvgs, IFVGEvent
+from strategy.order_block import detect_order_blocks, OBDirection
+from strategy.trendline import detect_trendlines, detect_trendline_reversals, TrendlineDirection
 
 
 class SignalType(Enum):
@@ -35,9 +61,12 @@ class Confidence(Enum):
 
 
 class SetupType(Enum):
-    A_PLUS = "A+"       # FVG + OB confluence
-    FVG_ONLY = "FVG"     # sadece FVG
-    OB_ONLY = "OB"        # sadece Order Block
+    FVG_ONLY = "FVG"
+    IFVG_ONLY = "iFVG"
+    OB_ONLY = "OB"
+    TRENDLINE_ONLY = "Trendline"
+    A_PLUS = "A+"       # ARTIK ÜRETİLMİYOR (confluence ablation'da fayda bulunamadı) --
+                         # sadece eski testlerin/backtest kodunun enum'u bilmesi için duruyor.
 
 
 @dataclass
@@ -49,140 +78,149 @@ class Signal:
     entry: float
     stop_loss: float
     reason: str
+    take_profit: float | None = None
+    breakeven_trigger_pct: float | None = None
 
 
-def _zones_overlap(top1: float, bottom1: float, top2: float, bottom2: float) -> bool:
-    return min(top1, top2) - max(bottom1, bottom2) > 0
+from strategy.config import (
+    DEFAULT_CONFIG, StrategyConfig, MODULE_R_MULTIPLE, MODULE_SL_BUFFER_RATIO,
+    BREAKEVEN_TRIGGER_PCT, BREAKEVEN_ENABLED_MODULES,
+)
 
 
-def _trend_confidence(trend: TrendState, wants_up: bool, cap_medium: bool = False) -> Confidence | None:
-    """
-    Trend durumuna göre güven seviyesini belirler. Tam ters trendse None
-    döner (eleme). cap_medium=True ise (tek başına sinyallerde) en
-    yüksek seviye HIGH yerine MEDIUM'da tavanlanır.
-    """
-    opposite = (
-        (wants_up and trend.direction == TrendDirection.DOWN) or
-        (not wants_up and trend.direction == TrendDirection.UP)
-    )
-    if opposite:
-        return None
-
-    matches = (
-        (wants_up and trend.direction == TrendDirection.UP) or
-        (not wants_up and trend.direction == TrendDirection.DOWN)
-    )
-
-    if matches and trend.strong:
-        return Confidence.MEDIUM if cap_medium else Confidence.HIGH
-    if matches:
-        return Confidence.LOW if cap_medium else Confidence.MEDIUM
-    return Confidence.LOW  # sideways
-
-
-from strategy.config import DEFAULT_CONFIG, StrategyConfig
+def _breakeven_pct(module: str) -> float | None:
+    return BREAKEVEN_TRIGGER_PCT if module in BREAKEVEN_ENABLED_MODULES else None
 
 
 def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG) -> list[Signal]:
-    fvgs = detect_fvgs(candles, config=config)
-    mark_filled_fvgs(fvgs, candles)
-    obs = detect_order_blocks(candles, config=config)
-    mark_mitigated_blocks(obs, candles)
-    trend_states = detect_trend(candles, config=config)
-
-    # NOT: burada "hiç dolmadı/mitigated olmadı mı" diye TÜM geçmişe (geleceğe)
-    # bakan bir ön-filtre YOK -- FVG.filled/OB.mitigated'ın kendisi candles
-    # dizisinin tamamına bakarak hesaplanıyor, ama bunu sinyal üretiminde
-    # global bir ön-filtre olarak kullanmak causal DEĞİL (bkz. FVG.is_unfilled_as_of
-    # docstring'i): entry seviyesi tam olarak "gelecekte bir daha asla
-    # dokunulmayacak" seviyeyle çakıştığında (fvg.entry_price = fvg.bottom/top),
-    # bu ön-filtre sinyal havuzunu tanım gereği DOLDURULAMAZ hale getiriyordu
-    # (her aday, "gelecekte asla o seviyeye dönmeyecek" olanlardan seçiliyordu).
-    # Bunun yerine her sinyal, KENDİ oluştuğu bar'a göre causal kontrol ediyor.
-    valid_fvgs = [f for f in fvgs if f.valid]
-    valid_obs_geo = [o for o in obs]
-
     signals: list[Signal] = []
 
-    # --- A+ : FVG + OB confluence ---
-    for fvg in valid_fvgs:
-        fvg_dir = SignalType.BUY if fvg.direction == FVGDirection.BULLISH else SignalType.SELL
-        for ob in valid_obs_geo:
-            ob_dir = SignalType.BUY if ob.direction == OBDirection.BULLISH else SignalType.SELL
-            if fvg_dir != ob_dir:
-                continue
-            if not _zones_overlap(fvg.top, fvg.bottom, ob.top, ob.bottom):
-                continue
-
-            signal_index = max(fvg.end_index, ob.index)
-            if signal_index >= len(candles):
-                continue
-            if not fvg.is_unfilled_as_of(signal_index):
-                continue
-            if ob.mitigated_index is not None and ob.mitigated_index <= signal_index:
-                continue
-
-            confidence = _trend_confidence(trend_states[signal_index], fvg_dir == SignalType.BUY)
-            if confidence is None:
-                continue
-
-            if fvg_dir == SignalType.BUY:
-                entry, stop_loss = max(fvg.bottom, ob.bottom), min(fvg.bottom, ob.bottom)
-            else:
-                entry, stop_loss = min(fvg.top, ob.top), max(fvg.top, ob.top)
-
-            signals.append(Signal(
-                index=signal_index, type=fvg_dir, confidence=confidence, setup_type=SetupType.A_PLUS,
-                entry=entry, stop_loss=stop_loss,
-                reason=f"A+ FVG({fvg.direction.value})+OB({ob.direction.value})",
-            ))
-
-    # --- Tek başına FVG ---
-    # (fvg.is_unfilled_as_of(fvg.end_index) her zaman True döner -- filled_at_index
-    # varsa her zaman end_index'ten SONRAKİ bir bar olduğundan, FVG kendi
-    # oluşum barında henüz dolmamıştır; dolayısıyla burada ayrıca kontrol
-    # edilmesine gerek yok, sadece geometrik gecerlilik -- fvg.valid -- geçerli.)
-    for fvg in valid_fvgs:
-        fvg_dir = SignalType.BUY if fvg.direction == FVGDirection.BULLISH else SignalType.SELL
-        if fvg.end_index >= len(candles):
+    # --- FVG ---
+    for f in detect_fvgs(candles, config=config):
+        if not f.valid:
             continue
-        confidence = _trend_confidence(trend_states[fvg.end_index], fvg_dir == SignalType.BUY, cap_medium=True)
-        if confidence is None:
+        is_bull = f.direction == FVGDirection.BULLISH
+        signal_index = f.end_index
+        if signal_index >= len(candles):
             continue
-
-        entry = fvg.entry_price
-        # Stop, FVG'nin kendi sınırı değil (o zaten entry ile aynı nokta olurdu,
-        # risk=0 verirdi) — formasyonu oluşturan 3 mumun gerçek en düşük/yüksek
-        # noktası kullanılıyor.
-        formation = candles[fvg.start_index: fvg.end_index + 1]
-        if fvg_dir == SignalType.BUY:
-            stop_loss = min(c["low"] for c in formation)
-        else:
-            stop_loss = max(c["high"] for c in formation)
+        entry = f.entry_price
+        buffer = (f.top - f.bottom) * MODULE_SL_BUFFER_RATIO["fvg"]
+        stop_loss = f.bottom - buffer if is_bull else f.top + buffer
+        risk = abs(entry - stop_loss)
+        if risk <= 0:
+            continue
+        r_mult = MODULE_R_MULTIPLE["fvg"]
+        take_profit = entry + r_mult * risk if is_bull else entry - r_mult * risk
         signals.append(Signal(
-            index=fvg.end_index, type=fvg_dir, confidence=confidence, setup_type=SetupType.FVG_ONLY,
-            entry=entry, stop_loss=stop_loss, reason=f"tek başına FVG({fvg.direction.value})",
+            index=signal_index, type=SignalType.BUY if is_bull else SignalType.SELL,
+            confidence=Confidence.MEDIUM, setup_type=SetupType.FVG_ONLY,
+            entry=entry, stop_loss=stop_loss, take_profit=take_profit,
+            breakeven_trigger_pct=_breakeven_pct("fvg"),
+            reason=f"FVG({f.direction.value})",
         ))
 
-    # --- Tek başına Order Block ---
-    # (ob.mitigated_index de aynı nedenle her zaman ob.index'ten sonradır --
-    # OB kendi oluşum barında henüz mitigated olamaz.)
-    for ob in valid_obs_geo:
-        ob_dir = SignalType.BUY if ob.direction == OBDirection.BULLISH else SignalType.SELL
-        if ob.index >= len(candles):
+    # --- iFVG ---
+    for e in detect_confirmed_ifvgs(candles, config=config):
+        is_bull = e.new_dir == FVGDirection.BULLISH
+        signal_index = e.retest_index
+        if signal_index >= len(candles):
             continue
-        confidence = _trend_confidence(trend_states[ob.index], ob_dir == SignalType.BUY, cap_medium=True)
-        if confidence is None:
+        entry = e.consequent_encroachment
+        buffer = (e.top - e.bottom) * MODULE_SL_BUFFER_RATIO["ifvg"]
+        stop_loss = (e.bottom - buffer) if is_bull else (e.top + buffer)
+        risk = abs(entry - stop_loss)
+        if risk <= 0:
             continue
-
-        # Entry, bölgenin fiyatın geldiği tarafı (BUY için üst, SELL için alt);
-        # stop, bölgenin öbür ucu — böylece stop her zaman entry'nin risk
-        # yönünde doğru tarafında kalıyor.
-        entry = ob.top if ob_dir == SignalType.BUY else ob.bottom
-        stop_loss = ob.bottom if ob_dir == SignalType.BUY else ob.top
+        r_mult = MODULE_R_MULTIPLE["ifvg"]
+        take_profit = entry + r_mult * risk if is_bull else entry - r_mult * risk
         signals.append(Signal(
-            index=ob.index, type=ob_dir, confidence=confidence, setup_type=SetupType.OB_ONLY,
-            entry=entry, stop_loss=stop_loss, reason=f"tek başına OB({ob.direction.value})",
+            index=signal_index, type=SignalType.BUY if is_bull else SignalType.SELL,
+            confidence=Confidence.MEDIUM, setup_type=SetupType.IFVG_ONLY,
+            entry=entry, stop_loss=stop_loss, take_profit=take_profit,
+            breakeven_trigger_pct=_breakeven_pct("ifvg"),
+            reason=f"iFVG({e.new_dir.value})",
+        ))
+
+    # --- Order Block ---
+    for ob in detect_order_blocks(candles, config=config):
+        is_bull = ob.direction == OBDirection.BULLISH
+        signal_index = ob.impulse_index
+        if signal_index >= len(candles):
+            continue
+        entry = (ob.top + ob.bottom) / 2.0
+        buffer = (ob.top - ob.bottom) * MODULE_SL_BUFFER_RATIO["ob"]
+        stop_loss = (ob.bottom - buffer) if is_bull else (ob.top + buffer)
+        risk = abs(entry - stop_loss)
+        if risk <= 0:
+            continue
+        r_mult = MODULE_R_MULTIPLE["ob"]
+        take_profit = entry + r_mult * risk if is_bull else entry - r_mult * risk
+        signals.append(Signal(
+            index=signal_index, type=SignalType.BUY if is_bull else SignalType.SELL,
+            confidence=Confidence.MEDIUM, setup_type=SetupType.OB_ONLY,
+            entry=entry, stop_loss=stop_loss, take_profit=take_profit,
+            breakeven_trigger_pct=_breakeven_pct("ob"),
+            reason=f"OB({ob.direction.value})",
+        ))
+
+    # --- Trendline (sıçrama + kırılım+retest) ---
+    # NOT: her iki durumda da entry, TETİKLEME BARININ KENDİ high/low/close'una
+    # eşit (dokunuş/reddiye anındaki gerçek fiyat) -- yani dolum KENDİ barında
+    # gerçekleşir. `backtest/engine.py`'nin dolum taraması `signal.index+1`'den
+    # başladığı için, bu iki durumda `signal_index = tetikleme_bari - 1`
+    # kullanılıyor (diğer üç modülde böyle bir kaydırmaya gerek yok, çünkü
+    # onların entry seviyesi tetikleme barının KENDİSİNDE değil, SONRAKİ
+    # barlarda dolduruluyor -- bkz. bu oturumun scratch script'leri).
+    r_mult_tl = MODULE_R_MULTIPLE["trendline"]
+    sl_ratio_tl = MODULE_SL_BUFFER_RATIO["trendline"]
+    atr_series = compute_atr_series(candles, config.atr_period)
+    lines = detect_trendlines(candles, config=config)
+
+    for tl in lines:
+        is_bull = tl.direction == TrendlineDirection.ASCENDING
+        start = tl.known_index + 1
+        end = tl.broken_index if tl.broken_index is not None else len(candles)
+        was_touching = False
+        for k in range(max(start, 0), min(end, len(candles))):
+            line_price = tl.price_at(k)
+            tol = (atr_series[k] or 0) * config.trendline_touch_tolerance_atr_ratio
+            c = candles[k]
+            touched = (c["low"] <= line_price + tol) if is_bull else (c["high"] >= line_price - tol)
+            if touched and not was_touching:
+                touch_price = c["low"] if is_bull else c["high"]
+                buffer = (atr_series[k] or 0) * sl_ratio_tl
+                entry = touch_price
+                stop_loss = entry - buffer if is_bull else entry + buffer
+                risk = abs(entry - stop_loss)
+                signal_index = k - 1
+                if risk > 0 and signal_index >= 0:
+                    take_profit = entry + r_mult_tl * risk if is_bull else entry - r_mult_tl * risk
+                    signals.append(Signal(
+                        index=signal_index, type=SignalType.BUY if is_bull else SignalType.SELL,
+                        confidence=Confidence.MEDIUM, setup_type=SetupType.TRENDLINE_ONLY,
+                        entry=entry, stop_loss=stop_loss, take_profit=take_profit,
+                        breakeven_trigger_pct=_breakeven_pct("trendline"),
+                        reason=f"Trendline-bounce({tl.direction.value})",
+                    ))
+            was_touching = touched
+
+    reversals = detect_trendline_reversals(candles, lines, config=config)
+    for r in reversals:
+        rc = candles[r.retest_index]
+        buffer = (atr_series[r.retest_index] or 0) * sl_ratio_tl
+        entry = rc["close"]
+        stop_loss = (rc["low"] - buffer) if r.is_bullish else (rc["high"] + buffer)
+        risk = abs(entry - stop_loss)
+        signal_index = r.retest_index - 1
+        if risk <= 0 or signal_index < 0:
+            continue
+        take_profit = entry + r_mult_tl * risk if r.is_bullish else entry - r_mult_tl * risk
+        signals.append(Signal(
+            index=signal_index, type=SignalType.BUY if r.is_bullish else SignalType.SELL,
+            confidence=Confidence.MEDIUM, setup_type=SetupType.TRENDLINE_ONLY,
+            entry=entry, stop_loss=stop_loss, take_profit=take_profit,
+            breakeven_trigger_pct=_breakeven_pct("trendline"),
+            reason=f"Trendline-reversal({'bullish' if r.is_bullish else 'bearish'})",
         ))
 
     signals.sort(key=lambda s: s.index)

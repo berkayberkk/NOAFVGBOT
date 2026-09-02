@@ -4,12 +4,22 @@ Backtest motoru.
 signal_engine'den gelen sinyalleri geçmiş veri üzerinde simüle edip
 performans metrikleri üretir.
 
-Take-profit kuralı: en yakın karşı yöndeki güçlü Destek/Direnç seviyesi.
-- BUY sinyali için: entry'nin üstündeki en yakın RESISTANCE seviyesi.
-- SELL sinyali için: entry'nin altındaki en yakın SUPPORT seviyesi.
-Sadece sinyal anına kadar (lookahead bias olmasın diye) oluşmuş
-seviyeler dikkate alınır. Uygun bir S/R seviyesi bulunamazsa o sinyal
-backtest'e dahil edilmez (TP'siz işlem açılmaz).
+Take-profit kuralı: eğer sinyal KENDİ take_profit'ini bildirdiyse (bkz.
+`strategy/signal_engine.py` -- FVG/iFVG/OB/Trendline artık kendi resmi
+R-katı hedeflerini burada hesaplayıp `Signal.take_profit`'e yazıyor)
+DOĞRUDAN o kullanılır. Bildirmediyse (eski/harici bir sinyal kaynağı,
+`take_profit=None`), eski davranışa (en yakın karşı yöndeki güçlü
+Destek/Direnç seviyesi) düşülür -- sadece sinyal anına kadar
+(lookahead bias olmasın diye) oluşmuş seviyeler dikkate alınır, uygun
+bir S/R seviyesi bulunamazsa o sinyal backtest'e dahil edilmez.
+
+Breakeven-stop: sinyal `breakeven_trigger_pct` bildirdiyse (bkz.
+`strategy/config.py:BREAKEVEN_TRIGGER_PCT`/`BREAKEVEN_ENABLED_MODULES`),
+işlem TP mesafesinin bu oranını kat ettiğinde SL girişe çekilir --
+nedensellik korunuyor: bir barın SL/TP kontrolü hep ÖNCEKİ bardan kalma
+efektif SL ile yapılır, "yeni bar bu barin kendi hareketiyle arm oldu"
+hiçbir zaman AYNI barda SL/TP sonucunu etkilemez (bkz. bu oturumun
+scratch script'lerindeki aynı desen, örn. scratch_trade_archive.py).
 
 Sonuç R-multiple (risk biriminin katları) cinsinden ölçülür: her
 işlemin kazancı/kaybı, o işlemin riskine (entry-stop_loss mesafesine)
@@ -45,6 +55,7 @@ class Trade:
     gross_r_multiple: float | None = None
     net_r_multiple: float | None = None
     r_multiple: float | None = None       # net_r_multiple ile özdeş (geriye dönük uyumluluk)
+    is_breakeven: bool = False             # SL, TP'ye giderken girişe çekilip sonra vuruldu mu (won=False ama gerçek zarar değil)
 
 
 @dataclass
@@ -90,12 +101,15 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
     commission = config.commission
 
     for signal in signals:
-        historical_candles = candles[: signal.index + 1]
-        historical_levels = build_levels(historical_candles, config=config)
-        take_profit = _find_take_profit(signal.entry, signal.type, historical_levels, signal.index, min_level_touch_count=config.min_level_touch_count)
-        if take_profit is None:
-            skipped += 1
-            continue
+        if signal.take_profit is not None:
+            take_profit = signal.take_profit
+        else:
+            historical_candles = candles[: signal.index + 1]
+            historical_levels = build_levels(historical_candles, config=config)
+            take_profit = _find_take_profit(signal.entry, signal.type, historical_levels, signal.index, min_level_touch_count=config.min_level_touch_count)
+            if take_profit is None:
+                skipped += 1
+                continue
 
         trade = Trade(signal=signal, entry_index=signal.index, entry_price=signal.entry,
                       stop_loss=signal.stop_loss, take_profit=take_profit)
@@ -104,6 +118,20 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
         if risk == 0:
             skipped += 1
             continue
+
+        # Breakeven-stop durumu (bkz. modul docstring'i) -- effective_sl,
+        # armed OLANA kadar trade.stop_loss ile ayni; arm oldugunda
+        # trade.entry_price'e cekilir. arm_level, TP mesafesinin
+        # breakeven_trigger_pct'i kat edildiginde asilan seviye.
+        use_breakeven = signal.breakeven_trigger_pct is not None
+        effective_sl = trade.stop_loss
+        armed = False
+        if use_breakeven:
+            trigger_pct = signal.breakeven_trigger_pct
+            if signal.type == SignalType.BUY:
+                arm_level = trade.entry_price + trigger_pct * (trade.take_profit - trade.entry_price)
+            else:
+                arm_level = trade.entry_price - trigger_pct * (trade.entry_price - trade.take_profit)
 
         is_filled = False
 
@@ -163,24 +191,28 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
                     continue
 
             # 2. POZİSYON ÇIKIŞ KONTROLÜ (Daha önceki bir mumda dolmuşsa)
+            # NOT: hit_sl/hit_tp bu barin ONCEKI bardan kalma effective_sl'iyle
+            # kontrol ediliyor -- bu barin kendi arm-kontrolu asagida, ancak
+            # bu iki kontrolden SONRA yapiliyor (bir sonraki bar icin).
             if signal.type == SignalType.BUY:
                 bid_low = candle["low"] - half_spread
                 bid_high = candle["high"] - half_spread
-                hit_sl = bid_low <= trade.stop_loss
+                hit_sl = bid_low <= effective_sl
                 hit_tp = bid_high >= trade.take_profit
             else:
                 ask_high = candle["high"] + half_spread
                 ask_low = candle["low"] + half_spread
-                hit_sl = ask_high >= trade.stop_loss
+                hit_sl = ask_high >= effective_sl
                 hit_tp = ask_low <= trade.take_profit
 
             if hit_sl:
-                trade.exit_index, trade.exit_price, trade.won = j, trade.stop_loss, False
+                trade.exit_index, trade.exit_price, trade.won = j, effective_sl, False
+                trade.is_breakeven = armed
                 if signal.type == SignalType.BUY:
-                    trade.executed_exit = trade.stop_loss - half_spread - slippage
+                    trade.executed_exit = effective_sl - half_spread - slippage
                     gross_pnl = trade.executed_exit - trade.executed_entry
                 else:
-                    trade.executed_exit = trade.stop_loss + half_spread + slippage
+                    trade.executed_exit = effective_sl + half_spread + slippage
                     gross_pnl = trade.executed_entry - trade.executed_exit
 
                 net_pnl = gross_pnl - commission
@@ -203,6 +235,17 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
                 trade.net_r_multiple = net_pnl / risk
                 trade.r_multiple = trade.net_r_multiple
                 break
+
+            # 3. BREAKEVEN ARM KONTROLÜ -- ne SL ne TP vurulduysa, bu barin
+            # KENDI lehte hareketi arm seviyesini gectiyse effective_sl bir
+            # SONRAKI bardan itibaren girise cekilir (bu barin SL/TP kontrolu
+            # zaten YUKARIDA, eski effective_sl ile yapildi -- geriye donuk
+            # etkisi yok).
+            if use_breakeven and not armed:
+                reached_arm = (bid_high >= arm_level) if signal.type == SignalType.BUY else (ask_low <= arm_level)
+                if reached_arm:
+                    armed = True
+                    effective_sl = trade.entry_price
 
         if trade.r_multiple is not None:
             trades.append(trade)

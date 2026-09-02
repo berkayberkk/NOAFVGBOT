@@ -25,6 +25,7 @@ FILES = {
     "fvg": "fvg_tp_sl_study_results.json",
     "ifvg": "ifvg_tp_sl_study_results.json",
     "ob": "ob_tp_sl_study_results.json",
+    "trendline": "trendline_tp_sl_study_results.json",
 }
 
 

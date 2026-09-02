@@ -1,0 +1,248 @@
+{
+  "GOLD": {
+    "baseline_all": {
+      "n": 9526,
+      "wins": 3152,
+      "losses": 6374,
+      "win_rate": 0.3308838967037581,
+      "total_r": 4703.0,
+      "expectancy_r": 0.49370144866680654,
+      "profit_factor": 1.9894803282137596,
+      "n_obs_matching_filter": 9833
+    },
+    "engulfing_only": {
+      "n": 2192,
+      "wins": 671,
+      "losses": 1521,
+      "win_rate": 0.3061131386861314,
+      "total_r": 861.0,
+      "expectancy_r": 0.3927919708029197,
+      "profit_factor": 1.7473958333333333,
+      "n_obs_matching_filter": 2192
+    },
+    "swept_liquidity_only": {
+      "n": 2930,
+      "wins": 822,
+      "losses": 2108,
+      "win_rate": 0.28054607508532425,
+      "total_r": 869.0,
+      "expectancy_r": 0.29658703071672365,
+      "profit_factor": 1.5441452723857232,
+      "n_obs_matching_filter": 3001
+    },
+    "htf_discount_only": {
+      "n": 4803,
+      "wins": 1498,
+      "losses": 3305,
+      "win_rate": 0.3118884030814075,
+      "total_r": 2016.0,
+      "expectancy_r": 0.4197376639600251,
+      "profit_factor": 1.8135593220338984,
+      "n_obs_matching_filter": 4947
+    },
+    "engulfing_AND_sweep": {
+      "n": 576,
+      "wins": 145,
+      "losses": 431,
+      "win_rate": 0.2517361111111111,
+      "total_r": 113.0,
+      "expectancy_r": 0.19618055555555547,
+      "profit_factor": 1.3509316770186335,
+      "n_obs_matching_filter": 576
+    },
+    "engulfing_AND_htf": {
+      "n": 1165,
+      "wins": 330,
+      "losses": 835,
+      "win_rate": 0.2832618025751073,
+      "total_r": 347.0,
+      "expectancy_r": 0.2978540772532189,
+      "profit_factor": 1.5396578538102643,
+      "n_obs_matching_filter": 1165
+    },
+    "sweep_AND_htf": {
+      "n": 2135,
+      "wins": 592,
+      "losses": 1543,
+      "win_rate": 0.27728337236533956,
+      "total_r": 610.0,
+      "expectancy_r": 0.2857142857142857,
+      "profit_factor": 1.523156089193825,
+      "n_obs_matching_filter": 2182
+    },
+    "all_three": {
+      "n": 433,
+      "wins": 109,
+      "losses": 324,
+      "win_rate": 0.2517321016166282,
+      "total_r": 88.0,
+      "expectancy_r": 0.20323325635103928,
+      "profit_factor": 1.3682008368200838,
+      "n_obs_matching_filter": 433
+    }
+  },
+  "BTCUSD": {
+    "baseline_all": {
+      "n": 8804,
+      "wins": 2835,
+      "losses": 5969,
+      "win_rate": 0.3220127214902317,
+      "total_r": 3806.0,
+      "expectancy_r": 0.43230349840981364,
+      "profit_factor": 1.8099595658650778,
+      "n_obs_matching_filter": 9169
+    },
+    "engulfing_only": {
+      "n": 1779,
+      "wins": 498,
+      "losses": 1281,
+      "win_rate": 0.2799325463743676,
+      "total_r": 453.0,
+      "expectancy_r": 0.25463743676222583,
+      "profit_factor": 1.4351585014409223,
+      "n_obs_matching_filter": 1781
+    },
+    "swept_liquidity_only": {
+      "n": 2417,
+      "wins": 620,
+      "losses": 1797,
+      "win_rate": 0.25651634257343814,
+      "total_r": 430.0,
+      "expectancy_r": 0.17790649565577166,
+      "profit_factor": 1.3006993006993006,
+      "n_obs_matching_filter": 2491
+    },
+    "htf_discount_only": {
+      "n": 4461,
+      "wins": 1376,
+      "losses": 3085,
+      "win_rate": 0.3084510199506837,
+      "total_r": 1659.0,
+      "expectancy_r": 0.3718897108271687,
+      "profit_factor": 1.6719319562575943,
+      "n_obs_matching_filter": 4606
+    },
+    "engulfing_AND_sweep": {
+      "n": 499,
+      "wins": 106,
+      "losses": 393,
+      "win_rate": 0.2124248496993988,
+      "total_r": 8.0,
+      "expectancy_r": 0.016032064128256418,
+      "profit_factor": 1.0258064516129033,
+      "n_obs_matching_filter": 501
+    },
+    "engulfing_AND_htf": {
+      "n": 1047,
+      "wins": 262,
+      "losses": 785,
+      "win_rate": 0.2502387774594078,
+      "total_r": 143.0,
+      "expectancy_r": 0.13658070678127976,
+      "profit_factor": 1.2223950233281493,
+      "n_obs_matching_filter": 1049
+    },
+    "sweep_AND_htf": {
+      "n": 1854,
+      "wins": 467,
+      "losses": 1387,
+      "win_rate": 0.2518878101402373,
+      "total_r": 285.0,
+      "expectancy_r": 0.15372168284789645,
+      "profit_factor": 1.2553763440860215,
+      "n_obs_matching_filter": 1903
+    },
+    "all_three": {
+      "n": 394,
+      "wins": 85,
+      "losses": 309,
+      "win_rate": 0.21573604060913706,
+      "total_r": 16.0,
+      "expectancy_r": 0.040609137055837574,
+      "profit_factor": 1.0669456066945606,
+      "n_obs_matching_filter": 396
+    }
+  },
+  "EURGBP": {
+    "baseline_all": {
+      "n": 16738,
+      "wins": 5190,
+      "losses": 11548,
+      "win_rate": 0.31007288803919225,
+      "total_r": 6870.0,
+      "expectancy_r": 0.4104433026645955,
+      "profit_factor": 1.789655172413793,
+      "n_obs_matching_filter": 17033
+    },
+    "engulfing_only": {
+      "n": 4085,
+      "wins": 1127,
+      "losses": 2958,
+      "win_rate": 0.2758873929008568,
+      "total_r": 1132.0,
+      "expectancy_r": 0.2771113831089351,
+      "profit_factor": 1.5033348154735438,
+      "n_obs_matching_filter": 4087
+    },
+    "swept_liquidity_only": {
+      "n": 6347,
+      "wins": 1839,
+      "losses": 4508,
+      "win_rate": 0.28974318575705055,
+      "total_r": 2117.0,
+      "expectancy_r": 0.33354340633370083,
+      "profit_factor": 1.6226470588235293,
+      "n_obs_matching_filter": 6452
+    },
+    "htf_discount_only": {
+      "n": 8729,
+      "wins": 2686,
+      "losses": 6043,
+      "win_rate": 0.3077099324092107,
+      "total_r": 3489.0,
+      "expectancy_r": 0.39970214228433965,
+      "profit_factor": 1.763624425476034,
+      "n_obs_matching_filter": 8892
+    },
+    "engulfing_AND_sweep": {
+      "n": 1220,
+      "wins": 310,
+      "losses": 910,
+      "win_rate": 0.2540983606557377,
+      "total_r": 241.0,
+      "expectancy_r": 0.19754098360655747,
+      "profit_factor": 1.3497822931785195,
+      "n_obs_matching_filter": 1221
+    },
+    "engulfing_AND_htf": {
+      "n": 2072,
+      "wins": 557,
+      "losses": 1515,
+      "win_rate": 0.2688223938223938,
+      "total_r": 510.0,
+      "expectancy_r": 0.24613899613899615,
+      "profit_factor": 1.4392764857881137,
+      "n_obs_matching_filter": 2073
+    },
+    "sweep_AND_htf": {
+      "n": 4216,
+      "wins": 1221,
+      "losses": 2995,
+      "win_rate": 0.2896110056925996,
+      "total_r": 1401.0,
+      "expectancy_r": 0.3323055028462998,
+      "profit_factor": 1.6193633952254642,
+      "n_obs_matching_filter": 4287
+    },
+    "all_three": {
+      "n": 795,
+      "wins": 195,
+      "losses": 600,
+      "win_rate": 0.24528301886792453,
+      "total_r": 122.0,
+      "expectancy_r": 0.15345911949685542,
+      "profit_factor": 1.263498920086393,
+      "n_obs_matching_filter": 796
+    }
+  }
+}

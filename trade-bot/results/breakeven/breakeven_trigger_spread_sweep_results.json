@@ -1,0 +1,917 @@
+{
+  "GOLD": {
+    "fvg": {
+      "baseline": {
+        "n": 8175,
+        "wins": 4103,
+        "losses": 4072,
+        "breakevens": 0,
+        "win_rate": 0.5018960244648318,
+        "breakeven_rate": 0.0,
+        "expectancy_r": 0.07698157801685505,
+        "profit_factor": 1.1308008270716359,
+        "total_r": 629.32440028779
+      },
+      "trigger_10pct": {
+        "n": 8175,
+        "wins": 3204,
+        "losses": 2390,
+        "breakevens": 2581,
+        "win_rate": 0.39192660550458713,
+        "breakeven_rate": 0.3157186544342508,
+        "expectancy_r": 0.1177766850504942,
+        "profit_factor": 1.2976517373464693,
+        "total_r": 962.82440028779
+      },
+      "trigger_20pct": {
+        "n": 8175,
+        "wins": 3217,
+        "losses": 2421,
+        "breakevens": 2537,
+        "win_rate": 0.39351681957186546,
+        "breakeven_rate": 0.31033639143730885,
+        "expectancy_r": 0.11636995722174802,
+        "profit_factor": 1.2914296283694267,
+        "total_r": 951.32440028779
+      },
+      "trigger_30pct": {
+        "n": 8175,
+        "wins": 3257,
+        "losses": 2513,
+        "breakevens": 2405,
+        "win_rate": 0.3984097859327217,
+        "breakeven_rate": 0.2941896024464832,
+        "expectancy_r": 0.112455584133063,
+        "profit_factor": 1.2741624942732444,
+        "total_r": 919.32440028779
+      },
+      "trigger_40pct": {
+        "n": 8175,
+        "wins": 3329,
+        "losses": 2681,
+        "breakevens": 2165,
+        "win_rate": 0.407217125382263,
+        "breakeven_rate": 0.26483180428134556,
+        "expectancy_r": 0.1051161345917786,
+        "profit_factor": 1.2445353094338891,
+        "total_r": 859.32440028779
+      },
+      "trigger_50pct": {
+        "n": 8175,
+        "wins": 3413,
+        "losses": 2892,
+        "breakevens": 1870,
+        "win_rate": 0.4174923547400612,
+        "breakeven_rate": 0.22874617737003058,
+        "expectancy_r": 0.09471858107495902,
+        "profit_factor": 1.2083416380419791,
+        "total_r": 774.32440028779
+      },
+      "trigger_60pct": {
+        "n": 8175,
+        "wins": 3533,
+        "losses": 3113,
+        "breakevens": 1529,
+        "win_rate": 0.43217125382263,
+        "breakeven_rate": 0.1870336391437309,
+        "expectancy_r": 0.08970329055508135,
+        "profit_factor": 1.1867735839087128,
+        "total_r": 733.32440028779
+      },
+      "trigger_70pct": {
+        "n": 8175,
+        "wins": 3657,
+        "losses": 3332,
+        "breakevens": 1186,
+        "win_rate": 0.4473394495412844,
+        "breakeven_rate": 0.14507645259938837,
+        "expectancy_r": 0.08566659330737493,
+        "profit_factor": 1.1695951336750074,
+        "total_r": 700.32440028779
+      },
+      "trigger_80pct": {
+        "n": 8175,
+        "wins": 3796,
+        "losses": 3600,
+        "breakevens": 779,
+        "win_rate": 0.4643425076452599,
+        "breakeven_rate": 0.09529051987767584,
+        "expectancy_r": 0.07838830584560122,
+        "profit_factor": 1.1462725415044217,
+        "total_r": 640.82440028779
+      }
+    },
+    "ifvg": {
+      "baseline": {
+        "n": 3729,
+        "wins": 1952,
+        "losses": 1777,
+        "breakevens": 0,
+        "win_rate": 0.5234647358541163,
+        "breakeven_rate": 0.0,
+        "expectancy_r": 0.18838372568219927,
+        "profit_factor": 1.3553033309977678,
+        "total_r": 702.4829130689211
+      },
+      "trigger_10pct": {
+        "n": 3729,
+        "wins": 1284,
+        "losses": 576,
+        "breakevens": 1869,
+        "win_rate": 0.34432823813354785,
+        "breakeven_rate": 0.501206757843926,
+        "expectancy_r": 0.24174923922470398,
+        "profit_factor": 2.0812162459088417,
+        "total_r": 901.4829130689211
+      },
+      "trigger_20pct": {
+        "n": 3729,
+        "wins": 1305,
+        "losses": 621,
+        "breakevens": 1803,
+        "win_rate": 0.3499597747385358,
+        "breakeven_rate": 0.4835076427996782,
+        "expectancy_r": 0.23812896569292602,
+        "profit_factor": 2.0116549261631,
+        "total_r": 887.9829130689211
+      },
+      "trigger_30pct": {
+        "n": 3729,
+        "wins": 1360,
+        "losses": 731,
+        "breakevens": 1638,
+        "win_rate": 0.36470903727540893,
+        "breakeven_rate": 0.43925985518905875,
+        "expectancy_r": 0.23075433442448945,
+        "profit_factor": 1.8744186332736474,
+        "total_r": 860.4829130689211
+      },
+      "trigger_40pct": {
+        "n": 3729,
+        "wins": 1427,
+        "losses": 871,
+        "breakevens": 1431,
+        "win_rate": 0.3826763207294181,
+        "breakeven_rate": 0.3837489943684634,
+        "expectancy_r": 0.22016168223891688,
+        "profit_factor": 1.732842001539236,
+        "total_r": 820.9829130689211
+      },
+      "trigger_50pct": {
+        "n": 3729,
+        "wins": 1521,
+        "losses": 1027,
+        "breakevens": 1181,
+        "win_rate": 0.40788415124698313,
+        "breakeven_rate": 0.31670689192813084,
+        "expectancy_r": 0.21613915609249695,
+        "profit_factor": 1.6352328067662882,
+        "total_r": 805.9829130689211
+      },
+      "trigger_60pct": {
+        "n": 3729,
+        "wins": 1610,
+        "losses": 1193,
+        "breakevens": 926,
+        "win_rate": 0.43175113971574147,
+        "breakeven_rate": 0.2483239474389917,
+        "expectancy_r": 0.20742368277525372,
+        "profit_factor": 1.5418587876922247,
+        "total_r": 773.4829130689211
+      },
+      "trigger_70pct": {
+        "n": 3729,
+        "wins": 1703,
+        "losses": 1354,
+        "breakevens": 672,
+        "win_rate": 0.4566908018235452,
+        "breakeven_rate": 0.18020917135961384,
+        "expectancy_r": 0.2016580619653851,
+        "profit_factor": 1.4756768200465948,
+        "total_r": 751.9829130689211
+      },
+      "trigger_80pct": {
+        "n": 3729,
+        "wins": 1790,
+        "losses": 1513,
+        "breakevens": 426,
+        "win_rate": 0.4800214534727809,
+        "breakeven_rate": 0.11423974255832663,
+        "expectancy_r": 0.1940152622871872,
+        "profit_factor": 1.417825762161354,
+        "total_r": 723.4829130689211
+      }
+    },
+    "ob": {
+      "baseline": {
+        "n": 9518,
+        "wins": 3502,
+        "losses": 6016,
+        "breakevens": 0,
+        "win_rate": 0.36793444000840514,
+        "breakeven_rate": 0.0,
+        "expectancy_r": 0.23662255297249848,
+        "profit_factor": 1.2932251845882654,
+        "total_r": 2252.1734591922404
+      },
+      "trigger_10pct": {
+        "n": 9537,
+        "wins": 2396,
+        "losses": 2173,
+        "breakevens": 4968,
+        "win_rate": 0.2512320436195869,
+        "breakeven_rate": 0.5209185278389431,
+        "expectancy_r": 0.29118992758835394,
+        "profit_factor": 1.710745059798971,
+        "total_r": 2777.0783394101313
+      },
+      "trigger_20pct": {
+        "n": 9533,
+        "wins": 2539,
+        "losses": 2721,
+        "breakevens": 4273,
+        "win_rate": 0.266337983845589,
+        "breakeven_rate": 0.44823245568026854,
+        "expectancy_r": 0.27883015857379273,
+        "profit_factor": 1.5972325197703467,
+        "total_r": 2658.0879016839663
+      },
+      "trigger_30pct": {
+        "n": 9532,
+        "wins": 2710,
+        "losses": 3317,
+        "breakevens": 3505,
+        "win_rate": 0.2843054972723458,
+        "breakeven_rate": 0.36770877045740663,
+        "expectancy_r": 0.2701520321440926,
+        "profit_factor": 1.5110226049017697,
+        "total_r": 2575.0891703974908
+      },
+      "trigger_40pct": {
+        "n": 9528,
+        "wins": 2860,
+        "losses": 3883,
+        "breakevens": 2785,
+        "win_rate": 0.3001679261125105,
+        "breakeven_rate": 0.292296389588581,
+        "expectancy_r": 0.2580925813881926,
+        "profit_factor": 1.4392382844696334,
+        "total_r": 2459.106115466699
+      },
+      "trigger_50pct": {
+        "n": 9526,
+        "wins": 3012,
+        "losses": 4353,
+        "breakevens": 2161,
+        "win_rate": 0.31618727692630694,
+        "breakeven_rate": 0.2268528238505144,
+        "expectancy_r": 0.2566778081272024,
+        "profit_factor": 1.4035296864340294,
+        "total_r": 2445.11280021973
+      },
+      "trigger_60pct": {
+        "n": 9526,
+        "wins": 3152,
+        "losses": 4753,
+        "breakevens": 1621,
+        "win_rate": 0.3308838967037581,
+        "breakeven_rate": 0.1701658618517741,
+        "expectancy_r": 0.25877732523826685,
+        "profit_factor": 1.3822061374471664,
+        "total_r": 2465.11280021973
+      },
+      "trigger_70pct": {
+        "n": 9522,
+        "wins": 3253,
+        "losses": 5138,
+        "breakevens": 1131,
+        "win_rate": 0.34162990968283974,
+        "breakeven_rate": 0.1187775677378702,
+        "expectancy_r": 0.2502772628405228,
+        "profit_factor": 1.3491414639184818,
+        "total_r": 2383.140096767458
+      },
+      "trigger_80pct": {
+        "n": 9519,
+        "wins": 3350,
+        "losses": 5459,
+        "breakevens": 710,
+        "win_rate": 0.35192772350036766,
+        "breakeven_rate": 0.07458766677171971,
+        "expectancy_r": 0.2472064255620463,
+        "profit_factor": 1.32961083329352,
+        "total_r": 2353.157964925119
+      }
+    }
+  },
+  "BTCUSD": {
+    "fvg": {
+      "baseline": {
+        "n": 6436,
+        "wins": 3089,
+        "losses": 3347,
+        "breakevens": 0,
+        "win_rate": 0.4799564947172157,
+        "breakeven_rate": 0.0,
+        "expectancy_r": -0.15768035063190497,
+        "profit_factor": 0.7865840018351076,
+        "total_r": -1014.8307366669403
+      },
+      "trigger_10pct": {
+        "n": 6436,
+        "wins": 2366,
+        "losses": 2024,
+        "breakevens": 2046,
+        "win_rate": 0.3676196395276569,
+        "breakeven_rate": 0.31789931634555624,
+        "expectancy_r": -0.12062317226024555,
+        "profit_factor": 0.7826915657068607,
+        "total_r": -776.3307366669403
+      },
+      "trigger_20pct": {
+        "n": 6436,
+        "wins": 2370,
+        "losses": 2049,
+        "breakevens": 2017,
+        "win_rate": 0.3682411435674332,
+        "breakeven_rate": 0.31339341205717836,
+        "expectancy_r": -0.12357531644918276,
+        "profit_factor": 0.7788942484712462,
+        "total_r": -795.3307366669403
+      },
+      "trigger_30pct": {
+        "n": 6436,
+        "wins": 2406,
+        "losses": 2104,
+        "breakevens": 1926,
+        "win_rate": 0.3738346799254195,
+        "breakeven_rate": 0.2992541951522685,
+        "expectancy_r": -0.12373069245912684,
+        "profit_factor": 0.7815392325301345,
+        "total_r": -796.3307366669403
+      },
+      "trigger_40pct": {
+        "n": 6436,
+        "wins": 2457,
+        "losses": 2206,
+        "breakevens": 1773,
+        "win_rate": 0.3817588564325668,
+        "breakeven_rate": 0.2754816656308266,
+        "expectancy_r": -0.1276927807127005,
+        "profit_factor": 0.7802379182964083,
+        "total_r": -821.8307366669403
+      },
+      "trigger_50pct": {
+        "n": 6436,
+        "wins": 2541,
+        "losses": 2341,
+        "breakevens": 1554,
+        "win_rate": 0.39481044126786824,
+        "breakeven_rate": 0.24145431945307644,
+        "expectancy_r": -0.12909116480219707,
+        "profit_factor": 0.7848842228095951,
+        "total_r": -830.8307366669403
+      },
+      "trigger_60pct": {
+        "n": 6436,
+        "wins": 2637,
+        "losses": 2510,
+        "breakevens": 1289,
+        "win_rate": 0.40972653822249844,
+        "breakeven_rate": 0.20027967681789932,
+        "expectancy_r": -0.1329755650507987,
+        "profit_factor": 0.7867801407983357,
+        "total_r": -855.8307366669403
+      },
+      "trigger_70pct": {
+        "n": 6436,
+        "wins": 2735,
+        "losses": 2709,
+        "breakevens": 992,
+        "win_rate": 0.4249533871970168,
+        "breakeven_rate": 0.15413300186451212,
+        "expectancy_r": -0.14105511756789005,
+        "profit_factor": 0.7837175302389611,
+        "total_r": -907.8307366669403
+      },
+      "trigger_80pct": {
+        "n": 6436,
+        "wins": 2866,
+        "losses": 2914,
+        "breakevens": 656,
+        "win_rate": 0.44530764449968924,
+        "breakeven_rate": 0.1019266625233064,
+        "expectancy_r": -0.14237581365241458,
+        "profit_factor": 0.7906787222987627,
+        "total_r": -916.3307366669403
+      }
+    },
+    "ifvg": {
+      "baseline": {
+        "n": 2936,
+        "wins": 1596,
+        "losses": 1340,
+        "breakevens": 0,
+        "win_rate": 0.5435967302452316,
+        "breakeven_rate": 0.0,
+        "expectancy_r": 0.12463374166499824,
+        "profit_factor": 1.217967525554654,
+        "total_r": 365.92466552843484
+      },
+      "trigger_10pct": {
+        "n": 2936,
+        "wins": 1018,
+        "losses": 453,
+        "breakevens": 1465,
+        "win_rate": 0.3467302452316076,
+        "breakeven_rate": 0.4989782016348774,
+        "expectancy_r": 0.13144573076581567,
+        "profit_factor": 1.4427990706857152,
+        "total_r": 385.92466552843484
+      },
+      "trigger_20pct": {
+        "n": 2936,
+        "wins": 1033,
+        "losses": 479,
+        "breakevens": 1424,
+        "win_rate": 0.3518392370572207,
+        "breakeven_rate": 0.48501362397820164,
+        "expectancy_r": 0.13025363267317264,
+        "profit_factor": 1.4268115571858988,
+        "total_r": 382.42466552843484
+      },
+      "trigger_30pct": {
+        "n": 2936,
+        "wins": 1075,
+        "losses": 563,
+        "breakevens": 1298,
+        "win_rate": 0.36614441416893734,
+        "breakeven_rate": 0.4420980926430518,
+        "expectancy_r": 0.12310104411731432,
+        "profit_factor": 1.3706741936182187,
+        "total_r": 361.42466552843484
+      },
+      "trigger_40pct": {
+        "n": 2936,
+        "wins": 1149,
+        "losses": 668,
+        "breakevens": 1119,
+        "win_rate": 0.39134877384196187,
+        "breakeven_rate": 0.3811307901907357,
+        "expectancy_r": 0.12514464084755955,
+        "profit_factor": 1.3437564283217929,
+        "total_r": 367.42466552843484
+      },
+      "trigger_50pct": {
+        "n": 2936,
+        "wins": 1220,
+        "losses": 793,
+        "breakevens": 923,
+        "win_rate": 0.41553133514986373,
+        "breakeven_rate": 0.3143732970027248,
+        "expectancy_r": 0.11884355092930342,
+        "profit_factor": 1.293883720348371,
+        "total_r": 348.92466552843484
+      },
+      "trigger_60pct": {
+        "n": 2936,
+        "wins": 1304,
+        "losses": 908,
+        "breakevens": 724,
+        "win_rate": 0.444141689373297,
+        "breakeven_rate": 0.24659400544959129,
+        "expectancy_r": 0.12259014493475301,
+        "profit_factor": 1.2785758023648441,
+        "total_r": 359.92466552843484
+      },
+      "trigger_70pct": {
+        "n": 2936,
+        "wins": 1399,
+        "losses": 1014,
+        "breakevens": 523,
+        "win_rate": 0.47649863760217986,
+        "breakeven_rate": 0.17813351498637603,
+        "expectancy_r": 0.13502202504374483,
+        "profit_factor": 1.2868136147182876,
+        "total_r": 396.42466552843484
+      },
+      "trigger_80pct": {
+        "n": 2936,
+        "wins": 1481,
+        "losses": 1133,
+        "breakevens": 322,
+        "win_rate": 0.5044277929155313,
+        "breakeven_rate": 0.10967302452316076,
+        "expectancy_r": 0.13638442286390834,
+        "profit_factor": 1.2692573387693322,
+        "total_r": 400.42466552843484
+      }
+    },
+    "ob": {
+      "baseline": {
+        "n": 8800,
+        "wins": 3118,
+        "losses": 5682,
+        "breakevens": 0,
+        "win_rate": 0.3543181818181818,
+        "breakeven_rate": 0.0,
+        "expectancy_r": -0.3890193379282104,
+        "profit_factor": 0.7081955023882108,
+        "total_r": -3423.370173768252
+      },
+      "trigger_10pct": {
+        "n": 8812,
+        "wins": 2196,
+        "losses": 2423,
+        "breakevens": 4193,
+        "win_rate": 0.24920562868815252,
+        "breakeven_rate": 0.4758284157966409,
+        "expectancy_r": -0.3325536010681695,
+        "profit_factor": 0.6591614345423036,
+        "total_r": -2930.46233261271
+      },
+      "trigger_20pct": {
+        "n": 8808,
+        "wins": 2330,
+        "losses": 2874,
+        "breakevens": 3604,
+        "win_rate": 0.2645322434150772,
+        "breakeven_rate": 0.4091734786557675,
+        "expectancy_r": -0.33826415817729305,
+        "profit_factor": 0.6704223036725933,
+        "total_r": -2979.430705225597
+      },
+      "trigger_30pct": {
+        "n": 8806,
+        "wins": 2454,
+        "losses": 3374,
+        "breakevens": 2978,
+        "win_rate": 0.27867363161480807,
+        "breakeven_rate": 0.33817851464910287,
+        "expectancy_r": -0.3528751773617319,
+        "profit_factor": 0.6738791134865906,
+        "total_r": -3107.4188118474112
+      },
+      "trigger_40pct": {
+        "n": 8806,
+        "wins": 2608,
+        "losses": 3873,
+        "breakevens": 2325,
+        "win_rate": 0.29616170792641383,
+        "breakeven_rate": 0.2640245287304111,
+        "expectancy_r": -0.3570768580340008,
+        "profit_factor": 0.6859637914146528,
+        "total_r": -3144.4188118474112
+      },
+      "trigger_50pct": {
+        "n": 8804,
+        "wins": 2742,
+        "losses": 4333,
+        "breakevens": 1729,
+        "win_rate": 0.31144934120854156,
+        "breakeven_rate": 0.19638800545206725,
+        "expectancy_r": -0.3637450564821447,
+        "profit_factor": 0.6935095795281444,
+        "total_r": -3202.411477268802
+      },
+      "trigger_60pct": {
+        "n": 8804,
+        "wins": 2835,
+        "losses": 4699,
+        "breakevens": 1270,
+        "win_rate": 0.3220127214902317,
+        "breakeven_rate": 0.14425261244888687,
+        "expectancy_r": -0.37362692835856454,
+        "profit_factor": 0.6954519185674535,
+        "total_r": -3289.411477268802
+      },
+      "trigger_70pct": {
+        "n": 8804,
+        "wins": 2900,
+        "losses": 5027,
+        "breakevens": 877,
+        "win_rate": 0.3293957292139936,
+        "breakeven_rate": 0.09961381190368014,
+        "expectancy_r": -0.38873369800872354,
+        "profit_factor": 0.6922431805444612,
+        "total_r": -3422.411477268802
+      },
+      "trigger_80pct": {
+        "n": 8804,
+        "wins": 2980,
+        "losses": 5277,
+        "breakevens": 547,
+        "win_rate": 0.3384825079509314,
+        "breakeven_rate": 0.062130849613811906,
+        "expectancy_r": -0.3898695453508408,
+        "profit_factor": 0.6976038794938416,
+        "total_r": -3432.411477268802
+      }
+    }
+  },
+  "EURGBP": {
+    "fvg": {
+      "baseline": {
+        "n": 10163,
+        "wins": 5181,
+        "losses": 4982,
+        "breakevens": 0,
+        "win_rate": 0.5097904162156843,
+        "breakeven_rate": 0.0,
+        "expectancy_r": -0.2921681893303213,
+        "profit_factor": 0.6272041542494241,
+        "total_r": -2969.305308164055
+      },
+      "trigger_10pct": {
+        "n": 10163,
+        "wins": 4031,
+        "losses": 2920,
+        "breakevens": 3212,
+        "win_rate": 0.396634851913805,
+        "breakeven_rate": 0.31604841090229263,
+        "expectancy_r": -0.25900868918272707,
+        "profit_factor": 0.5838012420512254,
+        "total_r": -2632.305308164055
+      },
+      "trigger_20pct": {
+        "n": 10163,
+        "wins": 4045,
+        "losses": 2955,
+        "breakevens": 3163,
+        "win_rate": 0.3980123979140018,
+        "breakeven_rate": 0.31122699990160385,
+        "expectancy_r": -0.26038623518292386,
+        "profit_factor": 0.5836477122896407,
+        "total_r": -2646.305308164055
+      },
+      "trigger_30pct": {
+        "n": 10163,
+        "wins": 4087,
+        "losses": 3056,
+        "breakevens": 3020,
+        "win_rate": 0.40214503591459216,
+        "breakeven_rate": 0.2971563514710223,
+        "expectancy_r": -0.26412528861202944,
+        "profit_factor": 0.5836246970513291,
+        "total_r": -2684.305308164055
+      },
+      "trigger_40pct": {
+        "n": 10163,
+        "wins": 4190,
+        "losses": 3235,
+        "breakevens": 2738,
+        "win_rate": 0.4122798386303257,
+        "breakeven_rate": 0.2694086391813441,
+        "expectancy_r": -0.26653599411237383,
+        "profit_factor": 0.5893395674862645,
+        "total_r": -2708.805308164055
+      },
+      "trigger_50pct": {
+        "n": 10163,
+        "wins": 4330,
+        "losses": 3492,
+        "breakevens": 2341,
+        "win_rate": 0.42605529863229363,
+        "breakeven_rate": 0.2303453704614779,
+        "expectancy_r": -0.2711606128273202,
+        "profit_factor": 0.5952684680967038,
+        "total_r": -2755.805308164055
+      },
+      "trigger_60pct": {
+        "n": 10163,
+        "wins": 4465,
+        "losses": 3764,
+        "breakevens": 1934,
+        "win_rate": 0.43933877791990555,
+        "breakeven_rate": 0.19029814031289974,
+        "expectancy_r": -0.27799914475686854,
+        "profit_factor": 0.5982601176630218,
+        "total_r": -2825.305308164055
+      },
+      "trigger_70pct": {
+        "n": 10163,
+        "wins": 4608,
+        "losses": 4045,
+        "breakevens": 1510,
+        "win_rate": 0.4534094263504871,
+        "breakeven_rate": 0.14857817573551116,
+        "expectancy_r": -0.2845424882578033,
+        "profit_factor": 0.6016416005373183,
+        "total_r": -2891.805308164055
+      },
+      "trigger_80pct": {
+        "n": 10163,
+        "wins": 4793,
+        "losses": 4362,
+        "breakevens": 1008,
+        "win_rate": 0.47161271278165895,
+        "breakeven_rate": 0.09918331201416905,
+        "expectancy_r": -0.2884291359012157,
+        "profit_factor": 0.6096342873925289,
+        "total_r": -2931.305308164055
+      }
+    },
+    "ifvg": {
+      "baseline": {
+        "n": 4700,
+        "wins": 2543,
+        "losses": 2157,
+        "breakevens": 0,
+        "win_rate": 0.541063829787234,
+        "breakeven_rate": 0.0,
+        "expectancy_r": -0.020455825466720392,
+        "profit_factor": 0.967059548683866,
+        "total_r": -96.14237969358584
+      },
+      "trigger_10pct": {
+        "n": 4700,
+        "wins": 1667,
+        "losses": 679,
+        "breakevens": 2354,
+        "win_rate": 0.3546808510638298,
+        "breakeven_rate": 0.5008510638297873,
+        "expectancy_r": 0.014437791554556208,
+        "profit_factor": 1.040655152551231,
+        "total_r": 67.85762030641418
+      },
+      "trigger_20pct": {
+        "n": 4700,
+        "wins": 1692,
+        "losses": 724,
+        "breakevens": 2284,
+        "win_rate": 0.36,
+        "breakeven_rate": 0.48595744680851066,
+        "expectancy_r": 0.012842046873705144,
+        "profit_factor": 1.035294617810789,
+        "total_r": 60.35762030641418
+      },
+      "trigger_30pct": {
+        "n": 4700,
+        "wins": 1744,
+        "losses": 849,
+        "breakevens": 2107,
+        "win_rate": 0.37106382978723407,
+        "breakeven_rate": 0.4482978723404255,
+        "expectancy_r": 0.002842046873705144,
+        "profit_factor": 1.0073142259414152,
+        "total_r": 13.357620306414177
+      },
+      "trigger_40pct": {
+        "n": 4700,
+        "wins": 1836,
+        "losses": 1034,
+        "breakevens": 1830,
+        "win_rate": 0.39063829787234045,
+        "breakeven_rate": 0.3893617021276596,
+        "expectancy_r": -0.007157953126294856,
+        "profit_factor": 0.9831248142410698,
+        "total_r": -33.64237969358582
+      },
+      "trigger_50pct": {
+        "n": 4700,
+        "wins": 1963,
+        "losses": 1261,
+        "breakevens": 1476,
+        "win_rate": 0.4176595744680851,
+        "breakeven_rate": 0.3140425531914894,
+        "expectancy_r": -0.014923910573103367,
+        "profit_factor": 0.9679827162278668,
+        "total_r": -70.14237969358582
+      },
+      "trigger_60pct": {
+        "n": 4700,
+        "wins": 2081,
+        "losses": 1454,
+        "breakevens": 1165,
+        "win_rate": 0.4427659574468085,
+        "breakeven_rate": 0.2478723404255319,
+        "expectancy_r": -0.018328165892252304,
+        "profit_factor": 0.9633713247976612,
+        "total_r": -86.14237969358582
+      },
+      "trigger_70pct": {
+        "n": 4700,
+        "wins": 2205,
+        "losses": 1656,
+        "breakevens": 839,
+        "win_rate": 0.46914893617021275,
+        "breakeven_rate": 0.17851063829787234,
+        "expectancy_r": -0.02173242121140124,
+        "profit_factor": 0.9595013141712174,
+        "total_r": -102.14237969358582
+      },
+      "trigger_80pct": {
+        "n": 4700,
+        "wins": 2337,
+        "losses": 1860,
+        "breakevens": 503,
+        "win_rate": 0.4972340425531915,
+        "breakeven_rate": 0.10702127659574467,
+        "expectancy_r": -0.023009016956082092,
+        "profit_factor": 0.9597802090044338,
+        "total_r": -108.14237969358584
+      }
+    },
+    "ob": {
+      "baseline": {
+        "n": 16728,
+        "wins": 5868,
+        "losses": 10860,
+        "breakevens": 0,
+        "win_rate": 0.35078909612625536,
+        "breakeven_rate": 0.0,
+        "expectancy_r": -0.13033669750540958,
+        "profit_factor": 0.8739575053584255,
+        "total_r": -2180.2722758704913
+      },
+      "trigger_10pct": {
+        "n": 16757,
+        "wins": 3677,
+        "losses": 3753,
+        "breakevens": 9327,
+        "win_rate": 0.21943068568359492,
+        "breakeven_rate": 0.5566032105985558,
+        "expectancy_r": -0.09835846162184118,
+        "profit_factor": 0.8445732819638242,
+        "total_r": -1648.1927413971928
+      },
+      "trigger_20pct": {
+        "n": 16751,
+        "wins": 4030,
+        "losses": 4815,
+        "breakevens": 7906,
+        "win_rate": 0.24058265178198315,
+        "breakeven_rate": 0.47197182257775655,
+        "expectancy_r": -0.09856116118043468,
+        "profit_factor": 0.8580081481073266,
+        "total_r": -1650.9980109334613
+      },
+      "trigger_30pct": {
+        "n": 16746,
+        "wins": 4352,
+        "losses": 5994,
+        "breakevens": 6400,
+        "win_rate": 0.2598829571240893,
+        "breakeven_rate": 0.38218081930013137,
+        "expectancy_r": -0.11129855144556403,
+        "profit_factor": 0.8539522713830038,
+        "total_r": -1863.805542507415
+      },
+      "trigger_40pct": {
+        "n": 16742,
+        "wins": 4682,
+        "losses": 7077,
+        "breakevens": 4983,
+        "win_rate": 0.2796559550830247,
+        "breakeven_rate": 0.297634691195795,
+        "expectancy_r": -0.11686903754205002,
+        "profit_factor": 0.8581022169627704,
+        "total_r": -1956.6214265290016
+      },
+      "trigger_50pct": {
+        "n": 16741,
+        "wins": 4963,
+        "losses": 7971,
+        "breakevens": 3807,
+        "win_rate": 0.29645779821993906,
+        "breakeven_rate": 0.2274057702646198,
+        "expectancy_r": -0.11992177513398318,
+        "profit_factor": 0.8627833337434055,
+        "total_r": -2007.6104375180125
+      },
+      "trigger_60pct": {
+        "n": 16738,
+        "wins": 5190,
+        "losses": 8700,
+        "breakevens": 2848,
+        "win_rate": 0.31007288803919225,
+        "breakeven_rate": 0.1701517505078265,
+        "expectancy_r": -0.12279397067123463,
+        "profit_factor": 0.8657594248701493,
+        "total_r": -2055.3254810951253
+      },
+      "trigger_70pct": {
+        "n": 16734,
+        "wins": 5397,
+        "losses": 9398,
+        "breakevens": 1939,
+        "win_rate": 0.32251703119397634,
+        "breakeven_rate": 0.11587187761443767,
+        "expectancy_r": -0.12741828254631538,
+        "profit_factor": 0.8663989878743,
+        "total_r": -2132.2175401300415
+      },
+      "trigger_80pct": {
+        "n": 16731,
+        "wins": 5553,
+        "losses": 9926,
+        "breakevens": 1252,
+        "win_rate": 0.3318988703604088,
+        "breakeven_rate": 0.07483115175422868,
+        "expectancy_r": -0.13099057165834413,
+        "profit_factor": 0.8667658564041478,
+        "total_r": -2191.6032544157556
+      }
+    }
+  }
+}

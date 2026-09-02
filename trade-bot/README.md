@@ -43,6 +43,64 @@ gösteriyor. Ayrıntı: `NOA_KONSEPTI_KAYNAK_ANALIZI.md`.
 **Demo hesapta çalışan `TradeBot_NOA_MultiSymbol.mq5`, bu geçersiz
 çıkan varsayıma dayanıyor — durdurulması ciddi şekilde düşünülmeli.**
 
+## ⚠️ KRİTİK — 2026-09-02: Yeniden kalibre edilen FVG/iFVG/OB/Trendline'ın
+## (bu oturumun tüm çalışması) pozitif sonuçları da AYNI hata sınıfından
+## dolayı büyük ölçüde şişirilmişti
+
+Yukarıdaki 2026-08-28 bulgusu V1'in ESKİ (FVG+OB+Destek/Direnç, trend
+filtreli) tanımıyla ilgiliydi. Bu bölüm, o bulgudan SONRA bir sonraki
+oturumda yapılan tüm işi (FVG/iFVG/Order Block/Trendline'ın R-katı
+hedefleri, SL tamponları, breakeven-stop eşiği — `strategy/config.py`'de
+kalibre edilen HER ŞEY) kapsıyor. Bu iş, kaynağı `NOA_KONSEPTI_KAYNAK_ANALIZI.md`'de
+belgelenen ~100 `scratch_*.py` script'iyle, `backtest/final_holdout.py`/
+`validation.py`/`robustness.py`/`regime.py`'deki mevcut (2026-08-28
+bulgusunu bulan) rigorous walk-forward/holdout altyapısı kullanılmadan
+yapıldı.
+
+Bu altyapıya (`strategy/signal_engine.py`+`backtest/engine.py` güncellenip
+bu oturumun stratejisini kullanacak şekilde bağlandıktan sonra, bkz.
+commit geçmişi) geçirildiğinde **GOLD/BTCUSD/EURGBP'nin ÜÇÜNDE de TRAIN
+partisyonunda (in-sample!) bile expectancy NEGATİF çıktı**, holdout
+"FAILED TO GENERALIZE", block-bootstrap %95 CI tamamen negatif (bkz.
+`holdout_validation_results.json`, `results/holdout_validation/`).
+
+**Kök neden araştırması (kod hatası DEĞİL, metodolojik iyimserlik):**
+scratch script'lerin ORTAK `_scan_fill_and_exit`-tipi simülasyon
+fonksiyonları iki ayrı, ölçülebilir iyimserlik içeriyordu:
+
+1. **Order Block'ta "impuls barının kendisiyle aynı barda dolum"**:
+   OB'nin dolum taraması `ob.impulse_index`'ten (dahil) başlıyordu --
+   ama o barın TAM aralığının (impuls'u onaylayan güçlü hareket)
+   bilinmesi için barın KAPANMASI gerekiyor, ve o kapanıştan SONRA
+   "bu bar aynı zamanda girişe de geri çekildi" demek gerçek hayatta
+   asla mümkün olmayan bir bilgiyi (barın kapanmadan önceki dip/tepe
+   noktasını) kullanmak demek. Düzeltme (`impulse_index+1`'den
+   başlamak) tek başına GOLD'un son 6.000 mumluk diliminde OB win
+   rate'ini %33.8'den %23.3'e, beklentiyi +0.35R'den -0.07R'ye düşürdü.
+2. **TÜM modüllerde "aynı barda iyimser TP kabul etme"**: scratch
+   script'ler, dolum barının KENDİSİNDE hem SL hem TP seviyesine
+   ulaşılabiliyorsa, TP'nin ÖNCE vurulduğunu varsayıyordu -- ama bu
+   sıralama tek bir OHLC barından ASLA kesin bilinemez (bkz.
+   `backtest/engine.py`'nin çok daha önceden -- bu bulgudan bağımsız
+   olarak -- test edilmiş `test_same_bar_entry_and_tp_ambiguity_no_optimistic_tp`
+   kuralı, hep muhafazakar/pessimistik SL öncelikli kabul eder, TP'yi
+   HER ZAMAN bir sonraki bara erteler). Bu TEK kuralı izole edip FVG'de
+   test etmek: win rate %51.8'den %36.0'a, beklenti +0.29R'den
+   -0.10R'ye düştü -- OB'deki kadar büyük, TEK BAŞINA gözlemlenen
+   toplam farkın neredeyse tamamını açıklıyor.
+
+**Sonuç:** `strategy/signal_engine.py`/`backtest/engine.py`'ye yapılan
+entegrasyon KOD OLARAK doğru (yukarıdaki iki iyimserlikten HİÇBİRİNİ
+içermiyor, holdout altyapısının zaten var olan muhafazakar kurallarını
+miras alıyor) -- düzeltilecek bir hata YOK, dolayısıyla holdout'u
+tekrar çalıştırmak (deterministik, aynı kod/veri) aynı sonucu verir.
+Bu oturumun ürettiği TÜM pozitif sonuçlar (breakeven-stop eşiği,
+R-katı/SL tamponu kalibrasyonları, GOLD $10k hesap simülasyonu, 95
+sembollük tam işlem arşivi) bu iki iyimserlik yüzünden gerçek olandan
+daha iyi görünüyor olabilir -- ne kadar, sembol/modüle göre değişiyor
+(OB en çok etkilenen, FVG de neredeyse aynı derecede, ayrıntı için
+`NOA_KONSEPTI_KAYNAK_ANALIZI.md`).
+
 ## Klasör yapısı
 
 ```

@@ -1,0 +1,131 @@
+{
+  "GOLD": {
+    "A_current": {
+      "n_taken": 137,
+      "win_rate": 0.2701,
+      "expectancy_r": 0.0329,
+      "profit_factor": 1.059,
+      "total_net_r": 4.5,
+      "taken_by_module": {
+        "ifvg": 32,
+        "ob": 77,
+        "fvg": 26,
+        "trendline": 2
+      }
+    },
+    "B_no_ob": {
+      "n_taken": 138,
+      "win_rate": 0.3406,
+      "expectancy_r": 0.0526,
+      "profit_factor": 1.113,
+      "total_net_r": 7.25,
+      "taken_by_module": {
+        "ifvg": 66,
+        "fvg": 69,
+        "trendline": 3
+      }
+    },
+    "ob_alone": {
+      "n_taken": 46,
+      "win_rate": 0.3043,
+      "expectancy_r": 0.3677,
+      "profit_factor": 1.675,
+      "total_net_r": 16.92,
+      "taken_by_module": {
+        "ob": 46
+      }
+    },
+    "C_separate": {
+      "n_taken": 184,
+      "win_rate": 0.3315,
+      "expectancy_r": 0.1314,
+      "total_net_r": 24.17
+    }
+  },
+  "BTCUSD": {
+    "A_current": {
+      "n_taken": 83,
+      "win_rate": 0.1807,
+      "expectancy_r": -0.0872,
+      "profit_factor": 0.771,
+      "total_net_r": -7.23,
+      "taken_by_module": {
+        "fvg": 11,
+        "ob": 52,
+        "ifvg": 18,
+        "trendline": 2
+      }
+    },
+    "B_no_ob": {
+      "n_taken": 141,
+      "win_rate": 0.305,
+      "expectancy_r": -0.0319,
+      "profit_factor": 0.937,
+      "total_net_r": -4.5,
+      "taken_by_module": {
+        "fvg": 41,
+        "ifvg": 89,
+        "trendline": 11
+      }
+    },
+    "ob_alone": {
+      "n_taken": 45,
+      "win_rate": 0.0667,
+      "expectancy_r": -0.4679,
+      "profit_factor": 0.279,
+      "total_net_r": -21.06,
+      "taken_by_module": {
+        "ob": 45
+      }
+    },
+    "C_separate": {
+      "n_taken": 186,
+      "win_rate": 0.2473,
+      "expectancy_r": -0.1374,
+      "total_net_r": -25.56
+    }
+  },
+  "EURGBP": {
+    "A_current": {
+      "n_taken": 147,
+      "win_rate": 0.2109,
+      "expectancy_r": -0.0577,
+      "profit_factor": 0.869,
+      "total_net_r": -8.49,
+      "taken_by_module": {
+        "ob": 95,
+        "fvg": 23,
+        "ifvg": 27,
+        "trendline": 2
+      }
+    },
+    "B_no_ob": {
+      "n_taken": 254,
+      "win_rate": 0.2874,
+      "expectancy_r": -0.0427,
+      "profit_factor": 0.91,
+      "total_net_r": -10.84,
+      "taken_by_module": {
+        "ifvg": 131,
+        "fvg": 116,
+        "trendline": 7
+      }
+    },
+    "ob_alone": {
+      "n_taken": 107,
+      "win_rate": 0.1682,
+      "expectancy_r": -0.1671,
+      "profit_factor": 0.723,
+      "total_net_r": -17.88,
+      "taken_by_module": {
+        "ob": 107
+      }
+    },
+    "C_separate": {
+      "n_taken": 361,
+      "win_rate": 0.2521,
+      "expectancy_r": -0.0796,
+      "total_net_r": -28.72
+    }
+  }
+}

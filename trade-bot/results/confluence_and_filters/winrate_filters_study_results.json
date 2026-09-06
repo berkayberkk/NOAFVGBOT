@@ -1,0 +1,212 @@
+{
+  "GOLD": {
+    "fvg": {
+      "baseline_all": {
+        "n_signals": 8506,
+        "n_filled": 8318,
+        "win_rate": 0.2504207742245732,
+        "expectancy_r": -0.32012929723460853,
+        "profit_factor": 0.5231585477150772,
+        "total_net_r": -2662.835494397474
+      },
+      "killzone_only": {
+        "n_signals": 2962,
+        "n_filled": 2890,
+        "win_rate": 0.2491349480968858,
+        "expectancy_r": -0.34527038163459883,
+        "profit_factor": 0.5045812376362886,
+        "total_net_r": -997.8314029239905
+      },
+      "volume_only": {
+        "n_signals": 2798,
+        "n_filled": 2722,
+        "win_rate": 0.26781778104335047,
+        "expectancy_r": -0.2089334659467924,
+        "profit_factor": 0.6451127469450554,
+        "total_net_r": -568.7168943071688
+      },
+      "killzone_AND_volume": {
+        "n_signals": 954,
+        "n_filled": 925,
+        "win_rate": 0.2756756756756757,
+        "expectancy_r": -0.1885698486760508,
+        "profit_factor": 0.6669002595907767,
+        "total_net_r": -174.42711002534708
+      }
+    },
+    "ob": {
+      "baseline_all": {
+        "n_signals": 9833,
+        "n_filled": 9605,
+        "win_rate": 0.15908381051535658,
+        "expectancy_r": -0.3177424365712908,
+        "profit_factor": 0.5858251220553058,
+        "total_net_r": -3051.9161032672487
+      },
+      "killzone_only": {
+        "n_signals": 2454,
+        "n_filled": 2406,
+        "win_rate": 0.1487946799667498,
+        "expectancy_r": -0.3975046378090341,
+        "profit_factor": 0.5186908325303824,
+        "total_net_r": -956.3961585685361
+      },
+      "volume_only": {
+        "n_signals": 7505,
+        "n_filled": 7333,
+        "win_rate": 0.15532524205645712,
+        "expectancy_r": -0.3390520591483549,
+        "profit_factor": 0.5704857096467335,
+        "total_net_r": -2486.2687497348866
+      },
+      "killzone_AND_volume": {
+        "n_signals": 1722,
+        "n_filled": 1682,
+        "win_rate": 0.15219976218787157,
+        "expectancy_r": -0.388644112645927,
+        "profit_factor": 0.5277754505052865,
+        "total_net_r": -653.6993974704491
+      }
+    }
+  },
+  "BTCUSD": {
+    "fvg": {
+      "baseline_all": {
+        "n_signals": 6745,
+        "n_filled": 6614,
+        "win_rate": 0.20290293317205926,
+        "expectancy_r": -0.4257045703138421,
+        "profit_factor": 0.358714497506624,
+        "total_net_r": -2815.610028055752
+      },
+      "killzone_only": {
+        "n_signals": 2151,
+        "n_filled": 2109,
+        "win_rate": 0.1981981981981982,
+        "expectancy_r": -0.4481313499644128,
+        "profit_factor": 0.34405435772116294,
+        "total_net_r": -945.1090170749466
+      },
+      "volume_only": {
+        "n_signals": 1503,
+        "n_filled": 1462,
+        "win_rate": 0.2243502051983584,
+        "expectancy_r": -0.30675353726562754,
+        "profit_factor": 0.4621739360578367,
+        "total_net_r": -448.47367148234747
+      },
+      "killzone_AND_volume": {
+        "n_signals": 503,
+        "n_filled": 487,
+        "win_rate": 0.21971252566735114,
+        "expectancy_r": -0.3348317103894078,
+        "profit_factor": 0.45051579381542667,
+        "total_net_r": -163.0630429596416
+      }
+    },
+    "ob": {
+      "baseline_all": {
+        "n_signals": 9169,
+        "n_filled": 8940,
+        "win_rate": 0.14093959731543623,
+        "expectancy_r": -0.26421666414937944,
+        "profit_factor": 0.3792448090681358,
+        "total_net_r": -2362.0969774954524
+      },
+      "killzone_only": {
+        "n_signals": 2618,
+        "n_filled": 2558,
+        "win_rate": 0.1364347146207975,
+        "expectancy_r": -0.1957518497169075,
+        "profit_factor": 0.35016171855844813,
+        "total_net_r": -500.73323157584963
+      },
+      "volume_only": {
+        "n_signals": 5271,
+        "n_filled": 5120,
+        "win_rate": 0.14609375,
+        "expectancy_r": -0.24903258024917185,
+        "profit_factor": 0.4245838423895511,
+        "total_net_r": -1275.04681087576
+      },
+      "killzone_AND_volume": {
+        "n_signals": 1427,
+        "n_filled": 1383,
+        "win_rate": 0.1301518438177874,
+        "expectancy_r": -0.5492472108024895,
+        "profit_factor": 0.3494891154886776,
+        "total_net_r": -759.6088925398432
+      }
+    }
+  },
+  "EURGBP": {
+    "fvg": {
+      "baseline_all": {
+        "n_signals": 10405,
+        "n_filled": 10358,
+        "win_rate": 0.15282873141533115,
+        "expectancy_r": -0.7604171127645155,
+        "profit_factor": 0.206864184597256,
+        "total_net_r": -7876.400454014851
+      },
+      "killzone_only": {
+        "n_signals": 3899,
+        "n_filled": 3875,
+        "win_rate": 0.16696774193548386,
+        "expectancy_r": -0.7016744027716939,
+        "profit_factor": 0.2364563932768542,
+        "total_net_r": -2718.9883107403134
+      },
+      "volume_only": {
+        "n_signals": 3469,
+        "n_filled": 3452,
+        "win_rate": 0.1943800695249131,
+        "expectancy_r": -0.5326360426814587,
+        "profit_factor": 0.32647640057098204,
+        "total_net_r": -1838.6596193363957
+      },
+      "killzone_AND_volume": {
+        "n_signals": 1485,
+        "n_filled": 1480,
+        "win_rate": 0.19864864864864865,
+        "expectancy_r": -0.5229114716610411,
+        "profit_factor": 0.3359178508482494,
+        "total_net_r": -773.9089780583408
+      }
+    },
+    "ob": {
+      "baseline_all": {
+        "n_signals": 17033,
+        "n_filled": 16958,
+        "win_rate": 0.13102960254747023,
+        "expectancy_r": -0.5601934980667946,
+        "profit_factor": 0.3864278643880704,
+        "total_net_r": -9499.761340216703
+      },
+      "killzone_only": {
+        "n_signals": 7618,
+        "n_filled": 7585,
+        "win_rate": 0.12933421226104153,
+        "expectancy_r": -0.6211206633118966,
+        "profit_factor": 0.36356789490531666,
+        "total_net_r": -4711.200231220736
+      },
+      "volume_only": {
+        "n_signals": 13534,
+        "n_filled": 13482,
+        "win_rate": 0.1349206349206349,
+        "expectancy_r": -0.5536183392468195,
+        "profit_factor": 0.4042123351583817,
+        "total_net_r": -7463.882449725618
+      },
+      "killzone_AND_volume": {
+        "n_signals": 6144,
+        "n_filled": 6126,
+        "win_rate": 0.13238654913483514,
+        "expectancy_r": -0.6004041964714457,
+        "profit_factor": 0.37768773025112584,
+        "total_net_r": -3678.076107584077
+      }
+    }
+  }
+}

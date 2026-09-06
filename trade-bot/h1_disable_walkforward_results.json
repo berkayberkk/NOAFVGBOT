@@ -1,0 +1,422 @@
+{
+  "GOLD": [
+    {
+      "period": "2014-06-13..2016-08-30",
+      "m30_n": 22886,
+      "h1_n": 10650,
+      "M30-alone": {
+        "n_filled": 58,
+        "win_rate": 0.2413793103448276,
+        "expectancy_r": -0.05019339496525277,
+        "profit_factor": 0.9109213818990615,
+        "total_net_r": -2.911216907984669,
+        "final_equity_compound": 9663.05,
+        "final_equity_fixed": 9708.88
+      },
+      "M30+H1-combined": {
+        "n_filled": 42,
+        "win_rate": 0.23809523809523808,
+        "expectancy_r": -0.174730934352408,
+        "profit_factor": 0.7245624666001247,
+        "total_net_r": -7.3386992428011375,
+        "final_equity_compound": 9260.52,
+        "final_equity_fixed": 9266.13
+      }
+    },
+    {
+      "period": "2016-08-30..2018-08-31",
+      "m30_n": 22886,
+      "h1_n": 11115,
+      "M30-alone": {
+        "n_filled": 25,
+        "win_rate": 0.28,
+        "expectancy_r": -0.09672861349600459,
+        "profit_factor": 0.8297807581018788,
+        "total_net_r": -2.418215337400119,
+        "final_equity_compound": 9743.8,
+        "final_equity_fixed": 9758.18
+      },
+      "M30+H1-combined": {
+        "n_filled": 20,
+        "win_rate": 0.25,
+        "expectancy_r": -0.07303879662369489,
+        "profit_factor": 0.8576557111018194,
+        "total_net_r": -1.4607759324738983,
+        "final_equity_compound": 9841.61,
+        "final_equity_fixed": 9853.92
+      }
+    },
+    {
+      "period": "2018-08-31..2020-09-11",
+      "m30_n": 22886,
+      "h1_n": 11089,
+      "M30-alone": {
+        "n_filled": 34,
+        "win_rate": 0.23529411764705882,
+        "expectancy_r": -0.2558703204176933,
+        "profit_factor": 0.6073897426847819,
+        "total_net_r": -8.699590894201574,
+        "final_equity_compound": 9145.42,
+        "final_equity_fixed": 9130.04
+      },
+      "M30+H1-combined": {
+        "n_filled": 30,
+        "win_rate": 0.2,
+        "expectancy_r": -0.35583172885158043,
+        "profit_factor": 0.5390288041265026,
+        "total_net_r": -10.674951865547412,
+        "final_equity_compound": 8964.3,
+        "final_equity_fixed": 8932.5
+      }
+    },
+    {
+      "period": "2020-09-11..2022-09-06",
+      "m30_n": 22886,
+      "h1_n": 11179,
+      "M30-alone": {
+        "n_filled": 31,
+        "win_rate": 0.2903225806451613,
+        "expectancy_r": 0.04508656080628903,
+        "profit_factor": 1.0773487835698226,
+        "total_net_r": 1.3976833849949595,
+        "final_equity_compound": 10108.09,
+        "final_equity_fixed": 10139.77
+      },
+      "M30+H1-combined": {
+        "n_filled": 34,
+        "win_rate": 0.17647058823529413,
+        "expectancy_r": -0.33005463256029094,
+        "profit_factor": 0.49541275355654596,
+        "total_net_r": -11.221857507049894,
+        "final_equity_compound": 8918.69,
+        "final_equity_fixed": 8877.81
+      }
+    },
+    {
+      "period": "2022-09-06..2024-08-29",
+      "m30_n": 22886,
+      "h1_n": 11181,
+      "M30-alone": {
+        "n_filled": 41,
+        "win_rate": 0.1951219512195122,
+        "expectancy_r": -0.24236120749210804,
+        "profit_factor": 0.623262618882578,
+        "total_net_r": -9.936809507176427,
+        "final_equity_compound": 9025.1,
+        "final_equity_fixed": 9006.32
+      },
+      "M30+H1-combined": {
+        "n_filled": 22,
+        "win_rate": 0.22727272727272727,
+        "expectancy_r": -0.06250065092253576,
+        "profit_factor": 0.8970695021605991,
+        "total_net_r": -1.375014320295786,
+        "final_equity_compound": 9841.43,
+        "final_equity_fixed": 9862.5
+      }
+    },
+    {
+      "period": "2024-08-29..2026-08-26",
+      "m30_n": 22887,
+      "h1_n": 11187,
+      "M30-alone": {
+        "n_filled": 38,
+        "win_rate": 0.3684210526315789,
+        "expectancy_r": 0.14358438267790974,
+        "profit_factor": 1.2724483872057233,
+        "total_net_r": 5.45620654176057,
+        "final_equity_compound": 10523.32,
+        "final_equity_fixed": 10545.62
+      },
+      "M30+H1-combined": {
+        "n_filled": 36,
+        "win_rate": 0.4166666666666667,
+        "expectancy_r": 0.5687320098856468,
+        "profit_factor": 2.5606422698368623,
+        "total_net_r": 20.47435235588328,
+        "final_equity_compound": 12214.47,
+        "final_equity_fixed": 12047.44
+      }
+    }
+  ],
+  "BTCUSD": [
+    {
+      "period": "2017-06-14..2019-09-10",
+      "m30_n": 21566,
+      "h1_n": 10338,
+      "M30-alone": {
+        "n_filled": 29,
+        "win_rate": 0.20689655172413793,
+        "expectancy_r": -0.3728057521248965,
+        "profit_factor": 0.5251666842633484,
+        "total_net_r": -10.811366811621998,
+        "final_equity_compound": 8946.64,
+        "final_equity_fixed": 8918.86
+      },
+      "M30+H1-combined": {
+        "n_filled": 29,
+        "win_rate": 0.20689655172413793,
+        "expectancy_r": -0.38205871183161766,
+        "profit_factor": 0.518822781183351,
+        "total_net_r": -11.079702643116908,
+        "final_equity_compound": 8922.39,
+        "final_equity_fixed": 8892.03
+      }
+    },
+    {
+      "period": "2019-09-10..2021-06-17",
+      "m30_n": 21566,
+      "h1_n": 10616,
+      "M30-alone": {
+        "n_filled": 31,
+        "win_rate": 0.2903225806451613,
+        "expectancy_r": 0.33872413280833025,
+        "profit_factor": 1.3236668799659528,
+        "total_net_r": 10.500448117058236,
+        "final_equity_compound": 11058.0,
+        "final_equity_fixed": 11050.04
+      },
+      "M30+H1-combined": {
+        "n_filled": 23,
+        "win_rate": 0.2608695652173913,
+        "expectancy_r": 0.19156635830200786,
+        "profit_factor": 1.370468468303065,
+        "total_net_r": 4.406026240946179,
+        "final_equity_compound": 10420.62,
+        "final_equity_fixed": 10440.6
+      }
+    },
+    {
+      "period": "2021-06-17..2022-11-24",
+      "m30_n": 21566,
+      "h1_n": 10649,
+      "M30-alone": {
+        "n_filled": 19,
+        "win_rate": 0.2631578947368421,
+        "expectancy_r": -0.22814014273045835,
+        "profit_factor": 0.6774852987809685,
+        "total_net_r": -4.334662711878708,
+        "final_equity_compound": 9560.45,
+        "final_equity_fixed": 9566.53
+      },
+      "M30+H1-combined": {
+        "n_filled": 28,
+        "win_rate": 0.25,
+        "expectancy_r": -0.029809206286794288,
+        "profit_factor": 0.9493309949215296,
+        "total_net_r": -0.8346577760302376,
+        "final_equity_compound": 9889.91,
+        "final_equity_fixed": 9916.53
+      }
+    },
+    {
+      "period": "2022-11-24..2024-02-26",
+      "m30_n": 21566,
+      "h1_n": 10666,
+      "M30-alone": {
+        "n_filled": 31,
+        "win_rate": 0.22580645161290322,
+        "expectancy_r": -0.28367524444301295,
+        "profit_factor": 0.6381947832236766,
+        "total_net_r": -8.793932577733402,
+        "final_equity_compound": 9128.36,
+        "final_equity_fixed": 9120.61
+      },
+      "M30+H1-combined": {
+        "n_filled": 29,
+        "win_rate": 0.10344827586206896,
+        "expectancy_r": -0.5639138585839758,
+        "profit_factor": 0.2678858559952067,
+        "total_net_r": -16.3535018989353,
+        "final_equity_compound": 8474.5,
+        "final_equity_fixed": 8364.65
+      }
+    },
+    {
+      "period": "2024-02-26..2025-05-31",
+      "m30_n": 21566,
+      "h1_n": 10680,
+      "M30-alone": {
+        "n_filled": 8,
+        "win_rate": 0.125,
+        "expectancy_r": -0.3777669489389606,
+        "profit_factor": 0.4980940757817978,
+        "total_net_r": -3.0221355915116845,
+        "final_equity_compound": 9695.08,
+        "final_equity_fixed": 9697.79
+      },
+      "M30+H1-combined": {
+        "n_filled": 17,
+        "win_rate": 0.23529411764705882,
+        "expectancy_r": -0.15005943731761706,
+        "profit_factor": 0.7457924662485022,
+        "total_net_r": -2.5510104343994895,
+        "final_equity_compound": 9735.68,
+        "final_equity_fixed": 9744.9
+      }
+    },
+    {
+      "period": "2025-05-31..2026-08-26",
+      "m30_n": 21568,
+      "h1_n": 10782,
+      "M30-alone": {
+        "n_filled": 41,
+        "win_rate": 0.17073170731707318,
+        "expectancy_r": -0.14749708673130768,
+        "profit_factor": 0.7205185594520126,
+        "total_net_r": -6.047380555983621,
+        "final_equity_compound": 9381.43,
+        "final_equity_fixed": 9395.26
+      },
+      "M30+H1-combined": {
+        "n_filled": 20,
+        "win_rate": 0.1,
+        "expectancy_r": -0.5057584360115114,
+        "profit_factor": 0.2285754534676956,
+        "total_net_r": -10.11516872023023,
+        "final_equity_compound": 9029.94,
+        "final_equity_fixed": 8988.48
+      }
+    }
+  ],
+  "EURGBP": [
+    {
+      "period": "2010-01-04..2012-11-09",
+      "m30_n": 33384,
+      "h1_n": 15958,
+      "M30-alone": {
+        "n_filled": 47,
+        "win_rate": 0.2127659574468085,
+        "expectancy_r": -0.05030253687986341,
+        "profit_factor": 0.9086355969230119,
+        "total_net_r": -2.3642192333535754,
+        "final_equity_compound": 9723.57,
+        "final_equity_fixed": 9763.58
+      },
+      "M30+H1-combined": {
+        "n_filled": 37,
+        "win_rate": 0.08108108108108109,
+        "expectancy_r": -0.5816746945237343,
+        "profit_factor": 0.2140692650748167,
+        "total_net_r": -21.521963697378172,
+        "final_equity_compound": 8046.83,
+        "final_equity_fixed": 7847.8
+      }
+    },
+    {
+      "period": "2012-11-09..2015-09-02",
+      "m30_n": 33384,
+      "h1_n": 16292,
+      "M30-alone": {
+        "n_filled": 27,
+        "win_rate": 0.14814814814814814,
+        "expectancy_r": -0.19076381808282739,
+        "profit_factor": 0.6699250908566762,
+        "total_net_r": -5.150623088236337,
+        "final_equity_compound": 9476.85,
+        "final_equity_fixed": 9484.94
+      },
+      "M30+H1-combined": {
+        "n_filled": 33,
+        "win_rate": 0.21212121212121213,
+        "expectancy_r": -0.1121477282403992,
+        "profit_factor": 0.7850881402467892,
+        "total_net_r": -3.7008750319331765,
+        "final_equity_compound": 9613.68,
+        "final_equity_fixed": 9629.91
+      }
+    },
+    {
+      "period": "2015-09-02..2018-05-28",
+      "m30_n": 33384,
+      "h1_n": 16454,
+      "M30-alone": {
+        "n_filled": 75,
+        "win_rate": 0.13333333333333333,
+        "expectancy_r": -0.40079372915668676,
+        "profit_factor": 0.3395279351096014,
+        "total_net_r": -30.0595296867515,
+        "final_equity_compound": 7368.87,
+        "final_equity_fixed": 6994.05
+      },
+      "M30+H1-combined": {
+        "n_filled": 44,
+        "win_rate": 0.11363636363636363,
+        "expectancy_r": -0.4592011034287562,
+        "profit_factor": 0.30717438950706233,
+        "total_net_r": -20.20484855086527,
+        "final_equity_compound": 8151.08,
+        "final_equity_fixed": 7979.52
+      }
+    },
+    {
+      "period": "2018-05-28..2021-02-19",
+      "m30_n": 33384,
+      "h1_n": 16488,
+      "M30-alone": {
+        "n_filled": 36,
+        "win_rate": 0.2222222222222222,
+        "expectancy_r": -0.1442336170216424,
+        "profit_factor": 0.7414477564868943,
+        "total_net_r": -5.192410212779128,
+        "final_equity_compound": 9470.0,
+        "final_equity_fixed": 9480.76
+      },
+      "M30+H1-combined": {
+        "n_filled": 50,
+        "win_rate": 0.12,
+        "expectancy_r": -0.4339442397308672,
+        "profit_factor": 0.3133747455970436,
+        "total_net_r": -21.69721198654336,
+        "final_equity_compound": 8030.02,
+        "final_equity_fixed": 7830.28
+      }
+    },
+    {
+      "period": "2021-02-19..2023-11-23",
+      "m30_n": 33384,
+      "h1_n": 16343,
+      "M30-alone": {
+        "n_filled": 28,
+        "win_rate": 0.21428571428571427,
+        "expectancy_r": 0.02112023380152883,
+        "profit_factor": 1.0317956889771644,
+        "total_net_r": 0.5913665464428083,
+        "final_equity_compound": 10032.58,
+        "final_equity_fixed": 10059.14
+      },
+      "M30+H1-combined": {
+        "n_filled": 40,
+        "win_rate": 0.05,
+        "expectancy_r": -0.5900883439260851,
+        "profit_factor": 0.129950087495217,
+        "total_net_r": -23.603533757043408,
+        "final_equity_compound": 7883.73,
+        "final_equity_fixed": 7639.65
+      }
+    },
+    {
+      "period": "2023-11-23..2026-08-26",
+      "m30_n": 33386,
+      "h1_n": 16368,
+      "M30-alone": {
+        "n_filled": 42,
+        "win_rate": 0.19047619047619047,
+        "expectancy_r": -0.3658481203920252,
+        "profit_factor": 0.490892532050894,
+        "total_net_r": -15.365621056465056,
+        "final_equity_compound": 8548.89,
+        "final_equity_fixed": 8463.44
+      },
+      "M30+H1-combined": {
+        "n_filled": 34,
+        "win_rate": 0.20588235294117646,
+        "expectancy_r": -0.16906111297773302,
+        "profit_factor": 0.7113140483202265,
+        "total_net_r": -5.748077841242921,
+        "final_equity_compound": 9414.76,
+        "final_equity_fixed": 9425.19
+      }
+    }
+  ]
+}

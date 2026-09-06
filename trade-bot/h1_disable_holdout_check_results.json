@@ -1,0 +1,128 @@
+{
+  "GOLD": {
+    "M30-alone": {
+      "trainval": {
+        "n_filled": 107,
+        "win_rate": 0.27102803738317754,
+        "expectancy_r": 0.11092110856278264,
+        "profit_factor": 1.222524596898308,
+        "total_net_r": 11.868558616217758,
+        "final_equity_compound": 11143.04,
+        "final_equity_fixed": 11186.86
+      },
+      "test": {
+        "n_filled": 32,
+        "win_rate": 0.375,
+        "expectancy_r": 0.18614261645524488,
+        "profit_factor": 1.3289530036244832,
+        "total_net_r": 5.956563726567834,
+        "final_equity_compound": 10575.98,
+        "final_equity_fixed": 10595.66
+      }
+    },
+    "M30+H1-combined": {
+      "trainval": {
+        "n_filled": 22,
+        "win_rate": 0.18181818181818182,
+        "expectancy_r": -0.2538588069433194,
+        "profit_factor": 0.5729809134880617,
+        "total_net_r": -5.584893752753026,
+        "final_equity_compound": 9443.22,
+        "final_equity_fixed": 9441.51
+      },
+      "test": {
+        "n_filled": 33,
+        "win_rate": 0.3939393939393939,
+        "expectancy_r": 0.48526349125679613,
+        "profit_factor": 2.134562195832461,
+        "total_net_r": 16.013695211474275,
+        "final_equity_compound": 11684.59,
+        "final_equity_fixed": 11601.37
+      }
+    }
+  },
+  "BTCUSD": {
+    "M30-alone": {
+      "trainval": {
+        "n_filled": 56,
+        "win_rate": 0.16071428571428573,
+        "expectancy_r": -0.05719882660774722,
+        "profit_factor": 0.6312108168560552,
+        "total_net_r": -3.203134290033844,
+        "final_equity_compound": 9639.96,
+        "final_equity_fixed": 9679.69
+      },
+      "test": {
+        "n_filled": 49,
+        "win_rate": 0.14285714285714285,
+        "expectancy_r": -0.25578080649177803,
+        "profit_factor": 0.5416358344600836,
+        "total_net_r": -12.533259518097116,
+        "final_equity_compound": 8792.97,
+        "final_equity_fixed": 8746.67
+      }
+    },
+    "M30+H1-combined": {
+      "trainval": {
+        "n_filled": 47,
+        "win_rate": 0.19148936170212766,
+        "expectancy_r": -0.042742787873256194,
+        "profit_factor": 0.657475705817618,
+        "total_net_r": -2.00891103004304,
+        "final_equity_compound": 9754.01,
+        "final_equity_fixed": 9799.11
+      },
+      "test": {
+        "n_filled": 32,
+        "win_rate": 0.1875,
+        "expectancy_r": -0.3059657092153749,
+        "profit_factor": 0.5758172636640226,
+        "total_net_r": -9.790902694891995,
+        "final_equity_compound": 9040.2,
+        "final_equity_fixed": 9020.91
+      }
+    }
+  },
+  "EURGBP": {
+    "M30-alone": {
+      "trainval": {
+        "n_filled": 153,
+        "win_rate": 0.1895424836601307,
+        "expectancy_r": -0.15465456586505233,
+        "profit_factor": 0.7406206407408951,
+        "total_net_r": -23.66214857735301,
+        "final_equity_compound": 7789.14,
+        "final_equity_fixed": 7633.79
+      },
+      "test": {
+        "n_filled": 35,
+        "win_rate": 0.2,
+        "expectancy_r": -0.19525491930720884,
+        "profit_factor": 0.6618336347839928,
+        "total_net_r": -6.833922175752307,
+        "final_equity_compound": 9315.95,
+        "final_equity_fixed": 9316.61
+      }
+    },
+    "M30+H1-combined": {
+      "trainval": {
+        "n_filled": 109,
+        "win_rate": 0.1651376146788991,
+        "expectancy_r": -0.29855337915458424,
+        "profit_factor": 0.5305110802448508,
+        "total_net_r": -32.542318327849685,
+        "final_equity_compound": 7166.68,
+        "final_equity_fixed": 6745.77
+      },
+      "test": {
+        "n_filled": 38,
+        "win_rate": 0.10526315789473684,
+        "expectancy_r": -0.3713069656368176,
+        "profit_factor": 0.42293591170714523,
+        "total_net_r": -14.109664694199067,
+        "final_equity_compound": 8660.12,
+        "final_equity_fixed": 8589.03
+      }
+    }
+  }
+}

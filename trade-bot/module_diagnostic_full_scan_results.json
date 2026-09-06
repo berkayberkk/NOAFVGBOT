@@ -1,0 +1,278 @@
+{
+  "GOLD": {
+    "module_level": {
+      "ob": {
+        "n_signals": 9833,
+        "n_filled": 9420,
+        "fill_rate": 0.958,
+        "win_rate": 0.2131,
+        "breakeven_wr_required": 0.25,
+        "win_rate_vs_required": -0.0369,
+        "expectancy_r": 0.0065,
+        "profit_factor": 1.01,
+        "n_tp_wins": 2007,
+        "n_true_sl_losses": 5852,
+        "n_breakeven_exits": 1561,
+        "true_sl_loss_rate_of_filled": 0.6212,
+        "breakeven_rate_of_filled": 0.1657,
+        "avg_bars_to_sl_hit": 1238.7,
+        "r_multiple_target": 3.0
+      },
+      "ifvg": {
+        "n_signals": 3785,
+        "n_filled": 3738,
+        "fill_rate": 0.988,
+        "win_rate": 0.2945,
+        "breakeven_wr_required": 0.4,
+        "win_rate_vs_required": -0.1055,
+        "expectancy_r": 0.0047,
+        "profit_factor": 1.009,
+        "n_tp_wins": 1101,
+        "n_true_sl_losses": 1618,
+        "n_breakeven_exits": 1019,
+        "true_sl_loss_rate_of_filled": 0.4329,
+        "breakeven_rate_of_filled": 0.2726,
+        "avg_bars_to_sl_hit": 299.1,
+        "r_multiple_target": 1.5
+      },
+      "fvg": {
+        "n_signals": 2798,
+        "n_filled": 2746,
+        "fill_rate": 0.981,
+        "win_rate": 0.303,
+        "breakeven_wr_required": 0.4,
+        "win_rate_vs_required": -0.097,
+        "expectancy_r": 0.0281,
+        "profit_factor": 1.066,
+        "n_tp_wins": 832,
+        "n_true_sl_losses": 1161,
+        "n_breakeven_exits": 753,
+        "true_sl_loss_rate_of_filled": 0.4228,
+        "breakeven_rate_of_filled": 0.2742,
+        "avg_bars_to_sl_hit": 597.6,
+        "r_multiple_target": 1.5
+      },
+      "trendline": {
+        "n_signals": 577,
+        "n_filled": 576,
+        "fill_rate": 0.998,
+        "win_rate": 0.2934,
+        "breakeven_wr_required": 0.3333,
+        "win_rate_vs_required": -0.0399,
+        "expectancy_r": -0.1115,
+        "profit_factor": 0.841,
+        "n_tp_wins": 169,
+        "n_true_sl_losses": 407,
+        "n_breakeven_exits": 0,
+        "true_sl_loss_rate_of_filled": 0.7066,
+        "breakeven_rate_of_filled": 0.0,
+        "avg_bars_to_sl_hit": 83.8,
+        "r_multiple_target": 2.0
+      }
+    },
+    "portfolio_level": {
+      "n_signals_total": 16993,
+      "n_taken_into_portfolio": 135,
+      "taken_by_module": {
+        "ifvg": 34,
+        "ob": 74,
+        "fvg": 25,
+        "trendline": 2
+      },
+      "rejected_by_module_due_to_slot_busy": {
+        "ob": 9346,
+        "ifvg": 3704,
+        "fvg": 2721,
+        "trendline": 574
+      },
+      "portfolio_win_rate": 0.2741,
+      "portfolio_expectancy_r": 0.0332,
+      "portfolio_profit_factor": 1.059,
+      "portfolio_total_net_r": 4.49
+    }
+  },
+  "BTCUSD": {
+    "module_level": {
+      "ifvg": {
+        "n_signals": 3001,
+        "n_filled": 2962,
+        "fill_rate": 0.987,
+        "win_rate": 0.2961,
+        "breakeven_wr_required": 0.4,
+        "win_rate_vs_required": -0.1039,
+        "expectancy_r": -0.0041,
+        "profit_factor": 0.987,
+        "n_tp_wins": 877,
+        "n_true_sl_losses": 1311,
+        "n_breakeven_exits": 774,
+        "true_sl_loss_rate_of_filled": 0.4426,
+        "breakeven_rate_of_filled": 0.2613,
+        "avg_bars_to_sl_hit": 444.6,
+        "r_multiple_target": 1.5
+      },
+      "ob": {
+        "n_signals": 9169,
+        "n_filled": 8613,
+        "fill_rate": 0.939,
+        "win_rate": 0.1916,
+        "breakeven_wr_required": 0.25,
+        "win_rate_vs_required": -0.0584,
+        "expectancy_r": -0.1066,
+        "profit_factor": 0.84,
+        "n_tp_wins": 1650,
+        "n_true_sl_losses": 5608,
+        "n_breakeven_exits": 1355,
+        "true_sl_loss_rate_of_filled": 0.6511,
+        "breakeven_rate_of_filled": 0.1573,
+        "avg_bars_to_sl_hit": 1025.8,
+        "r_multiple_target": 3.0
+      },
+      "fvg": {
+        "n_signals": 1503,
+        "n_filled": 1466,
+        "fill_rate": 0.975,
+        "win_rate": 0.3063,
+        "breakeven_wr_required": 0.4,
+        "win_rate_vs_required": -0.0937,
+        "expectancy_r": -0.0079,
+        "profit_factor": 0.982,
+        "n_tp_wins": 449,
+        "n_true_sl_losses": 680,
+        "n_breakeven_exits": 337,
+        "true_sl_loss_rate_of_filled": 0.4638,
+        "breakeven_rate_of_filled": 0.2299,
+        "avg_bars_to_sl_hit": 630.0,
+        "r_multiple_target": 1.5
+      },
+      "trendline": {
+        "n_signals": 424,
+        "n_filled": 417,
+        "fill_rate": 0.983,
+        "win_rate": 0.3118,
+        "breakeven_wr_required": 0.3333,
+        "win_rate_vs_required": -0.0216,
+        "expectancy_r": -0.0771,
+        "profit_factor": 0.884,
+        "n_tp_wins": 130,
+        "n_true_sl_losses": 287,
+        "n_breakeven_exits": 0,
+        "true_sl_loss_rate_of_filled": 0.6882,
+        "breakeven_rate_of_filled": 0.0,
+        "avg_bars_to_sl_hit": 100.6,
+        "r_multiple_target": 2.0
+      }
+    },
+    "portfolio_level": {
+      "n_signals_total": 14097,
+      "n_taken_into_portfolio": 73,
+      "taken_by_module": {
+        "fvg": 12,
+        "ob": 43,
+        "ifvg": 16,
+        "trendline": 2
+      },
+      "rejected_by_module_due_to_slot_busy": {
+        "ob": 8570,
+        "ifvg": 2946,
+        "fvg": 1454,
+        "trendline": 415
+      },
+      "portfolio_win_rate": 0.2055,
+      "portfolio_expectancy_r": -0.0598,
+      "portfolio_profit_factor": 0.889,
+      "portfolio_total_net_r": -4.36
+    }
+  },
+  "EURGBP": {
+    "module_level": {
+      "ob": {
+        "n_signals": 17033,
+        "n_filled": 16144,
+        "fill_rate": 0.948,
+        "win_rate": 0.1654,
+        "breakeven_wr_required": 0.25,
+        "win_rate_vs_required": -0.0846,
+        "expectancy_r": -0.1738,
+        "profit_factor": 0.738,
+        "n_tp_wins": 2670,
+        "n_true_sl_losses": 10377,
+        "n_breakeven_exits": 3097,
+        "true_sl_loss_rate_of_filled": 0.6428,
+        "breakeven_rate_of_filled": 0.1918,
+        "avg_bars_to_sl_hit": 1512.7,
+        "r_multiple_target": 3.0
+      },
+      "fvg": {
+        "n_signals": 3469,
+        "n_filled": 3441,
+        "fill_rate": 0.992,
+        "win_rate": 0.2621,
+        "breakeven_wr_required": 0.4,
+        "win_rate_vs_required": -0.1379,
+        "expectancy_r": -0.0572,
+        "profit_factor": 0.872,
+        "n_tp_wins": 902,
+        "n_true_sl_losses": 1514,
+        "n_breakeven_exits": 1025,
+        "true_sl_loss_rate_of_filled": 0.44,
+        "breakeven_rate_of_filled": 0.2979,
+        "avg_bars_to_sl_hit": 652.7,
+        "r_multiple_target": 1.5
+      },
+      "ifvg": {
+        "n_signals": 4747,
+        "n_filled": 4717,
+        "fill_rate": 0.994,
+        "win_rate": 0.2735,
+        "breakeven_wr_required": 0.4,
+        "win_rate_vs_required": -0.1265,
+        "expectancy_r": -0.0425,
+        "profit_factor": 0.905,
+        "n_tp_wins": 1290,
+        "n_true_sl_losses": 2059,
+        "n_breakeven_exits": 1368,
+        "true_sl_loss_rate_of_filled": 0.4365,
+        "breakeven_rate_of_filled": 0.29,
+        "avg_bars_to_sl_hit": 408.6,
+        "r_multiple_target": 1.5
+      },
+      "trendline": {
+        "n_signals": 699,
+        "n_filled": 694,
+        "fill_rate": 0.993,
+        "win_rate": 0.3386,
+        "breakeven_wr_required": 0.3333,
+        "win_rate_vs_required": 0.0053,
+        "expectancy_r": -0.0038,
+        "profit_factor": 0.994,
+        "n_tp_wins": 235,
+        "n_true_sl_losses": 459,
+        "n_breakeven_exits": 0,
+        "true_sl_loss_rate_of_filled": 0.6614,
+        "breakeven_rate_of_filled": 0.0,
+        "avg_bars_to_sl_hit": 116.7,
+        "r_multiple_target": 2.0
+      }
+    },
+    "portfolio_level": {
+      "n_signals_total": 25948,
+      "n_taken_into_portfolio": 144,
+      "taken_by_module": {
+        "ob": 91,
+        "fvg": 22,
+        "ifvg": 29,
+        "trendline": 2
+      },
+      "rejected_by_module_due_to_slot_busy": {
+        "ob": 16053,
+        "ifvg": 4688,
+        "fvg": 3419,
+        "trendline": 692
+      },
+      "portfolio_win_rate": 0.2153,
+      "portfolio_expectancy_r": -0.0671,
+      "portfolio_profit_factor": 0.885,
+      "portfolio_total_net_r": -9.67
+    }
+  }
+}

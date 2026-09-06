@@ -11,7 +11,7 @@
     "processed_m1_candles": 500,
     "first_scored_timestamp": "2021-01-04 01:00:00",
     "max_scored_timestamp": "2021-01-04 09:20:00",
-    "runtime_seconds": 1.289,
+    "runtime_seconds": 0.968,
     "experiment_fingerprint": "4bae11977a441bb0a160eb8bf8258a325909968e3f303210e28847936946acca"
   },
   "integrity": {

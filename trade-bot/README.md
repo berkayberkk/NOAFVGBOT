@@ -101,6 +101,70 @@ daha iyi görünüyor olabilir -- ne kadar, sembol/modüle göre değişiyor
 (OB en çok etkilenen, FVG de neredeyse aynı derecede, ayrıntı için
 `NOA_KONSEPTI_KAYNAK_ANALIZI.md`).
 
+### GÜNCELLEME — 2026-09-02/03: düzeltilmiş altyapıyla yeniden kalibrasyon TAMAMLANDI
+
+Yukarıdaki iki bulgudan sonra strateji **GOLD, BTCUSD, EURGBP'ye
+daraltıldı** (`strategy/config.py:KEPT_SYMBOLS` — 101 sembollük evrenden
+kademeli eleme, gerekçe dosyanın kendi içinde tarihçeli olarak belgeli)
+ve TÜM yeni kalibrasyon adımları (hacim teyidi, FVG/OB giriş-derinliği,
+SL tamponu genişletme) bu kez `backtest/final_holdout.py`'nin rigorous
+train/val/holdout + block-bootstrap disipliniyle, HİÇ BAKILMAMIŞ test
+kümesinde TEK ATIMLIK doğrulanarak kabul edildi (bkz.
+`NOA_KONSEPTI_KAYNAK_ANALIZI.md`, "Win rate araştırması -- Aday 1-8"
+bölümleri). Kabul edilenler: hacim teyidi (FVG), giriş-derinliği
+(FVG+OB), SL tamponu genişletme (FVG/iFVG/OB/Trendline'ın hepsinde
+holdout'ta doğrulandı). Reddedilenler: R-katı yeniden kalibrasyonu
+(win rate kaybı expectancy kazancını haklı çıkarmadı), H1 zaman
+diliminin devre dışı bırakılması (3 semboldeki holdout sonucu
+tutarsız çıktı, daha büyük örneklem gerekiyor — bkz. "Sıradaki adım").
+Bu, projenin yukarıdaki iki KRİTİK bulguyu bulan AYNI disiplinle
+geçirilmiş, şu ana kadarki EN SIKI doğrulanmış sonuç seti.
+
+## ⚠️ 2026-09-04: aşırı fiyat sıçramalarında R-katı hesaplaması bozuluyordu (düzeltildi)
+
+`backtest/engine.py`'de, bir sinyal süresiz beklerken (broker'da gerçek
+pending emir yok, backtest sinyali "dolana kadar" bekliyor) fiyat çok
+uzun süre sonra ekstrem bir sıçramayla (gap) seviyeye dokunursa,
+`executed_entry` sıçrama fiyatına güncelleniyordu ama R-katının paydası
+olan `risk`, hâlâ sinyalin ORİJİNAL `entry`'sinden hesaplanıyordu — bu
+da matematiksel olarak anlamsız R değerleri üretiyordu (ör. +413R,
++85R), üstelik aynı anda bayat aynı-bar SL kontrolü yüzünden bu işlemler
+YANLIŞLIKLA kayıp (`won=False`) olarak sınıflandırılıyordu. Gerçek
+tarihi olaylar: 2015-01-15 SNB CHF-euro sabit kur şoku (CHFJPY, CHFSGD)
+ve 2011-12-21 USDZAR aşırı volatilite günü.
+
+**Etki taraması** (`scratch_investigate_outliers.py` + hedefli debug
+script'i ile bulundu): CHFJPY/CHFSGD/USDZAR'da (KEPT_SYMBOLS dışı,
+101-sembol evreninde) şüpheli (|R|>15) işlemler bulundu; **KEPT_SYMBOLS
+içinde BTCUSD'de de 5 şüpheli işlem** tespit edildi (GOLD/EURGBP'de
+şüpheli işlem YOK).
+
+**Düzeltme:** `backtest/engine.py`'ye `MAX_GAP_FILL_RISK_MULTIPLE = 3.0`
+sınırı eklendi — dolum fiyatı orijinal entry'den `risk * 3.0`'dan daha
+uzaksa, o dolum geçersiz sayılır (sinyal "dolmadı" olarak işaretlenir,
+sahte bir işlem üretilmez). `pytest tests/test_backtest_engine.py`
+(34/34 geçti) ile doğrulandı; CHFJPY'de en yüksek 5 R değeri
+`[16.77, 17.54, 26.18, 34.02, 413.77]` → `[3.31, 3.35, 3.42, 3.98, 3.98]`
+oldu, şüpheli (|R|>15) işlem sayısı 0'a indi.
+
+**Karar üzerindeki somut etkisi:** OB-crowding derinleştirme analizi
+(tek-pozisyon havuzu A/B/C karşılaştırması) düzeltilmiş motorla yeniden
+koşuldu. GOLD ve EURGBP'de en iyi strateji önerisi DEĞİŞMEDİ (sırasıyla
+"OB'ye ayrı slot ver" ve "mevcut paylaşımlı havuzu koru"). **BTCUSD'de
+öneri TERSİNE DÖNDÜ**: düzeltme öncesi mevcut havuzu korumak (A) en
+iyiydi (-2.21R); düzeltme sonrası mevcut havuz -7.23R'ye düştü (sahte
+pozitif şişirme gitti) ve artık **OB'yi tamamen dışlamak (B, -4.50R)**
+en iyi öneri. Bu, hatanın kozmetik değil karar-değiştirici olduğunun
+kanıtı — BTCUSD canlı bir KEPT_SYMBOL olduğu için önemli.
+
+Ayrıca düzeltilmiş motorla: KEPT_SYMBOLS modül tanı taraması ve
+101-sembol tam evren taraması yeniden koşuldu (bkz.
+`module_diagnostic_full_scan_results.json`,
+`module_diagnostic_full_universe_results.json`; eski ön-düzeltme evren
+sonucu `module_diagnostic_full_universe_results.PREFIX_BACKUP_2026-09-04.json`
+olarak yedeklendi), web panelindeki modül örnek galerisi
+(`webapp/data_module_examples.json`) yeniden üretildi.
+
 ## Klasör yapısı
 
 ```
@@ -121,7 +185,10 @@ trade-bot/
 │   ├── forward.py / forward_store.py / forward_drift.py
 │   └── mt5_shadow.py / run_shadow.py
 ├── mql5/                     # MT5 EA (canlı/otomatik icra) — derleniyor, gerçek emir gönderiyor
-│   └── TradeBot_NOA.mq5
+│   ├── TradeBot_NOA_Recal.mq5   # GÜNCEL (2026-09-03) -- FVG+iFVG+OB+Trendline, KEPT_SYMBOLS
+│   │                              (GOLD/BTCUSD/EURGBP), breakeven-stop, tek dosya çoklu-sembol
+│   ├── TradeBot_NOA.mq5           # DEPRECATED -- 28 Ağustos bulgusundan önce, eski A+/trend mantığı
+│   └── TradeBot_NOA_MultiSymbol.mq5  # DEPRECATED -- aynı eski mantık, çoklu-sembol iskeleti
 ├── research/v2/               # V2: çok-zaman-dilimli (M30→M15→M5→M3) thesis/discovery araştırma hattı
 │   ├── core/                  # ParentThesis lifecycle & provenance
 │   ├── data/                  # gerçek MT5 veri edinimi, hizalama, denetim
@@ -139,29 +206,46 @@ trade-bot/
 tarafından kullanılıyor — mantık bir kere yazılır, iki yerde de aynı
 sonucu verir.
 
-## Durum (güncel)
+## Durum (güncel, 2026-09-04)
 
 İki paralel katman var:
 
-**V1 — kural tabanlı strateji, execution-ready.**
-FVG + Order Block + Destek/Direnç confluence sinyalleri üretiliyor,
-backtest motoru chronological train/val/holdout split + walk-forward +
-block-bootstrap güven aralığı ile disiplinli şekilde doğrulanıyor.
-`mql5/TradeBot_NOA.mq5` gerçek emir gönderiyor (risk bazlı lot
-hesaplama, max lot güvenlik kepi) ve hatasız derleniyor. Final holdout
-sonucu güçlü ama örneklem küçük (19 trade) — geniş çaplı forward/demo
-doğrulaması henüz tamamlanmadı.
+**V1 — kural tabanlı strateji (FVG+iFVG+OB+Trendline), execution-ready,
+kapsam GOLD/BTCUSD/EURGBP'ye daraltılmış.**
+`strategy/config.py:KEPT_SYMBOLS = (GOLD, BTCUSD, EURGBP)` — eski
+Round 1-3'teki 101 sembollük/10 sembollük geniş kapsam terk edildi
+(bkz. yukarıdaki "2026-09-02/03" güncellemesi). Dört modül bağımsız
+sinyal üretiyor (A+ confluence ve trend/EMA filtresi ablation'da fayda
+göstermediği için kaldırıldı), her modülün kendi R-katı/SL tamponu/
+breakeven-stop eşiği var, hepsi holdout'ta doğrulandı.
+
+`mql5/TradeBot_NOA_Recal.mq5` -- GÜNCEL EA, `TradeBot_NOA.mq5` ve
+`TradeBot_NOA_MultiSymbol.mq5`'in (ikisi de DEPRECATED, 28 Ağustos
+bulgusundan önceki eski mantığı taşıyor) yerine geçti. Tek dosyada
+3 sembolü birden işliyor, tick-bazlı dokunuş-izleme + market emriyle
+çalışıyor (gerçek bekleyen limit emri yok). 2026-09-04'te gerçek MT5
+Strategy Tester'da (GOLD, 2022-2026) koşuldu: **663 gerçek işlem, 4
+modülün ve 3 sembolün hepsi tetiklendi, breakeven-stop doğrulanmış
+şekilde çalıştı**; bu koşuda bulunan 2 gerçek hata (sinyal SL'i
+geçmişken hâlâ denenmesi → broker reddi; kapalı piyasada breakeven
+retry-spam'i) düzeltildi, temiz derleniyor. **Eksik kalan tek adım:**
+Python kaynak-doğrusuyla (`strategy/signal_engine.py`) tam otomatik
+sinyal-listesi paritesi -- `scratch_dump_signals_for_ea_parity.py` +
+`scratch_compare_ea_parity.py` hazır, `LogSignalsOnly=true` ile bir
+Strategy Tester koşusu daha gerekiyor (bkz. "Sıradaki adım").
 
 **V2 — çok-zaman-dilimli araştırma hattı, geliştirme aşamasında.**
 Immutable thesis lifecycle, leakage-safe feature engineering, causal
 liquidity/OB/FVG kalite skorları ve counterfactual entry refinement
 içeren kurumsal seviyede bir araştırma altyapısı kuruldu. Gerçek
 2 milyon satırlık XAUUSD M1 verisi mevcut (2021–2026), ama discovery
-koşusu şu ana kadar sadece küçük bir smoke-test fixture'ında çalıştı —
-tam TRAIN/VALIDATION/TEST partition'larında henüz koşulmadı, bu yüzden
-V2'den henüz kanıtlanmış bir strateji sonucu yok.
+koşusu şu ana kadar sadece küçük bir smoke-test fixture'ında ve bir
+"ENGINEERING_SMOKE_ONLY" chunked coverage koşusunda çalıştı — tam
+TRAIN/VALIDATION/TEST partition'larında GERÇEK strateji skorlaması
+(win-rate/expectancy) henüz koşulmadı, bu yüzden V2'den henüz
+kanıtlanmış bir strateji sonucu yok.
 
-## Çoklu-sembol genelleme testi
+## Çoklu-sembol genelleme testi (TARİHSEL — kapsam artık 3 sembolle sınırlı)
 
 `research/v2/data/run_multi_symbol_acquisition.py` ile gerçek MT5 M1
 verisi toplanıyor; `backtest/run_multi_symbol_validation.py` ile V1
@@ -169,48 +253,33 @@ stratejisi her sembolde kendi train/val/test bölünmesiyle test
 ediliyor (sonuçlar `backtest/results/V2_MULTI_*_validation.json`,
 özet `backtest/results/V2_MULTI_validation_summary.json`).
 
-**Round 1–2 (32 sembol, major FX + BTCUSD/WTI/Nasdaq/Silver):** 11
-sembol %95 block-bootstrap güven aralığı sıfırı kapsamıyor —
-istatistiksel olarak sağlam pozitif. USDCHF hariç tüm CHF çaprazları
-başarısız (muhtemelen GOLD'a göre kalibre ATR eşiklerinin CHF'nin
-düşük volatilitesine uymaması).
-
-**Round 3 (maksimum genişlik, 101 sembol, veri derinliği 2010'a
-kadar):** major/exotic FX çaprazları, 23 global endeks (US30, GER40,
-JP225, HK50, UK100 vb.), metal/enerji (PLATINUM, PALLADIUM, BRENT) ve
-15 büyük kripto para eklendi. Sonuç: **54/101 sembol validated** (17
-STRONG + 37 MODERATE), 47 generalize olamadı. Öne çıkan bulgu: STRONG
-sınıfının 11/17'si global endeks (CA60, GER40, IT40, US30, CHINAH,
-NETH25, FRA40, HK50, JP225, EU50, US500) — strateji FX'ten çok endeks
-piyasalarında güçlü genelleme gösteriyor. (İstisna: USFANG "STRONG"
-etiketli ama sadece 1 trade/pf=inf — örneklem gürültüsü, kanıt olarak
-sayılmamalı.) Şu an canlı EA'da olan 10 sembolün (GOLD, GBPJPY,
-GBPUSD, GBPAUD, EURAUD, BTCUSD, SILVER, EURJPY, EURNZD, USDCHF)
-tamamı Round 3'te de validated çıktı — regresyon yok.
-
-`mql5/TradeBot_NOA_MultiSymbol.mq5` bu 9 sağlam sembol (Round 1-2) +
-GOLD'u tek EA instance'ında (OnTimer tabanlı, sembol başına ayrı
-ATR/EMA handle, portföy risk tavanlı) işlem yapacak şekilde genişletir.
-Strateji mantığı `TradeBot_NOA.mq5` (tek sembol, kanıtlanmış GOLD
-versiyonu) ile birebir aynı — o dosyaya dokunulmadı, ayrı ve kanıtlanmış
-haliyle duruyor. Derlendi (0 hata), demo hesapta forward-test'te
-(bkz. `backtest/ea_monitor.py`).
-
-**EA'ya eklenmeye aday, Round 3'te STRONG çıkan yeni semboller**
-(henüz canlıda değil): USDJPY, BRENT + endeks grubu (CA60, GER40,
-IT40, US30, CHINAH, NETH25, FRA40, HK50, JP225, EU50, US500). Karar
-verilmedi — endekslerin işlem saatleri/swap/margin rejimi FX'ten
-farklı, EA'nın portföy risk mantığının bunlara uyarlanması gerekip
-gerekmediği ayrıca değerlendirilmeli.
+**Round 1–2 (32 sembol) ve Round 3 (101 sembol, 54/101 validated)**
+sonuçları hâlâ `backtest/results/` altında duruyor ama **bu sonuçlar
+eski (28 Ağustos'tan önceki, buggy sinyal üretimiyle hesaplanmış)
+metodolojiyle üretildi ve artık güvenilir değil** (bkz. dosyanın en
+üstündeki KRİTİK bölüm). Kullanıcı kararıyla kapsam zaten 3 sembole
+daraltıldığı için (bkz. "Durum") bu geniş-kapsam sonuçların yeniden
+üretilmesi planlanmıyor -- sadece tarihsel referans olarak kalıyor.
 
 ## Sıradaki adım
 
-1. Demo hesaptaki forward-test'i sürdürmek ve `ea_monitor.py` ile
-   izlemeye devam etmek — örneklem büyütmenin tek yolu bu.
-2. Round 3'te STRONG çıkan endeks/USDJPY/BRENT'in
-   `TradeBot_NOA_MultiSymbol.mq5`'e eklenip eklenmeyeceğine karar
-   vermek (işlem saati/margin/swap farklarını değerlendirdikten sonra).
-3. V2 discovery koşusunu gerçek veride (smoke fixture değil) TRAIN
+1. **`TradeBot_NOA_Recal.mq5` ile `LogSignalsOnly=true` Strategy
+   Tester koşusu (GOLD/BTCUSD/EURGBP)** -- `.set` dosyası hazır
+   (`MQL5/Profiles/Tester/NOA_Recal_GOLD.set`), `scratch_compare_ea_
+   parity.py` ile Python'un ürettiği sinyal listesiyle (`results/
+   ea_parity/*.json`) tam otomatik diff alınacak. Tam eşleşmeden
+   demoya alınmamalı.
+2. Demo hesapta `TradeBot_NOA_Recal.mq5`'i (parite doğrulaması
+   bittikten sonra) çalıştırmaya başlamak ve örneklem biriktirmek --
+   `ea_monitor.py` ile izleme altyapısı zaten var.
+3. H1 zaman diliminin devre dışı bırakılıp bırakılmayacağı kararı
+   ERTELENMİŞ durumda (bkz. `NOA_KONSEPTI_KAYNAK_ANALIZI.md`, en son
+   bölüm) -- 3 sembollük küçük holdout örnekleminde tutarsız çıktı
+   (2/3 kötüleşti, GOLD'un kendi holdout'u tersini gösterdi). Daha
+   büyük örneklem (KEPT_SYMBOLS'ün TÜM geçmişi, tek seferlik %20
+   holdout yerine walk-forward/genişleyen pencere) olmadan karar
+   verilmeyecek.
+4. V2 discovery koşusunu gerçek veride (smoke fixture değil) TRAIN
    partition'ında çalıştırmak. RAM/süre sorunu chunked engineering-
    coverage koşusuyla (`research/v2/engine/run_v2_train_chunked.py`)
    aşıldı (1.003M mum, 51 chunk, tam TRAIN, ~95dk) ama bu sadece

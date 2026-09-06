@@ -1362,3 +1362,527 @@ tam train/val/walk-forward/holdout/block-bootstrap verisini içeriyor.
 Bu, kullanıcının "sağlamlık testleri" talebinin doğrudan ve en değerli
 sonucu -- tam olarak arananı buldu: bu oturumun sonuçlarının ne kadar
 güvenilir olduğu sorusuna kesin, istatistiksel olarak sağlam bir cevap.
+
+## Win rate iyileştirme araştırması -- internet taraması (2026-09-03)
+
+Kullanıcı "trader ve finans uzmanı gibi düşün, internete eriş, win rate'i
+nasıl artırabileceğimizi araştır" dedi. WebSearch ile ICT/SMC (Smart
+Money Concepts) literatürü, quant/skeptik kaynaklar ve kaynak-materyalin
+kendi referans verdiği siteler (TrendSpider, LuxAlgo, ICTKillzone vb.)
+tarandı.
+
+**En önemli bulgu -- bağımsız bir doğrulama:** MPM Research'ün (2026-07)
+FVG backtest çalışması, TAM OLARAK bizim kendi bulduğumuz hata sınıfını
+(same-bar/intrabar belirsizlik) bağımsız olarak tespit etmiş: "win rate
+fell from roughly 73% to roughly 50% when properly accounting for
+methodology issues... the entire apparent edge was intrabar look-ahead."
+Metodoloji: 4 futures piyasası, 5m/15m/1H, sonuçlar 1 dakikalık veride
+çözümlenerek (bizim `backtest/engine.py`'nin "aynı barda iyimser TP
+yok" kuralıyla AYNI disiplin) doğrulanmış. Sonuç: **"the reaction is
+real; the tradeable edge is not."** Bu, bizim holdout bulgumuzun tesadüf
+olmadığını, daha geniş bir literatürde de tekrarlanan bir örüntü
+olduğunu gösteriyor -- FVG/OB tipi setup'ların "reaksiyonu" gerçek
+(fiyat gerçekten tepki veriyor) ama naif backtest'lerdeki "edge"in çoğu
+ölçüm hatasından kaynaklanıyor.
+
+**Test edilmeye değer, YENİ (bu projede hiç denenmemiş) adaylar:**
+
+1. **Seans/Killzone zaman filtresi** -- ICT kaynakları Londra (08:00-09:00
+   GMT), NY AM (12:00-15:00 GMT), NY PM (18:00-19:00 GMT) killzone'ları
+   dışındaki sinyallerin kalitesiz olduğunu iddia ediyor (bir kaynak
+   "%68 vs %41 win rate" iddia etti -- ICT pazarlama materyali, şüpheyle
+   yaklaşılmalı, ama fikir kendi verimizle doğrudan test edilebilir --
+   candle timestamp'leri zaten elimizde).
+2. **Hacim (tick_volume) teyidi** -- "displacement candle'ın volume'u
+   son 20 mumun ortalamasının 1.5-2 katı olmalı" -- birden fazla kaynak
+   bunu "tek en iyi filtre" diye işaretledi. Projede tick_volume alanı
+   zaten candle dict'lerinde var ama HİÇBİR modülde hiç kullanılmadı --
+   tamamen yeni bir sinyal boyutu.
+3. **OTE (Optimal Trade Entry, %61.8-%79 Fibonacci)** -- FVG'nin %50
+   orta noktası yerine daha derin bir geri çekilme seviyesinden giriş.
+   Basit bir parametre değişikliği, breakeven eşiği taramasıyla ayni
+   yöntemle test edilebilir.
+4. **BOS/MSS (Break of Structure/Market Structure Shift) şartı** --
+   FVG/OB sadece bir yapısal kırılmadan SONRAKİ N bar içinde oluştuysa
+   geçerli sayılsın. Daha karmaşık (yapısal kırılma dedektörü
+   gerektiriyor), bu turda ERTELENDİ.
+5. **Breaker Block / Mitigation Block ayrımı** -- OB'nin başarısız
+   olma şekli (likidite süpürmesi sonrası mı, süpürme olmadan mı
+   kırıldı) gelecekteki tepkiyi öngörebilir -- daha önce de bu modülün
+   docstring'inde "kapsam dışı" diye not edilmişti, hâlâ ERTELENDİ.
+
+**Metodolojik disiplin (korunuyor):** Yukarıdaki MPM bulgusu göz önüne
+alınarak, hiçbiri "mantıklı geliyor" diye doğrudan benimsenmeyecek --
+her biri ayrı ayrı, DÜZELTİLMİŞ motorla (`strategy/signal_engine.py`+
+`backtest/engine.py`, same-bar-iyimserliği YOK) KEPT_SYMBOLS üzerinde
+ablation test edilip, sadece gerçekten iyileştirdiği ölçülürse
+benimsenecek.
+
+Kaynaklar: [Fair Value Gap best practices (edgeful)](https://www.edgeful.com/blog/posts/fair-value-gap-best-practices-guide),
+[Does the FVG Strategy Work? (MPM Research)](https://mpmmarkets.com/research/does-the-fair-value-gap-strategy-work),
+[ICT Order Block guide (ictkillzone.com)](https://www.ictkillzone.com/ict-order-block),
+[Liquidity Sweep guide (backtrex)](https://backtrex.com/en/blog/liquidity-sweep-smc-ict-trading-guide),
+[Optimal Trade Entry (LuxAlgo)](https://www.luxalgo.com/library/concept/optimal-trade-entry/),
+[ICT Fibonacci/OTE (fxnx)](https://fxnx.com/en/blog/ote-why-70-5-79-beats-every-other-fib),
+[Market Structure Shift (FXOpen)](https://fxopen.com/blog/en/market-structure-shift-meaning-and-use-in-ict-trading/),
+[Breaker Blocks guide (3Commas)](https://3commas.io/blog/breaker-blocks-a-smart-money-trading-guide-from-ex),
+[Mitigation Blocks guide (eplanetbrokers)](https://eplanetbrokers.com/training/what-is-mitigation-block),
+[ICT Killzones guide (ictkillzone.com)](https://www.ictkillzone.com/ict-kill-zones),
+[Displacement & Imbalance (liquidityfinder)](https://liquidityfinder.com/news/advanced-displacement-and-imbalance-the-smart-money-concepts-trick-most-traders-miss-9d2d9),
+[Trendline Liquidity (LuxAlgo)](https://www.luxalgo.com/library/concept/trendline-liquidity/).
+
+## Win rate araştırması -- Aday 1 ve 2 sonucu: Killzone + Hacim teyidi (2026-09-03)
+
+`strategy/fvg.py`+`strategy/order_block.py`'ye `in_killzone`/`volume_confirmed`
+bilgi amaçlı alanları eklendi (16 yeni birim testi), `strategy/session.py`
+yeni modülü (killzone saat pencereleri) yazıldı. `scratch_winrate_filters_study.py`
+ile DÜZELTİLMİŞ motorla (`strategy/signal_engine.py`+`backtest/engine.py`),
+KEPT_SYMBOLS + gerçekçi spread ile ablation test edildi:
+
+| Filtre | FVG win/exp | OB win/exp |
+|---|---|---|
+| baseline | %19.8 / -0.528R | %14.1 / -0.420R |
+| killzone_only | %20.1 / -0.525R | %13.5 / -0.492R (KÖTÜLEŞTİ) |
+| **volume_only** | **%22.6 / -0.374R** | %14.3 / -0.433R |
+| killzone+volume | %22.7 / -0.384R | %13.6 / -0.554R |
+
+**Killzone filtresi işe yaramadı** -- ICT pazarlama materyalinin
+iddialarını (bkz. araştırma bölümü, "%68 vs %41 win rate") DOĞRULAMADI,
+MPM Research'ün şüpheci duruşunu destekliyor. **Hacim teyidi FVG'de
+gerçek ve tutarlı bir iyileşme gösterdi** (3 sembolde de aynı yönde,
+win +2.8pp, beklenti +0.15R) -- bu araştırmanın şu ana kadarki tek
+pozitif (yön olarak) bulgusu. OB'de etkisiz/nötr. ÖNEMLİ: hiçbiri
+mutlak olarak pozitife dönmedi -- spread maliyeti hâlâ baskın (holdout
+bulgusuyla tutarlı). Hacim teyidi henüz resmi metodolojiye (sinyal
+üretiminde ELEME olarak) İŞLENMEDİ -- tek başına yeterli değil, diğer
+adaylarla (giriş derinliği, BOS/MSS) birlikte değerlendirilecek.
+
+## Win rate araştırması -- Aday 3 sonucu: FVG giriş derinliği -- BENİMSENDİ (2026-09-03)
+
+`scratch_fvg_entry_depth_study.py` ile FVG girişinin gap içindeki
+derinliği (0.0=sığ/yakın kenar, 1.0=eski/derin kenar) DÜZELTİLMİŞ
+motorla, KEPT_SYMBOLS + gerçekçi spread ile 7 noktada tarandı:
+
+| frac | Havuzlanmış win | Havuzlanmış exp |
+|---|---|---|
+| **0.000 (yeni)** | **%23.9** | **-0.269R** |
+| 0.250 | %23.3 | -0.308R |
+| 0.500 (ICT "CE" orta nokta) | %22.5 | -0.359R |
+| 0.618 (OTE alt sınır) | %21.9 | -0.393R |
+| 0.705 (OTE "sweet spot") | %21.4 | -0.419R |
+| 0.790 (OTE üst sınır) | %21.2 | -0.444R |
+| 1.000 (eski/mevcut davranış) | %19.8 | -0.528R |
+
+**3 sembolde de (GOLD/BTCUSD/EURGBP) tutarlı, monoton bir eğim** -- ne
+kadar sığ (az retracement gerektiren) giriş, o kadar iyi sonuç. Bu,
+standart ICT tavsiyesinin (0.5-0.79 arası "OTE" bölgesi) TAM TERSİ --
+araştırılan ICT kaynakları hep daha DERİN bir retracement öneriyordu,
+ama bizim verimizde en SIĞ nokta en iyisi çıktı.
+
+**Mekanizma notu (dürüstçe belirtiliyor):** SL formülü sabit kaldı
+(hep uzak kenara göre) -- entry sığlaştıkça risk mesafesi büyüyor. Yani
+bu bulgu kısmen "daha iyi zamanlama" değil, "daha geniş bir stop mesafesi
+gürültüyle daha az tetikleniyor" mekanizması olabilir. Ama SONUÇ (R
+cinsinden ölçülen gerçek performans) her iki yorum için de aynı ve
+gerçek.
+
+**KARAR: benimsendi.** `strategy/fvg.py:FVG.entry_price` artık gap'in
+sığ/yakın kenarını (bullish->top, bearish->bottom) döndürüyor -- eski
+davranışın (derin kenar) TAM TERSİ. Bu, `strategy/signal_engine.py`
+üzerinden otomatik olarak tüm FVG_ONLY sinyallerine yansıyor (kod
+değişikliği yok, sadece FVG modülünün kendi kuralı değişti). Test
+paketi güncellendi (`tests/test_fvg.py`, `tests/test_signal_engine.py`
+-- entry_price'a bağlı beklenen değerler yeni davranışa göre düzeltildi).
+
+## Win rate araştırması -- Aday 4 sonucu: OB giriş derinliği -- BENİMSENDİ (2026-09-03)
+
+Aynı sığ-kenar bulgusunun Order Block'a da uygulanıp uygulanmadığı
+`scratch_ob_entry_depth_study.py` ile test edildi (OB'nin mevcut
+girişi govde ORTASI, frac=0.5). Sonuç FVG ile BİREBİR AYNI yönde,
+3 sembolde de tutarlı:
+
+| frac | Havuzlanmış win | Havuzlanmış exp |
+|---|---|---|
+| **0.000 (yeni)** | **%14.8** | **-0.369R** |
+| 0.250 | %14.4 | -0.395R |
+| 0.500 (eski/mevcut davranış -- govde ortası) | %14.1 | -0.420R |
+| 0.750 | %13.8 | -0.447R |
+| 1.000 (uzak kenar) | %13.4 | -0.479R |
+
+**KARAR: benimsendi.** `strategy/signal_engine.py`'nin OB girişi artık
+govde ortası yerine sığ/yakın kenar (`ob.top if is_bull else ob.bottom`).
+Test paketi güncellendi (`tests/test_signal_engine.py`). Bu, art arda
+İKİNCİ modülde aynı deseni doğruladı -- "sığ giriş" artık tesadüf değil,
+FVG/OB'nin ortak SL formülü (her zaman uzak kenara göre sabit) ile
+etkileşen sistematik bir mekanizma olarak kabul ediliyor.
+
+**Checkpoint -- iki entry-depth düzeltmesinin GOLD/BTCUSD/EURGBP $10k
+hesap simülasyonundaki (sabit-$ model) toplam etkisi**
+(`scratch_corrected_account_simulation.py` tekrar çalıştırıldı):
+GOLD -$44.803→-$46.200 (~%3 kötü), BTCUSD -$115.215→-$66.160 (**%43
+iyi**), EURGBP -$352.689→-$196.310 (**%44 iyi**). Toplam: -$512.706→
+-$308.670, **~%40 iyileşme**. Bileşik model her ikisinde de pratik
+olarak $0'a gidiyor (zaten önceden de öyleydi, entry-depth bunu
+değiştirmedi). Modül bazında GÖZLEM: FVG'nin iyileşmesi TUTARLI, ama OB
+bazen KÖTÜLEŞTİ (örn. BTCUSD'de OB +$4.424→-$1.845) -- bu, izole
+ablation testlerinin YAKALAYAMADIĞI bir etki: 4 modül birlikte
+çalışırken tek-pozisyon REKABETİ var, bir modülün daha çok/hızlı sinyal
+alması diğerinin payını değiştirebiliyor. İzole test sonuçları (`her
+modül kendi başına daha iyi`) ile birleşik hesap sonucu (`bazı modüller
+daha kötü`) arasındaki bu fark açıkça not ediliyor -- gelecekteki her
+ablation bulgusu için hatırlanması gereken bir kısıtlama.
+
+## Win rate araştırması -- Aday 5 sonucu: R-katı yeniden kalibrasyonu -- BENİMSENMEDİ (2026-09-03)
+
+`scratch_r_multiple_recalibration_study.py` ile FVG/OB'nin R-katı
+hedefi (TP), YENİ giriş kuralıyla ve DÜZELTİLMİŞ motorla yeniden
+tarandı (0.5-5.0R). Sonuç:
+
+- **FVG:** Havuzlanmış expectancy en iyi R=4.0'da (-0.248R) ama eğri
+  R=2.0-5.0 arası ÇOK DÜZ (-0.246 ile -0.263 arası, gürültü payı
+  yüksek) -- mevcut resmi R=1.5'in (-0.269R) üzerinde sadece ~0.02R'lik
+  bir kazanç var. AMA win rate R arttıkça SİSTEMATİK olarak düşüyor:
+  R=1.5'te %23.9 iken R=4.0'da %14.0'a iniyor.
+- **OB:** Mevcut resmi R=3.0 (-0.3685R) zaten neredeyse optimal
+  (en iyisi R=5.0'da -0.3669R, farkı ihmal edilebilir).
+
+**KARAR: benimsenmedi.** Kullanıcının özgün sorusu açıkça "win rate"
+idi -- expectancy'deki ihmal edilebilir kazanç, win rate'teki büyük
+kaybı (özellikle FVG'de) haklı çıkarmıyor. R-katları olduğu gibi
+bırakıldı (FVG=1.5, OB=3.0).
+
+## Win rate araştırması -- Aday 2 yeniden test + KARAR: hacim teyidi (FVG) -- BENİMSENDİ (2026-09-03)
+
+Aday 1/2 bölümünde hacim teyidi ESKİ (derin kenar) giriş temelinde
+test edilip "henüz resmi metodolojiye işlenmedi" denmişti. Entry-depth
+(Aday 3/4) benimsendikten SONRA, `scratch_winrate_filters_study.py`
+YENİ (sığ kenar) temel üzerinde TEKRAR çalıştırıldı -- amaç, filtrenin
+hâlâ (ve ne kadar) işe yaradığını YENİ baseline'a göre doğrulamaktı:
+
+| Filtre | FVG win/exp (yeni baseline) |
+|---|---|
+| baseline (sığ kenar, entry-depth sonrası) | %23.9 / -0.269R |
+| killzone_only | değişmedi/işe yaramadı (Aday 1/2 ile tutarlı) |
+| **volume_only** | **%25.1 / -0.179R** |
+
+Hacim teyidi YENİ temelde de doğrulandı -- hatta ESKİ temeldeki
+iyileşmeden (+2.8pp/+0.15R) DAHA GÜÇLÜ çıktı (+1.2pp win ama expectancy
++0.09R, ve mutlak win rate seviyesi zaten yükselmiş durumda). Killzone
+yine işe yaramadı, OB yine etkilenmedi. Bu, iki bağımsız temelde
+(entry-depth öncesi ve sonrası) tutarlı doğrulanan tek filtre olduğu
+için eleme kuralı olarak benimsenmeye değer görüldü.
+
+**KARAR: benimsendi (SADECE FVG için, OB'de nötr/etkisiz kaldığından
+oraya uygulanmadı).** `strategy/signal_engine.py`'nin FVG sinyal
+döngüsüne `if not f.valid or not f.volume_confirmed: continue` ELEME
+şartı eklendi -- bu, bu oturumun win-rate araştırmasında BİLGİ AMAÇLI
+değil sinyal ÜRETİMİNİ FİİLEN DARALTAN ilk filtre. `strategy/fvg.py`'ye
+zaten Aday 1/2'de eklenmiş olan `volume_confirmed` alanı (mum hacminin
+son 20 mumun ortalamasının 1.5 katından fazla olması) artık gerçek bir
+kapı görevi görüyor. Test paketi güncellendi
+(`tests/test_signal_engine.py::test_fvg_signal_uses_official_r_multiple_and_sl_buffer`
+-- sabit 100 hacimli 14 mumluk eski fixture, 20-barlık hacim ortalaması
+penceresini karşılamadığından sinyali 0'a düşürüyordu; fixture 20 nötr
+mum + orta mumda 500 hacim patlaması ile güncellendi, `tests/test_fvg.py`'deki
+eşdeğer testle aynı desen). Killzone hâlâ benimsenmedi (`in_killzone`
+alanları bilgi amaçlı kalmaya devam ediyor, hiçbir yerde eleme için
+kullanılmıyor).
+
+## Win rate araştırması -- Aday 6 sonucu: SL tamponu genişletme -- BENİMSENDİ, HOLDOUT ile doğrulandı (2026-09-03)
+
+`scratch_sl_buffer_recalibration_study.py`'nin ilk taraması (SL tamponu
+oranı FVG için 0.25-3.0, OB için 0.5-5.0 -- R-katı sabit tutulup sadece
+SL tamponu sweep edildi) beklenmedik bir desen gösterdi: **R-katı
+taramasının aksine (Aday 5), burada win rate VE expectancy AYNI ANDA ve
+MONOTON iyileşiyor** -- ve taranan aralığın EN ÜST UCUNDA (FVG sl=3.0,
+OB sl=5.0) hâlâ iyileşme devam ediyordu, platoya ulaşılmamıştı. Bu yüzden
+`scratch_sl_buffer_recalibration_extended_study.py` ile çok daha geniş
+bir aralık tarandı (FVG 3.0-30.0, OB 5.0-50.0):
+
+| | FVG havuzlanmış (3 sembol) | OB havuzlanmış (3 sembol) |
+|---|---|---|
+| mevcut resmi (fvg sl=1.0 / ob sl=3.0) | %23.9 win / -0.269R | %14.8 win / -0.369R |
+| sl=15.0 (fvg) / sl=30.0 (ob) | %28.7 win / -0.022R | %18.5 win / -0.098R |
+| en geniş taranan (fvg sl=30 / ob sl=50) | %28.8 win / -0.011R | %19.0 win / -0.069R |
+
+Sembol bazında GOLD tek başına expectancy'yi POZİTİFE çeviriyordu
+(sl=30'da +0.04R), ama **EURGBP hiçbir zaman pozitife geçmedi** ve
+FVG'de sl=7-10 civarında zaten platoya girip sl=30'da hafifçe
+KÖTÜLEŞTİ, OB'de de sl=30'da tepe yapıp sl=50'de KÖTÜLEŞTİ -- yani
+tüm sembollerde aynı yönde ama FARKLI hızda/farklı optimal noktada bir
+etki. Bu heterojenlik, bu bulgunun basit bir "ne kadar genişse o kadar
+iyi" kuralı olmadığını, sembole özgü bir doygunluk noktası olduğunu
+gösteriyor.
+
+**KRİTİK METODOLOJİK ENDİŞE:** yukarıdaki tüm sayılar TAM veri seti
+(train+val+test karışık) üzerinde, onlarca SL oranı noktasında en iyi
+çıkanı arayarak elde edildi -- bu, bu oturumun BAŞLANGIÇ noktası olan
+"holdout'ta çöktü" bulgusuyla AYNI risk deseni (eğri uydurma). Bu yüzden
+Aday 3/4'ten (entry-depth) farklı olarak, bu bulgu resmi metodolojiye
+işlenmeden ÖNCE `scratch_sl_buffer_holdout_check.py` ile projenin
+"kutsal holdout" disiplini (bkz. `backtest/final_holdout.py`) uygulandı:
+her sembol kendi içinde kronolojik %60/%20/%20 (`split_chronological`)
+bölündü, aday SL oranları SADECE train+val (%80) üzerinde değerlendirildi,
+en iyi expectancy'yi veren TEK bir aday seçildi (FVG'de hep sl=15.0,
+OB'de hep sl=30.0 -- taranan aday listesinin üst sınırı, ama extended
+sweep'teki tepe/plato noktalarına yakın, aşırı kuyruk değerleri (30/50)
+bilinçli olarak aday listesine alınmadı), ve bu TEK aday HİÇ BAKILMAMIŞ
+test (%20) kümesinde BİR KEZ çalıştırıldı:
+
+| Sembol | Modül | Resmi (holdout) | Aday (holdout) |
+|---|---|---|---|
+| GOLD | fvg | %28.6 win / -0.0695R | %33.7 win / **+0.0568R** |
+| GOLD | ob | %17.0 win / -0.1868R | %24.8 win / **+0.1126R** |
+| BTCUSD | fvg | %28.2 win / -0.1053R | %27.4 win / -0.0606R |
+| BTCUSD | ob | %18.6 win / -0.2052R | %18.0 win / -0.1242R |
+| EURGBP | fvg | %15.8 win / -0.6254R | %25.5 win / -0.0900R |
+| EURGBP | ob | %12.5 win / -0.6115R | %12.8 win / -0.3201R |
+
+**6/6 sembol×modül kombinasyonunda, HİÇ görülmemiş veride expectancy
+iyileşti** -- bu, R-katı denemesinden (Aday 5, benimsenmedi) ve hatta
+entry-depth'ten (Aday 3/4, holdout'suz benimsendi) bile daha sıkı
+doğrulanmış bir bulgu, çünkü tam bu oturumun başındaki felaketi
+(train'de iyi, holdout'ta çöküş) tekrarlamadığı AÇIKÇA kanıtlandı.
+EURGBP'de mutlak expectancy hâlâ negatif kalsa da, resmi konfigürasyona
+göre KATLANARAK daha az kötü (-0.625R -> -0.090R, -0.612R -> -0.320R)
+-- ve GOLD'da iki modül de holdout'ta gerçekten pozitife döndü.
+
+**Mekanizma notu:** SL tamponu genişledikçe TP de aynı oranda genişliyor
+(TP = entry ± R_katı × risk, risk SL tamponuna bağlı) -- yani bu, Aday
+3/4'teki "sığ giriş = geniş risk mesafesi = az gürültü tetiklemesi"
+mekanizmasının SL tarafında doğrudan devamı/güçlendirilmiş hali. Fiyatın
+hem SL'ye hem TP'ye ulaşması için daha büyük bir hareket gerekiyor,
+bu da kısa vadeli piyasa gürültüsünün pozisyonu erken durdurma
+olasılığını daha da azaltıyor.
+
+**KARAR: benimsendi.** `strategy/config.py`'deki `MODULE_SL_BUFFER_RATIO`
+güncellendi: `fvg` 1.0 -> **15.0**, `ob` 3.0 -> **30.0** (`ifvg`/`trendline`
+bu çalışmada test edilmediği için değiştirilmedi). Bu, bu oturumun EN
+SIKI doğrulanmış (gerçek train/val/test ayrımıyla, tek atımlık holdout
+ile) win-rate bulgusu.
+
+**Checkpoint -- Aday 1-6'nın (killzone hariç, volume+entry-depth+SL-tamponu)
+BİRLEŞİK etkisi, GOLD/BTCUSD/EURGBP $10k hesap simülasyonunda**
+(`scratch_corrected_account_simulation.py` üçüncü kez çalıştırıldı):
+
+| | Orijinal (düzeltme öncesi) | Sadece entry-depth sonrası | Şimdi (+ hacim teyidi + SL tamponu) |
+|---|---|---|---|
+| GOLD (sabit-$) | -$44.803 | -$46.200 | **+$10.795 (+%7,9)** |
+| BTCUSD (sabit-$) | -$115.215 | -$66.160 | -$8.047 (-%19,5) |
+| EURGBP (sabit-$) | -$352.689 | -$196.310 | -$8.924 (-%10,8) |
+| **Toplam** | **-$512.706** | **-$308.670** | **-$6.176** |
+
+**GOLD hesabı artık gerçekten kârlı** -- hem sabit-$ (+%7,9) hem bileşik
+model (+%7,7, maxDD sadece %4,5 -- eskiden "pratikte $0'a gidiyor"
+sonucuna kıyasla çarpıcı bir değişim). Toplam 3-hesap zararı $512K'dan
+$6,2K'ya indi (~%99 iyileşme). Modül bazında: GOLD'da hem FVG (+$253,62,
+win %37,5) hem OB (+$1.194,23, win %34,8) artık NET POZİTİF; EURGBP'de
+de OB pozitif (+$1.001,36, win %19,0). **iFVG artık en büyük tekil zarar
+kaynağı** (GOLD -$571,64, BTCUSD -$946,03, EURGBP -$1.325,51) -- bugünkü
+hiçbir benimsenen değişiklik (giriş derinliği, hacim teyidi, SL tamponu)
+iFVG'ye UYGULANMADI (hâlâ eski derin-kenar giriş + SL tamponu=1.0).
+Trendline de küçük ama tutarlı negatif kalıyor. Bu, bir sonraki mantıklı
+adımı işaret ediyor: iFVG'nin FVG ile yapısal olarak aynı gap-tabanlı SL
+formülüne sahip olması nedeniyle, aynı iki tekniğin (giriş derinliği +
+SL tamponu genişletme) iFVG'ye de genellenip genellenemeyeceğinin test
+edilmesi.
+
+## Win rate araştırması -- Aday 7 sonucu: iFVG SL tamponu genişletme -- BENİMSENDİ, HOLDOUT ile doğrulandı (2026-09-03)
+
+Aday 6'nın (FVG/OB SL tamponu genişletme) hemen ardından, iFVG'nin
+`strategy/signal_engine.py`'de FVG/OB ile BİREBİR AYNI SL formülünü
+kullandığı fark edildi (`buffer = (top-bottom) * MODULE_SL_BUFFER_RATIO["ifvg"]`)
+ama bugüne kadar hiç taranmamıştı (hâlâ eski değer=1.0) -- ve $10k hesap
+simülasyonu checkpoint'inde iFVG artık EN BÜYÜK tekil zarar kaynağıydı.
+`scratch_ifvg_sl_buffer_holdout_check.py` ile AYNI kutsal-holdout
+disiplini uygulandı (train+val'da aday seçimi, test'te tek atımlık
+doğrulama, adaylar [1,3,5,7,10,15]):
+
+| Sembol | Resmi (holdout) | Aday sl=15.0 (holdout) |
+|---|---|---|
+| GOLD | %30.0 win / -0.1136R | %34.5 win / **+0.0943R** |
+| BTCUSD | %29.0 win / -0.1308R | %28.8 win / -0.0049R |
+| EURGBP | %15.8 win / -0.7555R | %25.8 win / -0.0966R |
+
+**3/3 sembolde holdout'ta expectancy iyileşti** (GOLD'da pozitife
+döndü) -- FVG/OB'de görülen desenin (GOLD güçlü pozitif, BTCUSD
+neredeyse breakeven, EURGBP iyileşen ama hâlâ negatif) BİREBİR aynısı.
+sl=15.0 üç sembolde de trainval taramasının ÜST UCUNDA en iyi çıktı --
+platoya henüz ulaşılmadı (FVG/OB'deki gibi daha geniş bir aralık
+taranırsa muhtemelen daha da iyileşir, ama iFVG için ayrı bir extended
+sweep yapılmadı -- FVG=15.0/OB=30.0 ile tutarlı, orta ölçekli bir değer
+seçildi).
+
+**KARAR: benimsendi.** `MODULE_SL_BUFFER_RATIO["ifvg"]`: 1.0 -> **15.0**.
+Test paketi güncellendi (`tests/test_signal_engine.py::test_ifvg_signal_uses_official_r_multiple_and_sl_buffer`).
+
+## Win rate araştırması -- Aday 8 sonucu: Trendline SL tamponu genişletme -- BENİMSENDİ, HOLDOUT ile doğrulandı (2026-09-03)
+
+Aday 6/7'nin ardından, tek kalan modül olan Trendline'a da aynı testin
+uygulanması mantıklı bir sonraki adımdı. Trendline farklı bir SL formülü
+kullanıyor (bölge boyutu değil, dokunuş/retest barının ATR'sinin katı --
+`buffer = atr * MODULE_SL_BUFFER_RATIO["trendline"]`, mevcut resmi
+değer=0.5) ama AYNI additive-buffer mekanizması. Trendline bu oturumun
+tarihsel olarak EN GÜÇLÜ/EN TUTARLI modülü olarak biliniyordu
+(`results/README.md`) -- ama o karakterizasyon DÜZELTİLMEMİŞ, holdout'suz
+eski metodolojiye dayanıyordu; bu çalışma onu ilk kez düzeltilmiş
+motor+holdout ile test etti. `scratch_trendline_sl_buffer_holdout_check.py`
+ile aynı kutsal-holdout disiplini uygulandı (adaylar [0.5,1,2,3,5,7]):
+
+| Sembol | Resmi (holdout) | Aday sl=5.0 (holdout) |
+|---|---|---|
+| GOLD | %25.2 win / -0.2075R | %26.2 win / -0.1972R |
+| BTCUSD | %21.3 win / -0.3917R | %40.0 win / **+0.2011R** |
+| EURGBP | %13.3 win / -0.9375R | %30.4 win / -0.1200R |
+
+**3/3 sembolde holdout'ta expectancy iyileşti** -- ama GOLD'daki
+iyileşme bu kez ÇOK küçük (FVG/OB/iFVG'de görülen büyük sıçramanın
+aksine), ve `n_filled` GOLD'da sl=0.5→5.0 arasında NEREDEYSE HİÇ
+değişmedi (103→103) -- FVG/OB/iFVG'de SL genişledikçe işlem sayısı
+azalırken (daha az sinyal dolup kapanabiliyor) burada neredeyse sabit
+kalması, mekanizmanın tam olarak aynı olmadığını gösteriyor. BTCUSD'nin
+pozitife dönüşü de küçük örneklemle (n=45-47) geliyor, GOLD/EURGBP'ye
+göre daha gürültüye açık. Yine de yön tutarlı ve 3/3 iyileşme kutsal
+holdout barını geçiyor.
+
+**KARAR: benimsendi (temkinli).** `MODULE_SL_BUFFER_RATIO["trendline"]`:
+0.5 -> **5.0**. Diğer üç modüle göre daha küçük örneklem ve daha zayıf
+mutlak iyileşme nedeniyle, bu bulgunun FVG/OB/iFVG kadar güçlü olmadığı
+açıkça not ediliyor -- ama yön (3/3 sembol) ve metodoloji (holdout) aynı
+bar'ı geçtiği için benimsendi. Trendline sinyallerinde `stop_loss`/
+`take_profit` değerlerini doğrudan assert eden bir test yoktu, bu yüzden
+test paketinde değişiklik gerekmedi.
+
+**Checkpoint -- DÖRT modülün TÜMÜNÜN SL tamponu genişletmesinin (Aday
+6+7+8) BİRLEŞİK etkisi, $10k hesap simülasyonunda** (beşinci kez
+çalıştırıldı): GOLD sabit-$ $11.922,17 (**+%19,2**) / bileşik +%20,2
+(maxDD %6,9); BTCUSD $9.073,89 (-%9,3, önceki checkpoint'ten -%17,3 →
+-%9,3); EURGBP $9.050,27 (-%9,5, önceki -%10,8 → -%9,5).
+
+**3 hesabın TOPLAMI $30.046,33 -- $30.000 başlangıca göre NET +$46,33,
+YANİ İLK KEZ POZİTİF** (orijinal test -$512.706'ydı). Bu, bu oturumun
+başındaki "3 hesap da pratikte sıfırlanıyor" bulgusundan (bkz. dosyanın
+başındaki holdout/corrected-simulation bölümleri) tam ters yönde bir
+sonuç -- tabii ki $46 marjinal ve KEPT_SYMBOLS'ün sadece 3 sembolünde,
+gerçek spread'le, ama yön tersine döndü. GOLD tek başına artık güçlü
+pozitif (+%19-20), BTCUSD/EURGBP zararları da küçüldü (%17-19 →
+%9-10). Modül bazında ilginç bir gözlem: Trendline'ın kendi SL
+genişlemesi, DİĞER modüllerin (FVG özellikle) tek-pozisyon rekabetindeki
+payını DEĞİŞTİRDİ -- GOLD'da FVG'nin izole performansı KENDİSİ
+değişmediği halde n=9→25 işleme çıktı ve pnl $137,57→$864,93'e yükseldi,
+çünkü Trendline artık o pozisyon yuvasını daha az kazanıyor. Bu, çapraz-
+modül rekabet etkisinin HER İKİ yönde de (bazen kötüleştirici, bazen
+iyileştirici) çalışabildiğini gösteren üçüncü örnek.
+
+**Checkpoint -- Aday 7'nin (iFVG SL tamponu) $10k hesap simülasyonundaki
+etkisi** (`scratch_corrected_account_simulation.py` dördüncü kez
+çalıştırıldı): GOLD sabit-$ +$11.585,00 (+%15,8, ÖNCEKİ checkpoint'ten
++%7,9 → +%15,8) ve bileşik +%16,6 (maxDD sadece %3,0'a düştü) -- iFVG
+modülü GOLD'da (+$369,61, win %35,7) ve EURGBP'de (+$131,40, win %29,4)
+artık kendi başına da NET POZİTİF. Toplam 3-hesap zararı -$6.176'dan
+-$5.321'e indi. **Çapraz-modül rekabet etkisi tekrar gözlendi**: EURGBP'de
+FVG modülü izole olarak KÖTÜLEŞTİ (-$433,11 -> -$1.833,11) çünkü iFVG artık
+daha çekici hale geldiği için tek-pozisyon yuvasını daha sık kazanıyor --
+bu, önceki OB/BTCUSD gözlemiyle aynı, izole ablation ile birleşik hesap
+sonucu arasındaki bilinen ayrışma.
+
+## GOLD işlem galerisi + çoklu-zaman-dilimi (M30+H1) hesap simülasyonu (2026-09-03)
+
+Kullanıcı isteği: GOLD için tüm modüllerin (FVG/iFVG/OB/Trendline)
+gerçekten aldığı işlemleri, kaynak yapısıyla (zon/trend çizgisi)
+birlikte görselleştiren bir galeri + $10k hesap simülasyonunu M30'un
+yanında H1'e de genişletmek + her SL/breakeven işlem için kök neden
+tespiti.
+
+**Araçlar:** `scratch_gold_trade_gallery.py` (sadece M30, 92 işlem,
+`results/trade_gallery/GOLD_all_modules.json`) ve
+`scratch_gold_mtf_account_simulation.py` (M30+H1 birleşik,
+`results/trade_gallery/GOLD_mtf_summary.json` + `GOLD_mtf_trades.json`).
+İkisi de `generate_signals`'ı (bkz. `strategy/signal_engine.py`) BİREBİR
+aynı formüllerle tekrar üretiyor ama her sinyali kaynağı olan FVG/OB/
+iFVG nesnesine ya da Trendline slope/intercept'ine eşleyen bir geometri
+sözlüğüyle birlikte -- gerçek `run_backtest` motorundan geçirilip,
+`scratch_corrected_account_simulation.py::simulate_account` ile BİREBİR
+aynı tek-pozisyon seçim mantığıyla filtrelenmiş.
+
+**Teknik not (pencere boyutu):** geniş SL/TP tamponu bazı işlemleri çok
+uzun sürede (bazen >10.000 bar) çözdüğü için, ham pencere yaklaşımı
+dosyayı 19.8MB'a şişirdi -- pencere artık FORMASYON ankorü değil DOLUM
+barına göre kuruluyor, çıkış çok uzaktaysa ayrı kompakt bir "çıkış yakın
+çekimi" ekleniyor (`skipped_bars` ile not edilerek). Sonuç: 564KB (M30)
+/ 331KB (M30+H1).
+
+**MFE (Maximum Favorable Excursion) kök neden sınıflandırması:** her
+kaybeden/breakeven işlem için, dolum-çıkış arasında fiyatın planlı
+mesafenin (giriş→TP) yüzde kaçını lehte kat ettiği ölçülüp 4 kategoriye
+ayrılıyor: `ani_ters` (<%10, muhtemel fakeout), `erken_basarisiz`
+(%10-40), `yakin_iskalama` (%40-80), `cok_yakin_iskalama` (>%80, en
+aksiyon-alınabilir -- TP'ye çok yakınken kaybetti), artı ayrı
+`breakeven` kategorisi.
+
+**ÖNEMLİ, BEKLENMEDİK BULGU -- çoklu zaman dilimi birleşimi TOPLAM
+sonucu KÖTÜLEŞTİRDİ:** M30 tek başına 92 işlem alıp $11.922
+(**+%19,2**) ile bitiyordu (bkz. Aday 8 checkpoint'i). H1 aynı
+tek-pozisyon hesaba eklenince (24.954 aday sinyal, M30+H1 birleşik),
+**çakışma nedeniyle adayların %99,8'i (24.899/24.954) atlandı** ve
+toplam sadece **55 işlem** alındı -- $10.188 (**+%1,9**) ile bitti.
+Kök neden: H1 kendi başına zayıf (win %10,0, -$400,73) VE pozisyonu
+UZUN SÜRE işgal ederek M30'un daha iyi fırsatlarını da engelliyor.
+**Sonuç/ders:** tek-pozisyon (gerçek hesap kısıtı) bir sistemde birden
+fazla zaman dilimini AYNI havuza eklemek, her zaman diliminin kendi
+edge'i pozitif olsa bile, zayıf olanın hem kendi kaybı hem "fırsat
+maliyeti" (daha iyi işlemleri engellemesi) yüzünden toplamı aşağı
+çekebiliyor. H4/W1 zaten `MODULE_DISABLED_TIMEFRAMES`'te devre dışı
+(eski metodolojiyle kalibre edilmiş, bu çalışmada yeniden test
+edilmedi); bu yeni bulgu H1'in de (en azından GOLD'da, aynı tek-pozisyon
+havuzunda) benzer şekilde ele alınması gerektiğini düşündürüyor --
+ayrı bir pozisyon slotu/alt-hesap ile çalıştırılması ya da tamamen
+devre dışı bırakılması gibi seçenekler değerlendirilebilir. **Resmi
+konfigürasyona (`MODULE_DISABLED_TIMEFRAMES`) HENÜZ bir değişiklik
+yapılmadı** -- bu tek bir sembolün (GOLD) tek bir çalışması, KEPT_SYMBOLS
+genelinde ve holdout disipliniyle doğrulanmadan karar verilmeyecek.
+
+Sunumlar: GOLD İşlem Galerisi (sadece M30, 92 işlem) ve GOLD Detaylı
+Analiz Raporu (M30+H1, equity eğrisi + kök neden analizi + galeri)
+artifact olarak yayınlandı.
+
+## H1 zaman diliminin devre dışı bırakılması -- KEPT_SYMBOLS geneli holdout testi -- REDDEDİLDİ/ERTELENDİ (2026-09-03)
+
+Yukarıdaki GOLD bulgusunun ("M30+H1 birleşimi toplam sonucu kötüleştirdi")
+üç sembolün tamamında ve kutsal-holdout disipliniyle doğrulanmadan karar
+verilmeyeceği not edilmişti -- bu, o doğrulama. `scratch_h1_timeframe_
+disable_holdout_check.py`: her sembol için M30 `split_chronological`
+(%60/%20/%20) ile bölünüp test'in başlangıç zamanı kesim noktası olarak
+alındı, H1 de AYNI zaman sınırına göre trainval/test'e bölündü (H1 index'i
+M30'unkiyle karşılaştırılamaz, zaman karşılaştırılabilir). Serbest
+parametre yok (taranacak bir aralık değil, ikili bir seçim: M30-tek-başına
+vs M30+H1-birleşik) -- bu yüzden iki seçenek de doğrudan hem trainval'da
+hem HİÇ BAKILMAMIŞ test'te çalıştırıldı.
+
+| Sembol | M30-alone (holdout) | M30+H1-combined (holdout) |
+|---|---|---|
+| GOLD | %37.5 win / +0.1861R | %39.4 win / **+0.4853R** (İYİLEŞTİ) |
+| BTCUSD | %14.3 win / -0.2558R | %18.8 win / -0.3060R (kötüleşti) |
+| EURGBP | %20.0 win / -0.1953R | %10.5 win / -0.3713R (kötüleşti) |
+
+**3/3 DEĞİL, 2/3 -- ve tutarsız olan sembol tam da orijinal bulgunun
+kaynağı olan GOLD'un kendisi.** GOLD'un bu holdout diliminde (son %20,
+sadece n=32-33 işlem) M30+H1 birleşimi expectancy'yi ~2.6 kat artırıyor
+-- bu, GOLD'un TÜM geçmişini kullanan önceki tam-periyot koşusunun
+bulgusuyla (+%19,2 vs +%1,9, birleşim kötü) TAM TERS yönde. BTCUSD/EURGBP
+holdout'ta yönü doğruluyor (birleşim kötü) ama GOLD'un kendi holdout'u
+çelişiyor. Trainval'da da aynı tutarsızlık var: GOLD (-yönde, orijinal
+bulguyla uyumlu) ve EURGBP (-yönde) birleşimi kötü gösteriyor ama BTCUSD
+trainval'da birleşim hafif İYİ (-0.0572 -> -0.0427, orijinal hipotezle
+ters). Örneklem küçük (holdout'ta sembol başına n=32-49 işlem) --
+gürültüye açık.
+
+**KARAR: REDDEDİLDİ (şimdilik).** `MODULE_DISABLED_TIMEFRAMES`'e H1
+eklenmedi -- bu oturum boyunca her kabul edilen değişiklik (Aday 6/7/8)
+3/3 sembolde AYNI yönde holdout iyileşmesi barını geçmişti, bu bulgu
+geçmiyor. GOLD'un tam-periyot koşusundaki güçlü negatif sinyal muhtemelen
+gerçek ama rejime-özgü (ya da tek büyük örtüşen-işlem kümesinin
+etkisiyle şişmiş) bir etki -- 3 sembollik küçük holdout dilimleriyle
+güvenilir şekilde ayrıştırılamıyor. Daha büyük örneklem (ör. tüm
+KEPT_SYMBOLS'ün TÜM geçmişini, walk-forward/genişleyen pencereyle,
+tek seferlik %20 holdout yerine) olmadan bu konuda karar verilmeyecek.

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{ module_name }} — NOAFVGBOT{% endblock %}
+{% set active_nav = module_key %}
+{% block page_title %}{{ module_name }} Örnekleri{% endblock %}
+{% block page_sub %}<div class="page-sub">Güncel kalibrasyonla üretilmiş taze kazanan/kaybeden/breakeven örnekler</div>{% endblock %}
+
+{% block content %}
+<div class="section-block">
+  <p class="hint">
+    Güncel resmi kalibrasyonla (strategy/config.py) üretilmiş taze örnekler — her sembolden kazanan, kaybeden
+    ve (varsa) breakeven işlemler. Grafikteki mavi kesik çizgi giriş, kırmızı stop-loss, yeşil take-profit;
+    gölgeli alan (FVG/OB'de) sinyalin kaynak bölgesi. Her örneğin altına o örneğe özel gözlem/eleştiri yazabilirsin.
+  </p>
+  <div class="filters">
+    <label>Sembol:
+      <select id="filter-symbol"><option value="">Hepsi</option></select>
+    </label>
+    <label>Sonuç:
+      <select id="filter-outcome">
+        <option value="">Hepsi</option>
+        <option value="win">Kazanan</option>
+        <option value="loss">Kaybeden</option>
+        <option value="breakeven">Breakeven</option>
+      </select>
+    </label>
+  </div>
+  <div id="examples-container"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>const MODULE_KEY = "{{ module_key }}";</script>
+<script src="{{ url_for('static', filename='module.js') }}"></script>
+{% endblock %}

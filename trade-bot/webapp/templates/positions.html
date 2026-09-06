@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Positions — NOAFVGBOT{% endblock %}
+{% set active_nav = "positions" %}
+{% block page_title %}Positions{% endblock %}
+{% block page_sub %}<div class="page-sub">Şu an açık olan tüm pozisyonlar — bot ve harici</div>{% endblock %}
+
+{% block content %}
+<div class="section-block">
+  <div class="section-block-head">
+    <h2 style="margin:0;">Açık Pozisyonlar <span class="count" id="positions-count"></span></h2>
+  </div>
+  <div class="table-wrap">
+    <table id="positions-table">
+      <thead><tr>
+        <th>Kaynak</th><th>Sembol</th><th>Yön</th><th class="num">Lot</th>
+        <th class="num">Açılış</th><th class="num">Güncel</th><th class="num">SL</th><th class="num">TP</th>
+        <th class="num">Risk%</th><th class="num">P/L</th><th>Yorum</th><th>Zaman</th>
+      </tr></thead>
+      <tbody>
+        <tr class="skel-row"><td colspan="12"><span class="skel skel-line"></span></td></tr>
+        <tr class="skel-row"><td colspan="12"><span class="skel skel-line"></span></td></tr>
+      </tbody>
+    </table>
+    <div class="empty-state" id="positions-empty">
+      <div class="empty-title">Açık pozisyon yok</div>
+      <div class="empty-desc">Bot ya da manuel hiçbir pozisyon şu an açık değil.</div>
+    </div>
+    <div class="empty-state" id="positions-error">
+      <div class="empty-title">Bağlantı hatası</div>
+      <div class="empty-desc" id="positions-error-desc">MT5 verisi alınamadı.</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='positions.js') }}"></script>
+{% endblock %}

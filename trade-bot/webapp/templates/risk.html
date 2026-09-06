@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Risk — NOAFVGBOT{% endblock %}
+{% set active_nav = "risk" %}
+{% block page_title %}Risk{% endblock %}
+{% block page_sub %}<div class="page-sub">Gerçek zamanlı hesap riski ve maruziyet</div>{% endblock %}
+{% block page_actions %}<div class="risk-pill low" id="risk-status-pill">HESAPLANIYOR</div>{% endblock %}
+
+{% block content %}
+<div class="empty-state" id="risk-conn-error" style="display:none;">
+  <div class="empty-title">Bağlantı hatası</div>
+  <div class="empty-desc" id="risk-conn-error-desc">MT5 verisi alınamadı.</div>
+</div>
+<div id="risk-content">
+<div class="section-block">
+  <h2>Risk Durumu</h2>
+  <div class="risk-meter-wrap">
+    <div class="risk-meter-track"><div class="risk-meter-fill low" id="risk-meter-fill" style="width:0%;"></div></div>
+    <span class="mono" id="risk-meter-label">%0.00 / %4.00 tavan</span>
+  </div>
+  <p class="hint" style="margin-top:10px;">Açık pozisyonların toplam SL-riski, hesap bakiyesine oranı. EA'nın kendi <code>MaxPortfolioRiskPercent</code> tavanıyla (mql5/TradeBot_NOA_Recal.mq5) aynı formül kullanılıyor.</p>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="kpi-label">Equity</div><div class="kpi-value tabular-num" id="r-equity"><span class="skel skel-value"></span></div></div>
+  <div class="kpi-card"><div class="kpi-label">Bakiye</div><div class="kpi-value tabular-num" id="r-balance"><span class="skel skel-value"></span></div></div>
+  <div class="kpi-card"><div class="kpi-label">Kullanılan Margin</div><div class="kpi-value tabular-num" id="r-margin"><span class="skel skel-value"></span></div></div>
+  <div class="kpi-card"><div class="kpi-label">Serbest Margin</div><div class="kpi-value tabular-num" id="r-freemargin"><span class="skel skel-value"></span></div></div>
+  <div class="kpi-card"><div class="kpi-label">Açık Pozisyon</div><div class="kpi-value tabular-num" id="r-openpos"><span class="skel skel-value"></span></div></div>
+  <div class="kpi-card"><div class="kpi-label">Toplam Açık Risk</div><div class="kpi-value tabular-num" id="r-totalrisk"><span class="skel skel-value"></span></div></div>
+</div>
+
+<div class="section-block">
+  <h2>Pozisyon Bazında Risk</h2>
+  <div class="table-wrap">
+    <table id="risk-table">
+      <thead><tr><th>Sembol</th><th>Yön</th><th class="num">Lot</th><th class="num">SL Mesafesi</th><th class="num">Risk %</th><th class="num">P/L</th></tr></thead>
+      <tbody>
+        <tr class="skel-row"><td colspan="6"><span class="skel skel-line"></span></td></tr>
+      </tbody>
+    </table>
+    <div class="empty-state" id="risk-empty">
+      <div class="empty-title">Açık pozisyon yok</div>
+      <div class="empty-desc">Şu an risk taşıyan hiçbir pozisyon yok.</div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='risk.js') }}"></script>
+{% endblock %}

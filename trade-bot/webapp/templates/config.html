@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Settings — NOAFVGBOT{% endblock %}
+{% set active_nav = "settings" %}
+{% block page_title %}Settings{% endblock %}
+{% block page_sub %}<div class="page-sub">Strateji parametreleri — doğrudan strategy/config.py'den</div>{% endblock %}
+
+{% block content %}
+<div class="section-block">
+  <p class="hint">
+    Doğrudan <code>strategy/config.py</code>'den okunuyor — panel hiçbir değeri kendi
+    tutmuyor, dosya değişirse burası da (sayfa yenilenince) değişir.
+  </p>
+  <div id="config-container"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='config_view.js') }}"></script>
+{% endblock %}

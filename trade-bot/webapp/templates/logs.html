@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Logs — NOAFVGBOT{% endblock %}
+{% set active_nav = "logs" %}
+{% block page_title %}Logs{% endblock %}
+{% block page_sub %}<div class="page-sub">MT5 terminalinin bugünkü Experts/Journal kaydı (salt okunur)</div>{% endblock %}
+
+{% block content %}
+<div class="section-block">
+  <div class="filter-bar">
+    <label>Seviye:
+      <select id="log-level">
+        <option value="">Hepsi</option>
+        <option value="INFO">INFO</option>
+        <option value="SUCCESS">SUCCESS</option>
+        <option value="WARNING">WARNING</option>
+        <option value="ERROR">ERROR</option>
+        <option value="CRITICAL">CRITICAL</option>
+      </select>
+    </label>
+    <input type="text" id="log-search" class="search-input" placeholder="mesajda ara…">
+    <button type="button" class="btn-ghost" id="log-refresh">Yenile</button>
+    <span class="count" id="log-count"></span>
+    <span class="hint-inline" id="log-date-note"></span>
+  </div>
+  <div class="log-viewer" id="log-viewer">
+    <div class="empty-state" style="display:block;"><div class="empty-title">Yükleniyor…</div></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='logs.js') }}"></script>
+{% endblock %}

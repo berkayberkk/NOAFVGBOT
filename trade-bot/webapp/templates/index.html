@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — NOAFVGBOT{% endblock %}
+{% set active_nav = "dashboard" %}
+{% block page_title %}Dashboard{% endblock %}
+{% block page_sub %}<div class="page-sub">Hesap durumu, backtest performansı ve canlı sinyaller — tek bakışta</div>{% endblock %}
+{% block page_actions %}<div id="conn-status" class="badge badge-unknown">bağlantı kontrol ediliyor…</div>{% endblock %}
+
+{% block content %}
+<div class="kpi-grid" id="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Equity</div>
+    <div class="kpi-value tabular-num" id="kpi-equity"><span class="skel skel-value"></span></div>
+    <div class="kpi-sub" id="kpi-equity-sub">&nbsp;</div>
+    <canvas class="kpi-spark" id="kpi-equity-spark" width="140" height="34"></canvas>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Bugün P&amp;L <span class="info-ic" title="Bugün kapanan bot-işlemlerinin net kâr/zararı (gerçek MT5 verisi)">ⓘ</span></div>
+    <div class="kpi-value tabular-num" id="kpi-today"><span class="skel skel-value"></span></div>
+    <div class="kpi-sub" id="kpi-today-sub">&nbsp;</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Win Rate <span class="info-ic" title="Backtest (KEPT_SYMBOLS, portföy seviyesi) -- canlıda henüz yeterli işlem yok">ⓘ</span></div>
+    <div class="kpi-value tabular-num" id="kpi-winrate"><span class="skel skel-value"></span></div>
+    <div class="kpi-sub">backtest · portföy</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Expectancy <span class="info-ic" title="İşlem başına ortalama R-multiple (backtest, portföy seviyesi)">ⓘ</span></div>
+    <div class="kpi-value tabular-num" id="kpi-expectancy"><span class="skel skel-value"></span></div>
+    <div class="kpi-sub">backtest · R/işlem</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Net R <span class="info-ic" title="Toplam R-multiple (backtest, GOLD+BTCUSD+EURGBP portföy toplamı)">ⓘ</span></div>
+    <div class="kpi-value tabular-num" id="kpi-netr"><span class="skel skel-value"></span></div>
+    <div class="kpi-sub">backtest · 3 sembol toplamı</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Max Drawdown <span class="info-ic" title="Bot-only equity serisinden hesaplanan en büyük tepe-dip düşüş (gerçek MT5 verisi)">ⓘ</span></div>
+    <div class="kpi-value tabular-num" id="kpi-maxdd"><span class="skel skel-value"></span></div>
+    <div class="kpi-sub">canlı · equity serisi</div>
+    <canvas class="kpi-spark" id="kpi-maxdd-spark" width="140" height="34"></canvas>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="section-block-head">
+    <h2 style="margin:0;">Equity Geçmişi</h2>
+    <select id="equity-days" class="days-select">
+      <option value="30">30 gün</option>
+      <option value="90" selected>90 gün</option>
+      <option value="180">180 gün</option>
+      <option value="365">365 gün</option>
+    </select>
+  </div>
+  <div class="chart-scroll"><canvas id="equity-canvas"></canvas></div>
+  <div class="legend">
+    <span><i class="dot dot-all"></i> Tüm hesap</span>
+    <span><i class="dot dot-bot"></i> Sadece bot (TradeBot_NOA_*)</span>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="section-block-head">
+    <h2 style="margin:0;">Top Trade Candidates <span class="hint-inline">(101 sembol · 6 zaman dilimi, objektif sıralama)</span></h2>
+    <a href="/market-research" class="hint-inline">Market Scanner →</a>
+  </div>
+  <div class="table-wrap">
+    <table id="top-candidates-table">
+      <thead><tr><th>#</th><th>Sembol</th><th>TF</th><th>Yön</th><th class="num">MTF Uyum</th><th class="num">Expected R</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty-state" id="top-candidates-empty">
+      <div class="empty-title">Henüz tarama yok</div>
+      <div class="empty-desc">Market Scanner'ı çalıştırınca en iyi adaylar burada listelenecek.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Bekleyen Sinyaller <span class="hint-inline">(EA'nın şu an izlediği, henüz fiyata dokunmamış adaylar)</span></h2>
+  <div id="pending-container"></div>
+</div>
+
+<div class="section-block">
+  <div class="section-block-head">
+    <h2 style="margin:0;">Açık Pozisyonlar <span class="count" id="positions-count"></span></h2>
+    <a href="/positions" class="hint-inline">tüm pozisyonlar →</a>
+  </div>
+  <div class="table-wrap">
+    <table id="positions-table">
+      <thead><tr><th>Kaynak</th><th>Sembol</th><th>Yön</th><th>Lot</th><th>Açılış</th><th>Güncel</th><th>SL</th><th>TP</th><th class="num">P/L</th><th>Yorum</th></tr></thead>
+      <tbody>
+        <tr class="skel-row"><td colspan="10"><span class="skel skel-line"></span></td></tr>
+        <tr class="skel-row"><td colspan="10"><span class="skel skel-line"></span></td></tr>
+      </tbody>
+    </table>
+    <div class="empty-state" id="positions-empty">
+      <div class="empty-title">Açık pozisyon yok</div>
+      <div class="empty-desc">Bot ya da manuel hiçbir pozisyon şu an açık değil.</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

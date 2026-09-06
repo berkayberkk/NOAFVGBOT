@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}System Health — NOAFVGBOT{% endblock %}
+{% set active_nav = "health" %}
+{% block page_title %}System Health{% endblock %}
+{% block page_sub %}<div class="page-sub">Bot, MT5, veri ve API bağlantı durumu</div>{% endblock %}
+
+{% block content %}
+<div class="kpi-grid" id="health-grid">
+  <div class="kpi-card">
+    <div class="kpi-label"><span class="status-dot unknown" id="h-dot-bot"></span> Bot</div>
+    <div class="kpi-value" id="h-bot" style="font-size:16px;">–</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label"><span class="status-dot unknown" id="h-dot-mt5"></span> MT5</div>
+    <div class="kpi-value" id="h-mt5" style="font-size:16px;">–</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label"><span class="status-dot unknown" id="h-dot-data"></span> Veri</div>
+    <div class="kpi-value" id="h-data" style="font-size:16px;">–</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label"><span class="status-dot unknown" id="h-dot-api"></span> API</div>
+    <div class="kpi-value" id="h-api" style="font-size:16px;">–</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Son Sinyal</div>
+    <div class="kpi-value" id="h-lastsignal" style="font-size:16px;">–</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Son İşlem</div>
+    <div class="kpi-value" id="h-lasttrade" style="font-size:16px;">–</div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Sembol Bazında Durum</h2>
+  <div class="table-wrap">
+    <table id="health-symbol-table">
+      <thead><tr><th>Sembol</th><th>EA Aktif mi</th><th>Son Güncelleme</th><th>Durum</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Hesap Bağlantısı</h2>
+  <div class="config-table" style="max-width:420px;">
+    <table class="config-table" id="health-account-table"><tbody></tbody></table>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='system_health.js') }}"></script>
+{% endblock %}

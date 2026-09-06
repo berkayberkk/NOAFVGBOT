@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Market Research — NOAFVGBOT{% endblock %}
+{% set active_nav = "market_research" %}
+{% block page_title %}Market Research{% endblock %}
+{% block page_sub %}<div class="page-sub">Tüm enstrümanlar · tüm zaman dilimleri · aynı standart — <b>canlı araştırma, backtest değil</b></div>{% endblock %}
+{% block page_actions %}<div class="badge badge-unknown" id="research-status-badge">DURUM YÜKLENİYOR</div>{% endblock %}
+
+{% block content %}
+<div class="kpi-grid" id="scanner-kpi-grid">
+  <div class="kpi-card"><div class="kpi-label">Enstrüman</div><div class="kpi-value tabular-num" id="s-total-instruments"><span class="skel skel-value"></span></div></div>
+  <div class="kpi-card"><div class="kpi-label">Taranan</div><div class="kpi-value tabular-num" id="s-scanned"><span class="skel skel-value"></span></div></div>
+  <div class="kpi-card"><div class="kpi-label">Zaman Dilimi</div><div class="kpi-value tabular-num" id="s-timeframes">6/6</div></div>
+  <div class="kpi-card"><div class="kpi-label">Analiz İşi</div><div class="kpi-value tabular-num" id="s-jobs"><span class="skel skel-value"></span></div></div>
+  <div class="kpi-card"><div class="kpi-label">Uyarı <span class="info-ic" title="DATA_INCOMPLETE -- eksik/yetersiz/bayat veri">ⓘ</span></div><div class="kpi-value tabular-num" id="s-warnings">–</div></div>
+  <div class="kpi-card"><div class="kpi-label">Başarısız <span class="info-ic" title="SYMBOL_UNAVAILABLE / FETCH_ERROR">ⓘ</span></div><div class="kpi-value tabular-num" id="s-failed">–</div></div>
+</div>
+
+<div class="section-block" id="scanner-progress-block" style="display:none;">
+  <div class="section-block-head">
+    <h2 style="margin:0;">Canlı Tarama İlerlemesi</h2>
+    <span class="hint-inline" id="scanner-current">—</span>
+  </div>
+  <div class="log-viewer" id="scanner-log" style="max-height:200px;"></div>
+</div>
+
+<div class="section-block">
+  <div class="section-block-head"><h2 style="margin:0;">Top Trade Candidates <span class="hint-inline">(tüm enstrümanlar objektif kriterlerle yarışıyor)</span></h2></div>
+  <div class="table-wrap">
+    <table id="candidates-table">
+      <thead><tr><th>#</th><th>Sembol</th><th>TF</th><th>Yön</th><th class="num">MTF Uyum</th><th class="num">Expected R</th><th class="num">Risk</th><th>Modül</th></tr></thead>
+      <tbody><tr class="skel-row"><td colspan="8"><span class="skel skel-line"></span></td></tr></tbody>
+    </table>
+    <div class="empty-state" id="candidates-empty"><div class="empty-title">Henüz aday yok</div><div class="empty-desc">Tarama tamamlanınca burada listelenecek.</div></div>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="section-block-head"><h2 style="margin:0;">Multi-Timeframe Matrix</h2></div>
+  <div class="filter-bar">
+    <input type="text" id="f-symbol-search" class="search-input" placeholder="sembol ara…">
+    <label>Sinyal:
+      <select id="f-signal"><option value="">Hepsi</option><option value="BUY">BUY</option><option value="SELL">SELL</option><option value="MIXED">MIXED</option><option value="NEUTRAL">NEUTRAL</option></select>
+    </label>
+    <label>Min. MTF Uyum:
+      <select id="f-min-alignment"><option value="0">Hepsi</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option><option value="6">6/6</option></select>
+    </label>
+    <label>Sadece çatışanlar:
+      <select id="f-conflict"><option value="">Hepsi</option><option value="yes">Evet</option></select>
+    </label>
+    <span class="count" id="matrix-count"></span>
+  </div>
+  <div class="table-wrap">
+    <table id="matrix-table">
+      <thead><tr><th>Enstrüman</th><th>M30</th><th>H1</th><th>H2</th><th>H4</th><th>D1</th><th>W1</th><th>MTF Uyum</th><th>Durum</th></tr></thead>
+      <tbody><tr class="skel-row"><td colspan="9"><span class="skel skel-line"></span></td></tr></tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='market_research.js') }}"></script>
+{% endblock %}

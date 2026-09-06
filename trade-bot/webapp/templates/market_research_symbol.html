@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ symbol }} — Market Research — NOAFVGBOT{% endblock %}
+{% set active_nav = "market_research" %}
+{% block page_title %}{{ symbol }}{% endblock %}
+{% block page_sub %}<div class="page-sub"><a href="/market-research">← Market Scanner</a></div>{% endblock %}
+{% block page_actions %}<div class="mono" id="symbol-price" style="font-size:18px;">–</div>{% endblock %}
+
+{% block content %}
+<div class="section-block" id="confluence-summary">
+  <h2>Multi-Timeframe Confluence</h2>
+  <div id="confluence-body"><span class="skel skel-line"></span></div>
+</div>
+
+<div id="conflict-banner" style="display:none;" class="section-block" style="border-left:3px solid var(--warning);">
+  <h2 style="color:var(--warning);">⚠ TIMEFRAME CONFLICT</h2>
+  <p class="hint" id="conflict-detail-text" style="margin:0;"></p>
+</div>
+
+<div id="timeframe-cards"></div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>const SYMBOL = {{ symbol|tojson }};</script>
+<script src="{{ url_for('static', filename='market_research_symbol.js') }}"></script>
+{% endblock %}

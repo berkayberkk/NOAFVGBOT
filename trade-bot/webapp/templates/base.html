@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}NOAFVGBOT{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+<div class="shell" id="app-shell">
+
+  <aside class="app-sidebar" id="app-sidebar">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">NOAFVGBOT<small>Trading Terminal</small></div>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Operasyon</div>
+      <a href="/" class="nav-link {{ 'active' if active_nav == 'dashboard' else '' }}">{% include "_icons/grid.svg" %}Dashboard</a>
+      <a href="/positions" class="nav-link {{ 'active' if active_nav == 'positions' else '' }}">{% include "_icons/layers.svg" %}Positions</a>
+      <a href="/trades" class="nav-link {{ 'active' if active_nav == 'trades' else '' }}">{% include "_icons/list.svg" %}Trades</a>
+      <a href="#" class="nav-link" style="opacity:.4;cursor:default;" title="Yakında">{% include "_icons/activity.svg" %}Live Trading</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Strateji</div>
+      <a href="/module/fvg" class="nav-link {{ 'active' if active_nav == 'fvg' else '' }}">{% include "_icons/square.svg" %}FVG</a>
+      <a href="/module/ifvg" class="nav-link {{ 'active' if active_nav == 'ifvg' else '' }}">{% include "_icons/square.svg" %}iFVG</a>
+      <a href="/module/ob" class="nav-link {{ 'active' if active_nav == 'ob' else '' }}">{% include "_icons/square.svg" %}Order Block</a>
+      <a href="/module/trendline" class="nav-link {{ 'active' if active_nav == 'trendline' else '' }}">{% include "_icons/trend.svg" %}Trendline</a>
+      <a href="/backtest" class="nav-link {{ 'active' if active_nav == 'backtest' else '' }}">{% include "_icons/layout.svg" %}Backtest</a>
+      <a href="#" class="nav-link" style="opacity:.4;cursor:default;" title="Yakında">{% include "_icons/pie.svg" %}Analytics</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Araştırma</div>
+      <a href="/market-research" class="nav-link {{ 'active' if active_nav == 'market_research' else '' }}">{% include "_icons/scan.svg" %}Market Scanner</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Risk &amp; Sistem</div>
+      <a href="/risk" class="nav-link {{ 'active' if active_nav == 'risk' else '' }}">{% include "_icons/alert-triangle.svg" %}Risk</a>
+      <a href="/system-health" class="nav-link {{ 'active' if active_nav == 'health' else '' }}">{% include "_icons/heart.svg" %}System Health</a>
+      <a href="/logs" class="nav-link {{ 'active' if active_nav == 'logs' else '' }}">{% include "_icons/terminal.svg" %}Logs</a>
+    </div>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="nav-group" style="padding-top:0;">
+      <a href="/feedback" class="nav-link {{ 'active' if active_nav == 'feedback' else '' }}">{% include "_icons/edit.svg" %}Feedback</a>
+      <a href="/config" class="nav-link {{ 'active' if active_nav == 'settings' else '' }}">{% include "_icons/settings.svg" %}Settings</a>
+    </div>
+    <div class="sidebar-foot">TradeBot_NOA_Recal<br>GOLD · BTCUSD · EURGBP</div>
+  </aside>
+
+  <header class="app-header">
+    <div class="hdr-left">
+      <button class="sidebar-toggle" id="sidebar-toggle-btn" aria-label="Menü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="18" height="18"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="hdr-status-group" id="hdr-status-group">
+        <span class="status-dot-item"><span class="status-dot unknown" id="dot-bot"></span><span class="lbl">BOT</span></span>
+        <span class="status-dot-item"><span class="status-dot unknown" id="dot-mt5"></span><span class="lbl">MT5</span></span>
+        <span class="status-dot-item"><span class="status-dot unknown" id="dot-data"></span><span class="lbl">DATA</span></span>
+      </div>
+      <div class="hdr-symbols">
+        <span class="symbol-chip">GOLD</span><span class="symbol-chip">BTCUSD</span><span class="symbol-chip">EURGBP</span>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <span class="hdr-clock" id="hdr-clock">--:--:--</span>
+      <button class="theme-toggle" id="theme-toggle-btn" title="Tema değiştir" aria-label="Tema değiştir">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="page-head">
+      <div>
+        <div class="page-title">{% block page_title %}{% endblock %}</div>
+        {% block page_sub %}{% endblock %}
+      </div>
+      <div class="page-head-actions">{% block page_actions %}{% endblock %}</div>
+    </div>
+    {% block content %}{% endblock %}
+  </main>
+
+  <div class="app-statusbar">
+    <div class="sb-group">
+      <span class="sb-item" id="sb-bot">Bot: —</span>
+      <span class="sb-item" id="sb-mt5">MT5: —</span>
+      <span class="sb-item" id="sb-data">Veri: —</span>
+    </div>
+    <div class="sb-group">
+      <span class="sb-item" id="sb-updated">son güncelleme: —</span>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+<script src="{{ url_for('static', filename='common.js') }}"></script>
+<script src="{{ url_for('static', filename='shell.js') }}"></script>
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

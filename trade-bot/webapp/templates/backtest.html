@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Backtest — NOAFVGBOT{% endblock %}
+{% set active_nav = "backtest" %}
+{% block page_title %}Backtest{% endblock %}
+{% block page_sub %}<div class="page-sub">Diagnostic taramalar ve walk-forward pencereleri — gerçek backtest çıktıları</div>{% endblock %}
+
+{% block content %}
+<div class="section-block" id="wf-section">
+  <h2>Walk-Forward Pencereleri <span class="hint-inline">(H1 zaman dilimi eklenmesi denemesi, 6 fold × 3 sembol)</span></h2>
+  <div id="wf-container" class="wf-window-grid"><span class="hint">yükleniyor…</span></div>
+</div>
+
+<div class="section-block">
+  <h2>Diagnostic / Backtest Sonuçları</h2>
+  <div id="diagnostics-list" class="diag-list"></div>
+  <div id="diagnostics-viewer" class="diag-viewer"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='backtest.js') }}"></script>
+{% endblock %}

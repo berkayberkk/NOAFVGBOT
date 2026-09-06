@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Feedback — NOAFVGBOT{% endblock %}
+{% set active_nav = "feedback" %}
+{% block page_title %}Feedback Yönetimi{% endblock %}
+{% block page_sub %}<div class="page-sub">Strateji gözlemlerini incele, durumunu güncelle</div>{% endblock %}
+
+{% block content %}
+<div class="section-block">
+  <h2>Yeni Gözlem Yaz</h2>
+  <p class="hint">Strateji hakkında gözlem/düzeltme önerini yaz — Claude bunu okuyup değerlendirecek, gerekirse holdout ile doğrulayıp uygulayacak. Otomatik değişiklik yapılmaz.</p>
+  <form id="feedback-form">
+    <textarea id="feedback-text" placeholder="Örn: OB modülü çok uzun süre pozisyonu işgal ediyor, ayrı slot verilmeli..." rows="4"></textarea>
+    <button type="submit">Gönder</button>
+  </form>
+</div>
+
+<div class="section-block">
+  <p class="hint">Tüm feedback girdileri — durumu değiştirmek ve not eklemek için kartın altındaki kontrolleri kullan.</p>
+  <div class="filters">
+    <label>Durum:
+      <select id="filter-status">
+        <option value="">Hepsi</option>
+        <option value="yeni">Yeni</option>
+        <option value="incelendi">İncelendi</option>
+        <option value="uygulandi">Uygulandı</option>
+        <option value="reddedildi">Reddedildi</option>
+      </select>
+    </label>
+    <span id="feedback-count" class="count"></span>
+  </div>
+  <div id="feedback-container"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='feedback_admin.js') }}"></script>
+{% endblock %}

@@ -1,5 +1,18 @@
 //+------------------------------------------------------------------+
 //| TradeBot_NOA.mq5                                                  |
+//| DEPRECATED (2026-09-03) -- bkz. mql5/TradeBot_NOA_Recal.mq5.       |
+//| Bu dosya 28 Agustos 2026'daki lookahead/survivorship-bias          |
+//| bulgusundan (README.md, "KRITIK -- 2026-08-28") ONCE yazildi ve    |
+//| hala eski/gecersiz cikmis A+ (FVG+OB confluence) sinyali + EMA/    |
+//| trend filtresi + Destek/Direnc tabanli TP mantigini calistiriyor.  |
+//| Bu tasarim, o oturumdan sonraki calismada terk edildi (bkz.        |
+//| strategy/signal_engine.py basindaki not: confluence/trend filtresi |
+//| kaliteyi artirmadigi olculdu, kaldirildi). YENI demo/canli         |
+//| dagitimlar icin bu dosya DEGIL, TradeBot_NOA_Recal.mq5 kullanilmali|
+//| -- o, guncel (2026-09-03) FVG+iFVG+OB+Trendline, holdout ile       |
+//| dogrulanmis kalibrasyonu (strategy/config.py) uyguluyor. Bu dosya  |
+//| sadece referans/tarihce icin korunuyor, davranisi degistirilmedi.  |
+//|                                                                    |
 //| FVG + Order Block + Destek/Direnc + Trend confluence stratejisi. |
 //| Python tarafinda (strategy/ klasoru) kalibre edilen ayni kurallar |
 //| burada MQL5 EA olarak uygulanmistir. Ilk versiyon - demo hesapta  |

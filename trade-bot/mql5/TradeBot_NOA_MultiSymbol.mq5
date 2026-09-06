@@ -1,5 +1,18 @@
 //+------------------------------------------------------------------+
 //| TradeBot_NOA_MultiSymbol.mq5                                      |
+//| DEPRECATED (2026-09-03) -- bkz. mql5/TradeBot_NOA_Recal.mq5.       |
+//| Bu dosya 28 Agustos 2026'daki lookahead/survivorship-bias          |
+//| bulgusundan (README.md, "KRITIK -- 2026-08-28") ONCE yazildi ve    |
+//| hala eski/gecersiz cikmis A+ (FVG+OB confluence) sinyali + EMA/    |
+//| trend filtresi + Destek/Direnc tabanli TP mantigini calistiriyor.  |
+//| YENI demo/canli dagitimlar icin bu dosya DEGIL, TradeBot_NOA_      |
+//| Recal.mq5 kullanilmali -- o, guncel (2026-09-03) FVG+iFVG+OB+      |
+//| Trendline, holdout ile dogrulanmis kalibrasyonu (strategy/         |
+//| config.py, KEPT_SYMBOLS=GOLD/BTCUSD/EURGBP) uyguluyor. Bu dosyanin |
+//| coklu-sembol orkestrasyon iskeleti (CSV sembol listesi, portfoy    |
+//| risk tavani, TryOpenTrade/CheckPositionConflict) yeni dosyada      |
+//| aynen yeniden kullanildi -- SADECE sinyal-uretim mantigi degisti.  |
+//|                                                                    |
 //| FVG + Order Block + Destek/Direnc + Trend confluence stratejisi,  |
 //| birden fazla sembol uzerinde AYNI ANDA calisan tek EA instance'i. |
 //| Strateji mantigi TradeBot_NOA.mq5 (tek sembol, GOLD, kanitlanmis) |

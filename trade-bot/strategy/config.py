@@ -27,6 +27,15 @@ class StrategyConfig:
     ob_liquidity_sweep_lookback: int = 10
     ob_premium_discount_lookback: int = 48  # M30'da ~1 gun -- HTF gunluk araligin yerini tutan pencere
 
+    # --- Hacim Teyidi Parametreleri (2026-09-03 eklendi, FVG + OB icin ortak) ---
+    # bkz. NOA_KONSEPTI_KAYNAK_ANALIZI.md "Win rate iyilestirme arastirmasi" --
+    # birden fazla ICT kaynagi "displacement mumunun hacmi son N mumun
+    # ortalamasinin X kati olmali" filtresini "tek en iyi teyit" diye
+    # isaretledi. Ampirik olarak kalibre EDILMEDI, kaynak materyaldeki
+    # tipik degerler (1.5x, 20 bar) kullanildi.
+    volume_confirm_period: int = 20
+    volume_confirm_ratio: float = 1.5
+
     # --- Backtest İşlem Maliyetleri (0.0 varsayılan = geriye dönük uyumlu) ---
     spread: float = 0.0            # Fiyat mesafesi cinsinden spread (örn. 0.20)
     slippage: float = 0.0          # Taraf başına olumsuz kayma mesafesi (örn. 0.05)
@@ -128,11 +137,22 @@ MODULE_R_MULTIPLE: dict[str, float] = {
 # Modülün SL tamponu -- FVG/iFVG/OB kendi bölge boyutunun (gap/gövde)
 # katı, Trendline ise dokunuş/retest barının kendi ATR'sinin katı
 # (bölge boyutu kavramı yok, diyagonal bir çizgi).
+# fvg=15.0/ob=30.0/ifvg=15.0/trendline=5.0 (2026-09-03 GÜNCELLENDİ -- eski
+# 1.0/3.0/1.0/0.5'ten): win-rate araştırmasının SL tamponu yeniden
+# kalibrasyonu, DÜZELTİLMİŞ motorla ve YENİ giriş kuralıyla, KEPT_SYMBOLS'ün
+# her birinde kendi kronolojik train+val (%80) kümesinde adaylar tarandı,
+# TEK bir aday seçilip HİÇ BAKILMAMIŞ test (%20) holdout'unda TEK ATIMLIK
+# doğrulandı (bkz. scratch_sl_buffer_holdout_check.py + scratch_ifvg_sl_
+# buffer_holdout_check.py + scratch_trendline_sl_buffer_holdout_check.py,
+# NOA_KONSEPTI_KAYNAK_ANALIZI.md "Aday 6/7/8" bölümleri). FVG/OB: 6/6,
+# iFVG: 3/3, Trendline: 3/3 sembol×modül kombinasyonunda holdout'ta
+# expectancy iyileşti (GOLD'un tümünde, Trendline'da ayrıca BTCUSD'de de
+# pozitife döndü); bu oturumun EN SIKI doğrulanmış bulgusu.
 MODULE_SL_BUFFER_RATIO: dict[str, float] = {
-    "fvg": 1.0,
-    "ifvg": 1.0,
-    "ob": 3.0,
-    "trendline": 0.5,
+    "fvg": 15.0,
+    "ifvg": 15.0,
+    "ob": 30.0,
+    "trendline": 5.0,
 }
 
 # Modül başına, o modülün kendi seçili R'sinde (yukarıdaki MODULE_R_MULTIPLE)

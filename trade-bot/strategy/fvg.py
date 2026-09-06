@@ -42,11 +42,33 @@ class FVG:
     filled_at_index: int | None = None  # ilk dolum barının index'i (hiç dolmadıysa None) -- causal sorgular için
     valid: bool = True               # tüm geçerlilik kurallarını geçti mi
     invalid_reason: str | None = None  # geçersizse hangi kural yüzünden
+    # 2026-09-03 eklendi -- bilgi amaçlı win-rate arastirmasi alanlari
+    # (bkz. modul disi NOA_KONSEPTI_KAYNAK_ANALIZI.md notu). Hicbiri
+    # detect_fvgs tarafindan ELEME icin kullanilmiyor, sadece
+    # scratch_winrate_filters_study.py'nin ablation testi icin.
+    in_killzone: bool = False          # 3. mum (end_index) ICT killzone saatinde mi olustu
+    volume_confirmed: bool = False      # ortadaki (displacement) mumun hacmi son N mumun ortalamasinin X kati mi
 
     @property
     def entry_price(self) -> float:
-        """Kurala göre giriş fiyatı: bullish'te gap'in altı, bearish'te üstü."""
-        return self.bottom if self.direction == FVGDirection.BULLISH else self.top
+        """
+        Giriş fiyatı: bullish'te gap'in ÜSTÜ (yakın/sığ kenar), bearish'te ALTI.
+
+        GÜNCELLEME (2026-09-03, bkz. NOA_KONSEPTI_KAYNAK_ANALIZI.md "Win rate
+        arastirmasi -- FVG giris derinligi"): onceden bu kural gap'in EN
+        DERIN (uzak) kenarini kullaniyordu -- tam retracement gerektiren en
+        muhafazakar secim. scratch_fvg_entry_depth_study.py'de DUZELTILMIS
+        motorla (gercekci spread) 0.0 (sig kenar) ile 1.0 (derin kenar,
+        eski davranis) arasinda 7 nokta tarandi -- SIG kenar 3 sembolde de
+        (GOLD/BTCUSD/EURGBP) tutarli ve monoton sekilde daha iyi cikti (win
+        %19.8->%23.9, beklenti -0.528R->-0.269R). Mekanizma kismen "daha
+        erken/kolay dolum" degil, SL sabit kaldigi icin (hala uzak kenara
+        gore) risk mesafesinin buyumesi/stop'un daha az gurultuyle
+        tetiklenmesi olabilir -- bu nuans acikca not ediliyor, ama SONUC
+        (R-cinsinden olculen gercek performans) her iki mekanizma icin de
+        gecerli.
+        """
+        return self.top if self.direction == FVGDirection.BULLISH else self.bottom
 
     def is_unfilled_as_of(self, index: int) -> bool:
         """
@@ -104,6 +126,18 @@ def compute_atr_series(candles: list[dict], period: int = ATR_PERIOD) -> list[fl
 from dataclasses import replace
 
 
+def _average_volume_series(candles: list[dict], period: int) -> list[float | None]:
+    """Her mum icin, kendisinden ONCEKI `period` mumun ortalama tick_volume'unu doner (causal)."""
+    volumes = [c.get("tick_volume", 0) for c in candles]
+    result: list[float | None] = [None] * len(candles)
+    for i in range(len(candles)):
+        if i < period:
+            continue
+        window = volumes[i - period:i]
+        result[i] = sum(window) / period
+    return result
+
+
 def detect_fvgs(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG, atr_period: int | None = None) -> list[FVG]:
     """
     Verilen mum listesinden FVG'leri tespit eder ve geçerlilik kurallarını uygular.
@@ -112,6 +146,7 @@ def detect_fvgs(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG, at
         config = replace(config, atr_period=atr_period)
     fvgs: list[FVG] = []
     atr_series = compute_atr_series(candles, config.atr_period)
+    avg_volume_series = _average_volume_series(candles, config.volume_confirm_period)
 
     for i in range(len(candles) - 2):
         c1, c2, c3 = candles[i], candles[i + 1], candles[i + 2]
@@ -119,22 +154,32 @@ def detect_fvgs(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG, at
         if atr is None:
             continue  # henüz yeterli veri yok, ATR hesaplanamıyor
 
+        avg_vol = avg_volume_series[i + 1]  # c2 (ortadaki mum) icin ortalama
+        in_kz = candles[i + 2]["time"].hour in _KILLZONE_HOURS if hasattr(candles[i + 2]["time"], "hour") else False
+        vol_confirmed = bool(avg_vol and c2.get("tick_volume", 0) >= avg_vol * config.volume_confirm_ratio)
+
         # Bullish FVG: 3. mumun alt fitili, 1. mumun üst fitilinin üstünde
         if c3["low"] > c1["high"]:
             fvgs.append(_build_fvg(i, i + 2, c1["high"], c3["low"],
-                                    FVGDirection.BULLISH, c2, atr, config))
+                                    FVGDirection.BULLISH, c2, atr, config, in_kz, vol_confirmed))
 
         # Bearish FVG: 3. mumun üst fitili, 1. mumun alt fitilinin altında
         if c3["high"] < c1["low"]:
             fvgs.append(_build_fvg(i, i + 2, c3["high"], c1["low"],
-                                    FVGDirection.BEARISH, c2, atr, config))
+                                    FVGDirection.BEARISH, c2, atr, config, in_kz, vol_confirmed))
 
     _apply_multi_fvg_rule(fvgs)
     return fvgs
 
 
+from strategy.session import in_killzone as _in_killzone_fn
+
+_KILLZONE_HOURS = frozenset(h for h in range(24) if _in_killzone_fn(h))
+
+
 def _build_fvg(start_index: int, end_index: int, bottom: float, top: float,
-               direction: FVGDirection, middle_candle: dict, atr: float, config: StrategyConfig = DEFAULT_CONFIG) -> FVG:
+               direction: FVGDirection, middle_candle: dict, atr: float, config: StrategyConfig = DEFAULT_CONFIG,
+               in_killzone: bool = False, volume_confirmed: bool = False) -> FVG:
     gap_size = top - bottom
     gap_to_atr = gap_size / atr if atr else 0
 
@@ -153,7 +198,8 @@ def _build_fvg(start_index: int, end_index: int, bottom: float, top: float,
             reason = "dengesiz FVG (ortadaki mum boşluğa göre orantısız büyük)"
 
     return FVG(start_index=start_index, end_index=end_index, top=top, bottom=bottom,
-               direction=direction, valid=valid, invalid_reason=reason)
+               direction=direction, valid=valid, invalid_reason=reason,
+               in_killzone=in_killzone, volume_confirmed=volume_confirmed)
 
 
 def _apply_multi_fvg_rule(fvgs: list[FVG]) -> None:

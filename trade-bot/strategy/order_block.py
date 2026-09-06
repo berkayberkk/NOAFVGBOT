@@ -66,6 +66,11 @@ class OrderBlock:
     engulfing: bool = False           # impuls mumu, OB mumunun tum high-low araligini (fitil dahil) yutuyor mu
     swept_liquidity: bool = False     # OB mumu, kendinden onceki N barin en dip/tepe seviyesini gecti mi (likidite supurmesi)
     htf_discount_aligned: bool = False  # entry seviyesi, N barlik HTF-proxy araligin dogru yarisinda mi (bullish->discount, bearish->premium)
+    # 2026-09-03 eklendi -- ayni disiplinle, win-rate arastirmasi alanlari
+    # (bkz. NOA_KONSEPTI_KAYNAK_ANALIZI.md). Yine hicbiri ELEME icin
+    # kullanilmiyor.
+    in_killzone: bool = False          # impuls mumu ICT killzone saatinde mi olustu
+    volume_confirmed: bool = False      # impuls mumunun hacmi son N mumun ortalamasinin X kati mi
 
 
 from strategy.config import DEFAULT_CONFIG, StrategyConfig
@@ -87,6 +92,23 @@ def _average_range_series(candles: list[dict], period: int) -> list[float | None
         result[i] = sum(window) / period
 
     return result
+
+
+def _average_volume_series(candles: list[dict], period: int) -> list[float | None]:
+    """Her mum icin, kendisinden ONCEKI `period` mumun ortalama tick_volume'unu doner (causal)."""
+    volumes = [c.get("tick_volume", 0) for c in candles]
+    result: list[float | None] = [None] * len(candles)
+    for i in range(len(candles)):
+        if i < period:
+            continue
+        window = volumes[i - period:i]
+        result[i] = sum(window) / period
+    return result
+
+
+from strategy.session import in_killzone as _in_killzone_fn
+
+_KILLZONE_HOURS = frozenset(h for h in range(24) if _in_killzone_fn(h))
 
 
 from dataclasses import replace
@@ -113,6 +135,7 @@ def detect_order_blocks(candles: list[dict], config: StrategyConfig = DEFAULT_CO
         sm = strong_move_ratio if strong_move_ratio is not None else config.strong_move_ratio
         config = replace(config, avg_range_period=p, strong_move_ratio=sm)
     avg_ranges = _average_range_series(candles, config.avg_range_period)
+    avg_volumes = _average_volume_series(candles, config.volume_confirm_period)
     blocks: list[OrderBlock] = []
 
     for i, candle in enumerate(candles):
@@ -179,6 +202,10 @@ def detect_order_blocks(candles: list[dict], config: StrategyConfig = DEFAULT_CO
         else:
             htf_discount_aligned = entry_level > midpoint
 
+        avg_vol = avg_volumes[i]
+        vol_confirmed = bool(avg_vol and candle.get("tick_volume", 0) >= avg_vol * config.volume_confirm_ratio)
+        in_kz = candle["time"].hour in _KILLZONE_HOURS if hasattr(candle["time"], "hour") else False
+
         blocks.append(OrderBlock(
             index=ob_index,
             impulse_index=i,
@@ -188,6 +215,8 @@ def detect_order_blocks(candles: list[dict], config: StrategyConfig = DEFAULT_CO
             engulfing=engulfing,
             swept_liquidity=swept_liquidity,
             htf_discount_aligned=htf_discount_aligned,
+            in_killzone=in_kz,
+            volume_confirmed=vol_confirmed,
         ))
 
     return blocks

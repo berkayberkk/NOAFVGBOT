@@ -158,17 +158,6 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
 
             # 1. EMİR DOLUM KONTROLÜ (Henüz dolmadıysa)
             if not is_filled:
-                # SİNYAL GEÇERSİZLEŞMESİ (2026-09-06 -- audit denetiminde bulunan
-                # kök-neden düzeltmesi, bkz. Signal.invalid_after_index docstring'i):
-                # kaynak bölge (FVG gap'i / OB gövdesi) bu bardan ÖNCE kapanışla
-                # tamamen geçersiz olduysa, artık bu barda (veya sonrasında) dolum
-                # aranmaz -- sinyal bu noktadan sonra hiç dolmamış (unfilled)
-                # sayılır. Ayni-barda gap'in tamamının geçilip AYNI ANDA dolum
-                # gerçekleşmesi (j == invalid_after_index) hâlâ geçerli sayılır --
-                # sadece SONRAKİ barlardan (j > invalid_after_index) itibaren
-                # taramaya devam edilmez.
-                if signal.invalid_after_index is not None and j > signal.invalid_after_index:
-                    break
                 if signal.type == SignalType.BUY:
                     candle_ask_low = candle["low"] + half_spread
                     candle_ask_open = candle["open"] + half_spread

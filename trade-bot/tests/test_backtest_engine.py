@@ -652,3 +652,55 @@ def test_no_breakeven_when_trigger_pct_is_none():
     assert trade.is_breakeven is False
     assert trade.exit_price == 98.0
     assert trade.r_multiple == pytest.approx(-1.0)
+
+
+# --- 2026-09-04 regresyon testleri (bkz. backtest/engine.py MAX_GAP_FILL_RISK_MULTIPLE
+# yorumu) -- CHFJPY 2015-01-15 SNB CHF depeg soku gibi, sinyalin kendi (kucuk)
+# riskine gore anlamsiz derecede uzak bir "dolum" gecerli sayilmamali. Bu
+# koruma eklenmeden once, boyle bir sicrama +413R gibi sahte R degerleri
+# ureterek gercekte kayip olan islemleri bile "kazanc" gibi gosterebiliyordu
+# (bkz. audit denetiminde bulunan Bulgu #7 -- bu senaryo icin regresyon
+# testi eksikti).
+
+def test_extreme_gap_fill_rejected_and_signal_remains_unfilled():
+    # risk = |100-98| = 2.0, MAX_GAP_FILL_RISK_MULTIPLE=3.0 -> kabul siniri
+    # entry'den +/-6 birim. index 1'deki sicrama (entry'den 50 birim uzakta)
+    # naif mantikla "dolum" sayilirdi (ask_low <= entry) -- ama GECERSIZ
+    # sayilip taramaya devam edilmeli. Sonraki mumlar entry'nin (100) HEP
+    # USTUNDE kalip bir daha hic dokunmuyor -- sinyal sonuna kadar
+    # doldurulamamis kalmali.
+    candles_data = [(100.0, 100.2, 99.8, 100.0)]
+    candles_data.append((50.0, 55.0, 45.0, 52.0))          # asiri sicrama -- reddedilir
+    candles_data += [(110.0, 112.0, 108.0, 110.0)] * 4      # entry'nin (100) ustunde kaliyor, bir daha dokunmuyor
+    signal = Signal(index=0, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS,
+                    entry=100.0, stop_loss=98.0, take_profit=104.0, reason="A+")
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 0
+    assert result.unfilled_orders == 1
+
+
+def test_extreme_gap_rejected_then_genuine_later_fill_still_counted():
+    # Asiri sicrama reddedildikten SONRA fiyat gercekten (kucuk/normal bir
+    # hareketle, gap sinirinin ICINDE) entry seviyesine donerse, taramaya
+    # devam edilip GECERLI bir islem olusturulmali -- gap reddi taramayi
+    # kalici olarak durdurmamali.
+    candles_data = [(100.0, 100.2, 99.8, 100.0)]
+    candles_data.append((50.0, 55.0, 45.0, 52.0))          # asiri sicrama -- reddedilir
+    candles_data.append((110.0, 112.0, 108.0, 110.0))       # entry'nin (100) ustunde, henuz dokunmuyor
+    candles_data.append((101.0, 102.0, 99.5, 100.5))        # simdi GERCEKTEN entry'ye (100) dokunuyor -- normal dolum
+    candles_data.append((100.0, 104.5, 99.5, 104.0))        # TP (104) vuruluyor
+    signal = Signal(index=0, type=SignalType.BUY, confidence=Confidence.HIGH, setup_type=SetupType.A_PLUS,
+                    entry=100.0, stop_loss=98.0, take_profit=104.0, reason="A+")
+
+    candles = _make_dummy_candles(candles_data)
+    result = run_backtest(candles, [signal])
+
+    assert len(result.trades) == 1
+    trade = result.trades[0]
+    assert trade.entry_fill_index == 3
+    assert trade.executed_entry == pytest.approx(100.0)
+    assert trade.won is True
+    assert trade.r_multiple == pytest.approx(2.0)  # (104-100)/(100-98)

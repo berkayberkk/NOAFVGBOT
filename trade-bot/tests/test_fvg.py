@@ -51,7 +51,7 @@ def test_bullish_fvg_detection():
     assert fvg.end_index == 16
     assert fvg.bottom == 101.0
     assert fvg.top == 102.0
-    assert fvg.entry_price == 101.0
+    assert fvg.entry_price == 102.0  # sig/yakin kenar (2026-09-03 -- bkz. FVG.entry_price docstring'i)
     assert fvg.valid is True
     assert fvg.filled is False
 
@@ -74,7 +74,7 @@ def test_bearish_fvg_detection():
     assert fvg.end_index == 16
     assert fvg.bottom == 98.0
     assert fvg.top == 99.0
-    assert fvg.entry_price == 99.0
+    assert fvg.entry_price == 98.0  # sig/yakin kenar (2026-09-03 -- bkz. FVG.entry_price docstring'i)
     assert fvg.valid is True
 
 
@@ -163,3 +163,60 @@ def test_wick_touch_into_fvg_does_not_invalidate_it():
 
     bullish_fvg = [f for f in fvgs if f.direction == FVGDirection.BULLISH][0]
     assert bullish_fvg.filled is False
+
+
+# --- 2026-09-03: win-rate arastirmasi alanlari (in_killzone, volume_confirmed) ---
+
+def _make_dummy_candles_custom(ohlc_list, base_time=None, volumes=None):
+    base_time = base_time or datetime(2026, 1, 1, 0, 0, 0)
+    candles = []
+    for i, (o, h, l, c) in enumerate(ohlc_list):
+        candles.append({
+            "time": base_time + timedelta(minutes=30 * i),
+            "open": o, "high": h, "low": l, "close": c,
+            "tick_volume": volumes[i] if volumes else 100,
+            "spread": 10,
+        })
+    return candles
+
+
+def test_fvg_in_killzone_true_when_third_candle_in_london_window():
+    # base_time=21:00 -> idx22 (c3, end_index) = 21:00 + 11sa = 08:00 (ertesi gun) -> Londra killzone (07-10) icinde
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20
+    fvg = [(100.0, 101.0, 99.0, 100.5), (101.0, 103.0, 100.5, 102.8), (102.8, 104.0, 102.0, 103.5)]
+    candles = _make_dummy_candles_custom(neutral + fvg, base_time=datetime(2026, 1, 1, 21, 0, 0))
+    fvgs = detect_fvgs(candles)
+    bull = [f for f in fvgs if f.direction == FVGDirection.BULLISH][0]
+    assert candles[22]["time"].hour == 8
+    assert bull.in_killzone is True
+
+
+def test_fvg_in_killzone_false_when_third_candle_outside_windows():
+    # base_time=00:00 -> idx22 = 00:00 + 11sa = 11:00 -> hicbir killzone'da degil
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20
+    fvg = [(100.0, 101.0, 99.0, 100.5), (101.0, 103.0, 100.5, 102.8), (102.8, 104.0, 102.0, 103.5)]
+    candles = _make_dummy_candles_custom(neutral + fvg)
+    fvgs = detect_fvgs(candles)
+    bull = [f for f in fvgs if f.direction == FVGDirection.BULLISH][0]
+    assert candles[22]["time"].hour == 11
+    assert bull.in_killzone is False
+
+
+def test_fvg_volume_confirmed_true_when_middle_candle_volume_spikes():
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20  # hacim 100 (varsayilan), volume_confirm_period(20) icin yeterli gecmis
+    fvg = [(100.0, 101.0, 99.0, 100.5), (101.0, 103.0, 100.5, 102.8), (102.8, 104.0, 102.0, 103.5)]
+    volumes = [100] * 20 + [100, 500, 100]  # c2 (idx21) hacmi 500 -- ortalamanin (100) 5 kati, esik 1.5x'i asiyor
+    candles = _make_dummy_candles_custom(neutral + fvg, volumes=volumes)
+    fvgs = detect_fvgs(candles)
+    bull = [f for f in fvgs if f.direction == FVGDirection.BULLISH][0]
+    assert bull.volume_confirmed is True
+
+
+def test_fvg_volume_confirmed_false_when_middle_candle_volume_normal():
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20
+    fvg = [(100.0, 101.0, 99.0, 100.5), (101.0, 103.0, 100.5, 102.8), (102.8, 104.0, 102.0, 103.5)]
+    volumes = [100] * 23  # c2 hacmi ortalamayla ayni -- esigi asmiyor
+    candles = _make_dummy_candles_custom(neutral + fvg, volumes=volumes)
+    fvgs = detect_fvgs(candles)
+    bull = [f for f in fvgs if f.direction == FVGDirection.BULLISH][0]
+    assert bull.volume_confirmed is False

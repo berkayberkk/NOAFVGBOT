@@ -18,38 +18,42 @@ from strategy.signal_engine import generate_signals, SignalType, Confidence, Set
 from strategy.config import DEFAULT_CONFIG
 
 
-def _make_dummy_candles(ohlc_list: list[tuple[float, float, float, float]]) -> list[dict]:
+def _make_dummy_candles(ohlc_list: list[tuple[float, float, float, float]], volumes=None) -> list[dict]:
     base_time = datetime(2026, 1, 1, 0, 0, 0)
     candles = []
     for i, (o, h, l, c) in enumerate(ohlc_list):
         candles.append({
             "time": base_time + timedelta(minutes=30 * i),
             "open": o, "high": h, "low": l, "close": c,
-            "tick_volume": 100, "spread": 10,
+            "tick_volume": volumes[i] if volumes else 100, "spread": 10,
         })
     return candles
 
 
 def test_fvg_signal_uses_official_r_multiple_and_sl_buffer():
     # test_fvg.py::test_bullish_fvg_detection ile ayni FVG (top=102.0, bottom=101.0).
-    neutral = [(100.0, 101.0, 99.0, 100.0)] * 14
+    # 20 notr mum (volume_confirm_period=20 icin yeterli gecmis) + orta mumda
+    # (idx21) hacim patlamasi -- signal_engine artik FVG'de volume_confirmed
+    # sarti uyguluyor (2026-09-03), aksi halde sinyal 0'a elenir.
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20
     fvg = [
         (100.0, 101.0, 99.0, 100.5),
         (101.0, 103.0, 100.5, 102.8),
         (102.8, 104.0, 102.0, 103.5),
     ]
-    candles = _make_dummy_candles(neutral + fvg)
+    volumes = [100] * 20 + [100, 500, 100]
+    candles = _make_dummy_candles(neutral + fvg, volumes=volumes)
     signals = generate_signals(candles)
 
     fvg_signals = [s for s in signals if s.setup_type == SetupType.FVG_ONLY]
     assert len(fvg_signals) == 1
     s = fvg_signals[0]
-    assert s.index == 16
+    assert s.index == 22
     assert s.type == SignalType.BUY
     assert s.confidence == Confidence.MEDIUM
-    assert s.entry == 101.0
-    assert s.stop_loss == 100.0        # bottom(101.0) - gap(1.0)*SL_BUFFER_RATIO["fvg"](1.0)
-    assert s.take_profit == pytest.approx(102.5)  # entry + R(1.5)*risk(1.0)
+    assert s.entry == 102.0            # sig/yakin kenar (top) -- 2026-09-03 giris derinligi bulgusu
+    assert s.stop_loss == 86.0         # bottom(101.0) - gap(1.0)*SL_BUFFER_RATIO["fvg"](15.0, 2026-09-03 Aday 6 holdout ile benimsendi) -- SL hala uzak kenara gore
+    assert s.take_profit == pytest.approx(126.0)  # entry(102.0) + R(1.5)*risk(16.0)
     assert s.breakeven_trigger_pct == 0.5           # "fvg" BREAKEVEN_ENABLED_MODULES icinde
 
 
@@ -72,8 +76,8 @@ def test_ifvg_signal_uses_official_r_multiple_and_sl_buffer():
     assert s.index == 18
     assert s.type == SignalType.SELL   # bullish FVG asagi kirildi -> bearish reversal
     assert s.entry == 101.5             # consequent_encroachment
-    assert s.stop_loss == 103.0          # top(102.0) + gap(1.0)*SL_BUFFER_RATIO["ifvg"](1.0)
-    assert s.take_profit == pytest.approx(99.25)  # entry - R(1.5)*risk(1.5)
+    assert s.stop_loss == 117.0          # top(102.0) + gap(1.0)*SL_BUFFER_RATIO["ifvg"](15.0, 2026-09-03 Aday 7 holdout ile benimsendi)
+    assert s.take_profit == pytest.approx(78.25)  # entry(101.5) - R(1.5)*risk(15.5)
     assert s.breakeven_trigger_pct == 0.5
 
 
@@ -90,9 +94,9 @@ def test_ob_signal_uses_official_r_multiple_and_sl_buffer():
     s = ob_signals[0]
     assert s.index == 14                 # ob.impulse_index -- ob.index DEGIL (bu oturumun kalibrasyonuyla uyumlu)
     assert s.type == SignalType.BUY
-    assert s.entry == 100.0               # (top+bottom)/2 = (100.5+99.5)/2
-    assert s.stop_loss == 96.5             # bottom(99.5) - govde(1.0)*SL_BUFFER_RATIO["ob"](3.0)
-    assert s.take_profit == pytest.approx(110.5)  # entry + R(3.0)*risk(3.5)
+    assert s.entry == 100.5                # sig/yakin kenar (top) -- 2026-09-03 giris derinligi bulgusu
+    assert s.stop_loss == 69.5             # bottom(99.5) - govde(1.0)*SL_BUFFER_RATIO["ob"](30.0, 2026-09-03 Aday 6 holdout ile benimsendi)
+    assert s.take_profit == pytest.approx(193.5)  # entry(100.5) + R(3.0)*risk(31.0)
     assert s.breakeven_trigger_pct == 0.5
 
 

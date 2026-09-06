@@ -187,3 +187,60 @@ def test_htf_discount_aligned_false_for_bullish_ob_in_upper_half():
     blocks = detect_order_blocks(candles, config=cfg)
     assert len(blocks) == 1
     assert blocks[0].htf_discount_aligned is False
+
+
+# --- 2026-09-03: win-rate arastirmasi alanlari (in_killzone, volume_confirmed) ---
+
+def _make_dummy_candles_custom(ohlc_list, base_time=None, volumes=None):
+    base_time = base_time or datetime(2026, 1, 1, 0, 0, 0)
+    candles = []
+    for i, (o, h, l, c) in enumerate(ohlc_list):
+        candles.append({
+            "time": base_time + timedelta(minutes=30 * i),
+            "open": o, "high": h, "low": l, "close": c,
+            "tick_volume": volumes[i] if volumes else 100,
+            "spread": 10,
+        })
+    return candles
+
+
+def test_ob_in_killzone_true_when_impulse_in_london_window():
+    # base_time=22:00 -> idx21 (impuls) = 22:00 + 10sa30dk = 08:30 (ertesi gun) -> Londra killzone icinde
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]
+    impulse = [(99.5, 106.0, 99.4, 105.5)]
+    candles = _make_dummy_candles_custom(neutral + last_opposite + impulse, base_time=datetime(2026, 1, 1, 22, 0, 0))
+    blocks = detect_order_blocks(candles)
+    assert candles[21]["time"].hour == 8
+    assert blocks[0].in_killzone is True
+
+
+def test_ob_in_killzone_false_when_impulse_outside_windows():
+    # base_time=00:00 -> idx21 = 00:00 + 10sa30dk = 10:30 -> hicbir killzone'da degil
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]
+    impulse = [(99.5, 106.0, 99.4, 105.5)]
+    candles = _make_dummy_candles_custom(neutral + last_opposite + impulse)
+    blocks = detect_order_blocks(candles)
+    assert candles[21]["time"].hour == 10
+    assert blocks[0].in_killzone is False
+
+
+def test_ob_volume_confirmed_true_when_impulse_volume_spikes():
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]
+    impulse = [(99.5, 106.0, 99.4, 105.5)]
+    volumes = [100] * 20 + [100, 500]  # impuls (idx21) hacmi 500 -- ortalamanin (100) 5 kati
+    candles = _make_dummy_candles_custom(neutral + last_opposite + impulse, volumes=volumes)
+    blocks = detect_order_blocks(candles)
+    assert blocks[0].volume_confirmed is True
+
+
+def test_ob_volume_confirmed_false_when_impulse_volume_normal():
+    neutral = [(100.0, 101.0, 99.0, 100.0)] * 20
+    last_opposite = [(100.5, 100.8, 99.2, 99.5)]
+    impulse = [(99.5, 106.0, 99.4, 105.5)]
+    volumes = [100] * 22  # impuls hacmi ortalamayla ayni
+    candles = _make_dummy_candles_custom(neutral + last_opposite + impulse, volumes=volumes)
+    blocks = detect_order_blocks(candles)
+    assert blocks[0].volume_confirmed is False

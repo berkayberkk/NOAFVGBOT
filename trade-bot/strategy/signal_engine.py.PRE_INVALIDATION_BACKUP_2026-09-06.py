@@ -43,9 +43,9 @@ sabit `Confidence.MEDIUM` atanıyor.
 from dataclasses import dataclass
 from enum import Enum
 
-from strategy.fvg import detect_fvgs, mark_filled_fvgs, FVGDirection, compute_atr_series
+from strategy.fvg import detect_fvgs, FVGDirection, compute_atr_series
 from strategy.ifvg import detect_confirmed_ifvgs, IFVGEvent
-from strategy.order_block import detect_order_blocks, mark_mitigated_blocks, OBDirection
+from strategy.order_block import detect_order_blocks, OBDirection
 from strategy.trendline import detect_trendlines, detect_trendline_reversals, TrendlineDirection
 
 
@@ -86,19 +86,6 @@ class Signal:
     # Hicbiri generate_signals tarafindan ELEME icin kullanilmiyor.
     in_killzone: bool = False
     volume_confirmed: bool = False
-    # 2026-09-06 eklendi -- audit denetiminde bulunan kok-neden duzeltmesi
-    # (bkz. Bulgu #2): sinyaller onceden SURESIZ bekliyordu, kaynak
-    # bolge (FVG gap'i / OB govdesi) kapanisla tamamen gecersiz olsa BILE
-    # sinyal "hala bekliyor" sayilip fiyat cok daha sonra rastgele o eski
-    # seviyeye donerse islem aciliyordu -- bu, 2026-09-04'te duzeltilen
-    # R-multiple sisme hatasinin da kok nedeniydi (o duzeltme sadece
-    # asiri sicrama SEMPTOMUNU yamadi). Sadece FVG/OB icin doldurulur
-    # (mark_filled_fvgs/mark_mitigated_blocks kaynagi var); iFVG/Trendline'da
-    # analog bir "gecersizlesme" kavrami yok (iFVG zaten kirilma+retest
-    # olayinin kendisi, Trendline kendi broken_index'ini ayrica yonetiyor).
-    # backtest/engine.py'nin dolum taramasi j > invalid_after_index oldugunda
-    # durur (sinyal o barda hic dolmamis/unfilled sayilir).
-    invalid_after_index: int | None = None
 
 
 from strategy.config import (
@@ -123,9 +110,7 @@ def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFI
     # %19.8->%22.6 ilk testte, %23.9->%25.1 giris-derinligi sonrasi
     # ikinci testte). Sadece FVG'de -- OB'de etkisiz/notr cikti,
     # oraya uygulanmadi.
-    all_fvgs = detect_fvgs(candles, config=config)
-    mark_filled_fvgs(all_fvgs, candles)
-    for f in all_fvgs:
+    for f in detect_fvgs(candles, config=config):
         if not f.valid or not f.volume_confirmed:
             continue
         is_bull = f.direction == FVGDirection.BULLISH
@@ -146,7 +131,6 @@ def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFI
             entry=entry, stop_loss=stop_loss, take_profit=take_profit,
             breakeven_trigger_pct=_breakeven_pct("fvg"),
             in_killzone=f.in_killzone, volume_confirmed=f.volume_confirmed,
-            invalid_after_index=f.filled_at_index,
             reason=f"FVG({f.direction.value})",
         ))
 
@@ -173,9 +157,7 @@ def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFI
         ))
 
     # --- Order Block ---
-    all_obs = detect_order_blocks(candles, config=config)
-    mark_mitigated_blocks(all_obs, candles)
-    for ob in all_obs:
+    for ob in detect_order_blocks(candles, config=config):
         is_bull = ob.direction == OBDirection.BULLISH
         signal_index = ob.impulse_index
         if signal_index >= len(candles):
@@ -199,7 +181,6 @@ def generate_signals(candles: list[dict], config: StrategyConfig = DEFAULT_CONFI
             entry=entry, stop_loss=stop_loss, take_profit=take_profit,
             breakeven_trigger_pct=_breakeven_pct("ob"),
             in_killzone=ob.in_killzone, volume_confirmed=ob.volume_confirmed,
-            invalid_after_index=ob.mitigated_index,
             reason=f"OB({ob.direction.value})",
         ))
 

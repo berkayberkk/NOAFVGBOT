@@ -182,10 +182,12 @@ def test_buy_adverse_slippage():
     cfg = StrategyConfig(slippage=0.10)
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
-    # Exec entry capped at limit 100.0, Exec exit = 109.90, gross_pnl = 9.90, risk = 2.0 -> R = 4.95 < 5.0
-    assert t.executed_entry == 100.0
+    # Market-emri: exec entry = 100.0 + 0.10 = 100.10 (limit'ten kotu, EA'nin
+    # gercek davranisiyla uyumlu), exec exit = 109.90, gross_pnl = 9.80,
+    # risk = 2.0 -> R = 4.90 < 5.0
+    assert t.executed_entry == pytest.approx(100.10)
     assert t.executed_exit == 109.90
-    assert t.r_multiple == pytest.approx(4.95)
+    assert t.r_multiple == pytest.approx(4.90)
 
 
 def test_sell_adverse_slippage():
@@ -199,10 +201,11 @@ def test_sell_adverse_slippage():
     cfg = StrategyConfig(slippage=0.10)
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
-    # Exec entry capped at limit 100.0, Exec exit = 90.10, gross_pnl = 9.90, risk = 2.0 -> R = 4.95 < 5.0
-    assert t.executed_entry == 100.0
+    # Market-emri: exec entry = 100.0 - 0.10 = 99.90 (limit'ten kotu), exec
+    # exit = 90.10, gross_pnl = 9.80, risk = 2.0 -> R = 4.90 < 5.0
+    assert t.executed_entry == pytest.approx(99.90)
     assert t.executed_exit == 90.10
-    assert t.r_multiple == pytest.approx(4.95)
+    assert t.r_multiple == pytest.approx(4.90)
 
 
 def test_commission_reduces_net_r():
@@ -231,14 +234,14 @@ def test_combined_execution_costs():
     cfg = StrategyConfig(spread=0.20, slippage=0.05, commission=0.10)
     res = run_backtest(candles, [signal], config=cfg)
     t = res.trades[0]
-    # Exec entry capped at limit 100.0
+    # Market-emri: exec entry = 100.0 + half_spread(0.10) + slippage(0.05) = 100.05
     # Exec exit = 110.0 - 0.10 - 0.05 = 109.85
-    # Gross PnL = 9.85 -> Gross R = 4.925
-    # Net PnL = 9.85 - 0.10 = 9.75 -> Net R = 4.875
-    assert t.executed_entry == pytest.approx(100.0)
+    # Gross PnL = 9.80 -> Gross R = 4.90
+    # Net PnL = 9.80 - 0.10 = 9.70 -> Net R = 4.85
+    assert t.executed_entry == pytest.approx(100.05)
     assert t.executed_exit == pytest.approx(109.85)
-    assert t.gross_r_multiple == pytest.approx(4.925)
-    assert t.net_r_multiple == pytest.approx(4.875)
+    assert t.gross_r_multiple == pytest.approx(4.90)
+    assert t.net_r_multiple == pytest.approx(4.85)
 
 
 def test_same_bar_sl_tp_pessimistic_with_costs():
@@ -255,10 +258,10 @@ def test_same_bar_sl_tp_pessimistic_with_costs():
     t = res.trades[0]
     assert t.won is False
     # Executed SL exit = 98.0 - 0.10 - 0.05 = 97.85
-    # Executed entry = 100.0 (capped at limit)
-    # Gross PnL = 97.85 - 100.0 = -2.15
-    # Net PnL = -2.15 - 0.10 = -2.25 -> Net R = -1.125
-    assert t.net_r_multiple == pytest.approx(-1.125)
+    # Market-emri: executed entry = 100.0 + half_spread(0.10) + slippage(0.05) = 100.05
+    # Gross PnL = 97.85 - 100.05 = -2.20
+    # Net PnL = -2.20 - 0.10 = -2.30 -> Net R = -1.15
+    assert t.net_r_multiple == pytest.approx(-1.15)
 
 
 def test_long_tp_not_triggered_when_mid_touches_but_bid_does_not():
@@ -490,7 +493,11 @@ def test_same_bar_entry_sl_tp_all_reachable_pessimistic_sl_first():
     assert t.r_multiple == -1.0
 
 
-def test_buy_gap_through_with_large_slippage_capped_at_limit():
+def test_buy_gap_through_with_large_slippage_applies_beyond_limit():
+    # 2026-09-07: market-emri modelinde slippage KOSULSUZ uygulanir -- entry
+    # mumu limit'ten daha IYI (99.90) acilsa bile, dolum yine de
+    # signal.entry'den kotu olabilir (canli EA market emriyle acar, limit
+    # emri gibi "asla kotu olamaz" garantisi yok).
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
     candles_data[5] = (100.0, 110.0, 99.0, 105.0)
     candles_data[15] = (100.0, 110.0, 99.0, 105.0)
@@ -504,10 +511,11 @@ def test_buy_gap_through_with_large_slippage_capped_at_limit():
     res = run_backtest(candles, [signal], config=cfg)
 
     assert len(res.trades) == 1
-    assert res.trades[0].executed_entry == 100.0
+    # market_price = min(entry=100.0, open=99.90) = 99.90; +slippage(0.30) = 100.20
+    assert res.trades[0].executed_entry == pytest.approx(100.20)
 
 
-def test_sell_gap_through_with_large_slippage_capped_at_limit():
+def test_sell_gap_through_with_large_slippage_applies_beyond_limit():
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
     candles_data[5] = (100.0, 101.0, 90.0, 95.0)
     candles_data[15] = (100.0, 101.0, 90.0, 95.0)
@@ -521,10 +529,11 @@ def test_sell_gap_through_with_large_slippage_capped_at_limit():
     res = run_backtest(candles, [signal], config=cfg)
 
     assert len(res.trades) == 1
-    assert res.trades[0].executed_entry == 100.0
+    # market_price = max(entry=100.0, open=100.10) = 100.10; -slippage(0.30) = 99.80
+    assert res.trades[0].executed_entry == pytest.approx(99.80)
 
 
-def test_buy_intrabar_touch_with_slippage_never_exceeds_limit():
+def test_buy_intrabar_touch_with_slippage_applies_beyond_limit():
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
     candles_data[5] = (100.0, 110.0, 99.0, 105.0)
     candles_data[15] = (100.0, 110.0, 99.0, 105.0)
@@ -538,10 +547,11 @@ def test_buy_intrabar_touch_with_slippage_never_exceeds_limit():
     res = run_backtest(candles, [signal], config=cfg)
 
     assert len(res.trades) == 1
-    assert res.trades[0].executed_entry == 100.0
+    # market_price = min(entry=100.0, open=101.0) = 100.0; +slippage(0.20) = 100.20
+    assert res.trades[0].executed_entry == pytest.approx(100.20)
 
 
-def test_sell_intrabar_touch_with_slippage_never_exceeds_limit():
+def test_sell_intrabar_touch_with_slippage_applies_beyond_limit():
     candles_data = [(100.0, 100.5, 99.5, 100.0) for _ in range(25)]
     candles_data[5] = (100.0, 101.0, 90.0, 95.0)
     candles_data[15] = (100.0, 101.0, 90.0, 95.0)
@@ -555,7 +565,8 @@ def test_sell_intrabar_touch_with_slippage_never_exceeds_limit():
     res = run_backtest(candles, [signal], config=cfg)
 
     assert len(res.trades) == 1
-    assert res.trades[0].executed_entry == 100.0
+    # market_price = max(entry=100.0, open=99.0) = 100.0; -slippage(0.20) = 99.80
+    assert res.trades[0].executed_entry == pytest.approx(99.80)
 
 
 def test_small_slippage_consumes_some_gap_improvement():

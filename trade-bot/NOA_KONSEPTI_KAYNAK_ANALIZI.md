@@ -1886,3 +1886,42 @@ etkisiyle şişmiş) bir etki -- 3 sembollik küçük holdout dilimleriyle
 güvenilir şekilde ayrıştırılamıyor. Daha büyük örneklem (ör. tüm
 KEPT_SYMBOLS'ün TÜM geçmişini, walk-forward/genişleyen pencereyle,
 tek seferlik %20 holdout yerine) olmadan bu konuda karar verilmeyecek.
+
+## Backtest fill modeli -- market-emri simetrik slippage RESMİ hale getirildi (2026-09-07)
+
+2026-09-06 gecesi audit'in Bulgu #1'i (`scratch_execution_model_gap_study.py`,
+o zaman sadece ölçüldü, resmi motor değiştirilmedi) resmi olarak
+`backtest/engine.py`'ye uygulandı. Sorun: giriş dolumunda
+`executed_entry = min(signal.entry, better_price + slippage)` formülü
+dolumun ASLA `signal.entry`'den kötü olamayacağını varsayıyordu -- bu,
+gerçek bir bekleyen LIMIT emrinin davranışı. Ama canlı EA
+(`TradeBot_NOA_Recal.mq5`) pending limit emri KULLANMIYOR, tetiklenince
+MARKET emriyle açılıyor -- market emri tetiklendiği tick'teki fiyatı
+alır, `signal.entry`'den daha kötü de olabilir (normal, gap'siz
+dokunuşlarda bile). Düzeltme: cap kaldırıldı, slippage artık exit
+tarafındaki gibi KOŞULSUZ/simetrik uygulanıyor
+(`trade.executed_entry = market_price + slippage`, cap yok).
+
+**Etki:** backtest sonuçları artık sistematik olarak biraz daha kötümser
+(daha gerçekçi) -- her dolan işlemde giriş fiyatı eskisinden `slippage`
+kadar daha kötü. `tests/test_backtest_engine.py`'deki 8 test bu eski
+"limit-emri" davranışını sabit kodluyordu, yeni market-emri değerleriyle
+güncellendi (4'ü de isim değiştirdi: `..._capped_at_limit` /
+`..._never_exceeds_limit` -> `..._applies_beyond_limit`, artık doğru
+değil çünkü limit koruması yok). Tüm test paketi (36/36) yeşil.
+
+**Kapsam dışı bırakılan (bilinçli):** bu, SADECE giriş dolum modelini
+düzeltti. Aynı audit bulgusunun ikinci parçası -- ölçülen slippage
+DEĞERLERİNİN (`SPREAD`/`SLIPPAGE` sabitleri, "temsili, henüz kalibre
+edilmedi" olarak işaretli) gerçek broker/EA verisiyle kalibre edilmesi --
+hâlâ yapılmadı; `config.slippage`/`config.spread` varsayılanları bu
+oturumda değiştirilmedi. Ayrıca bu değişiklik, önceki oturumlarda
+holdout ile kalibre edilen SL tampon oranlarını (Aday 6/7/8) yeniden
+test ETMEDİ -- o kararlar farklı bir eksen (SL genişliği) üzerindeydi ve
+bu fill-model düzeltmesinden bağımsız kabul edildi; istenirse ayrı bir
+oturumda yeniden doğrulanabilir.
+
+**Diğer açık madde (2026-09-06 audit'ten, hâlâ ertelendi):** EA↔Python
+sinyal-parite doğrulaması (`LogSignalsOnly=true` Strategy Tester koşusu)
+ve mobil responsive doğrulama bu oturumda ele alınmadı; magic=0 USDTRY
+pozisyonu bulgusu kullanıcı isteğiyle bu oturumda kapsam dışı bırakıldı.

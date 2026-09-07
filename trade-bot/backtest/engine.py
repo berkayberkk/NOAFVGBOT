@@ -108,7 +108,9 @@ def _find_take_profit(entry: float, direction: SignalType, levels, signal_index:
 
 def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyConfig = DEFAULT_CONFIG) -> BacktestResult:
     """
-    Sinyalleri geçmiş veri üzerinde limit-emir dolum gerçekçiliği ve işlem maliyetleri ile simüle eder.
+    Sinyalleri geçmiş veri üzerinde market-emri dolum gerçekçiliği (canlı EA'nın
+    gerçek davranışıyla uyumlu -- bkz. giriş dolum bloğundaki 2026-09-07 notu)
+    ve işlem maliyetleri ile simüle eder.
     """
     trades: list[Trade] = []
     skipped = 0
@@ -176,8 +178,18 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
                         is_filled = True
                         trade.filled = True
                         trade.entry_fill_index = j
-                        better_price = min(signal.entry, candle_ask_open)
-                        trade.executed_entry = min(signal.entry, better_price + slippage)
+                        # MARKET EMRİ GERÇEKÇİLİĞİ (2026-09-07 -- audit Bulgu #1,
+                        # bkz. scratch_execution_model_gap_study.py): canlı EA
+                        # (TradeBot_NOA_Recal.mq5) bekleyen LIMIT emri kullanmıyor,
+                        # tetiklenince MARKET emriyle açılıyor -- market emri o
+                        # tick'te mevcut fiyatı alır, signal.entry'den daha kötü de
+                        # olabilir (normal, gap'siz dokunuşlarda bile). Eskiden
+                        # burada `min(signal.entry, ...)` ile dolum ASLA
+                        # signal.entry'den kötü olamıyordu (limit-emri davranışı,
+                        # EA'nın gerçek davranışıyla uyumsuzdu). Artık slippage
+                        # exit'teki gibi simetrik/koşulsuz uygulanıyor.
+                        market_price = min(signal.entry, candle_ask_open)
+                        trade.executed_entry = market_price + slippage
                 else:
                     candle_bid_high = candle["high"] - half_spread
                     candle_bid_open = candle["open"] - half_spread
@@ -185,8 +197,8 @@ def run_backtest(candles: list[dict], signals: list[Signal], config: StrategyCon
                         is_filled = True
                         trade.filled = True
                         trade.entry_fill_index = j
-                        better_price = max(signal.entry, candle_bid_open)
-                        trade.executed_entry = max(signal.entry, better_price - slippage)
+                        market_price = max(signal.entry, candle_bid_open)
+                        trade.executed_entry = market_price - slippage
 
                 if not is_filled:
                     continue  # Bu mumda emir dolmadı, sonraki muma geç

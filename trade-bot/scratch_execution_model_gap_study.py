@@ -12,6 +12,13 @@ SADECE giris tarafindaki bu "asla kotu olamaz" sinirlamasini KALDIRARAK
 (market-emri gibi, slippage'i giriste de exit'teki gibi simetrik uygulayarak)
 yeniden kosar ve resmi motorla karsilastirir. MEVCUT resmi motor
 (backtest/engine.py) DEGISTIRILMEDI -- bu sadece bir olcum/karsilastirma.
+
+GUNCELLEME (2026-09-07): bu scriptin olcup raporladigi market-emri modeli
+artik resmi motora (backtest/engine.py) benimsendi -- `run_backtest_market_
+order_variant` burada artik SADECE tarihsel/referans amacli duruyor, resmi
+`run_backtest` ile ayni sonucu uretir (bkz. backtest/engine.py giris dolum
+blogundaki 2026-09-07 notu, tests/test_backtest_engine.py'deki guncellenmis
+beklenen degerler).
 """
 import copy
 

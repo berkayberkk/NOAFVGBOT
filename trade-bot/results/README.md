@@ -32,9 +32,10 @@ var" sorusuna hızlı cevap vermek için, tam hikaye orada.
 
 Kapsam dışı bırakılanlar (bilinçli, boyut/önem nedeniyle):
 - `trade_archive/` (95 sembol, 230.068 işlem, 618MB, mum pencereleriyle)
-  -- git için çok büyük, proje kökünde `.gitignore`'da kalıyor, sadece
-  yerel diskte duruyor. Yeniden üretmek için `scratch_trade_archive.py`
-  (~5 saat, 95 sembol).
+  -- 2026-09-08'e kadar git için çok büyük kabul edilip `.gitignore`'da
+  tutuluyordu; kullanıcının "eksik hiçbir şey kalmasın" talimatıyla artık
+  repoya DAHİL (tek dosya 100MB GitHub limitini aşmıyor). Yeniden üretmek
+  için `scratch_trade_archive.py` (~5 saat, 95 sembol).
 - `*_checkpoint.json` dosyaları -- bunlar nihai sonuç değil, kesintiye
   dayanıklılık için ara durum (resume noktası), tekrar üretilebilir.
 - Erken D1-ölçekli prototip dosyaları (`gold_d1_*`) -- M30'a resmi geçiş

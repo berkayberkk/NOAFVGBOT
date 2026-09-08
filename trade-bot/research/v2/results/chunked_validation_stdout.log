@@ -1,0 +1,114 @@
+[chunked_train] TRAIN candles=1003676, chunk_size=20000, chunks_total=51, chunks_to_run=3
+[chunked_train] chunk 1/3: [2021-01-04 01:00:00 .. 2021-01-22 16:40:00] events=32616 theses=413 passports=20369 elapsed=107.1s
+[chunked_train] chunk 2/3: [2021-01-22 16:41:00 .. 2021-02-12 05:19:00] events=32611 theses=374 passports=19632 elapsed=119.8s
+[chunked_train] chunk 3/3: [2021-02-12 05:20:00 .. 2021-03-04 20:59:00] events=32621 theses=437 passports=18536 elapsed=98.5s
+Wrote research/v2/results/v2_train_chunked_coverage.json
+{
+  "chunk_count": 3,
+  "size_actual_total": 60000,
+  "first_timestamp": "2021-01-04 01:00:00",
+  "last_timestamp": "2021-03-04 20:59:00",
+  "runtime_seconds_total": 320.7144145965576,
+  "total_events": 97848,
+  "peak_active_theses_max_across_chunks": 8,
+  "peak_active_passports_max_across_chunks": 3133,
+  "created_theses_total": 1224,
+  "invalidated_theses_total": 1219,
+  "expired_theses_total": 0,
+  "passport_count_total": 58537,
+  "feature_coverage_merged": {
+    "EQUAL_HIGHS": {
+      "observations": 859,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 09:00:00",
+      "last_availability_timestamp": "2021-03-04 20:40:00"
+    },
+    "EQUAL_LOWS": {
+      "observations": 868,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 14:12:00",
+      "last_availability_timestamp": "2021-03-04 20:45:00"
+    },
+    "FVG_RAW_FEATURES": {
+      "observations": 8268,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:33:00",
+      "last_availability_timestamp": "2021-03-04 21:00:00"
+    },
+    "LIQUIDITY_SWEEP_EVENT": {
+      "observations": 243100,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 03:03:00",
+      "last_availability_timestamp": "2021-03-04 20:45:00"
+    },
+    "OB_RAW_FEATURES": {
+      "observations": 5896,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:15:00",
+      "last_availability_timestamp": "2021-03-04 21:00:00"
+    },
+    "STRUCTURE_EVENT": {
+      "observations": 13788,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:21:00",
+      "last_availability_timestamp": "2021-03-04 20:51:00"
+    },
+    "SWING_HIGH": {
+      "observations": 5062,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:42:00",
+      "last_availability_timestamp": "2021-03-04 20:48:00"
+    },
+    "SWING_LOW": {
+      "observations": 5173,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:21:00",
+      "last_availability_timestamp": "2021-03-04 20:45:00"
+    }
+  },
+  "quarantine_label": "ENGINEERING_SMOKE_ONLY / QUARANTINED / NOT_RESEARCH_EVIDENCE",
+  "chunking_caveat": "Theses/candidates spanning a chunk boundary are dropped, not carried over. Thesis lifetime cap is 720 M1 candles vs chunk_size=20000, so boundary effect is bounded to ~3.6% of each chunk.",
+  "train_end_boundary_utc": "2023-11-01 00:00:00",
+  "dataset_fingerprint": "e42c13ebe1207474bb99554e627d1ef8c41f19c64428728025ed7dcb0b9fd05c",
+  "full_train_run": false
+}

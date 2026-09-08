@@ -1,0 +1,162 @@
+[chunked_train] TRAIN candles=1003676, chunk_size=20000, chunks_total=51, chunks_to_run=51
+[chunked_train] chunk 1/51: [2021-01-04 01:00:00 .. 2021-01-22 16:40:00] events=32616 theses=413 passports=20369 elapsed=100.6s
+[chunked_train] chunk 2/51: [2021-01-22 16:41:00 .. 2021-02-12 05:19:00] events=32611 theses=374 passports=19632 elapsed=82.1s
+[chunked_train] chunk 3/51: [2021-02-12 05:20:00 .. 2021-03-04 20:59:00] events=32621 theses=437 passports=18536 elapsed=67.2s
+[chunked_train] chunk 4/51: [2021-03-04 21:00:00 .. 2021-03-25 08:37:00] events=32616 theses=383 passports=20109 elapsed=99.2s
+[chunked_train] chunk 5/51: [2021-03-25 08:38:00 .. 2021-04-15 21:13:00] events=32616 theses=307 passports=20304 elapsed=104.0s
+[chunked_train] chunk 6/51: [2021-04-15 21:14:00 .. 2021-05-06 09:51:00] events=32615 theses=325 passports=19508 elapsed=92.4s
+[chunked_train] chunk 7/51: [2021-05-06 09:52:00 .. 2021-05-26 21:28:00] events=32616 theses=344 passports=19874 elapsed=88.4s
+[chunked_train] chunk 8/51: [2021-05-26 21:29:00 .. 2021-06-16 14:09:00] events=32617 theses=310 passports=21831 elapsed=108.2s
+[chunked_train] chunk 9/51: [2021-06-16 14:10:00 .. 2021-07-07 06:50:00] events=32616 theses=335 passports=20043 elapsed=118.5s
+[chunked_train] chunk 10/51: [2021-07-07 06:51:00 .. 2021-07-27 18:27:00] events=32617 theses=320 passports=18210 elapsed=112.2s
+[chunked_train] chunk 11/51: [2021-07-27 18:28:00 .. 2021-08-17 07:09:00] events=32609 theses=304 passports=17884 elapsed=95.3s
+[chunked_train] chunk 12/51: [2021-08-17 07:10:00 .. 2021-09-06 18:47:00] events=32615 theses=255 passports=18819 elapsed=128.5s
+[chunked_train] chunk 13/51: [2021-09-06 18:48:00 .. 2021-09-27 11:28:00] events=32614 theses=320 passports=19827 elapsed=121.0s
+[chunked_train] chunk 14/51: [2021-09-27 11:29:00 .. 2021-10-15 23:06:00] events=32614 theses=326 passports=18822 elapsed=99.5s
+[chunked_train] chunk 15/51: [2021-10-15 23:07:00 .. 2021-11-05 10:44:00] events=32615 theses=310 passports=20000 elapsed=109.9s
+[chunked_train] chunk 16/51: [2021-11-05 10:45:00 .. 2021-11-26 04:26:00] events=32615 theses=352 passports=20441 elapsed=112.6s
+[chunked_train] chunk 17/51: [2021-11-26 04:27:00 .. 2021-12-16 19:20:00] events=32617 theses=314 passports=17590 elapsed=135.0s
+[chunked_train] chunk 18/51: [2021-12-16 19:21:00 .. 2022-01-07 13:08:00] events=32609 theses=286 passports=18880 elapsed=111.8s
+[chunked_train] chunk 19/51: [2022-01-07 13:09:00 .. 2022-01-28 04:21:00] events=32609 theses=291 passports=20336 elapsed=155.9s
+[chunked_train] chunk 20/51: [2022-01-28 04:22:00 .. 2022-02-17 16:02:00] events=32608 theses=281 passports=16602 elapsed=100.6s
+[chunked_train] chunk 21/51: [2022-02-17 16:03:00 .. 2022-03-10 07:14:00] events=32613 theses=455 passports=20807 elapsed=73.6s
+[chunked_train] chunk 22/51: [2022-03-10 07:15:00 .. 2022-03-30 18:51:00] events=32619 theses=440 passports=21189 elapsed=80.1s
+[chunked_train] chunk 23/51: [2022-03-30 18:52:00 .. 2022-04-21 07:28:00] events=32612 theses=408 passports=19164 elapsed=78.6s
+[chunked_train] chunk 24/51: [2022-04-21 07:29:00 .. 2022-05-11 19:05:00] events=32620 theses=411 passports=20179 elapsed=72.5s
+[chunked_train] chunk 25/51: [2022-05-11 19:06:00 .. 2022-06-01 10:16:00] events=32615 theses=352 passports=19558 elapsed=100.3s
+[chunked_train] chunk 26/51: [2022-06-01 10:17:00 .. 2022-06-22 01:30:00] events=32606 theses=346 passports=19535 elapsed=101.1s
+[chunked_train] chunk 27/51: [2022-06-22 01:31:00 .. 2022-07-12 15:44:00] events=32607 theses=347 passports=19651 elapsed=100.8s
+[chunked_train] chunk 28/51: [2022-07-12 15:45:00 .. 2022-08-02 04:25:00] events=32606 theses=346 passports=19558 elapsed=90.6s
+[chunked_train] chunk 29/51: [2022-08-02 04:26:00 .. 2022-08-22 16:03:00] events=32615 theses=343 passports=22027 elapsed=115.6s
+[chunked_train] chunk 30/51: [2022-08-22 16:04:00 .. 2022-09-12 07:14:00] events=32616 theses=323 passports=21397 elapsed=114.7s
+[chunked_train] chunk 31/51: [2022-09-12 07:15:00 .. 2022-09-30 18:50:00] events=32619 theses=388 passports=18674 elapsed=102.5s
+[chunked_train] chunk 32/51: [2022-09-30 18:51:00 .. 2022-10-21 07:28:00] events=32613 theses=385 passports=20676 elapsed=109.5s
+[chunked_train] chunk 33/51: [2022-10-21 07:29:00 .. 2022-11-10 19:05:00] events=32620 theses=370 passports=21395 elapsed=92.6s
+[chunked_train] chunk 34/51: [2022-11-10 19:06:00 .. 2022-12-01 13:33:00] events=32616 theses=366 passports=19371 elapsed=102.3s
+[chunked_train] chunk 35/51: [2022-12-01 13:34:00 .. 2022-12-22 02:11:00] events=32614 theses=332 passports=20654 elapsed=98.7s
+[chunked_train] chunk 36/51: [2022-12-22 02:12:00 .. 2023-01-13 13:49:00] events=32615 theses=373 passports=18388 elapsed=115.2s
+[chunked_train] chunk 37/51: [2023-01-13 13:50:00 .. 2023-02-03 05:00:00] events=32617 theses=375 passports=20815 elapsed=126.7s
+[chunked_train] chunk 38/51: [2023-02-03 05:01:00 .. 2023-02-23 19:10:00] events=32617 theses=354 passports=19728 elapsed=243.9s
+[chunked_train] chunk 39/51: [2023-02-23 19:11:00 .. 2023-03-16 06:48:00] events=32614 theses=341 passports=20912 elapsed=206.8s
+[chunked_train] chunk 40/51: [2023-03-16 06:49:00 .. 2023-04-05 19:32:00] events=32620 theses=419 passports=19490 elapsed=168.7s
+[chunked_train] chunk 41/51: [2023-04-05 19:33:00 .. 2023-04-27 08:10:00] events=32610 theses=364 passports=20345 elapsed=111.5s
+[chunked_train] chunk 42/51: [2023-04-27 08:11:00 .. 2023-05-17 19:47:00] events=32618 theses=347 passports=20509 elapsed=137.4s
+[chunked_train] chunk 43/51: [2023-05-17 19:48:00 .. 2023-06-07 11:04:00] events=32613 theses=330 passports=19211 elapsed=126.4s
+[chunked_train] chunk 44/51: [2023-06-07 11:05:00 .. 2023-06-28 02:15:00] events=32616 theses=296 passports=18320 elapsed=121.6s
+[chunked_train] chunk 45/51: [2023-06-28 02:16:00 .. 2023-07-18 16:26:00] events=32616 theses=279 passports=19358 elapsed=120.6s
+[chunked_train] chunk 46/51: [2023-07-18 16:27:00 .. 2023-08-08 05:06:00] events=32609 theses=292 passports=18237 elapsed=112.5s
+[chunked_train] chunk 47/51: [2023-08-08 05:07:00 .. 2023-08-28 17:04:00] events=32586 theses=245 passports=19900 elapsed=160.9s
+[chunked_train] chunk 48/51: [2023-08-28 17:05:00 .. 2023-09-18 08:17:00] events=32609 theses=194 passports=20249 elapsed=190.5s
+[chunked_train] chunk 49/51: [2023-09-18 08:18:00 .. 2023-10-06 20:00:00] events=32612 theses=277 passports=18796 elapsed=141.5s
+[chunked_train] chunk 50/51: [2023-10-06 20:01:00 .. 2023-10-27 08:39:00] events=32610 theses=346 passports=20777 elapsed=109.2s
+[chunked_train] chunk 51/51: [2023-10-27 08:40:00 .. 2023-10-31 22:58:00] events=5993 theses=64 passports=3242 elapsed=8.3s
+Wrote research/v2/results/v2_train_chunked_coverage.json
+{
+  "chunk_count": 51,
+  "size_actual_total": 1003676,
+  "first_timestamp": "2021-01-04 01:00:00",
+  "last_timestamp": "2023-10-31 22:58:00",
+  "runtime_seconds_total": 5692.1688113212585,
+  "total_events": 1636672,
+  "peak_active_theses_max_across_chunks": 14,
+  "peak_active_passports_max_across_chunks": 7423,
+  "created_theses_total": 17095,
+  "invalidated_theses_total": 16975,
+  "expired_theses_total": 29,
+  "passport_count_total": 989729,
+  "feature_coverage_merged": {
+    "EQUAL_HIGHS": {
+      "observations": 11911,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 09:00:00",
+      "last_availability_timestamp": "2023-10-31 22:50:00"
+    },
+    "EQUAL_LOWS": {
+      "observations": 12043,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 14:12:00",
+      "last_availability_timestamp": "2023-10-31 22:54:00"
+    },
+    "FVG_RAW_FEATURES": {
+      "observations": 138660,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:33:00",
+      "last_availability_timestamp": "2023-10-31 22:45:00"
+    },
+    "LIQUIDITY_SWEEP_EVENT": {
+      "observations": 4277663,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 03:03:00",
+      "last_availability_timestamp": "2023-10-31 22:55:00"
+    },
+    "OB_RAW_FEATURES": {
+      "observations": 96061,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:15:00",
+      "last_availability_timestamp": "2023-10-31 22:57:00"
+    },
+    "STRUCTURE_EVENT": {
+      "observations": 229726,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:21:00",
+      "last_availability_timestamp": "2023-10-31 22:54:00"
+    },
+    "SWING_HIGH": {
+      "observations": 84699,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:42:00",
+      "last_availability_timestamp": "2023-10-31 22:50:00"
+    },
+    "SWING_LOW": {
+      "observations": 85010,
+      "timeframes_represented": [
+        "M15",
+        "M3",
+        "M30",
+        "M5"
+      ],
+      "first_availability_timestamp": "2021-01-04 01:21:00",
+      "last_availability_timestamp": "2023-10-31 22:54:00"
+    }
+  },
+  "quarantine_label": "ENGINEERING_SMOKE_ONLY / QUARANTINED / NOT_RESEARCH_EVIDENCE",
+  "chunking_caveat": "Theses/candidates spanning a chunk boundary are dropped, not carried over. Thesis lifetime cap is 720 M1 candles vs chunk_size=20000, so boundary effect is bounded to ~3.6% of each chunk.",
+  "train_end_boundary_utc": "2023-11-01 00:00:00",
+  "dataset_fingerprint": "e42c13ebe1207474bb99554e627d1ef8c41f19c64428728025ed7dcb0b9fd05c",
+  "full_train_run": true
+}

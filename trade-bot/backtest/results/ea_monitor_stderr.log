@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\berka\OneDrive\Desktop\NOAFVGBOT\trade-bot\backtest\ea_monitor.py", line 203, in <module>
+    run_loop()
+    ~~~~~~~~^^
+  File "C:\Users\berka\OneDrive\Desktop\NOAFVGBOT\trade-bot\backtest\ea_monitor.py", line 183, in run_loop
+    result = run_once(mt5, notifier, send_status=send_status)
+  File "C:\Users\berka\OneDrive\Desktop\NOAFVGBOT\trade-bot\backtest\ea_monitor.py", line 162, in run_once
+    notifier.send(format_status_report(mt5, positions, portfolio_risk_pct))
+                  ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\berka\OneDrive\Desktop\NOAFVGBOT\trade-bot\backtest\ea_monitor.py", line 138, in format_status_report
+    f"bakiye: {account.balance:.2f} {account.currency} | equity: {account.equity:.2f}",
+               ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'balance'

@@ -1,0 +1,57 @@
+
+======================================================================
+GOLD
+======================================================================
+toplam mum: 137317, toplam sinyal: 16993
+
+-- MODUL SEVIYESI (kisitsiz, saf) --
+modul       n_sig n_fill  fill%    win% need_win%    exp_R     PF  true_SL%    BE%  bars->SL
+ob           9833   9529  96.9%   21.3%     25.0%  +0.0067   1.01     62.2%  16.5%    1229.9
+ifvg         3785   3738  98.8%   29.4%     40.0%  +0.0047  1.009     43.3%  27.3%     299.1
+fvg          2798   2746  98.1%   30.3%     40.0%  +0.0281  1.066     42.3%  27.4%     597.6
+trendline     577    576  99.8%   29.3%     33.3%  -0.1115  0.841     70.7%   0.0%      83.8
+
+-- PORTFOY SEVIYESI (tek-pozisyon havuzu, 4 modul birlikte) --
+toplam sinyal=16993 alinan=137
+alinan (modul basina): {'ifvg': 32, 'ob': 77, 'fvg': 26, 'trendline': 2}
+reddedilen (slot mesgul, modul basina): {'ob': 9452, 'ifvg': 3706, 'fvg': 2720, 'trendline': 574}
+portfoy win_rate=27.0% exp_R=+0.0329 PF=1.059 total_net_R=4.5
+
+======================================================================
+BTCUSD
+======================================================================
+toplam mum: 129398, toplam sinyal: 14097
+
+-- MODUL SEVIYESI (kisitsiz, saf) --
+modul       n_sig n_fill  fill%    win% need_win%    exp_R     PF  true_SL%    BE%  bars->SL
+ifvg         3001   2962  98.7%   29.6%     40.0%  -0.0041  0.987     44.3%  26.1%     444.6
+ob           9169   8785  95.8%   19.0%     25.0%  -0.1134  0.827     65.4%  15.6%    1025.2
+fvg          1503   1468  97.7%   30.6%     40.0%  -0.0097  0.978     46.5%  23.0%     628.1
+trendline     424    417  98.3%   31.2%     33.3%  -0.0771  0.884     68.8%   0.0%     100.6
+
+-- PORTFOY SEVIYESI (tek-pozisyon havuzu, 4 modul birlikte) --
+toplam sinyal=14097 alinan=83
+alinan (modul basina): {'fvg': 11, 'ob': 52, 'ifvg': 18, 'trendline': 2}
+reddedilen (slot mesgul, modul basina): {'ob': 8733, 'ifvg': 2944, 'fvg': 1457, 'trendline': 415}
+portfoy win_rate=18.1% exp_R=-0.0872 PF=0.771 total_net_R=-7.23
+
+======================================================================
+EURGBP
+======================================================================
+toplam mum: 200306, toplam sinyal: 25948
+
+-- MODUL SEVIYESI (kisitsiz, saf) --
+modul       n_sig n_fill  fill%    win% need_win%    exp_R     PF  true_SL%    BE%  bars->SL
+ob          17033  16475  96.7%   16.5%     25.0%  -0.1710   0.74     64.3%  19.1%    1498.2
+fvg          3469   3441  99.2%   26.2%     40.0%  -0.0572  0.872     44.0%  29.8%     652.7
+ifvg         4747   4717  99.4%   27.4%     40.0%  -0.0425  0.905     43.6%  29.0%     408.6
+trendline     699    694  99.3%   33.9%     33.3%  -0.0038  0.994     66.1%   0.0%     116.7
+
+-- PORTFOY SEVIYESI (tek-pozisyon havuzu, 4 modul birlikte) --
+toplam sinyal=25948 alinan=147
+alinan (modul basina): {'ob': 95, 'fvg': 23, 'ifvg': 27, 'trendline': 2}
+reddedilen (slot mesgul, modul basina): {'ob': 16380, 'ifvg': 4690, 'fvg': 3418, 'trendline': 692}
+portfoy win_rate=21.1% exp_R=-0.0577 PF=0.869 total_net_R=-8.49
+
+
+yazildi: module_diagnostic_full_scan_results.json

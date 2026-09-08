@@ -1,0 +1,17 @@
+[2026-08-26 04:41:38] EA monitor started. telegram_enabled=True magic=20260826
+[2026-08-26 04:41:48] deal notified: ticket=949709999 symbol=GBPUSD entry=0
+[2026-08-26 04:41:49] deal notified: ticket=949744822 symbol=GBPUSD entry=1
+[2026-08-26 04:41:50] deal notified: ticket=949752732 symbol=GBPUSD entry=0
+[2026-08-26 04:41:53] deal notified: ticket=949761530 symbol=GBPUSD entry=1
+[2026-08-26 04:42:00] poll=0 open=2 risk_pct=4.50 new_deals=4
+[2026-08-26 04:43:37] poll=1 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:44:08] poll=2 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:44:38] poll=3 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:46:52] poll=4 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:47:23] poll=5 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:47:54] poll=6 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:48:24] poll=7 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:48:54] poll=8 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:49:24] poll=9 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:49:54] poll=10 open=2 risk_pct=4.50 new_deals=0
+[2026-08-26 04:50:24] poll=11 open=2 risk_pct=4.50 new_deals=0

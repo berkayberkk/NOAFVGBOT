@@ -1,0 +1,1116 @@
+[2026-08-26 10:51:52] EURUSD: evaluating
+[2026-08-26 11:00:31] EURUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1912 test_trades=36
+[2026-08-26 11:00:31] GBPUSD: evaluating
+[2026-08-26 11:08:23] GBPUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2246 test_trades=32
+[2026-08-26 11:08:23] USDCHF: evaluating
+[2026-08-26 11:15:37] USDCHF: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2261 test_trades=39
+[2026-08-26 11:15:37] USDCAD: evaluating
+[2026-08-26 11:23:02] USDCAD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0708 test_trades=34
+[2026-08-26 11:23:02] AUDCAD: evaluating
+[2026-08-26 11:29:45] AUDCAD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1789 test_trades=23
+[2026-08-26 11:29:45] EURGBP: evaluating
+[2026-08-26 11:37:29] EURGBP: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.1215 test_trades=37
+[2026-08-26 11:37:29] USDJPY: evaluating
+[2026-08-26 11:39:18] USDJPY: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.3860 test_trades=27
+[2026-08-26 11:39:18] EURJPY: evaluating
+[2026-08-26 11:55:38] EURJPY: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.3151 test_trades=41
+[2026-08-26 11:55:38] EURCAD: evaluating
+[2026-08-26 12:09:23] EURCAD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1396 test_trades=46
+[2026-08-26 12:09:23] NASDAQ: evaluating
+[2026-08-26 12:09:55] NASDAQ: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.0704 test_trades=12
+[2026-08-26 12:09:55] SILVER: evaluating
+[2026-08-26 12:13:49] SILVER: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2357 test_trades=50
+[2026-08-26 12:13:49] AUDUSD: evaluating
+[2026-08-26 12:23:32] AUDUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0013 test_trades=39
+[2026-08-26 12:23:32] NZDUSD: evaluating
+[2026-08-26 12:33:48] NZDUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0309 test_trades=38
+[2026-08-26 12:33:48] GBPJPY: evaluating
+[2026-08-26 12:41:36] GBPJPY: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.4414 test_trades=52
+[2026-08-26 12:41:36] AUDJPY: evaluating
+[2026-08-26 12:49:05] AUDJPY: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0791 test_trades=39
+[2026-08-26 12:49:05] CADJPY: evaluating
+[2026-08-26 12:56:24] CADJPY: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2370 test_trades=35
+[2026-08-26 12:56:24] CHFJPY: evaluating
+[2026-08-26 13:04:12] CHFJPY: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1180 test_trades=51
+[2026-08-26 13:04:12] NZDJPY: evaluating
+[2026-08-26 13:11:36] NZDJPY: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.0521 test_trades=33
+[2026-08-26 13:11:36] EURAUD: evaluating
+[2026-08-26 13:18:40] EURAUD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1109 test_trades=23
+[2026-08-26 13:18:40] EURNZD: evaluating
+[2026-08-26 13:25:10] EURNZD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0838 test_trades=47
+[2026-08-26 13:25:10] EURCHF: evaluating
+[2026-08-26 13:33:18] EURCHF: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0058 test_trades=50
+[2026-08-26 13:33:18] GBPAUD: evaluating
+[2026-08-26 13:40:26] GBPAUD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2307 test_trades=24
+[2026-08-26 13:40:26] GBPCAD: evaluating
+[2026-08-26 13:47:53] GBPCAD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0753 test_trades=57
+[2026-08-26 13:47:53] GBPCHF: evaluating
+[2026-08-26 13:55:23] GBPCHF: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.0181 test_trades=49
+[2026-08-26 13:55:23] GBPNZD: evaluating
+[2026-08-26 14:01:22] GBPNZD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0482 test_trades=52
+[2026-08-26 14:01:22] AUDCHF: evaluating
+[2026-08-26 14:08:53] AUDCHF: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.0074 test_trades=27
+[2026-08-26 14:08:53] AUDNZD: evaluating
+[2026-08-26 14:15:34] AUDNZD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0603 test_trades=60
+[2026-08-26 14:15:34] CADCHF: evaluating
+[2026-08-26 14:23:03] CADCHF: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.1827 test_trades=44
+[2026-08-26 14:23:03] NZDCAD: evaluating
+[2026-08-26 14:29:24] NZDCAD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0626 test_trades=23
+[2026-08-26 14:29:24] NZDCHF: evaluating
+[2026-08-26 14:36:08] NZDCHF: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.2686 test_trades=41
+[2026-08-26 14:36:08] BTCUSD: evaluating
+[2026-08-26 14:40:46] BTCUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2890 test_trades=61
+[2026-08-26 14:40:46] WTI: evaluating
+[2026-08-26 14:43:13] WTI: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1066 test_trades=39
+[2026-08-26 14:43:13] GOLD: evaluating
+[2026-08-26 14:48:06] GOLD: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.3970 test_trades=82
+[2026-08-26 14:48:06] CHFSGD: evaluating
+[2026-08-26 14:52:02] CHFSGD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.1928 test_trades=22
+[2026-08-26 14:52:02] EURDKK: evaluating
+[2026-08-26 14:53:32] EURDKK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-2.3072 test_trades=22
+[2026-08-26 14:53:32] EURHKD: evaluating
+[2026-08-26 15:00:58] EURHKD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.2155 test_trades=33
+[2026-08-26 15:00:58] EURHUF: evaluating
+[2026-08-26 15:04:37] EURHUF: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.7993 test_trades=36
+[2026-08-26 15:04:37] EURNOK: evaluating
+[2026-08-26 15:04:38] EURNOK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.3195 test_trades=2
+[2026-08-26 15:04:38] EURPLN: evaluating
+[2026-08-26 15:07:55] EURPLN: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.2337 test_trades=17
+[2026-08-26 15:07:55] EURSEK: evaluating
+[2026-08-26 15:14:23] EURSEK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.6380 test_trades=61
+[2026-08-26 15:14:23] EURSGD: evaluating
+[2026-08-26 15:20:04] EURSGD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.8474 test_trades=19
+[2026-08-26 15:20:04] EURTRY: evaluating
+[2026-08-26 15:29:23] EURTRY: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.6875 test_trades=126
+[2026-08-26 15:29:23] EURZAR: evaluating
+[2026-08-26 15:33:38] EURZAR: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.4446 test_trades=25
+[2026-08-26 15:33:38] GBPDKK: evaluating
+[2026-08-26 15:37:43] GBPDKK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.1971 test_trades=19
+[2026-08-26 15:37:43] GBPNOK: evaluating
+[2026-08-26 15:41:48] GBPNOK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.8793 test_trades=24
+[2026-08-26 15:41:48] GBPSEK: evaluating
+[2026-08-26 15:46:01] GBPSEK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.6387 test_trades=30
+[2026-08-26 15:46:02] GBPSGD: evaluating
+[2026-08-26 15:50:24] GBPSGD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.5536 test_trades=30
+[2026-08-26 15:50:24] NZDSGD: evaluating
+[2026-08-26 15:55:47] NZDSGD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.4087 test_trades=9
+[2026-08-26 15:55:47] SGDJPY: evaluating
+[2026-08-26 16:03:12] SGDJPY: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.0413 test_trades=35
+[2026-08-26 16:03:12] USDCNH: evaluating
+[2026-08-26 16:06:32] USDCNH: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.7804 test_trades=51
+[2026-08-26 16:06:32] USDDKK: evaluating
+[2026-08-26 16:14:45] USDDKK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.1751 test_trades=35
+[2026-08-26 16:14:45] USDHKD: evaluating
+[2026-08-26 16:16:54] USDHKD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.5278 test_trades=7
+[2026-08-26 16:16:54] USDHUF: evaluating
+[2026-08-26 16:20:59] USDHUF: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.5944 test_trades=28
+[2026-08-26 16:20:59] USDMXN: evaluating
+[2026-08-26 16:27:13] USDMXN: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.6908 test_trades=49
+[2026-08-26 16:27:13] USDNOK: evaluating
+[2026-08-26 16:34:33] USDNOK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.6887 test_trades=28
+[2026-08-26 16:34:33] USDPLN: evaluating
+[2026-08-26 16:39:29] USDPLN: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.1787 test_trades=29
+[2026-08-26 16:39:29] USDSEK: evaluating
+[2026-08-26 16:47:24] USDSEK: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.5586 test_trades=35
+[2026-08-26 16:47:24] USDSGD: evaluating
+[2026-08-26 16:52:48] USDSGD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.2527 test_trades=21
+[2026-08-26 16:52:48] USDTRY: evaluating
+[2026-08-26 16:58:56] USDTRY: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.0617 test_trades=120
+[2026-08-26 16:58:56] USDZAR: evaluating
+[2026-08-26 17:05:19] USDZAR: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.2999 test_trades=27
+[2026-08-26 17:05:19] AUS200: evaluating
+[2026-08-26 17:07:02] AUS200: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1095 test_trades=24
+[2026-08-26 17:07:02] CA60: evaluating
+[2026-08-26 17:07:42] CA60: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.7181 test_trades=24
+[2026-08-26 17:07:42] CHN50: evaluating
+[2026-08-26 17:10:26] CHN50: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2423 test_trades=53
+[2026-08-26 17:10:26] CHINAH: evaluating
+[2026-08-26 17:11:30] CHINAH: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.4757 test_trades=34
+[2026-08-26 17:11:30] EU50: evaluating
+[2026-08-26 17:12:36] EU50: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.3729 test_trades=20
+[2026-08-26 17:12:36] FRA40: evaluating
+[2026-08-26 17:13:55] FRA40: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.4305 test_trades=23
+[2026-08-26 17:13:55] GER40: evaluating
+[2026-08-26 17:16:07] GER40: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.6549 test_trades=17
+[2026-08-26 17:16:07] GERMID50: evaluating
+[2026-08-26 17:16:27] GERMID50: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=0.0000 test_trades=0
+[2026-08-26 17:16:27] GERTECH30: evaluating
+[2026-08-26 17:16:44] GERTECH30: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=0.0000 test_trades=0
+[2026-08-26 17:16:44] HK50: evaluating
+[2026-08-26 17:18:27] HK50: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.4217 test_trades=33
+[2026-08-26 17:18:27] IT40: evaluating
+[2026-08-26 17:19:14] IT40: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.6199 test_trades=14
+[2026-08-26 17:19:14] JP225: evaluating
+[2026-08-26 17:21:09] JP225: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.3781 test_trades=49
+[2026-08-26 17:21:09] NETH25: evaluating
+[2026-08-26 17:22:28] NETH25: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.4619 test_trades=21
+[2026-08-26 17:22:28] SA40: evaluating
+[2026-08-26 17:22:53] SA40: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.1007 test_trades=12
+[2026-08-26 17:22:53] SWI20: evaluating
+[2026-08-26 17:24:02] SWI20: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2464 test_trades=21
+[2026-08-26 17:24:02] SING30: evaluating
+[2026-08-26 17:24:59] SING30: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2592 test_trades=24
+[2026-08-26 17:24:59] SPAIN35: evaluating
+[2026-08-26 17:25:54] SPAIN35: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0045 test_trades=22
+[2026-08-26 17:25:54] TAIWAN: evaluating
+[2026-08-26 17:26:32] TAIWAN: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1262 test_trades=26
+[2026-08-26 17:26:32] UK100: evaluating
+[2026-08-26 17:28:44] UK100: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1761 test_trades=40
+[2026-08-26 17:28:44] US2000: evaluating
+[2026-08-26 17:31:09] US2000: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1850 test_trades=59
+[2026-08-26 17:31:09] US30: evaluating
+[2026-08-26 17:34:13] US30: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.5016 test_trades=50
+[2026-08-26 17:34:13] US500: evaluating
+[2026-08-26 17:36:30] US500: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.3493 test_trades=44
+[2026-08-26 17:36:30] USFANG: evaluating
+[2026-08-26 17:36:34] USFANG: DONE -- classification=VALIDATED STRONG test_expectancy_r=3.9202 test_trades=1
+[2026-08-26 17:36:34] PLATINUM: evaluating
+[2026-08-26 17:37:48] PLATINUM: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0155 test_trades=38
+[2026-08-26 17:37:48] PALLADIUM: evaluating
+[2026-08-26 17:38:47] PALLADIUM: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0879 test_trades=20
+[2026-08-26 17:38:47] BRENT: evaluating
+[2026-08-26 17:41:16] BRENT: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.3172 test_trades=24
+[2026-08-26 17:41:16] ETHUSD: evaluating
+[2026-08-26 17:48:03] ETHUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.2134 test_trades=63
+[2026-08-26 17:48:03] XRPUSD: evaluating
+[2026-08-26 17:53:16] XRPUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0859 test_trades=27
+[2026-08-26 17:53:16] SOLUSD: evaluating
+[2026-08-26 17:56:08] SOLUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.1310 test_trades=33
+[2026-08-26 17:56:08] DOGEUSD: evaluating
+[2026-08-26 17:58:53] DOGEUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.3341 test_trades=31
+[2026-08-26 17:58:53] ADAUSD: evaluating
+[2026-08-26 18:01:10] ADAUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0729 test_trades=44
+[2026-08-26 18:01:10] DOTUSD: evaluating
+[2026-08-26 18:03:12] DOTUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0194 test_trades=34
+[2026-08-26 18:03:12] LINKUSD: evaluating
+[2026-08-26 18:04:56] LINKUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.8617 test_trades=35
+[2026-08-26 18:04:56] AVAXUSD: evaluating
+[2026-08-26 18:06:26] AVAXUSD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1672 test_trades=24
+[2026-08-26 18:06:26] MATICUSD: evaluating
+[2026-08-26 18:08:28] MATICUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.2479 test_trades=27
+[2026-08-26 18:08:28] BCHUSD: evaluating
+[2026-08-26 18:11:53] BCHUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.3441 test_trades=43
+[2026-08-26 18:11:53] LTCUSD: evaluating
+[2026-08-26 18:15:36] LTCUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.1404 test_trades=35
+[2026-08-26 18:15:36] ATOMUSD: evaluating
+[2026-08-26 18:17:24] ATOMUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.7802 test_trades=17
+[2026-08-26 18:17:24] UNIUSD: evaluating
+[2026-08-26 18:19:04] UNIUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-1.0344 test_trades=26
+[2026-08-26 18:19:04] XLMUSD: evaluating
+[2026-08-26 18:21:08] XLMUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.2005 test_trades=12
+[2026-08-26 18:21:08] ETCUSD: evaluating
+[2026-08-26 18:25:10] ETCUSD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.3793 test_trades=31
+{
+  "symbols": {
+    "EURUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.19124037831613394,
+      "test_profit_factor": 2.331627999407971,
+      "test_win_rate": 0.8333333333333334,
+      "test_filled_trades": 36,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURUSD_validation.json"
+    },
+    "GBPUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.22457626745061282,
+      "test_profit_factor": 5.350366738554727,
+      "test_win_rate": 0.9375,
+      "test_filled_trades": 32,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPUSD_validation.json"
+    },
+    "USDCHF": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.22614568468819818,
+      "test_profit_factor": 4.481227322928996,
+      "test_win_rate": 0.8974358974358975,
+      "test_filled_trades": 39,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDCHF_validation.json"
+    },
+    "USDCAD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.07079382754222355,
+      "test_profit_factor": 1.3178964894759662,
+      "test_win_rate": 0.7941176470588235,
+      "test_filled_trades": 34,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDCAD_validation.json"
+    },
+    "AUDCAD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.17891160103156217,
+      "test_profit_factor": 2.3304374424805614,
+      "test_win_rate": 0.8695652173913043,
+      "test_filled_trades": 23,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_AUDCAD_validation.json"
+    },
+    "EURGBP": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.1215283028884549,
+      "test_profit_factor": 0.5379763162624754,
+      "test_win_rate": 0.7837837837837838,
+      "test_filled_trades": 37,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURGBP_validation.json"
+    },
+    "USDJPY": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.3859667353407628,
+      "test_profit_factor": 3.9288150559012154,
+      "test_win_rate": 0.8518518518518519,
+      "test_filled_trades": 27,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDJPY_validation.json"
+    },
+    "EURJPY": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.3150758372905402,
+      "test_profit_factor": 16.06212039295935,
+      "test_win_rate": 0.975609756097561,
+      "test_filled_trades": 41,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURJPY_validation.json"
+    },
+    "EURCAD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.1395694034029849,
+      "test_profit_factor": 2.8275376635467873,
+      "test_win_rate": 0.8913043478260869,
+      "test_filled_trades": 46,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURCAD_validation.json"
+    },
+    "NASDAQ": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.0703908511113964,
+      "test_profit_factor": 0.04050224843405817,
+      "test_win_rate": 0.25,
+      "test_filled_trades": 12,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_NASDAQ_validation.json"
+    },
+    "SILVER": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.23565913540283862,
+      "test_profit_factor": 3.893633276660022,
+      "test_win_rate": 0.92,
+      "test_filled_trades": 50,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_SILVER_validation.json"
+    },
+    "AUDUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.0012541188631545463,
+      "test_profit_factor": 1.0322332489226573,
+      "test_win_rate": 0.7948717948717948,
+      "test_filled_trades": 39,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_AUDUSD_validation.json"
+    },
+    "NZDUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.030948540002756375,
+      "test_profit_factor": 1.2752056085658459,
+      "test_win_rate": 0.8421052631578947,
+      "test_filled_trades": 38,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_NZDUSD_validation.json"
+    },
+    "GBPJPY": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.44139409537551905,
+      "test_profit_factor": 4.8054462818018715,
+      "test_win_rate": 0.8653846153846154,
+      "test_filled_trades": 52,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPJPY_validation.json"
+    },
+    "AUDJPY": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.0791289733456394,
+      "test_profit_factor": 1.6243696434249233,
+      "test_win_rate": 0.8461538461538461,
+      "test_filled_trades": 39,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_AUDJPY_validation.json"
+    },
+    "CADJPY": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.23696138821959256,
+      "test_profit_factor": 4.7162840667155885,
+      "test_win_rate": 0.9428571428571428,
+      "test_filled_trades": 35,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_CADJPY_validation.json"
+    },
+    "CHFJPY": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.11801935707630648,
+      "test_profit_factor": 1.7797651847070184,
+      "test_win_rate": 0.7843137254901961,
+      "test_filled_trades": 51,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_CHFJPY_validation.json"
+    },
+    "NZDJPY": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.05213705256485204,
+      "test_profit_factor": 0.7805284580654199,
+      "test_win_rate": 0.696969696969697,
+      "test_filled_trades": 33,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_NZDJPY_validation.json"
+    },
+    "EURAUD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.11085963721996778,
+      "test_profit_factor": 1.709930781184307,
+      "test_win_rate": 0.782608695652174,
+      "test_filled_trades": 23,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURAUD_validation.json"
+    },
+    "EURNZD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.08383161296931997,
+      "test_profit_factor": 1.7810965013782327,
+      "test_win_rate": 0.8723404255319149,
+      "test_filled_trades": 47,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURNZD_validation.json"
+    },
+    "EURCHF": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.00583149068443084,
+      "test_profit_factor": 1.0621943969990555,
+      "test_win_rate": 0.72,
+      "test_filled_trades": 50,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURCHF_validation.json"
+    },
+    "GBPAUD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.23065605343635864,
+      "test_profit_factor": 4.022999179953121,
+      "test_win_rate": 0.9166666666666666,
+      "test_filled_trades": 24,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPAUD_validation.json"
+    },
+    "GBPCAD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.0753339472056195,
+      "test_profit_factor": 1.7593664099972153,
+      "test_win_rate": 0.8947368421052632,
+      "test_filled_trades": 57,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPCAD_validation.json"
+    },
+    "GBPCHF": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.01814499568949829,
+      "test_profit_factor": 0.9890359719924564,
+      "test_win_rate": 0.7755102040816326,
+      "test_filled_trades": 49,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPCHF_validation.json"
+    },
+    "GBPNZD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.048243317777517225,
+      "test_profit_factor": 1.3571573367115695,
+      "test_win_rate": 0.8461538461538461,
+      "test_filled_trades": 52,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPNZD_validation.json"
+    },
+    "AUDCHF": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.007400239763973249,
+      "test_profit_factor": 1.0273134854840547,
+      "test_win_rate": 0.8148148148148148,
+      "test_filled_trades": 27,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_AUDCHF_validation.json"
+    },
+    "AUDNZD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.06031417877885084,
+      "test_profit_factor": 1.5064711281018115,
+      "test_win_rate": 0.85,
+      "test_filled_trades": 60,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_AUDNZD_validation.json"
+    },
+    "CADCHF": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.18270557825133277,
+      "test_profit_factor": 0.37118480419539945,
+      "test_win_rate": 0.7954545454545454,
+      "test_filled_trades": 44,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_CADCHF_validation.json"
+    },
+    "NZDCAD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.06257043820547031,
+      "test_profit_factor": 1.3400279103707764,
+      "test_win_rate": 0.782608695652174,
+      "test_filled_trades": 23,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_NZDCAD_validation.json"
+    },
+    "NZDCHF": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.26860715525719203,
+      "test_profit_factor": 0.33928506493301996,
+      "test_win_rate": 0.7073170731707317,
+      "test_filled_trades": 41,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_NZDCHF_validation.json"
+    },
+    "BTCUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.28900159208897663,
+      "test_profit_factor": 7.459324824596307,
+      "test_win_rate": 0.9344262295081968,
+      "test_filled_trades": 61,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_BTCUSD_validation.json"
+    },
+    "WTI": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.10655426831397344,
+      "test_profit_factor": 1.5317715743188567,
+      "test_win_rate": 0.7692307692307693,
+      "test_filled_trades": 39,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_WTI_validation.json"
+    },
+    "GOLD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.3969879945731211,
+      "test_profit_factor": 8.194068757840304,
+      "test_win_rate": 0.926829268292683,
+      "test_filled_trades": 82,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GOLD_validation.json"
+    },
+    "CHFSGD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.1928428831508653,
+      "test_profit_factor": 0.009884448849104888,
+      "test_win_rate": 0.2727272727272727,
+      "test_filled_trades": 22,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_CHFSGD_validation.json"
+    },
+    "EURDKK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -2.30720169805065,
+      "test_profit_factor": 0.0,
+      "test_win_rate": 0.0,
+      "test_filled_trades": 22,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURDKK_validation.json"
+    },
+    "EURHKD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.2154625016959276,
+      "test_profit_factor": 0.3197936083330566,
+      "test_win_rate": 0.7272727272727273,
+      "test_filled_trades": 33,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURHKD_validation.json"
+    },
+    "EURHUF": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.7993139547410043,
+      "test_profit_factor": 0.013568644636414901,
+      "test_win_rate": 0.4166666666666667,
+      "test_filled_trades": 36,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURHUF_validation.json"
+    },
+    "EURNOK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.3195030772505376,
+      "test_profit_factor": 0.0,
+      "test_win_rate": 0.0,
+      "test_filled_trades": 2,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURNOK_validation.json"
+    },
+    "EURPLN": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.2337137897163222,
+      "test_profit_factor": 0.07303350033111584,
+      "test_win_rate": 0.11764705882352941,
+      "test_filled_trades": 17,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURPLN_validation.json"
+    },
+    "EURSEK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.6380380817001658,
+      "test_profit_factor": 0.06220023382582422,
+      "test_win_rate": 0.5245901639344263,
+      "test_filled_trades": 61,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURSEK_validation.json"
+    },
+    "EURSGD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.8474040339979411,
+      "test_profit_factor": 0.018682767474970424,
+      "test_win_rate": 0.47368421052631576,
+      "test_filled_trades": 19,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURSGD_validation.json"
+    },
+    "EURTRY": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.6875431094505636,
+      "test_profit_factor": 0.047370914723446726,
+      "test_win_rate": 0.4365079365079365,
+      "test_filled_trades": 126,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURTRY_validation.json"
+    },
+    "EURZAR": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.4446469871444056,
+      "test_profit_factor": 0.13702103546603872,
+      "test_win_rate": 0.6,
+      "test_filled_trades": 25,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EURZAR_validation.json"
+    },
+    "GBPDKK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.1970677350170353,
+      "test_profit_factor": 0.01573198768530082,
+      "test_win_rate": 0.21052631578947367,
+      "test_filled_trades": 19,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPDKK_validation.json"
+    },
+    "GBPNOK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.8793250022722978,
+      "test_profit_factor": 0.014275258936395852,
+      "test_win_rate": 0.3333333333333333,
+      "test_filled_trades": 24,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPNOK_validation.json"
+    },
+    "GBPSEK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.6387446667784872,
+      "test_profit_factor": 0.0287457588192157,
+      "test_win_rate": 0.5333333333333333,
+      "test_filled_trades": 30,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPSEK_validation.json"
+    },
+    "GBPSGD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.553642516910312,
+      "test_profit_factor": 0.0,
+      "test_win_rate": 0.03333333333333333,
+      "test_filled_trades": 30,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GBPSGD_validation.json"
+    },
+    "NZDSGD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.408704875813638,
+      "test_profit_factor": 0.0,
+      "test_win_rate": 0.2222222222222222,
+      "test_filled_trades": 9,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_NZDSGD_validation.json"
+    },
+    "SGDJPY": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.041294604277459,
+      "test_profit_factor": 0.002040101317377688,
+      "test_win_rate": 0.2857142857142857,
+      "test_filled_trades": 35,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_SGDJPY_validation.json"
+    },
+    "USDCNH": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.7804412046780242,
+      "test_profit_factor": 0.08437679048033676,
+      "test_win_rate": 0.45098039215686275,
+      "test_filled_trades": 51,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDCNH_validation.json"
+    },
+    "USDDKK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.17510080634808337,
+      "test_profit_factor": 0.474127763116006,
+      "test_win_rate": 0.7142857142857143,
+      "test_filled_trades": 35,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDDKK_validation.json"
+    },
+    "USDHKD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.5278128180988113,
+      "test_profit_factor": 0.0,
+      "test_win_rate": 0.14285714285714285,
+      "test_filled_trades": 7,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDHKD_validation.json"
+    },
+    "USDHUF": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.5943734749556525,
+      "test_profit_factor": 0.02134779038106525,
+      "test_win_rate": 0.5714285714285714,
+      "test_filled_trades": 28,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDHUF_validation.json"
+    },
+    "USDMXN": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.6908316238881046,
+      "test_profit_factor": 0.045894297439626634,
+      "test_win_rate": 0.4897959183673469,
+      "test_filled_trades": 49,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDMXN_validation.json"
+    },
+    "USDNOK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.6887436477292612,
+      "test_profit_factor": 0.025354015055445503,
+      "test_win_rate": 0.5357142857142857,
+      "test_filled_trades": 28,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDNOK_validation.json"
+    },
+    "USDPLN": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.1787161754512998,
+      "test_profit_factor": 0.6869423197360116,
+      "test_win_rate": 0.6896551724137931,
+      "test_filled_trades": 29,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDPLN_validation.json"
+    },
+    "USDSEK": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.5585950594910781,
+      "test_profit_factor": 0.0944106751238419,
+      "test_win_rate": 0.5142857142857142,
+      "test_filled_trades": 35,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDSEK_validation.json"
+    },
+    "USDSGD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.2526817356846656,
+      "test_profit_factor": 0.014881675784003883,
+      "test_win_rate": 0.14285714285714285,
+      "test_filled_trades": 21,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDSGD_validation.json"
+    },
+    "USDTRY": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.0616780745534937,
+      "test_profit_factor": 0.049671663832109414,
+      "test_win_rate": 0.225,
+      "test_filled_trades": 120,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDTRY_validation.json"
+    },
+    "USDZAR": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.2999399378681081,
+      "test_profit_factor": 0.24639557608923343,
+      "test_win_rate": 0.6296296296296297,
+      "test_filled_trades": 27,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USDZAR_validation.json"
+    },
+    "AUS200": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.10954183431244655,
+      "test_profit_factor": 1.6034936702762033,
+      "test_win_rate": 0.7916666666666666,
+      "test_filled_trades": 24,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_AUS200_validation.json"
+    },
+    "CA60": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.7180750977389774,
+      "test_profit_factor": 16.950544060070833,
+      "test_win_rate": 0.9166666666666666,
+      "test_filled_trades": 24,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_CA60_validation.json"
+    },
+    "CHN50": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.24225360281539546,
+      "test_profit_factor": 3.4417993241659106,
+      "test_win_rate": 0.8867924528301887,
+      "test_filled_trades": 53,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_CHN50_validation.json"
+    },
+    "CHINAH": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.4757322612816677,
+      "test_profit_factor": 2.989082888652224,
+      "test_win_rate": 0.7352941176470589,
+      "test_filled_trades": 34,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_CHINAH_validation.json"
+    },
+    "EU50": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.3728775392818104,
+      "test_profit_factor": 2.890927980055901,
+      "test_win_rate": 0.8,
+      "test_filled_trades": 20,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_EU50_validation.json"
+    },
+    "FRA40": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.43049523498452774,
+      "test_profit_factor": 6.143922174378406,
+      "test_win_rate": 0.8695652173913043,
+      "test_filled_trades": 23,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_FRA40_validation.json"
+    },
+    "GER40": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.6548591997642139,
+      "test_profit_factor": 7.61196730483439,
+      "test_win_rate": 0.8823529411764706,
+      "test_filled_trades": 17,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GER40_validation.json"
+    },
+    "GERMID50": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": 0.0,
+      "test_profit_factor": 0.0,
+      "test_win_rate": 0.0,
+      "test_filled_trades": 0,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GERMID50_validation.json"
+    },
+    "GERTECH30": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": 0.0,
+      "test_profit_factor": 0.0,
+      "test_win_rate": 0.0,
+      "test_filled_trades": 0,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_GERTECH30_validation.json"
+    },
+    "HK50": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.4217404622274643,
+      "test_profit_factor": 4.526160317858361,
+      "test_win_rate": 0.8484848484848485,
+      "test_filled_trades": 33,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_HK50_validation.json"
+    },
+    "IT40": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.6199374072593892,
+      "test_profit_factor": 15.060180396642947,
+      "test_win_rate": 0.9285714285714286,
+      "test_filled_trades": 14,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_IT40_validation.json"
+    },
+    "JP225": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.37807525253444385,
+      "test_profit_factor": 5.214124633271399,
+      "test_win_rate": 0.8775510204081632,
+      "test_filled_trades": 49,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_JP225_validation.json"
+    },
+    "NETH25": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.4618824594241716,
+      "test_profit_factor": 9.05444279765869,
+      "test_win_rate": 0.9047619047619048,
+      "test_filled_trades": 21,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_NETH25_validation.json"
+    },
+    "SA40": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.10065932237160499,
+      "test_profit_factor": 0.6482526967604236,
+      "test_win_rate": 0.75,
+      "test_filled_trades": 12,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_SA40_validation.json"
+    },
+    "SWI20": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.2464074572547737,
+      "test_profit_factor": 2.9030941403268593,
+      "test_win_rate": 0.8571428571428571,
+      "test_filled_trades": 21,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_SWI20_validation.json"
+    },
+    "SING30": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.2592076771294,
+      "test_profit_factor": 2.6335584191922354,
+      "test_win_rate": 0.7916666666666666,
+      "test_filled_trades": 24,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_SING30_validation.json"
+    },
+    "SPAIN35": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.004497131634719903,
+      "test_profit_factor": 1.0209932878607846,
+      "test_win_rate": 0.7727272727272727,
+      "test_filled_trades": 22,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_SPAIN35_validation.json"
+    },
+    "TAIWAN": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.12615022822238417,
+      "test_profit_factor": 1.6552857038936926,
+      "test_win_rate": 0.7692307692307693,
+      "test_filled_trades": 26,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_TAIWAN_validation.json"
+    },
+    "UK100": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.17605016828604522,
+      "test_profit_factor": 2.994797795735632,
+      "test_win_rate": 0.9,
+      "test_filled_trades": 40,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_UK100_validation.json"
+    },
+    "US2000": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.18504333138633253,
+      "test_profit_factor": 2.385452063751958,
+      "test_win_rate": 0.8305084745762712,
+      "test_filled_trades": 59,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_US2000_validation.json"
+    },
+    "US30": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.501596669136338,
+      "test_profit_factor": 6.4297879606084,
+      "test_win_rate": 0.86,
+      "test_filled_trades": 50,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_US30_validation.json"
+    },
+    "US500": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.34930313410278024,
+      "test_profit_factor": 4.412854508341991,
+      "test_win_rate": 0.8863636363636364,
+      "test_filled_trades": 44,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_US500_validation.json"
+    },
+    "USFANG": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 3.920195627157597,
+      "test_profit_factor": Infinity,
+      "test_win_rate": 1.0,
+      "test_filled_trades": 1,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_USFANG_validation.json"
+    },
+    "PLATINUM": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.01554269277896339,
+      "test_profit_factor": 1.1967811995699542,
+      "test_win_rate": 0.868421052631579,
+      "test_filled_trades": 38,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_PLATINUM_validation.json"
+    },
+    "PALLADIUM": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.08787906845667887,
+      "test_profit_factor": 1.4033180293214793,
+      "test_win_rate": 0.8,
+      "test_filled_trades": 20,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_PALLADIUM_validation.json"
+    },
+    "BRENT": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED STRONG",
+      "test_expectancy_r": 0.3171723644336081,
+      "test_profit_factor": 5.419263347762138,
+      "test_win_rate": 0.9166666666666666,
+      "test_filled_trades": 24,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_BRENT_validation.json"
+    },
+    "ETHUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.2134419831051999,
+      "test_profit_factor": 3.54255593500356,
+      "test_win_rate": 0.8571428571428571,
+      "test_filled_trades": 63,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_ETHUSD_validation.json"
+    },
+    "XRPUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.08594988233844103,
+      "test_profit_factor": 1.7578612957969517,
+      "test_win_rate": 0.8888888888888888,
+      "test_filled_trades": 27,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_XRPUSD_validation.json"
+    },
+    "SOLUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.13099698006460408,
+      "test_profit_factor": 0.696099568987782,
+      "test_win_rate": 0.696969696969697,
+      "test_filled_trades": 33,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_SOLUSD_validation.json"
+    },
+    "DOGEUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.3340878394691723,
+      "test_profit_factor": 0.3560020138950436,
+      "test_win_rate": 0.5806451612903226,
+      "test_filled_trades": 31,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_DOGEUSD_validation.json"
+    },
+    "ADAUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.07286216387115083,
+      "test_profit_factor": 1.471605223028957,
+      "test_win_rate": 0.7954545454545454,
+      "test_filled_trades": 44,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_ADAUSD_validation.json"
+    },
+    "DOTUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.019409417465339363,
+      "test_profit_factor": 1.0958122924812288,
+      "test_win_rate": 0.7647058823529411,
+      "test_filled_trades": 34,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_DOTUSD_validation.json"
+    },
+    "LINKUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.861662294730901,
+      "test_profit_factor": 0.07439184910529466,
+      "test_win_rate": 0.42857142857142855,
+      "test_filled_trades": 35,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_LINKUSD_validation.json"
+    },
+    "AVAXUSD": {
+      "status": "DONE",
+      "evidence_classification": "VALIDATED MODERATE",
+      "test_expectancy_r": 0.1672474728849895,
+      "test_profit_factor": 2.119135319715094,
+      "test_win_rate": 0.8333333333333334,
+      "test_filled_trades": 24,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_AVAXUSD_validation.json"
+    },
+    "MATICUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.2478627696496083,
+      "test_profit_factor": 0.5729387986926014,
+      "test_win_rate": 0.5555555555555556,
+      "test_filled_trades": 27,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_MATICUSD_validation.json"
+    },
+    "BCHUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.34407307644039925,
+      "test_profit_factor": 0.3376356086099729,
+      "test_win_rate": 0.627906976744186,
+      "test_filled_trades": 43,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_BCHUSD_validation.json"
+    },
+    "LTCUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.1404060299958925,
+      "test_profit_factor": 0.6501910041706248,
+      "test_win_rate": 0.7714285714285715,
+      "test_filled_trades": 35,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_LTCUSD_validation.json"
+    },
+    "ATOMUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.7802111645082968,
+      "test_profit_factor": 0.03749449293311658,
+      "test_win_rate": 0.47058823529411764,
+      "test_filled_trades": 17,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_ATOMUSD_validation.json"
+    },
+    "UNIUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -1.0344023366895712,
+      "test_profit_factor": 0.02217199702675011,
+      "test_win_rate": 0.34615384615384615,
+      "test_filled_trades": 26,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_UNIUSD_validation.json"
+    },
+    "XLMUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.20052146732180884,
+      "test_profit_factor": 0.47660842200579434,
+      "test_win_rate": 0.75,
+      "test_filled_trades": 12,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_XLMUSD_validation.json"
+    },
+    "ETCUSD": {
+      "status": "DONE",
+      "evidence_classification": "FAILED TO GENERALIZE",
+      "test_expectancy_r": -0.3793093938471873,
+      "test_profit_factor": 0.2759315204400824,
+      "test_win_rate": 0.6774193548387096,
+      "test_filled_trades": 31,
+      "result_path": "C:\\Users\\berka\\OneDrive\\Desktop\\NOAFVGBOT\\trade-bot\\backtest\\results\\V2_MULTI_ETCUSD_validation.json"
+    }
+  },
+  "updated_at_utc": "2026-08-26 18:25:10"
+}

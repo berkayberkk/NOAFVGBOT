@@ -1,0 +1,126 @@
+toplam 101 sembol bulundu
+[1/101] ADAUSD: n_candles=78812 n_sig=8580 | portfoy: taken=26 win=26.9% exp=-0.0330 taken_by_mod={'ob': 15, 'fvg': 8, 'ifvg': 2, 'trendline': 1} (77.3s)
+[2/101] ATOMUSD: n_candles=77783 n_sig=7366 | portfoy: taken=33 win=12.1% exp=-0.3328 taken_by_mod={'ob': 15, 'ifvg': 14, 'fvg': 4} (76.7s)
+[3/101] AUDCAD: n_candles=201009 n_sig=17523 | portfoy: taken=101 win=18.8% exp=-0.0580 taken_by_mod={'ifvg': 33, 'ob': 51, 'fvg': 14, 'trendline': 3} (198.9s)
+[4/101] AUDCHF: n_candles=201030 n_sig=19101 | portfoy: taken=111 win=20.7% exp=-0.1691 taken_by_mod={'ob': 66, 'fvg': 16, 'trendline': 2, 'ifvg': 27} (235.8s)
+[5/101] AUDJPY: n_candles=202348 n_sig=20118 | portfoy: taken=122 win=31.1% exp=+0.1449 taken_by_mod={'ob': 63, 'ifvg': 38, 'fvg': 19, 'trendline': 2} (225.7s)
+[6/101] AUDNZD: n_candles=200740 n_sig=16299 | portfoy: taken=109 win=28.4% exp=+0.1614 taken_by_mod={'ob': 62, 'fvg': 19, 'trendline': 3, 'ifvg': 25} (252.5s)
+[7/101] AUDUSD: n_candles=198445 n_sig=20742 | portfoy: taken=79 win=27.9% exp=+0.1271 taken_by_mod={'fvg': 13, 'ifvg': 20, 'ob': 45, 'trendline': 1} (301.3s)
+[8/101] AUS200: n_candles=63958 n_sig=7711 | portfoy: taken=72 win=30.6% exp=+0.1385 taken_by_mod={'ifvg': 30, 'fvg': 15, 'ob': 27} (104.3s)
+[9/101] AVAXUSD: n_candles=66425 n_sig=7734 | portfoy: taken=59 win=30.5% exp=+0.2034 taken_by_mod={'ob': 35, 'fvg': 13, 'ifvg': 11} (85.2s)
+[10/101] BCHUSD: n_candles=120787 n_sig=13499 | portfoy: taken=58 win=20.7% exp=-0.0498 taken_by_mod={'fvg': 5, 'ob': 44, 'ifvg': 8, 'trendline': 1} (151.9s)
+[11/101] BRENT: n_candles=76950 n_sig=9850 | portfoy: taken=54 win=18.5% exp=-0.1002 taken_by_mod={'ob': 30, 'ifvg': 15, 'fvg': 7, 'trendline': 2} (113.3s)
+[12/101] BTCUSD: n_candles=129398 n_sig=14097 | portfoy: taken=81 win=17.3% exp=-0.0884 taken_by_mod={'fvg': 12, 'ob': 53, 'ifvg': 15, 'trendline': 1} (161.5s)
+[13/101] CA60: n_candles=27100 n_sig=3389 | portfoy: taken=45 win=20.0% exp=-0.1305 taken_by_mod={'ob': 22, 'ifvg': 11, 'fvg': 12} (27.0s)
+[14/101] CADCHF: n_candles=199377 n_sig=23013 | portfoy: taken=78 win=32.0% exp=+0.2788 taken_by_mod={'ob': 39, 'fvg': 17, 'ifvg': 21, 'trendline': 1} (255.1s)
+[15/101] CADJPY: n_candles=201774 n_sig=21159 | portfoy: taken=135 win=17.0% exp=-0.2485 taken_by_mod={'ob': 72, 'ifvg': 38, 'fvg': 25} (296.8s)
+[16/101] CHFJPY: n_candles=201556 n_sig=20243 | portfoy: taken=72 win=13.9% exp=-9.3705 taken_by_mod={'ob': 46, 'fvg': 12, 'ifvg': 14} (312.6s)
+[17/101] CHFSGD: n_candles=142131 n_sig=13492 | portfoy: taken=97 win=17.5% exp=-2.8822 taken_by_mod={'ob': 67, 'fvg': 11, 'trendline': 3, 'ifvg': 16} (193.2s)
+[18/101] CHINAH: n_candles=45974 n_sig=7479 | portfoy: taken=80 win=20.0% exp=-0.1024 taken_by_mod={'ifvg': 16, 'ob': 52, 'fvg': 12} (75.4s)
+[19/101] CHN50: n_candles=76295 n_sig=13793 | portfoy: taken=62 win=19.4% exp=-0.1121 taken_by_mod={'ifvg': 11, 'ob': 43, 'fvg': 8} (154.7s)
+[20/101] DOGEUSD: n_candles=86003 n_sig=9118 | portfoy: taken=45 win=28.9% exp=+0.1939 taken_by_mod={'ob': 28, 'ifvg': 14, 'fvg': 3} (136.3s)
+[21/101] DOTUSD: n_candles=84122 n_sig=8389 | portfoy: taken=65 win=20.0% exp=-0.2117 taken_by_mod={'ifvg': 18, 'ob': 34, 'fvg': 13} (139.1s)
+[22/101] ETCUSD: n_candles=118827 n_sig=12812 | portfoy: taken=92 win=18.5% exp=-0.1491 taken_by_mod={'trendline': 3, 'ob': 47, 'ifvg': 40, 'fvg': 2} (202.9s)
+[23/101] ETHUSD: n_candles=133477 n_sig=14366 | portfoy: taken=143 win=17.5% exp=-0.2313 taken_by_mod={'ob': 94, 'ifvg': 31, 'fvg': 17, 'trendline': 1} (166.7s)
+[24/101] EU50: n_candles=43537 n_sig=5154 | portfoy: taken=76 win=26.3% exp=+0.1088 taken_by_mod={'ob': 41, 'fvg': 13, 'ifvg': 20, 'trendline': 2} (73.4s)
+[25/101] EURAUD: n_candles=202556 n_sig=18982 | portfoy: taken=169 win=26.6% exp=+0.1466 taken_by_mod={'ob': 97, 'ifvg': 40, 'fvg': 31, 'trendline': 1} (262.7s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 25 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD']
+[26/101] EURCAD: n_candles=202075 n_sig=22920 | portfoy: taken=91 win=24.2% exp=+0.1724 taken_by_mod={'ob': 50, 'fvg': 13, 'ifvg': 28} (250.0s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 26 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD']
+[27/101] EURCHF: n_candles=197334 n_sig=22805 | portfoy: taken=81 win=18.5% exp=-0.2645 taken_by_mod={'fvg': 14, 'ob': 53, 'ifvg': 13, 'trendline': 1} (272.0s)
+[28/101] EURDKK: n_candles=38708 n_sig=5485 | portfoy: taken=42 win=9.5% exp=-0.2632 taken_by_mod={'ob': 31, 'trendline': 3, 'fvg': 5, 'ifvg': 3} (98.6s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 28 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK']
+[29/101] EURGBP: n_candles=200306 n_sig=25948 | portfoy: taken=158 win=25.9% exp=+0.1186 taken_by_mod={'ob': 96, 'fvg': 28, 'ifvg': 31, 'trendline': 3} (263.8s)
+[30/101] EURHKD: n_candles=186916 n_sig=23457 | portfoy: taken=159 win=24.5% exp=+0.0028 taken_by_mod={'fvg': 30, 'ob': 93, 'ifvg': 36} (260.6s)
+[31/101] EURHUF: n_candles=112007 n_sig=18188 | portfoy: taken=68 win=26.5% exp=+0.0195 taken_by_mod={'ob': 42, 'fvg': 8, 'ifvg': 17, 'trendline': 1} (161.1s)
+[32/101] EURJPY: n_candles=202861 n_sig=21936 | portfoy: taken=41 win=21.9% exp=+0.0376 taken_by_mod={'ob': 26, 'fvg': 9, 'ifvg': 5, 'trendline': 1} (237.9s)
+[33/101] EURNOK: n_candles=649 n_sig=67 | portfoy: taken=4 win=25.0% exp=-0.0801 taken_by_mod={'ifvg': 1, 'ob': 3} (0.8s)
+[34/101] EURNZD: n_candles=201663 n_sig=18537 | portfoy: taken=150 win=20.0% exp=-0.0145 taken_by_mod={'ob': 84, 'ifvg': 46, 'trendline': 3, 'fvg': 17} (238.9s)
+[35/101] EURPLN: n_candles=106888 n_sig=16792 | portfoy: taken=44 win=25.0% exp=+0.1847 taken_by_mod={'ob': 29, 'ifvg': 11, 'fvg': 4} (176.7s)
+[36/101] EURSEK: n_candles=150588 n_sig=21406 | portfoy: taken=67 win=16.4% exp=-0.2430 taken_by_mod={'ob': 34, 'ifvg': 12, 'fvg': 19, 'trendline': 2} (196.8s)
+[37/101] EURSGD: n_candles=143982 n_sig=13706 | portfoy: taken=87 win=25.3% exp=+0.0750 taken_by_mod={'ob': 48, 'fvg': 15, 'ifvg': 23, 'trendline': 1} (160.8s)
+[38/101] EURTRY: n_candles=160212 n_sig=20146 | portfoy: taken=82 win=23.2% exp=+0.5997 taken_by_mod={'ob': 57, 'ifvg': 12, 'fvg': 13} (217.4s)
+[39/101] EURUSD: n_candles=199010 n_sig=25483 | portfoy: taken=119 win=24.4% exp=-0.0509 taken_by_mod={'fvg': 28, 'ob': 62, 'ifvg': 27, 'trendline': 2} (264.5s)
+[40/101] EURZAR: n_candles=141911 n_sig=18417 | portfoy: taken=99 win=19.2% exp=-0.0476 taken_by_mod={'ifvg': 18, 'ob': 61, 'fvg': 18, 'trendline': 2} (172.1s)
+[41/101] FRA40: n_candles=64335 n_sig=7294 | portfoy: taken=117 win=19.7% exp=-0.0739 taken_by_mod={'ifvg': 25, 'fvg': 19, 'ob': 71, 'trendline': 2} (72.4s)
+[42/101] GBPAUD: n_candles=202085 n_sig=19015 | portfoy: taken=203 win=24.1% exp=-0.0652 taken_by_mod={'ob': 112, 'fvg': 38, 'ifvg': 51, 'trendline': 2} (225.9s)
+[43/101] GBPCAD: n_candles=200533 n_sig=23877 | portfoy: taken=67 win=23.9% exp=+0.0870 taken_by_mod={'ob': 36, 'fvg': 14, 'ifvg': 17} (247.4s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 43 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK', 'EURGBP', 'EURHKD', 'EURHUF', 'EURJPY', 'EURNOK', 'EURNZD', 'EURPLN', 'EURSEK', 'EURSGD', 'EURTRY', 'EURUSD', 'EURZAR', 'FRA40', 'GBPAUD', 'GBPCAD']
+[44/101] GBPCHF: n_candles=201580 n_sig=25094 | portfoy: taken=144 win=20.1% exp=-0.0869 taken_by_mod={'ob': 82, 'fvg': 28, 'trendline': 1, 'ifvg': 33} (243.8s)
+[45/101] GBPDKK: n_candles=143576 n_sig=18024 | portfoy: taken=112 win=17.0% exp=-0.1831 taken_by_mod={'ob': 66, 'fvg': 18, 'ifvg': 26, 'trendline': 2} (172.0s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 45 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK', 'EURGBP', 'EURHKD', 'EURHUF', 'EURJPY', 'EURNOK', 'EURNZD', 'EURPLN', 'EURSEK', 'EURSGD', 'EURTRY', 'EURUSD', 'EURZAR', 'FRA40', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPDKK']
+[46/101] GBPJPY: n_candles=202694 n_sig=22073 | portfoy: taken=79 win=22.8% exp=+0.1813 taken_by_mod={'fvg': 20, 'ifvg': 21, 'ob': 37, 'trendline': 1} (238.8s)
+[47/101] GBPNOK: n_candles=143752 n_sig=17940 | portfoy: taken=121 win=19.0% exp=-0.1341 taken_by_mod={'ifvg': 24, 'ob': 82, 'fvg': 14, 'trendline': 1} (171.0s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 47 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK', 'EURGBP', 'EURHKD', 'EURHUF', 'EURJPY', 'EURNOK', 'EURNZD', 'EURPLN', 'EURSEK', 'EURSGD', 'EURTRY', 'EURUSD', 'EURZAR', 'FRA40', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPDKK', 'GBPJPY', 'GBPNOK']
+[48/101] GBPNZD: n_candles=188391 n_sig=17936 | portfoy: taken=116 win=24.1% exp=+0.0679 taken_by_mod={'ob': 66, 'fvg': 25, 'ifvg': 23, 'trendline': 2} (214.9s)
+[49/101] GBPSEK: n_candles=146008 n_sig=17942 | portfoy: taken=47 win=25.5% exp=+0.0442 taken_by_mod={'ob': 29, 'fvg': 6, 'trendline': 2, 'ifvg': 10} (168.6s)
+[50/101] GBPSGD: n_candles=155075 n_sig=16280 | portfoy: taken=61 win=16.4% exp=-0.1708 taken_by_mod={'ob': 34, 'ifvg': 10, 'fvg': 14, 'trendline': 3} (176.5s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 50 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK', 'EURGBP', 'EURHKD', 'EURHUF', 'EURJPY', 'EURNOK', 'EURNZD', 'EURPLN', 'EURSEK', 'EURSGD', 'EURTRY', 'EURUSD', 'EURZAR', 'FRA40', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPDKK', 'GBPJPY', 'GBPNOK', 'GBPNZD', 'GBPSEK', 'GBPSGD']
+toplam 101 sembol bulundu
+onceden tamamlanmis 50 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK', 'EURGBP', 'EURHKD', 'EURHUF', 'EURJPY', 'EURNOK', 'EURNZD', 'EURPLN', 'EURSEK', 'EURSGD', 'EURTRY', 'EURUSD', 'EURZAR', 'FRA40', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPDKK', 'GBPJPY', 'GBPNOK', 'GBPNZD', 'GBPSEK', 'GBPSGD']
+[51/101] GBPUSD: n_candles=200231 n_sig=26056 | portfoy: taken=87 win=18.4% exp=-0.1383 taken_by_mod={'fvg': 21, 'ob': 46, 'ifvg': 19, 'trendline': 1} (247.5s)
+[52/101] GER40: n_candles=87864 n_sig=12028 | portfoy: taken=79 win=20.2% exp=-0.2581 taken_by_mod={'ob': 40, 'fvg': 20, 'ifvg': 19} (108.8s)
+[53/101] GERMID50: n_candles=16031 n_sig=2269 | portfoy: taken=48 win=31.2% exp=+0.5173 taken_by_mod={'ob': 24, 'ifvg': 16, 'fvg': 8} (21.2s)
+[54/101] GERTECH30: n_candles=7792 n_sig=1162 | portfoy: taken=13 win=7.7% exp=-0.3144 taken_by_mod={'ob': 10, 'ifvg': 3} (16.2s)
+[55/101] GOLD: n_candles=137317 n_sig=16993 | portfoy: taken=131 win=25.2% exp=-0.0090 taken_by_mod={'ifvg': 28, 'ob': 76, 'fvg': 25, 'trendline': 2} (149.8s)
+[56/101] HK50: n_candles=66034 n_sig=10435 | portfoy: taken=99 win=22.2% exp=-0.0490 taken_by_mod={'ob': 62, 'ifvg': 23, 'fvg': 14} (68.8s)
+[57/101] IT40: n_candles=39291 n_sig=4596 | portfoy: taken=54 win=25.9% exp=+0.1559 taken_by_mod={'fvg': 7, 'ob': 28, 'ifvg': 19} (43.8s)
+[58/101] JP225: n_candles=70935 n_sig=9275 | portfoy: taken=93 win=25.8% exp=+0.0811 taken_by_mod={'ob': 47, 'fvg': 15, 'trendline': 2, 'ifvg': 29} (99.9s)
+[59/101] LINKUSD: n_candles=71734 n_sig=8100 | portfoy: taken=35 win=25.7% exp=+0.0571 taken_by_mod={'ifvg': 12, 'ob': 16, 'fvg': 7} (83.8s)
+[60/101] LTCUSD: n_candles=128333 n_sig=14393 | portfoy: taken=109 win=20.2% exp=-0.0991 taken_by_mod={'ifvg': 34, 'fvg': 19, 'ob': 55, 'trendline': 1} (150.8s)
+[61/101] MATICUSD: n_candles=82655 n_sig=8904 | portfoy: taken=74 win=23.0% exp=-0.1459 taken_by_mod={'ifvg': 37, 'ob': 23, 'fvg': 13, 'trendline': 1} (84.4s)
+[62/101] NASDAQ: n_candles=20672 n_sig=1849 | portfoy: taken=71 win=11.3% exp=-0.4079 taken_by_mod={'fvg': 12, 'ob': 37, 'ifvg': 22} (25.7s)
+[63/101] NETH25: n_candles=60834 n_sig=6851 | portfoy: taken=74 win=25.7% exp=+0.1077 taken_by_mod={'ifvg': 28, 'ob': 33, 'fvg': 13} (64.3s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 63 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK', 'EURGBP', 'EURHKD', 'EURHUF', 'EURJPY', 'EURNOK', 'EURNZD', 'EURPLN', 'EURSEK', 'EURSGD', 'EURTRY', 'EURUSD', 'EURZAR', 'FRA40', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPDKK', 'GBPJPY', 'GBPNOK', 'GBPNZD', 'GBPSEK', 'GBPSGD', 'GBPUSD', 'GER40', 'GERMID50', 'GERTECH30', 'GOLD', 'HK50', 'IT40', 'JP225', 'LINKUSD', 'LTCUSD', 'MATICUSD', 'NASDAQ', 'NETH25']
+[64/101] NZDCAD: n_candles=197052 n_sig=18242 | portfoy: taken=129 win=15.5% exp=-0.1957 taken_by_mod={'ifvg': 44, 'ob': 64, 'fvg': 20, 'trendline': 1} (223.6s)
+[65/101] NZDCHF: n_candles=198848 n_sig=19037 | portfoy: taken=21 win=28.6% exp=+0.1429 taken_by_mod={'ob': 6, 'ifvg': 6, 'fvg': 8, 'trendline': 1} (223.5s)
+[66/101] NZDJPY: n_candles=201742 n_sig=19424 | portfoy: taken=193 win=29.5% exp=+0.1930 taken_by_mod={'ifvg': 56, 'ob': 96, 'trendline': 7, 'fvg': 34} (226.7s)
+[67/101] NZDSGD: n_candles=168674 n_sig=15130 | portfoy: taken=75 win=17.3% exp=-0.1501 taken_by_mod={'ob': 38, 'fvg': 17, 'ifvg': 20} (225.8s)
+[68/101] NZDUSD: n_candles=195559 n_sig=20153 | portfoy: taken=149 win=20.8% exp=-0.1176 taken_by_mod={'ob': 71, 'ifvg': 48, 'fvg': 27, 'trendline': 3} (301.2s)
+[69/101] PALLADIUM: n_candles=40182 n_sig=6089 | portfoy: taken=34 win=41.2% exp=+0.3393 taken_by_mod={'ob': 15, 'fvg': 4, 'ifvg': 15} (63.6s)
+[70/101] PLATINUM: n_candles=62534 n_sig=7995 | portfoy: taken=61 win=21.3% exp=-0.1588 taken_by_mod={'ob': 42, 'fvg': 6, 'ifvg': 13} (73.5s)
+[71/101] SA40: n_candles=27811 n_sig=2984 | portfoy: taken=37 win=24.3% exp=-0.0101 taken_by_mod={'fvg': 9, 'ob': 19, 'ifvg': 8, 'trendline': 1} (24.9s)
+[72/101] SGDJPY: n_candles=190026 n_sig=18518 | portfoy: taken=139 win=28.8% exp=+0.1406 taken_by_mod={'ob': 79, 'trendline': 3, 'ifvg': 42, 'fvg': 15} (249.3s)
+[73/101] SILVER: n_candles=121164 n_sig=16188 | portfoy: taken=39 win=28.2% exp=+0.0903 taken_by_mod={'ob': 22, 'fvg': 5, 'ifvg': 12} (163.7s)
+[74/101] SING30: n_candles=33771 n_sig=5018 | portfoy: taken=27 win=37.0% exp=+0.5633 taken_by_mod={'ob': 19, 'ifvg': 4, 'fvg': 3, 'trendline': 1} (70.1s)
+[75/101] SOLUSD: n_candles=80918 n_sig=8990 | portfoy: taken=89 win=18.0% exp=-0.1959 taken_by_mod={'ob': 46, 'fvg': 19, 'ifvg': 21, 'trendline': 3} (100.6s)
+[76/101] SPAIN35: n_candles=44164 n_sig=5215 | portfoy: taken=68 win=30.9% exp=+0.2681 taken_by_mod={'ob': 38, 'fvg': 10, 'ifvg': 20} (54.0s)
+[77/101] SWI20: n_candles=54966 n_sig=6193 | portfoy: taken=61 win=24.6% exp=-0.0612 taken_by_mod={'ob': 30, 'ifvg': 20, 'fvg': 11} (67.7s)
+[78/101] TAIWAN: n_candles=32475 n_sig=4751 | portfoy: taken=78 win=21.8% exp=-0.0264 taken_by_mod={'ifvg': 21, 'fvg': 16, 'ob': 39, 'trendline': 2} (37.8s)
+[79/101] UK100: n_candles=90907 n_sig=11723 | portfoy: taken=84 win=27.4% exp=-0.0124 taken_by_mod={'ob': 41, 'fvg': 20, 'ifvg': 23} (125.6s)
+[80/101] UNIUSD: n_candles=67086 n_sig=8052 | portfoy: taken=62 win=16.1% exp=-0.3860 taken_by_mod={'ob': 31, 'fvg': 15, 'ifvg': 16} (100.1s)
+[81/101] US2000: n_candles=87738 n_sig=13148 | portfoy: taken=43 win=23.3% exp=+0.0586 taken_by_mod={'ob': 22, 'fvg': 6, 'ifvg': 14, 'trendline': 1} (106.4s)
+[82/101] US30: n_candles=106270 n_sig=15878 | portfoy: taken=82 win=23.2% exp=+0.0394 taken_by_mod={'ob': 53, 'ifvg': 19, 'fvg': 10} (116.0s)
+[83/101] US500: n_candles=83095 n_sig=11752 | portfoy: taken=91 win=26.4% exp=+0.0674 taken_by_mod={'ob': 45, 'fvg': 23, 'ifvg': 22, 'trendline': 1} (100.9s)
+[84/101] USDCAD: n_candles=196867 n_sig=23722 | portfoy: taken=111 win=25.2% exp=-0.0389 taken_by_mod={'ob': 53, 'ifvg': 25, 'fvg': 31, 'trendline': 2} (259.0s)
+[85/101] USDCHF: n_candles=196458 n_sig=25711 | portfoy: taken=84 win=27.4% exp=-0.0030 taken_by_mod={'ob': 34, 'fvg': 18, 'ifvg': 32} (297.2s)
+[86/101] USDCNH: n_candles=109288 n_sig=13602 | portfoy: taken=69 win=33.3% exp=+0.3594 taken_by_mod={'ob': 39, 'fvg': 9, 'ifvg': 21} (152.1s)
+[87/101] USDDKK: n_candles=198036 n_sig=24721 | portfoy: taken=172 win=23.3% exp=-0.0034 taken_by_mod={'ob': 95, 'ifvg': 47, 'fvg': 29, 'trendline': 1} (263.4s)
+[88/101] USDHKD: n_candles=47146 n_sig=7346 | portfoy: taken=38 win=21.1% exp=-0.0659 taken_by_mod={'ifvg': 14, 'fvg': 3, 'ob': 20, 'trendline': 1} (129.4s)
+[89/101] USDHUF: n_candles=132896 n_sig=19294 | portfoy: taken=93 win=23.7% exp=-0.0247 taken_by_mod={'ob': 58, 'fvg': 19, 'ifvg': 14, 'trendline': 2} (180.2s)
+[90/101] USDJPY: n_candles=68032 n_sig=7902 | portfoy: taken=110 win=30.0% exp=+0.0688 taken_by_mod={'ob': 53, 'ifvg': 36, 'fvg': 21} (70.8s)
+[91/101] USDMXN: n_candles=162959 n_sig=25216 | portfoy: taken=136 win=23.5% exp=-0.0214 taken_by_mod={'ob': 71, 'ifvg': 45, 'fvg': 20} (265.8s)
+[92/101] USDNOK: n_candles=197086 n_sig=25438 | portfoy: taken=86 win=29.1% exp=+0.1568 taken_by_mod={'fvg': 17, 'ob': 52, 'ifvg': 17} (267.6s)
+[93/101] USDPLN: n_candles=153116 n_sig=21488 | portfoy: taken=64 win=20.3% exp=-0.0919 taken_by_mod={'ob': 33, 'fvg': 12, 'ifvg': 19} (197.8s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 93 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK', 'EURGBP', 'EURHKD', 'EURHUF', 'EURJPY', 'EURNOK', 'EURNZD', 'EURPLN', 'EURSEK', 'EURSGD', 'EURTRY', 'EURUSD', 'EURZAR', 'FRA40', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPDKK', 'GBPJPY', 'GBPNOK', 'GBPNZD', 'GBPSEK', 'GBPSGD', 'GBPUSD', 'GER40', 'GERMID50', 'GERTECH30', 'GOLD', 'HK50', 'IT40', 'JP225', 'LINKUSD', 'LTCUSD', 'MATICUSD', 'NASDAQ', 'NETH25', 'NZDCAD', 'NZDCHF', 'NZDJPY', 'NZDSGD', 'NZDUSD', 'PALLADIUM', 'PLATINUM', 'SA40', 'SGDJPY', 'SILVER', 'SING30', 'SOLUSD', 'SPAIN35', 'SWI20', 'TAIWAN', 'UK100', 'UNIUSD', 'US2000', 'US30', 'US500', 'USDCAD', 'USDCHF', 'USDCNH', 'USDDKK', 'USDHKD', 'USDHUF', 'USDJPY', 'USDMXN', 'USDNOK', 'USDPLN']
+[94/101] USDSEK: n_candles=198403 n_sig=25581 | portfoy: taken=121 win=19.8% exp=-0.1554 taken_by_mod={'fvg': 24, 'ob': 61, 'ifvg': 36} (262.6s)
+toplam 101 sembol bulundu
+onceden tamamlanmis 94 sembol atlanacak: ['ADAUSD', 'ATOMUSD', 'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'AUS200', 'AVAXUSD', 'BCHUSD', 'BRENT', 'BTCUSD', 'CA60', 'CADCHF', 'CADJPY', 'CHFJPY', 'CHFSGD', 'CHINAH', 'CHN50', 'DOGEUSD', 'DOTUSD', 'ETCUSD', 'ETHUSD', 'EU50', 'EURAUD', 'EURCAD', 'EURCHF', 'EURDKK', 'EURGBP', 'EURHKD', 'EURHUF', 'EURJPY', 'EURNOK', 'EURNZD', 'EURPLN', 'EURSEK', 'EURSGD', 'EURTRY', 'EURUSD', 'EURZAR', 'FRA40', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPDKK', 'GBPJPY', 'GBPNOK', 'GBPNZD', 'GBPSEK', 'GBPSGD', 'GBPUSD', 'GER40', 'GERMID50', 'GERTECH30', 'GOLD', 'HK50', 'IT40', 'JP225', 'LINKUSD', 'LTCUSD', 'MATICUSD', 'NASDAQ', 'NETH25', 'NZDCAD', 'NZDCHF', 'NZDJPY', 'NZDSGD', 'NZDUSD', 'PALLADIUM', 'PLATINUM', 'SA40', 'SGDJPY', 'SILVER', 'SING30', 'SOLUSD', 'SPAIN35', 'SWI20', 'TAIWAN', 'UK100', 'UNIUSD', 'US2000', 'US30', 'US500', 'USDCAD', 'USDCHF', 'USDCNH', 'USDDKK', 'USDHKD', 'USDHUF', 'USDJPY', 'USDMXN', 'USDNOK', 'USDPLN', 'USDSEK']
+[95/101] USDSGD: n_candles=163045 n_sig=18342 | portfoy: taken=67 win=16.4% exp=-0.1966 taken_by_mod={'ob': 40, 'ifvg': 17, 'fvg': 9, 'trendline': 1} (236.7s)
+[96/101] USDTRY: n_candles=113508 n_sig=17732 | portfoy: taken=98 win=27.6% exp=+0.6440 taken_by_mod={'ob': 72, 'fvg': 12, 'ifvg': 13, 'trendline': 1} (226.8s)
+[97/101] USDZAR: n_candles=155929 n_sig=23140 | portfoy: taken=70 win=15.7% exp=-3.3309 taken_by_mod={'ob': 38, 'ifvg': 16, 'fvg': 15, 'trendline': 1} (278.6s)
+[98/101] USFANG: n_candles=4082 n_sig=386 | portfoy: taken=25 win=24.0% exp=-0.0088 taken_by_mod={'ob': 16, 'ifvg': 7, 'fvg': 2} (3.5s)
+[99/101] WTI: n_candles=86417 n_sig=12016 | portfoy: taken=74 win=31.1% exp=+0.0923 taken_by_mod={'ob': 30, 'ifvg': 23, 'fvg': 20, 'trendline': 1} (110.1s)
+[100/101] XLMUSD: n_candles=88970 n_sig=9405 | portfoy: taken=52 win=15.4% exp=-0.2667 taken_by_mod={'fvg': 10, 'ifvg': 19, 'ob': 20, 'trendline': 3} (87.9s)
+[101/101] XRPUSD: n_candles=124459 n_sig=14019 | portfoy: taken=27 win=11.1% exp=-0.4618 taken_by_mod={'ob': 17, 'ifvg': 6, 'trendline': 1, 'fvg': 3} (139.2s)
+
+TAMAMLANDI. module_diagnostic_full_universe_results.json yazildi.

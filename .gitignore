@@ -1,7 +1,8 @@
-*.ex5
-*.log
-compile.log
 __pycache__/
+.pytest_cache/
+
+# Piyasa veri CSV'leri (ham + kanonik) -- 56GB, 186 dosya GitHub'ın 100MB
+# sert dosya limitini aşıyor, Git LFS kurulmadan pushlanamaz. Kullanıcı
+# kararı (2026-09-08): repoya EKLENMEYECEK, sadece yerel diskte kalır.
 /data/
 /trade-bot/data/
-scratch/

@@ -1,0 +1,32 @@
+
+=== GOLD ===
+  fold 0 [2014-06-13..2016-08-30] n_m30=22886 n_h1=10650 | alone exp=-0.0502 (n=58) vs combined exp=-0.1747 (n=42) -> ALONE better
+  fold 1 [2016-08-30..2018-08-31] n_m30=22886 n_h1=11115 | alone exp=-0.0967 (n=25) vs combined exp=-0.0730 (n=20) -> COMBINED better
+  fold 2 [2018-08-31..2020-09-11] n_m30=22886 n_h1=11089 | alone exp=-0.2559 (n=34) vs combined exp=-0.3558 (n=30) -> ALONE better
+  fold 3 [2020-09-11..2022-09-06] n_m30=22886 n_h1=11179 | alone exp=+0.0451 (n=31) vs combined exp=-0.3301 (n=34) -> ALONE better
+  fold 4 [2022-09-06..2024-08-29] n_m30=22886 n_h1=11181 | alone exp=-0.2424 (n=41) vs combined exp=-0.0625 (n=22) -> COMBINED better
+  fold 5 [2024-08-29..2026-08-26] n_m30=22887 n_h1=11187 | alone exp=+0.1436 (n=38) vs combined exp=+0.5687 (n=36) -> COMBINED better
+
+=== BTCUSD ===
+  fold 0 [2017-06-14..2019-09-10] n_m30=21566 n_h1=10338 | alone exp=-0.3728 (n=29) vs combined exp=-0.3821 (n=29) -> ALONE better
+  fold 1 [2019-09-10..2021-06-17] n_m30=21566 n_h1=10616 | alone exp=+0.3387 (n=31) vs combined exp=+0.1916 (n=23) -> ALONE better
+  fold 2 [2021-06-17..2022-11-24] n_m30=21566 n_h1=10649 | alone exp=-0.2281 (n=19) vs combined exp=-0.0298 (n=28) -> COMBINED better
+  fold 3 [2022-11-24..2024-02-26] n_m30=21566 n_h1=10666 | alone exp=-0.2837 (n=31) vs combined exp=-0.5639 (n=29) -> ALONE better
+  fold 4 [2024-02-26..2025-05-31] n_m30=21566 n_h1=10680 | alone exp=-0.3778 (n=8) vs combined exp=-0.1501 (n=17) -> COMBINED better
+  fold 5 [2025-05-31..2026-08-26] n_m30=21568 n_h1=10782 | alone exp=-0.1475 (n=41) vs combined exp=-0.5058 (n=20) -> ALONE better
+
+=== EURGBP ===
+  fold 0 [2010-01-04..2012-11-09] n_m30=33384 n_h1=15958 | alone exp=-0.0503 (n=47) vs combined exp=-0.5817 (n=37) -> ALONE better
+  fold 1 [2012-11-09..2015-09-02] n_m30=33384 n_h1=16292 | alone exp=-0.1908 (n=27) vs combined exp=-0.1121 (n=33) -> COMBINED better
+  fold 2 [2015-09-02..2018-05-28] n_m30=33384 n_h1=16454 | alone exp=-0.4008 (n=75) vs combined exp=-0.4592 (n=44) -> ALONE better
+  fold 3 [2018-05-28..2021-02-19] n_m30=33384 n_h1=16488 | alone exp=-0.1442 (n=36) vs combined exp=-0.4339 (n=50) -> ALONE better
+  fold 4 [2021-02-19..2023-11-23] n_m30=33384 n_h1=16343 | alone exp=+0.0211 (n=28) vs combined exp=-0.5901 (n=40) -> ALONE better
+  fold 5 [2023-11-23..2026-08-26] n_m30=33386 n_h1=16368 | alone exp=-0.3658 (n=42) vs combined exp=-0.1691 (n=34) -> COMBINED better
+
+yazildi: h1_disable_walkforward_results.json
+
+=== OZET: kac fold'da COMBINED (M30+H1), ALONE'dan (M30 tek basina) daha iyi cikti ===
+  GOLD    : 3/6 fold'da COMBINED daha iyi
+  BTCUSD  : 2/6 fold'da COMBINED daha iyi
+  EURGBP  : 2/6 fold'da COMBINED daha iyi
+  TOPLAM: 7/18 fold'da COMBINED daha iyi (39%)

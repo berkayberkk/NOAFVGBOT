@@ -1,0 +1,17 @@
+[2026-08-24 22:21:05] EURUSD: evaluating
+[2026-08-24 22:22:44] EURUSD: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.3267 test_trades=16
+[2026-08-24 22:22:44] GBPUSD: evaluating
+[2026-08-24 22:24:14] GBPUSD: DONE -- classification=VALIDATED STRONG test_expectancy_r=0.5095 test_trades=20
+[2026-08-24 22:24:14] USDCHF: evaluating
+[2026-08-24 22:25:42] USDCHF: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.0731 test_trades=19
+[2026-08-24 22:25:42] USDCAD: evaluating
+[2026-08-24 22:27:28] EURUSD: already DONE, skipping
+[2026-08-24 22:27:28] GBPUSD: already DONE, skipping
+[2026-08-24 22:27:28] USDCHF: already DONE, skipping
+[2026-08-24 22:27:28] USDCAD: evaluating
+[2026-08-24 22:28:46] USDCAD: DONE -- classification=FAILED TO GENERALIZE test_expectancy_r=-0.0434 test_trades=20
+[2026-08-24 22:28:46] AUDCAD: evaluating
+[2026-08-24 22:30:06] AUDCAD: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.1159 test_trades=16
+[2026-08-24 22:30:06] EURGBP: evaluating
+[2026-08-24 22:31:28] EURGBP: DONE -- classification=VALIDATED MODERATE test_expectancy_r=0.3834 test_trades=20
+[2026-08-24 22:31:28] USDJPY: evaluating

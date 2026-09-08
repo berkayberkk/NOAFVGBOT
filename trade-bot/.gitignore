@@ -68,7 +68,6 @@ winrate_presentation_data.json
 breakeven_sl_study_results.json
 ob_filters_study_results.json
 confluence_study_results.json
-trade_archive/
 trade_archive_log.txt
 trade_archive_err.txt
 trade_archive_pid.txt

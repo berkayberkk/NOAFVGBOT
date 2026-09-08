@@ -1,0 +1,24 @@
+
+=== GOLD ===
+  ob        : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 9529 islemden)
+  ifvg      : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 3738 islemden)
+  fvg       : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 2746 islemden)
+  trendline : 4 kazanan + 4 kaybeden + 0 breakeven ornegi secildi (toplam 576 islemden)
+
+=== BTCUSD ===
+  ifvg      : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 2962 islemden)
+  ob        : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 8785 islemden)
+  fvg       : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 1468 islemden)
+  trendline : 4 kazanan + 4 kaybeden + 0 breakeven ornegi secildi (toplam 417 islemden)
+
+=== EURGBP ===
+  ob        : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 16475 islemden)
+  fvg       : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 3441 islemden)
+  ifvg      : 4 kazanan + 4 kaybeden + 3 breakeven ornegi secildi (toplam 4717 islemden)
+  trendline : 4 kazanan + 4 kaybeden + 0 breakeven ornegi secildi (toplam 694 islemden)
+
+yazildi: webapp/data_module_examples.json
+  fvg: 33 ornek
+  ifvg: 33 ornek
+  ob: 33 ornek
+  trendline: 24 ornek

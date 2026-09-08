@@ -1,0 +1,22 @@
+{
+  "symbol": "EURNOK",
+  "data_status": "insufficient",
+  "reason": "M30 mum sayisi (649) < esik (2000)",
+  "m30_candle_count": 649,
+  "classification": "STRATEGY NOT_TESTED / EXECUTION N/A",
+  "elapsed_sec": 0.4,
+  "strategy_validity": {
+    "status": "NOT_TESTED",
+    "reason": "M30 mum sayisi (649) < esik (2000)"
+  },
+  "execution_validity": null,
+  "spread_sensitivity": null,
+  "provenance": {
+    "universe_version": "v1_101_frozen_2026-09-07",
+    "data_version": "1343134_1787673866",
+    "strategy_version": "88b9151",
+    "parameter_hash": "8c6ab463e4bef9b2",
+    "research_run_id": "NOA101_2026-09-07",
+    "timestamp": "2026-09-07T08:49:12.908662+00:00"
+  }
+}

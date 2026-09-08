@@ -121,6 +121,24 @@ corrected_sim_err.txt
 corrected_sim_pid.txt
 gold_account_report_data_breakeven50.json
 
+# Kutsal Holdout v2 / 101-sembol / MTF arastirma calismasi (2026-09-07/08)
+# -- scratch run log/err/pid ve kok-dizindeki ham JSON'lar (ayni yerlesik
+# desen: results/ altindaki DONDURULMUS kopyalar tutulur, kok-dizindeki
+# yeniden-uretilebilir ham ciktilar tutulmaz)
+holdout_v2_log.txt
+holdout_v2_err.txt
+holdout_v2_pid.txt
+holdout_v2_101_log.txt
+holdout_v2_101_err.txt
+holdout_v2_101_pid.txt
+holdout_v2_101_log_v4.txt
+holdout_v2_101_err_v4.txt
+holdout_v2_101_pid_v4.txt
+holdout_v2_101_mtf_log.txt
+holdout_v2_101_mtf_err.txt
+holdout_v2_101_mtf_pid.txt
+holdout_validation_results_v2_current_config.json
+
 # results/ tutulur -- kalici bulgu arsivi (yukaridaki desenler dosya adiyla
 # eslesiyor, results/ altinda da eslesmemesi icin acikca geri aliniyor).
 !results/

@@ -1,0 +1,24 @@
+{
+  "symbol": "EURNOK",
+  "timeframe": "H1",
+  "data_status": "insufficient",
+  "reason": "H1 mum sayisi (311) < esik (1500)",
+  "candle_count": 311,
+  "strategy_validity": {
+    "status": "NOT_TESTED",
+    "reason": "H1 mum sayisi (311) < esik (1500)"
+  },
+  "execution_validity": null,
+  "spread_sensitivity": null,
+  "mae_mfe": null,
+  "classification": "STRATEGY NOT_TESTED / EXECUTION N/A",
+  "provenance": {
+    "universe_version": "v1_101_frozen_2026-09-07",
+    "data_version": "1343134_1787673866",
+    "strategy_version": "88b9151",
+    "parameter_hash": "8c6ab463e4bef9b2",
+    "research_run_id": "NOA101_2026-09-07",
+    "timestamp": "2026-09-07T18:11:44.432176+00:00"
+  },
+  "elapsed_sec": 1.8
+}

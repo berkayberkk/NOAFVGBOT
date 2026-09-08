@@ -1,0 +1,431 @@
+{
+  "symbol": "USDZAR",
+  "data_status": "ok",
+  "structural_failure": false,
+  "m30_candle_count": 155929,
+  "data_start": "2010-01-04 08:30:00",
+  "data_end": "2026-08-25 15:30:00",
+  "spread_used": 0.0,
+  "strategy_validity": {
+    "status": "FAIL",
+    "reason": "Bootstrap CI tamamen negatif -- istatistiksel olarak guvenilir sekilde basarisiz",
+    "ci_lower_95": -0.1344,
+    "ci_upper_95": -0.0419,
+    "n": 3968,
+    "expectancy_r": -0.08946668100883692
+  },
+  "execution_validity": {
+    "status": "INVALID",
+    "reason": "spread=0.0 (hic kalibre edilmedi, gercek maliyet kesinlikle >0) -- bu sembol icin hicbir temsili tahmin bile yok",
+    "real_spread_calibrated": false,
+    "commission_calibrated": false,
+    "slippage_calibrated": false,
+    "tick_level_data_available": false,
+    "spread_source": "uncalibrated_zero"
+  },
+  "classification": "STRATEGY FAIL / EXECUTION INVALID",
+  "spread_sensitivity": {
+    "zero": {
+      "spread_price": 0.0,
+      "atr_fraction": 0.0,
+      "n": 3968,
+      "expectancy_r": -0.0895,
+      "total_r": -355.0038,
+      "win_rate": 0.2067
+    },
+    "low": {
+      "spread_price": 0.00026092857142856983,
+      "atr_fraction": 0.01,
+      "n": 3968,
+      "expectancy_r": -0.0975,
+      "total_r": -386.7045,
+      "win_rate": 0.2044
+    },
+    "median": {
+      "spread_price": 0.0010437142857142793,
+      "atr_fraction": 0.04,
+      "n": 3965,
+      "expectancy_r": -0.1089,
+      "total_r": -431.7772,
+      "win_rate": 0.2023
+    },
+    "high": {
+      "spread_price": 0.002609285714285698,
+      "atr_fraction": 0.1,
+      "n": 3963,
+      "expectancy_r": -0.1344,
+      "total_r": -532.5803,
+      "win_rate": 0.1976
+    },
+    "median_atr_used": 0.02609285714285698,
+    "flips_negative_at": null,
+    "already_negative_at_zero_cost": true,
+    "disclaimer": "SYNTHETIC COST SENSITIVITY -- NOT BROKER CALIBRATED (ATR-orantili sentetik stres testi, gercek spread degil)"
+  },
+  "mae_mfe": {
+    "n": 3968,
+    "avg_mae_r": 0.8198253113406079,
+    "median_mae_r": 1.0028362163004692,
+    "avg_mfe_r": 1.2315106529991953,
+    "median_mfe_r": 0.9673631506362809,
+    "avg_mae_r_wins_only": 0.38688698072042843,
+    "avg_mfe_r_losses_only": 0.9446446090709946,
+    "pct_losses_with_mfe_over_80pct": 0.46092757306226173
+  },
+  "provenance": {
+    "universe_version": "v1_101_frozen_2026-09-07",
+    "data_version": "355876411_1787682906",
+    "strategy_version": "88b9151",
+    "parameter_hash": "8c6ab463e4bef9b2",
+    "research_run_id": "NOA101_2026-09-07",
+    "timestamp": "2026-09-07T11:25:21.206845+00:00"
+  },
+  "train_metrics": {
+    "total_signals": 14238,
+    "filled_trades": 13507,
+    "unfilled_orders": 493,
+    "fill_rate": 0.9486585194549796,
+    "wins": 3414,
+    "losses": 10093,
+    "win_rate": 0.25275782927370993,
+    "total_net_r": 502.1362152147494,
+    "avg_net_r": 0.037175998757292474,
+    "median_net_r": -0.9921782285036141,
+    "expectancy_r": 0.037175998757292494,
+    "profit_factor": 1.0646090090790044,
+    "max_drawdown_r": 534.2746542721038,
+    "longest_losing_streak": 41,
+    "std_dev_net_r": 1.4273587994011472,
+    "downside_dev_net_r": 0.9957367948344688
+  },
+  "val_metrics": {
+    "total_signals": 4604,
+    "filled_trades": 4192,
+    "unfilled_orders": 155,
+    "fill_rate": 0.9105125977410947,
+    "wins": 937,
+    "losses": 3255,
+    "win_rate": 0.2235209923664122,
+    "total_net_r": -245.97156998310496,
+    "avg_net_r": -0.05867642413719107,
+    "median_net_r": -1.0,
+    "expectancy_r": -0.0586764241371911,
+    "profit_factor": 0.8952064237251609,
+    "max_drawdown_r": 275.48130826673247,
+    "longest_losing_streak": 53,
+    "std_dev_net_r": 1.350691779305853,
+    "downside_dev_net_r": 0.9971933551369393
+  },
+  "walk_forward_oos_metrics": {
+    "total_signals": 9420,
+    "filled_trades": 8013,
+    "unfilled_orders": 379,
+    "fill_rate": 0.8506369426751592,
+    "wins": 1779,
+    "losses": 6234,
+    "win_rate": 0.22201422688131786,
+    "total_net_r": -621.8191267068072,
+    "avg_net_r": -0.07760128874414167,
+    "median_net_r": -1.0,
+    "expectancy_r": -0.07760128874414168,
+    "profit_factor": 0.8628293677451537,
+    "max_drawdown_r": 625.8191267068066,
+    "longest_losing_streak": 53,
+    "std_dev_net_r": 1.3305777516525334,
+    "downside_dev_net_r": 0.9968582972285399
+  },
+  "holdout": {
+    "git_commit": "2a2bf12",
+    "baseline_fingerprint": "5a56639725048f3d",
+    "dataset_fingerprint": "gold_m30_2yil_clean",
+    "test_start_index": 124742,
+    "test_end_index": 155929,
+    "test_start_date": "2023-10-11 14:00:00",
+    "test_end_date": "2026-08-25 15:30:00",
+    "test_candle_count": 31187,
+    "data_quality_status": "WARNING",
+    "test_metrics": {
+      "total_signals": 4367,
+      "filled_trades": 3968,
+      "unfilled_orders": 114,
+      "fill_rate": 0.9086329287840623,
+      "wins": 820,
+      "losses": 3148,
+      "win_rate": 0.20665322580645162,
+      "total_net_r": -355.0037902430649,
+      "avg_net_r": -0.08946668100883691,
+      "median_net_r": -0.9933568860145646,
+      "expectancy_r": -0.08946668100883692,
+      "profit_factor": 0.831993667301057,
+      "max_drawdown_r": 396.58802414105935,
+      "longest_losing_streak": 56,
+      "std_dev_net_r": 1.264233756905496,
+      "downside_dev_net_r": 0.9972141913133177
+    },
+    "validation_comparison": {
+      "val_expectancy_r": -0.0586764241371911,
+      "val_total_net_r": -245.97156998310496,
+      "val_profit_factor": 0.8952064237251609,
+      "val_win_rate": 0.2235209923664122,
+      "val_max_drawdown_r": 275.48130826673247,
+      "test_expectancy_r": -0.0895,
+      "test_total_net_r": -355.0038,
+      "test_profit_factor": 0.832,
+      "test_win_rate": 0.2067,
+      "test_max_drawdown_r": 396.588,
+      "expectancy_delta_r": -0.0308,
+      "pf_delta": -0.0632,
+      "win_rate_delta": -0.0169,
+      "max_dd_delta_r": 121.1067
+    },
+    "concentration": {
+      "top_1_contribution_r": 3.3524,
+      "top_3_contribution_r": 10.0573,
+      "top_5_contribution_r": 16.3661,
+      "top_10_pct_contribution_pct": -319.69,
+      "after_removing_best_1_r": -358.3562,
+      "after_removing_best_1_expectancy": -0.0903,
+      "after_removing_best_3_r": -365.0611,
+      "after_removing_best_3_expectancy": -0.0921,
+      "after_removing_best_5_r": -371.3699,
+      "after_removing_best_5_expectancy": -0.0937
+    },
+    "block_bootstrap": {
+      "seed": 42,
+      "block_size": 3,
+      "num_resamples": 1000,
+      "mean_expectancy_r": -0.0882,
+      "ci_lower_95": -0.1344,
+      "ci_upper_95": -0.0419
+    },
+    "time_distribution": [
+      {
+        "bucket_name": "Year 2023",
+        "filled_trades": 405,
+        "total_net_r": -124.5162,
+        "expectancy_r": -0.3074,
+        "win_rate": 0.1309,
+        "profit_factor": 0.4642,
+        "max_drawdown_r": 126.0473
+      },
+      {
+        "bucket_name": "Year 2024",
+        "filled_trades": 1548,
+        "total_net_r": -177.3014,
+        "expectancy_r": -0.1145,
+        "win_rate": 0.1828,
+        "profit_factor": 0.7792,
+        "max_drawdown_r": 223.2429
+      },
+      {
+        "bucket_name": "Year 2025",
+        "filled_trades": 1377,
+        "total_net_r": -32.3677,
+        "expectancy_r": -0.0235,
+        "win_rate": 0.2411,
+        "profit_factor": 0.9548,
+        "max_drawdown_r": 93.2394
+      },
+      {
+        "bucket_name": "Year 2026",
+        "filled_trades": 638,
+        "total_net_r": -20.8185,
+        "expectancy_r": -0.0326,
+        "win_rate": 0.2382,
+        "profit_factor": 0.938,
+        "max_drawdown_r": 83.4081
+      },
+      {
+        "bucket_name": "Quarter 2023-Q4",
+        "filled_trades": 405,
+        "total_net_r": -124.5162,
+        "expectancy_r": -0.3074,
+        "win_rate": 0.1309,
+        "profit_factor": 0.4642,
+        "max_drawdown_r": 126.0473
+      },
+      {
+        "bucket_name": "Quarter 2024-Q1",
+        "filled_trades": 384,
+        "total_net_r": -96.8588,
+        "expectancy_r": -0.2522,
+        "win_rate": 0.1198,
+        "profit_factor": 0.5109,
+        "max_drawdown_r": 104.8588
+      },
+      {
+        "bucket_name": "Quarter 2024-Q2",
+        "filled_trades": 420,
+        "total_net_r": -75.0875,
+        "expectancy_r": -0.1788,
+        "win_rate": 0.1762,
+        "profit_factor": 0.6806,
+        "max_drawdown_r": 89.1174
+      },
+      {
+        "bucket_name": "Quarter 2024-Q3",
+        "filled_trades": 431,
+        "total_net_r": -14.4721,
+        "expectancy_r": -0.0336,
+        "win_rate": 0.2274,
+        "profit_factor": 0.9357,
+        "max_drawdown_r": 48.8923
+      },
+      {
+        "bucket_name": "Quarter 2024-Q4",
+        "filled_trades": 313,
+        "total_net_r": 9.1171,
+        "expectancy_r": 0.0291,
+        "win_rate": 0.2077,
+        "profit_factor": 1.0627,
+        "max_drawdown_r": 31.3934
+      },
+      {
+        "bucket_name": "Quarter 2025-Q1",
+        "filled_trades": 345,
+        "total_net_r": -57.7601,
+        "expectancy_r": -0.1674,
+        "win_rate": 0.1826,
+        "profit_factor": 0.6876,
+        "max_drawdown_r": 89.3116
+      },
+      {
+        "bucket_name": "Quarter 2025-Q2",
+        "filled_trades": 353,
+        "total_net_r": 26.4087,
+        "expectancy_r": 0.0748,
+        "win_rate": 0.2805,
+        "profit_factor": 1.141,
+        "max_drawdown_r": 25.9855
+      },
+      {
+        "bucket_name": "Quarter 2025-Q3",
+        "filled_trades": 361,
+        "total_net_r": -22.9931,
+        "expectancy_r": -0.0637,
+        "win_rate": 0.2244,
+        "profit_factor": 0.8902,
+        "max_drawdown_r": 44.5383
+      },
+      {
+        "bucket_name": "Quarter 2025-Q4",
+        "filled_trades": 318,
+        "total_net_r": 21.9768,
+        "expectancy_r": 0.0691,
+        "win_rate": 0.2799,
+        "profit_factor": 1.1306,
+        "max_drawdown_r": 40.3949
+      },
+      {
+        "bucket_name": "Quarter 2026-Q1",
+        "filled_trades": 261,
+        "total_net_r": 33.1029,
+        "expectancy_r": 0.1268,
+        "win_rate": 0.3027,
+        "profit_factor": 1.2609,
+        "max_drawdown_r": 14.4415
+      },
+      {
+        "bucket_name": "Quarter 2026-Q2",
+        "filled_trades": 250,
+        "total_net_r": -63.659,
+        "expectancy_r": -0.2546,
+        "win_rate": 0.156,
+        "profit_factor": 0.5366,
+        "max_drawdown_r": 74.6875
+      },
+      {
+        "bucket_name": "Quarter 2026-Q3",
+        "filled_trades": 127,
+        "total_net_r": 9.7376,
+        "expectancy_r": 0.0767,
+        "win_rate": 0.2677,
+        "profit_factor": 1.1356,
+        "max_drawdown_r": 17.8895
+      }
+    ],
+    "volatility_regimes": [
+      {
+        "bucket_name": "LOW Volatility (ATR <= 0.02)",
+        "filled_trades": 1323,
+        "total_net_r": -73.3322,
+        "expectancy_r": -0.0554,
+        "win_rate": 0.2086,
+        "profit_factor": 0.8985,
+        "max_drawdown_r": 139.3805
+      },
+      {
+        "bucket_name": "MEDIUM Volatility (0.02 < ATR <= 0.03)",
+        "filled_trades": 1323,
+        "total_net_r": -174.0384,
+        "expectancy_r": -0.1315,
+        "win_rate": 0.2018,
+        "profit_factor": 0.7616,
+        "max_drawdown_r": 183.1073
+      },
+      {
+        "bucket_name": "HIGH Volatility (ATR > 0.03)",
+        "filled_trades": 1322,
+        "total_net_r": -107.6332,
+        "expectancy_r": -0.0814,
+        "win_rate": 0.2095,
+        "profit_factor": 0.8365,
+        "max_drawdown_r": 133.4151
+      }
+    ],
+    "market_states": [
+      {
+        "bucket_name": "Trend DOWN",
+        "filled_trades": 1193,
+        "total_net_r": -68.7424,
+        "expectancy_r": -0.0576,
+        "win_rate": 0.2196,
+        "profit_factor": 0.8891,
+        "max_drawdown_r": 121.1008
+      },
+      {
+        "bucket_name": "Trend SIDEWAYS",
+        "filled_trades": 1641,
+        "total_net_r": -205.8363,
+        "expectancy_r": -0.1254,
+        "win_rate": 0.1913,
+        "profit_factor": 0.7682,
+        "max_drawdown_r": 226.4677
+      },
+      {
+        "bucket_name": "Trend UP",
+        "filled_trades": 1134,
+        "total_net_r": -80.4251,
+        "expectancy_r": -0.0709,
+        "win_rate": 0.2152,
+        "profit_factor": 0.8668,
+        "max_drawdown_r": 99.0254
+      }
+    ],
+    "directions": [
+      {
+        "bucket_name": "LONG (BUY)",
+        "filled_trades": 2093,
+        "total_net_r": -582.9541,
+        "expectancy_r": -0.2785,
+        "win_rate": 0.1567,
+        "profit_factor": 0.5413,
+        "max_drawdown_r": 606.3797
+      },
+      {
+        "bucket_name": "SHORT (SELL)",
+        "filled_trades": 1875,
+        "total_net_r": 227.9503,
+        "expectancy_r": 0.1216,
+        "win_rate": 0.2624,
+        "profit_factor": 1.2654,
+        "max_drawdown_r": 128.6777
+      }
+    ],
+    "evidence_classification": "FAILED TO GENERALIZE",
+    "evidence_reason": "Final holdout net R or expectancy is negative; system failed to generalize to unseen test data.",
+    "final_test_evaluated": true,
+    "final_test_consumed": true
+  },
+  "elapsed_sec": 359.0
+}

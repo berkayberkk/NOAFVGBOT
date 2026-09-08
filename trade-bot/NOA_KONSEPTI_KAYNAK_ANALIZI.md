@@ -1925,3 +1925,47 @@ oturumda yeniden doğrulanabilir.
 sinyal-parite doğrulaması (`LogSignalsOnly=true` Strategy Tester koşusu)
 ve mobil responsive doğrulama bu oturumda ele alınmadı; magic=0 USDTRY
 pozisyonu bulgusu kullanıcı isteğiyle bu oturumda kapsam dışı bırakıldı.
+
+## NOAFVGBOT Research Lab başladı -- Kutsal Holdout v2: bugünkü resmi config İLK KEZ test edildi, 2/3 sembol BAŞARISIZ (2026-09-07)
+
+Kullanıcı 2026-09-07'de kapsamlı bir "Research & Testing Lab" çalışması
+başlattı (52 bölümlük detaylı talimat -- trade journey analizi, kayıp
+taksonomisi, MAE/MFE, ablation, Monte Carlo, red-team, vb.). Bu boyutta
+bir çalışma tek oturumda bitmez; fazlara bölündü ve detaylı ilerleme/
+deney kaydı artık `NOA_RESEARCH_LEDGER.md`'de tutuluyor (bu dosya artık
+SADECE anlatı/karar tarihçesi, deney detayları için ledger'a bakılmalı).
+
+**Faz 1, Deney #001 (bkz. `NOA_RESEARCH_LEDGER.md`):** `results/README.md`
+en kritik açık madde olarak şunu işaretliyordu: projenin kendi en sıkı
+doğrulama altyapısı (`backtest/final_holdout.py`), bugünkü resmi stratejiyi
+(SL tamponu 15/15/30/5, breakeven %50, shallow-edge giriş, hacim teyidi,
+2026-09-07 market-emri fill düzeltmesi) HİÇ görmemişti -- en son
+2026-09-02'de ESKİ config ile çalıştırılmıştı. Bu boşluk kapatıldı.
+
+**SONUÇ -- KIRMIZI BAYRAK:**
+
+| Sembol | Holdout expectancy | PF | Win% | maxDD | Sınıflandırma |
+|---|--:|--:|--:|--:|---|
+| GOLD | +0.0827R | 1.15 | 28.3% | 89.08R | VALIDATED MODERATE |
+| BTCUSD | -0.0817R | 0.86 | 22.5% | 288.67R | **FAILED TO GENERALIZE** |
+| EURGBP | -0.2375R | 0.62 | 17.9% | 1096.50R | **FAILED TO GENERALIZE** |
+
+3 sembolün TÜMÜNDE tarihin ilk %80'i (train+val+walk-forward) zaten
+negatif expectancy'liydi (win %17.9-24.1). Sadece GOLD'un son %20'lik
+kutsal holdout'u pozitife döndü (CI tamamen pozitif, ama maxDD 89R ile
+kendi içinde bile kırılgan). BTCUSD/EURGBP holdout'ta da başarısız,
+CI'ları tamamen negatif -- EURGBP'de maxDD 1096R'ye kadar çıkıyor.
+
+**Anlamı:** Aday 6/7/8 (SL tamponu genişletme) gibi kararlar kendi dar
+kapsamlı (sadece SL ekseni) train/val/holdout'larında sağlam
+doğrulanmıştı, ama stratejinin BÜTÜNÜ hiçbir zaman projenin bağımsız
+kutsal holdout'undan geçirilmemişti. Geçirildiğinde 2/3 sembolde açıkça
+genelleşemiyor. **Canlı işlem hazırlığı şu an için açıkça HAYIR** --
+sadece GOLD'da, o da büyük çekingelerle (89R maxDD), zayıf bir istatistik
+sinyali var.
+
+**KUTSAL KURAL uygulandı:** bu ölçüme dayanarak hiçbir parametre
+değiştirilmedi/önerilmedi -- Research Lab'ın sonraki fazları (kayıp
+taksonomisi, MAE/MFE, session/rejim kırılımları) bu bulgunun ışığında,
+özellikle "BTCUSD/EURGBP neden çalışmıyor" ve "GOLD neden bu kadar
+kırılgan" sorularına odaklanarak devam ediyor.

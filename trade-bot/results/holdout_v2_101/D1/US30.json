@@ -1,0 +1,24 @@
+{
+  "symbol": "US30",
+  "timeframe": "D1",
+  "data_status": "insufficient",
+  "reason": "D1 mum sayisi (0) < esik (300)",
+  "candle_count": 0,
+  "strategy_validity": {
+    "status": "NOT_TESTED",
+    "reason": "D1 mum sayisi (0) < esik (300)"
+  },
+  "execution_validity": null,
+  "spread_sensitivity": null,
+  "mae_mfe": null,
+  "classification": "STRATEGY NOT_TESTED / EXECUTION N/A",
+  "provenance": {
+    "universe_version": "v1_101_frozen_2026-09-07",
+    "data_version": "260289717_1787685579",
+    "strategy_version": "88b9151",
+    "parameter_hash": "8c6ab463e4bef9b2",
+    "research_run_id": "NOA101_2026-09-07",
+    "timestamp": "2026-09-08T04:30:26.642741+00:00"
+  },
+  "elapsed_sec": 78.1
+}

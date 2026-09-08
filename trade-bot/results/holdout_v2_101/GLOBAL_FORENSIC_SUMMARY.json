@@ -1,0 +1,182 @@
+{
+  "coverage": {
+    "universe_total": 101,
+    "tested": 101,
+    "not_tested": 0,
+    "not_tested_symbols": [],
+    "ok_evaluated": 100,
+    "data_insufficient": 1,
+    "structural_failure": 0
+  },
+  "strategy_validity_counts": {
+    "FAIL": 71,
+    "UNCERTAIN": 25,
+    "PASS": 4,
+    "NOT_TESTED": 1
+  },
+  "execution_validity_counts": {
+    "INVALID": 97,
+    "UNCERTAIN": 3,
+    "N/A": 1
+  },
+  "expectancy_distribution": {
+    "n": 100,
+    "mean": -0.0399,
+    "median": -0.044,
+    "p25": -0.0855,
+    "p75": 0.0083,
+    "pct_positive": 29.0,
+    "pct_negative": 71.0
+  },
+  "pf_distribution": {
+    "median": 0.9157
+  },
+  "win_rate_distribution": {
+    "median": 0.2321
+  },
+  "best_10": [
+    {
+      "symbol": "USDTRY",
+      "expectancy_r": 0.3532
+    },
+    {
+      "symbol": "EURTRY",
+      "expectancy_r": 0.2349
+    },
+    {
+      "symbol": "UK100",
+      "expectancy_r": 0.1078
+    },
+    {
+      "symbol": "GOLD",
+      "expectancy_r": 0.0827
+    },
+    {
+      "symbol": "JP225",
+      "expectancy_r": 0.0652
+    },
+    {
+      "symbol": "USDHKD",
+      "expectancy_r": 0.0515
+    },
+    {
+      "symbol": "USDCNH",
+      "expectancy_r": 0.0486
+    },
+    {
+      "symbol": "GERMID50",
+      "expectancy_r": 0.0449
+    },
+    {
+      "symbol": "CHFJPY",
+      "expectancy_r": 0.0418
+    },
+    {
+      "symbol": "UNIUSD",
+      "expectancy_r": 0.0383
+    }
+  ],
+  "worst_10": [
+    {
+      "symbol": "FRA40",
+      "expectancy_r": -0.1228
+    },
+    {
+      "symbol": "EURCHF",
+      "expectancy_r": -0.1289
+    },
+    {
+      "symbol": "USDPLN",
+      "expectancy_r": -0.1395
+    },
+    {
+      "symbol": "USDJPY",
+      "expectancy_r": -0.1403
+    },
+    {
+      "symbol": "GBPSGD",
+      "expectancy_r": -0.1682
+    },
+    {
+      "symbol": "GBPDKK",
+      "expectancy_r": -0.1706
+    },
+    {
+      "symbol": "GERTECH30",
+      "expectancy_r": -0.1782
+    },
+    {
+      "symbol": "EURDKK",
+      "expectancy_r": -0.1918
+    },
+    {
+      "symbol": "EURGBP",
+      "expectancy_r": -0.2375
+    },
+    {
+      "symbol": "USFANG",
+      "expectancy_r": -0.2614
+    }
+  ],
+  "market_family_stats": {
+    "FX_Majors": {
+      "n_symbols": 7,
+      "mean_expectancy_r": -0.0689,
+      "median_expectancy_r": -0.0792,
+      "pct_positive": 14.3
+    },
+    "Indices": {
+      "n_symbols": 24,
+      "mean_expectancy_r": -0.0414,
+      "median_expectancy_r": -0.0375,
+      "pct_positive": 33.3
+    },
+    "FX_Exotics": {
+      "n_symbols": 25,
+      "mean_expectancy_r": -0.0428,
+      "median_expectancy_r": -0.0765,
+      "pct_positive": 24.0
+    },
+    "Crypto": {
+      "n_symbols": 16,
+      "mean_expectancy_r": -0.0213,
+      "median_expectancy_r": -0.0157,
+      "pct_positive": 31.2
+    },
+    "Metals": {
+      "n_symbols": 4,
+      "mean_expectancy_r": 0.0158,
+      "median_expectancy_r": 0.0235,
+      "pct_positive": 75.0
+    },
+    "FX_Crosses": {
+      "n_symbols": 22,
+      "mean_expectancy_r": -0.0502,
+      "median_expectancy_r": -0.0474,
+      "pct_positive": 27.3
+    },
+    "Energy": {
+      "n_symbols": 2,
+      "mean_expectancy_r": -0.0309,
+      "median_expectancy_r": -0.0309,
+      "pct_positive": 0.0
+    }
+  },
+  "pilot_symbols_rank": {
+    "GOLD": {
+      "rank": 4,
+      "of": 100,
+      "percentile": 97.0
+    },
+    "BTCUSD": {
+      "rank": 73,
+      "of": 100,
+      "percentile": 28.0
+    },
+    "EURGBP": {
+      "rank": 99,
+      "of": 100,
+      "percentile": 2.0
+    }
+  }
+}

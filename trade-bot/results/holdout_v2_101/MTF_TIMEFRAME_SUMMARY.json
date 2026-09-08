@@ -1,0 +1,92 @@
+{
+  "M30": {
+    "tf": "M30",
+    "n_ok": 100,
+    "n_total_records": 101,
+    "sv_counts": {
+      "FAIL": 71,
+      "UNCERTAIN": 25,
+      "PASS": 4,
+      "NOT_TESTED": 1
+    },
+    "mean_exp": -0.0399,
+    "median_exp": -0.044,
+    "pct_positive": 29.0,
+    "pass_symbols": [
+      "EURTRY",
+      "GOLD",
+      "UK100",
+      "USDTRY"
+    ]
+  },
+  "H1": {
+    "tf": "H1",
+    "n_ok": 100,
+    "n_total_records": 101,
+    "sv_counts": {
+      "FAIL": 86,
+      "UNCERTAIN": 10,
+      "PASS": 4,
+      "NOT_TESTED": 1
+    },
+    "mean_exp": -0.0692,
+    "median_exp": -0.0741,
+    "pct_positive": 14.0,
+    "pass_symbols": [
+      "AUDNZD",
+      "EURTRY",
+      "GOLD",
+      "USDTRY"
+    ]
+  },
+  "H2": {
+    "tf": "H2",
+    "n_ok": 98,
+    "n_total_records": 101,
+    "sv_counts": {
+      "FAIL": 83,
+      "UNCERTAIN": 13,
+      "NOT_TESTED": 3,
+      "PASS": 2
+    },
+    "mean_exp": -0.0966,
+    "median_exp": -0.102,
+    "pct_positive": 15.3,
+    "pass_symbols": [
+      "EURTRY",
+      "USDTRY"
+    ]
+  },
+  "H4": {
+    "tf": "H4",
+    "n_ok": 95,
+    "n_total_records": 101,
+    "sv_counts": {
+      "FAIL": 76,
+      "NOT_TESTED": 6,
+      "UNCERTAIN": 17,
+      "PASS": 2
+    },
+    "mean_exp": -0.1331,
+    "median_exp": -0.1495,
+    "pct_positive": 20.0,
+    "pass_symbols": [
+      "EURTRY",
+      "USDTRY"
+    ]
+  },
+  "D1": {
+    "tf": "D1",
+    "n_ok": 59,
+    "n_total_records": 101,
+    "sv_counts": {
+      "UNCERTAIN": 17,
+      "FAIL": 42,
+      "NOT_TESTED": 42
+    },
+    "mean_exp": -0.2245,
+    "median_exp": -0.3679,
+    "pct_positive": 28.8,
+    "pass_symbols": []
+  }
+}

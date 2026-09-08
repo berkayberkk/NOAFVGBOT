@@ -1,0 +1,24 @@
+{
+  "symbol": "GERTECH30",
+  "timeframe": "H4",
+  "data_status": "insufficient",
+  "reason": "H4 mum sayisi (32) < esik (600)",
+  "candle_count": 32,
+  "strategy_validity": {
+    "status": "NOT_TESTED",
+    "reason": "H4 mum sayisi (32) < esik (600)"
+  },
+  "execution_validity": null,
+  "spread_sensitivity": null,
+  "mae_mfe": null,
+  "classification": "STRATEGY NOT_TESTED / EXECUTION N/A",
+  "provenance": {
+    "universe_version": "v1_101_frozen_2026-09-07",
+    "data_version": "50654833_1787684081",
+    "strategy_version": "88b9151",
+    "parameter_hash": "8c6ab463e4bef9b2",
+    "research_run_id": "NOA101_2026-09-07",
+    "timestamp": "2026-09-08T01:41:05.833130+00:00"
+  },
+  "elapsed_sec": 16.3
+}

@@ -1,0 +1,23 @@
+{
+  "symbol": "EURZAR",
+  "timeframe": "W1",
+  "data_status": "insufficient",
+  "reason": "STRUKTUREL KISIT (veri yetersizligi DEGIL): research/v2/data/resampler.py her hedef mum icin KESINTISIZ %100 dolu M1 penceresi sartiyor (satir 89). W1 = 7x24x60=10080 dakikanin TAMAMI demek -- ama HER enstruman (BTCUSD dahil) haftada en az bir veri/piyasa-kapanis boslu\u011fu iceriyor, bu yuzden HICBIR haftalik pencere hicbir sembolde tam olamiyor (GOLD icin dogrulandi: 869/869 aday hafta penceresi de incomplete). 101/101 sembolde ayni sonuc -- sistematik/yapisal, sembole ozgu degil. Kullanici karari (2026-09-08): W1 mevcut resampler ile NOT_TESTED olarak kapatildi, 606 hedefi 505e (M30+H1+H2+H4+D1) revize edildi.",
+  "candle_count": 0,
+  "strategy_validity": {
+    "status": "NOT_TESTED",
+    "reason": "STRUKTUREL KISIT (veri yetersizligi DEGIL): research/v2/data/resampler.py her hedef mum icin KESINTISIZ %100 dolu M1 penceresi sartiyor (satir 89). W1 = 7x24x60=10080 dakikanin TAMAMI demek -- ama HER enstruman (BTCUSD dahil) haftada en az bir veri/piyasa-kapanis boslu\u011fu iceriyor, bu yuzden HICBIR haftalik pencere hicbir sembolde tam olamiyor (GOLD icin dogrulandi: 869/869 aday hafta penceresi de incomplete). 101/101 sembolde ayni sonuc -- sistematik/yapisal, sembole ozgu degil. Kullanici karari (2026-09-08): W1 mevcut resampler ile NOT_TESTED olarak kapatildi, 606 hedefi 505e (M30+H1+H2+H4+D1) revize edildi."
+  },
+  "execution_validity": null,
+  "spread_sensitivity": null,
+  "mae_mfe": null,
+  "classification": "STRATEGY NOT_TESTED / EXECUTION N/A",
+  "provenance": {
+    "universe_version": "v1_101_frozen_2026-09-07",
+    "data_version": "287618596_1787675493",
+    "strategy_version": "88b9151",
+    "parameter_hash": "8c6ab463e4bef9b2",
+    "research_run_id": "NOA101_2026-09-07",
+    "timestamp": "2026-09-08T06:16:07.495680+00:00"
+  }
+}

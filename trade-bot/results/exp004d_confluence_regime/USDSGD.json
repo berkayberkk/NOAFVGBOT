@@ -1,0 +1,33 @@
+{
+  "symbol": "USDSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 14149,
+    "win_rate": 0.2691,
+    "expectancy_r": 0.0164,
+    "total_r": 232.71,
+    "profit_factor": 1.0311
+  },
+  "regime_only": {
+    "n": 4385,
+    "win_rate": 0.2684,
+    "expectancy_r": 0.0213,
+    "total_r": 93.36,
+    "profit_factor": 1.0412
+  },
+  "confluence_only": {
+    "n": 8461,
+    "win_rate": 0.2759,
+    "expectancy_r": 0.0341,
+    "total_r": 288.66,
+    "profit_factor": 1.0664
+  },
+  "confluence_and_regime": {
+    "n": 2759,
+    "win_rate": 0.2823,
+    "expectancy_r": 0.0634,
+    "total_r": 174.8,
+    "profit_factor": 1.1272
+  },
+  "elapsed_sec": 634.7
+}

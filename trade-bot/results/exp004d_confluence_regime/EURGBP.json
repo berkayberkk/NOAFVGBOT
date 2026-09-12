@@ -1,0 +1,33 @@
+{
+  "symbol": "EURGBP",
+  "status": "ok",
+  "baseline": {
+    "n": 20035,
+    "win_rate": 0.2211,
+    "expectancy_r": -0.1103,
+    "total_r": -2209.59,
+    "profit_factor": 0.8135
+  },
+  "regime_only": {
+    "n": 5091,
+    "win_rate": 0.219,
+    "expectancy_r": -0.1215,
+    "total_r": -618.71,
+    "profit_factor": 0.7971
+  },
+  "confluence_only": {
+    "n": 12232,
+    "win_rate": 0.2336,
+    "expectancy_r": -0.0741,
+    "total_r": -906.85,
+    "profit_factor": 0.8685
+  },
+  "confluence_and_regime": {
+    "n": 3083,
+    "win_rate": 0.2293,
+    "expectancy_r": -0.0992,
+    "total_r": -305.73,
+    "profit_factor": 0.8268
+  },
+  "elapsed_sec": 561.8
+}

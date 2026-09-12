@@ -1,0 +1,33 @@
+{
+  "symbol": "AVAXUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 5734,
+    "win_rate": 0.2698,
+    "expectancy_r": -0.0169,
+    "total_r": -97.18,
+    "profit_factor": 0.9684
+  },
+  "confluence_all": {
+    "n": 3838,
+    "win_rate": 0.2817,
+    "expectancy_r": 0.0112,
+    "total_r": 43.1,
+    "profit_factor": 1.0214
+  },
+  "confluence_with_trendline": {
+    "n": 546,
+    "win_rate": 0.2985,
+    "expectancy_r": 0.0342,
+    "total_r": 18.67,
+    "profit_factor": 1.0597
+  },
+  "confluence_without_trendline": {
+    "n": 3292,
+    "win_rate": 0.2789,
+    "expectancy_r": 0.0074,
+    "total_r": 24.43,
+    "profit_factor": 1.0144
+  },
+  "elapsed_sec": 80.9
+}

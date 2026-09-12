@@ -1,0 +1,33 @@
+{
+  "symbol": "GOLD",
+  "status": "ok",
+  "baseline": {
+    "n": 13407,
+    "win_rate": 0.2444,
+    "expectancy_r": -0.031,
+    "total_r": -416.06,
+    "profit_factor": 0.9444
+  },
+  "regime_only": {
+    "n": 4233,
+    "win_rate": 0.2476,
+    "expectancy_r": -0.0182,
+    "total_r": -76.92,
+    "profit_factor": 0.9671
+  },
+  "confluence_only": {
+    "n": 8782,
+    "win_rate": 0.2494,
+    "expectancy_r": -0.0311,
+    "total_r": -273.01,
+    "profit_factor": 0.9425
+  },
+  "confluence_and_regime": {
+    "n": 2896,
+    "win_rate": 0.2573,
+    "expectancy_r": -0.0094,
+    "total_r": -27.27,
+    "profit_factor": 0.9822
+  },
+  "elapsed_sec": 447.6
+}

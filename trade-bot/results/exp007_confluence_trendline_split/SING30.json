@@ -1,0 +1,33 @@
+{
+  "symbol": "SING30",
+  "status": "ok",
+  "baseline": {
+    "n": 3587,
+    "win_rate": 0.2846,
+    "expectancy_r": 0.0034,
+    "total_r": 12.34,
+    "profit_factor": 1.0065
+  },
+  "confluence_all": {
+    "n": 2435,
+    "win_rate": 0.3072,
+    "expectancy_r": 0.0484,
+    "total_r": 117.84,
+    "profit_factor": 1.0967
+  },
+  "confluence_with_trendline": {
+    "n": 253,
+    "win_rate": 0.2925,
+    "expectancy_r": -0.0608,
+    "total_r": -15.37,
+    "profit_factor": 0.8994
+  },
+  "confluence_without_trendline": {
+    "n": 2182,
+    "win_rate": 0.3089,
+    "expectancy_r": 0.061,
+    "total_r": 133.21,
+    "profit_factor": 1.125
+  },
+  "elapsed_sec": 56.1
+}

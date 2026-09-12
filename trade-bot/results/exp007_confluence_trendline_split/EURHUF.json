@@ -1,0 +1,33 @@
+{
+  "symbol": "EURHUF",
+  "status": "ok",
+  "baseline": {
+    "n": 13933,
+    "win_rate": 0.2582,
+    "expectancy_r": 0.0251,
+    "total_r": 350.27,
+    "profit_factor": 1.0463
+  },
+  "confluence_all": {
+    "n": 8393,
+    "win_rate": 0.2656,
+    "expectancy_r": 0.0462,
+    "total_r": 387.99,
+    "profit_factor": 1.0894
+  },
+  "confluence_with_trendline": {
+    "n": 1064,
+    "win_rate": 0.3008,
+    "expectancy_r": 0.1183,
+    "total_r": 125.85,
+    "profit_factor": 1.2147
+  },
+  "confluence_without_trendline": {
+    "n": 7329,
+    "win_rate": 0.2605,
+    "expectancy_r": 0.0358,
+    "total_r": 262.14,
+    "profit_factor": 1.0699
+  },
+  "elapsed_sec": 182.4
+}

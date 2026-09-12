@@ -1,0 +1,33 @@
+{
+  "symbol": "US2000",
+  "status": "ok",
+  "baseline": {
+    "n": 10066,
+    "win_rate": 0.2309,
+    "expectancy_r": -0.076,
+    "total_r": -764.78,
+    "profit_factor": 0.8636
+  },
+  "confluence_all": {
+    "n": 6588,
+    "win_rate": 0.2369,
+    "expectancy_r": -0.0544,
+    "total_r": -358.17,
+    "profit_factor": 0.8983
+  },
+  "confluence_with_trendline": {
+    "n": 548,
+    "win_rate": 0.2336,
+    "expectancy_r": -0.1615,
+    "total_r": -88.5,
+    "profit_factor": 0.7485
+  },
+  "confluence_without_trendline": {
+    "n": 6040,
+    "win_rate": 0.2373,
+    "expectancy_r": -0.0446,
+    "total_r": -269.67,
+    "profit_factor": 0.9149
+  },
+  "elapsed_sec": 98.3
+}

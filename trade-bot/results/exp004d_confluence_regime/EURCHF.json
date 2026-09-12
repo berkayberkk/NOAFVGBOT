@@ -1,0 +1,33 @@
+{
+  "symbol": "EURCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 16982,
+    "win_rate": 0.2648,
+    "expectancy_r": 0.0625,
+    "total_r": 1060.95,
+    "profit_factor": 1.1149
+  },
+  "regime_only": {
+    "n": 4363,
+    "win_rate": 0.2574,
+    "expectancy_r": 0.033,
+    "total_r": 143.81,
+    "profit_factor": 1.0605
+  },
+  "confluence_only": {
+    "n": 9178,
+    "win_rate": 0.2668,
+    "expectancy_r": 0.0576,
+    "total_r": 528.3,
+    "profit_factor": 1.1105
+  },
+  "confluence_and_regime": {
+    "n": 2357,
+    "win_rate": 0.2635,
+    "expectancy_r": 0.0354,
+    "total_r": 83.41,
+    "profit_factor": 1.0678
+  },
+  "elapsed_sec": 778.3
+}

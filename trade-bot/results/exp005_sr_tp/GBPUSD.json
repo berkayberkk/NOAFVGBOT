@@ -1,0 +1,83 @@
+{
+  "symbol": "GBPUSD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2877,
+        "win_rate": 0.2843,
+        "expectancy_r": -0.0134,
+        "total_r": -38.44,
+        "profit_factor": 0.9695,
+        "avg_bars_held": 812.2
+      },
+      "sr_based_tp": {
+        "n": 2898,
+        "win_rate": 0.7747,
+        "expectancy_r": -0.0136,
+        "total_r": -39.38,
+        "profit_factor": 0.6924,
+        "avg_bars_held": 32.9
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 4354,
+        "win_rate": 0.2809,
+        "expectancy_r": -0.0217,
+        "total_r": -94.45,
+        "profit_factor": 0.9503,
+        "avg_bars_held": 450.6
+      },
+      "sr_based_tp": {
+        "n": 4370,
+        "win_rate": 0.7604,
+        "expectancy_r": -0.0174,
+        "total_r": -75.95,
+        "profit_factor": 0.7149,
+        "avg_bars_held": 14.5
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 12740,
+        "win_rate": 0.2177,
+        "expectancy_r": -0.0255,
+        "total_r": -325.11,
+        "profit_factor": 0.9585,
+        "avg_bars_held": 2152.5
+      },
+      "sr_based_tp": {
+        "n": 12934,
+        "win_rate": 0.7584,
+        "expectancy_r": -0.0425,
+        "total_r": -550.27,
+        "profit_factor": 0.5801,
+        "avg_bars_held": 31.8
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 553,
+        "win_rate": 0.3544,
+        "expectancy_r": 0.0764,
+        "total_r": 42.26,
+        "profit_factor": 1.12,
+        "avg_bars_held": 122.8
+      },
+      "sr_based_tp": {
+        "n": 554,
+        "win_rate": 0.9495,
+        "expectancy_r": 0.0631,
+        "total_r": 34.98,
+        "profit_factor": 2.2697,
+        "avg_bars_held": 5.4
+      }
+    }
+  },
+  "elapsed_sec": 312.1
+}

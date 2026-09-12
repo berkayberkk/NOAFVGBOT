@@ -1,0 +1,33 @@
+{
+  "symbol": "SA40",
+  "status": "ok",
+  "baseline": {
+    "n": 2150,
+    "win_rate": 0.2633,
+    "expectancy_r": -0.0364,
+    "total_r": -78.18,
+    "profit_factor": 0.9295
+  },
+  "confluence_all": {
+    "n": 1165,
+    "win_rate": 0.2867,
+    "expectancy_r": 0.0452,
+    "total_r": 52.66,
+    "profit_factor": 1.0942
+  },
+  "confluence_with_trendline": {
+    "n": 106,
+    "win_rate": 0.4057,
+    "expectancy_r": 0.4041,
+    "total_r": 42.84,
+    "profit_factor": 1.8693
+  },
+  "confluence_without_trendline": {
+    "n": 1059,
+    "win_rate": 0.2748,
+    "expectancy_r": 0.0093,
+    "total_r": 9.83,
+    "profit_factor": 1.0193
+  },
+  "elapsed_sec": 26.7
+}

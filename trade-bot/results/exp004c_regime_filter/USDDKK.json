@@ -1,0 +1,53 @@
+{
+  "symbol": "USDDKK",
+  "status": "ok",
+  "baseline": {
+    "n": 19547,
+    "win_rate": 0.2419,
+    "expectancy_r": -0.0183,
+    "total_r": -357.76,
+    "profit_factor": 0.9663
+  },
+  "regime_filtered": {
+    "n": 5665,
+    "win_rate": 0.241,
+    "expectancy_r": -0.0252,
+    "total_r": -142.88,
+    "profit_factor": 0.9538
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 9820,
+      "win_rate": 0.2699,
+      "expectancy_r": 0.0834,
+      "total_r": 818.94,
+      "profit_factor": 1.1623
+    },
+    "sell": {
+      "n": 9727,
+      "win_rate": 0.2136,
+      "expectancy_r": -0.121,
+      "total_r": -1176.7,
+      "profit_factor": 0.7891
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2805,
+      "win_rate": 0.2695,
+      "expectancy_r": 0.0675,
+      "total_r": 189.27,
+      "profit_factor": 1.1294
+    },
+    "sell": {
+      "n": 2860,
+      "win_rate": 0.2129,
+      "expectancy_r": -0.1161,
+      "total_r": -332.15,
+      "profit_factor": 0.7965
+    }
+  },
+  "trade_retention_pct": 29.0,
+  "expectancy_delta_r": -0.0069,
+  "elapsed_sec": 701.0
+}

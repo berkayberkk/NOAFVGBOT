@@ -1,0 +1,33 @@
+{
+  "symbol": "EURPLN",
+  "status": "ok",
+  "baseline": {
+    "n": 13053,
+    "win_rate": 0.2405,
+    "expectancy_r": -0.0587,
+    "total_r": -766.55,
+    "profit_factor": 0.8951
+  },
+  "regime_only": {
+    "n": 3489,
+    "win_rate": 0.2448,
+    "expectancy_r": -0.058,
+    "total_r": -202.23,
+    "profit_factor": 0.8934
+  },
+  "confluence_only": {
+    "n": 7771,
+    "win_rate": 0.2512,
+    "expectancy_r": -0.0274,
+    "total_r": -212.75,
+    "profit_factor": 0.9485
+  },
+  "confluence_and_regime": {
+    "n": 2113,
+    "win_rate": 0.257,
+    "expectancy_r": -0.0262,
+    "total_r": -55.36,
+    "profit_factor": 0.9494
+  },
+  "elapsed_sec": 349.9
+}

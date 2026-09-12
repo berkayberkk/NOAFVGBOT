@@ -1,0 +1,33 @@
+{
+  "symbol": "USDHKD",
+  "status": "ok",
+  "baseline": {
+    "n": 5453,
+    "win_rate": 0.2923,
+    "expectancy_r": 0.082,
+    "total_r": 446.91,
+    "profit_factor": 1.1603
+  },
+  "confluence_all": {
+    "n": 3407,
+    "win_rate": 0.3061,
+    "expectancy_r": 0.1026,
+    "total_r": 349.66,
+    "profit_factor": 1.2095
+  },
+  "confluence_with_trendline": {
+    "n": 683,
+    "win_rate": 0.3851,
+    "expectancy_r": 0.345,
+    "total_r": 235.61,
+    "profit_factor": 1.7503
+  },
+  "confluence_without_trendline": {
+    "n": 2724,
+    "win_rate": 0.2863,
+    "expectancy_r": 0.0419,
+    "total_r": 114.05,
+    "profit_factor": 1.0842
+  },
+  "elapsed_sec": 144.1
+}

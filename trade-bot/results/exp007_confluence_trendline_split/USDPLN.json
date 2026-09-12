@@ -1,0 +1,33 @@
+{
+  "symbol": "USDPLN",
+  "status": "ok",
+  "baseline": {
+    "n": 16762,
+    "win_rate": 0.2586,
+    "expectancy_r": 0.0113,
+    "total_r": 189.41,
+    "profit_factor": 1.0207
+  },
+  "confluence_all": {
+    "n": 10681,
+    "win_rate": 0.2672,
+    "expectancy_r": 0.0339,
+    "total_r": 362.41,
+    "profit_factor": 1.0644
+  },
+  "confluence_with_trendline": {
+    "n": 1226,
+    "win_rate": 0.3238,
+    "expectancy_r": 0.1301,
+    "total_r": 159.53,
+    "profit_factor": 1.2359
+  },
+  "confluence_without_trendline": {
+    "n": 9455,
+    "win_rate": 0.2599,
+    "expectancy_r": 0.0215,
+    "total_r": 202.88,
+    "profit_factor": 1.041
+  },
+  "elapsed_sec": 279.8
+}

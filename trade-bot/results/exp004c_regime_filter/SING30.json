@@ -1,0 +1,53 @@
+{
+  "symbol": "SING30",
+  "status": "ok",
+  "baseline": {
+    "n": 3587,
+    "win_rate": 0.2846,
+    "expectancy_r": 0.0034,
+    "total_r": 12.34,
+    "profit_factor": 1.0065
+  },
+  "regime_filtered": {
+    "n": 1044,
+    "win_rate": 0.2787,
+    "expectancy_r": 0.0097,
+    "total_r": 10.15,
+    "profit_factor": 1.0184
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 1742,
+      "win_rate": 0.3783,
+      "expectancy_r": 0.3165,
+      "total_r": 551.39,
+      "profit_factor": 1.7565
+    },
+    "sell": {
+      "n": 1845,
+      "win_rate": 0.1962,
+      "expectancy_r": -0.2922,
+      "total_r": -539.05,
+      "profit_factor": 0.5368
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 528,
+      "win_rate": 0.3731,
+      "expectancy_r": 0.3193,
+      "total_r": 168.6,
+      "profit_factor": 1.7321
+    },
+    "sell": {
+      "n": 516,
+      "win_rate": 0.1822,
+      "expectancy_r": -0.3071,
+      "total_r": -158.45,
+      "profit_factor": 0.5081
+    }
+  },
+  "trade_retention_pct": 29.1,
+  "expectancy_delta_r": 0.0063,
+  "elapsed_sec": 62.2
+}

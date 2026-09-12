@@ -1,0 +1,158 @@
+{
+  "GOLD": {
+    "original": {
+      "buy": {
+        "n": 6444,
+        "win_rate": 0.295,
+        "expectancy_r": 0.1448
+      },
+      "sell": {
+        "n": 6963,
+        "win_rate": 0.1976,
+        "expectancy_r": -0.1938
+      }
+    },
+    "mirrored": {
+      "buy": {
+        "n": 6959,
+        "win_rate": 0.1973,
+        "expectancy_r": -0.1946
+      },
+      "sell": {
+        "n": 6442,
+        "win_rate": 0.2949,
+        "expectancy_r": 0.1447
+      }
+    }
+  },
+  "UK100": {
+    "original": {
+      "buy": {
+        "n": 4049,
+        "win_rate": 0.2494,
+        "expectancy_r": -0.033
+      },
+      "sell": {
+        "n": 4559,
+        "win_rate": 0.2312,
+        "expectancy_r": -0.075
+      }
+    },
+    "mirrored": {
+      "buy": {
+        "n": 4553,
+        "win_rate": 0.2317,
+        "expectancy_r": -0.0732
+      },
+      "sell": {
+        "n": 4055,
+        "win_rate": 0.2488,
+        "expectancy_r": -0.0352
+      }
+    }
+  },
+  "USDTRY": {
+    "original": {
+      "buy": {
+        "n": 6354,
+        "win_rate": 0.4131,
+        "expectancy_r": 0.536
+      },
+      "sell": {
+        "n": 6349,
+        "win_rate": 0.1648,
+        "expectancy_r": -0.3382
+      }
+    },
+    "mirrored": {
+      "buy": {
+        "n": 6348,
+        "win_rate": 0.1648,
+        "expectancy_r": -0.3381
+      },
+      "sell": {
+        "n": 6354,
+        "win_rate": 0.4131,
+        "expectancy_r": 0.536
+      }
+    }
+  },
+  "EURTRY": {
+    "original": {
+      "buy": {
+        "n": 7935,
+        "win_rate": 0.4423,
+        "expectancy_r": 0.6767
+      },
+      "sell": {
+        "n": 7438,
+        "win_rate": 0.1597,
+        "expectancy_r": -0.3422
+      }
+    },
+    "mirrored": {
+      "buy": {
+        "n": 7432,
+        "win_rate": 0.1596,
+        "expectancy_r": -0.3425
+      },
+      "sell": {
+        "n": 7931,
+        "win_rate": 0.4426,
+        "expectancy_r": 0.6775
+      }
+    }
+  },
+  "BTCUSD": {
+    "original": {
+      "buy": {
+        "n": 4858,
+        "win_rate": 0.2872,
+        "expectancy_r": 0.0792
+      },
+      "sell": {
+        "n": 5471,
+        "win_rate": 0.2053,
+        "expectancy_r": -0.209
+      }
+    },
+    "mirrored": {
+      "buy": {
+        "n": 5471,
+        "win_rate": 0.2053,
+        "expectancy_r": -0.2089
+      },
+      "sell": {
+        "n": 4861,
+        "win_rate": 0.2868,
+        "expectancy_r": 0.0779
+      }
+    }
+  },
+  "EURGBP": {
+    "original": {
+      "buy": {
+        "n": 10295,
+        "win_rate": 0.2143,
+        "expectancy_r": -0.1269
+      },
+      "sell": {
+        "n": 9740,
+        "win_rate": 0.2283,
+        "expectancy_r": -0.0928
+      }
+    },
+    "mirrored": {
+      "buy": {
+        "n": 9744,
+        "win_rate": 0.228,
+        "expectancy_r": -0.0938
+      },
+      "sell": {
+        "n": 10310,
+        "win_rate": 0.2137,
+        "expectancy_r": -0.1291
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "EURSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 10146,
+    "win_rate": 0.2446,
+    "expectancy_r": -0.0114,
+    "total_r": -115.8,
+    "profit_factor": 0.9788
+  },
+  "regime_filtered": {
+    "n": 3129,
+    "win_rate": 0.2397,
+    "expectancy_r": -0.0096,
+    "total_r": -30.19,
+    "profit_factor": 0.9819
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 5093,
+      "win_rate": 0.2221,
+      "expectancy_r": -0.1065,
+      "total_r": -542.61,
+      "profit_factor": 0.8149
+    },
+    "sell": {
+      "n": 5053,
+      "win_rate": 0.2674,
+      "expectancy_r": 0.0845,
+      "total_r": 426.81,
+      "profit_factor": 1.169
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1624,
+      "win_rate": 0.2204,
+      "expectancy_r": -0.0917,
+      "total_r": -148.89,
+      "profit_factor": 0.8392
+    },
+    "sell": {
+      "n": 1505,
+      "win_rate": 0.2605,
+      "expectancy_r": 0.0789,
+      "total_r": 118.69,
+      "profit_factor": 1.1601
+    }
+  },
+  "trade_retention_pct": 30.8,
+  "expectancy_delta_r": 0.0018,
+  "elapsed_sec": 357.1
+}

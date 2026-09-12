@@ -1,0 +1,33 @@
+{
+  "symbol": "USDDKK",
+  "status": "ok",
+  "baseline": {
+    "n": 19547,
+    "win_rate": 0.2419,
+    "expectancy_r": -0.0183,
+    "total_r": -357.76,
+    "profit_factor": 0.9663
+  },
+  "confluence_all": {
+    "n": 12615,
+    "win_rate": 0.2505,
+    "expectancy_r": 0.0042,
+    "total_r": 53.25,
+    "profit_factor": 1.0081
+  },
+  "confluence_with_trendline": {
+    "n": 1061,
+    "win_rate": 0.2573,
+    "expectancy_r": -0.072,
+    "total_r": -76.37,
+    "profit_factor": 0.8811
+  },
+  "confluence_without_trendline": {
+    "n": 11554,
+    "win_rate": 0.2499,
+    "expectancy_r": 0.0112,
+    "total_r": 129.62,
+    "profit_factor": 1.0218
+  },
+  "elapsed_sec": 227.7
+}

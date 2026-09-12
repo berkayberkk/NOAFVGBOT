@@ -1,0 +1,53 @@
+{
+  "symbol": "USDZAR",
+  "status": "ok",
+  "baseline": {
+    "n": 17947,
+    "win_rate": 0.2655,
+    "expectancy_r": 0.022,
+    "total_r": 395.72,
+    "profit_factor": 1.0401
+  },
+  "regime_filtered": {
+    "n": 5550,
+    "win_rate": 0.2632,
+    "expectancy_r": 0.0192,
+    "total_r": 106.6,
+    "profit_factor": 1.0354
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 8973,
+      "win_rate": 0.3407,
+      "expectancy_r": 0.2859,
+      "total_r": 2565.03,
+      "profit_factor": 1.5916
+    },
+    "sell": {
+      "n": 8974,
+      "win_rate": 0.1903,
+      "expectancy_r": -0.2417,
+      "total_r": -2169.31,
+      "profit_factor": 0.6077
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2720,
+      "win_rate": 0.3357,
+      "expectancy_r": 0.2567,
+      "total_r": 698.18,
+      "profit_factor": 1.5282
+    },
+    "sell": {
+      "n": 2830,
+      "win_rate": 0.1936,
+      "expectancy_r": -0.209,
+      "total_r": -591.58,
+      "profit_factor": 0.6494
+    }
+  },
+  "trade_retention_pct": 30.9,
+  "expectancy_delta_r": -0.0028,
+  "elapsed_sec": 329.7
+}

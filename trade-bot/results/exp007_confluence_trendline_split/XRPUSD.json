@@ -1,0 +1,33 @@
+{
+  "symbol": "XRPUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 10768,
+    "win_rate": 0.2643,
+    "expectancy_r": -0.0002,
+    "total_r": -2.07,
+    "profit_factor": 0.9996
+  },
+  "confluence_all": {
+    "n": 6379,
+    "win_rate": 0.2764,
+    "expectancy_r": 0.032,
+    "total_r": 204.2,
+    "profit_factor": 1.061
+  },
+  "confluence_with_trendline": {
+    "n": 775,
+    "win_rate": 0.32,
+    "expectancy_r": 0.1242,
+    "total_r": 96.22,
+    "profit_factor": 1.2299
+  },
+  "confluence_without_trendline": {
+    "n": 5604,
+    "win_rate": 0.2703,
+    "expectancy_r": 0.0193,
+    "total_r": 107.98,
+    "profit_factor": 1.0369
+  },
+  "elapsed_sec": 177.9
+}

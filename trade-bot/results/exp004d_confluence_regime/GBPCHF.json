@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 19273,
+    "win_rate": 0.2473,
+    "expectancy_r": -0.0143,
+    "total_r": -276.27,
+    "profit_factor": 0.9741
+  },
+  "regime_only": {
+    "n": 5231,
+    "win_rate": 0.22,
+    "expectancy_r": -0.1013,
+    "total_r": -529.75,
+    "profit_factor": 0.8251
+  },
+  "confluence_only": {
+    "n": 11479,
+    "win_rate": 0.2603,
+    "expectancy_r": 0.0317,
+    "total_r": 364.39,
+    "profit_factor": 1.0608
+  },
+  "confluence_and_regime": {
+    "n": 3145,
+    "win_rate": 0.2321,
+    "expectancy_r": -0.0594,
+    "total_r": -186.7,
+    "profit_factor": 0.8927
+  },
+  "elapsed_sec": 605.1
+}

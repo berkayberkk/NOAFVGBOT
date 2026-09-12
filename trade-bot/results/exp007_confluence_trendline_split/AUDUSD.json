@@ -1,0 +1,33 @@
+{
+  "symbol": "AUDUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 15832,
+    "win_rate": 0.2509,
+    "expectancy_r": -0.0084,
+    "total_r": -132.83,
+    "profit_factor": 0.9842
+  },
+  "confluence_all": {
+    "n": 9404,
+    "win_rate": 0.2536,
+    "expectancy_r": -0.0009,
+    "total_r": -8.6,
+    "profit_factor": 0.9982
+  },
+  "confluence_with_trendline": {
+    "n": 687,
+    "win_rate": 0.2693,
+    "expectancy_r": -0.0324,
+    "total_r": -22.26,
+    "profit_factor": 0.9458
+  },
+  "confluence_without_trendline": {
+    "n": 8717,
+    "win_rate": 0.2524,
+    "expectancy_r": 0.0016,
+    "total_r": 13.66,
+    "profit_factor": 1.0031
+  },
+  "elapsed_sec": 234.5
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "GERMID50",
+  "status": "ok",
+  "baseline": {
+    "n": 1632,
+    "win_rate": 0.2843,
+    "expectancy_r": -0.066,
+    "total_r": -107.69,
+    "profit_factor": 0.8726
+  },
+  "confluence_all": {
+    "n": 1079,
+    "win_rate": 0.2873,
+    "expectancy_r": -0.0715,
+    "total_r": -77.15,
+    "profit_factor": 0.8608
+  },
+  "confluence_with_trendline": {
+    "n": 54,
+    "win_rate": 0.3519,
+    "expectancy_r": 0.0364,
+    "total_r": 1.97,
+    "profit_factor": 1.0641
+  },
+  "confluence_without_trendline": {
+    "n": 1025,
+    "win_rate": 0.2839,
+    "expectancy_r": -0.0772,
+    "total_r": -79.12,
+    "profit_factor": 0.8489
+  },
+  "elapsed_sec": 33.6
+}

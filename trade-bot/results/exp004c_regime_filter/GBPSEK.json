@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPSEK",
+  "status": "ok",
+  "baseline": {
+    "n": 13740,
+    "win_rate": 0.2392,
+    "expectancy_r": -0.0503,
+    "total_r": -691.01,
+    "profit_factor": 0.9114
+  },
+  "regime_filtered": {
+    "n": 3351,
+    "win_rate": 0.2438,
+    "expectancy_r": -0.0277,
+    "total_r": -92.94,
+    "profit_factor": 0.9505
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6607,
+      "win_rate": 0.2779,
+      "expectancy_r": 0.0755,
+      "total_r": 498.72,
+      "profit_factor": 1.1428
+    },
+    "sell": {
+      "n": 7133,
+      "win_rate": 0.2033,
+      "expectancy_r": -0.1668,
+      "total_r": -1189.74,
+      "profit_factor": 0.724
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1585,
+      "win_rate": 0.2789,
+      "expectancy_r": 0.0624,
+      "total_r": 98.9,
+      "profit_factor": 1.1164
+    },
+    "sell": {
+      "n": 1766,
+      "win_rate": 0.2123,
+      "expectancy_r": -0.1086,
+      "total_r": -191.83,
+      "profit_factor": 0.8133
+    }
+  },
+  "trade_retention_pct": 24.4,
+  "expectancy_delta_r": 0.0226,
+  "elapsed_sec": 249.6
+}

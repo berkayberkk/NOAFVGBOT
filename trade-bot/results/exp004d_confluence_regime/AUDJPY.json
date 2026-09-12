@@ -1,0 +1,33 @@
+{
+  "symbol": "AUDJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 15275,
+    "win_rate": 0.257,
+    "expectancy_r": -0.0044,
+    "total_r": -67.14,
+    "profit_factor": 0.9918
+  },
+  "regime_only": {
+    "n": 5102,
+    "win_rate": 0.2583,
+    "expectancy_r": 0.02,
+    "total_r": 101.98,
+    "profit_factor": 1.0383
+  },
+  "confluence_only": {
+    "n": 8720,
+    "win_rate": 0.2628,
+    "expectancy_r": 0.0092,
+    "total_r": 80.39,
+    "profit_factor": 1.0178
+  },
+  "confluence_and_regime": {
+    "n": 3035,
+    "win_rate": 0.2695,
+    "expectancy_r": 0.0438,
+    "total_r": 132.86,
+    "profit_factor": 1.0878
+  },
+  "elapsed_sec": 633.9
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "TAIWAN",
+  "status": "ok",
+  "baseline": {
+    "n": 3421,
+    "win_rate": 0.2797,
+    "expectancy_r": 0.0328,
+    "total_r": 112.09,
+    "profit_factor": 1.0603
+  },
+  "regime_only": {
+    "n": 944,
+    "win_rate": 0.2871,
+    "expectancy_r": 0.0862,
+    "total_r": 81.41,
+    "profit_factor": 1.1641
+  },
+  "confluence_only": {
+    "n": 2271,
+    "win_rate": 0.2836,
+    "expectancy_r": 0.0304,
+    "total_r": 68.93,
+    "profit_factor": 1.0573
+  },
+  "confluence_and_regime": {
+    "n": 641,
+    "win_rate": 0.2855,
+    "expectancy_r": 0.0751,
+    "total_r": 48.17,
+    "profit_factor": 1.1473
+  },
+  "elapsed_sec": 40.3
+}

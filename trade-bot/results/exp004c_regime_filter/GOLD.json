@@ -1,0 +1,53 @@
+{
+  "symbol": "GOLD",
+  "status": "ok",
+  "baseline": {
+    "n": 13407,
+    "win_rate": 0.2444,
+    "expectancy_r": -0.031,
+    "total_r": -416.06,
+    "profit_factor": 0.9444
+  },
+  "regime_filtered": {
+    "n": 4233,
+    "win_rate": 0.2476,
+    "expectancy_r": -0.0182,
+    "total_r": -76.92,
+    "profit_factor": 0.9671
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6444,
+      "win_rate": 0.295,
+      "expectancy_r": 0.1448,
+      "total_r": 933.07,
+      "profit_factor": 1.2841
+    },
+    "sell": {
+      "n": 6963,
+      "win_rate": 0.1976,
+      "expectancy_r": -0.1938,
+      "total_r": -1349.14,
+      "profit_factor": 0.679
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2071,
+      "win_rate": 0.2945,
+      "expectancy_r": 0.1258,
+      "total_r": 260.58,
+      "profit_factor": 1.2432
+    },
+    "sell": {
+      "n": 2162,
+      "win_rate": 0.2026,
+      "expectancy_r": -0.1561,
+      "total_r": -337.5,
+      "profit_factor": 0.7342
+    }
+  },
+  "trade_retention_pct": 31.6,
+  "expectancy_delta_r": 0.0128,
+  "elapsed_sec": 276.8
+}

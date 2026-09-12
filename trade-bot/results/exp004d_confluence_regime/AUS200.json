@@ -1,0 +1,33 @@
+{
+  "symbol": "AUS200",
+  "status": "ok",
+  "baseline": {
+    "n": 5679,
+    "win_rate": 0.2474,
+    "expectancy_r": -0.0743,
+    "total_r": -421.86,
+    "profit_factor": 0.8593
+  },
+  "regime_only": {
+    "n": 1640,
+    "win_rate": 0.247,
+    "expectancy_r": -0.075,
+    "total_r": -123.04,
+    "profit_factor": 0.8576
+  },
+  "confluence_only": {
+    "n": 3706,
+    "win_rate": 0.2507,
+    "expectancy_r": -0.0734,
+    "total_r": -271.88,
+    "profit_factor": 0.8613
+  },
+  "confluence_and_regime": {
+    "n": 1061,
+    "win_rate": 0.263,
+    "expectancy_r": -0.0525,
+    "total_r": -55.68,
+    "profit_factor": 0.8998
+  },
+  "elapsed_sec": 166.3
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "CHINAH",
+  "status": "ok",
+  "baseline": {
+    "n": 5324,
+    "win_rate": 0.2628,
+    "expectancy_r": 0.0069,
+    "total_r": 36.53,
+    "profit_factor": 1.0128
+  },
+  "confluence_all": {
+    "n": 3552,
+    "win_rate": 0.2745,
+    "expectancy_r": 0.0185,
+    "total_r": 65.56,
+    "profit_factor": 1.0357
+  },
+  "confluence_with_trendline": {
+    "n": 434,
+    "win_rate": 0.2673,
+    "expectancy_r": -0.0758,
+    "total_r": -32.89,
+    "profit_factor": 0.8722
+  },
+  "confluence_without_trendline": {
+    "n": 3118,
+    "win_rate": 0.2755,
+    "expectancy_r": 0.0316,
+    "total_r": 98.45,
+    "profit_factor": 1.0623
+  },
+  "elapsed_sec": 50.8
+}

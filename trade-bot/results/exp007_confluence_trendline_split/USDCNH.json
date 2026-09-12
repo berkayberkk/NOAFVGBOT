@@ -1,0 +1,33 @@
+{
+  "symbol": "USDCNH",
+  "status": "ok",
+  "baseline": {
+    "n": 10364,
+    "win_rate": 0.2805,
+    "expectancy_r": 0.0458,
+    "total_r": 474.63,
+    "profit_factor": 1.0852
+  },
+  "confluence_all": {
+    "n": 6451,
+    "win_rate": 0.2917,
+    "expectancy_r": 0.0729,
+    "total_r": 470.13,
+    "profit_factor": 1.1409
+  },
+  "confluence_with_trendline": {
+    "n": 798,
+    "win_rate": 0.3095,
+    "expectancy_r": 0.0652,
+    "total_r": 52.02,
+    "profit_factor": 1.1141
+  },
+  "confluence_without_trendline": {
+    "n": 5653,
+    "win_rate": 0.2892,
+    "expectancy_r": 0.074,
+    "total_r": 418.11,
+    "profit_factor": 1.1452
+  },
+  "elapsed_sec": 125.8
+}

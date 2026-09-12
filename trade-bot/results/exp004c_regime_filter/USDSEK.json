@@ -1,0 +1,53 @@
+{
+  "symbol": "USDSEK",
+  "status": "ok",
+  "baseline": {
+    "n": 19661,
+    "win_rate": 0.2557,
+    "expectancy_r": 0.0082,
+    "total_r": 160.49,
+    "profit_factor": 1.015
+  },
+  "regime_filtered": {
+    "n": 5442,
+    "win_rate": 0.2567,
+    "expectancy_r": 0.0253,
+    "total_r": 137.94,
+    "profit_factor": 1.0478
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 9738,
+      "win_rate": 0.3121,
+      "expectancy_r": 0.2076,
+      "total_r": 2021.72,
+      "profit_factor": 1.4319
+    },
+    "sell": {
+      "n": 9923,
+      "win_rate": 0.2004,
+      "expectancy_r": -0.1876,
+      "total_r": -1861.23,
+      "profit_factor": 0.6901
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2659,
+      "win_rate": 0.3039,
+      "expectancy_r": 0.1894,
+      "total_r": 503.65,
+      "profit_factor": 1.3936
+    },
+    "sell": {
+      "n": 2783,
+      "win_rate": 0.2116,
+      "expectancy_r": -0.1314,
+      "total_r": -365.71,
+      "profit_factor": 0.7725
+    }
+  },
+  "trade_retention_pct": 27.7,
+  "expectancy_delta_r": 0.0171,
+  "elapsed_sec": 705.2
+}

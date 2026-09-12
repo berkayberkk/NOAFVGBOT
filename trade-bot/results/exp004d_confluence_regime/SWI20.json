@@ -1,0 +1,33 @@
+{
+  "symbol": "SWI20",
+  "status": "ok",
+  "baseline": {
+    "n": 4545,
+    "win_rate": 0.2554,
+    "expectancy_r": -0.0545,
+    "total_r": -247.83,
+    "profit_factor": 0.896
+  },
+  "regime_only": {
+    "n": 1423,
+    "win_rate": 0.2551,
+    "expectancy_r": -0.0385,
+    "total_r": -54.79,
+    "profit_factor": 0.9245
+  },
+  "confluence_only": {
+    "n": 2770,
+    "win_rate": 0.2715,
+    "expectancy_r": -0.0086,
+    "total_r": -23.88,
+    "profit_factor": 0.9829
+  },
+  "confluence_and_regime": {
+    "n": 860,
+    "win_rate": 0.2616,
+    "expectancy_r": -0.0273,
+    "total_r": -23.45,
+    "profit_factor": 0.9451
+  },
+  "elapsed_sec": 108.5
+}

@@ -1,0 +1,83 @@
+{
+  "symbol": "EURJPY",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2488,
+        "win_rate": 0.2974,
+        "expectancy_r": 0.0269,
+        "total_r": 66.89,
+        "profit_factor": 1.0646,
+        "avg_bars_held": 929.0
+      },
+      "sr_based_tp": {
+        "n": 2497,
+        "win_rate": 0.7749,
+        "expectancy_r": -0.0008,
+        "total_r": -2.02,
+        "profit_factor": 0.9715,
+        "avg_bars_held": 22.4
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 4354,
+        "win_rate": 0.2977,
+        "expectancy_r": 0.0094,
+        "total_r": 40.95,
+        "profit_factor": 1.0217,
+        "avg_bars_held": 498.1
+      },
+      "sr_based_tp": {
+        "n": 4370,
+        "win_rate": 0.7568,
+        "expectancy_r": -0.0093,
+        "total_r": -40.8,
+        "profit_factor": 0.8087,
+        "avg_bars_held": 14.0
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 9692,
+        "win_rate": 0.2171,
+        "expectancy_r": -0.0132,
+        "total_r": -128.21,
+        "profit_factor": 0.9784,
+        "avg_bars_held": 2031.0
+      },
+      "sr_based_tp": {
+        "n": 9848,
+        "win_rate": 0.7443,
+        "expectancy_r": -0.0374,
+        "total_r": -368.1,
+        "profit_factor": 0.6224,
+        "avg_bars_held": 54.4
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 612,
+        "win_rate": 0.4085,
+        "expectancy_r": 0.2416,
+        "total_r": 147.89,
+        "profit_factor": 1.4152,
+        "avg_bars_held": 135.9
+      },
+      "sr_based_tp": {
+        "n": 613,
+        "win_rate": 0.9429,
+        "expectancy_r": 0.0558,
+        "total_r": 34.19,
+        "profit_factor": 1.9887,
+        "avg_bars_held": 5.7
+      }
+    }
+  },
+  "elapsed_sec": 347.4
+}

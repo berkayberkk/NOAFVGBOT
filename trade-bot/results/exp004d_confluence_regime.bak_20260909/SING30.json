@@ -1,0 +1,33 @@
+{
+  "symbol": "SING30",
+  "status": "ok",
+  "baseline": {
+    "n": 3587,
+    "win_rate": 0.2846,
+    "expectancy_r": 0.0034,
+    "total_r": 12.34,
+    "profit_factor": 1.0065
+  },
+  "regime_only": {
+    "n": 1044,
+    "win_rate": 0.2787,
+    "expectancy_r": 0.0097,
+    "total_r": 10.15,
+    "profit_factor": 1.0184
+  },
+  "confluence_only": {
+    "n": 2435,
+    "win_rate": 0.3072,
+    "expectancy_r": 0.0484,
+    "total_r": 117.84,
+    "profit_factor": 1.0967
+  },
+  "confluence_and_regime": {
+    "n": 721,
+    "win_rate": 0.294,
+    "expectancy_r": 0.0374,
+    "total_r": 26.99,
+    "profit_factor": 1.0736
+  },
+  "elapsed_sec": 67.6
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "GERTECH30",
+  "status": "ok",
+  "baseline": {
+    "n": 777,
+    "win_rate": 0.3166,
+    "expectancy_r": -0.0606,
+    "total_r": -47.12,
+    "profit_factor": 0.8764
+  },
+  "regime_only": {
+    "n": 262,
+    "win_rate": 0.3282,
+    "expectancy_r": -0.101,
+    "total_r": -26.46,
+    "profit_factor": 0.7948
+  },
+  "confluence_only": {
+    "n": 522,
+    "win_rate": 0.3525,
+    "expectancy_r": 0.0085,
+    "total_r": 4.46,
+    "profit_factor": 1.0191
+  },
+  "confluence_and_regime": {
+    "n": 190,
+    "win_rate": 0.3526,
+    "expectancy_r": -0.0322,
+    "total_r": -6.11,
+    "profit_factor": 0.9306
+  },
+  "elapsed_sec": 17.9
+}

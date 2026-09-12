@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPSEK",
+  "status": "ok",
+  "baseline": {
+    "n": 13740,
+    "win_rate": 0.2392,
+    "expectancy_r": -0.0503,
+    "total_r": -691.01,
+    "profit_factor": 0.9114
+  },
+  "regime_only": {
+    "n": 3351,
+    "win_rate": 0.2438,
+    "expectancy_r": -0.0277,
+    "total_r": -92.94,
+    "profit_factor": 0.9505
+  },
+  "confluence_only": {
+    "n": 7143,
+    "win_rate": 0.2569,
+    "expectancy_r": 0.0045,
+    "total_r": 32.44,
+    "profit_factor": 1.0086
+  },
+  "confluence_and_regime": {
+    "n": 1760,
+    "win_rate": 0.2631,
+    "expectancy_r": 0.0466,
+    "total_r": 82.07,
+    "profit_factor": 1.0914
+  },
+  "elapsed_sec": 470.1
+}

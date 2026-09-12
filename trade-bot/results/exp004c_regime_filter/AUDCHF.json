@@ -1,0 +1,53 @@
+{
+  "symbol": "AUDCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 14620,
+    "win_rate": 0.2528,
+    "expectancy_r": -0.0001,
+    "total_r": -0.76,
+    "profit_factor": 0.9999
+  },
+  "regime_filtered": {
+    "n": 4675,
+    "win_rate": 0.2372,
+    "expectancy_r": -0.0355,
+    "total_r": -165.99,
+    "profit_factor": 0.9331
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7208,
+      "win_rate": 0.2021,
+      "expectancy_r": -0.1801,
+      "total_r": -1298.19,
+      "profit_factor": 0.6859
+    },
+    "sell": {
+      "n": 7412,
+      "win_rate": 0.3021,
+      "expectancy_r": 0.175,
+      "total_r": 1297.43,
+      "profit_factor": 1.3673
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2369,
+      "win_rate": 0.2005,
+      "expectancy_r": -0.1698,
+      "total_r": -402.2,
+      "profit_factor": 0.7009
+    },
+    "sell": {
+      "n": 2306,
+      "win_rate": 0.2749,
+      "expectancy_r": 0.1024,
+      "total_r": 236.21,
+      "profit_factor": 1.2075
+    }
+  },
+  "trade_retention_pct": 32.0,
+  "expectancy_delta_r": -0.0354,
+  "elapsed_sec": 853.3
+}

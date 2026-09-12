@@ -1,0 +1,53 @@
+{
+  "symbol": "USDTRY",
+  "status": "ok",
+  "baseline": {
+    "n": 12703,
+    "win_rate": 0.289,
+    "expectancy_r": 0.0991,
+    "total_r": 1258.49,
+    "profit_factor": 1.181
+  },
+  "regime_filtered": {
+    "n": 3797,
+    "win_rate": 0.2865,
+    "expectancy_r": 0.111,
+    "total_r": 421.48,
+    "profit_factor": 1.2065
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6354,
+      "win_rate": 0.4131,
+      "expectancy_r": 0.536,
+      "total_r": 3405.82,
+      "profit_factor": 2.2384
+    },
+    "sell": {
+      "n": 6349,
+      "win_rate": 0.1648,
+      "expectancy_r": -0.3382,
+      "total_r": -2147.33,
+      "profit_factor": 0.4893
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1996,
+      "win_rate": 0.4133,
+      "expectancy_r": 0.5386,
+      "total_r": 1075.0,
+      "profit_factor": 2.2616
+    },
+    "sell": {
+      "n": 1801,
+      "win_rate": 0.146,
+      "expectancy_r": -0.3629,
+      "total_r": -653.52,
+      "profit_factor": 0.4502
+    }
+  },
+  "trade_retention_pct": 29.9,
+  "expectancy_delta_r": 0.0119,
+  "elapsed_sec": 271.4
+}

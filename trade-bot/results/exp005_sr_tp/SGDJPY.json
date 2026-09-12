@@ -1,0 +1,83 @@
+{
+  "symbol": "SGDJPY",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2257,
+        "win_rate": 0.2756,
+        "expectancy_r": -0.0304,
+        "total_r": -68.58,
+        "profit_factor": 0.9304,
+        "avg_bars_held": 914.2
+      },
+      "sr_based_tp": {
+        "n": 2267,
+        "win_rate": 0.7644,
+        "expectancy_r": -0.0039,
+        "total_r": -8.79,
+        "profit_factor": 0.9038,
+        "avg_bars_held": 23.3
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 3744,
+        "win_rate": 0.3066,
+        "expectancy_r": 0.0428,
+        "total_r": 160.21,
+        "profit_factor": 1.1044,
+        "avg_bars_held": 517.6
+      },
+      "sr_based_tp": {
+        "n": 3757,
+        "win_rate": 0.7495,
+        "expectancy_r": -0.0054,
+        "total_r": -20.13,
+        "profit_factor": 0.8889,
+        "avg_bars_held": 14.0
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 7558,
+        "win_rate": 0.219,
+        "expectancy_r": -0.0166,
+        "total_r": -125.55,
+        "profit_factor": 0.9732,
+        "avg_bars_held": 2265.1
+      },
+      "sr_based_tp": {
+        "n": 7677,
+        "win_rate": 0.7369,
+        "expectancy_r": -0.0225,
+        "total_r": -172.46,
+        "profit_factor": 0.7511,
+        "avg_bars_held": 50.2
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 821,
+        "win_rate": 0.3423,
+        "expectancy_r": 0.0417,
+        "total_r": 34.26,
+        "profit_factor": 1.0645,
+        "avg_bars_held": 153.7
+      },
+      "sr_based_tp": {
+        "n": 821,
+        "win_rate": 0.9598,
+        "expectancy_r": 0.0802,
+        "total_r": 65.83,
+        "profit_factor": 3.059,
+        "avg_bars_held": 5.3
+      }
+    }
+  },
+  "elapsed_sec": 339.4
+}

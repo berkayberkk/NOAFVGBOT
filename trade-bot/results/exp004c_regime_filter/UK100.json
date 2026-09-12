@@ -1,0 +1,53 @@
+{
+  "symbol": "UK100",
+  "status": "ok",
+  "baseline": {
+    "n": 8608,
+    "win_rate": 0.2398,
+    "expectancy_r": -0.0553,
+    "total_r": -475.9,
+    "profit_factor": 0.8954
+  },
+  "regime_filtered": {
+    "n": 2640,
+    "win_rate": 0.233,
+    "expectancy_r": -0.0708,
+    "total_r": -187.01,
+    "profit_factor": 0.8694
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 4049,
+      "win_rate": 0.2494,
+      "expectancy_r": -0.033,
+      "total_r": -133.76,
+      "profit_factor": 0.9379
+    },
+    "sell": {
+      "n": 4559,
+      "win_rate": 0.2312,
+      "expectancy_r": -0.075,
+      "total_r": -342.15,
+      "profit_factor": 0.8572
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1415,
+      "win_rate": 0.2495,
+      "expectancy_r": -0.0166,
+      "total_r": -23.55,
+      "profit_factor": 0.9691
+    },
+    "sell": {
+      "n": 1225,
+      "win_rate": 0.2139,
+      "expectancy_r": -0.1334,
+      "total_r": -163.46,
+      "profit_factor": 0.7556
+    }
+  },
+  "trade_retention_pct": 30.7,
+  "expectancy_delta_r": -0.0155,
+  "elapsed_sec": 163.6
+}

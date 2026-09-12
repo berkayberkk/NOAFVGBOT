@@ -1,0 +1,53 @@
+{
+  "symbol": "PALLADIUM",
+  "status": "ok",
+  "baseline": {
+    "n": 4615,
+    "win_rate": 0.2778,
+    "expectancy_r": 0.0237,
+    "total_r": 109.31,
+    "profit_factor": 1.0431
+  },
+  "regime_filtered": {
+    "n": 1445,
+    "win_rate": 0.2761,
+    "expectancy_r": 0.0448,
+    "total_r": 64.76,
+    "profit_factor": 1.0816
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2299,
+      "win_rate": 0.1944,
+      "expectancy_r": -0.28,
+      "total_r": -643.83,
+      "profit_factor": 0.5675
+    },
+    "sell": {
+      "n": 2316,
+      "win_rate": 0.3605,
+      "expectancy_r": 0.3252,
+      "total_r": 753.14,
+      "profit_factor": 1.718
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 731,
+      "win_rate": 0.1888,
+      "expectancy_r": -0.2653,
+      "total_r": -193.96,
+      "profit_factor": 0.5882
+    },
+    "sell": {
+      "n": 714,
+      "win_rate": 0.3655,
+      "expectancy_r": 0.3624,
+      "total_r": 258.72,
+      "profit_factor": 1.8008
+    }
+  },
+  "trade_retention_pct": 31.3,
+  "expectancy_delta_r": 0.0211,
+  "elapsed_sec": 66.4
+}

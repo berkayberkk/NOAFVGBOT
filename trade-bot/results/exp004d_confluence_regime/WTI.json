@@ -1,0 +1,33 @@
+{
+  "symbol": "WTI",
+  "status": "ok",
+  "baseline": {
+    "n": 9181,
+    "win_rate": 0.2583,
+    "expectancy_r": 0.0122,
+    "total_r": 112.46,
+    "profit_factor": 1.0229
+  },
+  "regime_only": {
+    "n": 2434,
+    "win_rate": 0.265,
+    "expectancy_r": 0.0418,
+    "total_r": 101.83,
+    "profit_factor": 1.0811
+  },
+  "confluence_only": {
+    "n": 6232,
+    "win_rate": 0.2652,
+    "expectancy_r": 0.0252,
+    "total_r": 157.32,
+    "profit_factor": 1.0489
+  },
+  "confluence_and_regime": {
+    "n": 1694,
+    "win_rate": 0.2745,
+    "expectancy_r": 0.0476,
+    "total_r": 80.57,
+    "profit_factor": 1.0958
+  },
+  "elapsed_sec": 214.5
+}

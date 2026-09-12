@@ -1,0 +1,33 @@
+{
+  "symbol": "EURTRY",
+  "status": "ok",
+  "baseline": {
+    "n": 15373,
+    "win_rate": 0.3056,
+    "expectancy_r": 0.1837,
+    "total_r": 2823.94,
+    "profit_factor": 1.3476
+  },
+  "regime_only": {
+    "n": 4368,
+    "win_rate": 0.3093,
+    "expectancy_r": 0.1926,
+    "total_r": 841.49,
+    "profit_factor": 1.3744
+  },
+  "confluence_only": {
+    "n": 8345,
+    "win_rate": 0.313,
+    "expectancy_r": 0.1802,
+    "total_r": 1503.66,
+    "profit_factor": 1.3607
+  },
+  "confluence_and_regime": {
+    "n": 2421,
+    "win_rate": 0.309,
+    "expectancy_r": 0.1619,
+    "total_r": 391.98,
+    "profit_factor": 1.3292
+  },
+  "elapsed_sec": 585.5
+}

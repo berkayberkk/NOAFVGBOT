@@ -1,0 +1,53 @@
+{
+  "symbol": "MATICUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6633,
+    "win_rate": 0.27,
+    "expectancy_r": 0.022,
+    "total_r": 146.15,
+    "profit_factor": 1.0406
+  },
+  "regime_filtered": {
+    "n": 2108,
+    "win_rate": 0.2585,
+    "expectancy_r": 0.0062,
+    "total_r": 13.06,
+    "profit_factor": 1.0113
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 3101,
+      "win_rate": 0.2406,
+      "expectancy_r": -0.0658,
+      "total_r": -203.94,
+      "profit_factor": 0.8827
+    },
+    "sell": {
+      "n": 3532,
+      "win_rate": 0.2959,
+      "expectancy_r": 0.0991,
+      "total_r": 350.09,
+      "profit_factor": 1.1884
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 965,
+      "win_rate": 0.2363,
+      "expectancy_r": -0.0649,
+      "total_r": -62.62,
+      "profit_factor": 0.8856
+    },
+    "sell": {
+      "n": 1143,
+      "win_rate": 0.2773,
+      "expectancy_r": 0.0662,
+      "total_r": 75.68,
+      "profit_factor": 1.1236
+    }
+  },
+  "trade_retention_pct": 31.8,
+  "expectancy_delta_r": -0.0158,
+  "elapsed_sec": 118.3
+}

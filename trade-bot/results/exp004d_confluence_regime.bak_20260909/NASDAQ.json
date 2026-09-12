@@ -1,0 +1,33 @@
+{
+  "symbol": "NASDAQ",
+  "status": "ok",
+  "baseline": {
+    "n": 1263,
+    "win_rate": 0.2953,
+    "expectancy_r": -0.0317,
+    "total_r": -40.07,
+    "profit_factor": 0.9405
+  },
+  "regime_only": {
+    "n": 361,
+    "win_rate": 0.277,
+    "expectancy_r": -0.0459,
+    "total_r": -16.58,
+    "profit_factor": 0.9189
+  },
+  "confluence_only": {
+    "n": 659,
+    "win_rate": 0.2974,
+    "expectancy_r": -0.0261,
+    "total_r": -17.17,
+    "profit_factor": 0.9517
+  },
+  "confluence_and_regime": {
+    "n": 187,
+    "win_rate": 0.2834,
+    "expectancy_r": 0.0082,
+    "total_r": 1.53,
+    "profit_factor": 1.0147
+  },
+  "elapsed_sec": 28.5
+}

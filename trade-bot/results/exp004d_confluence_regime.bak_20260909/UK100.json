@@ -1,0 +1,33 @@
+{
+  "symbol": "UK100",
+  "status": "ok",
+  "baseline": {
+    "n": 8608,
+    "win_rate": 0.2398,
+    "expectancy_r": -0.0553,
+    "total_r": -475.9,
+    "profit_factor": 0.8954
+  },
+  "regime_only": {
+    "n": 2640,
+    "win_rate": 0.233,
+    "expectancy_r": -0.0708,
+    "total_r": -187.01,
+    "profit_factor": 0.8694
+  },
+  "confluence_only": {
+    "n": 5421,
+    "win_rate": 0.2411,
+    "expectancy_r": -0.0483,
+    "total_r": -261.65,
+    "profit_factor": 0.9061
+  },
+  "confluence_and_regime": {
+    "n": 1692,
+    "win_rate": 0.2199,
+    "expectancy_r": -0.1171,
+    "total_r": -198.15,
+    "profit_factor": 0.7855
+  },
+  "elapsed_sec": 237.6
+}

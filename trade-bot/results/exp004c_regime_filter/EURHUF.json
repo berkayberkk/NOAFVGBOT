@@ -1,0 +1,53 @@
+{
+  "symbol": "EURHUF",
+  "status": "ok",
+  "baseline": {
+    "n": 13933,
+    "win_rate": 0.2582,
+    "expectancy_r": 0.0251,
+    "total_r": 350.27,
+    "profit_factor": 1.0463
+  },
+  "regime_filtered": {
+    "n": 3730,
+    "win_rate": 0.2491,
+    "expectancy_r": -0.0013,
+    "total_r": -4.81,
+    "profit_factor": 0.9976
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7204,
+      "win_rate": 0.3508,
+      "expectancy_r": 0.3663,
+      "total_r": 2638.5,
+      "profit_factor": 1.8315
+    },
+    "sell": {
+      "n": 6729,
+      "win_rate": 0.1592,
+      "expectancy_r": -0.3401,
+      "total_r": -2288.23,
+      "profit_factor": 0.4791
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2002,
+      "win_rate": 0.3262,
+      "expectancy_r": 0.2836,
+      "total_r": 567.87,
+      "profit_factor": 1.6352
+    },
+    "sell": {
+      "n": 1728,
+      "win_rate": 0.1597,
+      "expectancy_r": -0.3314,
+      "total_r": -572.67,
+      "profit_factor": 0.4872
+    }
+  },
+  "trade_retention_pct": 26.8,
+  "expectancy_delta_r": -0.0264,
+  "elapsed_sec": 207.8
+}

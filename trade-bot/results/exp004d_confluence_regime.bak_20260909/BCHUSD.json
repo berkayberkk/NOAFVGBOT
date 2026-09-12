@@ -1,0 +1,33 @@
+{
+  "symbol": "BCHUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 10300,
+    "win_rate": 0.251,
+    "expectancy_r": -0.0174,
+    "total_r": -179.18,
+    "profit_factor": 0.9686
+  },
+  "regime_only": {
+    "n": 3446,
+    "win_rate": 0.2464,
+    "expectancy_r": -0.0196,
+    "total_r": -67.61,
+    "profit_factor": 0.9646
+  },
+  "confluence_only": {
+    "n": 6049,
+    "win_rate": 0.2587,
+    "expectancy_r": -0.0066,
+    "total_r": -39.92,
+    "profit_factor": 0.9876
+  },
+  "confluence_and_regime": {
+    "n": 2142,
+    "win_rate": 0.2582,
+    "expectancy_r": -0.0162,
+    "total_r": -34.61,
+    "profit_factor": 0.9699
+  },
+  "elapsed_sec": 363.7
+}

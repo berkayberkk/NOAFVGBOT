@@ -1,0 +1,53 @@
+{
+  "symbol": "NZDCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 13645,
+    "win_rate": 0.2474,
+    "expectancy_r": -0.0347,
+    "total_r": -473.15,
+    "profit_factor": 0.9354
+  },
+  "regime_filtered": {
+    "n": 4294,
+    "win_rate": 0.2494,
+    "expectancy_r": -0.0247,
+    "total_r": -106.14,
+    "profit_factor": 0.9535
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6896,
+      "win_rate": 0.2568,
+      "expectancy_r": -0.0074,
+      "total_r": -51.24,
+      "profit_factor": 0.9858
+    },
+    "sell": {
+      "n": 6749,
+      "win_rate": 0.2378,
+      "expectancy_r": -0.0625,
+      "total_r": -421.91,
+      "profit_factor": 0.8865
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2223,
+      "win_rate": 0.2587,
+      "expectancy_r": 0.0045,
+      "total_r": 9.98,
+      "profit_factor": 1.0088
+    },
+    "sell": {
+      "n": 2071,
+      "win_rate": 0.2395,
+      "expectancy_r": -0.0561,
+      "total_r": -116.11,
+      "profit_factor": 0.8987
+    }
+  },
+  "trade_retention_pct": 31.5,
+  "expectancy_delta_r": 0.01,
+  "elapsed_sec": 492.4
+}

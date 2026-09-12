@@ -1,0 +1,83 @@
+{
+  "symbol": "ETHUSD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1089,
+        "win_rate": 0.3278,
+        "expectancy_r": 0.0485,
+        "total_r": 52.82,
+        "profit_factor": 1.1098,
+        "avg_bars_held": 789.1
+      },
+      "sr_based_tp": {
+        "n": 1091,
+        "win_rate": 0.7003,
+        "expectancy_r": -0.0158,
+        "total_r": -17.28,
+        "profit_factor": 0.6656,
+        "avg_bars_held": 32.7
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2696,
+        "win_rate": 0.3186,
+        "expectancy_r": 0.0331,
+        "total_r": 89.13,
+        "profit_factor": 1.0755,
+        "avg_bars_held": 504.3
+      },
+      "sr_based_tp": {
+        "n": 2704,
+        "win_rate": 0.7019,
+        "expectancy_r": -0.0178,
+        "total_r": -48.0,
+        "profit_factor": 0.7602,
+        "avg_bars_held": 20.5
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 6745,
+        "win_rate": 0.2418,
+        "expectancy_r": 0.069,
+        "total_r": 465.69,
+        "profit_factor": 1.1129,
+        "avg_bars_held": 1386.5
+      },
+      "sr_based_tp": {
+        "n": 6894,
+        "win_rate": 0.7018,
+        "expectancy_r": -0.0483,
+        "total_r": -332.99,
+        "profit_factor": 0.6314,
+        "avg_bars_held": 71.1
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 205,
+        "win_rate": 0.3805,
+        "expectancy_r": 0.1639,
+        "total_r": 33.59,
+        "profit_factor": 1.2711,
+        "avg_bars_held": 133.6
+      },
+      "sr_based_tp": {
+        "n": 205,
+        "win_rate": 0.8683,
+        "expectancy_r": 0.0195,
+        "total_r": 4.0,
+        "profit_factor": 1.1511,
+        "avg_bars_held": 8.5
+      }
+    }
+  },
+  "elapsed_sec": 203.6
+}

@@ -1,0 +1,83 @@
+{
+  "symbol": "GERMID50",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 257,
+        "win_rate": 0.358,
+        "expectancy_r": 0.0476,
+        "total_r": 12.22,
+        "profit_factor": 1.1167,
+        "avg_bars_held": 434.2
+      },
+      "sr_based_tp": {
+        "n": 261,
+        "win_rate": 0.705,
+        "expectancy_r": -0.025,
+        "total_r": -6.54,
+        "profit_factor": 0.7971,
+        "avg_bars_held": 84.4
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 566,
+        "win_rate": 0.3074,
+        "expectancy_r": -0.0698,
+        "total_r": -39.51,
+        "profit_factor": 0.8409,
+        "avg_bars_held": 174.7
+      },
+      "sr_based_tp": {
+        "n": 574,
+        "win_rate": 0.7091,
+        "expectancy_r": -0.0029,
+        "total_r": -1.69,
+        "profit_factor": 0.9741,
+        "avg_bars_held": 21.0
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 778,
+        "win_rate": 0.2404,
+        "expectancy_r": -0.1067,
+        "total_r": -83.04,
+        "profit_factor": 0.8242,
+        "avg_bars_held": 548.7
+      },
+      "sr_based_tp": {
+        "n": 837,
+        "win_rate": 0.7001,
+        "expectancy_r": -0.0043,
+        "total_r": -3.57,
+        "profit_factor": 0.9731,
+        "avg_bars_held": 62.8
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 31,
+        "win_rate": 0.3548,
+        "expectancy_r": 0.085,
+        "total_r": 2.63,
+        "profit_factor": 1.133,
+        "avg_bars_held": 91.4
+      },
+      "sr_based_tp": {
+        "n": 31,
+        "win_rate": 0.8387,
+        "expectancy_r": -0.0711,
+        "total_r": -2.21,
+        "profit_factor": 0.5489,
+        "avg_bars_held": 5.5
+      }
+    }
+  },
+  "elapsed_sec": 31.0
+}

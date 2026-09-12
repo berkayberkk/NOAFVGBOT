@@ -1,0 +1,53 @@
+{
+  "symbol": "EURJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 17146,
+    "win_rate": 0.256,
+    "expectancy_r": 0.0074,
+    "total_r": 127.52,
+    "profit_factor": 1.0138
+  },
+  "regime_filtered": {
+    "n": 5517,
+    "win_rate": 0.2543,
+    "expectancy_r": 0.0092,
+    "total_r": 50.86,
+    "profit_factor": 1.0172
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 8129,
+      "win_rate": 0.2562,
+      "expectancy_r": -0.0032,
+      "total_r": -26.25,
+      "profit_factor": 0.9941
+    },
+    "sell": {
+      "n": 9017,
+      "win_rate": 0.2559,
+      "expectancy_r": 0.0171,
+      "total_r": 153.78,
+      "profit_factor": 1.0322
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2684,
+      "win_rate": 0.2578,
+      "expectancy_r": 0.0122,
+      "total_r": 32.63,
+      "profit_factor": 1.0224
+    },
+    "sell": {
+      "n": 2833,
+      "win_rate": 0.251,
+      "expectancy_r": 0.0064,
+      "total_r": 18.23,
+      "profit_factor": 1.0122
+    }
+  },
+  "trade_retention_pct": 32.2,
+  "expectancy_delta_r": 0.0018,
+  "elapsed_sec": 758.7
+}

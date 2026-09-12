@@ -1,0 +1,33 @@
+{
+  "symbol": "PALLADIUM",
+  "status": "ok",
+  "baseline": {
+    "n": 4615,
+    "win_rate": 0.2778,
+    "expectancy_r": 0.0237,
+    "total_r": 109.31,
+    "profit_factor": 1.0431
+  },
+  "confluence_all": {
+    "n": 2960,
+    "win_rate": 0.2949,
+    "expectancy_r": 0.0629,
+    "total_r": 186.08,
+    "profit_factor": 1.1203
+  },
+  "confluence_with_trendline": {
+    "n": 419,
+    "win_rate": 0.2792,
+    "expectancy_r": -0.0553,
+    "total_r": -23.18,
+    "profit_factor": 0.9075
+  },
+  "confluence_without_trendline": {
+    "n": 2541,
+    "win_rate": 0.2975,
+    "expectancy_r": 0.0823,
+    "total_r": 209.25,
+    "profit_factor": 1.1614
+  },
+  "elapsed_sec": 63.3
+}

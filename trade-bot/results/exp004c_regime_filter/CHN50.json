@@ -1,0 +1,53 @@
+{
+  "symbol": "CHN50",
+  "status": "ok",
+  "baseline": {
+    "n": 9988,
+    "win_rate": 0.2507,
+    "expectancy_r": -0.0357,
+    "total_r": -356.24,
+    "profit_factor": 0.9365
+  },
+  "regime_filtered": {
+    "n": 2463,
+    "win_rate": 0.2383,
+    "expectancy_r": -0.0759,
+    "total_r": -186.82,
+    "profit_factor": 0.8681
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 4908,
+      "win_rate": 0.2516,
+      "expectancy_r": -0.0223,
+      "total_r": -109.68,
+      "profit_factor": 0.9607
+    },
+    "sell": {
+      "n": 5080,
+      "win_rate": 0.2498,
+      "expectancy_r": -0.0485,
+      "total_r": -246.56,
+      "profit_factor": 0.9127
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1244,
+      "win_rate": 0.2339,
+      "expectancy_r": -0.0728,
+      "total_r": -90.53,
+      "profit_factor": 0.875
+    },
+    "sell": {
+      "n": 1219,
+      "win_rate": 0.2428,
+      "expectancy_r": -0.079,
+      "total_r": -96.29,
+      "profit_factor": 0.861
+    }
+  },
+  "trade_retention_pct": 24.7,
+  "expectancy_delta_r": -0.0402,
+  "elapsed_sec": 123.8
+}

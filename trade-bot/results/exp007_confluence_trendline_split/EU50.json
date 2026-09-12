@@ -1,0 +1,33 @@
+{
+  "symbol": "EU50",
+  "status": "ok",
+  "baseline": {
+    "n": 3728,
+    "win_rate": 0.2607,
+    "expectancy_r": -0.0516,
+    "total_r": -192.49,
+    "profit_factor": 0.9003
+  },
+  "confluence_all": {
+    "n": 2266,
+    "win_rate": 0.263,
+    "expectancy_r": -0.0367,
+    "total_r": -83.17,
+    "profit_factor": 0.9271
+  },
+  "confluence_with_trendline": {
+    "n": 245,
+    "win_rate": 0.2653,
+    "expectancy_r": -0.0891,
+    "total_r": -21.84,
+    "profit_factor": 0.8527
+  },
+  "confluence_without_trendline": {
+    "n": 2021,
+    "win_rate": 0.2627,
+    "expectancy_r": -0.0303,
+    "total_r": -61.33,
+    "profit_factor": 0.9382
+  },
+  "elapsed_sec": 81.1
+}

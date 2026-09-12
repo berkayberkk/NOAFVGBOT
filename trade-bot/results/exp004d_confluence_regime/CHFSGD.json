@@ -1,0 +1,33 @@
+{
+  "symbol": "CHFSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 10401,
+    "win_rate": 0.2219,
+    "expectancy_r": -0.0938,
+    "total_r": -975.88,
+    "profit_factor": 0.8314
+  },
+  "regime_only": {
+    "n": 2914,
+    "win_rate": 0.2032,
+    "expectancy_r": -0.1335,
+    "total_r": -388.92,
+    "profit_factor": 0.7636
+  },
+  "confluence_only": {
+    "n": 5486,
+    "win_rate": 0.2308,
+    "expectancy_r": -0.0674,
+    "total_r": -369.85,
+    "profit_factor": 0.8736
+  },
+  "confluence_and_regime": {
+    "n": 1533,
+    "win_rate": 0.2061,
+    "expectancy_r": -0.1241,
+    "total_r": -190.17,
+    "profit_factor": 0.7714
+  },
+  "elapsed_sec": 460.9
+}

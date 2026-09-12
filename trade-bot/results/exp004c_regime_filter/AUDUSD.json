@@ -1,0 +1,53 @@
+{
+  "symbol": "AUDUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 15832,
+    "win_rate": 0.2509,
+    "expectancy_r": -0.0084,
+    "total_r": -132.83,
+    "profit_factor": 0.9842
+  },
+  "regime_filtered": {
+    "n": 5151,
+    "win_rate": 0.2658,
+    "expectancy_r": 0.0501,
+    "total_r": 257.87,
+    "profit_factor": 1.098
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7749,
+      "win_rate": 0.2063,
+      "expectancy_r": -0.1598,
+      "total_r": -1238.17,
+      "profit_factor": 0.7186
+    },
+    "sell": {
+      "n": 8083,
+      "win_rate": 0.2936,
+      "expectancy_r": 0.1367,
+      "total_r": 1105.34,
+      "profit_factor": 1.2761
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2569,
+      "win_rate": 0.2238,
+      "expectancy_r": -0.0784,
+      "total_r": -201.52,
+      "profit_factor": 0.8533
+    },
+    "sell": {
+      "n": 2582,
+      "win_rate": 0.3075,
+      "expectancy_r": 0.1779,
+      "total_r": 459.39,
+      "profit_factor": 1.3652
+    }
+  },
+  "trade_retention_pct": 32.5,
+  "expectancy_delta_r": 0.0585,
+  "elapsed_sec": 786.9
+}

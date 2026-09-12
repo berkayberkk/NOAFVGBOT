@@ -1,0 +1,33 @@
+{
+  "symbol": "XLMUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 7039,
+    "win_rate": 0.2441,
+    "expectancy_r": -0.0438,
+    "total_r": -308.08,
+    "profit_factor": 0.9192
+  },
+  "regime_only": {
+    "n": 2130,
+    "win_rate": 0.2432,
+    "expectancy_r": -0.0469,
+    "total_r": -99.99,
+    "profit_factor": 0.9135
+  },
+  "confluence_only": {
+    "n": 4129,
+    "win_rate": 0.2485,
+    "expectancy_r": -0.039,
+    "total_r": -160.94,
+    "profit_factor": 0.9263
+  },
+  "confluence_and_regime": {
+    "n": 1266,
+    "win_rate": 0.2496,
+    "expectancy_r": -0.0559,
+    "total_r": -70.72,
+    "profit_factor": 0.8954
+  },
+  "elapsed_sec": 187.6
+}

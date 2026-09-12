@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPDKK",
+  "status": "ok",
+  "baseline": {
+    "n": 13953,
+    "win_rate": 0.2245,
+    "expectancy_r": -0.0956,
+    "total_r": -1334.56,
+    "profit_factor": 0.8304
+  },
+  "regime_filtered": {
+    "n": 3704,
+    "win_rate": 0.2025,
+    "expectancy_r": -0.162,
+    "total_r": -599.97,
+    "profit_factor": 0.7231
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6827,
+      "win_rate": 0.2134,
+      "expectancy_r": -0.1426,
+      "total_r": -973.81,
+      "profit_factor": 0.7543
+    },
+    "sell": {
+      "n": 7126,
+      "win_rate": 0.2352,
+      "expectancy_r": -0.0506,
+      "total_r": -360.75,
+      "profit_factor": 0.9077
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1876,
+      "win_rate": 0.1828,
+      "expectancy_r": -0.2342,
+      "total_r": -439.37,
+      "profit_factor": 0.6165
+    },
+    "sell": {
+      "n": 1828,
+      "win_rate": 0.2226,
+      "expectancy_r": -0.0879,
+      "total_r": -160.6,
+      "profit_factor": 0.8427
+    }
+  },
+  "trade_retention_pct": 26.5,
+  "expectancy_delta_r": -0.0664,
+  "elapsed_sec": 318.4
+}

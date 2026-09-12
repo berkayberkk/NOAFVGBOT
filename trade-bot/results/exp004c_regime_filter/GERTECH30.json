@@ -1,0 +1,53 @@
+{
+  "symbol": "GERTECH30",
+  "status": "ok",
+  "baseline": {
+    "n": 777,
+    "win_rate": 0.3166,
+    "expectancy_r": -0.0606,
+    "total_r": -47.12,
+    "profit_factor": 0.8764
+  },
+  "regime_filtered": {
+    "n": 262,
+    "win_rate": 0.3282,
+    "expectancy_r": -0.101,
+    "total_r": -26.46,
+    "profit_factor": 0.7948
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 431,
+      "win_rate": 0.3689,
+      "expectancy_r": 0.0448,
+      "total_r": 19.29,
+      "profit_factor": 1.0991
+    },
+    "sell": {
+      "n": 346,
+      "win_rate": 0.2514,
+      "expectancy_r": -0.1919,
+      "total_r": -66.41,
+      "profit_factor": 0.644
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 153,
+      "win_rate": 0.3529,
+      "expectancy_r": -0.0281,
+      "total_r": -4.3,
+      "profit_factor": 0.9395
+    },
+    "sell": {
+      "n": 109,
+      "win_rate": 0.2936,
+      "expectancy_r": -0.2033,
+      "total_r": -22.16,
+      "profit_factor": 0.6171
+    }
+  },
+  "trade_retention_pct": 33.7,
+  "expectancy_delta_r": -0.0404,
+  "elapsed_sec": 21.1
+}

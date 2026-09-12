@@ -1,0 +1,33 @@
+{
+  "symbol": "USDMXN",
+  "status": "ok",
+  "baseline": {
+    "n": 19467,
+    "win_rate": 0.2566,
+    "expectancy_r": 0.0062,
+    "total_r": 120.16,
+    "profit_factor": 1.0115
+  },
+  "confluence_all": {
+    "n": 13094,
+    "win_rate": 0.2596,
+    "expectancy_r": 0.0122,
+    "total_r": 159.37,
+    "profit_factor": 1.0233
+  },
+  "confluence_with_trendline": {
+    "n": 926,
+    "win_rate": 0.3186,
+    "expectancy_r": 0.1142,
+    "total_r": 105.73,
+    "profit_factor": 1.2083
+  },
+  "confluence_without_trendline": {
+    "n": 12168,
+    "win_rate": 0.2551,
+    "expectancy_r": 0.0044,
+    "total_r": 53.64,
+    "profit_factor": 1.0085
+  },
+  "elapsed_sec": 270.1
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "EURGBP",
+  "status": "ok",
+  "baseline": {
+    "n": 20035,
+    "win_rate": 0.2211,
+    "expectancy_r": -0.1103,
+    "total_r": -2209.59,
+    "profit_factor": 0.8135
+  },
+  "regime_filtered": {
+    "n": 5091,
+    "win_rate": 0.219,
+    "expectancy_r": -0.1215,
+    "total_r": -618.71,
+    "profit_factor": 0.7971
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 10295,
+      "win_rate": 0.2143,
+      "expectancy_r": -0.1269,
+      "total_r": -1305.96,
+      "profit_factor": 0.786
+    },
+    "sell": {
+      "n": 9740,
+      "win_rate": 0.2283,
+      "expectancy_r": -0.0928,
+      "total_r": -903.63,
+      "profit_factor": 0.8426
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2648,
+      "win_rate": 0.2164,
+      "expectancy_r": -0.1119,
+      "total_r": -296.19,
+      "profit_factor": 0.809
+    },
+    "sell": {
+      "n": 2443,
+      "win_rate": 0.2219,
+      "expectancy_r": -0.132,
+      "total_r": -322.51,
+      "profit_factor": 0.7847
+    }
+  },
+  "trade_retention_pct": 25.4,
+  "expectancy_delta_r": -0.0112,
+  "elapsed_sec": 691.2
+}

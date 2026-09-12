@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Görsel İnceleme — NOAFVGBOT{% endblock %}
+{% set active_nav = 'visual_review' %}
+{% block page_title %}Görsel İnceleme Paneli{% endblock %}
+{% block page_sub %}<div class="page-sub">Sembol + zaman dilimi + modül seç, gerçek tespit motoru ve backtest sonucuyla incele</div>{% endblock %}
+
+{% block content %}
+<div class="section-block">
+  <p class="hint">
+    Seçilen modülün <code>detect_*</code> fonksiyonu ile üretilen TÜM sinyaller (geçerli VE
+    filtrelenmiş/geçersiz, sarı X işaretiyle) gerçek mum grafiği üzerinde gösterilir. Kazanan/kaybeden
+    sonuçlar <code>backtest/engine.py</code>'den doğrudan okunur -- ayrı bir hesap yapılmaz. Sadece
+    train+val (%80) verisi kullanılır, holdout hiç dokunulmaz. Bu panel SADECE inceleme amaçlıdır --
+    hiçbir "canlıya al" / config'e yaz eylemi yoktur.
+  </p>
+  <div class="filters" style="flex-wrap:wrap;">
+    <label>Sembol:
+      <select id="vr-symbol"><option value="">Seçin…</option></select>
+    </label>
+    <label>Zaman dilimi:
+      <select id="vr-timeframe"></select>
+    </label>
+    <label>Modül:
+      <select id="vr-module"></select>
+    </label>
+    <label>Sonuç filtresi:
+      <select id="vr-outcome">
+        <option value="">Hepsi</option>
+        <option value="win">Kazanan</option>
+        <option value="loss">Kaybeden</option>
+        <option value="breakeven">Breakeven</option>
+        <option value="invalid">Geçersiz/Filtrelenmiş</option>
+      </select>
+    </label>
+    <button type="button" id="vr-load-btn" class="chart-reset-btn" style="align-self:flex-end;">Yükle</button>
+  </div>
+
+  <div id="vr-status" class="hint"></div>
+  <div id="vr-consistency"></div>
+  <div id="vr-summary"></div>
+  <div id="vr-examples-container"></div>
+  <div id="vr-pagination" style="display:flex; gap:10px; align-items:center; justify-content:center; margin-top:14px;"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='chart_common.js') }}"></script>
+<script src="{{ url_for('static', filename='visual_review.js') }}"></script>
+{% endblock %}

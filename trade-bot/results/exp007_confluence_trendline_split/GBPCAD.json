@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 18592,
+    "win_rate": 0.2384,
+    "expectancy_r": -0.0247,
+    "total_r": -458.79,
+    "profit_factor": 0.9551
+  },
+  "confluence_all": {
+    "n": 11131,
+    "win_rate": 0.2434,
+    "expectancy_r": -0.0154,
+    "total_r": -171.27,
+    "profit_factor": 0.9709
+  },
+  "confluence_with_trendline": {
+    "n": 989,
+    "win_rate": 0.2568,
+    "expectancy_r": -0.0348,
+    "total_r": -34.43,
+    "profit_factor": 0.9395
+  },
+  "confluence_without_trendline": {
+    "n": 10142,
+    "win_rate": 0.2421,
+    "expectancy_r": -0.0135,
+    "total_r": -136.84,
+    "profit_factor": 0.9742
+  },
+  "elapsed_sec": 212.0
+}

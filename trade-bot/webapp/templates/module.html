@@ -30,5 +30,6 @@
 
 {% block extra_scripts %}
 <script>const MODULE_KEY = "{{ module_key }}";</script>
+<script src="{{ url_for('static', filename='chart_common.js') }}"></script>
 <script src="{{ url_for('static', filename='module.js') }}"></script>
 {% endblock %}

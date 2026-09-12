@@ -1,0 +1,33 @@
+{
+  "symbol": "LTCUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 11199,
+    "win_rate": 0.2612,
+    "expectancy_r": 0.0048,
+    "total_r": 53.39,
+    "profit_factor": 1.0087
+  },
+  "regime_only": {
+    "n": 3446,
+    "win_rate": 0.2516,
+    "expectancy_r": -0.0185,
+    "total_r": -63.71,
+    "profit_factor": 0.9662
+  },
+  "confluence_only": {
+    "n": 6760,
+    "win_rate": 0.2746,
+    "expectancy_r": 0.0356,
+    "total_r": 240.69,
+    "profit_factor": 1.0679
+  },
+  "confluence_and_regime": {
+    "n": 2183,
+    "win_rate": 0.2657,
+    "expectancy_r": 0.0069,
+    "total_r": 15.01,
+    "profit_factor": 1.013
+  },
+  "elapsed_sec": 380.8
+}

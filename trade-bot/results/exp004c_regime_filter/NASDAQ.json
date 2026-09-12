@@ -1,0 +1,53 @@
+{
+  "symbol": "NASDAQ",
+  "status": "ok",
+  "baseline": {
+    "n": 1263,
+    "win_rate": 0.2953,
+    "expectancy_r": -0.0317,
+    "total_r": -40.07,
+    "profit_factor": 0.9405
+  },
+  "regime_filtered": {
+    "n": 361,
+    "win_rate": 0.277,
+    "expectancy_r": -0.0459,
+    "total_r": -16.58,
+    "profit_factor": 0.9189
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 564,
+      "win_rate": 0.4415,
+      "expectancy_r": 0.4141,
+      "total_r": 233.58,
+      "profit_factor": 2.1119
+    },
+    "sell": {
+      "n": 699,
+      "win_rate": 0.1774,
+      "expectancy_r": -0.3915,
+      "total_r": -273.65,
+      "profit_factor": 0.4091
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 177,
+      "win_rate": 0.3955,
+      "expectancy_r": 0.346,
+      "total_r": 61.25,
+      "profit_factor": 1.8463
+    },
+    "sell": {
+      "n": 184,
+      "win_rate": 0.163,
+      "expectancy_r": -0.423,
+      "total_r": -77.83,
+      "profit_factor": 0.4112
+    }
+  },
+  "trade_retention_pct": 28.6,
+  "expectancy_delta_r": -0.0142,
+  "elapsed_sec": 42.6
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "NZDCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 14518,
+    "win_rate": 0.2476,
+    "expectancy_r": -0.0209,
+    "total_r": -302.86,
+    "profit_factor": 0.9605
+  },
+  "regime_filtered": {
+    "n": 4794,
+    "win_rate": 0.2426,
+    "expectancy_r": -0.0316,
+    "total_r": -151.65,
+    "profit_factor": 0.9408
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7227,
+      "win_rate": 0.2134,
+      "expectancy_r": -0.1526,
+      "total_r": -1102.55,
+      "profit_factor": 0.7284
+    },
+    "sell": {
+      "n": 7291,
+      "win_rate": 0.2816,
+      "expectancy_r": 0.1097,
+      "total_r": 799.7,
+      "profit_factor": 1.2217
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2482,
+      "win_rate": 0.2176,
+      "expectancy_r": -0.1254,
+      "total_r": -311.29,
+      "profit_factor": 0.7758
+    },
+    "sell": {
+      "n": 2312,
+      "win_rate": 0.2695,
+      "expectancy_r": 0.069,
+      "total_r": 159.64,
+      "profit_factor": 1.1363
+    }
+  },
+  "trade_retention_pct": 33.0,
+  "expectancy_delta_r": -0.0107,
+  "elapsed_sec": 682.4
+}

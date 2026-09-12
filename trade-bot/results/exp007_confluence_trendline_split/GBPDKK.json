@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPDKK",
+  "status": "ok",
+  "baseline": {
+    "n": 13953,
+    "win_rate": 0.2245,
+    "expectancy_r": -0.0956,
+    "total_r": -1334.56,
+    "profit_factor": 0.8304
+  },
+  "confluence_all": {
+    "n": 8243,
+    "win_rate": 0.2329,
+    "expectancy_r": -0.0713,
+    "total_r": -587.8,
+    "profit_factor": 0.8686
+  },
+  "confluence_with_trendline": {
+    "n": 949,
+    "win_rate": 0.2687,
+    "expectancy_r": -0.0404,
+    "total_r": -38.36,
+    "profit_factor": 0.9316
+  },
+  "confluence_without_trendline": {
+    "n": 7294,
+    "win_rate": 0.2283,
+    "expectancy_r": -0.0753,
+    "total_r": -549.44,
+    "profit_factor": 0.8595
+  },
+  "elapsed_sec": 188.5
+}

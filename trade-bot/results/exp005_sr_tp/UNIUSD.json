@@ -1,0 +1,83 @@
+{
+  "symbol": "UNIUSD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1003,
+        "win_rate": 0.322,
+        "expectancy_r": 0.0353,
+        "total_r": 35.38,
+        "profit_factor": 1.0824,
+        "avg_bars_held": 780.3
+      },
+      "sr_based_tp": {
+        "n": 1008,
+        "win_rate": 0.7649,
+        "expectancy_r": -0.0099,
+        "total_r": -9.94,
+        "profit_factor": 0.8007,
+        "avg_bars_held": 32.7
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1744,
+        "win_rate": 0.3159,
+        "expectancy_r": 0.0362,
+        "total_r": 63.07,
+        "profit_factor": 1.0872,
+        "avg_bars_held": 387.5
+      },
+      "sr_based_tp": {
+        "n": 1749,
+        "win_rate": 0.7633,
+        "expectancy_r": -0.0251,
+        "total_r": -43.88,
+        "profit_factor": 0.6701,
+        "avg_bars_held": 12.6
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 3035,
+        "win_rate": 0.204,
+        "expectancy_r": -0.0669,
+        "total_r": -203.11,
+        "profit_factor": 0.8947,
+        "avg_bars_held": 1699.9
+      },
+      "sr_based_tp": {
+        "n": 3186,
+        "win_rate": 0.7448,
+        "expectancy_r": -0.0404,
+        "total_r": -128.62,
+        "profit_factor": 0.5524,
+        "avg_bars_held": 73.6
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 314,
+        "win_rate": 0.4013,
+        "expectancy_r": 0.2229,
+        "total_r": 70.01,
+        "profit_factor": 1.3803,
+        "avg_bars_held": 128.0
+      },
+      "sr_based_tp": {
+        "n": 316,
+        "win_rate": 0.8987,
+        "expectancy_r": 0.014,
+        "total_r": 4.43,
+        "profit_factor": 1.1434,
+        "avg_bars_held": 8.6
+      }
+    }
+  },
+  "elapsed_sec": 122.3
+}

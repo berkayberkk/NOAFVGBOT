@@ -1,0 +1,83 @@
+{
+  "symbol": "AUDUSD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2563,
+        "win_rate": 0.2969,
+        "expectancy_r": 0.0182,
+        "total_r": 46.64,
+        "profit_factor": 1.0431,
+        "avg_bars_held": 736.2
+      },
+      "sr_based_tp": {
+        "n": 2587,
+        "win_rate": 0.7658,
+        "expectancy_r": -0.0012,
+        "total_r": -3.09,
+        "profit_factor": 0.9642,
+        "avg_bars_held": 30.5
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 4668,
+        "win_rate": 0.2858,
+        "expectancy_r": -0.0039,
+        "total_r": -18.12,
+        "profit_factor": 0.991,
+        "avg_bars_held": 393.9
+      },
+      "sr_based_tp": {
+        "n": 4693,
+        "win_rate": 0.7362,
+        "expectancy_r": -0.017,
+        "total_r": -79.75,
+        "profit_factor": 0.7098,
+        "avg_bars_held": 12.1
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 8159,
+        "win_rate": 0.2118,
+        "expectancy_r": -0.0214,
+        "total_r": -174.31,
+        "profit_factor": 0.9653,
+        "avg_bars_held": 1999.0
+      },
+      "sr_based_tp": {
+        "n": 8339,
+        "win_rate": 0.7352,
+        "expectancy_r": -0.0395,
+        "total_r": -329.5,
+        "profit_factor": 0.5958,
+        "avg_bars_held": 56.8
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 442,
+        "win_rate": 0.3371,
+        "expectancy_r": 0.0293,
+        "total_r": 12.96,
+        "profit_factor": 1.045,
+        "avg_bars_held": 108.9
+      },
+      "sr_based_tp": {
+        "n": 442,
+        "win_rate": 0.905,
+        "expectancy_r": 0.016,
+        "total_r": 7.09,
+        "profit_factor": 1.1715,
+        "avg_bars_held": 6.0
+      }
+    }
+  },
+  "elapsed_sec": 317.8
+}

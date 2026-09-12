@@ -1,0 +1,33 @@
+{
+  "symbol": "USDCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 18492,
+    "win_rate": 0.2411,
+    "expectancy_r": -0.0244,
+    "total_r": -451.05,
+    "profit_factor": 0.9547
+  },
+  "confluence_all": {
+    "n": 11971,
+    "win_rate": 0.2473,
+    "expectancy_r": -0.0097,
+    "total_r": -116.16,
+    "profit_factor": 0.9813
+  },
+  "confluence_with_trendline": {
+    "n": 1047,
+    "win_rate": 0.277,
+    "expectancy_r": 0.0045,
+    "total_r": 4.69,
+    "profit_factor": 1.0077
+  },
+  "confluence_without_trendline": {
+    "n": 10924,
+    "win_rate": 0.2445,
+    "expectancy_r": -0.0111,
+    "total_r": -120.85,
+    "profit_factor": 0.9784
+  },
+  "elapsed_sec": 232.4
+}

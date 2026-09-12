@@ -1,0 +1,53 @@
+{
+  "symbol": "PLATINUM",
+  "status": "ok",
+  "baseline": {
+    "n": 6223,
+    "win_rate": 0.225,
+    "expectancy_r": -0.0774,
+    "total_r": -481.73,
+    "profit_factor": 0.8558
+  },
+  "regime_filtered": {
+    "n": 1756,
+    "win_rate": 0.2198,
+    "expectancy_r": -0.1085,
+    "total_r": -190.54,
+    "profit_factor": 0.8025
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 3014,
+      "win_rate": 0.2482,
+      "expectancy_r": 0.0005,
+      "total_r": 1.37,
+      "profit_factor": 1.0009
+    },
+    "sell": {
+      "n": 3209,
+      "win_rate": 0.2032,
+      "expectancy_r": -0.1505,
+      "total_r": -483.1,
+      "profit_factor": 0.7336
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 890,
+      "win_rate": 0.2247,
+      "expectancy_r": -0.0677,
+      "total_r": -60.23,
+      "profit_factor": 0.8715
+    },
+    "sell": {
+      "n": 866,
+      "win_rate": 0.2148,
+      "expectancy_r": -0.1505,
+      "total_r": -130.32,
+      "profit_factor": 0.7373
+    }
+  },
+  "trade_retention_pct": 28.2,
+  "expectancy_delta_r": -0.0311,
+  "elapsed_sec": 100.5
+}

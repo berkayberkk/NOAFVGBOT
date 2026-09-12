@@ -1,0 +1,33 @@
+{
+  "symbol": "NZDCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 14518,
+    "win_rate": 0.2476,
+    "expectancy_r": -0.0209,
+    "total_r": -302.86,
+    "profit_factor": 0.9605
+  },
+  "regime_only": {
+    "n": 4794,
+    "win_rate": 0.2426,
+    "expectancy_r": -0.0316,
+    "total_r": -151.65,
+    "profit_factor": 0.9408
+  },
+  "confluence_only": {
+    "n": 8209,
+    "win_rate": 0.2617,
+    "expectancy_r": 0.0151,
+    "total_r": 123.82,
+    "profit_factor": 1.0301
+  },
+  "confluence_and_regime": {
+    "n": 2837,
+    "win_rate": 0.2598,
+    "expectancy_r": 0.0014,
+    "total_r": 3.95,
+    "profit_factor": 1.0027
+  },
+  "elapsed_sec": 1228.0
+}

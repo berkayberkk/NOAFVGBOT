@@ -1,0 +1,53 @@
+{
+  "symbol": "ADAUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6340,
+    "win_rate": 0.2521,
+    "expectancy_r": -0.0243,
+    "total_r": -154.23,
+    "profit_factor": 0.9548
+  },
+  "regime_filtered": {
+    "n": 1995,
+    "win_rate": 0.2461,
+    "expectancy_r": -0.0213,
+    "total_r": -42.51,
+    "profit_factor": 0.96
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2981,
+      "win_rate": 0.2395,
+      "expectancy_r": -0.0633,
+      "total_r": -188.55,
+      "profit_factor": 0.8871
+    },
+    "sell": {
+      "n": 3359,
+      "win_rate": 0.2632,
+      "expectancy_r": 0.0102,
+      "total_r": 34.32,
+      "profit_factor": 1.0197
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 968,
+      "win_rate": 0.2273,
+      "expectancy_r": -0.0909,
+      "total_r": -88.0,
+      "profit_factor": 0.8368
+    },
+    "sell": {
+      "n": 1027,
+      "win_rate": 0.2639,
+      "expectancy_r": 0.0443,
+      "total_r": 45.49,
+      "profit_factor": 1.0871
+    }
+  },
+  "trade_retention_pct": 31.5,
+  "expectancy_delta_r": 0.003,
+  "elapsed_sec": 104.7
+}

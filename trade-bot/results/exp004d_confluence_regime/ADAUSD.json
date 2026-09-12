@@ -1,0 +1,33 @@
+{
+  "symbol": "ADAUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6340,
+    "win_rate": 0.2521,
+    "expectancy_r": -0.0243,
+    "total_r": -154.23,
+    "profit_factor": 0.9548
+  },
+  "regime_only": {
+    "n": 1995,
+    "win_rate": 0.2461,
+    "expectancy_r": -0.0213,
+    "total_r": -42.51,
+    "profit_factor": 0.96
+  },
+  "confluence_only": {
+    "n": 4042,
+    "win_rate": 0.2568,
+    "expectancy_r": -0.0051,
+    "total_r": -20.55,
+    "profit_factor": 0.9902
+  },
+  "confluence_and_regime": {
+    "n": 1329,
+    "win_rate": 0.2408,
+    "expectancy_r": -0.0367,
+    "total_r": -48.82,
+    "profit_factor": 0.9302
+  },
+  "elapsed_sec": 198.2
+}

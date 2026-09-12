@@ -1,0 +1,53 @@
+{
+  "symbol": "BCHUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 10300,
+    "win_rate": 0.251,
+    "expectancy_r": -0.0174,
+    "total_r": -179.18,
+    "profit_factor": 0.9686
+  },
+  "regime_filtered": {
+    "n": 3446,
+    "win_rate": 0.2464,
+    "expectancy_r": -0.0196,
+    "total_r": -67.61,
+    "profit_factor": 0.9646
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 5009,
+      "win_rate": 0.2815,
+      "expectancy_r": 0.0985,
+      "total_r": 493.3,
+      "profit_factor": 1.1875
+    },
+    "sell": {
+      "n": 5291,
+      "win_rate": 0.2221,
+      "expectancy_r": -0.1271,
+      "total_r": -672.49,
+      "profit_factor": 0.7816
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1649,
+      "win_rate": 0.2729,
+      "expectancy_r": 0.0704,
+      "total_r": 116.12,
+      "profit_factor": 1.133
+    },
+    "sell": {
+      "n": 1797,
+      "win_rate": 0.222,
+      "expectancy_r": -0.1022,
+      "total_r": -183.73,
+      "profit_factor": 0.8227
+    }
+  },
+  "trade_retention_pct": 33.5,
+  "expectancy_delta_r": -0.0022,
+  "elapsed_sec": 194.8
+}

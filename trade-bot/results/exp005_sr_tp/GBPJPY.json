@@ -1,0 +1,83 @@
+{
+  "symbol": "GBPJPY",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2621,
+        "win_rate": 0.3121,
+        "expectancy_r": 0.0334,
+        "total_r": 87.42,
+        "profit_factor": 1.0774,
+        "avg_bars_held": 803.6
+      },
+      "sr_based_tp": {
+        "n": 2645,
+        "win_rate": 0.7607,
+        "expectancy_r": -0.0136,
+        "total_r": -35.84,
+        "profit_factor": 0.7038,
+        "avg_bars_held": 33.4
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 4182,
+        "win_rate": 0.2908,
+        "expectancy_r": -0.003,
+        "total_r": -12.41,
+        "profit_factor": 0.9932,
+        "avg_bars_held": 476.6
+      },
+      "sr_based_tp": {
+        "n": 4204,
+        "win_rate": 0.7555,
+        "expectancy_r": -0.0169,
+        "total_r": -71.23,
+        "profit_factor": 0.7168,
+        "avg_bars_held": 15.3
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 9607,
+        "win_rate": 0.2132,
+        "expectancy_r": -0.0243,
+        "total_r": -233.69,
+        "profit_factor": 0.9601,
+        "avg_bars_held": 1826.1
+      },
+      "sr_based_tp": {
+        "n": 9785,
+        "win_rate": 0.7424,
+        "expectancy_r": -0.0379,
+        "total_r": -370.73,
+        "profit_factor": 0.6293,
+        "avg_bars_held": 37.3
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 758,
+        "win_rate": 0.3681,
+        "expectancy_r": 0.1199,
+        "total_r": 90.92,
+        "profit_factor": 1.1924,
+        "avg_bars_held": 155.3
+      },
+      "sr_based_tp": {
+        "n": 758,
+        "win_rate": 0.9657,
+        "expectancy_r": 0.072,
+        "total_r": 54.59,
+        "profit_factor": 3.1761,
+        "avg_bars_held": 5.1
+      }
+    }
+  },
+  "elapsed_sec": 305.3
+}

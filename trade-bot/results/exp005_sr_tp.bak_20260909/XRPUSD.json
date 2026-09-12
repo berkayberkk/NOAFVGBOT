@@ -1,0 +1,83 @@
+{
+  "symbol": "XRPUSD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1314,
+        "win_rate": 0.2983,
+        "expectancy_r": 0.016,
+        "total_r": 21.0,
+        "profit_factor": 1.0381,
+        "avg_bars_held": 715.1
+      },
+      "sr_based_tp": {
+        "n": 1324,
+        "win_rate": 0.7727,
+        "expectancy_r": -0.0106,
+        "total_r": -14.04,
+        "profit_factor": 0.7401,
+        "avg_bars_held": 22.1
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2740,
+        "win_rate": 0.3321,
+        "expectancy_r": 0.0608,
+        "total_r": 166.5,
+        "profit_factor": 1.1446,
+        "avg_bars_held": 560.8
+      },
+      "sr_based_tp": {
+        "n": 2753,
+        "win_rate": 0.7367,
+        "expectancy_r": -0.0197,
+        "total_r": -54.14,
+        "profit_factor": 0.7158,
+        "avg_bars_held": 14.4
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 6253,
+        "win_rate": 0.2202,
+        "expectancy_r": -0.0382,
+        "total_r": -238.84,
+        "profit_factor": 0.9389,
+        "avg_bars_held": 2237.2
+      },
+      "sr_based_tp": {
+        "n": 6383,
+        "win_rate": 0.7539,
+        "expectancy_r": -0.0525,
+        "total_r": -334.91,
+        "profit_factor": 0.5406,
+        "avg_bars_held": 62.4
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 461,
+        "win_rate": 0.3623,
+        "expectancy_r": 0.1069,
+        "total_r": 49.27,
+        "profit_factor": 1.1702,
+        "avg_bars_held": 157.6
+      },
+      "sr_based_tp": {
+        "n": 462,
+        "win_rate": 0.9329,
+        "expectancy_r": 0.0732,
+        "total_r": 33.82,
+        "profit_factor": 2.1088,
+        "avg_bars_held": 6.6
+      }
+    }
+  },
+  "elapsed_sec": 208.8
+}

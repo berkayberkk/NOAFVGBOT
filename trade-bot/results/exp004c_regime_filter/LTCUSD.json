@@ -1,0 +1,53 @@
+{
+  "symbol": "LTCUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 11199,
+    "win_rate": 0.2612,
+    "expectancy_r": 0.0048,
+    "total_r": 53.39,
+    "profit_factor": 1.0087
+  },
+  "regime_filtered": {
+    "n": 3446,
+    "win_rate": 0.2516,
+    "expectancy_r": -0.0185,
+    "total_r": -63.71,
+    "profit_factor": 0.9662
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 5411,
+      "win_rate": 0.3014,
+      "expectancy_r": 0.1399,
+      "total_r": 757.14,
+      "profit_factor": 1.2742
+    },
+    "sell": {
+      "n": 5788,
+      "win_rate": 0.2236,
+      "expectancy_r": -0.1216,
+      "total_r": -703.75,
+      "profit_factor": 0.7906
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1704,
+      "win_rate": 0.2717,
+      "expectancy_r": 0.0581,
+      "total_r": 99.03,
+      "profit_factor": 1.1094
+    },
+    "sell": {
+      "n": 1742,
+      "win_rate": 0.2319,
+      "expectancy_r": -0.0934,
+      "total_r": -162.74,
+      "profit_factor": 0.8343
+    }
+  },
+  "trade_retention_pct": 30.8,
+  "expectancy_delta_r": -0.0233,
+  "elapsed_sec": 354.9
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "SPAIN35",
+  "status": "ok",
+  "baseline": {
+    "n": 3776,
+    "win_rate": 0.2762,
+    "expectancy_r": -0.0175,
+    "total_r": -66.13,
+    "profit_factor": 0.9663
+  },
+  "regime_only": {
+    "n": 1121,
+    "win_rate": 0.2801,
+    "expectancy_r": 0.0008,
+    "total_r": 0.94,
+    "profit_factor": 1.0016
+  },
+  "confluence_only": {
+    "n": 2343,
+    "win_rate": 0.2808,
+    "expectancy_r": -0.0076,
+    "total_r": -17.87,
+    "profit_factor": 0.9849
+  },
+  "confluence_and_regime": {
+    "n": 718,
+    "win_rate": 0.2953,
+    "expectancy_r": 0.0404,
+    "total_r": 29.01,
+    "profit_factor": 1.0814
+  },
+  "elapsed_sec": 65.9
+}

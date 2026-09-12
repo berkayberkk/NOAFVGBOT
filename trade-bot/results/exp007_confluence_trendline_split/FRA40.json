@@ -1,0 +1,33 @@
+{
+  "symbol": "FRA40",
+  "status": "ok",
+  "baseline": {
+    "n": 5437,
+    "win_rate": 0.2615,
+    "expectancy_r": -0.0413,
+    "total_r": -224.51,
+    "profit_factor": 0.9212
+  },
+  "confluence_all": {
+    "n": 3242,
+    "win_rate": 0.269,
+    "expectancy_r": -0.0193,
+    "total_r": -62.42,
+    "profit_factor": 0.9618
+  },
+  "confluence_with_trendline": {
+    "n": 259,
+    "win_rate": 0.3629,
+    "expectancy_r": 0.1857,
+    "total_r": 48.1,
+    "profit_factor": 1.3673
+  },
+  "confluence_without_trendline": {
+    "n": 2983,
+    "win_rate": 0.2608,
+    "expectancy_r": -0.037,
+    "total_r": -110.52,
+    "profit_factor": 0.9265
+  },
+  "elapsed_sec": 81.9
+}

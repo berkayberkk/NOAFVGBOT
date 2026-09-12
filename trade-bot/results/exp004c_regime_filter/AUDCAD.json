@@ -1,0 +1,53 @@
+{
+  "symbol": "AUDCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 13023,
+    "win_rate": 0.2389,
+    "expectancy_r": -0.0374,
+    "total_r": -486.68,
+    "profit_factor": 0.9298
+  },
+  "regime_filtered": {
+    "n": 4104,
+    "win_rate": 0.2432,
+    "expectancy_r": -0.0248,
+    "total_r": -101.97,
+    "profit_factor": 0.9538
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6510,
+      "win_rate": 0.2065,
+      "expectancy_r": -0.16,
+      "total_r": -1041.88,
+      "profit_factor": 0.7215
+    },
+    "sell": {
+      "n": 6513,
+      "win_rate": 0.2713,
+      "expectancy_r": 0.0852,
+      "total_r": 555.21,
+      "profit_factor": 1.1739
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2075,
+      "win_rate": 0.2149,
+      "expectancy_r": -0.1284,
+      "total_r": -266.35,
+      "profit_factor": 0.7746
+    },
+    "sell": {
+      "n": 2029,
+      "win_rate": 0.2721,
+      "expectancy_r": 0.081,
+      "total_r": 164.38,
+      "profit_factor": 1.16
+    }
+  },
+  "trade_retention_pct": 31.5,
+  "expectancy_delta_r": 0.0126,
+  "elapsed_sec": 675.4
+}

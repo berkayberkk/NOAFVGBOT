@@ -1,0 +1,83 @@
+{
+  "symbol": "NZDJPY",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2148,
+        "win_rate": 0.2989,
+        "expectancy_r": 0.0167,
+        "total_r": 35.78,
+        "profit_factor": 1.0389,
+        "avg_bars_held": 876.0
+      },
+      "sr_based_tp": {
+        "n": 2165,
+        "win_rate": 0.7672,
+        "expectancy_r": -0.0117,
+        "total_r": -25.24,
+        "profit_factor": 0.7157,
+        "avg_bars_held": 29.8
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 4234,
+        "win_rate": 0.295,
+        "expectancy_r": 0.0059,
+        "total_r": 24.99,
+        "profit_factor": 1.0137,
+        "avg_bars_held": 449.9
+      },
+      "sr_based_tp": {
+        "n": 4254,
+        "win_rate": 0.7654,
+        "expectancy_r": -0.005,
+        "total_r": -21.29,
+        "profit_factor": 0.8905,
+        "avg_bars_held": 11.8
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 7477,
+        "win_rate": 0.1981,
+        "expectancy_r": -0.0719,
+        "total_r": -537.81,
+        "profit_factor": 0.8837,
+        "avg_bars_held": 2344.4
+      },
+      "sr_based_tp": {
+        "n": 7716,
+        "win_rate": 0.7512,
+        "expectancy_r": -0.0293,
+        "total_r": -225.78,
+        "profit_factor": 0.6676,
+        "avg_bars_held": 28.2
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 759,
+        "win_rate": 0.3623,
+        "expectancy_r": 0.106,
+        "total_r": 80.45,
+        "profit_factor": 1.1696,
+        "avg_bars_held": 144.6
+      },
+      "sr_based_tp": {
+        "n": 760,
+        "win_rate": 0.9645,
+        "expectancy_r": 0.0786,
+        "total_r": 59.76,
+        "profit_factor": 3.2769,
+        "avg_bars_held": 5.3
+      }
+    }
+  },
+  "elapsed_sec": 289.7
+}

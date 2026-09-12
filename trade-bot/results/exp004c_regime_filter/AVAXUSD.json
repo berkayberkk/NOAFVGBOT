@@ -1,0 +1,53 @@
+{
+  "symbol": "AVAXUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 5734,
+    "win_rate": 0.2698,
+    "expectancy_r": -0.0169,
+    "total_r": -97.18,
+    "profit_factor": 0.9684
+  },
+  "regime_filtered": {
+    "n": 1723,
+    "win_rate": 0.2693,
+    "expectancy_r": -0.0224,
+    "total_r": -38.58,
+    "profit_factor": 0.9582
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2805,
+      "win_rate": 0.2749,
+      "expectancy_r": 0.0033,
+      "total_r": 9.28,
+      "profit_factor": 1.0063
+    },
+    "sell": {
+      "n": 2929,
+      "win_rate": 0.2649,
+      "expectancy_r": -0.0363,
+      "total_r": -106.46,
+      "profit_factor": 0.9332
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 851,
+      "win_rate": 0.2573,
+      "expectancy_r": -0.0446,
+      "total_r": -37.98,
+      "profit_factor": 0.9179
+    },
+    "sell": {
+      "n": 872,
+      "win_rate": 0.281,
+      "expectancy_r": -0.0007,
+      "total_r": -0.59,
+      "profit_factor": 0.9987
+    }
+  },
+  "trade_retention_pct": 30.0,
+  "expectancy_delta_r": -0.0055,
+  "elapsed_sec": 88.4
+}

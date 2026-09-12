@@ -1,0 +1,33 @@
+{
+  "symbol": "USDCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 20330,
+    "win_rate": 0.2437,
+    "expectancy_r": -0.0222,
+    "total_r": -451.6,
+    "profit_factor": 0.9592
+  },
+  "confluence_all": {
+    "n": 13149,
+    "win_rate": 0.2533,
+    "expectancy_r": 0.0072,
+    "total_r": 94.36,
+    "profit_factor": 1.0139
+  },
+  "confluence_with_trendline": {
+    "n": 1359,
+    "win_rate": 0.2958,
+    "expectancy_r": 0.0454,
+    "total_r": 61.72,
+    "profit_factor": 1.08
+  },
+  "confluence_without_trendline": {
+    "n": 11790,
+    "win_rate": 0.2484,
+    "expectancy_r": 0.0028,
+    "total_r": 32.65,
+    "profit_factor": 1.0054
+  },
+  "elapsed_sec": 223.9
+}

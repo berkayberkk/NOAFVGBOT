@@ -1,0 +1,53 @@
+{
+  "symbol": "SA40",
+  "status": "ok",
+  "baseline": {
+    "n": 2150,
+    "win_rate": 0.2633,
+    "expectancy_r": -0.0364,
+    "total_r": -78.18,
+    "profit_factor": 0.9295
+  },
+  "regime_filtered": {
+    "n": 669,
+    "win_rate": 0.2481,
+    "expectancy_r": -0.0699,
+    "total_r": -46.73,
+    "profit_factor": 0.8696
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 1023,
+      "win_rate": 0.3441,
+      "expectancy_r": 0.2208,
+      "total_r": 225.84,
+      "profit_factor": 1.4971
+    },
+    "sell": {
+      "n": 1127,
+      "win_rate": 0.1899,
+      "expectancy_r": -0.2698,
+      "total_r": -304.01,
+      "profit_factor": 0.536
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 347,
+      "win_rate": 0.3458,
+      "expectancy_r": 0.2622,
+      "total_r": 91.0,
+      "profit_factor": 1.6018
+    },
+    "sell": {
+      "n": 322,
+      "win_rate": 0.1429,
+      "expectancy_r": -0.4277,
+      "total_r": -137.73,
+      "profit_factor": 0.3349
+    }
+  },
+  "trade_retention_pct": 31.1,
+  "expectancy_delta_r": -0.0335,
+  "elapsed_sec": 39.8
+}

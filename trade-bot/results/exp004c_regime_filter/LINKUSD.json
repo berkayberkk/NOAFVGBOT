@@ -1,0 +1,53 @@
+{
+  "symbol": "LINKUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6078,
+    "win_rate": 0.2453,
+    "expectancy_r": -0.0646,
+    "total_r": -392.92,
+    "profit_factor": 0.8801
+  },
+  "regime_filtered": {
+    "n": 1565,
+    "win_rate": 0.2652,
+    "expectancy_r": 0.0111,
+    "total_r": 17.35,
+    "profit_factor": 1.0211
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2907,
+      "win_rate": 0.2759,
+      "expectancy_r": 0.0519,
+      "total_r": 150.8,
+      "profit_factor": 1.1031
+    },
+    "sell": {
+      "n": 3171,
+      "win_rate": 0.2173,
+      "expectancy_r": -0.1715,
+      "total_r": -543.71,
+      "profit_factor": 0.7006
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 777,
+      "win_rate": 0.2934,
+      "expectancy_r": 0.1232,
+      "total_r": 95.76,
+      "profit_factor": 1.2494
+    },
+    "sell": {
+      "n": 788,
+      "win_rate": 0.2373,
+      "expectancy_r": -0.0995,
+      "total_r": -78.41,
+      "profit_factor": 0.8208
+    }
+  },
+  "trade_retention_pct": 25.7,
+  "expectancy_delta_r": 0.0757,
+  "elapsed_sec": 120.5
+}

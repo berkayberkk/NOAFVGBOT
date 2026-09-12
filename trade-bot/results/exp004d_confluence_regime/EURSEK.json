@@ -1,0 +1,33 @@
+{
+  "symbol": "EURSEK",
+  "status": "ok",
+  "baseline": {
+    "n": 16400,
+    "win_rate": 0.2523,
+    "expectancy_r": 0.0255,
+    "total_r": 418.42,
+    "profit_factor": 1.0462
+  },
+  "regime_only": {
+    "n": 4175,
+    "win_rate": 0.2398,
+    "expectancy_r": -0.0239,
+    "total_r": -99.84,
+    "profit_factor": 0.9578
+  },
+  "confluence_only": {
+    "n": 8899,
+    "win_rate": 0.2595,
+    "expectancy_r": 0.0435,
+    "total_r": 386.83,
+    "profit_factor": 1.0834
+  },
+  "confluence_and_regime": {
+    "n": 2235,
+    "win_rate": 0.2421,
+    "expectancy_r": -0.0081,
+    "total_r": -18.03,
+    "profit_factor": 0.9847
+  },
+  "elapsed_sec": 788.9
+}

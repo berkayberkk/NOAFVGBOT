@@ -1,0 +1,83 @@
+{
+  "symbol": "NASDAQ",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 201,
+        "win_rate": 0.3532,
+        "expectancy_r": 0.0499,
+        "total_r": 10.03,
+        "profit_factor": 1.1212,
+        "avg_bars_held": 414.4
+      },
+      "sr_based_tp": {
+        "n": 208,
+        "win_rate": 0.6683,
+        "expectancy_r": 0.0351,
+        "total_r": 7.3,
+        "profit_factor": 1.3133,
+        "avg_bars_held": 72.5
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 495,
+        "win_rate": 0.3253,
+        "expectancy_r": -0.0518,
+        "total_r": -25.66,
+        "profit_factor": 0.8936,
+        "avg_bars_held": 211.8
+      },
+      "sr_based_tp": {
+        "n": 501,
+        "win_rate": 0.6567,
+        "expectancy_r": -0.0576,
+        "total_r": -28.88,
+        "profit_factor": 0.6626,
+        "avg_bars_held": 28.9
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 515,
+        "win_rate": 0.2408,
+        "expectancy_r": -0.0471,
+        "total_r": -24.26,
+        "profit_factor": 0.923,
+        "avg_bars_held": 609.8
+      },
+      "sr_based_tp": {
+        "n": 540,
+        "win_rate": 0.6481,
+        "expectancy_r": -0.0081,
+        "total_r": -4.35,
+        "profit_factor": 0.9456,
+        "avg_bars_held": 44.7
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 52,
+        "win_rate": 0.3269,
+        "expectancy_r": -0.0036,
+        "total_r": -0.19,
+        "profit_factor": 0.9945,
+        "avg_bars_held": 104.5
+      },
+      "sr_based_tp": {
+        "n": 52,
+        "win_rate": 0.9038,
+        "expectancy_r": 0.0539,
+        "total_r": 2.81,
+        "profit_factor": 1.5722,
+        "avg_bars_held": 9.5
+      }
+    }
+  },
+  "elapsed_sec": 38.0
+}

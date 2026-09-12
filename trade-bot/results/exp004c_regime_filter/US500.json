@@ -1,0 +1,53 @@
+{
+  "symbol": "US500",
+  "status": "ok",
+  "baseline": {
+    "n": 9004,
+    "win_rate": 0.2583,
+    "expectancy_r": -0.0199,
+    "total_r": -179.15,
+    "profit_factor": 0.9638
+  },
+  "regime_filtered": {
+    "n": 2544,
+    "win_rate": 0.2563,
+    "expectancy_r": -0.0215,
+    "total_r": -54.72,
+    "profit_factor": 0.961
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 3968,
+      "win_rate": 0.3425,
+      "expectancy_r": 0.2725,
+      "total_r": 1081.45,
+      "profit_factor": 1.5961
+    },
+    "sell": {
+      "n": 5036,
+      "win_rate": 0.192,
+      "expectancy_r": -0.2503,
+      "total_r": -1260.6,
+      "profit_factor": 0.5976
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1277,
+      "win_rate": 0.3281,
+      "expectancy_r": 0.2202,
+      "total_r": 281.21,
+      "profit_factor": 1.4584
+    },
+    "sell": {
+      "n": 1267,
+      "win_rate": 0.1839,
+      "expectancy_r": -0.2651,
+      "total_r": -335.93,
+      "profit_factor": 0.5754
+    }
+  },
+  "trade_retention_pct": 28.3,
+  "expectancy_delta_r": -0.0016,
+  "elapsed_sec": 146.3
+}

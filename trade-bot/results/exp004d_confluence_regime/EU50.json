@@ -1,0 +1,33 @@
+{
+  "symbol": "EU50",
+  "status": "ok",
+  "baseline": {
+    "n": 3728,
+    "win_rate": 0.2607,
+    "expectancy_r": -0.0516,
+    "total_r": -192.49,
+    "profit_factor": 0.9003
+  },
+  "regime_only": {
+    "n": 1076,
+    "win_rate": 0.2835,
+    "expectancy_r": -0.0107,
+    "total_r": -11.54,
+    "profit_factor": 0.9787
+  },
+  "confluence_only": {
+    "n": 2266,
+    "win_rate": 0.263,
+    "expectancy_r": -0.0367,
+    "total_r": -83.17,
+    "profit_factor": 0.9271
+  },
+  "confluence_and_regime": {
+    "n": 664,
+    "win_rate": 0.3012,
+    "expectancy_r": 0.0324,
+    "total_r": 21.5,
+    "profit_factor": 1.0675
+  },
+  "elapsed_sec": 129.8
+}

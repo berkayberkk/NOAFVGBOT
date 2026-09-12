@@ -1,0 +1,33 @@
+{
+  "symbol": "USDZAR",
+  "status": "ok",
+  "baseline": {
+    "n": 17947,
+    "win_rate": 0.2655,
+    "expectancy_r": 0.022,
+    "total_r": 395.72,
+    "profit_factor": 1.0401
+  },
+  "regime_only": {
+    "n": 5550,
+    "win_rate": 0.2632,
+    "expectancy_r": 0.0192,
+    "total_r": 106.6,
+    "profit_factor": 1.0354
+  },
+  "confluence_only": {
+    "n": 11537,
+    "win_rate": 0.2735,
+    "expectancy_r": 0.0392,
+    "total_r": 451.71,
+    "profit_factor": 1.0734
+  },
+  "confluence_and_regime": {
+    "n": 3733,
+    "win_rate": 0.2732,
+    "expectancy_r": 0.0498,
+    "total_r": 185.76,
+    "profit_factor": 1.0959
+  },
+  "elapsed_sec": 573.6
+}

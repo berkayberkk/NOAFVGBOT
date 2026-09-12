@@ -1,0 +1,33 @@
+{
+  "symbol": "CHFJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 15643,
+    "win_rate": 0.2643,
+    "expectancy_r": 0.0458,
+    "total_r": 715.87,
+    "profit_factor": 1.0861
+  },
+  "confluence_all": {
+    "n": 8971,
+    "win_rate": 0.2718,
+    "expectancy_r": 0.0626,
+    "total_r": 561.96,
+    "profit_factor": 1.124
+  },
+  "confluence_with_trendline": {
+    "n": 690,
+    "win_rate": 0.2652,
+    "expectancy_r": -0.0601,
+    "total_r": -41.49,
+    "profit_factor": 0.9023
+  },
+  "confluence_without_trendline": {
+    "n": 8281,
+    "win_rate": 0.2723,
+    "expectancy_r": 0.0729,
+    "total_r": 603.45,
+    "profit_factor": 1.1469
+  },
+  "elapsed_sec": 199.2
+}

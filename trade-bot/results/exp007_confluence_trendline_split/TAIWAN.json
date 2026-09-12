@@ -1,0 +1,33 @@
+{
+  "symbol": "TAIWAN",
+  "status": "ok",
+  "baseline": {
+    "n": 3421,
+    "win_rate": 0.2797,
+    "expectancy_r": 0.0328,
+    "total_r": 112.09,
+    "profit_factor": 1.0603
+  },
+  "confluence_all": {
+    "n": 2271,
+    "win_rate": 0.2836,
+    "expectancy_r": 0.0304,
+    "total_r": 68.93,
+    "profit_factor": 1.0573
+  },
+  "confluence_with_trendline": {
+    "n": 243,
+    "win_rate": 0.3292,
+    "expectancy_r": 0.1652,
+    "total_r": 40.15,
+    "profit_factor": 1.3073
+  },
+  "confluence_without_trendline": {
+    "n": 2028,
+    "win_rate": 0.2781,
+    "expectancy_r": 0.0142,
+    "total_r": 28.78,
+    "profit_factor": 1.0269
+  },
+  "elapsed_sec": 37.7
+}

@@ -1,0 +1,83 @@
+{
+  "symbol": "LTCUSD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1495,
+        "win_rate": 0.2876,
+        "expectancy_r": -0.0247,
+        "total_r": -36.94,
+        "profit_factor": 0.9448,
+        "avg_bars_held": 821.4
+      },
+      "sr_based_tp": {
+        "n": 1504,
+        "win_rate": 0.7932,
+        "expectancy_r": -0.0047,
+        "total_r": -7.11,
+        "profit_factor": 0.8632,
+        "avg_bars_held": 21.0
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2831,
+        "win_rate": 0.3289,
+        "expectancy_r": 0.0543,
+        "total_r": 153.83,
+        "profit_factor": 1.1264,
+        "avg_bars_held": 447.2
+      },
+      "sr_based_tp": {
+        "n": 2838,
+        "win_rate": 0.7533,
+        "expectancy_r": -0.0187,
+        "total_r": -53.1,
+        "profit_factor": 0.7103,
+        "avg_bars_held": 18.9
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 6364,
+        "win_rate": 0.2205,
+        "expectancy_r": -0.0074,
+        "total_r": -46.82,
+        "profit_factor": 0.988,
+        "avg_bars_held": 1484.3
+      },
+      "sr_based_tp": {
+        "n": 6569,
+        "win_rate": 0.7485,
+        "expectancy_r": -0.0428,
+        "total_r": -281.13,
+        "profit_factor": 0.5891,
+        "avg_bars_held": 45.1
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 509,
+        "win_rate": 0.3163,
+        "expectancy_r": -0.0328,
+        "total_r": -16.68,
+        "profit_factor": 0.9511,
+        "avg_bars_held": 143.3
+      },
+      "sr_based_tp": {
+        "n": 509,
+        "win_rate": 0.9273,
+        "expectancy_r": 0.0292,
+        "total_r": 14.88,
+        "profit_factor": 1.4088,
+        "avg_bars_held": 5.7
+      }
+    }
+  },
+  "elapsed_sec": 184.1
+}

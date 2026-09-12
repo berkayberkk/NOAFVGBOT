@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 20524,
+    "win_rate": 0.2442,
+    "expectancy_r": -0.0203,
+    "total_r": -415.74,
+    "profit_factor": 0.9633
+  },
+  "confluence_all": {
+    "n": 13032,
+    "win_rate": 0.2499,
+    "expectancy_r": -0.0057,
+    "total_r": -73.83,
+    "profit_factor": 0.9893
+  },
+  "confluence_with_trendline": {
+    "n": 1103,
+    "win_rate": 0.2883,
+    "expectancy_r": 0.0589,
+    "total_r": 64.99,
+    "profit_factor": 1.1034
+  },
+  "confluence_without_trendline": {
+    "n": 11929,
+    "win_rate": 0.2464,
+    "expectancy_r": -0.0116,
+    "total_r": -138.82,
+    "profit_factor": 0.978
+  },
+  "elapsed_sec": 224.8
+}

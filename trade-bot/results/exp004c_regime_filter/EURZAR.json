@@ -1,0 +1,53 @@
+{
+  "symbol": "EURZAR",
+  "status": "ok",
+  "baseline": {
+    "n": 14250,
+    "win_rate": 0.2474,
+    "expectancy_r": -0.0247,
+    "total_r": -352.16,
+    "profit_factor": 0.9554
+  },
+  "regime_filtered": {
+    "n": 3958,
+    "win_rate": 0.2532,
+    "expectancy_r": -0.0163,
+    "total_r": -64.61,
+    "profit_factor": 0.9708
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7168,
+      "win_rate": 0.284,
+      "expectancy_r": 0.1083,
+      "total_r": 776.55,
+      "profit_factor": 1.2051
+    },
+    "sell": {
+      "n": 7082,
+      "win_rate": 0.2104,
+      "expectancy_r": -0.1594,
+      "total_r": -1128.71,
+      "profit_factor": 0.7255
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2079,
+      "win_rate": 0.2977,
+      "expectancy_r": 0.1258,
+      "total_r": 261.55,
+      "profit_factor": 1.238
+    },
+    "sell": {
+      "n": 1879,
+      "win_rate": 0.2038,
+      "expectancy_r": -0.1736,
+      "total_r": -326.16,
+      "profit_factor": 0.7064
+    }
+  },
+  "trade_retention_pct": 27.8,
+  "expectancy_delta_r": 0.0084,
+  "elapsed_sec": 249.9
+}

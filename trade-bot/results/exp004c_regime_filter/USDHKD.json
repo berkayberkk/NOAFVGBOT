@@ -1,0 +1,53 @@
+{
+  "symbol": "USDHKD",
+  "status": "ok",
+  "baseline": {
+    "n": 5453,
+    "win_rate": 0.2923,
+    "expectancy_r": 0.082,
+    "total_r": 446.91,
+    "profit_factor": 1.1603
+  },
+  "regime_filtered": {
+    "n": 896,
+    "win_rate": 0.2433,
+    "expectancy_r": -0.081,
+    "total_r": -72.62,
+    "profit_factor": 0.8572
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2566,
+      "win_rate": 0.403,
+      "expectancy_r": 0.5026,
+      "total_r": 1289.66,
+      "profit_factor": 2.395
+    },
+    "sell": {
+      "n": 2887,
+      "win_rate": 0.194,
+      "expectancy_r": -0.2919,
+      "total_r": -842.75,
+      "profit_factor": 0.5476
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 368,
+      "win_rate": 0.3641,
+      "expectancy_r": 0.3693,
+      "total_r": 135.9,
+      "profit_factor": 1.9182
+    },
+    "sell": {
+      "n": 528,
+      "win_rate": 0.1591,
+      "expectancy_r": -0.3949,
+      "total_r": -208.52,
+      "profit_factor": 0.4213
+    }
+  },
+  "trade_retention_pct": 16.4,
+  "expectancy_delta_r": -0.163,
+  "elapsed_sec": 161.7
+}

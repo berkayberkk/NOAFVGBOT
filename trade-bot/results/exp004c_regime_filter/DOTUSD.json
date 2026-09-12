@@ -1,0 +1,53 @@
+{
+  "symbol": "DOTUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 5989,
+    "win_rate": 0.259,
+    "expectancy_r": 0.0013,
+    "total_r": 7.76,
+    "profit_factor": 1.0024
+  },
+  "regime_filtered": {
+    "n": 1877,
+    "win_rate": 0.2445,
+    "expectancy_r": -0.0194,
+    "total_r": -36.34,
+    "profit_factor": 0.9646
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2732,
+      "win_rate": 0.2423,
+      "expectancy_r": -0.0598,
+      "total_r": -163.49,
+      "profit_factor": 0.8968
+    },
+    "sell": {
+      "n": 3257,
+      "win_rate": 0.273,
+      "expectancy_r": 0.0526,
+      "total_r": 171.25,
+      "profit_factor": 1.1011
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 822,
+      "win_rate": 0.2238,
+      "expectancy_r": -0.1158,
+      "total_r": -95.16,
+      "profit_factor": 0.8061
+    },
+    "sell": {
+      "n": 1055,
+      "win_rate": 0.2607,
+      "expectancy_r": 0.0557,
+      "total_r": 58.81,
+      "profit_factor": 1.1097
+    }
+  },
+  "trade_retention_pct": 31.3,
+  "expectancy_delta_r": -0.0207,
+  "elapsed_sec": 112.3
+}

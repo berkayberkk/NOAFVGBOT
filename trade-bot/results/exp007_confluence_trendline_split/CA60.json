@@ -1,0 +1,33 @@
+{
+  "symbol": "CA60",
+  "status": "ok",
+  "baseline": {
+    "n": 2290,
+    "win_rate": 0.2786,
+    "expectancy_r": -0.0144,
+    "total_r": -32.88,
+    "profit_factor": 0.9732
+  },
+  "confluence_all": {
+    "n": 1347,
+    "win_rate": 0.2932,
+    "expectancy_r": 0.0075,
+    "total_r": 10.04,
+    "profit_factor": 1.0144
+  },
+  "confluence_with_trendline": {
+    "n": 75,
+    "win_rate": 0.3867,
+    "expectancy_r": 0.3358,
+    "total_r": 25.18,
+    "profit_factor": 1.7211
+  },
+  "confluence_without_trendline": {
+    "n": 1272,
+    "win_rate": 0.2877,
+    "expectancy_r": -0.0119,
+    "total_r": -15.14,
+    "profit_factor": 0.9771
+  },
+  "elapsed_sec": 39.0
+}

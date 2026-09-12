@@ -1,0 +1,53 @@
+{
+  "symbol": "NZDUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 15307,
+    "win_rate": 0.253,
+    "expectancy_r": -0.0053,
+    "total_r": -81.5,
+    "profit_factor": 0.9899
+  },
+  "regime_filtered": {
+    "n": 4962,
+    "win_rate": 0.257,
+    "expectancy_r": 0.0013,
+    "total_r": 6.21,
+    "profit_factor": 1.0024
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7643,
+      "win_rate": 0.2477,
+      "expectancy_r": -0.023,
+      "total_r": -175.97,
+      "profit_factor": 0.9564
+    },
+    "sell": {
+      "n": 7664,
+      "win_rate": 0.2582,
+      "expectancy_r": 0.0123,
+      "total_r": 94.47,
+      "profit_factor": 1.0234
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2563,
+      "win_rate": 0.2524,
+      "expectancy_r": -0.0098,
+      "total_r": -24.99,
+      "profit_factor": 0.9813
+    },
+    "sell": {
+      "n": 2399,
+      "win_rate": 0.2618,
+      "expectancy_r": 0.013,
+      "total_r": 31.2,
+      "profit_factor": 1.0243
+    }
+  },
+  "trade_retention_pct": 32.4,
+  "expectancy_delta_r": 0.0066,
+  "elapsed_sec": 888.9
+}

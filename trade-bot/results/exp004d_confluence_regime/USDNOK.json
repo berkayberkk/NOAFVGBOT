@@ -1,0 +1,33 @@
+{
+  "symbol": "USDNOK",
+  "status": "ok",
+  "baseline": {
+    "n": 19645,
+    "win_rate": 0.2494,
+    "expectancy_r": -0.0031,
+    "total_r": -60.72,
+    "profit_factor": 0.9944
+  },
+  "regime_only": {
+    "n": 5588,
+    "win_rate": 0.2547,
+    "expectancy_r": 0.01,
+    "total_r": 56.05,
+    "profit_factor": 1.0184
+  },
+  "confluence_only": {
+    "n": 11527,
+    "win_rate": 0.2608,
+    "expectancy_r": 0.0256,
+    "total_r": 294.79,
+    "profit_factor": 1.0495
+  },
+  "confluence_and_regime": {
+    "n": 3344,
+    "win_rate": 0.2736,
+    "expectancy_r": 0.0587,
+    "total_r": 196.32,
+    "profit_factor": 1.115
+  },
+  "elapsed_sec": 447.6
+}

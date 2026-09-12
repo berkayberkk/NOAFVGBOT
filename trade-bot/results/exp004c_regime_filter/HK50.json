@@ -1,0 +1,53 @@
+{
+  "symbol": "HK50",
+  "status": "ok",
+  "baseline": {
+    "n": 7435,
+    "win_rate": 0.2642,
+    "expectancy_r": -0.0112,
+    "total_r": -83.05,
+    "profit_factor": 0.9796
+  },
+  "regime_filtered": {
+    "n": 2171,
+    "win_rate": 0.2658,
+    "expectancy_r": -0.0054,
+    "total_r": -11.75,
+    "profit_factor": 0.99
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 3624,
+      "win_rate": 0.2414,
+      "expectancy_r": -0.0854,
+      "total_r": -309.39,
+      "profit_factor": 0.8514
+    },
+    "sell": {
+      "n": 3811,
+      "win_rate": 0.2858,
+      "expectancy_r": 0.0594,
+      "total_r": 226.34,
+      "profit_factor": 1.1135
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1088,
+      "win_rate": 0.2445,
+      "expectancy_r": -0.0708,
+      "total_r": -77.06,
+      "profit_factor": 0.8754
+    },
+    "sell": {
+      "n": 1083,
+      "win_rate": 0.2872,
+      "expectancy_r": 0.0603,
+      "total_r": 65.32,
+      "profit_factor": 1.1172
+    }
+  },
+  "trade_retention_pct": 29.2,
+  "expectancy_delta_r": 0.0058,
+  "elapsed_sec": 89.0
+}

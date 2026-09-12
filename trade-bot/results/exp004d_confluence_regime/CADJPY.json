@@ -1,0 +1,33 @@
+{
+  "symbol": "CADJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 16447,
+    "win_rate": 0.2498,
+    "expectancy_r": -0.0119,
+    "total_r": -196.23,
+    "profit_factor": 0.9777
+  },
+  "regime_only": {
+    "n": 5287,
+    "win_rate": 0.2436,
+    "expectancy_r": -0.0325,
+    "total_r": -171.8,
+    "profit_factor": 0.9401
+  },
+  "confluence_only": {
+    "n": 10056,
+    "win_rate": 0.2555,
+    "expectancy_r": 0.0027,
+    "total_r": 27.04,
+    "profit_factor": 1.0052
+  },
+  "confluence_and_regime": {
+    "n": 3369,
+    "win_rate": 0.2514,
+    "expectancy_r": -0.01,
+    "total_r": -33.62,
+    "profit_factor": 0.9809
+  },
+  "elapsed_sec": 888.1
+}

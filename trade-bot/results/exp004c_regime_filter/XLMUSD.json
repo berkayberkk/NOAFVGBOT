@@ -1,0 +1,53 @@
+{
+  "symbol": "XLMUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 7039,
+    "win_rate": 0.2441,
+    "expectancy_r": -0.0438,
+    "total_r": -308.08,
+    "profit_factor": 0.9192
+  },
+  "regime_filtered": {
+    "n": 2130,
+    "win_rate": 0.2432,
+    "expectancy_r": -0.0469,
+    "total_r": -99.99,
+    "profit_factor": 0.9135
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 3241,
+      "win_rate": 0.2496,
+      "expectancy_r": -0.0503,
+      "total_r": -163.06,
+      "profit_factor": 0.91
+    },
+    "sell": {
+      "n": 3798,
+      "win_rate": 0.2393,
+      "expectancy_r": -0.0382,
+      "total_r": -145.02,
+      "profit_factor": 0.9275
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1068,
+      "win_rate": 0.2528,
+      "expectancy_r": -0.0573,
+      "total_r": -61.15,
+      "profit_factor": 0.8977
+    },
+    "sell": {
+      "n": 1062,
+      "win_rate": 0.2335,
+      "expectancy_r": -0.0366,
+      "total_r": -38.84,
+      "profit_factor": 0.9304
+    }
+  },
+  "trade_retention_pct": 30.3,
+  "expectancy_delta_r": -0.0031,
+  "elapsed_sec": 120.1
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 12321,
+    "win_rate": 0.2459,
+    "expectancy_r": -0.0209,
+    "total_r": -257.43,
+    "profit_factor": 0.9618
+  },
+  "confluence_all": {
+    "n": 6779,
+    "win_rate": 0.258,
+    "expectancy_r": 0.0061,
+    "total_r": 41.48,
+    "profit_factor": 1.0117
+  },
+  "confluence_with_trendline": {
+    "n": 1007,
+    "win_rate": 0.3069,
+    "expectancy_r": 0.0683,
+    "total_r": 68.81,
+    "profit_factor": 1.1195
+  },
+  "confluence_without_trendline": {
+    "n": 5772,
+    "win_rate": 0.2495,
+    "expectancy_r": -0.0047,
+    "total_r": -27.33,
+    "profit_factor": 0.9908
+  },
+  "elapsed_sec": 199.2
+}

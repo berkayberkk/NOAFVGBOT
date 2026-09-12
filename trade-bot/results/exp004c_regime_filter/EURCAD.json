@@ -1,0 +1,53 @@
+{
+  "symbol": "EURCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 17698,
+    "win_rate": 0.2392,
+    "expectancy_r": -0.0345,
+    "total_r": -610.61,
+    "profit_factor": 0.937
+  },
+  "regime_filtered": {
+    "n": 4783,
+    "win_rate": 0.2478,
+    "expectancy_r": -0.0101,
+    "total_r": -48.43,
+    "profit_factor": 0.9814
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 9074,
+      "win_rate": 0.2447,
+      "expectancy_r": -0.0159,
+      "total_r": -144.17,
+      "profit_factor": 0.9707
+    },
+    "sell": {
+      "n": 8624,
+      "win_rate": 0.2335,
+      "expectancy_r": -0.0541,
+      "total_r": -466.44,
+      "profit_factor": 0.9021
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2514,
+      "win_rate": 0.2562,
+      "expectancy_r": 0.0196,
+      "total_r": 49.25,
+      "profit_factor": 1.0363
+    },
+    "sell": {
+      "n": 2269,
+      "win_rate": 0.2384,
+      "expectancy_r": -0.043,
+      "total_r": -97.68,
+      "profit_factor": 0.922
+    }
+  },
+  "trade_retention_pct": 27.0,
+  "expectancy_delta_r": 0.0244,
+  "elapsed_sec": 692.1
+}

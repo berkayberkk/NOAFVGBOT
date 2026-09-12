@@ -1,0 +1,83 @@
+{
+  "symbol": "BRENT",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1079,
+        "win_rate": 0.2864,
+        "expectancy_r": 0.0029,
+        "total_r": 3.13,
+        "profit_factor": 1.007,
+        "avg_bars_held": 751.8
+      },
+      "sr_based_tp": {
+        "n": 1116,
+        "win_rate": 0.7742,
+        "expectancy_r": 0.0024,
+        "total_r": 2.7,
+        "profit_factor": 1.0629,
+        "avg_bars_held": 29.4
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2173,
+        "win_rate": 0.3203,
+        "expectancy_r": 0.033,
+        "total_r": 71.61,
+        "profit_factor": 1.0764,
+        "avg_bars_held": 359.3
+      },
+      "sr_based_tp": {
+        "n": 2197,
+        "win_rate": 0.7233,
+        "expectancy_r": -0.0185,
+        "total_r": -40.56,
+        "profit_factor": 0.7481,
+        "avg_bars_held": 18.6
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 3747,
+        "win_rate": 0.2162,
+        "expectancy_r": -0.006,
+        "total_r": -22.38,
+        "profit_factor": 0.9902,
+        "avg_bars_held": 1209.3
+      },
+      "sr_based_tp": {
+        "n": 4066,
+        "win_rate": 0.7391,
+        "expectancy_r": -0.0201,
+        "total_r": -81.72,
+        "profit_factor": 0.7672,
+        "avg_bars_held": 56.0
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 308,
+        "win_rate": 0.3182,
+        "expectancy_r": -0.0214,
+        "total_r": -6.59,
+        "profit_factor": 0.9678,
+        "avg_bars_held": 102.8
+      },
+      "sr_based_tp": {
+        "n": 308,
+        "win_rate": 0.9221,
+        "expectancy_r": 0.0607,
+        "total_r": 18.69,
+        "profit_factor": 1.7988,
+        "avg_bars_held": 6.3
+      }
+    }
+  },
+  "elapsed_sec": 186.9
+}

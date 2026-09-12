@@ -1,0 +1,53 @@
+{
+  "symbol": "SILVER",
+  "status": "ok",
+  "baseline": {
+    "n": 12756,
+    "win_rate": 0.244,
+    "expectancy_r": -0.0322,
+    "total_r": -410.59,
+    "profit_factor": 0.9407
+  },
+  "regime_filtered": {
+    "n": 3953,
+    "win_rate": 0.2429,
+    "expectancy_r": -0.013,
+    "total_r": -51.26,
+    "profit_factor": 0.9758
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6252,
+      "win_rate": 0.2631,
+      "expectancy_r": 0.0231,
+      "total_r": 144.45,
+      "profit_factor": 1.0435
+    },
+    "sell": {
+      "n": 6504,
+      "win_rate": 0.2257,
+      "expectancy_r": -0.0853,
+      "total_r": -555.04,
+      "profit_factor": 0.846
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2017,
+      "win_rate": 0.2608,
+      "expectancy_r": 0.0295,
+      "total_r": 59.54,
+      "profit_factor": 1.055
+    },
+    "sell": {
+      "n": 1936,
+      "win_rate": 0.2242,
+      "expectancy_r": -0.0572,
+      "total_r": -110.81,
+      "profit_factor": 0.8926
+    }
+  },
+  "trade_retention_pct": 31.0,
+  "expectancy_delta_r": 0.0192,
+  "elapsed_sec": 290.1
+}

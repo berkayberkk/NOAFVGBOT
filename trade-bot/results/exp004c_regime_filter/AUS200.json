@@ -1,0 +1,53 @@
+{
+  "symbol": "AUS200",
+  "status": "ok",
+  "baseline": {
+    "n": 5679,
+    "win_rate": 0.2474,
+    "expectancy_r": -0.0743,
+    "total_r": -421.86,
+    "profit_factor": 0.8593
+  },
+  "regime_filtered": {
+    "n": 1640,
+    "win_rate": 0.247,
+    "expectancy_r": -0.075,
+    "total_r": -123.04,
+    "profit_factor": 0.8576
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2609,
+      "win_rate": 0.3108,
+      "expectancy_r": 0.1411,
+      "total_r": 368.09,
+      "profit_factor": 1.319
+    },
+    "sell": {
+      "n": 3070,
+      "win_rate": 0.1935,
+      "expectancy_r": -0.2573,
+      "total_r": -789.95,
+      "profit_factor": 0.5719
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 856,
+      "win_rate": 0.2991,
+      "expectancy_r": 0.1154,
+      "total_r": 98.8,
+      "profit_factor": 1.2665
+    },
+    "sell": {
+      "n": 784,
+      "win_rate": 0.1901,
+      "expectancy_r": -0.283,
+      "total_r": -221.84,
+      "profit_factor": 0.5503
+    }
+  },
+  "trade_retention_pct": 28.9,
+  "expectancy_delta_r": -0.0007,
+  "elapsed_sec": 99.3
+}

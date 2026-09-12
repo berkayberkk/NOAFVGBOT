@@ -1,0 +1,33 @@
+{
+  "symbol": "AUDCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 14620,
+    "win_rate": 0.2528,
+    "expectancy_r": -0.0001,
+    "total_r": -0.76,
+    "profit_factor": 0.9999
+  },
+  "regime_only": {
+    "n": 4675,
+    "win_rate": 0.2372,
+    "expectancy_r": -0.0355,
+    "total_r": -165.99,
+    "profit_factor": 0.9331
+  },
+  "confluence_only": {
+    "n": 8215,
+    "win_rate": 0.2639,
+    "expectancy_r": 0.0308,
+    "total_r": 252.64,
+    "profit_factor": 1.0616
+  },
+  "confluence_and_regime": {
+    "n": 2729,
+    "win_rate": 0.2418,
+    "expectancy_r": -0.0319,
+    "total_r": -87.09,
+    "profit_factor": 0.9373
+  },
+  "elapsed_sec": 553.4
+}

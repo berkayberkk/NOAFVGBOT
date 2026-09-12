@@ -1,0 +1,33 @@
+{
+  "symbol": "SOLUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6761,
+    "win_rate": 0.2664,
+    "expectancy_r": 0.0084,
+    "total_r": 57.02,
+    "profit_factor": 1.0156
+  },
+  "confluence_all": {
+    "n": 4414,
+    "win_rate": 0.2714,
+    "expectancy_r": 0.0224,
+    "total_r": 99.07,
+    "profit_factor": 1.0428
+  },
+  "confluence_with_trendline": {
+    "n": 467,
+    "win_rate": 0.2912,
+    "expectancy_r": 0.0309,
+    "total_r": 14.44,
+    "profit_factor": 1.0553
+  },
+  "confluence_without_trendline": {
+    "n": 3947,
+    "win_rate": 0.2691,
+    "expectancy_r": 0.0214,
+    "total_r": 84.63,
+    "profit_factor": 1.0412
+  },
+  "elapsed_sec": 80.2
+}

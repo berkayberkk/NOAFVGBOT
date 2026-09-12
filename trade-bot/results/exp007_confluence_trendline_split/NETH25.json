@@ -1,0 +1,33 @@
+{
+  "symbol": "NETH25",
+  "status": "ok",
+  "baseline": {
+    "n": 5168,
+    "win_rate": 0.2591,
+    "expectancy_r": -0.0582,
+    "total_r": -300.8,
+    "profit_factor": 0.891
+  },
+  "confluence_all": {
+    "n": 3243,
+    "win_rate": 0.2581,
+    "expectancy_r": -0.0585,
+    "total_r": -189.68,
+    "profit_factor": 0.8893
+  },
+  "confluence_with_trendline": {
+    "n": 289,
+    "win_rate": 0.2872,
+    "expectancy_r": -0.0288,
+    "total_r": -8.32,
+    "profit_factor": 0.9521
+  },
+  "confluence_without_trendline": {
+    "n": 2954,
+    "win_rate": 0.2552,
+    "expectancy_r": -0.0614,
+    "total_r": -181.36,
+    "profit_factor": 0.8822
+  },
+  "elapsed_sec": 65.1
+}

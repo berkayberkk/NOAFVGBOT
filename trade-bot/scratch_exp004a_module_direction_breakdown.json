@@ -1,0 +1,202 @@
+{
+  "GOLD": {
+    "FVG_buy": {
+      "n": 228,
+      "win_rate": 0.5132,
+      "expectancy_r": 0.5057,
+      "total_r": 115.29
+    },
+    "FVG_sell": {
+      "n": 230,
+      "win_rate": 0.1174,
+      "expectancy_r": -0.4819,
+      "total_r": -110.84
+    },
+    "OB_buy": {
+      "n": 735,
+      "win_rate": 0.4871,
+      "expectancy_r": 1.0241,
+      "total_r": 752.71
+    },
+    "OB_sell": {
+      "n": 919,
+      "win_rate": 0.0718,
+      "expectancy_r": -0.6118,
+      "total_r": -562.21
+    },
+    "Trendline_buy": {
+      "n": 56,
+      "win_rate": 0.3393,
+      "expectancy_r": 0.0377,
+      "total_r": 2.11
+    },
+    "Trendline_sell": {
+      "n": 47,
+      "win_rate": 0.1702,
+      "expectancy_r": -0.4771,
+      "total_r": -22.42
+    },
+    "iFVG_buy": {
+      "n": 318,
+      "win_rate": 0.5189,
+      "expectancy_r": 0.5264,
+      "total_r": 167.38
+    },
+    "iFVG_sell": {
+      "n": 404,
+      "win_rate": 0.2104,
+      "expectancy_r": -0.2457,
+      "total_r": -99.27
+    }
+  },
+  "UK100": {
+    "FVG_buy": {
+      "n": 138,
+      "win_rate": 0.5507,
+      "expectancy_r": 0.5591,
+      "total_r": 77.16
+    },
+    "FVG_sell": {
+      "n": 181,
+      "win_rate": 0.1436,
+      "expectancy_r": -0.4748,
+      "total_r": -85.94
+    },
+    "OB_buy": {
+      "n": 522,
+      "win_rate": 0.3985,
+      "expectancy_r": 0.673,
+      "total_r": 351.32
+    },
+    "OB_sell": {
+      "n": 580,
+      "win_rate": 0.1379,
+      "expectancy_r": -0.3886,
+      "total_r": -225.4
+    },
+    "Trendline_buy": {
+      "n": 48,
+      "win_rate": 0.7083,
+      "expectancy_r": 1.1365,
+      "total_r": 54.55
+    },
+    "Trendline_sell": {
+      "n": 43,
+      "win_rate": 0.186,
+      "expectancy_r": -0.4111,
+      "total_r": -17.68
+    },
+    "iFVG_buy": {
+      "n": 303,
+      "win_rate": 0.4818,
+      "expectancy_r": 0.4344,
+      "total_r": 131.61
+    },
+    "iFVG_sell": {
+      "n": 310,
+      "win_rate": 0.2161,
+      "expectancy_r": -0.1823,
+      "total_r": -56.52
+    }
+  },
+  "USDTRY": {
+    "FVG_buy": {
+      "n": 201,
+      "win_rate": 0.597,
+      "expectancy_r": 0.615,
+      "total_r": 123.62
+    },
+    "FVG_sell": {
+      "n": 156,
+      "win_rate": 0.1795,
+      "expectancy_r": -0.3894,
+      "total_r": -60.74
+    },
+    "OB_buy": {
+      "n": 1029,
+      "win_rate": 0.6268,
+      "expectancy_r": 1.4984,
+      "total_r": 1541.81
+    },
+    "OB_sell": {
+      "n": 1291,
+      "win_rate": 0.1418,
+      "expectancy_r": -0.4318,
+      "total_r": -557.41
+    },
+    "Trendline_buy": {
+      "n": 17,
+      "win_rate": 0.4706,
+      "expectancy_r": 0.4984,
+      "total_r": 8.47
+    },
+    "Trendline_sell": {
+      "n": 41,
+      "win_rate": 0.6585,
+      "expectancy_r": 0.9756,
+      "total_r": 40.0
+    },
+    "iFVG_buy": {
+      "n": 274,
+      "win_rate": 0.5255,
+      "expectancy_r": 0.4335,
+      "total_r": 118.78
+    },
+    "iFVG_sell": {
+      "n": 222,
+      "win_rate": 0.2027,
+      "expectancy_r": -0.3307,
+      "total_r": -73.41
+    }
+  },
+  "EURTRY": {
+    "FVG_buy": {
+      "n": 277,
+      "win_rate": 0.4368,
+      "expectancy_r": 0.3814,
+      "total_r": 105.65
+    },
+    "FVG_sell": {
+      "n": 222,
+      "win_rate": 0.1126,
+      "expectancy_r": -0.4189,
+      "total_r": -93.0
+    },
+    "OB_buy": {
+      "n": 1095,
+      "win_rate": 0.5753,
+      "expectancy_r": 1.3505,
+      "total_r": 1478.75
+    },
+    "OB_sell": {
+      "n": 1121,
+      "win_rate": 0.0758,
+      "expectancy_r": -0.6144,
+      "total_r": -688.74
+    },
+    "Trendline_buy": {
+      "n": 71,
+      "win_rate": 0.5211,
+      "expectancy_r": 0.5992,
+      "total_r": 42.55
+    },
+    "Trendline_sell": {
+      "n": 68,
+      "win_rate": 0.2647,
+      "expectancy_r": -0.1997,
+      "total_r": -13.58
+    },
+    "iFVG_buy": {
+      "n": 397,
+      "win_rate": 0.4131,
+      "expectancy_r": 0.2886,
+      "total_r": 114.56
+    },
+    "iFVG_sell": {
+      "n": 370,
+      "win_rate": 0.2,
+      "expectancy_r": -0.2589,
+      "total_r": -95.79
+    }
+  }
+}

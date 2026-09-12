@@ -1,0 +1,53 @@
+{
+  "symbol": "FRA40",
+  "status": "ok",
+  "baseline": {
+    "n": 5437,
+    "win_rate": 0.2615,
+    "expectancy_r": -0.0413,
+    "total_r": -224.51,
+    "profit_factor": 0.9212
+  },
+  "regime_filtered": {
+    "n": 1701,
+    "win_rate": 0.2722,
+    "expectancy_r": -0.0103,
+    "total_r": -17.44,
+    "profit_factor": 0.9802
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2507,
+      "win_rate": 0.2884,
+      "expectancy_r": 0.0327,
+      "total_r": 81.99,
+      "profit_factor": 1.0641
+    },
+    "sell": {
+      "n": 2930,
+      "win_rate": 0.2386,
+      "expectancy_r": -0.1046,
+      "total_r": -306.5,
+      "profit_factor": 0.8048
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 853,
+      "win_rate": 0.3036,
+      "expectancy_r": 0.0697,
+      "total_r": 59.45,
+      "profit_factor": 1.1382
+    },
+    "sell": {
+      "n": 848,
+      "win_rate": 0.2406,
+      "expectancy_r": -0.0907,
+      "total_r": -76.89,
+      "profit_factor": 0.83
+    }
+  },
+  "trade_retention_pct": 31.3,
+  "expectancy_delta_r": 0.031,
+  "elapsed_sec": 81.5
+}

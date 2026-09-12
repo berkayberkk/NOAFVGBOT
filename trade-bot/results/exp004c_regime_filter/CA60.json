@@ -1,0 +1,53 @@
+{
+  "symbol": "CA60",
+  "status": "ok",
+  "baseline": {
+    "n": 2290,
+    "win_rate": 0.2786,
+    "expectancy_r": -0.0144,
+    "total_r": -32.88,
+    "profit_factor": 0.9732
+  },
+  "regime_filtered": {
+    "n": 707,
+    "win_rate": 0.3027,
+    "expectancy_r": 0.0441,
+    "total_r": 31.16,
+    "profit_factor": 1.0883
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 996,
+      "win_rate": 0.3936,
+      "expectancy_r": 0.3493,
+      "total_r": 347.89,
+      "profit_factor": 1.8137
+    },
+    "sell": {
+      "n": 1294,
+      "win_rate": 0.1901,
+      "expectancy_r": -0.2943,
+      "total_r": -380.77,
+      "profit_factor": 0.5229
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 375,
+      "win_rate": 0.3973,
+      "expectancy_r": 0.3613,
+      "total_r": 135.49,
+      "profit_factor": 1.8913
+    },
+    "sell": {
+      "n": 332,
+      "win_rate": 0.1958,
+      "expectancy_r": -0.3142,
+      "total_r": -104.33,
+      "profit_factor": 0.4806
+    }
+  },
+  "trade_retention_pct": 30.9,
+  "expectancy_delta_r": 0.0585,
+  "elapsed_sec": 30.9
+}

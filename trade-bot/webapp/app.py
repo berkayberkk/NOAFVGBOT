@@ -33,6 +33,8 @@ if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)  # strategy/config.py'yi dogrudan import edebilmek icin
 FEEDBACK_LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "feedback_log.jsonl")
 
+import visual_review  # strategy/backtest importlari icin PROJECT_ROOT'un sys.path'te olmasi GEREKIR (yukarida)
+
 # mql5/TradeBot_NOA_Recal.mq5 input MagicNumber varsayilani -- pozisyon/gecmis
 # kayitlarinin BOTUN KENDI actigi mi yoksa harici/manuel mi oldugunu ayirt
 # etmek icin (2026-09-04 gecesi yasanan karisikliktan sonra eklendi: USDTRY
@@ -273,6 +275,68 @@ def api_examples(module_key):
     with open(MODULE_EXAMPLES_PATH, "r", encoding="utf-8") as f:
         all_examples = json.load(f)
     return jsonify({"data": all_examples.get(module_key, [])})
+
+
+
+# --- FAZ A: Görsel İnceleme Paneli (webapp/visual_review.py -- strategy/
+# tespit motorunu VE backtest/engine.py'yi DOĞRUDAN çağırır, talep üzerine
+# canlı hesaplar; ayrı/paralel bir tespit-backtest mantığı YOK). Sadece
+# inceleme amaçlı -- "canlıya al"/"config'e yaz" eylemi YOK. ---
+@app.route("/visual-review")
+def visual_review_page():
+    return render_template("visual_review.html", module_names=visual_review.MODULE_NAMES,
+                           timeframes=list(visual_review.TIMEFRAMES.keys()))
+
+
+@app.route("/api/visual_review/options")
+def api_visual_review_options():
+    return jsonify({"data": {
+        "symbols": visual_review.discover_symbols(),
+        "timeframes": list(visual_review.TIMEFRAMES.keys()),
+        "modules": visual_review.MODULE_NAMES,
+        "official_timeframe": visual_review.OFFICIAL_TIMEFRAME,
+    }})
+
+
+@app.route("/api/visual_review/signals")
+def api_visual_review_signals():
+    symbol = request.args.get("symbol", "")
+    timeframe = request.args.get("timeframe", "M30")
+    module = request.args.get("module", "")
+    outcome = request.args.get("outcome") or None
+    try:
+        limit = int(request.args.get("limit", visual_review.DEFAULT_LIMIT))
+    except ValueError:
+        limit = visual_review.DEFAULT_LIMIT
+    try:
+        offset = int(request.args.get("offset", 0))
+    except ValueError:
+        offset = 0
+    if not symbol or not module:
+        return jsonify({"error": "symbol ve module zorunlu"}), 400
+    try:
+        data = visual_review.build_review(symbol, timeframe, module, outcome_filter=outcome, limit=limit, offset=offset)
+    except Exception as e:
+        return jsonify({"error": f"{type(e).__name__}: {e}"}), 500
+    if "error" in data:
+        return jsonify(data), 400
+    return jsonify({"data": data, "error": None})
+
+
+@app.route("/api/visual_review/notes", methods=["GET"])
+def api_visual_review_notes_list():
+    symbol = request.args.get("symbol") or None
+    module = request.args.get("module") or None
+    return jsonify({"data": visual_review.list_notes(symbol=symbol, module=module)})
+
+
+@app.route("/api/visual_review/notes", methods=["POST"])
+def api_visual_review_notes_post():
+    payload = request.get_json(force=True, silent=True) or {}
+    if not (payload.get("text") or "").strip():
+        return jsonify({"error": "boş not kaydedilmez"}), 400
+    entry = visual_review.append_note(payload)
+    return jsonify({"data": entry, "error": None})
 
 
 @app.route("/api/mt5/account")

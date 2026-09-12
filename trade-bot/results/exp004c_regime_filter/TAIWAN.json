@@ -1,0 +1,53 @@
+{
+  "symbol": "TAIWAN",
+  "status": "ok",
+  "baseline": {
+    "n": 3421,
+    "win_rate": 0.2797,
+    "expectancy_r": 0.0328,
+    "total_r": 112.09,
+    "profit_factor": 1.0603
+  },
+  "regime_filtered": {
+    "n": 944,
+    "win_rate": 0.2871,
+    "expectancy_r": 0.0862,
+    "total_r": 81.41,
+    "profit_factor": 1.1641
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 1554,
+      "win_rate": 0.37,
+      "expectancy_r": 0.3422,
+      "total_r": 531.83,
+      "profit_factor": 1.768
+    },
+    "sell": {
+      "n": 1867,
+      "win_rate": 0.2046,
+      "expectancy_r": -0.2248,
+      "total_r": -419.75,
+      "profit_factor": 0.6402
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 483,
+      "win_rate": 0.3685,
+      "expectancy_r": 0.3456,
+      "total_r": 166.9,
+      "profit_factor": 1.7659
+    },
+    "sell": {
+      "n": 461,
+      "win_rate": 0.2017,
+      "expectancy_r": -0.1855,
+      "total_r": -85.5,
+      "profit_factor": 0.6925
+    }
+  },
+  "trade_retention_pct": 27.6,
+  "expectancy_delta_r": 0.0534,
+  "elapsed_sec": 47.4
+}

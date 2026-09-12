@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPAUD",
+  "status": "ok",
+  "baseline": {
+    "n": 14653,
+    "win_rate": 0.255,
+    "expectancy_r": -0.0032,
+    "total_r": -47.59,
+    "profit_factor": 0.994
+  },
+  "regime_filtered": {
+    "n": 4627,
+    "win_rate": 0.2505,
+    "expectancy_r": -0.0174,
+    "total_r": -80.51,
+    "profit_factor": 0.9681
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7473,
+      "win_rate": 0.2789,
+      "expectancy_r": 0.0813,
+      "total_r": 607.4,
+      "profit_factor": 1.1586
+    },
+    "sell": {
+      "n": 7180,
+      "win_rate": 0.2302,
+      "expectancy_r": -0.0912,
+      "total_r": -654.99,
+      "profit_factor": 0.8384
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2363,
+      "win_rate": 0.2662,
+      "expectancy_r": 0.0335,
+      "total_r": 79.12,
+      "profit_factor": 1.0629
+    },
+    "sell": {
+      "n": 2264,
+      "win_rate": 0.2341,
+      "expectancy_r": -0.0705,
+      "total_r": -159.64,
+      "profit_factor": 0.874
+    }
+  },
+  "trade_retention_pct": 31.6,
+  "expectancy_delta_r": -0.0142,
+  "elapsed_sec": 718.0
+}

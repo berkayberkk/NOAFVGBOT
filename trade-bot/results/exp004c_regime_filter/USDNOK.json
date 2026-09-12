@@ -1,0 +1,53 @@
+{
+  "symbol": "USDNOK",
+  "status": "ok",
+  "baseline": {
+    "n": 19645,
+    "win_rate": 0.2494,
+    "expectancy_r": -0.0031,
+    "total_r": -60.72,
+    "profit_factor": 0.9944
+  },
+  "regime_filtered": {
+    "n": 5588,
+    "win_rate": 0.2547,
+    "expectancy_r": 0.01,
+    "total_r": 56.05,
+    "profit_factor": 1.0184
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 10057,
+      "win_rate": 0.307,
+      "expectancy_r": 0.2183,
+      "total_r": 2194.95,
+      "profit_factor": 1.4516
+    },
+    "sell": {
+      "n": 9588,
+      "win_rate": 0.189,
+      "expectancy_r": -0.2353,
+      "total_r": -2255.67,
+      "profit_factor": 0.6186
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2921,
+      "win_rate": 0.3078,
+      "expectancy_r": 0.2104,
+      "total_r": 614.7,
+      "profit_factor": 1.4344
+    },
+    "sell": {
+      "n": 2667,
+      "win_rate": 0.1965,
+      "expectancy_r": -0.2095,
+      "total_r": -558.64,
+      "profit_factor": 0.6582
+    }
+  },
+  "trade_retention_pct": 28.4,
+  "expectancy_delta_r": 0.0131,
+  "elapsed_sec": 653.9
+}

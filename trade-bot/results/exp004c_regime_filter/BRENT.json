@@ -1,0 +1,53 @@
+{
+  "symbol": "BRENT",
+  "status": "ok",
+  "baseline": {
+    "n": 7307,
+    "win_rate": 0.2618,
+    "expectancy_r": 0.0063,
+    "total_r": 45.78,
+    "profit_factor": 1.0118
+  },
+  "regime_filtered": {
+    "n": 2099,
+    "win_rate": 0.2773,
+    "expectancy_r": 0.0735,
+    "total_r": 154.32,
+    "profit_factor": 1.1476
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 3475,
+      "win_rate": 0.3085,
+      "expectancy_r": 0.1534,
+      "total_r": 532.97,
+      "profit_factor": 1.3196
+    },
+    "sell": {
+      "n": 3832,
+      "win_rate": 0.2195,
+      "expectancy_r": -0.1271,
+      "total_r": -487.19,
+      "profit_factor": 0.7796
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1032,
+      "win_rate": 0.3227,
+      "expectancy_r": 0.2039,
+      "total_r": 210.38,
+      "profit_factor": 1.4494
+    },
+    "sell": {
+      "n": 1067,
+      "win_rate": 0.2334,
+      "expectancy_r": -0.0525,
+      "total_r": -56.06,
+      "profit_factor": 0.903
+    }
+  },
+  "trade_retention_pct": 28.7,
+  "expectancy_delta_r": 0.0672,
+  "elapsed_sec": 126.5
+}

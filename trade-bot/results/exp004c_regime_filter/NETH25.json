@@ -1,0 +1,53 @@
+{
+  "symbol": "NETH25",
+  "status": "ok",
+  "baseline": {
+    "n": 5168,
+    "win_rate": 0.2591,
+    "expectancy_r": -0.0582,
+    "total_r": -300.8,
+    "profit_factor": 0.891
+  },
+  "regime_filtered": {
+    "n": 1615,
+    "win_rate": 0.2663,
+    "expectancy_r": -0.0518,
+    "total_r": -83.64,
+    "profit_factor": 0.9049
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2301,
+      "win_rate": 0.3433,
+      "expectancy_r": 0.1983,
+      "total_r": 456.27,
+      "profit_factor": 1.4426
+    },
+    "sell": {
+      "n": 2867,
+      "win_rate": 0.1915,
+      "expectancy_r": -0.2641,
+      "total_r": -757.07,
+      "profit_factor": 0.562
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 785,
+      "win_rate": 0.3567,
+      "expectancy_r": 0.2153,
+      "total_r": 169.04,
+      "profit_factor": 1.4636
+    },
+    "sell": {
+      "n": 830,
+      "win_rate": 0.1807,
+      "expectancy_r": -0.3044,
+      "total_r": -252.68,
+      "profit_factor": 0.5089
+    }
+  },
+  "trade_retention_pct": 31.2,
+  "expectancy_delta_r": 0.0064,
+  "elapsed_sec": 88.2
+}

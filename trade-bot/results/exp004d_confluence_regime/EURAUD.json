@@ -1,0 +1,33 @@
+{
+  "symbol": "EURAUD",
+  "status": "ok",
+  "baseline": {
+    "n": 14538,
+    "win_rate": 0.2522,
+    "expectancy_r": -0.0132,
+    "total_r": -191.69,
+    "profit_factor": 0.9753
+  },
+  "regime_only": {
+    "n": 4880,
+    "win_rate": 0.2426,
+    "expectancy_r": -0.0421,
+    "total_r": -205.48,
+    "profit_factor": 0.9229
+  },
+  "confluence_only": {
+    "n": 8087,
+    "win_rate": 0.2615,
+    "expectancy_r": 0.0023,
+    "total_r": 18.87,
+    "profit_factor": 1.0045
+  },
+  "confluence_and_regime": {
+    "n": 2921,
+    "win_rate": 0.2434,
+    "expectancy_r": -0.0626,
+    "total_r": -182.83,
+    "profit_factor": 0.8856
+  },
+  "elapsed_sec": 444.5
+}

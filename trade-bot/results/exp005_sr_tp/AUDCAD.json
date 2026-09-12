@@ -1,0 +1,83 @@
+{
+  "symbol": "AUDCAD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1931,
+        "win_rate": 0.2589,
+        "expectancy_r": -0.0399,
+        "total_r": -77.12,
+        "profit_factor": 0.9061,
+        "avg_bars_held": 918.5
+      },
+      "sr_based_tp": {
+        "n": 1950,
+        "win_rate": 0.7779,
+        "expectancy_r": -0.0052,
+        "total_r": -10.05,
+        "profit_factor": 0.8236,
+        "avg_bars_held": 17.9
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 3530,
+        "win_rate": 0.285,
+        "expectancy_r": -0.0046,
+        "total_r": -16.12,
+        "profit_factor": 0.9893,
+        "avg_bars_held": 495.5
+      },
+      "sr_based_tp": {
+        "n": 3543,
+        "win_rate": 0.7765,
+        "expectancy_r": 0.0028,
+        "total_r": 9.97,
+        "profit_factor": 1.0869,
+        "avg_bars_held": 10.1
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 6712,
+        "win_rate": 0.1937,
+        "expectancy_r": -0.0701,
+        "total_r": -470.56,
+        "profit_factor": 0.8842,
+        "avg_bars_held": 2806.6
+      },
+      "sr_based_tp": {
+        "n": 6886,
+        "win_rate": 0.7678,
+        "expectancy_r": -0.0229,
+        "total_r": -158.02,
+        "profit_factor": 0.6804,
+        "avg_bars_held": 23.5
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 850,
+        "win_rate": 0.3588,
+        "expectancy_r": 0.0907,
+        "total_r": 77.12,
+        "profit_factor": 1.1437,
+        "avg_bars_held": 155.1
+      },
+      "sr_based_tp": {
+        "n": 850,
+        "win_rate": 0.9553,
+        "expectancy_r": 0.0492,
+        "total_r": 41.82,
+        "profit_factor": 2.145,
+        "avg_bars_held": 5.4
+      }
+    }
+  },
+  "elapsed_sec": 265.1
+}

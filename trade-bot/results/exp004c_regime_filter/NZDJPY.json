@@ -1,0 +1,53 @@
+{
+  "symbol": "NZDJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 14618,
+    "win_rate": 0.2495,
+    "expectancy_r": -0.0271,
+    "total_r": -396.58,
+    "profit_factor": 0.9494
+  },
+  "regime_filtered": {
+    "n": 4924,
+    "win_rate": 0.2413,
+    "expectancy_r": -0.0365,
+    "total_r": -179.93,
+    "profit_factor": 0.9321
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6972,
+      "win_rate": 0.259,
+      "expectancy_r": -0.0049,
+      "total_r": -33.82,
+      "profit_factor": 0.9908
+    },
+    "sell": {
+      "n": 7646,
+      "win_rate": 0.2408,
+      "expectancy_r": -0.0474,
+      "total_r": -362.76,
+      "profit_factor": 0.913
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2413,
+      "win_rate": 0.2503,
+      "expectancy_r": 0.0016,
+      "total_r": 3.89,
+      "profit_factor": 1.0031
+    },
+    "sell": {
+      "n": 2511,
+      "win_rate": 0.2326,
+      "expectancy_r": -0.0732,
+      "total_r": -183.81,
+      "profit_factor": 0.8677
+    }
+  },
+  "trade_retention_pct": 33.7,
+  "expectancy_delta_r": -0.0094,
+  "elapsed_sec": 740.0
+}

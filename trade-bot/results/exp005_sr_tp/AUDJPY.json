@@ -1,0 +1,83 @@
+{
+  "symbol": "AUDJPY",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2243,
+        "win_rate": 0.3058,
+        "expectancy_r": 0.0337,
+        "total_r": 75.52,
+        "profit_factor": 1.0794,
+        "avg_bars_held": 836.5
+      },
+      "sr_based_tp": {
+        "n": 2263,
+        "win_rate": 0.7866,
+        "expectancy_r": -0.0096,
+        "total_r": -21.79,
+        "profit_factor": 0.7094,
+        "avg_bars_held": 19.9
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 4276,
+        "win_rate": 0.2991,
+        "expectancy_r": 0.0031,
+        "total_r": 13.07,
+        "profit_factor": 1.007,
+        "avg_bars_held": 460.6
+      },
+      "sr_based_tp": {
+        "n": 4297,
+        "win_rate": 0.7668,
+        "expectancy_r": -0.012,
+        "total_r": -51.52,
+        "profit_factor": 0.7558,
+        "avg_bars_held": 13.6
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 8023,
+        "win_rate": 0.2116,
+        "expectancy_r": -0.0275,
+        "total_r": -220.45,
+        "profit_factor": 0.9553,
+        "avg_bars_held": 2242.4
+      },
+      "sr_based_tp": {
+        "n": 8215,
+        "win_rate": 0.7535,
+        "expectancy_r": -0.0339,
+        "total_r": -278.68,
+        "profit_factor": 0.616,
+        "avg_bars_held": 28.4
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 733,
+        "win_rate": 0.3574,
+        "expectancy_r": 0.0883,
+        "total_r": 64.72,
+        "profit_factor": 1.1398,
+        "avg_bars_held": 154.6
+      },
+      "sr_based_tp": {
+        "n": 734,
+        "win_rate": 0.9523,
+        "expectancy_r": 0.056,
+        "total_r": 41.14,
+        "profit_factor": 2.1835,
+        "avg_bars_held": 4.5
+      }
+    }
+  },
+  "elapsed_sec": 332.4
+}

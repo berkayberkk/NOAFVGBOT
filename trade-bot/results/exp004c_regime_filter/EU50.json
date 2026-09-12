@@ -1,0 +1,53 @@
+{
+  "symbol": "EU50",
+  "status": "ok",
+  "baseline": {
+    "n": 3728,
+    "win_rate": 0.2607,
+    "expectancy_r": -0.0516,
+    "total_r": -192.49,
+    "profit_factor": 0.9003
+  },
+  "regime_filtered": {
+    "n": 1076,
+    "win_rate": 0.2835,
+    "expectancy_r": -0.0107,
+    "total_r": -11.54,
+    "profit_factor": 0.9787
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 1688,
+      "win_rate": 0.2903,
+      "expectancy_r": 0.0394,
+      "total_r": 66.56,
+      "profit_factor": 1.0779
+    },
+    "sell": {
+      "n": 2040,
+      "win_rate": 0.2363,
+      "expectancy_r": -0.127,
+      "total_r": -259.05,
+      "profit_factor": 0.7594
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 555,
+      "win_rate": 0.3027,
+      "expectancy_r": 0.0334,
+      "total_r": 18.52,
+      "profit_factor": 1.0665
+    },
+    "sell": {
+      "n": 521,
+      "win_rate": 0.263,
+      "expectancy_r": -0.0577,
+      "total_r": -30.06,
+      "profit_factor": 0.8855
+    }
+  },
+  "trade_retention_pct": 28.9,
+  "expectancy_delta_r": 0.0409,
+  "elapsed_sec": 69.7
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "USDCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 20330,
+    "win_rate": 0.2437,
+    "expectancy_r": -0.0222,
+    "total_r": -451.6,
+    "profit_factor": 0.9592
+  },
+  "regime_filtered": {
+    "n": 5633,
+    "win_rate": 0.2388,
+    "expectancy_r": -0.0379,
+    "total_r": -213.62,
+    "profit_factor": 0.9308
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 9953,
+      "win_rate": 0.2366,
+      "expectancy_r": -0.0607,
+      "total_r": -604.35,
+      "profit_factor": 0.8912
+    },
+    "sell": {
+      "n": 10377,
+      "win_rate": 0.2505,
+      "expectancy_r": 0.0147,
+      "total_r": 152.76,
+      "profit_factor": 1.0277
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2853,
+      "win_rate": 0.2334,
+      "expectancy_r": -0.0582,
+      "total_r": -166.14,
+      "profit_factor": 0.8947
+    },
+    "sell": {
+      "n": 2780,
+      "win_rate": 0.2442,
+      "expectancy_r": -0.0171,
+      "total_r": -47.49,
+      "profit_factor": 0.9685
+    }
+  },
+  "trade_retention_pct": 27.7,
+  "expectancy_delta_r": -0.0157,
+  "elapsed_sec": 736.9
+}

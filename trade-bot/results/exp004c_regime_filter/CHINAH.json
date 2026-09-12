@@ -1,0 +1,53 @@
+{
+  "symbol": "CHINAH",
+  "status": "ok",
+  "baseline": {
+    "n": 5324,
+    "win_rate": 0.2628,
+    "expectancy_r": 0.0069,
+    "total_r": 36.53,
+    "profit_factor": 1.0128
+  },
+  "regime_filtered": {
+    "n": 1556,
+    "win_rate": 0.2577,
+    "expectancy_r": 0.0191,
+    "total_r": 29.65,
+    "profit_factor": 1.0364
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2651,
+      "win_rate": 0.2267,
+      "expectancy_r": -0.1108,
+      "total_r": -293.61,
+      "profit_factor": 0.8109
+    },
+    "sell": {
+      "n": 2673,
+      "win_rate": 0.2985,
+      "expectancy_r": 0.1235,
+      "total_r": 330.14,
+      "profit_factor": 1.2523
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 784,
+      "win_rate": 0.2219,
+      "expectancy_r": -0.1356,
+      "total_r": -106.31,
+      "profit_factor": 0.7684
+    },
+    "sell": {
+      "n": 772,
+      "win_rate": 0.294,
+      "expectancy_r": 0.1761,
+      "total_r": 135.96,
+      "profit_factor": 1.3826
+    }
+  },
+  "trade_retention_pct": 29.2,
+  "expectancy_delta_r": 0.0122,
+  "elapsed_sec": 58.3
+}

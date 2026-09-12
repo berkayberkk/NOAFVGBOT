@@ -1,0 +1,53 @@
+{
+  "symbol": "JP225",
+  "status": "ok",
+  "baseline": {
+    "n": 6964,
+    "win_rate": 0.2576,
+    "expectancy_r": -0.0237,
+    "total_r": -165.3,
+    "profit_factor": 0.9549
+  },
+  "regime_filtered": {
+    "n": 1932,
+    "win_rate": 0.2769,
+    "expectancy_r": 0.0289,
+    "total_r": 55.78,
+    "profit_factor": 1.0552
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 3160,
+      "win_rate": 0.2902,
+      "expectancy_r": 0.0788,
+      "total_r": 248.99,
+      "profit_factor": 1.1547
+    },
+    "sell": {
+      "n": 3804,
+      "win_rate": 0.2305,
+      "expectancy_r": -0.1089,
+      "total_r": -414.28,
+      "profit_factor": 0.7984
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 918,
+      "win_rate": 0.3137,
+      "expectancy_r": 0.1383,
+      "total_r": 126.94,
+      "profit_factor": 1.2715
+    },
+    "sell": {
+      "n": 1014,
+      "win_rate": 0.2436,
+      "expectancy_r": -0.0702,
+      "total_r": -71.16,
+      "profit_factor": 0.8691
+    }
+  },
+  "trade_retention_pct": 27.7,
+  "expectancy_delta_r": 0.0526,
+  "elapsed_sec": 135.5
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPNOK",
+  "status": "ok",
+  "baseline": {
+    "n": 13220,
+    "win_rate": 0.2374,
+    "expectancy_r": -0.0458,
+    "total_r": -606.01,
+    "profit_factor": 0.919
+  },
+  "confluence_all": {
+    "n": 6807,
+    "win_rate": 0.2581,
+    "expectancy_r": 0.0123,
+    "total_r": 83.9,
+    "profit_factor": 1.0233
+  },
+  "confluence_with_trendline": {
+    "n": 922,
+    "win_rate": 0.3037,
+    "expectancy_r": 0.0861,
+    "total_r": 79.36,
+    "profit_factor": 1.1529
+  },
+  "confluence_without_trendline": {
+    "n": 5885,
+    "win_rate": 0.251,
+    "expectancy_r": 0.0008,
+    "total_r": 4.54,
+    "profit_factor": 1.0015
+  },
+  "elapsed_sec": 172.6
+}

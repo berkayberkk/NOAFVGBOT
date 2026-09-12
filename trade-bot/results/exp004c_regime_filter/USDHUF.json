@@ -1,0 +1,53 @@
+{
+  "symbol": "USDHUF",
+  "status": "ok",
+  "baseline": {
+    "n": 15301,
+    "win_rate": 0.247,
+    "expectancy_r": -0.014,
+    "total_r": -214.07,
+    "profit_factor": 0.9744
+  },
+  "regime_filtered": {
+    "n": 4115,
+    "win_rate": 0.2457,
+    "expectancy_r": -0.0179,
+    "total_r": -73.79,
+    "profit_factor": 0.9669
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7794,
+      "win_rate": 0.2954,
+      "expectancy_r": 0.1601,
+      "total_r": 1247.59,
+      "profit_factor": 1.3197
+    },
+    "sell": {
+      "n": 7507,
+      "win_rate": 0.1969,
+      "expectancy_r": -0.1947,
+      "total_r": -1461.66,
+      "profit_factor": 0.6732
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1996,
+      "win_rate": 0.2936,
+      "expectancy_r": 0.1351,
+      "total_r": 269.63,
+      "profit_factor": 1.2672
+    },
+    "sell": {
+      "n": 2119,
+      "win_rate": 0.2006,
+      "expectancy_r": -0.1621,
+      "total_r": -343.42,
+      "profit_factor": 0.7178
+    }
+  },
+  "trade_retention_pct": 26.9,
+  "expectancy_delta_r": -0.0039,
+  "elapsed_sec": 233.1
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "IT40",
+  "status": "ok",
+  "baseline": {
+    "n": 3373,
+    "win_rate": 0.2834,
+    "expectancy_r": -0.0323,
+    "total_r": -109.04,
+    "profit_factor": 0.9393
+  },
+  "regime_filtered": {
+    "n": 1041,
+    "win_rate": 0.2949,
+    "expectancy_r": 0.0052,
+    "total_r": 5.4,
+    "profit_factor": 1.0099
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 1466,
+      "win_rate": 0.3724,
+      "expectancy_r": 0.2335,
+      "total_r": 342.37,
+      "profit_factor": 1.5117
+    },
+    "sell": {
+      "n": 1907,
+      "win_rate": 0.215,
+      "expectancy_r": -0.2367,
+      "total_r": -451.4,
+      "profit_factor": 0.5997
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 514,
+      "win_rate": 0.3735,
+      "expectancy_r": 0.2117,
+      "total_r": 108.81,
+      "profit_factor": 1.444
+    },
+    "sell": {
+      "n": 527,
+      "win_rate": 0.2182,
+      "expectancy_r": -0.1962,
+      "total_r": -103.42,
+      "profit_factor": 0.6557
+    }
+  },
+  "trade_retention_pct": 30.9,
+  "expectancy_delta_r": 0.0375,
+  "elapsed_sec": 52.6
+}

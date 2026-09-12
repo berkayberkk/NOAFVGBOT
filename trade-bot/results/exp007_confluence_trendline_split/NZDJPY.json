@@ -1,0 +1,33 @@
+{
+  "symbol": "NZDJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 14618,
+    "win_rate": 0.2495,
+    "expectancy_r": -0.0271,
+    "total_r": -396.58,
+    "profit_factor": 0.9494
+  },
+  "confluence_all": {
+    "n": 8351,
+    "win_rate": 0.2536,
+    "expectancy_r": -0.0132,
+    "total_r": -110.56,
+    "profit_factor": 0.9745
+  },
+  "confluence_with_trendline": {
+    "n": 1099,
+    "win_rate": 0.3057,
+    "expectancy_r": 0.0596,
+    "total_r": 65.5,
+    "profit_factor": 1.1056
+  },
+  "confluence_without_trendline": {
+    "n": 7252,
+    "win_rate": 0.2457,
+    "expectancy_r": -0.0243,
+    "total_r": -176.06,
+    "profit_factor": 0.9526
+  },
+  "elapsed_sec": 198.6
+}

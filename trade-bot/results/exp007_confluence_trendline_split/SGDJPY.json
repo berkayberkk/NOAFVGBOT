@@ -1,0 +1,33 @@
+{
+  "symbol": "SGDJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 14380,
+    "win_rate": 0.2577,
+    "expectancy_r": 0.0,
+    "total_r": 0.34,
+    "profit_factor": 1.0
+  },
+  "confluence_all": {
+    "n": 8294,
+    "win_rate": 0.2598,
+    "expectancy_r": 0.0031,
+    "total_r": 25.49,
+    "profit_factor": 1.0059
+  },
+  "confluence_with_trendline": {
+    "n": 1089,
+    "win_rate": 0.2764,
+    "expectancy_r": -0.0136,
+    "total_r": -14.79,
+    "profit_factor": 0.9776
+  },
+  "confluence_without_trendline": {
+    "n": 7205,
+    "win_rate": 0.2573,
+    "expectancy_r": 0.0056,
+    "total_r": 40.27,
+    "profit_factor": 1.011
+  },
+  "elapsed_sec": 192.9
+}

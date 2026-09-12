@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 18592,
+    "win_rate": 0.2384,
+    "expectancy_r": -0.0247,
+    "total_r": -458.79,
+    "profit_factor": 0.9551
+  },
+  "regime_filtered": {
+    "n": 4941,
+    "win_rate": 0.2289,
+    "expectancy_r": -0.0609,
+    "total_r": -300.92,
+    "profit_factor": 0.8913
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 9381,
+      "win_rate": 0.2473,
+      "expectancy_r": 0.0015,
+      "total_r": 14.46,
+      "profit_factor": 1.0029
+    },
+    "sell": {
+      "n": 9211,
+      "win_rate": 0.2294,
+      "expectancy_r": -0.0514,
+      "total_r": -473.25,
+      "profit_factor": 0.9081
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2588,
+      "win_rate": 0.2477,
+      "expectancy_r": 0.0061,
+      "total_r": 15.87,
+      "profit_factor": 1.0115
+    },
+    "sell": {
+      "n": 2353,
+      "win_rate": 0.2082,
+      "expectancy_r": -0.1346,
+      "total_r": -316.79,
+      "profit_factor": 0.7713
+    }
+  },
+  "trade_retention_pct": 26.6,
+  "expectancy_delta_r": -0.0362,
+  "elapsed_sec": 684.5
+}

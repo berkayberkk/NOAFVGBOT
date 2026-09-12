@@ -1,0 +1,33 @@
+{
+  "symbol": "US500",
+  "status": "ok",
+  "baseline": {
+    "n": 9004,
+    "win_rate": 0.2583,
+    "expectancy_r": -0.0199,
+    "total_r": -179.15,
+    "profit_factor": 0.9638
+  },
+  "regime_only": {
+    "n": 2544,
+    "win_rate": 0.2563,
+    "expectancy_r": -0.0215,
+    "total_r": -54.72,
+    "profit_factor": 0.961
+  },
+  "confluence_only": {
+    "n": 6132,
+    "win_rate": 0.258,
+    "expectancy_r": -0.0319,
+    "total_r": -195.72,
+    "profit_factor": 0.9409
+  },
+  "confluence_and_regime": {
+    "n": 1727,
+    "win_rate": 0.2548,
+    "expectancy_r": -0.048,
+    "total_r": -82.85,
+    "profit_factor": 0.9117
+  },
+  "elapsed_sec": 212.8
+}

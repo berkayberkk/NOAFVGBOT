@@ -1,0 +1,33 @@
+{
+  "symbol": "EURJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 17146,
+    "win_rate": 0.256,
+    "expectancy_r": 0.0074,
+    "total_r": 127.52,
+    "profit_factor": 1.0138
+  },
+  "regime_only": {
+    "n": 5517,
+    "win_rate": 0.2543,
+    "expectancy_r": 0.0092,
+    "total_r": 50.86,
+    "profit_factor": 1.0172
+  },
+  "confluence_only": {
+    "n": 10330,
+    "win_rate": 0.2668,
+    "expectancy_r": 0.0407,
+    "total_r": 420.66,
+    "profit_factor": 1.0798
+  },
+  "confluence_and_regime": {
+    "n": 3452,
+    "win_rate": 0.2729,
+    "expectancy_r": 0.0653,
+    "total_r": 225.37,
+    "profit_factor": 1.1316
+  },
+  "elapsed_sec": 452.7
+}

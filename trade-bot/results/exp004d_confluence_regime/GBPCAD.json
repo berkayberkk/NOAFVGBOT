@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 18592,
+    "win_rate": 0.2384,
+    "expectancy_r": -0.0247,
+    "total_r": -458.79,
+    "profit_factor": 0.9551
+  },
+  "regime_only": {
+    "n": 4941,
+    "win_rate": 0.2289,
+    "expectancy_r": -0.0609,
+    "total_r": -300.92,
+    "profit_factor": 0.8913
+  },
+  "confluence_only": {
+    "n": 11131,
+    "win_rate": 0.2434,
+    "expectancy_r": -0.0154,
+    "total_r": -171.27,
+    "profit_factor": 0.9709
+  },
+  "confluence_and_regime": {
+    "n": 3011,
+    "win_rate": 0.2308,
+    "expectancy_r": -0.065,
+    "total_r": -195.64,
+    "profit_factor": 0.8803
+  },
+  "elapsed_sec": 828.9
+}

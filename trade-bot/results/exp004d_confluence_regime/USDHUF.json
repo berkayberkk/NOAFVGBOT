@@ -1,0 +1,33 @@
+{
+  "symbol": "USDHUF",
+  "status": "ok",
+  "baseline": {
+    "n": 15301,
+    "win_rate": 0.247,
+    "expectancy_r": -0.014,
+    "total_r": -214.07,
+    "profit_factor": 0.9744
+  },
+  "regime_only": {
+    "n": 4115,
+    "win_rate": 0.2457,
+    "expectancy_r": -0.0179,
+    "total_r": -73.79,
+    "profit_factor": 0.9669
+  },
+  "confluence_only": {
+    "n": 9835,
+    "win_rate": 0.2556,
+    "expectancy_r": 0.013,
+    "total_r": 127.77,
+    "profit_factor": 1.025
+  },
+  "confluence_and_regime": {
+    "n": 2691,
+    "win_rate": 0.252,
+    "expectancy_r": -0.0022,
+    "total_r": -5.87,
+    "profit_factor": 0.9958
+  },
+  "elapsed_sec": 397.4
+}

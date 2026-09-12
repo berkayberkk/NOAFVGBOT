@@ -1,0 +1,53 @@
+{
+  "symbol": "GERMID50",
+  "status": "ok",
+  "baseline": {
+    "n": 1632,
+    "win_rate": 0.2843,
+    "expectancy_r": -0.066,
+    "total_r": -107.69,
+    "profit_factor": 0.8726
+  },
+  "regime_filtered": {
+    "n": 599,
+    "win_rate": 0.2922,
+    "expectancy_r": -0.062,
+    "total_r": -37.16,
+    "profit_factor": 0.8836
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 879,
+      "win_rate": 0.2787,
+      "expectancy_r": -0.1312,
+      "total_r": -115.34,
+      "profit_factor": 0.7549
+    },
+    "sell": {
+      "n": 753,
+      "win_rate": 0.2908,
+      "expectancy_r": 0.0102,
+      "total_r": 7.64,
+      "profit_factor": 1.0204
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 349,
+      "win_rate": 0.2808,
+      "expectancy_r": -0.1089,
+      "total_r": -38.02,
+      "profit_factor": 0.7958
+    },
+    "sell": {
+      "n": 250,
+      "win_rate": 0.308,
+      "expectancy_r": 0.0034,
+      "total_r": 0.86,
+      "profit_factor": 1.0065
+    }
+  },
+  "trade_retention_pct": 36.7,
+  "expectancy_delta_r": 0.004,
+  "elapsed_sec": 22.4
+}

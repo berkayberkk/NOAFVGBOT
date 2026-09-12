@@ -1,0 +1,33 @@
+{
+  "symbol": "DOTUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 5989,
+    "win_rate": 0.259,
+    "expectancy_r": 0.0013,
+    "total_r": 7.76,
+    "profit_factor": 1.0024
+  },
+  "confluence_all": {
+    "n": 3154,
+    "win_rate": 0.273,
+    "expectancy_r": 0.0302,
+    "total_r": 95.11,
+    "profit_factor": 1.0574
+  },
+  "confluence_with_trendline": {
+    "n": 419,
+    "win_rate": 0.2912,
+    "expectancy_r": 0.0052,
+    "total_r": 2.17,
+    "profit_factor": 1.0088
+  },
+  "confluence_without_trendline": {
+    "n": 2735,
+    "win_rate": 0.2702,
+    "expectancy_r": 0.034,
+    "total_r": 92.94,
+    "profit_factor": 1.0659
+  },
+  "elapsed_sec": 90.5
+}

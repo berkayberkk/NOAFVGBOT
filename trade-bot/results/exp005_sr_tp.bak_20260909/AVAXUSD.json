@@ -1,0 +1,83 @@
+{
+  "symbol": "AVAXUSD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1058,
+        "win_rate": 0.345,
+        "expectancy_r": 0.0776,
+        "total_r": 82.12,
+        "profit_factor": 1.1814,
+        "avg_bars_held": 672.4
+      },
+      "sr_based_tp": {
+        "n": 1073,
+        "win_rate": 0.7353,
+        "expectancy_r": -0.0155,
+        "total_r": -16.62,
+        "profit_factor": 0.7298,
+        "avg_bars_held": 42.6
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1689,
+        "win_rate": 0.3215,
+        "expectancy_r": 0.0307,
+        "total_r": 51.9,
+        "profit_factor": 1.0697,
+        "avg_bars_held": 355.5
+      },
+      "sr_based_tp": {
+        "n": 1696,
+        "win_rate": 0.7105,
+        "expectancy_r": -0.0312,
+        "total_r": -52.92,
+        "profit_factor": 0.6118,
+        "avg_bars_held": 27.5
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2663,
+        "win_rate": 0.1923,
+        "expectancy_r": -0.1108,
+        "total_r": -295.02,
+        "profit_factor": 0.8244,
+        "avg_bars_held": 1427.3
+      },
+      "sr_based_tp": {
+        "n": 2797,
+        "win_rate": 0.7472,
+        "expectancy_r": -0.0325,
+        "total_r": -90.92,
+        "profit_factor": 0.6603,
+        "avg_bars_held": 71.7
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 324,
+        "win_rate": 0.392,
+        "expectancy_r": 0.197,
+        "total_r": 63.83,
+        "profit_factor": 1.3304,
+        "avg_bars_held": 133.8
+      },
+      "sr_based_tp": {
+        "n": 324,
+        "win_rate": 0.8611,
+        "expectancy_r": -0.0073,
+        "total_r": -2.35,
+        "profit_factor": 0.9464,
+        "avg_bars_held": 9.2
+      }
+    }
+  },
+  "elapsed_sec": 107.2
+}

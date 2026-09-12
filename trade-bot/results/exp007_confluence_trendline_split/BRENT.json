@@ -1,0 +1,33 @@
+{
+  "symbol": "BRENT",
+  "status": "ok",
+  "baseline": {
+    "n": 7307,
+    "win_rate": 0.2618,
+    "expectancy_r": 0.0063,
+    "total_r": 45.78,
+    "profit_factor": 1.0118
+  },
+  "confluence_all": {
+    "n": 4684,
+    "win_rate": 0.2615,
+    "expectancy_r": 0.0052,
+    "total_r": 24.2,
+    "profit_factor": 1.01
+  },
+  "confluence_with_trendline": {
+    "n": 570,
+    "win_rate": 0.2596,
+    "expectancy_r": -0.0927,
+    "total_r": -52.82,
+    "profit_factor": 0.849
+  },
+  "confluence_without_trendline": {
+    "n": 4114,
+    "win_rate": 0.2618,
+    "expectancy_r": 0.0187,
+    "total_r": 77.02,
+    "profit_factor": 1.0374
+  },
+  "elapsed_sec": 88.3
+}

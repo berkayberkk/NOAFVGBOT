@@ -1,0 +1,53 @@
+{
+  "symbol": "CADJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 16447,
+    "win_rate": 0.2498,
+    "expectancy_r": -0.0119,
+    "total_r": -196.23,
+    "profit_factor": 0.9777
+  },
+  "regime_filtered": {
+    "n": 5287,
+    "win_rate": 0.2436,
+    "expectancy_r": -0.0325,
+    "total_r": -171.8,
+    "profit_factor": 0.9401
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7698,
+      "win_rate": 0.2585,
+      "expectancy_r": 0.0098,
+      "total_r": 75.31,
+      "profit_factor": 1.0185
+    },
+    "sell": {
+      "n": 8749,
+      "win_rate": 0.2421,
+      "expectancy_r": -0.031,
+      "total_r": -271.54,
+      "profit_factor": 0.9426
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2571,
+      "win_rate": 0.2482,
+      "expectancy_r": -0.0148,
+      "total_r": -38.06,
+      "profit_factor": 0.9726
+    },
+    "sell": {
+      "n": 2716,
+      "win_rate": 0.2393,
+      "expectancy_r": -0.0492,
+      "total_r": -133.73,
+      "profit_factor": 0.9098
+    }
+  },
+  "trade_retention_pct": 32.1,
+  "expectancy_delta_r": -0.0206,
+  "elapsed_sec": 691.6
+}

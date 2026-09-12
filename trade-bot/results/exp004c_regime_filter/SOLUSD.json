@@ -1,0 +1,53 @@
+{
+  "symbol": "SOLUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6761,
+    "win_rate": 0.2664,
+    "expectancy_r": 0.0084,
+    "total_r": 57.02,
+    "profit_factor": 1.0156
+  },
+  "regime_filtered": {
+    "n": 2283,
+    "win_rate": 0.2676,
+    "expectancy_r": 0.0243,
+    "total_r": 55.48,
+    "profit_factor": 1.0459
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 3254,
+      "win_rate": 0.3036,
+      "expectancy_r": 0.1324,
+      "total_r": 430.74,
+      "profit_factor": 1.2587
+    },
+    "sell": {
+      "n": 3507,
+      "win_rate": 0.2318,
+      "expectancy_r": -0.1066,
+      "total_r": -373.72,
+      "profit_factor": 0.8118
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1109,
+      "win_rate": 0.3003,
+      "expectancy_r": 0.1357,
+      "total_r": 150.47,
+      "profit_factor": 1.2679
+    },
+    "sell": {
+      "n": 1174,
+      "win_rate": 0.2368,
+      "expectancy_r": -0.0809,
+      "total_r": -94.99,
+      "profit_factor": 0.8531
+    }
+  },
+  "trade_retention_pct": 33.8,
+  "expectancy_delta_r": 0.0159,
+  "elapsed_sec": 105.8
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "USDCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 18492,
+    "win_rate": 0.2411,
+    "expectancy_r": -0.0244,
+    "total_r": -451.05,
+    "profit_factor": 0.9547
+  },
+  "regime_filtered": {
+    "n": 5089,
+    "win_rate": 0.2437,
+    "expectancy_r": -0.0183,
+    "total_r": -93.25,
+    "profit_factor": 0.9656
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 9451,
+      "win_rate": 0.2751,
+      "expectancy_r": 0.0904,
+      "total_r": 853.91,
+      "profit_factor": 1.1757
+    },
+    "sell": {
+      "n": 9041,
+      "win_rate": 0.2055,
+      "expectancy_r": -0.1443,
+      "total_r": -1304.96,
+      "profit_factor": 0.7437
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2648,
+      "win_rate": 0.2662,
+      "expectancy_r": 0.065,
+      "total_r": 172.24,
+      "profit_factor": 1.1261
+    },
+    "sell": {
+      "n": 2441,
+      "win_rate": 0.2192,
+      "expectancy_r": -0.1088,
+      "total_r": -265.5,
+      "profit_factor": 0.8023
+    }
+  },
+  "trade_retention_pct": 27.5,
+  "expectancy_delta_r": 0.0061,
+  "elapsed_sec": 799.1
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "DOGEUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6710,
+    "win_rate": 0.2465,
+    "expectancy_r": -0.0216,
+    "total_r": -144.84,
+    "profit_factor": 0.9622
+  },
+  "regime_only": {
+    "n": 2225,
+    "win_rate": 0.244,
+    "expectancy_r": -0.0167,
+    "total_r": -37.08,
+    "profit_factor": 0.9711
+  },
+  "confluence_only": {
+    "n": 3459,
+    "win_rate": 0.2561,
+    "expectancy_r": -0.0043,
+    "total_r": -14.7,
+    "profit_factor": 0.9922
+  },
+  "confluence_and_regime": {
+    "n": 1190,
+    "win_rate": 0.2622,
+    "expectancy_r": 0.0003,
+    "total_r": 0.35,
+    "profit_factor": 1.0005
+  },
+  "elapsed_sec": 185.2
+}

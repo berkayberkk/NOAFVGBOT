@@ -1,0 +1,33 @@
+{
+  "symbol": "AUDCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 13023,
+    "win_rate": 0.2389,
+    "expectancy_r": -0.0374,
+    "total_r": -486.68,
+    "profit_factor": 0.9298
+  },
+  "regime_only": {
+    "n": 4104,
+    "win_rate": 0.2432,
+    "expectancy_r": -0.0248,
+    "total_r": -101.97,
+    "profit_factor": 0.9538
+  },
+  "confluence_only": {
+    "n": 7070,
+    "win_rate": 0.241,
+    "expectancy_r": -0.0276,
+    "total_r": -195.47,
+    "profit_factor": 0.9459
+  },
+  "confluence_and_regime": {
+    "n": 2270,
+    "win_rate": 0.2445,
+    "expectancy_r": -0.0279,
+    "total_r": -63.3,
+    "profit_factor": 0.9468
+  },
+  "elapsed_sec": 560.4
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "USFANG",
+  "status": "ok",
+  "baseline": {
+    "n": 216,
+    "win_rate": 0.2963,
+    "expectancy_r": -0.0125,
+    "total_r": -2.7,
+    "profit_factor": 0.9769
+  },
+  "regime_filtered": {
+    "n": 71,
+    "win_rate": 0.2676,
+    "expectancy_r": -0.094,
+    "total_r": -6.67,
+    "profit_factor": 0.836
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 84,
+      "win_rate": 0.3333,
+      "expectancy_r": 0.0841,
+      "total_r": 7.06,
+      "profit_factor": 1.1634
+    },
+    "sell": {
+      "n": 132,
+      "win_rate": 0.2727,
+      "expectancy_r": -0.074,
+      "total_r": -9.76,
+      "profit_factor": 0.8674
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 33,
+      "win_rate": 0.2424,
+      "expectancy_r": -0.137,
+      "total_r": -4.52,
+      "profit_factor": 0.7508
+    },
+    "sell": {
+      "n": 38,
+      "win_rate": 0.2895,
+      "expectancy_r": -0.0566,
+      "total_r": -2.15,
+      "profit_factor": 0.9046
+    }
+  },
+  "trade_retention_pct": 32.9,
+  "expectancy_delta_r": -0.0815,
+  "elapsed_sec": 3.5
+}

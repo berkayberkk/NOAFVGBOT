@@ -1,0 +1,33 @@
+{
+  "symbol": "PLATINUM",
+  "status": "ok",
+  "baseline": {
+    "n": 6223,
+    "win_rate": 0.225,
+    "expectancy_r": -0.0774,
+    "total_r": -481.73,
+    "profit_factor": 0.8558
+  },
+  "confluence_all": {
+    "n": 4082,
+    "win_rate": 0.2303,
+    "expectancy_r": -0.0737,
+    "total_r": -301.0,
+    "profit_factor": 0.8601
+  },
+  "confluence_with_trendline": {
+    "n": 373,
+    "win_rate": 0.2869,
+    "expectancy_r": 0.0228,
+    "total_r": 8.52,
+    "profit_factor": 1.0407
+  },
+  "confluence_without_trendline": {
+    "n": 3709,
+    "win_rate": 0.2246,
+    "expectancy_r": -0.0835,
+    "total_r": -309.52,
+    "profit_factor": 0.8406
+  },
+  "elapsed_sec": 63.3
+}

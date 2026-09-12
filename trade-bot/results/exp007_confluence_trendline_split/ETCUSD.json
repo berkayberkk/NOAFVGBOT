@@ -1,0 +1,33 @@
+{
+  "symbol": "ETCUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 9391,
+    "win_rate": 0.2633,
+    "expectancy_r": 0.0233,
+    "total_r": 218.96,
+    "profit_factor": 1.0418
+  },
+  "confluence_all": {
+    "n": 4755,
+    "win_rate": 0.2778,
+    "expectancy_r": 0.0424,
+    "total_r": 201.47,
+    "profit_factor": 1.0799
+  },
+  "confluence_with_trendline": {
+    "n": 1045,
+    "win_rate": 0.3053,
+    "expectancy_r": 0.0805,
+    "total_r": 84.14,
+    "profit_factor": 1.1403
+  },
+  "confluence_without_trendline": {
+    "n": 3710,
+    "win_rate": 0.2701,
+    "expectancy_r": 0.0316,
+    "total_r": 117.33,
+    "profit_factor": 1.061
+  },
+  "elapsed_sec": 157.4
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "EURZAR",
+  "status": "ok",
+  "baseline": {
+    "n": 14250,
+    "win_rate": 0.2474,
+    "expectancy_r": -0.0247,
+    "total_r": -352.16,
+    "profit_factor": 0.9554
+  },
+  "confluence_all": {
+    "n": 8428,
+    "win_rate": 0.2564,
+    "expectancy_r": 0.0048,
+    "total_r": 40.6,
+    "profit_factor": 1.0091
+  },
+  "confluence_with_trendline": {
+    "n": 820,
+    "win_rate": 0.3024,
+    "expectancy_r": 0.0647,
+    "total_r": 53.04,
+    "profit_factor": 1.1117
+  },
+  "confluence_without_trendline": {
+    "n": 7608,
+    "win_rate": 0.2514,
+    "expectancy_r": -0.0016,
+    "total_r": -12.44,
+    "profit_factor": 0.9969
+  },
+  "elapsed_sec": 181.9
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 17168,
+    "win_rate": 0.254,
+    "expectancy_r": -0.0039,
+    "total_r": -67.77,
+    "profit_factor": 0.9927
+  },
+  "regime_filtered": {
+    "n": 5352,
+    "win_rate": 0.2476,
+    "expectancy_r": -0.021,
+    "total_r": -112.52,
+    "profit_factor": 0.9611
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 8207,
+      "win_rate": 0.2601,
+      "expectancy_r": 0.0028,
+      "total_r": 22.59,
+      "profit_factor": 1.0051
+    },
+    "sell": {
+      "n": 8961,
+      "win_rate": 0.2484,
+      "expectancy_r": -0.0101,
+      "total_r": -90.36,
+      "profit_factor": 0.9814
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2707,
+      "win_rate": 0.2468,
+      "expectancy_r": -0.0219,
+      "total_r": -59.2,
+      "profit_factor": 0.9594
+    },
+    "sell": {
+      "n": 2645,
+      "win_rate": 0.2484,
+      "expectancy_r": -0.0202,
+      "total_r": -53.33,
+      "profit_factor": 0.9628
+    }
+  },
+  "trade_retention_pct": 31.2,
+  "expectancy_delta_r": -0.0171,
+  "elapsed_sec": 770.8
+}

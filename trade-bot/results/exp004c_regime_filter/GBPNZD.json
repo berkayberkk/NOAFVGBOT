@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPNZD",
+  "status": "ok",
+  "baseline": {
+    "n": 13820,
+    "win_rate": 0.2466,
+    "expectancy_r": -0.0286,
+    "total_r": -394.59,
+    "profit_factor": 0.946
+  },
+  "regime_filtered": {
+    "n": 4372,
+    "win_rate": 0.2379,
+    "expectancy_r": -0.0444,
+    "total_r": -194.26,
+    "profit_factor": 0.9167
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6935,
+      "win_rate": 0.2676,
+      "expectancy_r": 0.0398,
+      "total_r": 276.07,
+      "profit_factor": 1.0781
+    },
+    "sell": {
+      "n": 6885,
+      "win_rate": 0.2254,
+      "expectancy_r": -0.0974,
+      "total_r": -670.66,
+      "profit_factor": 0.8221
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2134,
+      "win_rate": 0.254,
+      "expectancy_r": 0.0096,
+      "total_r": 20.54,
+      "profit_factor": 1.0186
+    },
+    "sell": {
+      "n": 2238,
+      "win_rate": 0.2225,
+      "expectancy_r": -0.096,
+      "total_r": -214.8,
+      "profit_factor": 0.8252
+    }
+  },
+  "trade_retention_pct": 31.6,
+  "expectancy_delta_r": -0.0158,
+  "elapsed_sec": 506.1
+}

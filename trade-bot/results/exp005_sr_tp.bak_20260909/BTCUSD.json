@@ -1,0 +1,83 @@
+{
+  "symbol": "BTCUSD",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 959,
+        "win_rate": 0.3285,
+        "expectancy_r": 0.0255,
+        "total_r": 24.5,
+        "profit_factor": 1.0556,
+        "avg_bars_held": 811.4
+      },
+      "sr_based_tp": {
+        "n": 966,
+        "win_rate": 0.5911,
+        "expectancy_r": -0.0427,
+        "total_r": -41.21,
+        "profit_factor": 0.4256,
+        "avg_bars_held": 37.5
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2220,
+        "win_rate": 0.305,
+        "expectancy_r": -0.0035,
+        "total_r": -7.69,
+        "profit_factor": 0.9923,
+        "avg_bars_held": 576.7
+      },
+      "sr_based_tp": {
+        "n": 2225,
+        "win_rate": 0.582,
+        "expectancy_r": -0.0596,
+        "total_r": -132.69,
+        "profit_factor": 0.428,
+        "avg_bars_held": 33.1
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 6778,
+        "win_rate": 0.2083,
+        "expectancy_r": -0.1083,
+        "total_r": -733.89,
+        "profit_factor": 0.843,
+        "avg_bars_held": 1636.8
+      },
+      "sr_based_tp": {
+        "n": 6894,
+        "win_rate": 0.5653,
+        "expectancy_r": -0.1504,
+        "total_r": -1036.76,
+        "profit_factor": 0.2594,
+        "avg_bars_held": 55.2
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 372,
+        "win_rate": 0.3065,
+        "expectancy_r": -0.1108,
+        "total_r": -41.22,
+        "profit_factor": 0.8445,
+        "avg_bars_held": 111.6
+      },
+      "sr_based_tp": {
+        "n": 372,
+        "win_rate": 0.6183,
+        "expectancy_r": -0.2101,
+        "total_r": -78.15,
+        "profit_factor": 0.2924,
+        "avg_bars_held": 15.7
+      }
+    }
+  },
+  "elapsed_sec": 206.4
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "ETCUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 9391,
+    "win_rate": 0.2633,
+    "expectancy_r": 0.0233,
+    "total_r": 218.96,
+    "profit_factor": 1.0418
+  },
+  "regime_filtered": {
+    "n": 2513,
+    "win_rate": 0.2622,
+    "expectancy_r": 0.0341,
+    "total_r": 85.8,
+    "profit_factor": 1.0619
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 4612,
+      "win_rate": 0.3109,
+      "expectancy_r": 0.1832,
+      "total_r": 845.01,
+      "profit_factor": 1.3543
+    },
+    "sell": {
+      "n": 4779,
+      "win_rate": 0.2174,
+      "expectancy_r": -0.131,
+      "total_r": -626.05,
+      "profit_factor": 0.7801
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1168,
+      "win_rate": 0.3048,
+      "expectancy_r": 0.1672,
+      "total_r": 195.35,
+      "profit_factor": 1.3289
+    },
+    "sell": {
+      "n": 1345,
+      "win_rate": 0.2253,
+      "expectancy_r": -0.0814,
+      "total_r": -109.55,
+      "profit_factor": 0.8615
+    }
+  },
+  "trade_retention_pct": 26.8,
+  "expectancy_delta_r": 0.0108,
+  "elapsed_sec": 226.0
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "US2000",
+  "status": "ok",
+  "baseline": {
+    "n": 10066,
+    "win_rate": 0.2309,
+    "expectancy_r": -0.076,
+    "total_r": -764.78,
+    "profit_factor": 0.8636
+  },
+  "regime_filtered": {
+    "n": 2729,
+    "win_rate": 0.2224,
+    "expectancy_r": -0.091,
+    "total_r": -248.29,
+    "profit_factor": 0.8358
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 4557,
+      "win_rate": 0.2471,
+      "expectancy_r": -0.0163,
+      "total_r": -74.39,
+      "profit_factor": 0.9692
+    },
+    "sell": {
+      "n": 5509,
+      "win_rate": 0.2175,
+      "expectancy_r": -0.1253,
+      "total_r": -690.39,
+      "profit_factor": 0.7839
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1353,
+      "win_rate": 0.2217,
+      "expectancy_r": -0.0806,
+      "total_r": -109.08,
+      "profit_factor": 0.8474
+    },
+    "sell": {
+      "n": 1376,
+      "win_rate": 0.2231,
+      "expectancy_r": -0.1012,
+      "total_r": -139.22,
+      "profit_factor": 0.8254
+    }
+  },
+  "trade_retention_pct": 27.1,
+  "expectancy_delta_r": -0.015,
+  "elapsed_sec": 163.6
+}

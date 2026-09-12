@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPNZD",
+  "status": "ok",
+  "baseline": {
+    "n": 13820,
+    "win_rate": 0.2466,
+    "expectancy_r": -0.0286,
+    "total_r": -394.59,
+    "profit_factor": 0.946
+  },
+  "confluence_all": {
+    "n": 7869,
+    "win_rate": 0.2589,
+    "expectancy_r": 0.0042,
+    "total_r": 32.73,
+    "profit_factor": 1.0082
+  },
+  "confluence_with_trendline": {
+    "n": 920,
+    "win_rate": 0.2935,
+    "expectancy_r": 0.0204,
+    "total_r": 18.77,
+    "profit_factor": 1.0359
+  },
+  "confluence_without_trendline": {
+    "n": 6949,
+    "win_rate": 0.2543,
+    "expectancy_r": 0.002,
+    "total_r": 13.96,
+    "profit_factor": 1.004
+  },
+  "elapsed_sec": 231.4
+}

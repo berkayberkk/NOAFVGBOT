@@ -1,0 +1,53 @@
+{
+  "symbol": "AUDJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 15275,
+    "win_rate": 0.257,
+    "expectancy_r": -0.0044,
+    "total_r": -67.14,
+    "profit_factor": 0.9918
+  },
+  "regime_filtered": {
+    "n": 5102,
+    "win_rate": 0.2583,
+    "expectancy_r": 0.02,
+    "total_r": 101.98,
+    "profit_factor": 1.0383
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7324,
+      "win_rate": 0.2428,
+      "expectancy_r": -0.0633,
+      "total_r": -463.57,
+      "profit_factor": 0.8858
+    },
+    "sell": {
+      "n": 7951,
+      "win_rate": 0.27,
+      "expectancy_r": 0.0499,
+      "total_r": 396.43,
+      "profit_factor": 1.0952
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2553,
+      "win_rate": 0.2538,
+      "expectancy_r": 0.0012,
+      "total_r": 2.95,
+      "profit_factor": 1.0022
+    },
+    "sell": {
+      "n": 2549,
+      "win_rate": 0.2628,
+      "expectancy_r": 0.0388,
+      "total_r": 99.02,
+      "profit_factor": 1.0753
+    }
+  },
+  "trade_retention_pct": 33.4,
+  "expectancy_delta_r": 0.0244,
+  "elapsed_sec": 726.9
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPNOK",
+  "status": "ok",
+  "baseline": {
+    "n": 13220,
+    "win_rate": 0.2374,
+    "expectancy_r": -0.0458,
+    "total_r": -606.01,
+    "profit_factor": 0.919
+  },
+  "regime_filtered": {
+    "n": 3529,
+    "win_rate": 0.2256,
+    "expectancy_r": -0.0798,
+    "total_r": -281.6,
+    "profit_factor": 0.8603
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6527,
+      "win_rate": 0.2917,
+      "expectancy_r": 0.1455,
+      "total_r": 949.73,
+      "profit_factor": 1.2851
+    },
+    "sell": {
+      "n": 6693,
+      "win_rate": 0.1845,
+      "expectancy_r": -0.2324,
+      "total_r": -1555.74,
+      "profit_factor": 0.6253
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1839,
+      "win_rate": 0.2724,
+      "expectancy_r": 0.0788,
+      "total_r": 144.92,
+      "profit_factor": 1.151
+    },
+    "sell": {
+      "n": 1690,
+      "win_rate": 0.1746,
+      "expectancy_r": -0.2524,
+      "total_r": -426.53,
+      "profit_factor": 0.5963
+    }
+  },
+  "trade_retention_pct": 26.7,
+  "expectancy_delta_r": -0.034,
+  "elapsed_sec": 253.7
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "USDJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 5934,
+    "win_rate": 0.272,
+    "expectancy_r": 0.0554,
+    "total_r": 328.65,
+    "profit_factor": 1.1029
+  },
+  "regime_only": {
+    "n": 1848,
+    "win_rate": 0.2841,
+    "expectancy_r": 0.1013,
+    "total_r": 187.17,
+    "profit_factor": 1.1929
+  },
+  "confluence_only": {
+    "n": 3494,
+    "win_rate": 0.2876,
+    "expectancy_r": 0.092,
+    "total_r": 321.27,
+    "profit_factor": 1.1812
+  },
+  "confluence_and_regime": {
+    "n": 1117,
+    "win_rate": 0.3008,
+    "expectancy_r": 0.1163,
+    "total_r": 129.86,
+    "profit_factor": 1.2268
+  },
+  "elapsed_sec": 243.5
+}

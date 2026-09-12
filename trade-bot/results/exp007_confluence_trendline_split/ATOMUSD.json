@@ -1,0 +1,33 @@
+{
+  "symbol": "ATOMUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 5248,
+    "win_rate": 0.25,
+    "expectancy_r": -0.036,
+    "total_r": -188.77,
+    "profit_factor": 0.934
+  },
+  "confluence_all": {
+    "n": 2801,
+    "win_rate": 0.2578,
+    "expectancy_r": -0.0262,
+    "total_r": -73.42,
+    "profit_factor": 0.9508
+  },
+  "confluence_with_trendline": {
+    "n": 290,
+    "win_rate": 0.2655,
+    "expectancy_r": -0.0561,
+    "total_r": -16.27,
+    "profit_factor": 0.906
+  },
+  "confluence_without_trendline": {
+    "n": 2511,
+    "win_rate": 0.2569,
+    "expectancy_r": -0.0228,
+    "total_r": -57.15,
+    "profit_factor": 0.9567
+  },
+  "elapsed_sec": 93.4
+}

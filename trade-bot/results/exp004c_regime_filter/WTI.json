@@ -1,0 +1,53 @@
+{
+  "symbol": "WTI",
+  "status": "ok",
+  "baseline": {
+    "n": 9181,
+    "win_rate": 0.2583,
+    "expectancy_r": 0.0122,
+    "total_r": 112.46,
+    "profit_factor": 1.0229
+  },
+  "regime_filtered": {
+    "n": 2434,
+    "win_rate": 0.265,
+    "expectancy_r": 0.0418,
+    "total_r": 101.83,
+    "profit_factor": 1.0811
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 4374,
+      "win_rate": 0.3013,
+      "expectancy_r": 0.1491,
+      "total_r": 651.95,
+      "profit_factor": 1.3041
+    },
+    "sell": {
+      "n": 4807,
+      "win_rate": 0.2191,
+      "expectancy_r": -0.1122,
+      "total_r": -539.49,
+      "profit_factor": 0.8055
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1197,
+      "win_rate": 0.2857,
+      "expectancy_r": 0.1175,
+      "total_r": 140.64,
+      "profit_factor": 1.2407
+    },
+    "sell": {
+      "n": 1237,
+      "win_rate": 0.2449,
+      "expectancy_r": -0.0314,
+      "total_r": -38.81,
+      "profit_factor": 0.9421
+    }
+  },
+  "trade_retention_pct": 26.5,
+  "expectancy_delta_r": 0.0296,
+  "elapsed_sec": 130.6
+}

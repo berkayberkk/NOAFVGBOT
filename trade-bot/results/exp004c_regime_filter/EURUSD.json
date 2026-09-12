@@ -1,0 +1,53 @@
+{
+  "symbol": "EURUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 20047,
+    "win_rate": 0.2463,
+    "expectancy_r": -0.009,
+    "total_r": -180.29,
+    "profit_factor": 0.9834
+  },
+  "regime_filtered": {
+    "n": 5716,
+    "win_rate": 0.2498,
+    "expectancy_r": -0.0087,
+    "total_r": -49.56,
+    "profit_factor": 0.9841
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 9994,
+      "win_rate": 0.227,
+      "expectancy_r": -0.0727,
+      "total_r": -726.31,
+      "profit_factor": 0.8694
+    },
+    "sell": {
+      "n": 10053,
+      "win_rate": 0.2654,
+      "expectancy_r": 0.0543,
+      "total_r": 546.02,
+      "profit_factor": 1.1034
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2844,
+      "win_rate": 0.2215,
+      "expectancy_r": -0.0962,
+      "total_r": -273.71,
+      "profit_factor": 0.8292
+    },
+    "sell": {
+      "n": 2872,
+      "win_rate": 0.2779,
+      "expectancy_r": 0.078,
+      "total_r": 224.15,
+      "profit_factor": 1.1489
+    }
+  },
+  "trade_retention_pct": 28.5,
+  "expectancy_delta_r": 0.0003,
+  "elapsed_sec": 715.7
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 17168,
+    "win_rate": 0.254,
+    "expectancy_r": -0.0039,
+    "total_r": -67.77,
+    "profit_factor": 0.9927
+  },
+  "confluence_all": {
+    "n": 10411,
+    "win_rate": 0.2659,
+    "expectancy_r": 0.0261,
+    "total_r": 271.72,
+    "profit_factor": 1.0502
+  },
+  "confluence_with_trendline": {
+    "n": 1183,
+    "win_rate": 0.3254,
+    "expectancy_r": 0.1315,
+    "total_r": 155.6,
+    "profit_factor": 1.2424
+  },
+  "confluence_without_trendline": {
+    "n": 9228,
+    "win_rate": 0.2582,
+    "expectancy_r": 0.0126,
+    "total_r": 116.12,
+    "profit_factor": 1.0243
+  },
+  "elapsed_sec": 200.5
+}

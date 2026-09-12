@@ -1,0 +1,33 @@
+{
+  "symbol": "NZDCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 13645,
+    "win_rate": 0.2474,
+    "expectancy_r": -0.0347,
+    "total_r": -473.15,
+    "profit_factor": 0.9354
+  },
+  "confluence_all": {
+    "n": 7649,
+    "win_rate": 0.253,
+    "expectancy_r": -0.0206,
+    "total_r": -157.38,
+    "profit_factor": 0.9605
+  },
+  "confluence_with_trendline": {
+    "n": 1014,
+    "win_rate": 0.2801,
+    "expectancy_r": -0.0026,
+    "total_r": -2.6,
+    "profit_factor": 0.9955
+  },
+  "confluence_without_trendline": {
+    "n": 6635,
+    "win_rate": 0.2488,
+    "expectancy_r": -0.0233,
+    "total_r": -154.78,
+    "profit_factor": 0.9546
+  },
+  "elapsed_sec": 205.6
+}

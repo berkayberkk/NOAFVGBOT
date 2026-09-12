@@ -1,0 +1,33 @@
+{
+  "symbol": "GER40",
+  "status": "ok",
+  "baseline": {
+    "n": 9096,
+    "win_rate": 0.2477,
+    "expectancy_r": -0.0486,
+    "total_r": -442.11,
+    "profit_factor": 0.909
+  },
+  "regime_only": {
+    "n": 2922,
+    "win_rate": 0.2454,
+    "expectancy_r": -0.0621,
+    "total_r": -181.37,
+    "profit_factor": 0.8866
+  },
+  "confluence_only": {
+    "n": 5952,
+    "win_rate": 0.2495,
+    "expectancy_r": -0.0485,
+    "total_r": -288.7,
+    "profit_factor": 0.9072
+  },
+  "confluence_and_regime": {
+    "n": 2020,
+    "win_rate": 0.2446,
+    "expectancy_r": -0.0876,
+    "total_r": -177.03,
+    "profit_factor": 0.8392
+  },
+  "elapsed_sec": 298.6
+}

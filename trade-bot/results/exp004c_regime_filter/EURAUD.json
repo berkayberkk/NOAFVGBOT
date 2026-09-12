@@ -1,0 +1,53 @@
+{
+  "symbol": "EURAUD",
+  "status": "ok",
+  "baseline": {
+    "n": 14538,
+    "win_rate": 0.2522,
+    "expectancy_r": -0.0132,
+    "total_r": -191.69,
+    "profit_factor": 0.9753
+  },
+  "regime_filtered": {
+    "n": 4880,
+    "win_rate": 0.2426,
+    "expectancy_r": -0.0421,
+    "total_r": -205.48,
+    "profit_factor": 0.9229
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7430,
+      "win_rate": 0.276,
+      "expectancy_r": 0.0681,
+      "total_r": 506.14,
+      "profit_factor": 1.1321
+    },
+    "sell": {
+      "n": 7108,
+      "win_rate": 0.2272,
+      "expectancy_r": -0.0982,
+      "total_r": -697.83,
+      "profit_factor": 0.8227
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2398,
+      "win_rate": 0.2615,
+      "expectancy_r": 0.0207,
+      "total_r": 49.66,
+      "profit_factor": 1.0388
+    },
+    "sell": {
+      "n": 2482,
+      "win_rate": 0.2244,
+      "expectancy_r": -0.1028,
+      "total_r": -255.14,
+      "profit_factor": 0.8157
+    }
+  },
+  "trade_retention_pct": 33.6,
+  "expectancy_delta_r": -0.0289,
+  "elapsed_sec": 759.5
+}

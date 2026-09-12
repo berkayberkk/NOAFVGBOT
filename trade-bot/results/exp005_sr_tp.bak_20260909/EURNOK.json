@@ -1,0 +1,6 @@
+{
+  "symbol": "EURNOK",
+  "status": "insufficient",
+  "reason": "M30 mum sayisi (649) < esik",
+  "elapsed_sec": 0.6
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "MATICUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6633,
+    "win_rate": 0.27,
+    "expectancy_r": 0.022,
+    "total_r": 146.15,
+    "profit_factor": 1.0406
+  },
+  "confluence_all": {
+    "n": 4209,
+    "win_rate": 0.2811,
+    "expectancy_r": 0.0529,
+    "total_r": 222.78,
+    "profit_factor": 1.101
+  },
+  "confluence_with_trendline": {
+    "n": 508,
+    "win_rate": 0.2874,
+    "expectancy_r": 0.0419,
+    "total_r": 21.3,
+    "profit_factor": 1.0733
+  },
+  "confluence_without_trendline": {
+    "n": 3701,
+    "win_rate": 0.2802,
+    "expectancy_r": 0.0544,
+    "total_r": 201.47,
+    "profit_factor": 1.1053
+  },
+  "elapsed_sec": 104.3
+}

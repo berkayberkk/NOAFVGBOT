@@ -1,0 +1,53 @@
+{
+  "symbol": "SPAIN35",
+  "status": "ok",
+  "baseline": {
+    "n": 3776,
+    "win_rate": 0.2762,
+    "expectancy_r": -0.0175,
+    "total_r": -66.13,
+    "profit_factor": 0.9663
+  },
+  "regime_filtered": {
+    "n": 1121,
+    "win_rate": 0.2801,
+    "expectancy_r": 0.0008,
+    "total_r": 0.94,
+    "profit_factor": 1.0016
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 1737,
+      "win_rate": 0.2809,
+      "expectancy_r": 0.0054,
+      "total_r": 9.31,
+      "profit_factor": 1.0104
+    },
+    "sell": {
+      "n": 2039,
+      "win_rate": 0.2722,
+      "expectancy_r": -0.037,
+      "total_r": -75.44,
+      "profit_factor": 0.9296
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 566,
+      "win_rate": 0.3198,
+      "expectancy_r": 0.1283,
+      "total_r": 72.62,
+      "profit_factor": 1.2686
+    },
+    "sell": {
+      "n": 555,
+      "win_rate": 0.2396,
+      "expectancy_r": -0.1292,
+      "total_r": -71.68,
+      "profit_factor": 0.7697
+    }
+  },
+  "trade_retention_pct": 29.7,
+  "expectancy_delta_r": 0.0183,
+  "elapsed_sec": 63.1
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 20524,
+    "win_rate": 0.2442,
+    "expectancy_r": -0.0203,
+    "total_r": -415.74,
+    "profit_factor": 0.9633
+  },
+  "regime_filtered": {
+    "n": 5673,
+    "win_rate": 0.2392,
+    "expectancy_r": -0.023,
+    "total_r": -130.69,
+    "profit_factor": 0.9581
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 10152,
+      "win_rate": 0.2247,
+      "expectancy_r": -0.0896,
+      "total_r": -909.31,
+      "profit_factor": 0.8419
+    },
+    "sell": {
+      "n": 10372,
+      "win_rate": 0.2632,
+      "expectancy_r": 0.0476,
+      "total_r": 493.58,
+      "profit_factor": 1.0884
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2812,
+      "win_rate": 0.2255,
+      "expectancy_r": -0.0719,
+      "total_r": -202.26,
+      "profit_factor": 0.8719
+    },
+    "sell": {
+      "n": 2861,
+      "win_rate": 0.2527,
+      "expectancy_r": 0.025,
+      "total_r": 71.57,
+      "profit_factor": 1.0465
+    }
+  },
+  "trade_retention_pct": 27.6,
+  "expectancy_delta_r": -0.0027,
+  "elapsed_sec": 720.9
+}

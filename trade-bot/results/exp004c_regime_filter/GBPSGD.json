@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 12321,
+    "win_rate": 0.2459,
+    "expectancy_r": -0.0209,
+    "total_r": -257.43,
+    "profit_factor": 0.9618
+  },
+  "regime_filtered": {
+    "n": 3382,
+    "win_rate": 0.2368,
+    "expectancy_r": -0.0565,
+    "total_r": -191.1,
+    "profit_factor": 0.8993
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6083,
+      "win_rate": 0.2288,
+      "expectancy_r": -0.0992,
+      "total_r": -603.44,
+      "profit_factor": 0.8249
+    },
+    "sell": {
+      "n": 6238,
+      "win_rate": 0.2626,
+      "expectancy_r": 0.0555,
+      "total_r": 346.01,
+      "profit_factor": 1.105
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1726,
+      "win_rate": 0.23,
+      "expectancy_r": -0.0889,
+      "total_r": -153.41,
+      "profit_factor": 0.8437
+    },
+    "sell": {
+      "n": 1656,
+      "win_rate": 0.244,
+      "expectancy_r": -0.0228,
+      "total_r": -37.69,
+      "profit_factor": 0.9588
+    }
+  },
+  "trade_retention_pct": 27.4,
+  "expectancy_delta_r": -0.0356,
+  "elapsed_sec": 291.1
+}

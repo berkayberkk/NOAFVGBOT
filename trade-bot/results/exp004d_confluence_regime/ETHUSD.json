@@ -1,0 +1,33 @@
+{
+  "symbol": "ETHUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 10735,
+    "win_rate": 0.2725,
+    "expectancy_r": 0.0597,
+    "total_r": 641.24,
+    "profit_factor": 1.1085
+  },
+  "regime_only": {
+    "n": 3612,
+    "win_rate": 0.2744,
+    "expectancy_r": 0.088,
+    "total_r": 317.75,
+    "profit_factor": 1.1626
+  },
+  "confluence_only": {
+    "n": 5898,
+    "win_rate": 0.2854,
+    "expectancy_r": 0.0835,
+    "total_r": 492.52,
+    "profit_factor": 1.1583
+  },
+  "confluence_and_regime": {
+    "n": 2098,
+    "win_rate": 0.285,
+    "expectancy_r": 0.0894,
+    "total_r": 187.57,
+    "profit_factor": 1.1695
+  },
+  "elapsed_sec": 383.8
+}

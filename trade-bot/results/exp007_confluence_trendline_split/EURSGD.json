@@ -1,0 +1,33 @@
+{
+  "symbol": "EURSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 10146,
+    "win_rate": 0.2446,
+    "expectancy_r": -0.0114,
+    "total_r": -115.8,
+    "profit_factor": 0.9788
+  },
+  "confluence_all": {
+    "n": 5548,
+    "win_rate": 0.2567,
+    "expectancy_r": 0.0062,
+    "total_r": 34.4,
+    "profit_factor": 1.0121
+  },
+  "confluence_with_trendline": {
+    "n": 770,
+    "win_rate": 0.2987,
+    "expectancy_r": 0.057,
+    "total_r": 43.86,
+    "profit_factor": 1.1
+  },
+  "confluence_without_trendline": {
+    "n": 4778,
+    "win_rate": 0.2499,
+    "expectancy_r": -0.002,
+    "total_r": -9.46,
+    "profit_factor": 0.9961
+  },
+  "elapsed_sec": 177.8
+}

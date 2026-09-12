@@ -1,0 +1,53 @@
+{
+  "symbol": "ETHUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 10735,
+    "win_rate": 0.2725,
+    "expectancy_r": 0.0597,
+    "total_r": 641.24,
+    "profit_factor": 1.1085
+  },
+  "regime_filtered": {
+    "n": 3612,
+    "win_rate": 0.2744,
+    "expectancy_r": 0.088,
+    "total_r": 317.75,
+    "profit_factor": 1.1626
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 5019,
+      "win_rate": 0.3335,
+      "expectancy_r": 0.263,
+      "total_r": 1320.24,
+      "profit_factor": 1.5314
+    },
+    "sell": {
+      "n": 5716,
+      "win_rate": 0.2189,
+      "expectancy_r": -0.1188,
+      "total_r": -679.0,
+      "profit_factor": 0.8019
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1736,
+      "win_rate": 0.3376,
+      "expectancy_r": 0.2916,
+      "total_r": 506.24,
+      "profit_factor": 1.6037
+    },
+    "sell": {
+      "n": 1876,
+      "win_rate": 0.2159,
+      "expectancy_r": -0.1005,
+      "total_r": -188.49,
+      "profit_factor": 0.8311
+    }
+  },
+  "trade_retention_pct": 33.6,
+  "expectancy_delta_r": 0.0283,
+  "elapsed_sec": 222.4
+}

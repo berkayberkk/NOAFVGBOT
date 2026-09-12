@@ -1,0 +1,83 @@
+{
+  "symbol": "EURCHF",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1932,
+        "win_rate": 0.309,
+        "expectancy_r": 0.0486,
+        "total_r": 93.88,
+        "profit_factor": 1.1188,
+        "avg_bars_held": 1355.3
+      },
+      "sr_based_tp": {
+        "n": 1949,
+        "win_rate": 0.7671,
+        "expectancy_r": 0.0044,
+        "total_r": 8.52,
+        "profit_factor": 1.1247,
+        "avg_bars_held": 70.3
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 3106,
+        "win_rate": 0.2695,
+        "expectancy_r": -0.0455,
+        "total_r": -141.46,
+        "profit_factor": 0.8967,
+        "avg_bars_held": 759.3
+      },
+      "sr_based_tp": {
+        "n": 3119,
+        "win_rate": 0.7592,
+        "expectancy_r": -0.0061,
+        "total_r": -19.14,
+        "profit_factor": 0.8872,
+        "avg_bars_held": 17.1
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 11185,
+        "win_rate": 0.2472,
+        "expectancy_r": 0.0863,
+        "total_r": 965.57,
+        "profit_factor": 1.1459,
+        "avg_bars_held": 3355.0
+      },
+      "sr_based_tp": {
+        "n": 11557,
+        "win_rate": 0.7634,
+        "expectancy_r": -0.0141,
+        "total_r": -162.87,
+        "profit_factor": 0.8264,
+        "avg_bars_held": 54.5
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 759,
+        "win_rate": 0.3913,
+        "expectancy_r": 0.1884,
+        "total_r": 142.97,
+        "profit_factor": 1.3135,
+        "avg_bars_held": 244.4
+      },
+      "sr_based_tp": {
+        "n": 760,
+        "win_rate": 0.9487,
+        "expectancy_r": 0.0621,
+        "total_r": 47.23,
+        "profit_factor": 2.2423,
+        "avg_bars_held": 6.2
+      }
+    }
+  },
+  "elapsed_sec": 282.6
+}

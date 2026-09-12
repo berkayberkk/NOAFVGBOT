@@ -1,0 +1,53 @@
+{
+  "symbol": "XRPUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 10768,
+    "win_rate": 0.2643,
+    "expectancy_r": -0.0002,
+    "total_r": -2.07,
+    "profit_factor": 0.9996
+  },
+  "regime_filtered": {
+    "n": 3468,
+    "win_rate": 0.2736,
+    "expectancy_r": 0.0466,
+    "total_r": 161.66,
+    "profit_factor": 1.0877
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 5128,
+      "win_rate": 0.3058,
+      "expectancy_r": 0.1463,
+      "total_r": 750.08,
+      "profit_factor": 1.282
+    },
+    "sell": {
+      "n": 5640,
+      "win_rate": 0.2266,
+      "expectancy_r": -0.1334,
+      "total_r": -752.15,
+      "profit_factor": 0.7679
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1700,
+      "win_rate": 0.3147,
+      "expectancy_r": 0.1809,
+      "total_r": 307.52,
+      "profit_factor": 1.3574
+    },
+    "sell": {
+      "n": 1768,
+      "win_rate": 0.2342,
+      "expectancy_r": -0.0825,
+      "total_r": -145.86,
+      "profit_factor": 0.8516
+    }
+  },
+  "trade_retention_pct": 32.2,
+  "expectancy_delta_r": 0.0468,
+  "elapsed_sec": 216.5
+}

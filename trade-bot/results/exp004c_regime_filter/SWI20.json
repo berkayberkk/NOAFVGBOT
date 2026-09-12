@@ -1,0 +1,53 @@
+{
+  "symbol": "SWI20",
+  "status": "ok",
+  "baseline": {
+    "n": 4545,
+    "win_rate": 0.2554,
+    "expectancy_r": -0.0545,
+    "total_r": -247.83,
+    "profit_factor": 0.896
+  },
+  "regime_filtered": {
+    "n": 1423,
+    "win_rate": 0.2551,
+    "expectancy_r": -0.0385,
+    "total_r": -54.79,
+    "profit_factor": 0.9245
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 2143,
+      "win_rate": 0.2958,
+      "expectancy_r": 0.0794,
+      "total_r": 170.13,
+      "profit_factor": 1.1655
+    },
+    "sell": {
+      "n": 2402,
+      "win_rate": 0.2194,
+      "expectancy_r": -0.174,
+      "total_r": -417.97,
+      "profit_factor": 0.6914
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 709,
+      "win_rate": 0.2694,
+      "expectancy_r": 0.0117,
+      "total_r": 8.33,
+      "profit_factor": 1.0231
+    },
+    "sell": {
+      "n": 714,
+      "win_rate": 0.2409,
+      "expectancy_r": -0.0884,
+      "total_r": -63.12,
+      "profit_factor": 0.8273
+    }
+  },
+  "trade_retention_pct": 31.3,
+  "expectancy_delta_r": 0.016,
+  "elapsed_sec": 74.4
+}

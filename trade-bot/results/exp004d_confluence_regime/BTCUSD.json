@@ -1,0 +1,33 @@
+{
+  "symbol": "BTCUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 10329,
+    "win_rate": 0.2438,
+    "expectancy_r": -0.0734,
+    "total_r": -758.3,
+    "profit_factor": 0.8812
+  },
+  "regime_only": {
+    "n": 3300,
+    "win_rate": 0.2482,
+    "expectancy_r": -0.0596,
+    "total_r": -196.57,
+    "profit_factor": 0.9025
+  },
+  "confluence_only": {
+    "n": 5406,
+    "win_rate": 0.263,
+    "expectancy_r": -0.024,
+    "total_r": -129.56,
+    "profit_factor": 0.9583
+  },
+  "confluence_and_regime": {
+    "n": 1820,
+    "win_rate": 0.2802,
+    "expectancy_r": 0.0315,
+    "total_r": 57.42,
+    "profit_factor": 1.0564
+  },
+  "elapsed_sec": 418.8
+}

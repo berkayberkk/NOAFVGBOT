@@ -1,0 +1,33 @@
+{
+  "symbol": "NZDSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 11024,
+    "win_rate": 0.2553,
+    "expectancy_r": -0.0281,
+    "total_r": -310.25,
+    "profit_factor": 0.9463
+  },
+  "regime_only": {
+    "n": 3398,
+    "win_rate": 0.2343,
+    "expectancy_r": -0.0843,
+    "total_r": -286.54,
+    "profit_factor": 0.8461
+  },
+  "confluence_only": {
+    "n": 5788,
+    "win_rate": 0.2628,
+    "expectancy_r": -0.0085,
+    "total_r": -48.94,
+    "profit_factor": 0.9834
+  },
+  "confluence_and_regime": {
+    "n": 1880,
+    "win_rate": 0.2404,
+    "expectancy_r": -0.0624,
+    "total_r": -117.3,
+    "profit_factor": 0.8831
+  },
+  "elapsed_sec": 666.3
+}

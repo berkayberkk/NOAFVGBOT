@@ -1,0 +1,33 @@
+{
+  "symbol": "EURDKK",
+  "status": "ok",
+  "baseline": {
+    "n": 3205,
+    "win_rate": 0.2262,
+    "expectancy_r": -0.1589,
+    "total_r": -509.34,
+    "profit_factor": 0.704
+  },
+  "confluence_all": {
+    "n": 1567,
+    "win_rate": 0.2521,
+    "expectancy_r": -0.0856,
+    "total_r": -134.17,
+    "profit_factor": 0.8309
+  },
+  "confluence_with_trendline": {
+    "n": 374,
+    "win_rate": 0.2861,
+    "expectancy_r": -0.055,
+    "total_r": -20.55,
+    "profit_factor": 0.9034
+  },
+  "confluence_without_trendline": {
+    "n": 1193,
+    "win_rate": 0.2414,
+    "expectancy_r": -0.0952,
+    "total_r": -113.61,
+    "profit_factor": 0.8044
+  },
+  "elapsed_sec": 84.2
+}

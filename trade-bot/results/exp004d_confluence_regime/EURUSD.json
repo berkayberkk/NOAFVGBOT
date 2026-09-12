@@ -1,0 +1,33 @@
+{
+  "symbol": "EURUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 20047,
+    "win_rate": 0.2463,
+    "expectancy_r": -0.009,
+    "total_r": -180.29,
+    "profit_factor": 0.9834
+  },
+  "regime_only": {
+    "n": 5716,
+    "win_rate": 0.2498,
+    "expectancy_r": -0.0087,
+    "total_r": -49.56,
+    "profit_factor": 0.9841
+  },
+  "confluence_only": {
+    "n": 13113,
+    "win_rate": 0.252,
+    "expectancy_r": 0.005,
+    "total_r": 65.55,
+    "profit_factor": 1.0096
+  },
+  "confluence_and_regime": {
+    "n": 3745,
+    "win_rate": 0.2539,
+    "expectancy_r": -0.0108,
+    "total_r": -40.48,
+    "profit_factor": 0.9795
+  },
+  "elapsed_sec": 745.2
+}

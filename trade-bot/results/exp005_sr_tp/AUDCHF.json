@@ -1,0 +1,83 @@
+{
+  "symbol": "AUDCHF",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2390,
+        "win_rate": 0.2983,
+        "expectancy_r": 0.0217,
+        "total_r": 51.88,
+        "profit_factor": 1.0519,
+        "avg_bars_held": 853.6
+      },
+      "sr_based_tp": {
+        "n": 2404,
+        "win_rate": 0.7608,
+        "expectancy_r": -0.0048,
+        "total_r": -11.56,
+        "profit_factor": 0.873,
+        "avg_bars_held": 24.1
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 4035,
+        "win_rate": 0.2781,
+        "expectancy_r": -0.0152,
+        "total_r": -61.47,
+        "profit_factor": 0.9643,
+        "avg_bars_held": 481.9
+      },
+      "sr_based_tp": {
+        "n": 4052,
+        "win_rate": 0.7589,
+        "expectancy_r": -0.0041,
+        "total_r": -16.57,
+        "profit_factor": 0.9112,
+        "avg_bars_held": 14.6
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 7449,
+        "win_rate": 0.2132,
+        "expectancy_r": -0.0104,
+        "total_r": -77.35,
+        "profit_factor": 0.9827,
+        "avg_bars_held": 2313.9
+      },
+      "sr_based_tp": {
+        "n": 7650,
+        "win_rate": 0.7441,
+        "expectancy_r": -0.025,
+        "total_r": -190.87,
+        "profit_factor": 0.6942,
+        "avg_bars_held": 38.2
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 746,
+        "win_rate": 0.366,
+        "expectancy_r": 0.1155,
+        "total_r": 86.19,
+        "profit_factor": 1.1853,
+        "avg_bars_held": 150.8
+      },
+      "sr_based_tp": {
+        "n": 746,
+        "win_rate": 0.941,
+        "expectancy_r": 0.0575,
+        "total_r": 42.92,
+        "profit_factor": 1.9822,
+        "avg_bars_held": 5.8
+      }
+    }
+  },
+  "elapsed_sec": 268.5
+}

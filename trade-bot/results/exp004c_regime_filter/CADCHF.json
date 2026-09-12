@@ -1,0 +1,53 @@
+{
+  "symbol": "CADCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 17733,
+    "win_rate": 0.2396,
+    "expectancy_r": -0.0195,
+    "total_r": -345.67,
+    "profit_factor": 0.9637
+  },
+  "regime_filtered": {
+    "n": 4777,
+    "win_rate": 0.2366,
+    "expectancy_r": -0.0315,
+    "total_r": -150.34,
+    "profit_factor": 0.942
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 8733,
+      "win_rate": 0.1925,
+      "expectancy_r": -0.199,
+      "total_r": -1737.48,
+      "profit_factor": 0.6669
+    },
+    "sell": {
+      "n": 9000,
+      "win_rate": 0.2852,
+      "expectancy_r": 0.1546,
+      "total_r": 1391.82,
+      "profit_factor": 1.3228
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2416,
+      "win_rate": 0.1941,
+      "expectancy_r": -0.1861,
+      "total_r": -449.69,
+      "profit_factor": 0.6851
+    },
+    "sell": {
+      "n": 2361,
+      "win_rate": 0.28,
+      "expectancy_r": 0.1268,
+      "total_r": 299.35,
+      "profit_factor": 1.2568
+    }
+  },
+  "trade_retention_pct": 26.9,
+  "expectancy_delta_r": -0.012,
+  "elapsed_sec": 723.2
+}

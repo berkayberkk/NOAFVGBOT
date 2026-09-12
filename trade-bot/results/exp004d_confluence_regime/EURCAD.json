@@ -1,0 +1,33 @@
+{
+  "symbol": "EURCAD",
+  "status": "ok",
+  "baseline": {
+    "n": 17698,
+    "win_rate": 0.2392,
+    "expectancy_r": -0.0345,
+    "total_r": -610.61,
+    "profit_factor": 0.937
+  },
+  "regime_only": {
+    "n": 4783,
+    "win_rate": 0.2478,
+    "expectancy_r": -0.0101,
+    "total_r": -48.43,
+    "profit_factor": 0.9814
+  },
+  "confluence_only": {
+    "n": 10659,
+    "win_rate": 0.2472,
+    "expectancy_r": -0.0161,
+    "total_r": -171.26,
+    "profit_factor": 0.9694
+  },
+  "confluence_and_regime": {
+    "n": 2926,
+    "win_rate": 0.258,
+    "expectancy_r": 0.0012,
+    "total_r": 3.42,
+    "profit_factor": 1.0022
+  },
+  "elapsed_sec": 676.7
+}

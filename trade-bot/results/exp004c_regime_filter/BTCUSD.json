@@ -1,0 +1,53 @@
+{
+  "symbol": "BTCUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 10329,
+    "win_rate": 0.2438,
+    "expectancy_r": -0.0734,
+    "total_r": -758.3,
+    "profit_factor": 0.8812
+  },
+  "regime_filtered": {
+    "n": 3300,
+    "win_rate": 0.2482,
+    "expectancy_r": -0.0596,
+    "total_r": -196.57,
+    "profit_factor": 0.9025
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 4858,
+      "win_rate": 0.2872,
+      "expectancy_r": 0.0792,
+      "total_r": 384.92,
+      "profit_factor": 1.1364
+    },
+    "sell": {
+      "n": 5471,
+      "win_rate": 0.2053,
+      "expectancy_r": -0.209,
+      "total_r": -1143.22,
+      "profit_factor": 0.6788
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1640,
+      "win_rate": 0.2817,
+      "expectancy_r": 0.0279,
+      "total_r": 45.69,
+      "profit_factor": 1.047
+    },
+    "sell": {
+      "n": 1660,
+      "win_rate": 0.2151,
+      "expectancy_r": -0.1459,
+      "total_r": -242.26,
+      "profit_factor": 0.7681
+    }
+  },
+  "trade_retention_pct": 31.9,
+  "expectancy_delta_r": 0.0138,
+  "elapsed_sec": 214.6
+}

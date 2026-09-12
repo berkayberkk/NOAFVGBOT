@@ -1,0 +1,33 @@
+{
+  "symbol": "HK50",
+  "status": "ok",
+  "baseline": {
+    "n": 7435,
+    "win_rate": 0.2642,
+    "expectancy_r": -0.0112,
+    "total_r": -83.05,
+    "profit_factor": 0.9796
+  },
+  "confluence_all": {
+    "n": 4844,
+    "win_rate": 0.275,
+    "expectancy_r": 0.0048,
+    "total_r": 23.31,
+    "profit_factor": 1.0091
+  },
+  "confluence_with_trendline": {
+    "n": 375,
+    "win_rate": 0.3173,
+    "expectancy_r": 0.1117,
+    "total_r": 41.89,
+    "profit_factor": 1.1982
+  },
+  "confluence_without_trendline": {
+    "n": 4469,
+    "win_rate": 0.2714,
+    "expectancy_r": -0.0042,
+    "total_r": -18.58,
+    "profit_factor": 0.9921
+  },
+  "elapsed_sec": 89.0
+}

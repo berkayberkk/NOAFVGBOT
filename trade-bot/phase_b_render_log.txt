@@ -1,0 +1,18 @@
+=== GOLD trendline ===
+  havuz=200 win=66 loss=134 invalid=0 (toplam gercek n=475, consistency=True)
+=== BTCUSD trendline ===
+  havuz=200 win=67 loss=133 invalid=0 (toplam gercek n=372, consistency=True)
+=== GOLD ob ===
+  havuz=200 win=43 loss=130 invalid=0 (toplam gercek n=7648, consistency=True)
+=== BTCUSD ob ===
+  havuz=200 win=20 loss=149 invalid=0 (toplam gercek n=6778, consistency=True)
+=== GOLD fvg ===
+  havuz=200 win=12 loss=7 invalid=180 (toplam gercek n=2278, consistency=True)
+=== BTCUSD fvg ===
+  havuz=200 win=8 loss=3 invalid=189 (toplam gercek n=959, consistency=True)
+=== GOLD ifvg ===
+  havuz=200 win=44 loss=100 invalid=20 (toplam gercek n=3006, consistency=True)
+=== BTCUSD ifvg ===
+  havuz=200 win=61 loss=74 invalid=12 (toplam gercek n=2220, consistency=True)
+
+TAMAMLANDI

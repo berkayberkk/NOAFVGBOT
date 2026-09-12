@@ -1,0 +1,33 @@
+{
+  "symbol": "US2000",
+  "status": "ok",
+  "baseline": {
+    "n": 10066,
+    "win_rate": 0.2309,
+    "expectancy_r": -0.076,
+    "total_r": -764.78,
+    "profit_factor": 0.8636
+  },
+  "regime_only": {
+    "n": 2729,
+    "win_rate": 0.2224,
+    "expectancy_r": -0.091,
+    "total_r": -248.29,
+    "profit_factor": 0.8358
+  },
+  "confluence_only": {
+    "n": 6588,
+    "win_rate": 0.2369,
+    "expectancy_r": -0.0544,
+    "total_r": -358.17,
+    "profit_factor": 0.8983
+  },
+  "confluence_and_regime": {
+    "n": 1831,
+    "win_rate": 0.2185,
+    "expectancy_r": -0.1047,
+    "total_r": -191.75,
+    "profit_factor": 0.8069
+  },
+  "elapsed_sec": 225.2
+}

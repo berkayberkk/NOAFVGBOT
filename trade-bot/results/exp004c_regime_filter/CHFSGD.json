@@ -1,0 +1,53 @@
+{
+  "symbol": "CHFSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 10401,
+    "win_rate": 0.2219,
+    "expectancy_r": -0.0938,
+    "total_r": -975.88,
+    "profit_factor": 0.8314
+  },
+  "regime_filtered": {
+    "n": 2914,
+    "win_rate": 0.2032,
+    "expectancy_r": -0.1335,
+    "total_r": -388.92,
+    "profit_factor": 0.7636
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 5368,
+      "win_rate": 0.231,
+      "expectancy_r": -0.0673,
+      "total_r": -361.3,
+      "profit_factor": 0.8793
+    },
+    "sell": {
+      "n": 5033,
+      "win_rate": 0.2122,
+      "expectancy_r": -0.1221,
+      "total_r": -614.58,
+      "profit_factor": 0.7801
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1443,
+      "win_rate": 0.203,
+      "expectancy_r": -0.1399,
+      "total_r": -201.93,
+      "profit_factor": 0.7577
+    },
+    "sell": {
+      "n": 1471,
+      "win_rate": 0.2033,
+      "expectancy_r": -0.1271,
+      "total_r": -187.0,
+      "profit_factor": 0.7696
+    }
+  },
+  "trade_retention_pct": 28.0,
+  "expectancy_delta_r": -0.0397,
+  "elapsed_sec": 376.2
+}

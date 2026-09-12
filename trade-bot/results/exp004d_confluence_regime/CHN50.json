@@ -1,0 +1,33 @@
+{
+  "symbol": "CHN50",
+  "status": "ok",
+  "baseline": {
+    "n": 9988,
+    "win_rate": 0.2507,
+    "expectancy_r": -0.0357,
+    "total_r": -356.24,
+    "profit_factor": 0.9365
+  },
+  "regime_only": {
+    "n": 2463,
+    "win_rate": 0.2383,
+    "expectancy_r": -0.0759,
+    "total_r": -186.82,
+    "profit_factor": 0.8681
+  },
+  "confluence_only": {
+    "n": 6520,
+    "win_rate": 0.2661,
+    "expectancy_r": 0.0045,
+    "total_r": 29.49,
+    "profit_factor": 1.0085
+  },
+  "confluence_and_regime": {
+    "n": 1545,
+    "win_rate": 0.2608,
+    "expectancy_r": -0.0285,
+    "total_r": -44.01,
+    "profit_factor": 0.9485
+  },
+  "elapsed_sec": 197.5
+}

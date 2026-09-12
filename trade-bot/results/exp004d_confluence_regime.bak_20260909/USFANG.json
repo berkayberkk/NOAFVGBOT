@@ -1,0 +1,33 @@
+{
+  "symbol": "USFANG",
+  "status": "ok",
+  "baseline": {
+    "n": 216,
+    "win_rate": 0.2963,
+    "expectancy_r": -0.0125,
+    "total_r": -2.7,
+    "profit_factor": 0.9769
+  },
+  "regime_only": {
+    "n": 71,
+    "win_rate": 0.2676,
+    "expectancy_r": -0.094,
+    "total_r": -6.67,
+    "profit_factor": 0.836
+  },
+  "confluence_only": {
+    "n": 100,
+    "win_rate": 0.29,
+    "expectancy_r": -0.0427,
+    "total_r": -4.27,
+    "profit_factor": 0.922
+  },
+  "confluence_and_regime": {
+    "n": 40,
+    "win_rate": 0.225,
+    "expectancy_r": -0.1849,
+    "total_r": -7.39,
+    "profit_factor": 0.7101
+  },
+  "elapsed_sec": 3.1
+}

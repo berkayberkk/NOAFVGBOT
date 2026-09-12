@@ -1,0 +1,33 @@
+{
+  "symbol": "CADCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 17733,
+    "win_rate": 0.2396,
+    "expectancy_r": -0.0195,
+    "total_r": -345.67,
+    "profit_factor": 0.9637
+  },
+  "confluence_all": {
+    "n": 10904,
+    "win_rate": 0.2458,
+    "expectancy_r": -0.002,
+    "total_r": -21.56,
+    "profit_factor": 0.9961
+  },
+  "confluence_with_trendline": {
+    "n": 969,
+    "win_rate": 0.29,
+    "expectancy_r": 0.0571,
+    "total_r": 55.32,
+    "profit_factor": 1.1005
+  },
+  "confluence_without_trendline": {
+    "n": 9935,
+    "win_rate": 0.2415,
+    "expectancy_r": -0.0077,
+    "total_r": -76.88,
+    "profit_factor": 0.9847
+  },
+  "elapsed_sec": 218.6
+}

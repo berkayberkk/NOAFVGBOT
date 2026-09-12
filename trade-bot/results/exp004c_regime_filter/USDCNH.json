@@ -1,0 +1,53 @@
+{
+  "symbol": "USDCNH",
+  "status": "ok",
+  "baseline": {
+    "n": 10364,
+    "win_rate": 0.2805,
+    "expectancy_r": 0.0458,
+    "total_r": 474.63,
+    "profit_factor": 1.0852
+  },
+  "regime_filtered": {
+    "n": 3031,
+    "win_rate": 0.286,
+    "expectancy_r": 0.0951,
+    "total_r": 288.38,
+    "profit_factor": 1.188
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 5028,
+      "win_rate": 0.2621,
+      "expectancy_r": -0.0208,
+      "total_r": -104.39,
+      "profit_factor": 0.9628
+    },
+    "sell": {
+      "n": 5336,
+      "win_rate": 0.2978,
+      "expectancy_r": 0.1085,
+      "total_r": 579.02,
+      "profit_factor": 1.2095
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1434,
+      "win_rate": 0.2524,
+      "expectancy_r": -0.0063,
+      "total_r": -9.02,
+      "profit_factor": 0.988
+    },
+    "sell": {
+      "n": 1597,
+      "win_rate": 0.3162,
+      "expectancy_r": 0.1862,
+      "total_r": 297.4,
+      "profit_factor": 1.3814
+    }
+  },
+  "trade_retention_pct": 29.2,
+  "expectancy_delta_r": 0.0493,
+  "elapsed_sec": 277.4
+}

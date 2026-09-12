@@ -1,0 +1,83 @@
+{
+  "symbol": "NZDCHF",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 2368,
+        "win_rate": 0.28,
+        "expectancy_r": -0.0162,
+        "total_r": -38.41,
+        "profit_factor": 0.9621,
+        "avg_bars_held": 916.3
+      },
+      "sr_based_tp": {
+        "n": 2373,
+        "win_rate": 0.8003,
+        "expectancy_r": 0.0038,
+        "total_r": 8.91,
+        "profit_factor": 1.1337,
+        "avg_bars_held": 17.1
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 3940,
+        "win_rate": 0.2858,
+        "expectancy_r": 0.0055,
+        "total_r": 21.52,
+        "profit_factor": 1.0131,
+        "avg_bars_held": 496.3
+      },
+      "sr_based_tp": {
+        "n": 3943,
+        "win_rate": 0.7677,
+        "expectancy_r": -0.0005,
+        "total_r": -2.0,
+        "profit_factor": 0.9875,
+        "avg_bars_held": 11.1
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 7379,
+        "win_rate": 0.2045,
+        "expectancy_r": -0.0487,
+        "total_r": -359.64,
+        "profit_factor": 0.9199,
+        "avg_bars_held": 2616.7
+      },
+      "sr_based_tp": {
+        "n": 7564,
+        "win_rate": 0.7673,
+        "expectancy_r": -0.0137,
+        "total_r": -103.65,
+        "profit_factor": 0.8087,
+        "avg_bars_held": 32.0
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 831,
+        "win_rate": 0.3574,
+        "expectancy_r": 0.0887,
+        "total_r": 73.68,
+        "profit_factor": 1.1401,
+        "avg_bars_held": 165.9
+      },
+      "sr_based_tp": {
+        "n": 831,
+        "win_rate": 0.9567,
+        "expectancy_r": 0.0604,
+        "total_r": 50.22,
+        "profit_factor": 2.4075,
+        "avg_bars_held": 4.8
+      }
+    }
+  },
+  "elapsed_sec": 325.4
+}

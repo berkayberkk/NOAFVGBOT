@@ -1,0 +1,83 @@
+{
+  "symbol": "TAIWAN",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 493,
+        "win_rate": 0.3225,
+        "expectancy_r": 0.0243,
+        "total_r": 11.96,
+        "profit_factor": 1.0567,
+        "avg_bars_held": 554.5
+      },
+      "sr_based_tp": {
+        "n": 496,
+        "win_rate": 0.6492,
+        "expectancy_r": -0.007,
+        "total_r": -3.46,
+        "profit_factor": 0.924,
+        "avg_bars_held": 80.3
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 968,
+        "win_rate": 0.3213,
+        "expectancy_r": 0.0173,
+        "total_r": 16.77,
+        "profit_factor": 1.0383,
+        "avg_bars_held": 262.0
+      },
+      "sr_based_tp": {
+        "n": 975,
+        "win_rate": 0.6636,
+        "expectancy_r": -0.0099,
+        "total_r": -9.69,
+        "profit_factor": 0.9061,
+        "avg_bars_held": 27.4
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1829,
+        "win_rate": 0.2433,
+        "expectancy_r": 0.0471,
+        "total_r": 86.14,
+        "profit_factor": 1.0767,
+        "avg_bars_held": 985.1
+      },
+      "sr_based_tp": {
+        "n": 1894,
+        "win_rate": 0.6679,
+        "expectancy_r": -0.0333,
+        "total_r": -63.1,
+        "profit_factor": 0.784,
+        "avg_bars_held": 97.7
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 131,
+        "win_rate": 0.3206,
+        "expectancy_r": -0.0212,
+        "total_r": -2.78,
+        "profit_factor": 0.9684,
+        "avg_bars_held": 90.2
+      },
+      "sr_based_tp": {
+        "n": 133,
+        "win_rate": 0.9023,
+        "expectancy_r": 0.0603,
+        "total_r": 8.02,
+        "profit_factor": 1.6369,
+        "avg_bars_held": 8.0
+      }
+    }
+  },
+  "elapsed_sec": 48.4
+}

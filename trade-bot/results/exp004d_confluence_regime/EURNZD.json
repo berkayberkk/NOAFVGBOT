@@ -1,0 +1,33 @@
+{
+  "symbol": "EURNZD",
+  "status": "ok",
+  "baseline": {
+    "n": 13983,
+    "win_rate": 0.2429,
+    "expectancy_r": -0.0378,
+    "total_r": -528.94,
+    "profit_factor": 0.9294
+  },
+  "regime_only": {
+    "n": 4756,
+    "win_rate": 0.2546,
+    "expectancy_r": 0.0103,
+    "total_r": 48.88,
+    "profit_factor": 1.0197
+  },
+  "confluence_only": {
+    "n": 7798,
+    "win_rate": 0.2494,
+    "expectancy_r": -0.0255,
+    "total_r": -199.2,
+    "profit_factor": 0.9506
+  },
+  "confluence_and_regime": {
+    "n": 2794,
+    "win_rate": 0.2588,
+    "expectancy_r": 0.0042,
+    "total_r": 11.79,
+    "profit_factor": 1.0083
+  },
+  "elapsed_sec": 785.9
+}

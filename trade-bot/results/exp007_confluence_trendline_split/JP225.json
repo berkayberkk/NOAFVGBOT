@@ -1,0 +1,33 @@
+{
+  "symbol": "JP225",
+  "status": "ok",
+  "baseline": {
+    "n": 6964,
+    "win_rate": 0.2576,
+    "expectancy_r": -0.0237,
+    "total_r": -165.3,
+    "profit_factor": 0.9549
+  },
+  "confluence_all": {
+    "n": 4603,
+    "win_rate": 0.2559,
+    "expectancy_r": -0.0365,
+    "total_r": -167.83,
+    "profit_factor": 0.93
+  },
+  "confluence_with_trendline": {
+    "n": 674,
+    "win_rate": 0.2611,
+    "expectancy_r": -0.087,
+    "total_r": -58.65,
+    "profit_factor": 0.8591
+  },
+  "confluence_without_trendline": {
+    "n": 3929,
+    "win_rate": 0.255,
+    "expectancy_r": -0.0278,
+    "total_r": -109.18,
+    "profit_factor": 0.9449
+  },
+  "elapsed_sec": 96.8
+}

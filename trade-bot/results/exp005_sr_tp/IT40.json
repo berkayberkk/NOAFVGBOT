@@ -1,0 +1,83 @@
+{
+  "symbol": "IT40",
+  "status": "ok",
+  "modules": {
+    "fvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 562,
+        "win_rate": 0.3025,
+        "expectancy_r": -0.0724,
+        "total_r": -40.66,
+        "profit_factor": 0.8498,
+        "avg_bars_held": 469.2
+      },
+      "sr_based_tp": {
+        "n": 565,
+        "win_rate": 0.7097,
+        "expectancy_r": -0.0168,
+        "total_r": -9.51,
+        "profit_factor": 0.8113,
+        "avg_bars_held": 43.4
+      }
+    },
+    "ifvg": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1202,
+        "win_rate": 0.3278,
+        "expectancy_r": -0.0001,
+        "total_r": -0.06,
+        "profit_factor": 0.9999,
+        "avg_bars_held": 237.8
+      },
+      "sr_based_tp": {
+        "n": 1202,
+        "win_rate": 0.7138,
+        "expectancy_r": -0.0188,
+        "total_r": -22.64,
+        "profit_factor": 0.8078,
+        "avg_bars_held": 18.2
+      }
+    },
+    "ob": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 1483,
+        "win_rate": 0.2272,
+        "expectancy_r": -0.0733,
+        "total_r": -108.68,
+        "profit_factor": 0.8827,
+        "avg_bars_held": 904.6
+      },
+      "sr_based_tp": {
+        "n": 1508,
+        "win_rate": 0.7042,
+        "expectancy_r": -0.0075,
+        "total_r": -11.29,
+        "profit_factor": 0.9451,
+        "avg_bars_held": 53.6
+      }
+    },
+    "trendline": {
+      "status": "ok",
+      "baseline_fixed_r": {
+        "n": 126,
+        "win_rate": 0.4365,
+        "expectancy_r": 0.3204,
+        "total_r": 40.37,
+        "profit_factor": 1.5782,
+        "avg_bars_held": 83.0
+      },
+      "sr_based_tp": {
+        "n": 126,
+        "win_rate": 0.9048,
+        "expectancy_r": 0.0891,
+        "total_r": 11.22,
+        "profit_factor": 1.9804,
+        "avg_bars_held": 7.5
+      }
+    }
+  },
+  "elapsed_sec": 63.8
+}

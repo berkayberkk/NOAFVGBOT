@@ -1,0 +1,53 @@
+{
+  "symbol": "GBPCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 19273,
+    "win_rate": 0.2473,
+    "expectancy_r": -0.0143,
+    "total_r": -276.27,
+    "profit_factor": 0.9741
+  },
+  "regime_filtered": {
+    "n": 5231,
+    "win_rate": 0.22,
+    "expectancy_r": -0.1013,
+    "total_r": -529.75,
+    "profit_factor": 0.8251
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 9413,
+      "win_rate": 0.21,
+      "expectancy_r": -0.1637,
+      "total_r": -1541.31,
+      "profit_factor": 0.7193
+    },
+    "sell": {
+      "n": 9860,
+      "win_rate": 0.283,
+      "expectancy_r": 0.1283,
+      "total_r": 1265.04,
+      "profit_factor": 1.2448
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2612,
+      "win_rate": 0.1899,
+      "expectancy_r": -0.2169,
+      "total_r": -566.63,
+      "profit_factor": 0.6428
+    },
+    "sell": {
+      "n": 2619,
+      "win_rate": 0.2501,
+      "expectancy_r": 0.0141,
+      "total_r": 36.87,
+      "profit_factor": 1.0256
+    }
+  },
+  "trade_retention_pct": 27.1,
+  "expectancy_delta_r": -0.087,
+  "elapsed_sec": 648.1
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "AUDNZD",
+  "status": "ok",
+  "baseline": {
+    "n": 11899,
+    "win_rate": 0.2538,
+    "expectancy_r": -0.0073,
+    "total_r": -86.77,
+    "profit_factor": 0.9864
+  },
+  "confluence_all": {
+    "n": 5446,
+    "win_rate": 0.2593,
+    "expectancy_r": -0.0037,
+    "total_r": -20.13,
+    "profit_factor": 0.9929
+  },
+  "confluence_with_trendline": {
+    "n": 1070,
+    "win_rate": 0.3093,
+    "expectancy_r": 0.0593,
+    "total_r": 63.43,
+    "profit_factor": 1.103
+  },
+  "confluence_without_trendline": {
+    "n": 4376,
+    "win_rate": 0.247,
+    "expectancy_r": -0.0191,
+    "total_r": -83.56,
+    "profit_factor": 0.9626
+  },
+  "elapsed_sec": 194.3
+}

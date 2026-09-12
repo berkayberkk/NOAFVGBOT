@@ -1,0 +1,33 @@
+{
+  "symbol": "USDTRY",
+  "status": "ok",
+  "baseline": {
+    "n": 12703,
+    "win_rate": 0.289,
+    "expectancy_r": 0.0991,
+    "total_r": 1258.49,
+    "profit_factor": 1.181
+  },
+  "regime_only": {
+    "n": 3797,
+    "win_rate": 0.2865,
+    "expectancy_r": 0.111,
+    "total_r": 421.48,
+    "profit_factor": 1.2065
+  },
+  "confluence_only": {
+    "n": 7824,
+    "win_rate": 0.2993,
+    "expectancy_r": 0.1225,
+    "total_r": 958.29,
+    "profit_factor": 1.235
+  },
+  "confluence_and_regime": {
+    "n": 2384,
+    "win_rate": 0.2928,
+    "expectancy_r": 0.1269,
+    "total_r": 302.55,
+    "profit_factor": 1.2464
+  },
+  "elapsed_sec": 328.1
+}

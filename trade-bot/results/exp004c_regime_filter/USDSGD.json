@@ -1,0 +1,53 @@
+{
+  "symbol": "USDSGD",
+  "status": "ok",
+  "baseline": {
+    "n": 14149,
+    "win_rate": 0.2691,
+    "expectancy_r": 0.0164,
+    "total_r": 232.71,
+    "profit_factor": 1.0311
+  },
+  "regime_filtered": {
+    "n": 4385,
+    "win_rate": 0.2684,
+    "expectancy_r": 0.0213,
+    "total_r": 93.36,
+    "profit_factor": 1.0412
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 7189,
+      "win_rate": 0.2904,
+      "expectancy_r": 0.085,
+      "total_r": 610.99,
+      "profit_factor": 1.1643
+    },
+    "sell": {
+      "n": 6960,
+      "win_rate": 0.247,
+      "expectancy_r": -0.0543,
+      "total_r": -378.27,
+      "profit_factor": 0.8993
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2150,
+      "win_rate": 0.294,
+      "expectancy_r": 0.101,
+      "total_r": 217.04,
+      "profit_factor": 1.2008
+    },
+    "sell": {
+      "n": 2235,
+      "win_rate": 0.2438,
+      "expectancy_r": -0.0553,
+      "total_r": -123.68,
+      "profit_factor": 0.8955
+    }
+  },
+  "trade_retention_pct": 31.0,
+  "expectancy_delta_r": 0.0049,
+  "elapsed_sec": 366.9
+}

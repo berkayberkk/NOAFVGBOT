@@ -1,0 +1,33 @@
+{
+  "symbol": "EURHKD",
+  "status": "ok",
+  "baseline": {
+    "n": 18507,
+    "win_rate": 0.2469,
+    "expectancy_r": -0.0084,
+    "total_r": -154.56,
+    "profit_factor": 0.9846
+  },
+  "regime_only": {
+    "n": 5450,
+    "win_rate": 0.2398,
+    "expectancy_r": -0.0245,
+    "total_r": -133.51,
+    "profit_factor": 0.9552
+  },
+  "confluence_only": {
+    "n": 11959,
+    "win_rate": 0.2545,
+    "expectancy_r": 0.0159,
+    "total_r": 190.29,
+    "profit_factor": 1.0307
+  },
+  "confluence_and_regime": {
+    "n": 3522,
+    "win_rate": 0.2382,
+    "expectancy_r": -0.0311,
+    "total_r": -109.4,
+    "profit_factor": 0.9413
+  },
+  "elapsed_sec": 789.7
+}

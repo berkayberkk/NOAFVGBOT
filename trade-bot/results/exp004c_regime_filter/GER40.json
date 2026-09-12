@@ -1,0 +1,53 @@
+{
+  "symbol": "GER40",
+  "status": "ok",
+  "baseline": {
+    "n": 9096,
+    "win_rate": 0.2477,
+    "expectancy_r": -0.0486,
+    "total_r": -442.11,
+    "profit_factor": 0.909
+  },
+  "regime_filtered": {
+    "n": 2922,
+    "win_rate": 0.2454,
+    "expectancy_r": -0.0621,
+    "total_r": -181.37,
+    "profit_factor": 0.8866
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 4239,
+      "win_rate": 0.2732,
+      "expectancy_r": 0.0406,
+      "total_r": 172.05,
+      "profit_factor": 1.0792
+    },
+    "sell": {
+      "n": 4857,
+      "win_rate": 0.2254,
+      "expectancy_r": -0.1264,
+      "total_r": -614.16,
+      "profit_factor": 0.7716
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 1485,
+      "win_rate": 0.2633,
+      "expectancy_r": -0.0004,
+      "total_r": -0.66,
+      "profit_factor": 0.9992
+    },
+    "sell": {
+      "n": 1437,
+      "win_rate": 0.2269,
+      "expectancy_r": -0.1258,
+      "total_r": -180.71,
+      "profit_factor": 0.7757
+    }
+  },
+  "trade_retention_pct": 32.1,
+  "expectancy_delta_r": -0.0135,
+  "elapsed_sec": 172.4
+}

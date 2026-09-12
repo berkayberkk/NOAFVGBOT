@@ -1,0 +1,53 @@
+{
+  "symbol": "EURDKK",
+  "status": "ok",
+  "baseline": {
+    "n": 3205,
+    "win_rate": 0.2262,
+    "expectancy_r": -0.1589,
+    "total_r": -509.34,
+    "profit_factor": 0.704
+  },
+  "regime_filtered": {
+    "n": 853,
+    "win_rate": 0.2005,
+    "expectancy_r": -0.2543,
+    "total_r": -216.91,
+    "profit_factor": 0.5693
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 1539,
+      "win_rate": 0.2586,
+      "expectancy_r": -0.142,
+      "total_r": -218.61,
+      "profit_factor": 0.7184
+    },
+    "sell": {
+      "n": 1666,
+      "win_rate": 0.1963,
+      "expectancy_r": -0.1745,
+      "total_r": -290.73,
+      "profit_factor": 0.6922
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 423,
+      "win_rate": 0.2128,
+      "expectancy_r": -0.2801,
+      "total_r": -118.48,
+      "profit_factor": 0.5178
+    },
+    "sell": {
+      "n": 430,
+      "win_rate": 0.1884,
+      "expectancy_r": -0.2289,
+      "total_r": -98.43,
+      "profit_factor": 0.6184
+    }
+  },
+  "trade_retention_pct": 26.6,
+  "expectancy_delta_r": -0.0954,
+  "elapsed_sec": 98.6
+}

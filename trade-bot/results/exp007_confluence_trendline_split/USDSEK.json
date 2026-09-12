@@ -1,0 +1,33 @@
+{
+  "symbol": "USDSEK",
+  "status": "ok",
+  "baseline": {
+    "n": 19661,
+    "win_rate": 0.2557,
+    "expectancy_r": 0.0082,
+    "total_r": 160.49,
+    "profit_factor": 1.015
+  },
+  "confluence_all": {
+    "n": 11843,
+    "win_rate": 0.2648,
+    "expectancy_r": 0.0321,
+    "total_r": 379.71,
+    "profit_factor": 1.062
+  },
+  "confluence_with_trendline": {
+    "n": 1375,
+    "win_rate": 0.3076,
+    "expectancy_r": 0.0885,
+    "total_r": 121.63,
+    "profit_factor": 1.1607
+  },
+  "confluence_without_trendline": {
+    "n": 10468,
+    "win_rate": 0.2592,
+    "expectancy_r": 0.0247,
+    "total_r": 258.08,
+    "profit_factor": 1.048
+  },
+  "elapsed_sec": 262.4
+}

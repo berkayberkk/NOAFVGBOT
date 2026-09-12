@@ -50,6 +50,18 @@ CHOP_CLUSTER_BARS = 15
 def detect_confirmed_ifvgs(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG,
                            chop_cluster_bars: int = CHOP_CLUSTER_BARS) -> list[IFVGEvent]:
     """Kırılma + retest/reddiye + causal chop-cluster filtresiyle onaylanmış iFVG listesi döner."""
+    events = detect_all_ifvg_candidates(candles, config=config, chop_cluster_bars=chop_cluster_bars)
+    return [e for e in events if not e.chop_cluster]
+
+
+def detect_all_ifvg_candidates(candles: list[dict], config: StrategyConfig = DEFAULT_CONFIG,
+                               chop_cluster_bars: int = CHOP_CLUSTER_BARS) -> list[IFVGEvent]:
+    """`detect_confirmed_ifvgs` ile AYNI kırılma+retest mantığı, ama
+    chop-cluster filtresi UYGULANMADAN (reddedilenler de `chop_cluster=True`
+    ile listede kalır) -- webapp/visual_review.py'nin reddedilen adayları
+    da gösterebilmesi için (bkz. FAZ A). Davranış degistirmez:
+    `detect_confirmed_ifvgs` bu fonksiyonun ustune sadece son filtreyi
+    uygular."""
     fvgs = [f for f in detect_fvgs(candles, config=config) if f.valid]
     n = len(candles)
     events: list[IFVGEvent] = []
@@ -91,7 +103,7 @@ def detect_confirmed_ifvgs(candles: list[dict], config: StrategyConfig = DEFAULT
         ))
 
     _mark_chop_clusters(events, chop_cluster_bars)
-    return [e for e in events if not e.chop_cluster]
+    return events
 
 
 def _mark_chop_clusters(events: list[IFVGEvent], chop_cluster_bars: int = CHOP_CLUSTER_BARS) -> None:

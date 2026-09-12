@@ -1,0 +1,33 @@
+{
+  "symbol": "GBPAUD",
+  "status": "ok",
+  "baseline": {
+    "n": 14653,
+    "win_rate": 0.255,
+    "expectancy_r": -0.0032,
+    "total_r": -47.59,
+    "profit_factor": 0.994
+  },
+  "confluence_all": {
+    "n": 8147,
+    "win_rate": 0.2576,
+    "expectancy_r": -0.0048,
+    "total_r": -38.99,
+    "profit_factor": 0.9908
+  },
+  "confluence_with_trendline": {
+    "n": 1006,
+    "win_rate": 0.2932,
+    "expectancy_r": 0.0522,
+    "total_r": 52.51,
+    "profit_factor": 1.095
+  },
+  "confluence_without_trendline": {
+    "n": 7141,
+    "win_rate": 0.2526,
+    "expectancy_r": -0.0128,
+    "total_r": -91.5,
+    "profit_factor": 0.9752
+  },
+  "elapsed_sec": 206.8
+}

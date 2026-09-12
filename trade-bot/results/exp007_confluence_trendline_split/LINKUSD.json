@@ -1,0 +1,33 @@
+{
+  "symbol": "LINKUSD",
+  "status": "ok",
+  "baseline": {
+    "n": 6078,
+    "win_rate": 0.2453,
+    "expectancy_r": -0.0646,
+    "total_r": -392.92,
+    "profit_factor": 0.8801
+  },
+  "confluence_all": {
+    "n": 3984,
+    "win_rate": 0.248,
+    "expectancy_r": -0.0563,
+    "total_r": -224.41,
+    "profit_factor": 0.8941
+  },
+  "confluence_with_trendline": {
+    "n": 631,
+    "win_rate": 0.3328,
+    "expectancy_r": 0.114,
+    "total_r": 71.93,
+    "profit_factor": 1.2072
+  },
+  "confluence_without_trendline": {
+    "n": 3353,
+    "win_rate": 0.232,
+    "expectancy_r": -0.0884,
+    "total_r": -296.34,
+    "profit_factor": 0.8327
+  },
+  "elapsed_sec": 107.4
+}

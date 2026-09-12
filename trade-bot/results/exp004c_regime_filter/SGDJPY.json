@@ -1,0 +1,53 @@
+{
+  "symbol": "SGDJPY",
+  "status": "ok",
+  "baseline": {
+    "n": 14380,
+    "win_rate": 0.2577,
+    "expectancy_r": 0.0,
+    "total_r": 0.34,
+    "profit_factor": 1.0
+  },
+  "regime_filtered": {
+    "n": 4590,
+    "win_rate": 0.2723,
+    "expectancy_r": 0.0486,
+    "total_r": 222.98,
+    "profit_factor": 1.094
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 6624,
+      "win_rate": 0.3036,
+      "expectancy_r": 0.1424,
+      "total_r": 943.11,
+      "profit_factor": 1.2856
+    },
+    "sell": {
+      "n": 7756,
+      "win_rate": 0.2185,
+      "expectancy_r": -0.1216,
+      "total_r": -942.77,
+      "profit_factor": 0.7874
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2244,
+      "win_rate": 0.3097,
+      "expectancy_r": 0.1615,
+      "total_r": 362.4,
+      "profit_factor": 1.3301
+    },
+    "sell": {
+      "n": 2346,
+      "win_rate": 0.2366,
+      "expectancy_r": -0.0594,
+      "total_r": -139.42,
+      "profit_factor": 0.8905
+    }
+  },
+  "trade_retention_pct": 31.9,
+  "expectancy_delta_r": 0.0486,
+  "elapsed_sec": 649.1
+}

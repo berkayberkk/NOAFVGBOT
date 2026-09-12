@@ -1,0 +1,33 @@
+{
+  "symbol": "EURCHF",
+  "status": "ok",
+  "baseline": {
+    "n": 16982,
+    "win_rate": 0.2648,
+    "expectancy_r": 0.0625,
+    "total_r": 1060.95,
+    "profit_factor": 1.1149
+  },
+  "confluence_all": {
+    "n": 9178,
+    "win_rate": 0.2668,
+    "expectancy_r": 0.0576,
+    "total_r": 528.3,
+    "profit_factor": 1.1105
+  },
+  "confluence_with_trendline": {
+    "n": 1168,
+    "win_rate": 0.3399,
+    "expectancy_r": 0.204,
+    "total_r": 238.25,
+    "profit_factor": 1.3832
+  },
+  "confluence_without_trendline": {
+    "n": 8010,
+    "win_rate": 0.2562,
+    "expectancy_r": 0.0362,
+    "total_r": 290.06,
+    "profit_factor": 1.0697
+  },
+  "elapsed_sec": 222.2
+}

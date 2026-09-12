@@ -1,0 +1,53 @@
+{
+  "symbol": "USDPLN",
+  "status": "ok",
+  "baseline": {
+    "n": 16762,
+    "win_rate": 0.2586,
+    "expectancy_r": 0.0113,
+    "total_r": 189.41,
+    "profit_factor": 1.0207
+  },
+  "regime_filtered": {
+    "n": 4441,
+    "win_rate": 0.2594,
+    "expectancy_r": -0.0057,
+    "total_r": -25.48,
+    "profit_factor": 0.9896
+  },
+  "baseline_by_direction": {
+    "buy": {
+      "n": 8712,
+      "win_rate": 0.2925,
+      "expectancy_r": 0.1302,
+      "total_r": 1133.9,
+      "profit_factor": 1.2554
+    },
+    "sell": {
+      "n": 8050,
+      "win_rate": 0.2219,
+      "expectancy_r": -0.1173,
+      "total_r": -944.49,
+      "profit_factor": 0.8001
+    }
+  },
+  "filtered_by_direction": {
+    "buy": {
+      "n": 2313,
+      "win_rate": 0.2888,
+      "expectancy_r": 0.0857,
+      "total_r": 198.23,
+      "profit_factor": 1.165
+    },
+    "sell": {
+      "n": 2128,
+      "win_rate": 0.2274,
+      "expectancy_r": -0.1051,
+      "total_r": -223.71,
+      "profit_factor": 0.8208
+    }
+  },
+  "trade_retention_pct": 26.5,
+  "expectancy_delta_r": -0.017,
+  "elapsed_sec": 291.8
+}
